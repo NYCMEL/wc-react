@@ -1,0 +1,7 @@
+pre {
+  padding: 1em;
+  overflow: auto;
+  font-size: 12px;
+  line-height: 1.33333;
+  box-shadow: 0 0 0.5em #CCC;
+}
