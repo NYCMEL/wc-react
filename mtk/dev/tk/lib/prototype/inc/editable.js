@@ -51,7 +51,7 @@ function removeAll() {
 
     jQuery.get(url + "&ajax=1", function(data) {
 	    jQuery(tid).html(data);
-	    debug.log(url + ' get was performed on ' + tid);
+	    console.log(url + ' get was performed on ' + tid);
 	});
     
     alert("All changes are removed. Click ok to continue");
