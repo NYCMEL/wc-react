@@ -40,7 +40,7 @@ function tkShowComponents(key,flag,display) {
 //// 
 ////////////////////////////////////////////////////////////////
 function processCtrlC(flag,display) {
-    debug.log("processCtrlC: " + flag + " " + display);
+    console.log("processCtrlC: " + flag + " " + display);
 
     if (flag) {
 	jQuery(display).each(function() {
@@ -78,7 +78,7 @@ function processCtrlC(flag,display) {
 //// 
 ////////////////////////////////////////////////////////////////
 function processCtrlD(flag,display) {
-    debug.log("processCtrlD: " + flag + " " + display);
+    console.log("processCtrlD: " + flag + " " + display);
 
     if (flag) {
 	if (ctrl_d_showing == 0) {
@@ -95,7 +95,7 @@ function processCtrlD(flag,display) {
 //// 
 ////////////////////////////////////////////////////////////////
 function processCtrlS(flag,display) {
-    debug.log("processCtrlS: " + flag + " " + display);
+    console.log("processCtrlS: " + flag + " " + display);
 
     if (flag) {
 	if (ctrl_s_showing == 0) {
@@ -139,12 +139,12 @@ function processCtrlH(flag,display) {
     var links = jQuery(".tk-hotspot, a");
 
     if (ctrl_h_showing == 0) {
-	debug.log("adding tk-show-hotspot class...");
+	console.log("adding tk-show-hotspot class...");
 	links.addClass("tk-show-hotspot");
 
 	ctrl_h_showing = 1;
     } else {
-	debug.log("removeing tk-show-hotspot.");
+	console.log("removeing tk-show-hotspot.");
 	links.removeClass("tk-show-hotspot");
 
 	ctrl_h_showing = 0;
