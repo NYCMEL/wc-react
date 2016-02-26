@@ -1,6 +1,6 @@
 var jqComponentExpose = {
     /////////////////////////////////////////////////////////////////////////////
-    //// Time-stamp: <2015-10-05 19:36:43 (melify)>
+    //// Time-stamp: <2016-02-26 17:26:28 (melify)>
     /////////////////////////////////////////////////////////////////////////////
     init: function(options) {
 	console.group("jqComponentExpose.init");
@@ -35,7 +35,7 @@ var jqComponentExpose = {
 
 		    $("#tk-comps table tbody").append("<tr><td>" + cnt + "</td><td>" + url + "</td>" + "<td>" + id  + "</td></tr>");
 
-		    debug.log(tmp);
+		    console.log(tmp);
 		}
 	    });
 	}
@@ -67,7 +67,7 @@ var jqComponentExpose = {
 
 	val = $("#edit-text").val();
 
-	//debug.log("/mtk/render?callback=jq::component::expose::showme&txt=" + escape(val));
+	//console.log("/mtk/render?callback=jq::component::expose::showme&txt=" + escape(val));
 
 	console.groupEnd();
 	tk.load("#comp-display","/mtk/render?callback=jq::component::expose::showme&txt=" + escape(val), true);
