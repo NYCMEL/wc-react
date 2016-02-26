@@ -953,7 +953,7 @@ function error(code, stop) {
 	if (stop) {
 		throw msg;
 	} else if (win.console) {
-		debug.log(msg);
+		console.log(msg);
 	}
 }
 
@@ -16239,7 +16239,7 @@ extend(Highcharts, {
 });
 }());
 
-debug.log("highcharts loaded");
+console.log("highcharts loaded");
 
 
 
