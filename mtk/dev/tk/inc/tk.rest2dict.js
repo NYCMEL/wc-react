@@ -4,7 +4,7 @@ var tkRest2Dict = {
     times: Date.now(),
 
     /////////////////////////////////////////////////////////////////////////////
-    //// Time-stamp: <2016-02-27 09:31:55 (melify)>
+    //// Time-stamp: <2016-02-27 09:46:47 (melify)>
     /////////////////////////////////////////////////////////////////////////////
     init: function(options) {
 	console.group("tkRest2Dict.init: " + options.url + ", " + options.callback);
@@ -33,9 +33,9 @@ var tkRest2Dict = {
 
 	console.log("IT TOOK: " + timer + " miliseconds");
 
-	console.log(data);
+	console.log("========="+ data +"============");
 
-	var jstr = JSON.stringify(data);
+	var jstr = data;
 
 	var url = (tk.siteurl + "?callback=" + callback + "&ajax=1&timer=" + timer + "&json=" + encodeURI(jstr));
 
