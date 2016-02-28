@@ -97,7 +97,15 @@ m::proc -public 404::guts {
 	    put [url "Home Page" "[URL]" class="btn btn-default"]
 
 	    division [style padding 25px] {
-		p $::env(REQUEST_URI)
+		set tmp $::env(REQUEST_URI)
+		set tmp [split $tmp "?"]
+		set uri [lrange [split [lindex $tmp 0] "/"] 1 end]
+		set par [lindex $tmp 1]
+
+		p "$uri | $par"
+
+		#set proc [lindex $uri 0]
+		#p "/${proc}?table=[lindex $uri 1]&id=[lindex $uri 2]&${par}"
 	    }
 	}
     }
