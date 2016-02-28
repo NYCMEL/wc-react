@@ -100,12 +100,6 @@ m::proc -public 404::guts {
 		p $::env(REQUEST_URI)
 	    }
 	}
-
-	# hr
-	# division [style text-align left] {
-	# h3 $::env(REDIRECT_URL)
-	#     parray ::env
-	# }
     }
 }
 
