@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2016-03-01 12:09:41 (melify)>
+//// Time-stamp: <2016-03-01 12:11:04 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 tk = tk || {};
 tk.ajax = tk.ajax || {};
@@ -14,9 +14,13 @@ tk.ajax.init = function(options) {
 	options.contentType = "application/x-www-form-urlencoded";
     }
 
+    if (!options.async) {
+	options.async = true;
+    }
+
     var req = $.ajax({
 	url: options.url,
-	async: false,
+	async: options.async,
 	type: options.type,
 	data: options.data,
 	contentType: options.contentType,
@@ -38,6 +42,7 @@ tk.ajax.test = function() {
 	type: "POST",
 	data: "TESTING",
 	dataType: "json",
+	async: false,
     });
 
     request.success(function(result) {
