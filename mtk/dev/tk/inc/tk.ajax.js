@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2016-03-01 12:02:58 (melify)>
+//// Time-stamp: <2016-03-01 12:09:41 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 tk = tk || {};
 tk.ajax = tk.ajax || {};
@@ -8,34 +8,35 @@ tk.ajax = tk.ajax || {};
 //// 
 /////////////////////////////////////////////////////////////////////////////
 tk.ajax.init = function(options) {
-    console.group("tk.ajax.init");
+    console.group("tk.ajax.init", JSON.stringify(options));
     
+    if (!options.contentType) {
+	options.contentType = "application/x-www-form-urlencoded";
+    }
+
     var req = $.ajax({
 	url: options.url,
 	async: false,
 	type: options.type,
 	data: options.data,
-	contentType: "application/x-www-form-urlencoded",
+	contentType: options.contentType,
 	dataType: options.dataType
     });
     
     console.groupEnd();
-
     return req;
 };
 
 /////////////////////////////////////////////////////////////////////////////
-//// 
+//// FOR TESTING PURPOSES
 /////////////////////////////////////////////////////////////////////////////
 tk.ajax.test = function() {
     console.group("tk.ajax.test");
     
-    var request = $.ajax({
+    var request = tk.ajax.init({
 	url: "http://localhost:8080/dbGet/users/1000",
-	async: false,
 	type: "POST",
-	data: "HELLO",
-	contentType: "application/x-www-form-urlencoded",
+	data: "TESTING",
 	dataType: "json",
     });
 
