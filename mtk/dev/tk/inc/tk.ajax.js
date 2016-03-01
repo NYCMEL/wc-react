@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2016-03-01 12:18:05 (melify)>
+//// Time-stamp: <2016-03-01 12:19:41 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 tk = tk || {};
 tk.ajax = tk.ajax || {};
@@ -37,6 +37,7 @@ tk.ajax.init = function(options) {
 tk.ajax.test = function() {
     console.group("tk.ajax.test");
     
+    // MAKE THE REQUEST AND GET THE RESULT
     var request = tk.ajax.init({
 	url: "http://localhost:8080/dbGet/users/1000",
 	type: "POST",
@@ -46,13 +47,14 @@ tk.ajax.test = function() {
     });
 
     request.success(function(result) {
-	//console.log(result);
+	// SUCCESS
 	console.log(JSON.stringify(result));
 
 	$("body").append(JSON.stringify(result));
     });
 
     request.fail(function(jqXHR, textStatus) {
+	// FAILURE
 	alert("Request failed: " + textStatus);
     });
 }
