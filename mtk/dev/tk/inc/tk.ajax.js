@@ -1,14 +1,15 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2016-03-01 12:19:41 (melify)>
+//// Time-stamp: <2016-03-01 12:23:01 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 tk = tk || {};
-tk.ajax = tk.ajax || {};
+tk.util = tk.util || {};
+tk.util.ajax = tk.util.ajax || {};
 
 /////////////////////////////////////////////////////////////////////////////
 //// 
 /////////////////////////////////////////////////////////////////////////////
-tk.ajax.init = function(options) {
-    console.group("tk.ajax.init", JSON.stringify(options));
+tk.util.ajax.init = function(options) {
+    console.group("tk.util.ajax.init", JSON.stringify(options));
     
     if (!options.contentType) {
 	options.contentType = "application/x-www-form-urlencoded";
@@ -34,11 +35,11 @@ tk.ajax.init = function(options) {
 /////////////////////////////////////////////////////////////////////////////
 //// FOR TESTING PURPOSES (HOW TO USE IT)
 /////////////////////////////////////////////////////////////////////////////
-tk.ajax.test = function() {
-    console.group("tk.ajax.test");
+tk.util.ajax.test = function() {
+    console.group("tk.util.ajax.test");
     
     // MAKE THE REQUEST AND GET THE RESULT
-    var request = tk.ajax.init({
+    var request = tk.util.ajax.init({
 	url: "http://localhost:8080/dbGet/users/1000",
 	type: "POST",
 	data: "TESTING",
