@@ -92,3 +92,13 @@ function getScope(variable) {
     return true;
 }
 
+///////////////////////////////////////////////////////////////////////////
+///// UTILITY TO SET SCOPE VAR FROM JS
+///////////////////////////////////////////////////////////////////////////
+function scope() {
+    var appElement = document.querySelector("[ng-app=melified]");
+    var $scope = angular.element(appElement).scope();
+
+    return $scope;
+}
+
