@@ -71,8 +71,8 @@ tk.angular = tk.angular || {};
 /////////////////////////////////////////////////////////////////////////
 //// 
 /////////////////////////////////////////////////////////////////////////////
-tk.angular.getScope = function(variable,value) {
-    console.group("tk.angular.getScope:", variable, value);
+tk.angular.setScope = function(variable,value) {
+    console.group("tk.angular.setScope:", variable, value);
 
     var appElement = document.querySelector("[ng-app=melified]");
     var $scope = angular.element(appElement).scope();
@@ -88,8 +88,8 @@ tk.angular.getScope = function(variable,value) {
 ///////////////////////////////////////////////////////////////////////////
 ///// 
 ///////////////////////////////////////////////////////////////////////////
-tk.angular.setScope = function(variable) {
-    console.group("tk.angular.setScope:", variable);
+tk.angular.getScope = function(variable) {
+    console.group("tk.angular.getScope:", variable);
 
     var appElement = document.querySelector("[ng-app=melified]");
     var $scope = angular.element(appElement).scope();
