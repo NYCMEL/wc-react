@@ -82,7 +82,7 @@ tk.angular.setScope = function(variable,value) {
     });
 
     console.groupEnd();
-    return value;
+    return $scope[variable];
 };
 
 ///////////////////////////////////////////////////////////////////////////
