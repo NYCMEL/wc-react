@@ -1,7 +1,12 @@
-/////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2016-03-05 15:10:03 (melify)>
-/////////////////////////////////////////////////////////////////////////////////
-function compileAngularElement( elSelector) {
+var angular = angular || {};
+
+/////////////////////////////////////////////////////////////////////////
+//// usage: 
+////       angular.compile('#burger'); 
+/////////////////////////////////////////////////////////////////////////////
+angular.compile = function(elSelector) {
+    console.group("angular.compile: ", elSelector);
+
     var elSelector = (typeof elSelector == 'string') ? elSelector : null ;  
     // The new element to be added
     if (elSelector != null ) {
@@ -18,6 +23,3 @@ function compileAngularElement( elSelector) {
         }]);
     }
 }
-
-// example:
-//     compileAngularElement('#burger'); 
