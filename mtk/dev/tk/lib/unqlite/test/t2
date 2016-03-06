@@ -3,6 +3,7 @@
 lappend ::auto_path ../
 
 package require unqlite
+
 unqlite db1 "test.db"
 
 db1 kv_store "foo" "bar"
@@ -14,9 +15,11 @@ db1 commit
 db1 begin
 db1 kv_store "test" "testmessage"
 db1 kv_delete "foo"
+
 puts [db1 kv_fetch "foo"]
 puts [db1 kv_fetch "test"]
 db1 rollback
+
 puts [db1 kv_fetch "foo"]
 puts [db1 kv_fetch "test"]
 
