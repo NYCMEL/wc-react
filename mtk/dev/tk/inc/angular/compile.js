@@ -22,4 +22,6 @@ angular.compile = function(elSelector) {
             $scope.$apply();
         }]);
     }
+
+    console.groupEnd();
 }
