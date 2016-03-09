@@ -74,8 +74,8 @@ m::proc -private tk::include::bootstrap:4 {
 } {
     Trace
 
-    include "/GitHub/bootstrap-4.0.0-alpha/dist/css/bootstrap.min.css"
-    include "/GitHub/bootstrap-4.0.0-alpha/dist/js/bootstrap.min.js"
+    include "/GitHub/bootstrap.4/dist/css/bootstrap-theme.min.css"
+    include "/GitHub/bootstrap.4/dist/js/bootstrap.min.js"
 }
 
 ##################################################
