@@ -11,6 +11,7 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/components/cap\
     $TKSERVER/tk/lib/components/d3\
     $TKSERVER/tk/lib/components/bc\
+    $TKSERVER/tk/lib/components/ang\
     $TKSERVER/tk/lib/components/jqw\
     $TKSERVER/tk/lib/modules/videos\
     $TKSERVER/tk/lib/modules/users\
