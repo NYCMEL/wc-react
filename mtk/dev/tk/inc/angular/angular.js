@@ -73,7 +73,7 @@ tk.angular = tk.angular || {};
 /////////////////////////////////////////////////////////////////////////////
 tk.angular.setScope = function(variable,value) {
     console.group("tk.angular.setScope:", variable, value);
-
+    
     var appElement = document.querySelector("[ng-app=melified]");
     var $scope = angular.element(appElement).scope();
     
