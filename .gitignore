@@ -1,8 +1,8 @@
-prepros.cfg
 app
+kits
 components
 modules
 samples
+prod
 private
-kits
 tools
