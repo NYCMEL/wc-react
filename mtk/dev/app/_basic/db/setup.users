@@ -1,5 +1,0 @@
-CREATE TABLE users (id integer primary key, fname char(50),lname char(50), email char(50) UNIQUE,paswd char(30),active int,updated int,role char(30), company char(50));
-
-INSERT INTO users VALUES (1000 , 'Isac'  , 'Berman' , 'admin@melify.com' , 'guest' , 1 , 1042129066 , 'admin' , 'Melify');
-INSERT INTO users VALUES (null , 'Peter' , 'Johnson', 'u2@melify.com' , 'guest' , 1 , 1042129066 , 'user'  , 'Melify');
-INSERT INTO users VALUES (null , 'Susan' , 'Smith'  , 'u3@melify.com' , 'guest' , 1 , 1042129066 , 'sales' , 'Melify');

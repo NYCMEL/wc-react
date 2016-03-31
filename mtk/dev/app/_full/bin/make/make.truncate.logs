@@ -1,9 +1,0 @@
-#!/Melify/bin/mac/tclkit
-
-foreach i [glob /var/log/apache2/*.log] {
-    puts $i
-
-    exec cp /dev/null $i
-}
-
-exec cp /dev/null /var/log/apache2/error_log
