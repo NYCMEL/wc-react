@@ -6,3 +6,5 @@ samples
 prod
 private
 tools
+.DS_Store
+_notes
