@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>http://www.Melify.com</title>
+    <description>Welcome to Melify. You can use the following links to get to our content</description>
+    <link>http://www.melify.com</link>
+
+    <item>
+      <title>Usability and Rapid Prototyping</title>
+      <description>Learn how prototyping improves your product and different ways to do this</description>
+      <link>http://www.melify.com</link>
+    </item>
+
+    <item>
+      <title>Internet Toolkit Website</title>
+      <description>
+	Melify Internet Toolkit is unlike what you have heard from others. It is a complete language around HTML; so you
+	code at a much higher level than those TAGS you are used to. A common remote library allows you to completely
+	separate applications from ever moving changes in the backend devlopment. You can easily connect to your database and
+	run it on any Operating System. From MacOSX, Windows to any branch of unix. No other compnay can offer anything close to
+	this.
+      </description>
+      <link>http://toolkit.melify.com</link>
+    </item>
+
+    <item>
+      <title>Example Notebooks</title>
+      <description>
+	There are many notebooks to choose from and best of all.
+	You never have to change your code. Each notebook is created
+	with a couple of lines of code. Not bad ! Click on the link above,
+	view code and live examples.
+      </description>
+      <link>http://www.Melify.com/do/display?callback=tk::demo::notebooks</link>
+    </item>
+
+    <item>
+      <title>Toolkit Helper</title>
+      <description>
+	Use this link to looup widgets their associated code
+      </description>
+      <link>http://www.melify.com/do/display?callback=tk::help::app</link>
+    </item>
+
+    <item>
+      <title>Toolkit Videos Online</title>
+      <description>
+	Watch videos on how to create applications in a very short time
+      </description>
+      <link>http://www.screencast.com/users/Melify/folders/Melify%20-%20Internet%20Toolkit/rss</link>
+    </item>
+
+  </channel>
+</rss>
