@@ -1,0 +1,35 @@
+dict set bootstrap navbar [subst {
+    brand "<img src=/images/logo.gif>"
+    fixed "navbar-fixed-top"
+
+    left {
+	link {
+	    "Home" "home" "[URL]"
+	}
+	link {
+	    "Products" "products" "[URL page public::products]"
+	}
+
+	menu {
+	    "Documents" {
+		"How to build" "blah-1" "#"
+		- - -
+		"Lessons learned" "blah-2" "#"
+	    }
+	}
+
+	link {
+	    "Contact" "contact" "[URL page public::contact]"
+	}
+    }
+
+    right {
+	link {
+	    "Register" "register" "[URL page public::register]"
+	}
+	link {
+	    "Login" "login" "[URL page public::login]"
+	}
+    }   
+}]
+

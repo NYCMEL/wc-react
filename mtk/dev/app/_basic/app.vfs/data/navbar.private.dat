@@ -1,0 +1,26 @@
+set fname [tk::db::sqlite::query "select fname from users where id=$::userid"]
+
+dict set bootstrap navbar {
+    brand "<i class='fa fa-building-o'></i> TheCompany"
+    fixed "navbar-inverse"
+
+    left {
+	link {
+	    "Home" "home" "[URL]"
+	}
+	link {
+	    "Users" "users" "[URL page users]"
+	}
+
+	link {
+	    "Downloads" "downloads" "[URL page downloads]"
+	}
+    }
+
+    right {
+	link {
+	    "$fname <i class='fa fa-angle-right'></i> Logout" "logout" "[URL callback mtk::component::login::logout]"
+	}
+    }   
+}
+

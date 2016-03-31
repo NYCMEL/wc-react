@@ -1,0 +1,12 @@
+var play = {
+    /////////////////////////////////////////////////////////////////////////////
+    //// Time-stamp: <2016-03-18 15:10:51 (melify)>
+    /////////////////////////////////////////////////////////////////////////////
+    init: function(options) {
+	console.group("play.init");
+
+	autosize(document.querySelectorAll('textarea'));
+
+	console.groupEnd("play.init");
+    }
+}

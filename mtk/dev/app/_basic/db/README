@@ -1,0 +1,11 @@
+CONTENT OF THIS FOLDER:
+----------------------------------------------------------------------------
+   1: dump.database.new -> created using sqlite manager
+   2: build             -> script to create your database in this folder
+
+
+TO CREATE A NEW DATABASE FROM DUMP FILE IN Windows / linux / MacOSX :
+----------------------------------------------------------------------------
+  % /Melify/mtk/bin/uni build 
+
+

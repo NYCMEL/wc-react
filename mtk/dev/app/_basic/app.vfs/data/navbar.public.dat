@@ -1,0 +1,35 @@
+dict set bootstrap navbar {
+    brand "<i class='fa fa-building'></i> TheCompany"
+    fixed ""
+
+    left {
+	link {
+	    "Home" "home" "[URL]"
+	}
+	link {
+	    "Products" "products" "[URL page products]"
+	}
+
+	menu {
+	    "Documents" {
+		"How to build" "blah-1" "#"
+		- - -
+		"Lessons learned" "blah-2" "#"
+	    }
+	}
+
+	link {
+	    "Contact" "contact" "[URL page contact]"
+	}
+    }
+
+    right {
+	link {
+	    "Register" "register" "[URL page register]"
+	}
+	link {
+	    "Login" "login" "[URL page login]"
+	}
+    }   
+}
+

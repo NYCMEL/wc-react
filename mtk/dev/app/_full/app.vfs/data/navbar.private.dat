@@ -1,0 +1,36 @@
+put {
+    <style>
+    .caret {display: none}
+    </style>
+}
+
+set fname [dict get $::tk(user) fname]
+
+dict set bootstrap navbar {
+    brand "<img src=/images/logo.gif>"
+    fixed "navbar-fixed-top"
+
+    left {
+	link {
+	    "Home" "home" "[URL]"
+	}
+	link {
+	    "Users" "users" "[URL page private::users]"
+	}
+
+	link {
+	    "Downloads" "downloads" "[URL page private::downloads]"
+	}
+    }
+
+    right {
+	menu {
+	    "$fname&nbsp;&nbsp;<i class='fa fa-cog'></i>" {
+		"Preferences" "preferences" "[URL page private::preferences]"
+		- - -
+		"Logout $fname" "logout" "[URL callback mtk::component::login::logout]"
+	    }
+	}
+    }   
+}
+

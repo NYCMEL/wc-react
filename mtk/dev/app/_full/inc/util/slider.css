@@ -1,0 +1,19 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.slider {
+  height: 500px;
+  overflow: auto;
+}
+.slider .list-group > a.disabled {
+  color: #999999;
+}
+.slider .list-group > a.disabled:hover,
+.slider .list-group > a.disabled:focus {
+  color: #999999;
+  text-decoration: none;
+  cursor: not-allowed;
+}

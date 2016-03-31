@@ -1,0 +1,73 @@
+/****HEADS*****************************************************************
+*
+*  Melify Internet Toolkit (MTK) - Copyright (C) 2015  Melify LLC.
+*  
+*  This program is free software: you can redistribute it and/or modify
+*  it under the terms of the GNU General Public License as published by
+*  the Free Software Foundation, either version 3 of the License, or
+*  any later version.
+*  
+*  This program is distributed in the hope that it will be useful,
+*  but WITHOUT ANY WARRANTY; without even the implied warranty of
+*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*  GNU General Public License for more details.
+*  
+*  You should have received a copy of the GNU General Public License
+*  along with this program.  If not, see http://www.gnu.org/licenses.
+*
+****HEADE*****************************************************************/
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@font-face {
+  font-family: "font-1";
+  src: url("/GitHub/fonts/apache/roboto/Roboto-Light.ttf") format("truetype");
+}
+body {
+  background: url(/tk/img/common/texture.png);
+  background: #7B9F8B!important;
+  padding-bottom: 100px;
+}
+body h1 {
+  font-family: font-1 !important;
+  color: #FFF!important;
+  font-size: 24px!important;
+}
+body h1 a {
+  font-family: font-1 !important;
+  color: #FFF!important;
+}
+body h1 small {
+  color: #ebebeb!important;
+}
+body .page-header {
+  font-size: 24px!important;
+  background: transparent!important;
+}
+body .orange {
+  color: orange;
+}
+body .red {
+  color: red;
+}
+body pre {
+  font-size: 12px!important;
+}
+body .btn {
+  border-radius: 2px!important;
+}
+body #detail-view,
+body #play {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+}
+body #detail {
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,386 @@
+/****HEADS*****************************************************************
+*
+*  Melify Internet Toolkit (MTK) - Copyright (C) 2015  Melify LLC.
+*  
+*  This program is free software: you can redistribute it and/or modify
+*  it under the terms of the GNU General Public License as published by
+*  the Free Software Foundation, either version 3 of the License, or
+*  any later version.
+*  
+*  This program is distributed in the hope that it will be useful,
+*  but WITHOUT ANY WARRANTY; without even the implied warranty of
+*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*  GNU General Public License for more details.
+*  
+*  You should have received a copy of the GNU General Public License
+*  along with this program.  If not, see http://www.gnu.org/licenses.
+*
+****HEADE*****************************************************************/
+.template-1 {
+  /*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+  @import url("http://localhost/tk/inc/media.css");
+}
+.template-1 h1,
+.template-1 h2,
+.template-1 h3,
+.template-1 h4,
+.template-1 h5,
+.template-1 h6,
+.template-1 .h1,
+.template-1 .h2,
+.template-1 .h3,
+.template-1 .h4,
+.template-1 .h5,
+.template-1 .h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+.template-1 h1 small,
+.template-1 h2 small,
+.template-1 h3 small,
+.template-1 h4 small,
+.template-1 h5 small,
+.template-1 h6 small,
+.template-1 .h1 small,
+.template-1 .h2 small,
+.template-1 .h3 small,
+.template-1 .h4 small,
+.template-1 .h5 small,
+.template-1 .h6 small,
+.template-1 h1 .small,
+.template-1 h2 .small,
+.template-1 h3 .small,
+.template-1 h4 .small,
+.template-1 h5 .small,
+.template-1 h6 .small,
+.template-1 .h1 .small,
+.template-1 .h2 .small,
+.template-1 .h3 .small,
+.template-1 .h4 .small,
+.template-1 .h5 .small,
+.template-1 .h6 .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #777777;
+}
+.template-1 h1,
+.template-1 .h1,
+.template-1 h2,
+.template-1 .h2,
+.template-1 h3,
+.template-1 .h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.template-1 h1 small,
+.template-1 .h1 small,
+.template-1 h2 small,
+.template-1 .h2 small,
+.template-1 h3 small,
+.template-1 .h3 small,
+.template-1 h1 .small,
+.template-1 .h1 .small,
+.template-1 h2 .small,
+.template-1 .h2 .small,
+.template-1 h3 .small,
+.template-1 .h3 .small {
+  font-size: 65%;
+}
+.template-1 h4,
+.template-1 .h4,
+.template-1 h5,
+.template-1 .h5,
+.template-1 h6,
+.template-1 .h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.template-1 h4 small,
+.template-1 .h4 small,
+.template-1 h5 small,
+.template-1 .h5 small,
+.template-1 h6 small,
+.template-1 .h6 small,
+.template-1 h4 .small,
+.template-1 .h4 .small,
+.template-1 h5 .small,
+.template-1 .h5 .small,
+.template-1 h6 .small,
+.template-1 .h6 .small {
+  font-size: 75%;
+}
+.template-1 h1,
+.template-1 .h1 {
+  font-size: 36px;
+}
+.template-1 h2,
+.template-1 .h2 {
+  font-size: 30px;
+}
+.template-1 h3,
+.template-1 .h3 {
+  font-size: 24px;
+}
+.template-1 h4,
+.template-1 .h4 {
+  font-size: 18px;
+}
+.template-1 h5,
+.template-1 .h5 {
+  font-size: 14px;
+}
+.template-1 h6,
+.template-1 .h6 {
+  font-size: 12px;
+}
+.template-1 p {
+  margin: 0 0 10px;
+}
+.template-1 .lead {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+@media (min-width: 768px) {
+  .template-1 .lead {
+    font-size: 21px;
+  }
+}
+.template-1 small,
+.template-1 .small {
+  font-size: 85%;
+}
+.template-1 mark,
+.template-1 .mark {
+  background-color: #fcf8e3;
+  padding: .2em;
+}
+.template-1 .text-left {
+  text-align: left;
+}
+.template-1 .text-right {
+  text-align: right;
+}
+.template-1 .text-center {
+  text-align: center;
+}
+.template-1 .text-justify {
+  text-align: justify;
+}
+.template-1 .text-nowrap {
+  white-space: nowrap;
+}
+.template-1 .text-lowercase {
+  text-transform: lowercase;
+}
+.template-1 .text-uppercase {
+  text-transform: uppercase;
+}
+.template-1 .text-capitalize {
+  text-transform: capitalize;
+}
+.template-1 .text-muted {
+  color: #777777;
+}
+.template-1 .text-primary {
+  color: #337ab7;
+}
+a.template-1 .text-primary:hover,
+a.template-1 .text-primary:focus {
+  color: #286090;
+}
+.template-1 .text-success {
+  color: #3c763d;
+}
+a.template-1 .text-success:hover,
+a.template-1 .text-success:focus {
+  color: #2b542c;
+}
+.template-1 .text-info {
+  color: #31708f;
+}
+a.template-1 .text-info:hover,
+a.template-1 .text-info:focus {
+  color: #245269;
+}
+.template-1 .text-warning {
+  color: #8a6d3b;
+}
+a.template-1 .text-warning:hover,
+a.template-1 .text-warning:focus {
+  color: #66512c;
+}
+.template-1 .text-danger {
+  color: #a94442;
+}
+a.template-1 .text-danger:hover,
+a.template-1 .text-danger:focus {
+  color: #843534;
+}
+.template-1 .bg-primary {
+  color: #fff;
+  background-color: #337ab7;
+}
+a.template-1 .bg-primary:hover,
+a.template-1 .bg-primary:focus {
+  background-color: #286090;
+}
+.template-1 .bg-success {
+  background-color: #dff0d8;
+}
+a.template-1 .bg-success:hover,
+a.template-1 .bg-success:focus {
+  background-color: #c1e2b3;
+}
+.template-1 .bg-info {
+  background-color: #d9edf7;
+}
+a.template-1 .bg-info:hover,
+a.template-1 .bg-info:focus {
+  background-color: #afd9ee;
+}
+.template-1 .bg-warning {
+  background-color: #fcf8e3;
+}
+a.template-1 .bg-warning:hover,
+a.template-1 .bg-warning:focus {
+  background-color: #f7ecb5;
+}
+.template-1 .bg-danger {
+  background-color: #f2dede;
+}
+a.template-1 .bg-danger:hover,
+a.template-1 .bg-danger:focus {
+  background-color: #e4b9b9;
+}
+.template-1 .page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+.template-1 ul,
+.template-1 ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.template-1 ul ul,
+.template-1 ol ul,
+.template-1 ul ol,
+.template-1 ol ol {
+  margin-bottom: 0;
+}
+.template-1 .list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.template-1 .list-inline {
+  padding-left: 0;
+  list-style: none;
+  margin-left: -5px;
+}
+.template-1 .list-inline > li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.template-1 dl {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.template-1 dt,
+.template-1 dd {
+  line-height: 1.42857143;
+}
+.template-1 dt {
+  font-weight: bold;
+}
+.template-1 dd {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .template-1 .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .template-1 .dl-horizontal dd {
+    margin-left: 180px;
+  }
+}
+.template-1 abbr[title],
+.template-1 abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #777777;
+}
+.template-1 .initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+.template-1 blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #eeeeee;
+}
+.template-1 blockquote p:last-child,
+.template-1 blockquote ul:last-child,
+.template-1 blockquote ol:last-child {
+  margin-bottom: 0;
+}
+.template-1 blockquote footer,
+.template-1 blockquote small,
+.template-1 blockquote .small {
+  display: block;
+  font-size: 80%;
+  line-height: 1.42857143;
+  color: #777777;
+}
+.template-1 blockquote footer:before,
+.template-1 blockquote small:before,
+.template-1 blockquote .small:before {
+  content: '\2014 \00A0';
+}
+.template-1 .blockquote-reverse,
+.template-1 blockquote.pull-right {
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid #eeeeee;
+  border-left: 0;
+  text-align: right;
+}
+.template-1 .blockquote-reverse footer:before,
+.template-1 blockquote.pull-right footer:before,
+.template-1 .blockquote-reverse small:before,
+.template-1 blockquote.pull-right small:before,
+.template-1 .blockquote-reverse .small:before,
+.template-1 blockquote.pull-right .small:before {
+  content: '';
+}
+.template-1 .blockquote-reverse footer:after,
+.template-1 blockquote.pull-right footer:after,
+.template-1 .blockquote-reverse small:after,
+.template-1 blockquote.pull-right small:after,
+.template-1 .blockquote-reverse .small:after,
+.template-1 blockquote.pull-right .small:after {
+  content: '\00A0 \2014';
+}
+.template-1 address {
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 1.42857143;
+}
+.template-1 .template-1-guts {
+  min-height: 300px;
+}
