@@ -98,8 +98,7 @@ m::proc -public secret::init {
     }
 
     division class="span4" style=padding:40px\;position:relative {
-	put [img /tk/img/common/martians.png]
-
+	put [img /tk/img/common/melBG.gif]
 	
 	division [style position absolute top 350px left 80px text-align center] {
 	    tk::form -name "secretform" -callback "secret::cb" -guts {
