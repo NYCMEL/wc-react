@@ -80,12 +80,12 @@ proc tk::start {} {
 	cgi_html lang="$::lang" {
 	    if {$::ajax == 0} {
 		cgi_head {
-		    put "\n"
-		    put "<!------------------------------------------------------------->\n"
-		    put "<!-- THIS IS AN AUTO. GENERATED CODE FROM Melify.com TOOLKIT -->\n"
-		    put "<!--           Info@Melify.com | 1.646.303.1234              -->\n"
-		    put "<!------------------------------------------------------------->\n"
-
+		    put "\n\
+                         <!----------------------------------------------------------------------------------->\n\
+                         <!-- This code is automatically generated from Melify's 4GL Internet Toolkit (MTK) -->\n\
+                         <!--                    Info@Melify.com | 1.646.303.1234                           -->\n\
+                         <!----------------------------------------------------------------------------------->\n"
+		    
 		    tk::site::head
 		}
 	    }
