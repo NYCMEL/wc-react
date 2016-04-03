@@ -144,15 +144,10 @@ m::proc -public secret::cb {
 ##### 
 ######################################################
 m::proc -public secret::client {
-    -sites:required
 } {
     Documentation goes here...
 } {    
     Trace
-
-    if {[lsearch $sites $::env(SERVER_NAME)] == -1} {
-	return
-    }
 
     if {$::secret == ""} {
 	secret::init
