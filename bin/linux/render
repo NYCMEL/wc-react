@@ -20,5 +20,7 @@
 
 source ../app.cfg
 
+fconfigure stdout -encoding binary
+
 source /Melify/bin/MelifyIT
 
