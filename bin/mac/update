@@ -50,6 +50,7 @@ proc generate {line} {
 	set x [exec http $url?callback=fm::component::header::test&id=my-header&isolate=0]
     }
 
+    # ADD ALL REQUIRED SCRIPTS
     puts $fo [fm::component::header::required]
 
     set x1 [string first "guts START" $x]; incr x1 14
@@ -64,10 +65,9 @@ proc generate {line} {
 ##### 
 ######################################################
 proc process {line} {
-    global fi fo cfg
+    global fi fo cfg url
 
     parse $line
-    #parray cfg
 
     if {$cfg(update) == 1} {
 	#CLEAR ALL PRIOR CODE
