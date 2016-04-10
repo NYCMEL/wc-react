@@ -48,7 +48,7 @@ proc process {line} {
     global fi fo cfg
 
     parse $line
-    parray cfg
+    #parray cfg
 
     if {$cfg(update) == 1} {
 	#CLEAR ALL PRIOR CODE
