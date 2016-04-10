@@ -15,6 +15,7 @@ lappend auto_path /Melify/mtk/dev/tk/src/utl\
 ######################################################
 ##### 
 ######################################################
+set url "http://localhost/mtk/render"
 set fi [open $argv r]
 set fo [open out.$argv w]
 #set fo stdout
@@ -40,9 +41,7 @@ proc parse {line} {
 ##### 
 ######################################################
 proc generate {line} {
-    global fi fo cfg
-
-    set url "http://localhost/mtk/render"
+    global fi fo cfg url
 
     if {0} {
 	set menus {melify%20MELIFY%20download%20DOWNLOADS}
