@@ -10,16 +10,36 @@ lappend auto_path "/Melify/mtk/dev/tk/src/utl"
 ######################################################
 ##### 
 ######################################################
-proc process {line} {
-    puts $line;exit
+set fi [open $argv r]
+set fo stdout
+set save 1
+
+######################################################
+##### 
+######################################################
+proc generate {line} {
+    global fi fo
+
+    puts $fo $line
+    puts $fo "GENERATED CODE GOES HERE"
 }
 
 ######################################################
 ##### 
 ######################################################
-set fi [open $argv r]
-set fo [open out.$argv w]
-set save 1
+proc process {line} {
+    global fi fo
+
+    #CLEAR ALL PRIOR CODE
+    while {[gets $fi tmp] >= 1} {
+	if {[string first "</mtk>" $tmp] !=-1} {
+	    generate $line
+	    break
+	}
+    }
+
+    puts $fo "</mtk>"
+}
 
 while {[gets $fi line] >= 1} {
     if {$save == 1} {puts $fo $line}
