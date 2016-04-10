@@ -30,15 +30,13 @@ proc parse {line} {
 	set j [split $i =]
 	set cfg([lindex $j 0]) [lindex $j 1]
     }
-
-    parray cfg
 }
 
 ######################################################
 ##### 
 ######################################################
 proc generate {line} {
-    global fi fo cfg save
+    global fi fo cfg
 
     puts $fo "GENERATED CODE GOES HERE"
 }
@@ -47,29 +45,28 @@ proc generate {line} {
 ##### 
 ######################################################
 proc process {line} {
-    global fi fo cfg save
+    global fi fo cfg
 
     parse $line
+    parray cfg
 
     if {$cfg(update) == 1} {
 	#CLEAR ALL PRIOR CODE
 	while {[gets $fi tmp] >= 1} {
 	    if {[string first "</mtk>" $tmp] !=-1} {
 		generate $line
-		set save 0
 	    }
 	}
-    }
 
-    puts $fo "</mtk>"
-    set save 1
+	puts $fo "</mtk>"
+    }
 }
 
 ######################################################
 ##### 
 ######################################################
 while {[gets $fi line] >= 1} {
-    if {$save == 1} {puts $fo $line}
+    puts $fo $line
 
     set line [string trim $line]
 
