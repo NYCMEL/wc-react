@@ -18,7 +18,7 @@ lappend auto_path /Melify/mtk/dev/tk/src/utl\
 set url "http://localhost/mtk/render"
 set fi [open $argv r]
 set fo [open out.$argv w]
-#set fo stdout
+set settings ""
 
 ######################################################
 ##### 
@@ -40,9 +40,8 @@ proc parse {line} {
 
     if {[file exist $cfg(config)] == 1} {
 	set c [file:read $cfg(config)]
+	set settings [json::json2dict $c]
     }
-
-    set settings [json::json2dict $c]
 }
 
 ######################################################
@@ -51,9 +50,9 @@ proc parse {line} {
 proc generate {line} {
     global fi fo cfg url settings
 
-    set id [dict get $settings id]
-
     if {$settings != ""} {
+	set id [dict get $settings id]
+
 	set menus ""
 	foreach i [dict get $settings menus] {
 	    lappend menus [dict get $i id] [dict get $i label]
