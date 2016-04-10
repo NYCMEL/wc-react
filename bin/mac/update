@@ -31,7 +31,7 @@ proc parse {line} {
 	set cfg([lindex $j 0]) [lindex $j 1]
     }
 
-    #parray cfg
+    parray cfg
 }
 
 ######################################################
@@ -51,15 +51,13 @@ proc process {line} {
 
     parse $line
 
-    #CLEAR ALL PRIOR CODE
-    while {[gets $fi tmp] >= 1} {
-	if {[string first "</mtk>" $tmp] !=-1} {
-	    if {$cfg(update) == 1} {
+    if {$cfg(update) == 1} {
+	#CLEAR ALL PRIOR CODE
+	while {[gets $fi tmp] >= 1} {
+	    if {[string first "</mtk>" $tmp] !=-1} {
 		generate $line
 		set save 0
 	    }
-	} else {
-	    puts $fo $tmp
 	}
     }
 
@@ -67,6 +65,9 @@ proc process {line} {
     set save 1
 }
 
+######################################################
+##### 
+######################################################
 while {[gets $fi line] >= 1} {
     if {$save == 1} {puts $fo $line}
 
