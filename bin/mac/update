@@ -38,7 +38,21 @@ proc parse {line} {
 proc generate {line} {
     global fi fo cfg
 
-    puts $fo "GENERATED CODE GOES HERE"
+    set url "http://localhost/mtk/render"
+
+    if {0} {
+	set menus {melify%20MELIFY%20download%20DOWNLOADS}
+	set x [exec http $url?callback=fm::component::header::test&logo=/tk/img/common/mel.gif&menus=$menus&id=my-header&isolate=0]
+    } else {
+	set x [exec http $url?callback=fm::component::header::test&id=my-header&isolate=0]
+    }
+
+    set x1 [string first "guts START" $x]; incr x1 15
+    set x2 [string first "guts END"   $x]; incr x2 -26
+    
+    set guts [string range $x $x1 $x2]
+    
+    puts $fo "$guts"
 }
 
 ######################################################

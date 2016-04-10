@@ -1,0 +1,37 @@
+#!/Melify/bin/mac/tclkit
+
+if {0} {
+    set menus {melify%20MELIFY%20download%20DOWNLOADS}
+    set x [exec http http://localhost/mtk/render?callback=fm::component::header::test&logo=/tk/img/common/mel.gif&menus=$menus&id=my-header]
+} else {
+    set x [exec http http://localhost/mtk/render?callback=fm::component::header::test&id=my-header]
+}
+
+if {0} {
+    set f [open /tmp/z.html w]
+    puts $f $x
+    close $f
+}
+
+set x1 [string first "isolate START" $x]; incr x1 17
+set x2 [string first "isolate END"   $x]; incr x2 -26
+
+set isolate [string range $x $x1 $x2]
+
+set x1 [string first "guts START" $x]; incr x1 15
+set x2 [string first "guts END"   $x]; incr x2 -26
+
+set guts [string range $x $x1 $x2]
+
+set f [open /tmp/z2.html w]
+
+puts $f {
+    <link type="text/css" href="http://localhost/GitHub/Font-Awesome/css/font-awesome.min.css" media="all" rel="stylesheet" />
+    <link type="text/css" href="http://localhost/GitHub/bootstrap/dist/css/bootstrap.min.css" media="all" rel="stylesheet" />    
+
+    <script type="text/javascript" media="all" src="http://localhost/tk/jquery/scripts/jquery.min.js"></script>
+    <script type="text/javascript" media="all" src="http://localhost/tk/inc/media.js"></script>
+}
+puts $f "\n"
+puts $f $guts
+close $f
