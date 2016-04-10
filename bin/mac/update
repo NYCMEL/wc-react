@@ -21,7 +21,7 @@ proc generate {line} {
     global fi fo
 
     puts $fo $line
-    puts $fo "GENERATED CODE GOES HERE"
+    puts $fo "    GENERATED CODE GOES HERE"
 }
 
 ######################################################
