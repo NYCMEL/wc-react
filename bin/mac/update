@@ -11,16 +11,36 @@ lappend auto_path "/Melify/mtk/dev/tk/src/utl"
 ##### 
 ######################################################
 set fi [open $argv r]
-set fo stdout
+set fo [open out.$argv w]
 set save 1
 
 ######################################################
 ##### 
 ######################################################
+proc parse {line} {
+    global cfg
+
+    catch {unset cfg}
+
+    set line [string range $line 5 end-1]
+    regsub -all "\"" $line "" line
+
+    foreach i [split $line] {
+	set j [split $i =]
+	set cfg([lindex $j 0]) [lindex $j 1]
+    }
+
+    parray cfg
+}
+
+######################################################
+##### 
+######################################################
 proc generate {line} {
-    global fi fo
+    global fi fo cfg
 
     puts $fo $line
+
     puts $fo "    GENERATED CODE GOES HERE"
 }
 
@@ -28,13 +48,16 @@ proc generate {line} {
 ##### 
 ######################################################
 proc process {line} {
-    global fi fo
+    global fi fo cfg
 
     #CLEAR ALL PRIOR CODE
     while {[gets $fi tmp] >= 1} {
 	if {[string first "</mtk>" $tmp] !=-1} {
-	    generate $line
-	    break
+	    parse $line
+
+	    if {$cfg(update) == 1} {
+		generate $line
+	    }
 	}
     }
 
