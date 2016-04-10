@@ -19,14 +19,6 @@ set fi [open $argv r]
 set fo [open out.$argv w]
 #set fo stdout
 
-puts $fo {
-    <link type="text/css" href="http://localhost/GitHub/Font-Awesome/css/font-awesome.min.css" media="all" rel="stylesheet" />
-    <link type="text/css" href="http://localhost/GitHub/bootstrap/dist/css/bootstrap.min.css" media="all" rel="stylesheet" />    
-    
-    <script type="text/javascript" media="all" src="http://localhost/tk/jquery/scripts/jquery.min.js"></script>
-    <script type="text/javascript" media="all" src="/GitHub/bootstrap/dist/js/bootstrap.min.js"></script>
-}
-
 ######################################################
 ##### 
 ######################################################
@@ -57,12 +49,9 @@ proc generate {line} {
 	set x [exec http $url?callback=fm::component::header::test&logo=/tk/img/common/mel.gif&menus=$menus&id=my-header&isolate=0]
     } else {
 	set x [exec http $url?callback=fm::component::header::test&id=my-header&isolate=0]
-	set y [exec http $url?callback=fm::component::header::required]
     }
 
-    puts [fm::component::header::required]
-
-    #puts $y
+    puts $fo [fm::component::header::required]
 
     set x1 [string first "guts START" $x]; incr x1 15
     set x2 [string first "guts END"   $x]; incr x2 -26
