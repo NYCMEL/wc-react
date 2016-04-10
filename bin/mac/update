@@ -55,6 +55,7 @@ proc process {line} {
 	while {[gets $fi tmp] >= 1} {
 	    if {[string first "</mtk>" $tmp] !=-1} {
 		generate $line
+		break
 	    }
 	}
 
