@@ -56,8 +56,7 @@ proc generate {line} {
     set x2 [string first "guts END"   $x]; incr x2 -26
     
     set guts [string range $x $x1 $x2]
-    puts $guts
-    
+
     puts $fo "$guts"
 }
 
