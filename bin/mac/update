@@ -58,9 +58,9 @@ proc generate {line} {
 	foreach i [dict get $settings menus] {
 	    lappend menus [dict get $i id] [dict get $i label]
 	}
-	
+	#REPLACE SPACES
 	regsub -all " " $menus "%20" menus
-	puts >>>$menus<<<
+
 	set x [exec http $url?callback=fm::component::header::test&logo=/tk/img/common/mel.gif&menus=$menus&id=$id&isolate=0]
     } else {
 	set x [exec http $url?callback=fm::component::header::test&id=my-header&isolate=0]
