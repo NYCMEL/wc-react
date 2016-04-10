@@ -87,7 +87,6 @@ proc process {line} {
 ######################################################
 while {[gets $fi line] >= 1} {
     puts $fo $line
-    puts ---$line
 
     set line [string trim $line]
 
