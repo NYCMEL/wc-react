@@ -52,10 +52,11 @@ proc generate {line} {
 
     puts $fo [fm::component::header::required]
 
-    set x1 [string first "guts START" $x]; incr x1 15
+    set x1 [string first "guts START" $x]; incr x1 14
     set x2 [string first "guts END"   $x]; incr x2 -26
     
     set guts [string range $x $x1 $x2]
+    puts $guts
     
     puts $fo "$guts"
 }
