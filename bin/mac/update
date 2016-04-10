@@ -24,7 +24,7 @@ set fo [open out.$argv w]
 ##### 
 ######################################################
 proc parse {line} {
-    global cfg
+    global cfg settings
 
     catch {unset cfg}
 
@@ -35,17 +35,33 @@ proc parse {line} {
 	set j [split $i =]
 	set cfg([lindex $j 0]) [lindex $j 1]
     }
+
+    #parray cfg
+
+    if {[file exist $cfg(config)] == 1} {
+	set c [file:read $cfg(config)]
+    }
+
+    set settings [json::json2dict $c]
 }
 
 ######################################################
 ##### 
 ######################################################
 proc generate {line} {
-    global fi fo cfg url
+    global fi fo cfg url settings
 
-    if {0} {
-	set menus {melify%20MELIFY%20download%20DOWNLOADS}
-	set x [exec http $url?callback=fm::component::header::test&logo=/tk/img/common/mel.gif&menus=$menus&id=my-header&isolate=0]
+    set id [dict get $settings id]
+
+    if {$settings != ""} {
+	set menus ""
+	foreach i [dict get $settings menus] {
+	    lappend menus [dict get $i id] [dict get $i label]
+	}
+	
+	regsub -all " " $menus "%20" menus
+	puts >>>$menus<<<
+	set x [exec http $url?callback=fm::component::header::test&logo=/tk/img/common/mel.gif&menus=$menus&id=$id&isolate=0]
     } else {
 	set x [exec http $url?callback=fm::component::header::test&id=my-header&isolate=0]
     }
@@ -65,7 +81,7 @@ proc generate {line} {
 ##### 
 ######################################################
 proc process {line} {
-    global fi fo cfg url
+    global fi fo cfg url settings
 
     parse $line
 
