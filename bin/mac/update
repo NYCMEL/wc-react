@@ -38,7 +38,7 @@ proc parse {line} {
 ##### 
 ######################################################
 proc generate {line} {
-    global fi fo cfg
+    global fi fo cfg save
 
     puts $fo "GENERATED CODE GOES HERE"
 }
@@ -47,7 +47,7 @@ proc generate {line} {
 ##### 
 ######################################################
 proc process {line} {
-    global fi fo cfg
+    global fi fo cfg save
 
     parse $line
 
@@ -56,13 +56,15 @@ proc process {line} {
 	if {[string first "</mtk>" $tmp] !=-1} {
 	    if {$cfg(update) == 1} {
 		generate $line
+		set save 0
 	    }
+	} else {
+	    puts $fo $tmp
 	}
-
-	puts $fo $tmp
     }
 
     puts $fo "</mtk>"
+    set save 1
 }
 
 while {[gets $fi line] >= 1} {
