@@ -5,6 +5,10 @@ if {$argc != 1} {
     exit
 }
 
+lappend auto_path /Melify/mtk/dev/tk/src/utl
+
+set y [file:read $argv]
+
 if {0} {
     set menus {melify%20MELIFY%20download%20DOWNLOADS}
     set x [exec http http://localhost/mtk/render?callback=fm::component::header::test&logo=/tk/img/common/mel.gif&menus=$menus&id=my-header]
