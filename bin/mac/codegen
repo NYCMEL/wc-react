@@ -1,5 +1,10 @@
 #!/Melify/bin/mac/tclkit
 
+if {$argc != 1} {
+    puts "\nUSAGE: codegen <file-name>\n"
+    exit
+}
+
 if {0} {
     set menus {melify%20MELIFY%20download%20DOWNLOADS}
     set x [exec http http://localhost/mtk/render?callback=fm::component::header::test&logo=/tk/img/common/mel.gif&menus=$menus&id=my-header]
