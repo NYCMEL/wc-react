@@ -18,8 +18,8 @@ lappend auto_path /Melify/mtk/dev/tk/src/utl\
 set url "http://localhost/mtk/render"
 set fi [open $argv r]
 set fo [open out.$argv w]
-set settings ""
 
+set settings		""
 set ENV			"dev"
 set env(REMOTE_ADDR)	"127.0.0.1"
 set env(HTTP_HOST)	"localhost"
