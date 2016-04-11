@@ -67,7 +67,7 @@ proc generate {line} {
 
     # ADD ALL REQUIRED SCRIPTS
     puts $fo [fm::component::header::required]
-    puts $fo [fm::component::header::test]
+    puts $fo [cgi_buffer {fm::component::header::test}]
 }
 
 ######################################################
