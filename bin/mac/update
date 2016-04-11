@@ -64,6 +64,7 @@ proc generate {line} {
 	set ::menus	$menus
 	set ::isolate	0
 	set ::id	$id
+	set ::logo	"[dict get $settings logo]"
     }
 
     # ADD ALL REQUIRED SCRIPTS
