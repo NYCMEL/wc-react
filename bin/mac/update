@@ -20,6 +20,10 @@ set fi [open $argv r]
 set fo [open out.$argv w]
 set settings ""
 
+set ENV			"dev"
+set env(REMOTE_ADDR)	"127.0.0.1"
+set env(HTTP_HOST)	"localhost"
+
 ######################################################
 ##### 
 ######################################################
@@ -35,8 +39,6 @@ proc parse {line} {
 	set j [split $i =]
 	set cfg([lindex $j 0]) [lindex $j 1]
     }
-
-    #parray cfg
 
     if {[file exist $cfg(config)] == 1} {
 	set c [file:read $cfg(config)]
@@ -57,23 +59,15 @@ proc generate {line} {
 	foreach i [dict get $settings menus] {
 	    lappend menus [dict get $i id] [dict get $i label]
 	}
-	#REPLACE SPACES
-	regsub -all " " $menus "%20" menus
 
-	set x [exec http $url?callback=fm::component::header::test&logo=/tk/img/common/mel.gif&menus=$menus&id=$id&isolate=0]
-    } else {
-	set x [exec http $url?callback=fm::component::header::test&id=my-header&isolate=0]
+	set ::menus	$menus
+	set ::isolate	0
+	set ::id	$id
     }
 
     # ADD ALL REQUIRED SCRIPTS
     puts $fo [fm::component::header::required]
-
-    set x1 [string first "guts START" $x]; incr x1 14
-    set x2 [string first "guts END"   $x]; incr x2 -26
-    
-    set guts [string range $x $x1 $x2]
-
-    puts $fo "$guts"
+    puts $fo [fm::component::header::test]
 }
 
 ######################################################
