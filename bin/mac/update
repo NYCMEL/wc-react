@@ -5,7 +5,8 @@ if {$argc != 1} {
     exit
 }
 
-lappend auto_path /Melify/mtk/dev/tk/src/utl\
+lappend auto_path\
+    /Melify/mtk/dev/tk/src/utl\
     /Melify/mtk/dev/tk/lib/components/fm\
     /Melify/mtk/dev/tk/src/cgi\
     /Melify/mtk/dev/tk/src/utl\
@@ -15,7 +16,6 @@ lappend auto_path /Melify/mtk/dev/tk/src/utl\
 ######################################################
 ##### 
 ######################################################
-set url "http://localhost/mtk/render"
 set fi [open $argv r]
 set fo [open out.$argv w]
 
@@ -50,7 +50,7 @@ proc parse {line} {
 ##### 
 ######################################################
 proc generate {line} {
-    global fi fo cfg url settings
+    global fi fo cfg settings
 
     if {$settings != ""} {
 	set id [dict get $settings id]
@@ -75,7 +75,7 @@ proc generate {line} {
 ##### 
 ######################################################
 proc process {line} {
-    global fi fo cfg url settings
+    global fi fo cfg settings
 
     parse $line
 
