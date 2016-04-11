@@ -60,6 +60,7 @@ proc generate {line} {
 	    lappend menus [dict get $i id] [dict get $i label]
 	}
 
+	# PREPARE VARIABLE FOR TEST PROC
 	set ::menus	$menus
 	set ::isolate	0
 	set ::id	$id
