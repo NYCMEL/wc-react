@@ -80,7 +80,7 @@ proc process {line} {
 
     parse $line
 
-    if {$cfg(update) == 1} {
+    if {$cfg(update) == "true"} {
 	#CLEAR ALL PRIOR CODE
 	while {[gets $fi tmp] >= 0} {
 	    if {[string first "</mtk>" $tmp] !=-1} {
