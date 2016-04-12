@@ -65,6 +65,7 @@ proc generate {line} {
 	set ::isolate	0
 	set ::id	$id
 	set ::logo	"[dict get $settings logo]"
+	set ::callback	"[dict get $settings callback]"
     }
 
     lappend ::auto_path $::root/$cfg(component)/fm.component.$cfg(component).$cfg(version)
