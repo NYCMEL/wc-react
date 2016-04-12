@@ -7,7 +7,6 @@ if {$argc != 1} {
 
 lappend auto_path\
     /Melify/mtk/dev/tk/src/utl\
-    /Melify/mtk/dev/tk/lib/components/fm\
     /Melify/mtk/dev/tk/src/cgi\
     /Melify/mtk/dev/tk/src/utl\
     /Melify/mtk/dev/tk/src/db\
@@ -23,6 +22,7 @@ set settings		""
 set ENV			"dev"
 set env(REMOTE_ADDR)	"127.0.0.1"
 set env(HTTP_HOST)	"localhost"
+set root "/Melify/mtk/dev/tk/lib/components/fm/components"
 
 ######################################################
 ##### 
@@ -67,9 +67,19 @@ proc generate {line} {
 	set ::logo	"[dict get $settings logo]"
     }
 
+    parray cfg
+
+    set dir $::root/$cfg(component)/fm.component.$cfg(component).$cfg(version)
+    puts ==$dir==
+
+    lappend ::auto_path $dir
+
+    set comp "fm::component::$cfg(component)"
+    puts $comp
+
     # ADD ALL REQUIRED SCRIPTS
-    puts $fo [cgi_buffer {fm::component::header::isolate}]
-    puts $fo [cgi_buffer {fm::component::header::test}]
+    puts $fo [cgi_buffer {${comp}::isolate}]
+    puts $fo [cgi_buffer {${comp}::test}]
 }
 
 ######################################################
