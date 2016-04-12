@@ -67,15 +67,9 @@ proc generate {line} {
 	set ::logo	"[dict get $settings logo]"
     }
 
-    parray cfg
-
-    set dir $::root/$cfg(component)/fm.component.$cfg(component).$cfg(version)
-    puts ==$dir==
-
-    lappend ::auto_path $dir
+    lappend ::auto_path $::root/$cfg(component)/fm.component.$cfg(component).$cfg(version)
 
     set comp "fm::component::$cfg(component)"
-    puts $comp
 
     # ADD ALL REQUIRED SCRIPTS
     puts $fo [cgi_buffer {${comp}::isolate}]
