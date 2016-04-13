@@ -18,7 +18,7 @@ lappend auto_path\
 set fi [open $argv r]
 set fo [open out.$argv w]
 
-set settings		""
+set conf		""
 set ENV			"dev"
 set env(REMOTE_ADDR)	"127.0.0.1"
 set env(HTTP_HOST)	"localhost"
@@ -28,21 +28,21 @@ set root "/Melify/mtk/dev/tk/lib/components/fm/components"
 ##### 
 ######################################################
 proc parse {line} {
-    global cfg settings
+    global spec conf
 
-    catch {unset cfg}
+    catch {unset spec}
 
     set line [string range $line 5 end-1]
     regsub -all "\"" $line "" line
 
     foreach i [split $line] {
 	set j [split $i =]
-	set cfg([lindex $j 0]) [lindex $j 1]
+	set spec([lindex $j 0]) [lindex $j 1]
     }
 
-    if {[file exist $cfg(config)] == 1} {
-	set c [file:read $cfg(config)]
-	set settings [json::json2dict $c]
+    if {[file exist $spec(config)] == 1} {
+	set c [file:read $spec(config)]
+	set conf [json::json2dict $c]
     }
 }
 
@@ -50,13 +50,18 @@ proc parse {line} {
 ##### 
 ######################################################
 proc generate {line} {
-    global fi fo cfg settings
+    global fi fo spec conf
 
-    if {$settings != ""} {
-	set id [dict get $settings id]
+    parray spec
+    puts $conf
+
+    exit
+
+    if {$conf != ""} {
+	set id [dict get $conf id]
 
 	set menus ""
-	foreach i [dict get $settings menus] {
+	foreach i [dict get $conf menus] {
 	    lappend menus [dict get $i id] [dict get $i label]
 	}
 
@@ -64,13 +69,13 @@ proc generate {line} {
 	set ::menus	$menus
 	set ::isolate	0
 	set ::id	$id
-	set ::logo	"[dict get $settings logo]"
-	set ::callback	"[dict get $settings callback]"
+	set ::logo	"[dict get $conf logo]"
+	set ::callback	"[dict get $conf callback]"
     }
 
-    lappend ::auto_path $::root/$cfg(component)/fm.component.$cfg(component).$cfg(version)
+    lappend ::auto_path $::root/$spec(component)/fm.component.$spec(component).$spec(version)
 
-    set comp "fm::component::$cfg(component)"
+    set comp "fm::component::$spec(component)"
 
     # ADD ALL REQUIRED SCRIPTS
     puts $fo [cgi_buffer {${comp}::isolate}]
@@ -81,11 +86,11 @@ proc generate {line} {
 ##### 
 ######################################################
 proc process {line} {
-    global fi fo cfg settings
+    global fi fo spec conf
 
     parse $line
 
-    if {$cfg(update) == "true"} {
+    if {$spec(update) == "true"} {
 	#CLEAR ALL PRIOR CODE
 	while {[gets $fi tmp] >= 0} {
 	    if {[string first "</mtk>" $tmp] !=-1} {
