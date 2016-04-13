@@ -18,7 +18,6 @@ lappend auto_path\
 set fi [open $argv r]
 set fo [open out.$argv w]
 
-set conf		""
 set ENV			"dev"
 set env(REMOTE_ADDR)	"127.0.0.1"
 set env(HTTP_HOST)	"localhost"
@@ -42,7 +41,10 @@ proc parse {line} {
 
     if {[file exist $spec(config)] == 1} {
 	set c [file:read $spec(config)]
-	set conf [json::json2dict $c]
+
+	foreach {i j} [json::json2dict $c] {
+	    set conf($i) $j
+	}
     }
 }
 
@@ -51,27 +53,6 @@ proc parse {line} {
 ######################################################
 proc generate {line} {
     global fi fo spec conf
-
-    parray spec
-    puts $conf
-
-    exit
-
-    if {$conf != ""} {
-	set id [dict get $conf id]
-
-	set menus ""
-	foreach i [dict get $conf menus] {
-	    lappend menus [dict get $i id] [dict get $i label]
-	}
-
-	# PREPARE VARIABLE FOR TEST PROC
-	set ::menus	$menus
-	set ::isolate	0
-	set ::id	$id
-	set ::logo	"[dict get $conf logo]"
-	set ::callback	"[dict get $conf callback]"
-    }
 
     lappend ::auto_path $::root/$spec(component)/fm.component.$spec(component).$spec(version)
 
