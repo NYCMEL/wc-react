@@ -8,6 +8,9 @@ case "$OSTYPE" in
   darwin14)
        EXECUTABLE=/Melify/bin/mac/tclkit;;
 
+  darwin15)
+       EXECUTABLE=/Melify/bin/mac/tclkit;;
+
   linux-gnu)
        EXECUTABLE=/Melify/bin/linux/tclkit-32;; 
 
