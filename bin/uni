@@ -9,7 +9,7 @@ case "$OSTYPE" in
        EXECUTABLE=/Melify/bin/mac/tclkit;;
 
   linux-gnu)
-       EXECUTABLE=/Melify/bin/linux/tclkit-32;; 
+       EXECUTABLE=/Melify/bin/linux/tclkit;; 
 
   linux)
        EXECUTABLE=/Melify/bin/linux/tclkit-64;; 
