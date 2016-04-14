@@ -15,7 +15,7 @@ case "$OSTYPE" in
        EXECUTABLE=/Melify/bin/linux/tclkit;; 
 
   linux)
-       EXECUTABLE=/Melify/bin/linux/tclkit-64;; 
+       EXECUTABLE=/Melify/bin/linux/tclkit;; 
 
   cygwin)
        EXECUTABLE=/cygdrive/c/Melify/bin/win/tclkitsh.exe;; 
