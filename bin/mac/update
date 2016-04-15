@@ -18,10 +18,13 @@ lappend auto_path\
 set fi [open $argv r]
 set fo [open out.$argv w]
 
-set ENV			"dev"
-set env(REMOTE_ADDR)	"127.0.0.1"
-set env(HTTP_HOST)	"localhost"
-set root "/Melify/mtk/dev/tk/lib/components/fm/components"
+set ::ENV		"dev"
+set ::env(REMOTE_ADDR)	"127.0.0.1"
+set ::env(SERVER_ADDR)	"localhost"
+set ::env(HTTP_HOST)	"localhost"
+set ::root		"/Melify/mtk/dev/tk/lib/components/fm/components"
+
+parray ::env
 
 ######################################################
 ##### 
