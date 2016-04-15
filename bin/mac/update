@@ -1,4 +1,4 @@
-#!/Melify/bin/uni
+#!/Melify/bin/mac/tclkit
 
 if {$argc != 1} {
     puts "\nUSAGE: codegen <file-name>\n"
