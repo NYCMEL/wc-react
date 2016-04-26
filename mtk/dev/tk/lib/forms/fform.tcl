@@ -17,45 +17,35 @@
 #
 ###HEADE###################################################################
 
-namespace eval ftext {}
+namespace eval fform {}
 
 ######################################################
 ##### 
 ######################################################
-m::proc -public ftext {
-    -name:required
-    {-label ""}
-    {-value ""}
-    {-placeholder ""}
-    {-class "form-control"}
-    {-required ""}
+m::proc -public fform {
+    -id:required
+    -guts:required
 } {
     Documentation goes here...
 } {
     Trace
     
-    text $name=$value id="$name" placeholder="$placeholder" class="$class" $required
+    put "<form class='form-horizontal' id='$id' role='form'>"
+
+    uplevel $guts
+
+    put "</form>"
 }
 
 ######################################################
 ##### 
 ######################################################
-m::proc -public ftext:test {
+m::proc -public fform:test {
 } {
     Documentation goes here...
 } {
     Trace
     
-    division [style margin 100px] {
-	tk::form -name "form-name" -callback "form-callback" -class "form-inline" -guts {
-	    foreach i {1 2 3} {
-		division class="form-group" {
-		    division class="input-group" {
-			label for="fname" "Your Name:"
-			ftext -name "fname" -placeholder "Your name ..."
-		    }
-		}
-	    }
-	}
+    fform -id "myform" -guts {
     }
 }
