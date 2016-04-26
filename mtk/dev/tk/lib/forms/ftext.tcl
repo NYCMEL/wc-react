@@ -53,7 +53,7 @@ m::proc -public ftext:test {
 		    label for="fname" class="col-md-2 control-label" "Your Name:"
 
 		    division class="input-group" {
-			division class="col-md-8" {
+			division class="col-md-12" {
 			    ftext -name "fname" -placeholder "Your name ..."
 			}
 		    }
