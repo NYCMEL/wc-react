@@ -46,6 +46,15 @@ m::proc -public ftext:test {
 } {
     Trace
     
+    put {
+	<style>
+	form {
+	    width:100%;
+	    border:1px red solid;
+	}
+	</style>
+    }
+
     division [style margin 50px] {
 	fform -id "my-form" -guts {
 	    foreach i {1 2 3} {
