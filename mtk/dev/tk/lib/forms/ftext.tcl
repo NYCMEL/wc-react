@@ -24,17 +24,24 @@ namespace eval ftext {}
 ######################################################
 m::proc -public ftext {
     -name:required
-    {-label ""}
-    {-value ""}
-    {-placeholder ""}
+    {-label             ""}
+    {-width     "col-md-2"}
+    {-value             ""}
+    {-placeholder       ""}
     {-class "form-control"}
-    {-required ""}
+    {-required          ""}
 } {
     Documentation goes here...
 } {
     Trace
     
-    text $name=$value id="$name" placeholder="$placeholder" class="$class" $required
+    division class="form-group" [style margin-left 0px] {
+	label for="name" class="col-md-2 control-label" "Your Name:"
+	
+	division class="col-md-4" {
+	    text $name=$value id="$name" placeholder="$placeholder" class="$class" $required
+	}
+    }
 }
 
 ######################################################
@@ -46,30 +53,5 @@ m::proc -public ftext:test {
 } {
     Trace
     
-    put {
-	<style>
-	form {
-	    margin:0;
-	    padding:0;
-	    padding-top:10px;
-	    width:100%;
-	    border:1px red solid;
-	    clear:both;
-	}
-	</style>
-    }
-
-    division [style margin 50px] {
-	fform -id "my-form" -guts {
-	    foreach i {1 2 3} {
-		division class="form-group" [style margin-left 0px] {
-		    label for="name" class="col-md-2 control-label" "Your Name:"
-		    
-		    division class="col-md-4" {
-			ftext -name "fname" -placeholder "your name..."
-		    }
-		}
-	    }
-	}
-    }
+    ftext -name "fname" -placeholder "your name goes here" -required "required"
 }

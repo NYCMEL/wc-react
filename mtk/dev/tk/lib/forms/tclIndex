@@ -8,5 +8,6 @@
 
 set auto_index(fform) [list source [file join $dir fform.tcl]]
 set auto_index(fform:test) [list source [file join $dir fform.tcl]]
+set auto_index(ftest::init) [list source [file join $dir ftest.tcl]]
 set auto_index(ftext) [list source [file join $dir ftext.tcl]]
 set auto_index(ftext:test) [list source [file join $dir ftext.tcl]]

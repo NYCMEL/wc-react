@@ -25,12 +25,13 @@ namespace eval fform {}
 m::proc -public fform {
     -id:required
     -guts:required
+    {-direction "form-horizontal"}
 } {
     Documentation goes here...
 } {
     Trace
     
-    put "<form class='form-horizontal' id='$id' role='form'>"
+    put "<form class='$direction' id='$id' role='form'>"
 
     uplevel $guts
 
