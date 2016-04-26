@@ -41,18 +41,20 @@ m::proc -public ftest::init {
 	    foreach row $rows {
 		p "<PRE>$row</PRE>"
 
-		switch [dict get $row type] {
-		    "text" {
-			ftext\
-			    -name "[dict get $row id]" \
-			    -placeholder "[dict get $row placeholder]" \
-			    -value "[dict get $row value]" \
-			    -required "[dict get $row required]" \
-			    -validate "[dict get $row validate]" \
-			    -labelwidth "[dict get $row labelwidth]" \
-			    -textwidth "[dict get $row textwidth]" \
-			    -required "[dict get $row required]" \
-			    -label "[dict get $row label]"
+		foreach r $row {
+		    switch [dict get $r type] {
+			"text" {
+			    ftext\
+				-name "[dict get $r id]" \
+				-placeholder "[dict get $r placeholder]" \
+				-value "[dict get $r value]" \
+				-required "[dict get $r required]" \
+				-validate "[dict get $r validate]" \
+				-labelwidth "[dict get $r labelwidth]" \
+				-textwidth "[dict get $r textwidth]" \
+				-required "[dict get $r required]" \
+				-label "[dict get $r label]"
+			}
 		    }
 		}
 	    }
