@@ -46,13 +46,16 @@ m::proc -public ftext:test {
 } {
     Trace
     
-    division [style margin 100px] {
+    division [style margin 50px] {
 	fform -id "my-form" -guts {
 	    foreach i {1 2 3} {
 		division class="form-group" {
+		    label for="fname" class="col-md-2 control-label" "Your Name:"
+
 		    division class="input-group" {
-			label for="fname" "Your Name:"
-			ftext -name "fname" -placeholder "Your name ..."
+			division class="col-md-8" {
+			    ftext -name "fname" -placeholder "Your name ..."
+			}
 		    }
 		}
 	    }
