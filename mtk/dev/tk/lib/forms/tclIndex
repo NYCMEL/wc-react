@@ -6,5 +6,7 @@
 # element name is the name of a command and the value is
 # a script that loads the command.
 
+set auto_index(fform) [list source [file join $dir fform.tcl]]
+set auto_index(fform:test) [list source [file join $dir fform.tcl]]
 set auto_index(ftext) [list source [file join $dir ftext.tcl]]
 set auto_index(ftext:test) [list source [file join $dir ftext.tcl]]
