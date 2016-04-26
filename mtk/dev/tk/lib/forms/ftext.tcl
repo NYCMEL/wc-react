@@ -51,6 +51,7 @@ m::proc -public ftext:test {
 	form {
 	    width:100%;
 	    border:1px red solid;
+	    clear:both;
 	}
 	</style>
     }
@@ -58,13 +59,11 @@ m::proc -public ftext:test {
     division [style margin 50px] {
 	fform -id "my-form" -guts {
 	    foreach i {1 2 3} {
-		division class="form-group" {
-		    label for="fname" class="col-md-2 control-label" "Your Name:"
-
-		    division class="input-group" {
-			division class="col-md-12" {
-			    ftext -name "fname" -placeholder "Your name ..."
-			}
+		division class="form-group" [style margin-left 0px] {
+		    label for="name" class="col-md-2 control-label" "Your Name:"
+		    
+		    division class="col-md-6" {
+			ftext -name "fname"
 		    }
 		}
 	    }
