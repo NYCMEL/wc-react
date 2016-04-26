@@ -8,5 +8,3 @@
 
 set auto_index(ftext) [list source [file join $dir ftext.tcl]]
 set auto_index(ftext:test) [list source [file join $dir ftext.tcl]]
-set auto_index(ftext) [list source [file join $dir text.tcl]]
-set auto_index(ftext:test) [list source [file join $dir text.tcl]]
