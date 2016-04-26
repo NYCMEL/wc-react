@@ -31,13 +31,14 @@ m::proc -public ftext {
     {-placeholder        ""}
     {-class  "form-control"}
     {-required           ""}
+    {-validate           ""}
 } {
     Documentation goes here...
 } {
     Trace
     
     division class="form-group" [style margin-left 0px] {
-	label for="name" class="$labelwidth control-label" "Your Name:"
+	label for="name" class="$labelwidth control-label" "$label"
 	
 	division class="$textwidth" {
 	    text $name=$value id="$name" placeholder="$placeholder" class="$class" $required
@@ -54,5 +55,5 @@ m::proc -public ftext:test {
 } {
     Trace
     
-    ftext -name "fname" -placeholder "your name goes here" -required "required"
+    ftext -name "fname" -label "Your Name:" -placeholder "your name goes here" -required "required"
 }
