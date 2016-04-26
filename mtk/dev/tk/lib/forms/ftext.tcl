@@ -49,6 +49,9 @@ m::proc -public ftext:test {
     put {
 	<style>
 	form {
+	    margin:0;
+	    padding:0;
+	    padding-top:10px;
 	    width:100%;
 	    border:1px red solid;
 	    clear:both;
@@ -63,7 +66,7 @@ m::proc -public ftext:test {
 		    label for="name" class="col-md-2 control-label" "Your Name:"
 		    
 		    division class="col-md-6" {
-			ftext -name "fname"
+			ftext -name "fname" -placeholder "your name..."
 		    }
 		}
 	    }
