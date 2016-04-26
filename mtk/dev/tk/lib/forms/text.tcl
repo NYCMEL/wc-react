@@ -17,14 +17,12 @@
 #
 ###HEADE###################################################################
 
-namespace eval form {
-    namespace eval component {}
-}
+namespace eval ftext {}
 
 ######################################################
 ##### 
 ######################################################
-m::proc -public form::component::ftext {
+m::proc -public ftext {
     -name:required
     {-value ""}
     {-placeholder ""}
@@ -41,7 +39,7 @@ m::proc -public form::component::ftext {
 ######################################################
 ##### 
 ######################################################
-m::proc -public form::component::ftext:test {
+m::proc -public ftext:test {
 } {
     Documentation goes here...
 } {
@@ -51,7 +49,7 @@ m::proc -public form::component::ftext:test {
     division class="container" {
 	division class="row" {
 	    division class="col-md-12" {
-		form::component::ftext -name "fname" -placeholder "Your name ..." -class "form-control input-lg"
+		ftext -name "fname" -placeholder "Your name ..." -class "form-control input-lg"
 	    }
 	}
     }
