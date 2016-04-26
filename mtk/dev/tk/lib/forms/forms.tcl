@@ -17,16 +17,22 @@
 #
 ###HEADE###################################################################
 
-namespace eval forms {}
+namespace eval forms {
+    namespace eval component {}
+}
 
 ######################################################
 ##### 
 ######################################################
-m::proc -public forms::id {
+m::proc -public forms::component::text {
+    -name:required
+    {-value ""}
+    {-placeholder ""}
+    -id:required
 } {
     Documentation goes here...
 } {
     Trace
     
-    return "forms"
+    text $name=$value placeholder="$placeholder"
 }
