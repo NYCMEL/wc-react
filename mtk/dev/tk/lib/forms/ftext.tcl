@@ -47,7 +47,7 @@ m::proc -public ftext:test {
     Trace
     
     division [style margin 100px] {
-	tk::form -name "form-name" -callback "form-callback" -class "form-inline" -guts {
+	fform -id "my-form" -guts {
 	    foreach i {1 2 3} {
 		division class="form-group" {
 		    division class="input-group" {
