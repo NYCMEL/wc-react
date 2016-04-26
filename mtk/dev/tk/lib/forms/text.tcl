@@ -24,27 +24,35 @@ namespace eval form {
 ######################################################
 ##### 
 ######################################################
-m::proc -public form::component::text {
+m::proc -public form::component::ftext {
     -name:required
     {-value ""}
     {-placeholder ""}
-    -id:required
+    {-class "form-control"}
+    {-required ""}
 } {
     Documentation goes here...
 } {
     Trace
     
-    text $name=$value placeholder="$placeholder"
+    text $name=$value id="$name" placeholder="$placeholder" class="$class" $required
 }
 
 ######################################################
 ##### 
 ######################################################
-m::proc -public form::component::text:test {
+m::proc -public form::component::ftext:test {
 } {
     Documentation goes here...
 } {
     Trace
     
-    form::component::text -name "fname" -value "Mel" -placeholder "Your name ..."
+    br
+    division class="container" {
+	division class="row" {
+	    division class="col-md-12" {
+		form::component::ftext -name "fname" -placeholder "Your name ..." -class "form-control input-lg"
+	    }
+	}
+    }
 }
