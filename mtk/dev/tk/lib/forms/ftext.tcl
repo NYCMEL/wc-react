@@ -65,7 +65,7 @@ m::proc -public ftext:test {
 		division class="form-group" [style margin-left 0px] {
 		    label for="name" class="col-md-2 control-label" "Your Name:"
 		    
-		    division class="col-md-6" {
+		    division class="col-md-4" {
 			ftext -name "fname" -placeholder "your name..."
 		    }
 		}
