@@ -17,14 +17,14 @@
 #
 ###HEADE###################################################################
 
-namespace eval forms {
+namespace eval form {
     namespace eval component {}
 }
 
 ######################################################
 ##### 
 ######################################################
-m::proc -public forms::component::text {
+m::proc -public form::component::text {
     -name:required
     {-value ""}
     {-placeholder ""}
@@ -35,4 +35,16 @@ m::proc -public forms::component::text {
     Trace
     
     text $name=$value placeholder="$placeholder"
+}
+
+######################################################
+##### 
+######################################################
+m::proc -public form::component::text:test {
+} {
+    Documentation goes here...
+} {
+    Trace
+    
+    form::component::text -name "fname" -value "Mel" -placeholder "Your name ..."
 }
