@@ -67,40 +67,6 @@ melified.controller('MelifiedCtrl', function($scope, $http, $compile) {
 tk = tk || {};
 tk.angular = tk.angular || {};
 
-/////////////////////////////////////////////////////////////////////////
-//// 
-/////////////////////////////////////////////////////////////////////////////
-tk.angular.setScope = function(variable,value) {
-    console.group("tk.angular.setScope:", variable, value);
-    
-    var appElement = document.querySelector("[ng-app=melified]");
-    var $scope = angular.element(appElement).scope();
-    
-    $scope.$apply(function() {
-	$scope[variable] = value;
-    });
-
-    console.groupEnd();
-    return $scope[variable];
-};
-
-///////////////////////////////////////////////////////////////////////////
-///// 
-///////////////////////////////////////////////////////////////////////////
-tk.angular.getScope = function(variable) {
-    console.group("tk.angular.getScope:", variable);
-
-    var appElement = document.querySelector("[ng-app=melified]");
-    var $scope = angular.element(appElement).scope();
-    
-    $scope.$apply(function() {
-	console.log($scope[variable]);
-    });
-
-    console.groupEnd();
-    return $scope[variable];
-}
-
 ///////////////////////////////////////////////////////////////////////////
 ///// 
 ///////////////////////////////////////////////////////////////////////////
