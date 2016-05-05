@@ -9,8 +9,7 @@ var melified = angular.module('melified', ['ngRoute', "ngSanitize"]);
 melified.controller('MelifiedCtrl', function($scope, $http, $compile) {
     console.group('MelifiedCtrl');
 
-    $scope.msg    = "NO MESSAGE YET !";
-    $scope.page   = "home";
+    $scope.app = {};
 
     ///////////////////////////////////////////////////////////////////////
     /////
