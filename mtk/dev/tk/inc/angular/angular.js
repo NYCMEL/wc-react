@@ -114,3 +114,29 @@ tk.angular.scope = function() {
     return $scope;
 }
 
+///////////////////////////////////////////////////////////////////////////
+///// 
+///////////////////////////////////////////////////////////////////////////
+tk.angular.app = function(variable, value) {
+    console.group("tk.angular.app: ", variable, value);
+
+    var appElement = document.querySelector("[ng-app=melified]");
+    var $scope = angular.element(appElement).scope();
+    
+    if (variable == undefined) {
+	console.groupEnd();
+	return $scope.app;
+    }
+
+    if (variable == undefined) {
+	console.groupEnd();
+	return $scope.app[variable]
+    }
+    
+    $scope.$apply(function() {
+	$scope.app[variable] = value;
+    });
+
+    console.groupEnd();
+    return $scope.app;
+}
