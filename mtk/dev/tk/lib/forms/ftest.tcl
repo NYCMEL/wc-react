@@ -28,6 +28,14 @@ m::proc -public ftest::init {
 } {
     Trace
     
+    put {
+	<style>
+	label {
+	    margin-top:5px;
+	}
+	</style>
+    }
+
     set f [file:read /Melify/mtk/dev/app/_git/app.vfs/data/form.2.json]
     set d [json::json2dict $f]
     set d [string range $d 1 end-1]
@@ -82,6 +90,19 @@ m::proc -public ftest::init {
 				    ng-bind="[dict get $n bind]" \
 				    "[dict get $n required]"
 
+				if {$width == 0} {
+				    put "</div>"
+				}
+			    }
+			    "select" {
+				if {$width == 0} {
+				    put "<div class=[dict get $n width]>"
+				}
+				select [dict get $n id] class="form-control" {
+				    foreach {i j} [dict get $n options] {
+					option $j value=$i
+				    }
+				}
 				if {$width == 0} {
 				    put "</div>"
 				}
