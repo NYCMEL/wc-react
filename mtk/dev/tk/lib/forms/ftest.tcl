@@ -31,69 +31,66 @@ m::proc -public ftest::init {
     set f [file:read /Melify/mtk/dev/app/_git/app.vfs/data/form.2.json]
     set d [json::json2dict $f]
     set d [string range $d 1 end-1]
-    p >>$d<<
-    hr
+    #p >>$d<<
     
-    division [style background wheat] {
-	fform -id "my-form" -guts {
-	    foreach k $d {
-		division class="form-group" {
-		    foreach j $k {
-			set class [dict exist $j class]
-			
-			if {$class == 1} {
-			    put "<div class=[dict get $j class]>"
-			}
+    fform -id "my-form" -guts {
+	foreach k $d {
+	    division class="form-group" {
+		foreach j $k {
+		    set width [dict exist $j width]
+		    
+		    if {$width == 1} {
+			put "<div class=[dict get $j width]>"
+		    }
 
-			foreach {m n} $j {
-			    switch $m {
-				"label" {
-				    if {$class == 0} {
-					label class="[dict get $n width]" for="[dict get $n for]" "[dict get $n text]"
-				    } else {
-					label "[dict get $n text]"
-				    }
+		    foreach {m n} $j {
+			switch $m {
+			    "label" {
+				if {$width == 0} {
+				    label class="[dict get $n width]" for="[dict get $n for]" "[dict get $n text]"
+				} else {
+				    label "[dict get $n text]"
 				}
-				"text" {
-				    if {$class == 0} {
-					put "<div class=[dict get $n width]>"
-				    }
-				    
-				    text [dict get $n id]=[dict get $n value] \
-					type="[dict get $n type]" \
-					class="form-control" \
-					expression="[dict get $n expression]" \
-					placeholder="[dict get $n placeholder]" \
-					ng-bind="[dict get $n bind]" \
-					"[dict get $n required]"
-
-				    if {$class == 0} {
-					put "</div>"
-				    }
+			    }
+			    "text" {
+				if {$width == 0} {
+				    put "<div class=[dict get $n width]>"
 				}
-				"textarea" {
-				    if {$class == 0} {
-					put "<div class=[dict get $n width]>"
-				    }
-				    
-				    textarea [dict get $n id]=[dict get $n value] \
-					type="[dict get $n type]" \
-					class="form-control" \
-					expression="[dict get $n expression]" \
-					placeholder="[dict get $n placeholder]" \
-					ng-bind="[dict get $n bind]" \
-					"[dict get $n required]"
+				
+				text [dict get $n id]=[dict get $n value] \
+				    type="[dict get $n type]" \
+				    class="form-control" \
+				    expression="[dict get $n expression]" \
+				    placeholder="[dict get $n placeholder]" \
+				    ng-bind="[dict get $n bind]" \
+				    "[dict get $n required]"
 
-				    if {$class == 0} {
-					put "</div>"
-				    }
+				if {$width == 0} {
+				    put "</div>"
+				}
+			    }
+			    "textarea" {
+				if {$width == 0} {
+				    put "<div class=[dict get $n width]>"
+				}
+				
+				textarea [dict get $n id]=[dict get $n value] \
+				    type="[dict get $n type]" \
+				    class="form-control" \
+				    expression="[dict get $n expression]" \
+				    placeholder="[dict get $n placeholder]" \
+				    ng-bind="[dict get $n bind]" \
+				    "[dict get $n required]"
+
+				if {$width == 0} {
+				    put "</div>"
 				}
 			    }
 			}
+		    }
 
-			if {$class == 1} {
-			    put "</div>"
-			}
+		    if {$width == 1} {
+			put "</div>"
 		    }
 		}
 	    }
