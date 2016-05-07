@@ -33,7 +33,6 @@ m::proc -public ftest::init {
 	label {
 	    margin-top:5px;
 	}
-	#answer-label {text-align: right;}
 	</style>
     }
 
