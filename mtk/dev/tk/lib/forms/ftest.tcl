@@ -32,42 +32,28 @@ m::proc -public ftest::init {
     set q [json::json2dict $f]
     set q [string range $q 1 end-1]
     p $q
+    hr
     
-    foreach i $q {
-	foreach {m n} $i {
-	    switch $m {
-		"text" {
-		    p $n
-
-		    text [dict get $n id]=[dict get $n value]\
-			type="[dict get $n type]" "[dict get $n required]"\
-			class="form-control" expression="[dict get $n expression]"\
-			placeholder="[dict get $n placeholder]"
-		}
-	    }
-	}
-    }
-    return
-
-    br
-    fform -id "[dict get $q name]" -direction "[dict get $q direction]" -guts {
-	foreach rows [dict get $q guts] {
-	    foreach row $rows {
-		p "<PRE>$row</PRE>"
-
-		foreach r $row {
-		    switch [dict get $r type] {
+    fform -id "my-form" -guts {
+	foreach i $q {
+	    foreach {m n} $i {
+		division class="form-group" {
+		    switch $m {
+			"label" {
+			    division class="[dict get $n width]" {
+				label for="[dict get $n for]" "[dict get $n text]"
+			    }
+			}
 			"text" {
-			    ftext\
-				-name "[dict get $r id]" \
-				-placeholder "[dict get $r placeholder]" \
-				-value "[dict get $r value]" \
-				-required "[dict get $r required]" \
-				-validate "[dict get $r validate]" \
-				-labelwidth "[dict get $r labelwidth]" \
-				-textwidth "[dict get $r textwidth]" \
-				-required "[dict get $r required]" \
-				-label "[dict get $r label]"
+			    division class="[dict get $n width]" {
+				text [dict get $n id]=[dict get $n value] \
+				    type="[dict get $n type]" \
+				    class="form-control" \
+				    expression="[dict get $n expression]" \
+				    placeholder="[dict get $n placeholder]" \
+				    ng-bind="[dict get $n bind]" \
+				    "[dict get $n required]"
+			    }
 			}
 		    }
 		}
