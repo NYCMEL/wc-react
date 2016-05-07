@@ -36,26 +36,42 @@ m::proc -public ftest::init {
     
     fform -id "my-form" -guts {
 	foreach i $q {
-	    foreach {m n} $i {
-		division class="form-group" {
+	    division class="form-group" {
+		if {[dict exist $i class] == 1} {
+		    put "<div class=[dict get $i class]>"
+		}
+
+		foreach {m n} $i {
 		    switch $m {
 			"label" {
-			    division class="[dict get $n width]" {
-				label for="[dict get $n for]" "[dict get $n text]"
+			    if {[dict exist $i class] == 0} {
+				label class="[dict get $n width]" for="[dict get $n for]" "[dict get $n text]"
+			    } else {
+				label "[dict get $n text]"
 			    }
 			}
 			"text" {
-			    division class="[dict get $n width]" {
-				text [dict get $n id]=[dict get $n value] \
-				    type="[dict get $n type]" \
-				    class="form-control" \
-				    expression="[dict get $n expression]" \
-				    placeholder="[dict get $n placeholder]" \
-				    ng-bind="[dict get $n bind]" \
-				    "[dict get $n required]"
+			    if {[dict exist $i class] == 0} {
+				put "<div class=[dict get $n width]>"
+			    }
+				
+			    text [dict get $n id]=[dict get $n value] \
+				type="[dict get $n type]" \
+				class="form-control" \
+				expression="[dict get $n expression]" \
+				placeholder="[dict get $n placeholder]" \
+				ng-bind="[dict get $n bind]" \
+				"[dict get $n required]"
+
+			    if {[dict exist $i class] == 0} {
+				put "</div>"
 			    }
 			}
 		    }
+		}
+
+		if {[dict exist $i class] == 1} {
+		    put "</div>"
 		}
 	    }
 	}
