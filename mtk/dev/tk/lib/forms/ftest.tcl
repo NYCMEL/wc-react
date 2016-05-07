@@ -134,6 +134,7 @@ m::proc -public ftest::init {
 					put "</div>"
 				    }
 				}
+
 				if {$width == 0} {
 				    put "</div>"
 				}
@@ -157,6 +158,10 @@ m::proc -public ftest::init {
 				    if {$width == 0} {
 					put "</div>"
 				    }
+				}
+
+				if {$width == 0} {
+				    put "</div>"
 				}
 			    }
 			}
