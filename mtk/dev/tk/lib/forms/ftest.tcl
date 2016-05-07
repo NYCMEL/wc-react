@@ -28,13 +28,27 @@ m::proc -public ftest::init {
 } {
     Trace
     
-    set f [file:read /Melify/mtk/dev/app/_git/app.vfs/data/form.json]
+    set f [file:read /Melify/mtk/dev/app/_git/app.vfs/data/form.2.json]
     set q [json::json2dict $f]
     set q [string range $q 1 end-1]
-    # p $q
-    # hr
-    # p $g
+    p $q
     
+    foreach i $q {
+	foreach {m n} $i {
+	    switch $m {
+		"text" {
+		    p $n
+
+		    text [dict get $n id]=[dict get $n value]\
+			type="[dict get $n type]" "[dict get $n required]"\
+			class="form-control" expression="[dict get $n expression]"\
+			placeholder="[dict get $n placeholder]"
+		}
+	    }
+	}
+    }
+    return
+
     br
     fform -id "[dict get $q name]" -direction "[dict get $q direction]" -guts {
 	foreach rows [dict get $q guts] {

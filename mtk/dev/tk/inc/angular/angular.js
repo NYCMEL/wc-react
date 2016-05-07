@@ -1,7 +1,13 @@
+/////////////////////////////////////////////////////////////////////////////
+//// create tk namespace for angular
+/////////////////////////////////////////////////////////////////////////////
+tk = tk || {};
+tk.angular = tk.angular || {};
+
 ///////////////////////////////////////////////////////////////////////////
 /////
 ///////////////////////////////////////////////////////////////////////////
-var melified = angular.module('melified', ['ngRoute', "ngSanitize"]);
+var melified = angular.module('melified', ['ngRoute', "ngSanitize", "ngAnimate"]);
 
 ///////////////////////////////////////////////////////////////////////////
 /////
@@ -10,6 +16,19 @@ melified.controller('MelifiedCtrl', function($scope, $http, $compile) {
     console.group('MelifiedCtrl');
 
     $scope.app = {};
+
+    ///////////////////////////////////////////////////////////////////////
+    /////
+    ///////////////////////////////////////////////////////////////////////
+    $scope.compile = function(id) {
+	console.group('melified.compile: ' + id);
+
+	var el = angular.element(
+	    "<div id=" + id + " ng-show=\"page == '" + id + "'\"></div>"
+	);
+
+        $compile(el)($scope); //USE ANGULAR INSIDE el
+    },
 
     ///////////////////////////////////////////////////////////////////////
     /////
@@ -61,35 +80,52 @@ melified.controller('MelifiedCtrl', function($scope, $http, $compile) {
     console.groupEnd();
 });
 
-/////////////////////////////////////////////////////////////////////////////
-//// create tk namespace for angular
-/////////////////////////////////////////////////////////////////////////////
-tk = tk || {};
-tk.angular = tk.angular || {};
-
 ///////////////////////////////////////////////////////////////////////////
 ///// 
 ///////////////////////////////////////////////////////////////////////////
 tk.angular.app = function(variable, value) {
     console.group("tk.angular.app: ", variable, value);
 
-    var appElement = document.querySelector("[ng-app=melified]");
-    var $scope = angular.element(appElement).scope();
-    
+    var scope = $("body").scope();
+
     if (variable == undefined) {
 	console.groupEnd();
-	return $scope.app;
+	return scope.app;
     }
 
     if (variable == undefined) {
 	console.groupEnd();
-	return $scope.app[variable]
+	return scope.app[variable]
     }
     
-    $scope.$apply(function() {
-	$scope.app[variable] = value;
+    scope.$apply(function() {
+	scope.app[variable] = value;
     });
 
     console.groupEnd();
-    return $scope.app;
+    return scope.app;
 }
+
+///////////////////////////////////////////////////////////////////////////
+///// 
+///////////////////////////////////////////////////////////////////////////
+tk.angular.compile = function(el) {
+    console.group("tk.angular.compile: ", el);
+
+    var el = (typeof el == 'string') ? el : null ;  
+    // The new element to be added
+    if (el != null ) {
+        var $div = $( el );
+
+        // The parent of the new element
+        var $target = $("[ng-app]");
+
+        angular.element($target).injector().invoke(['$compile', function ($compile) {
+            var $scope = angular.element($target).scope();
+            $compile($div)($scope);
+            // Finally, refresh the watch expressions in the new element
+            $scope.$apply();
+        }]);
+    }
+}
+
