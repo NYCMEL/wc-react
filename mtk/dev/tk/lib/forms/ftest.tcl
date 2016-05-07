@@ -71,6 +71,23 @@ m::proc -public ftest::init {
 					put "</div>"
 				    }
 				}
+				"textarea" {
+				    if {$class == 0} {
+					put "<div class=[dict get $n width]>"
+				    }
+				    
+				    textarea [dict get $n id]=[dict get $n value] \
+					type="[dict get $n type]" \
+					class="form-control" \
+					expression="[dict get $n expression]" \
+					placeholder="[dict get $n placeholder]" \
+					ng-bind="[dict get $n bind]" \
+					"[dict get $n required]"
+
+				    if {$class == 0} {
+					put "</div>"
+				    }
+				}
 			    }
 			}
 
