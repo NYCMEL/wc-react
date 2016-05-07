@@ -118,7 +118,7 @@ m::proc -public ftest::init {
 				    put "<div class=[dict get $n width]>"
 				}
 				
-				checkbox [dict get $n id] class="form-control" {
+				checkbox [dict get $n id] {
 				    foreach {i j} [dict get $n options] {
 					if {[dict get $n selected] == $i} {
 					    set state "selected"
