@@ -85,6 +85,7 @@ m::proc -public ftest::init {
 				textarea [dict get $n id]=[dict get $n value] \
 				    type="[dict get $n type]" \
 				    class="form-control" \
+				    rows="[dict get $n rows]" \
 				    expression="[dict get $n expression]" \
 				    placeholder="[dict get $n placeholder]" \
 				    ng-bind="[dict get $n bind]" \
