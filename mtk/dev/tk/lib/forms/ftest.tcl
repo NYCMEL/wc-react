@@ -118,9 +118,9 @@ m::proc -public ftest::init {
 				    put "<div class=[dict get $n width] style='border:1px red solid'>"
 				}
 				    
-				foreach p $n {
+				foreach p [dict get $n checkbox] {
 				    if {$width == 0} {
-					put "<div class=[dict get $p width]>"
+					put "<div class=[dict get $p width] style='border:1px green solid'>"
 				    }
 				    
 				    checkbox [dict get $p id] {
@@ -135,7 +135,7 @@ m::proc -public ftest::init {
 					}
 				    }
 
-				    set lbl [dict get $p label]
+				    set lbl [dict get $p caption]
 				    
 				    label for="[dict get $lbl for]" class="label-control" "&nbsp;[dict get $lbl text]"
 
