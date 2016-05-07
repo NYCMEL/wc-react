@@ -29,50 +29,54 @@ m::proc -public ftest::init {
     Trace
     
     set f [file:read /Melify/mtk/dev/app/_git/app.vfs/data/form.2.json]
-    set q [json::json2dict $f]
-    set q [string range $q 1 end-1]
-    p $q
+    set d [json::json2dict $f]
+    set d [string range $d 1 end-1]
+    p >>$d<<
     hr
     
     division [style background wheat] {
 	fform -id "my-form" -guts {
-	    foreach i $q {
+	    foreach k $d {
+		p ==$k==
+
 		division class="form-group" {
-		    if {[dict exist $i class] == 1} {
-			put "<div class=[dict get $i class]>"
-		    }
+		    foreach j $k {
+			if {[dict exist $j class] == 1} {
+			    put "<div class=[dict get $j class]>"
+			}
 
-		    foreach {m n} $i {
-			switch $m {
-			    "label" {
-				if {[dict exist $i class] == 0} {
-				    label class="[dict get $n width]" for="[dict get $n for]" "[dict get $n text]"
-				} else {
-				    label "[dict get $n text]"
+			foreach {m n} $j {
+			    switch $m {
+				"label" {
+				    if {[dict exist $m class] == 0} {
+					label class="[dict get $n width]" for="[dict get $n for]" "[dict get $n text]"
+				    } else {
+					label "[dict get $n text]"
+				    }
 				}
-			    }
-			    "text" {
-				if {[dict exist $i class] == 0} {
-				    put "<div class=[dict get $n width]>"
-				}
-				
-				text [dict get $n id]=[dict get $n value] \
-				    type="[dict get $n type]" \
-				    class="form-control" \
-				    expression="[dict get $n expression]" \
-				    placeholder="[dict get $n placeholder]" \
-				    ng-bind="[dict get $n bind]" \
-				    "[dict get $n required]"
+				"text" {
+				    if {[dict exist $m class] == 0} {
+					put "<div class=[dict get $n width]>"
+				    }
+				    
+				    text [dict get $n id]=[dict get $n value] \
+					type="[dict get $n type]" \
+					class="form-control" \
+					expression="[dict get $n expression]" \
+					placeholder="[dict get $n placeholder]" \
+					ng-bind="[dict get $n bind]" \
+					"[dict get $n required]"
 
-				if {[dict exist $i class] == 0} {
-				    put "</div>"
+				    if {[dict exist $m class] == 0} {
+					put "</div>"
+				    }
 				}
 			    }
 			}
-		    }
 
-		    if {[dict exist $i class] == 1} {
-			put "</div>"
+			if {[dict exist $m class] == 1} {
+			    put "</div>"
+			}
 		    }
 		}
 	    }
