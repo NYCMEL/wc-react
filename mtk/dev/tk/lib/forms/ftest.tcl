@@ -34,44 +34,46 @@ m::proc -public ftest::init {
     p $q
     hr
     
-    fform -id "my-form" -guts {
-	foreach i $q {
-	    division class="form-group" {
-		if {[dict exist $i class] == 1} {
-		    put "<div class=[dict get $i class]>"
-		}
+    division [style background wheat] {
+	fform -id "my-form" -guts {
+	    foreach i $q {
+		division class="form-group" {
+		    if {[dict exist $i class] == 1} {
+			put "<div class=[dict get $i class]>"
+		    }
 
-		foreach {m n} $i {
-		    switch $m {
-			"label" {
-			    if {[dict exist $i class] == 0} {
-				label class="[dict get $n width]" for="[dict get $n for]" "[dict get $n text]"
-			    } else {
-				label "[dict get $n text]"
+		    foreach {m n} $i {
+			switch $m {
+			    "label" {
+				if {[dict exist $i class] == 0} {
+				    label class="[dict get $n width]" for="[dict get $n for]" "[dict get $n text]"
+				} else {
+				    label "[dict get $n text]"
+				}
 			    }
-			}
-			"text" {
-			    if {[dict exist $i class] == 0} {
-				put "<div class=[dict get $n width]>"
-			    }
+			    "text" {
+				if {[dict exist $i class] == 0} {
+				    put "<div class=[dict get $n width]>"
+				}
 				
-			    text [dict get $n id]=[dict get $n value] \
-				type="[dict get $n type]" \
-				class="form-control" \
-				expression="[dict get $n expression]" \
-				placeholder="[dict get $n placeholder]" \
-				ng-bind="[dict get $n bind]" \
-				"[dict get $n required]"
+				text [dict get $n id]=[dict get $n value] \
+				    type="[dict get $n type]" \
+				    class="form-control" \
+				    expression="[dict get $n expression]" \
+				    placeholder="[dict get $n placeholder]" \
+				    ng-bind="[dict get $n bind]" \
+				    "[dict get $n required]"
 
-			    if {[dict exist $i class] == 0} {
-				put "</div>"
+				if {[dict exist $i class] == 0} {
+				    put "</div>"
+				}
 			    }
 			}
 		    }
-		}
 
-		if {[dict exist $i class] == 1} {
-		    put "</div>"
+		    if {[dict exist $i class] == 1} {
+			put "</div>"
+		    }
 		}
 	    }
 	}
