@@ -100,7 +100,13 @@ m::proc -public ftest::init {
 				}
 				select [dict get $n id] class="form-control" {
 				    foreach {i j} [dict get $n options] {
-					option $j value=$i
+					if {[dict get $n selected] == $i} {
+					    set state "selected"
+					} else {
+					    set state ""
+					}
+
+					option $j value=$i $state
 				    }
 				}
 				if {$width == 0} {
