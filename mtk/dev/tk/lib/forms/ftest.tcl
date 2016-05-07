@@ -130,6 +130,10 @@ m::proc -public ftest::init {
 				    }
 				}
 
+				set lbl [dict get $n label]
+				
+				label for="[dict get $lbl for]" class="label-control" "&nbsp;[dict get $lbl text]"
+
 				if {$width == 0} {
 				    put "</div>"
 				}
