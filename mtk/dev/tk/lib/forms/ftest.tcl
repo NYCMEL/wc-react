@@ -38,7 +38,7 @@ m::proc -public ftest::init {
 	    division class="form-group" {
 		foreach j $k {
 		    set width [dict exist $j width]
-		    
+
 		    if {$width == 1} {
 			put "<div class=[dict get $j width]>"
 		    }
