@@ -70,7 +70,7 @@ m::proc -public ftest::init {
 				    class="form-control" \
 				    expression="[dict get $n expression]" \
 				    placeholder="[dict get $n placeholder]" \
-				    ng-bind="[dict get $n bind]" \
+				    ng-model="[dict get $n bind]" \
 				    "[dict get $n required]"
 
 				if {$width == 0} {
@@ -88,7 +88,7 @@ m::proc -public ftest::init {
 				    rows="[dict get $n rows]" \
 				    expression="[dict get $n expression]" \
 				    placeholder="[dict get $n placeholder]" \
-				    ng-bind="[dict get $n bind]" \
+				    ng-model="[dict get $n bind]" \
 				    "[dict get $n required]"
 
 				if {$width == 0} {
@@ -106,7 +106,7 @@ m::proc -public ftest::init {
 				    set size ""
 				}
 
-				select [dict get $n id] $size class="form-control" {
+				select [dict get $n id] $size class="form-control" ng-model="[dict get $n bind]" {
 				    foreach {i j} [dict get $n options] {
 					if {[dict get $n selected] == $i} {
 					    set state "selected"
@@ -131,7 +131,7 @@ m::proc -public ftest::init {
 					put "<div class=[dict get $p width]>"
 				    }
 				    
-				    checkbox [dict get $p id] [dict get $p "checked"]
+				    checkbox [dict get $p id] [dict get $p "checked"] ng-model="[dict get $n bind]"
 
 				    set lbl [dict get $p caption]
 				    
@@ -156,7 +156,7 @@ m::proc -public ftest::init {
 					put "<div class=[dict get $p width]>"
 				    }
 				    
-				    radio_button [dict get $p "id"]=[dict get $p "value"] [dict get $p "checked"]
+				    radio_button [dict get $p "id"]=[dict get $p "value"] [dict get $p "checked"] ng-model="[dict get $n bind]"
 
 				    set lbl [dict get $p caption]
 				    
