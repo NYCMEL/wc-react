@@ -114,6 +114,10 @@ m::proc -public ftest::init {
 				}
 			    }
 			    "checkboxes" {
+				if {$width == 0} {
+				    put "<div class=[dict get $n width] style='border:1px red solid'>"
+				}
+				    
 				foreach p $n {
 				    if {$width == 0} {
 					put "<div class=[dict get $p width]>"
