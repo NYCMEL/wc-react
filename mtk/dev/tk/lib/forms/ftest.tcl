@@ -37,25 +37,25 @@ m::proc -public ftest::init {
     division [style background wheat] {
 	fform -id "my-form" -guts {
 	    foreach k $d {
-		p ==$k==
-
 		division class="form-group" {
 		    foreach j $k {
-			if {[dict exist $j class] == 1} {
+			set class [dict exist $j class]
+			
+			if {$class == 1} {
 			    put "<div class=[dict get $j class]>"
 			}
 
 			foreach {m n} $j {
 			    switch $m {
 				"label" {
-				    if {[dict exist $m class] == 0} {
+				    if {$class == 0} {
 					label class="[dict get $n width]" for="[dict get $n for]" "[dict get $n text]"
 				    } else {
 					label "[dict get $n text]"
 				    }
 				}
 				"text" {
-				    if {[dict exist $m class] == 0} {
+				    if {$class == 0} {
 					put "<div class=[dict get $n width]>"
 				    }
 				    
@@ -67,14 +67,14 @@ m::proc -public ftest::init {
 					ng-bind="[dict get $n bind]" \
 					"[dict get $n required]"
 
-				    if {[dict exist $m class] == 0} {
+				    if {$class == 0} {
 					put "</div>"
 				    }
 				}
 			    }
 			}
 
-			if {[dict exist $m class] == 1} {
+			if {$class == 1} {
 			    put "</div>"
 			}
 		    }
