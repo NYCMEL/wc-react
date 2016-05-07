@@ -61,14 +61,21 @@ m::proc -public ftest::init {
 				}
 			    }
 			    "text" {
+				if {[dict exist $n maxlength] == 1} {
+				    set maxlength "maxlength=[dict get $n maxlength]"
+				} else {
+				    set maxlength ""
+				}
+
 				if {$width == 0} {
 				    put "<div class=[dict get $n width]>"
 				}
 				
 				text [dict get $n id]=[dict get $n value] \
 				    type="[dict get $n type]" \
+				    $maxlength\
 				    class="form-control" \
-				    expression="[dict get $n expression]" \
+				    pattern="[dict get $n pattern]" \
 				    placeholder="[dict get $n placeholder]" \
 				    ng-model="[dict get $n bind]" \
 				    "[dict get $n required]"
@@ -86,7 +93,7 @@ m::proc -public ftest::init {
 				    type="[dict get $n type]" \
 				    class="form-control" \
 				    rows="[dict get $n rows]" \
-				    expression="[dict get $n expression]" \
+				    pattern="[dict get $n pattern]" \
 				    placeholder="[dict get $n placeholder]" \
 				    ng-model="[dict get $n bind]" \
 				    "[dict get $n required]"
