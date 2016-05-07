@@ -99,7 +99,7 @@ m::proc -public ftest::init {
 				if {$width == 0} {
 				    put "<div class=[dict get $n width]>"
 				}
-				select [dict get $n id] size="[dict get $n size]" class="form-control" {
+				select [dict get $n id] class="form-control" {
 				    foreach {i j} [dict get $n options] {
 					if {[dict get $n selected] == $i} {
 					    set state "selected"
