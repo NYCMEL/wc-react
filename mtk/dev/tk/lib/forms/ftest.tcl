@@ -55,9 +55,9 @@ m::proc -public ftest::init {
 			switch $m {
 			    "label" {
 				if {$width == 0} {
-				    label class="[dict get $n width]" for="[dict get $n for]" "[dict get $n text]"
+				    label id="[dict get $n id]" class="[dict get $n width]" for="[dict get $n for]" "[dict get $n text]"
 				} else {
-				    label "[dict get $n text]"
+				    label id="[dict get $n id]" "[dict get $n text]"
 				}
 			    }
 			    "text" {
@@ -127,7 +127,7 @@ m::proc -public ftest::init {
 
 				    set lbl [dict get $p caption]
 				    
-				    label for="[dict get $lbl for]" class="label-control" "&nbsp;[dict get $lbl text]" 
+				    label id="[dict get $lbl id]" for="[dict get $lbl for]" class="label-control" "&nbsp;[dict get $lbl text]" 
 
 				    if {$width == 0} {
 					put "</div>"
