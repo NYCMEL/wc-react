@@ -119,12 +119,33 @@ m::proc -public ftest::init {
 				    put "<div class=[dict get $n width]>"
 				}
 				    
-				foreach p [dict get $n checkbox] {
+				foreach p [dict get $n "checkbox"] {
 				    if {$width == 0} {
 					put "<div class=[dict get $p width]>"
 				    }
 				    
-				    checkbox [dict get $p id] [dict get $p checked]
+				    checkbox [dict get $p id] [dict get $p "checked"]
+
+				    set lbl [dict get $p caption]
+				    
+				    label id="[dict get $lbl id]" for="[dict get $lbl for]" class="label-control" "&nbsp;[dict get $lbl text]" 
+
+				    if {$width == 0} {
+					put "</div>"
+				    }
+				}
+			    }
+			    "radioboxes" {
+				if {$width == 0} {
+				    put "<div class=[dict get $n width]>"
+				}
+				    
+				foreach p [dict get $n "radiobox"] {
+				    if {$width == 0} {
+					put "<div class=[dict get $p width]>"
+				    }
+				    
+				    radio_button [dict get $p "id"]=[dict get $p "value"] [dict get $p "selected"]
 
 				    set lbl [dict get $p caption]
 				    
