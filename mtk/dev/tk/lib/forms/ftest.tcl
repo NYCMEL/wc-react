@@ -131,7 +131,7 @@ m::proc -public ftest::init {
 					put "<div class=[dict get $p width]>"
 				    }
 				    
-				    checkbox [dict get $p id] [dict get $p "checked"] ng-model="[dict get $n bind]"
+				    checkbox [dict get $p id] [dict get $p "checked"] ng-model="[dict get $p bind]"
 
 				    set lbl [dict get $p caption]
 				    
