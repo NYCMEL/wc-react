@@ -133,6 +133,9 @@ m::proc -public ftest::init {
 					put "</div>"
 				    }
 				}
+				if {$width == 0} {
+				    put "</div>"
+				}
 			    }
 			    "radioboxes" {
 				if {$width == 0} {
