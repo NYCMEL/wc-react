@@ -113,29 +113,31 @@ m::proc -public ftest::init {
 				    put "</div>"
 				}
 			    }
-			    "checkbox" {
-				if {$width == 0} {
-				    put "<div class=[dict get $n width]>"
-				}
-				
-				checkbox [dict get $n id] {
-				    foreach {i j} [dict get $n options] {
-					if {[dict get $n selected] == $i} {
-					    set state "selected"
-					} else {
-					    set state ""
-					}
-
-					option $j value=$i $state
+			    "checkboxes" {
+				foreach p $n {
+				    if {$width == 0} {
+					put "<div class=[dict get $p width]>"
 				    }
-				}
+				    
+				    checkbox [dict get $p id] {
+					foreach {i j} [dict get $p options] {
+					    if {[dict get $p selected] == $i} {
+						set state "selected"
+					    } else {
+						set state ""
+					    }
 
-				set lbl [dict get $n label]
-				
-				label for="[dict get $lbl for]" class="label-control" "&nbsp;[dict get $lbl text]"
+					    option $j value=$i $state
+					}
+				    }
 
-				if {$width == 0} {
-				    put "</div>"
+				    set lbl [dict get $p label]
+				    
+				    label for="[dict get $lbl for]" class="label-control" "&nbsp;[dict get $lbl text]"
+
+				    if {$width == 0} {
+					put "</div>"
+				    }
 				}
 			    }
 			}
