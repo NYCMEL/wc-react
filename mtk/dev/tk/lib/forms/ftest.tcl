@@ -145,7 +145,7 @@ m::proc -public ftest::init {
 					put "<div class=[dict get $p width]>"
 				    }
 				    
-				    radio_button [dict get $p "id"]=[dict get $p "value"] [dict get $p "selected"]
+				    radio_button [dict get $p "id"]=[dict get $p "value"] [dict get $p "checked"]
 
 				    set lbl [dict get $p caption]
 				    
