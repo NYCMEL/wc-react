@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2016-05-08 09:49:02 (melify)>
+//// Time-stamp: <2016-05-08 09:56:34 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 var fplay = {};
 
@@ -19,6 +19,12 @@ fplay.init = function(options) {
 	mode : "javascript",
 	htmlMode: true,
 	lineSeparator:null
+    });
+
+    $(".btn-update").on("click", function() {
+	var text = editor.getValue();
+
+	$(".tk-dummy").load(tk.siteurl + "?callback=play::save&text=" + escape(text));
     });
 
     if (0) {

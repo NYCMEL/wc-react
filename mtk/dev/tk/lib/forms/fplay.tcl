@@ -126,7 +126,7 @@ m::proc -public fplay::guts {
 			    division class="panel-footer" {
 				division class="clearfix" {
 				    division class="pull-left" {
-					button "Update" class="btn btn-primary btn-big" onclick="fplay.update()"
+					button "Update" class="btn btn-primary btn-big btn-update"
 				    }
 				    division class="pull-right" {
 					button "Reset" class="btn btn-warning btn-big pull-right" onclick="fplay.reset()"
@@ -160,5 +160,18 @@ m::proc -public fplay::guts {
 	    }
 	}
     }
+}
+
+######################################################
+##### 
+######################################################
+m::proc -public fplay::update {
+} {
+    Documentation goes here...
+} {    
+    Trace
+    variable _id [id]
+    
+    h1 >>>$::text
 }
 
