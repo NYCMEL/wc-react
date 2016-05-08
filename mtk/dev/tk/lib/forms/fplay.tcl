@@ -126,10 +126,10 @@ m::proc -public fplay::guts {
 			    division class="panel-footer" {
 				division class="clearfix" {
 				    division class="pull-left" {
-					button "Update" class="btn btn-primary btn-big"
+					button "Update" class="btn btn-primary btn-big" onclick="fplay.update()"
 				    }
 				    division class="pull-right" {
-					button "Reset" class="btn btn-warning btn-big pull-right"
+					button "Reset" class="btn btn-warning btn-big pull-right" onclick="fplay.reset()"
 				    }
 				}
 			    }
