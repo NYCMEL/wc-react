@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2016-05-08 09:38:11 (melify)>
+//// Time-stamp: <2016-05-08 09:46:01 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var fplay = {};
 
@@ -21,25 +21,22 @@ fplay.init = function(options) {
 	lineSeparator:null
     });
 
-    // MAKE SURE EDITOR SHOWS TEXT
-    setTimeout(function(){
-	editor.refresh();
-    }, 200);
+    if (0) {
+	var scope = $("body").scope();
 
-    var scope = $("body").scope();
+	scope.app = {
+	    fname:"Mel",
+	    lname:"Heravi",
+	    address:"400 East 41st Street",
+	    city: "New York",
+	    state: "NY",
+	    zipcode: "10012",
+	    email: "mel@gmail.com",
+	    ssn: "555-55-5555"
+	}
 
-    scope.app = {
-	fname:"Mel",
-	lname:"Heravi",
-	address:"400 East 41st Street",
-	city: "New York",
-	state: "NY",
-	zipcode: "10012",
-	email: "mel@gmail.com",
-	ssn: "555-55-5555"
+	scope.$apply();
     }
-
-    scope.$apply();
 
     console.groupEnd();
 };
