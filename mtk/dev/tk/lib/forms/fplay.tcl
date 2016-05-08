@@ -176,7 +176,7 @@ m::proc -public fplay::update {
     Trace
     variable _id [id]
     
-    file:write /tmp/junk.json
+    file:write /tmp/junk.json "HELLO"
 
     h1 >>>$::text
 }
