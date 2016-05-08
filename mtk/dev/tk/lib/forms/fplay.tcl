@@ -177,7 +177,5 @@ m::proc -public fplay::update {
     variable _id [id]
     
     file:write /tmp/junk.json "HELLO"
-
-    h1 >>>$::text
 }
 

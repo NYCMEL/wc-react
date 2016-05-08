@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2016-05-08 10:20:37 (melify)>
+//// Time-stamp: <2016-05-08 10:27:40 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 var fplay = {};
 
@@ -26,17 +26,18 @@ fplay.init = function(options) {
 	    jQuery.parseJSON(editor.getValue());
 	    
 	    var text = editor.getValue();
-	    var url  = tk.siteurl + "?ajax=1&callback=play::save";
+	    var url  = tk.siteurl + "?ajax=1&callback=fplay::update";
+	    console.log(url)
 
 	    //$(".play-dummy").load(tk.siteurl + "?ajax=1&callback=play::save&text" + escape(text));
+	    //console.log(text);
 
 	    $.ajax({
 		url : url,
 		type: "POST",
 		data : text,
 		success: function(data, textStatus, jqXHR) {
-		    alert(textStatus);
-		    //data - response from server
+		    alert(textStatus, data);
 		},
 		error: function (jqXHR, textStatus, errorThrown) {
 		    alert(textStatus);
