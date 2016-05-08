@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2016-05-08 09:17:48 (melify)>
+//// Time-stamp: <2016-05-08 09:32:54 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var fplay = {};
 
@@ -8,6 +8,23 @@ var fplay = {};
 /////////////////////////////////////////////////////////////////////////////
 fplay.init = function(options) {
     console.group("fplay.init");
+
+    // MAKE TEXT AREA PRETTY
+    editor = CodeMirror.fromTextArea(document.getElementById("json"), {
+        lineNumbers: true,
+        matchBrackets: true,
+        continueComments: "Enter",
+        extraKeys: {"Ctrl-Q": "toggleComment"},
+	styleActiveLine: true,
+	mode : "javascript",
+	htmlMode: true,
+	lineSeparator:null
+    });
+
+    // MAKE SURE EDITOR SHOWS TEXT
+    setTimeout(function(){
+	editor.refresh();
+    }, 200);
 
     var scope = $("body").scope();
 

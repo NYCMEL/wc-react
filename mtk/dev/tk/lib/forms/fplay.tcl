@@ -19,6 +19,21 @@
 
 namespace eval fplay {}
 
+include "/GitHub/CodeMirror/lib/codemirror.css"
+include "/GitHub/CodeMirror/theme/mdn-like.css"
+include "/GitHub/CodeMirror/theme/3024-night.css"
+
+include "/GitHub/CodeMirror/lib/codemirror.js"
+include "/GitHub/CodeMirror/addon/edit/matchbrackets.js"
+include "/GitHub/CodeMirror/addon/comment/continuecomment.js"
+include "/GitHub/CodeMirror/addon/comment/comment.js"
+include "/GitHub/CodeMirror/addon/selection/active-line.js"
+include "/GitHub/CodeMirror/mode/javascript/javascript.js"
+
+include "/GitHub/js-beautify/js/lib/beautify-html.js"
+
+put {<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>}
+
 include "/tk/lib/forms/inc/fplay.css"
 include "/tk/lib/forms/inc/fplay.js"
 include "/tk/lib/forms/inc/fvalidate.js"
@@ -106,13 +121,13 @@ m::proc -public fplay::guts {
 				h3 class="panel-title" "Json file..."
 			    }
 			    division class="panel-body" [style margin 0 padding 0 height 600px overflow auto] {
-				put "<pre style=font-size:10px>"
-				put [file:read /Melify/mtk/dev/app/_git/app.vfs/data/form.2.json]
-				put "</pre>"
+				textarea json=[file:read /Melify/mtk/dev/app/_git/app.vfs/data/form.2.json] id="json"
 			    }
-			    # division class="panel-footer" {
-			    # 	put [lorem 10]
-			    # }
+			    division class="panel-footer" {
+			    	button "Update" class="btn btn-info"
+				space 20 0
+			    	button "Reset" class="btn btn-warning"
+			    }
 			}
 		    }
 		    division class="col-md-8" {

@@ -1,9 +1,3 @@
-#fplay pre {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: #FFF;
-  outline: 0px !important;
-  -webkit-appearance: none;
-  border-radius: 0;
+#fplay .CodeMirror {
+  border: 1px solid #CCC;
 }
