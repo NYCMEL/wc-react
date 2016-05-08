@@ -54,6 +54,11 @@ m::proc -public ftest::init {
 
 		    foreach {m n} $j {
 			switch $m {
+			    "html" {
+				division class="col-md-12" {
+				    p $n
+				}
+			    }
 			    "label" {
 				if {$width == 0} {
 				    label id="[dict get $n id]" class="[dict get $n width]" for="[dict get $n for]" "[dict get $n text]"
@@ -164,7 +169,7 @@ m::proc -public ftest::init {
 					put "<div class=[dict get $p width]>"
 				    }
 				    
-				    radio_button [dict get $p "id"]=[dict get $p "value"] [dict get $p "checked"] ng-model="[dict get $n bind]"
+				    radio_button [dict get $p "id"]=[dict get $p "value"] id=[dict get $p "id"] [dict get $p "checked"] ng-model="[dict get $n bind]"
 
 				    set lbl [dict get $p caption]
 				    
