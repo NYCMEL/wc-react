@@ -127,5 +127,7 @@ tk.angular.compile = function(el) {
             $scope.$apply();
         }]);
     }
+
+    console.groupEnd();
 }
 
