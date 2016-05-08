@@ -1,3 +1,6 @@
+#fplay .CodeMirror {
+  height: 100%;
+}
 #fplay .btn-big {
   width: 120px;
 }
