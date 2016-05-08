@@ -117,12 +117,12 @@ m::proc -public fplay::guts {
 			division class="panel-heading" {
 			    h3 class="panel-title" "Generated Form..."
 			}
-			division class="panel-body" [style height 600px] {
-			    ftest::init
+			division class="panel-body" {
+			    ftest::init -file "/Melify/mtk/dev/app/fannie/app.vfs/data/forms/f1.json"
 			}
-			# division class="panel-footer" {
-			# 	put [lorem 10]
-			# }
+			division class="panel-footer" {
+			    submit_button action=Continue class="btn btn-primary" onclick="validate('f1', 'f2')"
+			}
 		    }
 		}
 	    }

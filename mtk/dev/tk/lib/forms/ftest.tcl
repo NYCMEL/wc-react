@@ -23,6 +23,7 @@ namespace eval ftest {}
 ##### 
 ######################################################
 m::proc -public ftest::init {
+    {-file "/Melify/mtk/dev/app/_git/app.vfs/data/form.2.json"}
 } {
     Documentation goes here...
 } {
@@ -36,7 +37,7 @@ m::proc -public ftest::init {
 	</style>
     }
 
-    set f [file:read /Melify/mtk/dev/app/_git/app.vfs/data/form.2.json]
+    set f [file:read $file]
     set d [json::json2dict $f]
     set d [string range $d 1 end-1]
     #p >>$d<<
