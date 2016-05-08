@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2016-05-08 09:57:47 (melify)>
+//// Time-stamp: <2016-05-08 09:59:50 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 var fplay = {};
 
@@ -22,9 +22,20 @@ fplay.init = function(options) {
     });
 
     $(".btn-update").on("click", function() {
-	var text = editor.getValue();
+	try {
+	    jQuery.parseJSON(editor.getValue());
+	    var cfg = editor.getValue()
+	    console.log("CFG: ", cfg);
+	    
+	    var text = editor.getValue();
+	    $(".play-dummy").load(tk.siteurl + "?ajax=1&callback=play::save&text=" + escape(text));
+	}
+	catch(e) {
+	    $("#customize-dummy-content").load(tk.siteurl + "?ajax=1&callback=customize::error")
+	    $("#customize-dummy").show(0);
+	}
 
-	$(".play-dummy").load(tk.siteurl + "?callback=play::save&text=" + escape(text));
+
     });
 
     if (0) {
