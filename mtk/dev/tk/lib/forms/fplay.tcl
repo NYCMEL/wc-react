@@ -38,6 +38,10 @@ include "/tk/lib/forms/inc/fplay.css"
 include "/tk/lib/forms/inc/fplay.js"
 include "/tk/lib/forms/inc/fvalidate.js"
 
+division class="play-dummy" {
+    #PLACE HOLDER FOR AJAX
+}
+
 ######################################################
 ##### 
 ######################################################
