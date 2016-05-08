@@ -21,6 +21,7 @@ namespace eval fplay {}
 
 include "/tk/lib/forms/inc/fplay.css"
 include "/tk/lib/forms/inc/fplay.js"
+include "/tk/lib/forms/inc/fvalidate.js"
 
 ######################################################
 ##### 
