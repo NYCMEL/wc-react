@@ -115,7 +115,7 @@ m::proc -public fplay::guts {
 	fform -id "ftest" -guts {
 	    division class="container" {
 		division class="row" {
-		    division class="col-md-4" {
+		    division class="col-md-5" {
 			division class="panel panel-default" {
 			    division class="panel-heading" {
 				h3 class="panel-title" "Json file..."
@@ -135,7 +135,7 @@ m::proc -public fplay::guts {
 			    }
 			}
 		    }
-		    division class="col-md-8" {
+		    division class="col-md-7" {
 			division class="panel panel-default" {
 			    division class="panel-heading" {
 				h3 class="panel-title" "Generated Form..."
