@@ -19,8 +19,8 @@
 
 namespace eval fplay {}
 
-include "/inc/fplay.css"
-include "/inc/fplay.js"
+include "/tk/lib/forms/inc/fplay.css"
+include "/tk/lib/forms/inc/fplay.js"
 
 ######################################################
 ##### 
@@ -94,20 +94,6 @@ m::proc -public fplay::guts {
     variable _id [id]
     
     division id="${_id}" {
-	put {
-	    <style>
-	    pre {
-		margin:0;
-		padding:0;
-		border:0;
-		background:#FFF;
-		outline:0px !important;
-		-webkit-appearance:none;
-		border-radius:0;
-	    }
-	    </style>
-	}
-
 	br
 	division class="container" {
 	    division class="row" {
@@ -139,6 +125,14 @@ m::proc -public fplay::guts {
 			# }
 		    }
 		}
+	    }
+	}
+
+	javascript {
+	    put {
+		jQuery(document).ready(function() {
+		    fplay.init();
+		});
 	    }
 	}
     }
