@@ -116,51 +116,51 @@ m::proc -public fplay::guts {
     br
 
     division id="${_id}" {
-	fform -id "ftest" -guts {
-	    division class="container" {
-		division class="row" {
-		    division class="col-md-5" {
-			division class="panel panel-default" {
-			    division class="panel-heading" {
-				h3 class="panel-title" "Json file..."
-			    }
-			    division class="panel-body" [style margin 0 padding 0 height 600px overflow auto] {
+	division class="container" {
+	    division class="row" {
+		division class="col-md-5" {
+		    division class="panel panel-default" {
+			division class="panel-heading" {
+			    h3 class="panel-title" "Json file..."
+			}
+			division class="panel-body" [style margin 0 padding 0 height 600px overflow auto] {
+			    tk::form -name "ftest" -callback "fplay::update" -validate 0 -guts {
 				textarea json=[file:read /Melify/mtk/dev/app/_git/app.vfs/data/form.2.json] id="json"
 			    }
-			    division class="panel-footer" {
-				division class="clearfix" {
-				    division class="pull-left" {
-					button "Update" class="btn btn-primary btn-big btn-update"
-				    }
-				    division class="pull-right" {
-					button "Reset" class="btn btn-warning btn-big pull-right" onclick="fplay.reset()"
-				    }
+			}
+			division class="panel-footer" {
+			    division class="clearfix" {
+				division class="pull-left" {
+				    button "Update" class="btn btn-primary btn-big btn-update"
+				}
+				division class="pull-right" {
+				    button "Reset" class="btn btn-warning btn-big pull-right" onclick="fplay.reset()"
 				}
 			    }
 			}
 		    }
-		    division class="col-md-7" {
-			division class="panel panel-default" {
-			    division class="panel-heading" {
-				h3 class="panel-title" "Generated Form..."
-			    }
-			    division class="panel-body" {
-				ftest::init -file "/Melify/mtk/dev/app/fannie/app.vfs/data/forms/f1.json"
-			    }
-			    division class="panel-footer" {
-				submit_button action=Validate class="btn btn-success btn-big" onclick="fvalidate('ftest')"
-			    }
+		}
+		division class="col-md-7" {
+		    division class="panel panel-default" {
+			division class="panel-heading" {
+			    h3 class="panel-title" "Generated Form..."
+			}
+			division class="panel-body" {
+			    ftest::init -file "/Melify/mtk/dev/app/fannie/app.vfs/data/forms/f1.json"
+			}
+			division class="panel-footer" {
+			    submit_button action=Validate class="btn btn-success btn-big" onclick="fvalidate('ftest')"
 			}
 		    }
 		}
 	    }
+	}
 
-	    javascript {
-		put {
-		    jQuery(document).ready(function() {
-			fplay.init();
-		    });
-		}
+	javascript {
+	    put {
+		jQuery(document).ready(function() {
+		    fplay.init();
+		});
 	    }
 	}
     }
@@ -177,5 +177,7 @@ m::proc -public fplay::update {
     variable _id [id]
     
     file:write /tmp/junk.json "HELLO"
+
+    h1 >>>>>>>>>>$::json<<<<<<<<<
 }
 
