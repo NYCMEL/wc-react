@@ -124,9 +124,14 @@ m::proc -public fplay::guts {
 				textarea json=[file:read /Melify/mtk/dev/app/_git/app.vfs/data/form.2.json] id="json"
 			    }
 			    division class="panel-footer" {
-			    	button "Update" class="btn btn-info"
-				space 20 0
-			    	button "Reset" class="btn btn-warning"
+				division class="clearfix" {
+				    division class="pull-left" {
+					button "Update" class="btn btn-primary btn-big"
+				    }
+				    division class="pull-right" {
+					button "Reset" class="btn btn-warning btn-big pull-right"
+				    }
+				}
 			    }
 			}
 		    }
@@ -139,7 +144,7 @@ m::proc -public fplay::guts {
 				ftest::init -file "/Melify/mtk/dev/app/fannie/app.vfs/data/forms/f1.json"
 			    }
 			    division class="panel-footer" {
-				submit_button action=Continue class="btn btn-primary" onclick="fvalidate('ftest')"
+				submit_button action=Validate class="btn btn-success btn-big" onclick="fvalidate('ftest')"
 			    }
 			}
 		    }
