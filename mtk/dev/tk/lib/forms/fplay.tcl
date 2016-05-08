@@ -94,49 +94,51 @@ m::proc -public fplay::guts {
     Trace
     variable _id [id]
     
+    br
+
     division id="${_id}" {
-	br
-	division class="container" {
-	    division class="row" {
-		division class="col-md-4" {
-		    division class="panel panel-default" {
-			division class="panel-heading" {
-			    h3 class="panel-title" "Json file..."
+	fform -id "ftest" -guts {
+	    division class="container" {
+		division class="row" {
+		    division class="col-md-4" {
+			division class="panel panel-default" {
+			    division class="panel-heading" {
+				h3 class="panel-title" "Json file..."
+			    }
+			    division class="panel-body" [style margin 0 padding 0 height 600px overflow auto] {
+				put "<pre style=font-size:10px>"
+				put [file:read /Melify/mtk/dev/app/_git/app.vfs/data/form.2.json]
+				put "</pre>"
+			    }
+			    # division class="panel-footer" {
+			    # 	put [lorem 10]
+			    # }
 			}
-			division class="panel-body" [style margin 0 padding 0 height 600px overflow auto] {
-			    put "<pre style=font-size:10px>"
-			    put [file:read /Melify/mtk/dev/app/_git/app.vfs/data/form.2.json]
-			    put "</pre>"
-			}
-			# division class="panel-footer" {
-			# 	put [lorem 10]
-			# }
 		    }
-		}
-		division class="col-md-8" {
-		    division class="panel panel-default" {
-			division class="panel-heading" {
-			    h3 class="panel-title" "Generated Form..."
-			}
-			division class="panel-body" {
-			    ftest::init -file "/Melify/mtk/dev/app/fannie/app.vfs/data/forms/f1.json"
-			}
-			division class="panel-footer" {
-			    submit_button action=Continue class="btn btn-primary" onclick="validate('f1', 'f2')"
+		    division class="col-md-8" {
+			division class="panel panel-default" {
+			    division class="panel-heading" {
+				h3 class="panel-title" "Generated Form..."
+			    }
+			    division class="panel-body" {
+				ftest::init -file "/Melify/mtk/dev/app/fannie/app.vfs/data/forms/f1.json"
+			    }
+			    division class="panel-footer" {
+				submit_button action=Continue class="btn btn-primary" onclick="fvalidate('ftest')"
+			    }
 			}
 		    }
 		}
 	    }
-	}
 
-	javascript {
-	    put {
-		jQuery(document).ready(function() {
-		    fplay.init();
-		});
+	    javascript {
+		put {
+		    jQuery(document).ready(function() {
+			fplay.init();
+		    });
+		}
 	    }
 	}
     }
 }
-
 

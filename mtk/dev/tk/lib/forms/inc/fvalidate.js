@@ -1,4 +1,4 @@
-function validate(id, next) {
+function fvalidate(id) {
     var valid = true;
 
     $.each($("#" + id + " input[required]"), function (index, value) {
@@ -8,9 +8,11 @@ function validate(id, next) {
     });
 
     if (valid) {
-	$("#" + id).slideToggle(500, function() {
-	    $("#" + id).slideToggle(500);
-	});
+	alert("YOUR FORM IS VALIDATED");
+
+	// $("#" + id).slideToggle(500, function() {
+	//     $("#" + id).slideToggle(500);
+	// });
     }
 }
 
