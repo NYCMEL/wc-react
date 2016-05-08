@@ -56,7 +56,7 @@ m::proc -public ftest::init {
 			switch $m {
 			    "html" {
 				division class="col-md-12" {
-				    p $n
+				    put [subst $n]
 				}
 			    }
 			    "label" {
