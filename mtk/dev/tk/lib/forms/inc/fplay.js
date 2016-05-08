@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2016-05-08 09:59:50 (melify)>
+//// Time-stamp: <2016-05-08 10:08:06 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 var fplay = {};
 
@@ -23,12 +23,24 @@ fplay.init = function(options) {
 
     $(".btn-update").on("click", function() {
 	try {
+	    //$(".play-dummy").load(tk.siteurl + "?ajax=1&callback=play::save&text=" + escape(text));
+
 	    jQuery.parseJSON(editor.getValue());
-	    var cfg = editor.getValue()
-	    console.log("CFG: ", cfg);
 	    
 	    var text = editor.getValue();
-	    $(".play-dummy").load(tk.siteurl + "?ajax=1&callback=play::save&text=" + escape(text));
+	    var url  = tk.siteurl + "?ajax=1&callback=play::save";
+
+	    $.ajax({
+		type: "POST",
+		url: tk.siteurl + "?ajax=1&callback=fplay::update",
+		data: text,
+		success: function() {
+		    alert("A");
+		},
+		error: function() {
+		    alert("B");
+		}
+	    });
 	}
 	catch(e) {
 	    $("#customize-dummy-content").load(tk.siteurl + "?ajax=1&callback=customize::error")
