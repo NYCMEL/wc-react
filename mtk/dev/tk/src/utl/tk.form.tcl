@@ -101,9 +101,9 @@ m::proc -public tk::form {
 	    put [subst {
 		jQuery("form").submit(function(e) {
 		    e.preventDefault();
-		    var self = $(this);
-
+		    
 		    var values = jQuery("$id").serialize();
+
 		    jQuery("#result-$id").load(tk.siteurl + "?ajax=1&callback=$callback&values=" + values).show("slow");
 		});
 	    }]
