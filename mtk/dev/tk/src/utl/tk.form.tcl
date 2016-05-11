@@ -59,6 +59,10 @@ m::proc -public tk::form {
     set en [expr {($enctype == "") ? "" : "enctype=$enctype"}]
 
     cgi_form [expr {($url == {}) ? "[URL]" : $url}] $en method=$method name="$name" id=$id class="$class" [lstring $args] {
+	if {$validate == 0} {
+	    export callback=$callback
+	}
+
 	uplevel $guts
 
 	division id="result-$id" style=display:none\;padding:5px {
@@ -90,6 +94,18 @@ m::proc -public tk::form {
 		});
 
 		$custom
+	    }]
+	}
+    } else {
+	javascript {
+	    put [subst {
+		jQuery("form").submit(function(e) {
+		    e.preventDefault();
+		    var self = $(this);
+
+		    var values = jQuery("$id").serialize();
+		    jQuery("#result-$id").load(tk.siteurl + "?ajax=1&callback=$callback&values=" + values).show("slow");
+		});
 	    }]
 	}
     }
