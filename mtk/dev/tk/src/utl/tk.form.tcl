@@ -99,7 +99,7 @@ m::proc -public tk::form {
     } else {
 	javascript {
 	    put [subst {
-		jQuery("form").submit(function(e) {
+		jQuery("$id").submit(function(e) {
 		    e.preventDefault();
 		    
 		    var values = jQuery("$id").serialize();
