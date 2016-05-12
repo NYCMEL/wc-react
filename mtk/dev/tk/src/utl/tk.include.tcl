@@ -55,7 +55,7 @@ proc include {fname} {
     }
 
     switch [file extension $t] {
-	".js" - ".json"{
+	".js" - ".json" {
 	    set func [file tail $fname]
 	    regsub -all {\-} $func "" func
 	    regsub -all {\_} $func "" func
