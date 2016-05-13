@@ -99,10 +99,10 @@ m::proc -public tk::form {
     } else {
 	javascript {
 	    put [subst {
-		jQuery("$id").submit(function(e) {
+		jQuery("#$id").submit(function(e) {
 		    e.preventDefault();
 		    
-		    var values = jQuery("$id").serialize();
+		    var values = jQuery("#$id").serialize();
 
 		    jQuery("#result-$id").load(tk.siteurl + "?ajax=1&callback=$callback&values=" + values).show("slow");
 		});
