@@ -44,7 +44,7 @@ m::proc -public ftest::init {
     #p >>$d<<
     
     foreach k $d {
-	division class="form-group" {
+	division class="form-group clearfix" {
 	    foreach j $k {
 		set width [dict exist $j width]
 
@@ -54,6 +54,11 @@ m::proc -public ftest::init {
 
 		foreach {m n} $j {
 		    switch $m {
+			"custom" {
+			    division class="col-md-12" {
+				uplevel $n
+			    }
+			}
 			"html" {
 			    division class="col-md-12" {
 				put [subst $n]
