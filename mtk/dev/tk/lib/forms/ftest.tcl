@@ -23,6 +23,7 @@ namespace eval ftest {}
 ##### 
 ######################################################
 m::proc -public ftest::init {
+    -id:required
     {-file "/Melify/mtk/dev/app/_git/app.vfs/data/form.2.json"}
 } {
     Documentation goes here...
@@ -42,154 +43,152 @@ m::proc -public ftest::init {
     set d [string range $d 1 end-1]
     #p >>$d<<
     
-    fform -id "my-form" -guts {
-	foreach k $d {
-	    division class="form-group" {
-		foreach j $k {
-		    set width [dict exist $j width]
+    foreach k $d {
+	division class="form-group" {
+	    foreach j $k {
+		set width [dict exist $j width]
 
-		    if {$width == 1} {
-			put "<div class=[dict get $j width]>"
-		    }
+		if {$width == 1} {
+		    put "<div class=[dict get $j width]>"
+		}
 
-		    foreach {m n} $j {
-			switch $m {
-			    "html" {
-				division class="col-md-12" {
-				    put [subst $n]
+		foreach {m n} $j {
+		    switch $m {
+			"html" {
+			    division class="col-md-12" {
+				put [subst $n]
+			    }
+			}
+			"label" {
+			    if {$width == 0} {
+				label id="[dict get $n id]" class="[dict get $n width]" for="[dict get $n for]" "[dict get $n text]"
+			    } else {
+				label id="[dict get $n id]" "[dict get $n text]"
+			    }
+			}
+			"text" {
+			    if {[dict exist $n maxlength] == 1} {
+				set maxlength "maxlength=[dict get $n maxlength]"
+			    } else {
+				set maxlength ""
+			    }
+
+			    if {$width == 0} {
+				put "<div class=[dict get $n width]>"
+			    }
+			    
+			    text [dict get $n id]=[dict get $n value] \
+				type="[dict get $n type]" \
+				$maxlength\
+				class="form-control" \
+				pattern="[dict get $n pattern]" \
+				placeholder="[dict get $n placeholder]" \
+				ng-model="[dict get $n bind]" \
+				"[dict get $n required]"
+
+			    if {$width == 0} {
+				put "</div>"
+			    }
+			}
+			"textarea" {
+			    if {$width == 0} {
+				put "<div class=[dict get $n width]>"
+			    }
+			    
+			    textarea [dict get $n id]=[dict get $n value] \
+				type="[dict get $n type]" \
+				class="form-control" \
+				rows="[dict get $n rows]" \
+				pattern="[dict get $n pattern]" \
+				placeholder="[dict get $n placeholder]" \
+				ng-model="[dict get $n bind]" \
+				"[dict get $n required]"
+
+			    if {$width == 0} {
+				put "</div>"
+			    }
+			}
+			"select" {
+			    if {$width == 0} {
+				put "<div class=[dict get $n width]>"
+			    }
+
+			    if {[dict get $n size] > 1} {
+				set size "size=[dict get $n size]"
+			    } else {
+				set size ""
+			    }
+
+			    select [dict get $n id] $size class="form-control" ng-model="[dict get $n bind]" {
+				foreach {i j} [dict get $n options] {
+				    if {[dict get $n selected] == $i} {
+					set state "selected"
+				    } else {
+					set state ""
+				    }
+
+				    option $j value=$i $state
 				}
 			    }
-			    "label" {
-				if {$width == 0} {
-				    label id="[dict get $n id]" class="[dict get $n width]" for="[dict get $n for]" "[dict get $n text]"
-				} else {
-				    label id="[dict get $n id]" "[dict get $n text]"
-				}
+			    if {$width == 0} {
+				put "</div>"
 			    }
-			    "text" {
-				if {[dict exist $n maxlength] == 1} {
-				    set maxlength "maxlength=[dict get $n maxlength]"
-				} else {
-				    set maxlength ""
-				}
-
+			}
+			"checkboxes" {
+			    if {$width == 0} {
+				put "<div class=[dict get $n width]>"
+			    }
+			    
+			    foreach p [dict get $n "checkbox"] {
 				if {$width == 0} {
-				    put "<div class=[dict get $n width]>"
+				    put "<div class=[dict get $p width]>"
 				}
 				
-				text [dict get $n id]=[dict get $n value] \
-				    type="[dict get $n type]" \
-				    $maxlength\
-				    class="form-control" \
-				    pattern="[dict get $n pattern]" \
-				    placeholder="[dict get $n placeholder]" \
-				    ng-model="[dict get $n bind]" \
-				    "[dict get $n required]"
+				checkbox [dict get $p id] [dict get $p "checked"] ng-model="[dict get $p bind]"
+
+				set lbl [dict get $p caption]
+				
+				label id="[dict get $lbl id]" for="[dict get $lbl for]" class="label-control" "[dict get $lbl text]" 
 
 				if {$width == 0} {
 				    put "</div>"
 				}
 			    }
-			    "textarea" {
+
+			    if {$width == 0} {
+				put "</div>"
+			    }
+			}
+			"radioboxes" {
+			    if {$width == 0} {
+				put "<div class=[dict get $n width]>"
+			    }
+			    
+			    foreach p [dict get $n "radiobox"] {
 				if {$width == 0} {
-				    put "<div class=[dict get $n width]>"
+				    put "<div class=[dict get $p width]>"
 				}
 				
-				textarea [dict get $n id]=[dict get $n value] \
-				    type="[dict get $n type]" \
-				    class="form-control" \
-				    rows="[dict get $n rows]" \
-				    pattern="[dict get $n pattern]" \
-				    placeholder="[dict get $n placeholder]" \
-				    ng-model="[dict get $n bind]" \
-				    "[dict get $n required]"
+				radio_button [dict get $p "id"]=[dict get $p "value"] id=[dict get $p "id"] [dict get $p "checked"] ng-model="[dict get $n bind]"
+
+				set lbl [dict get $p caption]
+				
+				label id="[dict get $lbl id]" for="[dict get $lbl for]" class="label-control" "&nbsp;[dict get $lbl text]" 
 
 				if {$width == 0} {
 				    put "</div>"
 				}
 			    }
-			    "select" {
-				if {$width == 0} {
-				    put "<div class=[dict get $n width]>"
-				}
 
-				if {[dict get $n size] > 1} {
-				    set size "size=[dict get $n size]"
-				} else {
-				    set size ""
-				}
-
-				select [dict get $n id] $size class="form-control" ng-model="[dict get $n bind]" {
-				    foreach {i j} [dict get $n options] {
-					if {[dict get $n selected] == $i} {
-					    set state "selected"
-					} else {
-					    set state ""
-					}
-
-					option $j value=$i $state
-				    }
-				}
-				if {$width == 0} {
-				    put "</div>"
-				}
-			    }
-			    "checkboxes" {
-				if {$width == 0} {
-				    put "<div class=[dict get $n width]>"
-				}
-				    
-				foreach p [dict get $n "checkbox"] {
-				    if {$width == 0} {
-					put "<div class=[dict get $p width]>"
-				    }
-				    
-				    checkbox [dict get $p id] [dict get $p "checked"] ng-model="[dict get $p bind]"
-
-				    set lbl [dict get $p caption]
-				    
-				    label id="[dict get $lbl id]" for="[dict get $lbl for]" class="label-control" "[dict get $lbl text]" 
-
-				    if {$width == 0} {
-					put "</div>"
-				    }
-				}
-
-				if {$width == 0} {
-				    put "</div>"
-				}
-			    }
-			    "radioboxes" {
-				if {$width == 0} {
-				    put "<div class=[dict get $n width]>"
-				}
-				    
-				foreach p [dict get $n "radiobox"] {
-				    if {$width == 0} {
-					put "<div class=[dict get $p width]>"
-				    }
-				    
-				    radio_button [dict get $p "id"]=[dict get $p "value"] id=[dict get $p "id"] [dict get $p "checked"] ng-model="[dict get $n bind]"
-
-				    set lbl [dict get $p caption]
-				    
-				    label id="[dict get $lbl id]" for="[dict get $lbl for]" class="label-control" "&nbsp;[dict get $lbl text]" 
-
-				    if {$width == 0} {
-					put "</div>"
-				    }
-				}
-
-				if {$width == 0} {
-				    put "</div>"
-				}
+			    if {$width == 0} {
+				put "</div>"
 			    }
 			}
 		    }
+		}
 
-		    if {$width == 1} {
-			put "</div>"
-		    }
+		if {$width == 1} {
+		    put "</div>"
 		}
 	    }
 	}
