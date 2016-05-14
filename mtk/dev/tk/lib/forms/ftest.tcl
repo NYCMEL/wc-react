@@ -30,6 +30,8 @@ m::proc -public ftest::init {
 } {
     Trace
     
+    source "$::TKSERVER/tk/lib/forms/patterns.tcl"
+
     if {[info exist ::file] == 1} {
 	set file $::file
     }
@@ -90,7 +92,7 @@ m::proc -public ftest::init {
 				type="[dict get $n type]" \
 				$maxlength\
 				class="form-control" \
-				pattern="[dict get $n pattern]" \
+				pattern=$patterns([dict get $n pattern]) \
 				placeholder="[dict get $n placeholder]" \
 				ng-model="[dict get $n bind]" \
 				"[dict get $n required]"
@@ -108,7 +110,7 @@ m::proc -public ftest::init {
 				type="[dict get $n type]" \
 				class="form-control" \
 				rows="[dict get $n rows]" \
-				pattern="[dict get $n pattern]" \
+				pattern=$patterns([dict get $n pattern]) \
 				placeholder="[dict get $n placeholder]" \
 				ng-model="[dict get $n bind]" \
 				"[dict get $n required]"
