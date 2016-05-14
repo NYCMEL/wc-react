@@ -19,11 +19,6 @@
 
 namespace eval tk {}
 
-#VALIDATE FORM AND PROCES RESULT
-include "/tk/jquery/scripts/jquery.form.js"
-include "/tk/jquery/scripts/jquery.validate.js"
-include "/tk/inc/form.css"
-
 ######################################################
 ##### 
 ######################################################
@@ -45,6 +40,13 @@ m::proc -public tk::form {
 } {
     Trace
     
+    if {$validate == 1} {
+	#VALIDATE FORM AND PROCES RESULT
+	include "/tk/jquery/scripts/jquery.form.js"
+	include "/tk/jquery/scripts/jquery.validate.js"
+	include "/tk/inc/form.css"
+    }
+
     # -custom {
     # 	jQuery(".paswd").rules("add", { 
     # 	    required:true,  
@@ -103,7 +105,7 @@ m::proc -public tk::form {
 		    e.preventDefault();
 		    
 		    var values = jQuery("#$id").serialize();
-
+		    
 		    jQuery("#result-$id").load(tk.siteurl + "?ajax=1&callback=$callback&values=" + values).show("slow");
 		});
 	    }]
