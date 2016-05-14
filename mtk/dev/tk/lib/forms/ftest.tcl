@@ -30,7 +30,7 @@ m::proc -public ftest::init {
 } {
     Trace
     
-    source "$::TKSERVER/tk/lib/forms/patterns.tcl"
+    source "$::TKSERVER/tk/lib/forms/fpatterns.tcl"
 
     if {[info exist ::file] == 1} {
 	set file $::file
