@@ -88,11 +88,17 @@ m::proc -public ftest::init {
 				put "<div class=[dict get $n width]>"
 			    }
 			    
+			    if {[dict get $n pattern] == ""} {
+				set pattern ""
+			    } else {
+				set pattern "pattern=$patterns([dict get $n pattern])"
+			    }
+
 			    text [dict get $n id]=[dict get $n value] \
 				type="[dict get $n type]" \
 				$maxlength\
 				class="form-control" \
-				pattern=$patterns([dict get $n pattern]) \
+				$pattern\
 				placeholder="[dict get $n placeholder]" \
 				ng-model="[dict get $n bind]" \
 				"[dict get $n required]"
@@ -106,11 +112,17 @@ m::proc -public ftest::init {
 				put "<div class=[dict get $n width]>"
 			    }
 			    
+			    if {[dict get $n pattern] == ""} {
+				set pattern ""
+			    } else {
+				set pattern "pattern=$patterns([dict get $n pattern])"
+			    }
+
 			    textarea [dict get $n id]=[dict get $n value] \
 				type="[dict get $n type]" \
 				class="form-control" \
 				rows="[dict get $n rows]" \
-				pattern=$patterns([dict get $n pattern]) \
+				$pattern\
 				placeholder="[dict get $n placeholder]" \
 				ng-model="[dict get $n bind]" \
 				"[dict get $n required]"

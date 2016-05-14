@@ -8,5 +8,5 @@ array set patterns {
     ssn		{^d{3}-d{2}-d{4}$}
 }
 
-parray patterns
+#parray patterns
 
