@@ -23,7 +23,6 @@ namespace eval ftest {}
 ##### 
 ######################################################
 m::proc -public ftest::init {
-    {-id "abcd"}
     {-file "/Melify/mtk/dev/app/_git/app.vfs/data/form.2.json"}
 } {
     Documentation goes here...
