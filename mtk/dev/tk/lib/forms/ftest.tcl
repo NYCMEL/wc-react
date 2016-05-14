@@ -23,13 +23,17 @@ namespace eval ftest {}
 ##### 
 ######################################################
 m::proc -public ftest::init {
-    -id:required
+    {-id "abcd"}
     {-file "/Melify/mtk/dev/app/_git/app.vfs/data/form.2.json"}
 } {
     Documentation goes here...
 } {
     Trace
     
+    if {[info exist ::file] == 1} {
+	set file $::file
+    }
+
     put {
 	<style>
 	label {
