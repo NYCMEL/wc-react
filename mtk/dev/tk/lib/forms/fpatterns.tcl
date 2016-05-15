@@ -6,6 +6,8 @@ array set patterns {
     state	{[A-Za-z]{1,50}}
     zipcode	{\d{5,5}(-\d{4,4})?}
     ssn		{^(\d{3}-|(\d{3})\s)\d{2}-\d{4}$}
+    amount	{^[$\-\s]*[\d\,]*?([\.]\d{0,2})?\s*$}
+    number	{\d*}
 }
 
 #parray patterns
