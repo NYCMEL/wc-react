@@ -380,7 +380,7 @@ m::proc -public google::colors {
     
     javascript {
 	put {
-	    $(".inner").center();
+	    $(".inner").center({against:"parent"});
 	    
 	    $(".color").on("click", function() {
 		new Clipboard('.color', {
