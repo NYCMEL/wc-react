@@ -33,6 +33,9 @@ namespace eval tk {
     namespace eval form {}
 }
 
+include "/tk/jquery/scripts/jquery.form.js"
+include "/tk/inc/form.css"
+
 ######################################################
 #####
 ######################################################
@@ -55,9 +58,9 @@ m::proc -public tk::form {
     Trace
     
     #VALIDATE FORM AND PROCES RESULT
-    include "/tk/jquery/scripts/jquery.form.js"
-    include "/tk/jquery/scripts/jquery.validate.js"
-    include "/tk/inc/form.css"
+    if {$validate == 1} {
+	include "/tk/jquery/scripts/jquery.validate.js"
+    }
     
     # -custom {
     #      jQuery(".paswd").rules("add", {
