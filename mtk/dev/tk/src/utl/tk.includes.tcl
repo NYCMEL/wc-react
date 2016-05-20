@@ -183,7 +183,7 @@ m::proc -private tk::include::common {
     include "/GitHub/pushState/js/pjax.js";# Browser pushState
     include "/GitHub/jquery-cookie/src/jquery.cookie.js"
     include "/GitHub/jquery-tiny-pubsub/dist/ba-tiny-pubsub.min.js"
-    include "/GitHub/pace/themes/black/pace-theme-big-counter.css"
+    include "/GitHub/pace/themes/blue/pace-theme-minimal.css"
     include "/GitHub/pace/pace.min.js"
 
     # TK FUNCTIONS ARE HERE
