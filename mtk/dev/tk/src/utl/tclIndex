@@ -106,7 +106,12 @@ set auto_index(tk::find) [list source [file join $dir tk.find.tcl]]
 set auto_index(tk::find:test) [list source [file join $dir tk.find.tcl]]
 set auto_index(tk::form) [list source [file join $dir tk.form.tcl]]
 set auto_index(tk::form::init) [list source [file join $dir tk.form.tcl]]
+<<<<<<< HEAD
 set auto_index(tk::form::create) [list source [file join $dir tk.form.tcl]]
+=======
+set auto_index(tk::form::test) [list source [file join $dir tk.form.tcl]]
+set auto_index(tk::form::test:cb) [list source [file join $dir tk.form.tcl]]
+>>>>>>> dec16d07e0489f5578b0e60a61ad2c97bc19bb2b
 set auto_index(tk::form::upload::init) [list source [file join $dir tk.form.upload.tcl]]
 set auto_index(tk::form::upload::cb) [list source [file join $dir tk.form.upload.tcl]]
 set auto_index(tk::form::upload::test) [list source [file join $dir tk.form.upload.tcl]]
