@@ -183,7 +183,7 @@ m::proc -public tk::form::test {
 
     tk::form::init -name "aform" -method "GET" -callback "tk::form::test:cb" -guts {
 	foreach i {a b c d} {
-	    text v($i)=[lorem 10] class="form-control" required pattern="$pattern(text)"
+	    text v($i)=[lorem 10] class="form-control" required
 	}
 	
 	hr
