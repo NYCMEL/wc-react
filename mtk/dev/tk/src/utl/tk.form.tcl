@@ -179,11 +179,9 @@ m::proc -public tk::form::test {
     Trace
     variable pattern
     
-    h1 >>>$pattern(text)<<<
-
     tk::form::init -name "aform" -method "GET" -callback "tk::form::test:cb" -guts {
-	foreach i {a b c d} {
-	    text v($i)=[lorem 10] class="form-control" required
+	foreach i {A B C D} {
+	    text v($i)=$i>[lorem 10] class="form-control" required
 	}
 	
 	hr
