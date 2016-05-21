@@ -163,15 +163,11 @@ m::proc -public tk::form::test {
 } {
     Trace
     
-    tk::form::init -name "aform" -callback "test::postcb" -result "result" -guts {
+    tk::form::init -name "aform" -callback "tk::form::test:cb" -result "result" -guts {
 	foreach i {a b c d} {
 	    text v($i)=[lorem 10] class="form-control" required
 	}
 	
-	hr
-	button "POST" class="btn btn-default" onclick="tkForm.process({method:'POST', url:'[URL]', cb:'test::postcb', result:'result'})"
-	space 30 0
-
 	put "<button type='submit' class='btn btn-primary'><i class='fa fa-smile-o'></i> PUSH IT</button>"
     }
     
@@ -179,3 +175,16 @@ m::proc -public tk::form::test {
 	p waiting...
     }
 }
+
+######################################################
+##### 
+######################################################
+m::proc -public tk::form::test:cb {
+} {
+    Documentation goes here...
+} {    
+    Trace
+
+    parray ::v
+}
+
