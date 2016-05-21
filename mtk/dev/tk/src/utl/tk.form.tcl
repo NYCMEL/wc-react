@@ -380,7 +380,7 @@ m::proc -public tk::form::create {
 				    put "<div class=[dict get $p width]>"
 				}
 				
-				checkbox [dict get $p id] [dict get $p "checked"] ng-model="[dict get $p bind]" id="[dict get $p id]"
+				checkbox [dict get $p id] [dict get $p "checked"] [dict get $p required] ng-model="[dict get $p bind]" id="[dict get $p id]"
 				
 				set lbl [dict get $p caption]
 				
@@ -405,7 +405,8 @@ m::proc -public tk::form::create {
 				    put "<div class=[dict get $p width]>"
 				}
 				
-				radio_button [dict get $p "id"]=[dict get $p "value"] id=[dict get $p "id"] [dict get $p "checked"] ng-model="[dict get $n bind]"
+				radio_button [dict get $p "id"]=[dict get $p "value"] id=[dict get $p "id"]\
+				    [dict get $p required] [dict get $p "checked"] ng-model="[dict get $n bind]"
 				
 				set lbl [dict get $p caption]
 				

@@ -238,7 +238,7 @@
 			{
 			    "id": "v(pull-credit)",
 			    "width": "col-sm-12",
-			    "required": "",
+			    "required": "required",
 			    "value": "0",
 			    "bind":"app.f1010.pullcredit",
 			    "checked" : "",
