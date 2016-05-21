@@ -21,6 +21,8 @@ namespace eval tk {
     namespace eval form {}
 }
 
+include "/tk/src/utl/inc/tk.form.js"
+
 ######################################################
 ##### 
 ######################################################
@@ -138,7 +140,7 @@ m::proc -public tk::form::init {
     
     set id [expr {($id == "") ? "$name" : "$id"}]
     set en [expr {($enctype == "") ? "" : "enctype=$enctype"}]
-
+    
     cgi_form [expr {($url == {}) ? "[URL]" : $url}] $en method=$method name="$name" id=$id class="$class" [lstring $args] {
 	uplevel $guts
     }
