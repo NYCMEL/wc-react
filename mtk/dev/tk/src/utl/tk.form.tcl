@@ -18,22 +18,24 @@
 ###HEADE###################################################################
 
 namespace eval tk {
-    namespace eval form {}
+    namespace eval form {
+	array set pattern {
+	    text	{[A-Za-z0-9 ]}
+	    phone	{^(?d{3})?[- ]?d{3}[- ]?d{4}$}
+	    email	{[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$}
+	    city	{[A-Za-z ]+}
+	    state	{[A-Za-z]{1,50}}
+	    zipcode     {\d{5,5}(-\d{4,4})?}
+	    ssn         {^(\d{3}-|(\d{3})\s)\d{2}-\d{4}$}
+	    amount	{^[$\-\s]*[\d\,]*?([\.]\d{0,2})?\s*$}
+	    number	{\d*}
+	}
+    }
 }
 
+include "/tk/inc/form.css"
 include "/tk/src/utl/inc/tk.form.js"
-
-set tk(patterns) {
-    text	{[A-Za-z0-9 ]}
-    phone	{^(?d{3})?[- ]?d{3}[- ]?d{4}$}
-    email	{[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$}
-    city	{[A-Za-z ]+}
-    state	{[A-Za-z]{1,50}}
-    zipcode     {\d{5,5}(-\d{4,4})?}
-    ssn         {^(\d{3}-|(\d{3})\s)\d{2}-\d{4}$}
-    amount	{^[$\-\s]*[\d\,]*?([\.]\d{0,2})?\s*$}
-    number	{\d*}
-}
+include "/tk/jquery/scripts/jquery.validate.js"
 
 ######################################################
 ##### 
@@ -56,12 +58,6 @@ m::proc -public tk::form {
 } {
     Trace
     
-    if {$validate == 1} {
-	#VALIDATE FORM AND PROCES RESULT
-	include "/tk/jquery/scripts/jquery.validate.js"
-	include "/tk/inc/form.css"
-    }
-
     # -custom {
     # 	jQuery(".paswd").rules("add", { 
     # 	    required:true,  
@@ -149,12 +145,6 @@ m::proc -public tk::form::init {
 } {
     Trace
     
-    if {$validate == 1} {
-	#VALIDATE FORM AND PROCES RESULT
-	include "/tk/jquery/scripts/jquery.validate.js"
-	include "/tk/inc/form.css"
-    }
-
     set id  [expr {($id == "") ? "$name" : "$id"}]
     set en  [expr {($enctype == "") ? "" : "enctype=$enctype"}]
     set url [expr {($url == {}) ? "[URL]" : $url}]
@@ -189,10 +179,11 @@ m::proc -public tk::form::test {
     DOCUMENTATION GOES HERE...
 } {
     Trace
+    variable pattern
     
     tk::form::init -name "aform" -validate 1 -method "GET" -callback "tk::form::test:cb" -guts {
 	foreach i {a b c d} {
-	    text v($i)=[lorem 10] class="form-control" required
+	    text v($i)=[lorem 10] class="form-control" required pattern="$pattern(text)"
 	}
 	
 	hr
@@ -221,6 +212,7 @@ m::proc -public tk::form::create {
     Documentation goes here...
 } {
     Trace
+    variable pattern
     
     if {[info exist ::file] == 1} {
 	set file $::file
@@ -281,7 +273,7 @@ m::proc -public tk::form::create {
 			    if {[dict get $n pattern] == ""} {
 				set pattern ""
 			    } else {
-				set pattern "pattern=$::tk(patterns)([dict get $n pattern])"
+				set pattern "pattern=$pattern([dict get $n pattern])"
 			    }
 			    
 			    text [dict get $n id]=[dict get $n value] \
@@ -305,7 +297,7 @@ m::proc -public tk::form::create {
 			    if {[dict get $n pattern] == ""} {
 				set pattern ""
 			    } else {
-				set pattern "pattern=$::tk(patterns)([dict get $n pattern])"
+				set pattern "pattern=$pattern([dict get $n pattern])"
 			    }
 			    
 			    textarea [dict get $n id]=[dict get $n value] \
