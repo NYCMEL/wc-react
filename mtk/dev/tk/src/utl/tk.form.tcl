@@ -143,6 +143,13 @@ m::proc -public tk::form::init {
     set en  [expr {($enctype == "") ? "" : "enctype=$enctype"}]
     set url [expr {($url == {}) ? "[URL]" : $url}]
     
+    if {$validate == 1} {
+	#VALIDATE FORM AND PROCES RESULT
+	include "/tk/jquery/scripts/jquery.form.js"
+	include "/tk/jquery/scripts/jquery.validate.js"
+	include "/tk/inc/form.css"
+    }
+
     cgi_form $url $en method=$method name="$name" id=$id class="$class" [lstring $args] {
 	uplevel $guts
     }
@@ -159,7 +166,7 @@ m::proc -public tk::form::test {
 } {
     Trace
     
-    tk::form::init -name "aform" -method "GET" -callback "tk::form::test:cb" -result "result" -guts {
+    tk::form::init -name "aform" -validate 1 -method "GET" -callback "tk::form::test:cb" -result "result" -guts {
 	foreach i {a b c d} {
 	    text v($i)=[lorem 10] class="form-control" required
 	}
