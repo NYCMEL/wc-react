@@ -34,7 +34,7 @@ namespace eval tk {
     }
 }
 
-include "/tk/inc/form.css"
+include "/tk/src/utl/inc/tk.form.css"
 include "/tk/src/utl/inc/tk.form.js"
 
 ######################################################
