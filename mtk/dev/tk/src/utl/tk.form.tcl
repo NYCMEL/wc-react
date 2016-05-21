@@ -157,8 +157,21 @@ m::proc -public tk::form::init {
 	}
     }
 
+    if {$validate == 1} {
+	set validateit [subst {
+	    jQuery("#$id").validate({
+		debug: true,
+		errorClass: "form-error"
+	    });
+	}]
+    } else {
+	set validateit ""
+    }
+
     javascript {
 	put [subst {
+	    $validateit
+
 	    tkForm.init({
 		id:"$id",
 		url:"$url",
