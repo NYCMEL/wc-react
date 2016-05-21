@@ -20,7 +20,8 @@
 namespace eval tk {
     namespace eval form {
 	array set pattern {
-	    text	{[a-zA-Z0-9 ]+}
+	    text	{[a-zA-Z ]+}
+	    alnum	{[a-zA-Z0-9 ]+}
 	    phone	{^(?d{3})?[- ]?d{3}[- ]?d{4}$}
 	    email	{[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$}
 	    city	{[A-Za-z ]+}
