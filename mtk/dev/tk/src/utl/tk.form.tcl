@@ -145,4 +145,10 @@ m::proc -public tk::form::init {
     cgi_form [expr {($url == {}) ? "[URL]" : $url}] $en method=$method name="$name" id=$id class="$class" [lstring $args] {
 	uplevel $guts
     }
+
+    javascript {
+	put [subst {
+	    tkForm.init({id:"$id", method:"$method", callback:"$callback", result:"result"});
+	}]
+    }
 }
