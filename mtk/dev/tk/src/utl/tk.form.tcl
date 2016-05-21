@@ -179,24 +179,44 @@ m::proc -public tk::form::test {
     Trace
     variable pattern
     
-    tk::form::init -name "aform" -method "GET" -callback "tk::form::test:cb" -guts {
-	if {0} {
-	    foreach i {A B C D} {
-		text v($i)=$i>[lorem 10] class="form-control" required
-	    }
-	}
-	
-	division class="clearfix" {
-	    foreach i [array names pattern] {
+    variable pattern
+
+    division [style padding 100px] {
+	division class="container" {
+	    division class="row" {
 		division class="col-md-4" {
-		    put $i
-		    text v($i)= class="form-control" required pattern="$pattern($i)"
+		    division class="well" {
+			tk::form::init -name "aform" -method "GET" -callback "tk::form::test:cb" -guts {
+			    if {0} {
+				foreach i {A B C D} {
+				    text v($i)=$i>[lorem 10] class="form-control" required
+				}
+			    }
+			    
+			    division class="clearfix" {
+				foreach i [array names pattern] {
+				    division class="col-md-4" {
+					put $i
+					text v($i)= class="form-control" required pattern="$pattern($i)"
+				    }
+				}
+			    }
+			    hr
+			    division class="clearfix" {
+				put "<button type='submit' class='btn btn-default'>PUSH IT <i class='fa fa-chevron-right'></i></button>"
+			    }
+			}
+		    }
+		}
+		division class="col-md-8" {
+		    division class="well" {
+			tk::form::init -name "bform" -method "GET" -callback "tk::form::test:cb" -guts {
+			    tk::form::create
+			    put "<button type='submit' class='btn btn-primary'><i class='fa fa-smile-o'></i> PUSH IT</button>"
+			}
+		    }
 		}
 	    }
-	}
-	hr
-	division class="clearfix" {
-	    put "<button type='submit' class='btn btn-default'>PUSH IT <i class='fa fa-chevron-right'></i></button>"
 	}
     }
 }
