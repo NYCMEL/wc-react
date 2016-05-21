@@ -30,6 +30,7 @@ namespace eval tk {
 	    ssn         {^(\d{3}-|(\d{3})\s)\d{2}-\d{4}$}
 	    amount	{^[$\-\s]*[\d\,]*?([\.]\d{0,2})?\s*$}
 	    number	{\d*}
+	    date	{\d{1,2}/\d{1,2}/\d{4}}
 	}
     }
 }
