@@ -1,0 +1,278 @@
+[
+    [
+	[
+	    {
+		"html": "<div class=branded><h4>We use the following information to determine <small>(need some real text here)</small></h4><p>[lorem 30]</div>",
+	    },
+	    {
+		"width":"col-sm-6",
+
+		"label": {
+		    "id":"fname-label",
+		    "text":"First Name",
+		    "width": "col-sm-2",
+		    "for":"fname"
+		},
+		"text": {
+		    "id": "fname",
+		    "type": "text",
+		    "value": "",
+		    "width": "col-sm-3",
+		    "pattern": "text",
+		    "required": "required",
+		    "placeholder": "first name",
+		    "bind":"app.f1010.fname"
+		}
+	    },
+	    {
+		"width":"col-sm-6",
+
+		"label": {
+		    "id":"lname-label",
+		    "text":"Last Name",
+		    "width": "col-sm-2",
+		    "for":"lname"
+		},
+		"text": {
+		    "id": "lname",
+		    "type": "text",
+		    "value": "",
+		    "width": "col-sm-3",
+		    "pattern": "text",
+		    "required": "required",
+		    "placeholder": "last name",
+		    "bind":"app.f1010.lname"
+		}
+	    }
+	],
+	[
+	    {
+		"width":"col-sm-6",
+		"label": {
+		    "id":"dob-label",
+		    "text":"Date of birth",
+		    "width": "col-sm-4",
+		    "for":"dob"
+		},
+		"text": {
+		    "id": "dob",
+		    "type": "date",
+		    "value": "",
+		    "width": "col-sm-4",
+		    "pattern": "",
+		    "required": "",
+		    "placeholder": "mm/dd/yyyy",
+		    "bind":"app.f1010.dob"
+		}
+	    }
+	],
+	[
+	    {
+		"width":"col-sm-6",
+
+		"label": {
+		    "id":"address1-label",
+		    "text":"Address1",
+		    "width": "col-sm-6",
+		    "for":"address1"
+		},
+		"text": {
+		    "id": "address1",
+		    "type": "text",
+		    "value": "",
+		    "width": "col-sm-6",
+		    "pattern": "text",
+		    "required": "required",
+		    "placeholder": "address I",
+		    "bind":"app.f1010.address1"
+		}
+	    },
+	    {
+		"width":"col-sm-6",
+
+		"label": {
+		    "id":"address2-label",
+		    "text":"Address2",
+		    "width": "col-sm-6",
+		    "for":"address2"
+		},
+		"text": {
+		    "id": "address2",
+		    "type": "text",
+		    "value": "",
+		    "width": "col-sm-6",
+		    "pattern": "text",
+		    "required": "required",
+		    "placeholder": "address II",
+		    "bind":"app.f1010.address2"
+		}
+	    }
+	],
+	[
+	    {
+		"width":"col-sm-4",
+
+		"label": {
+		    "id":"city-label",
+		    "text":"City",
+		    "width": "col-sm-4",
+		    "for":"city"
+		},
+		"text": {
+		    "id": "city",
+		    "type": "text",
+		    "value": "",
+		    "width": "col-sm-3",
+		    "pattern": "text",
+		    "required": "required",
+		    "placeholder": "city...",
+		    "bind":"app.f1010.city"
+		}
+	    },
+	    {
+		"width":"col-sm-4",
+
+		"label": {
+		    "id":"state-label",
+		    "text":"State",
+		    "width": "col-sm-4",
+		    "for":"state"
+		},
+		"text": {
+		    "id": "state",
+		    "type": "text",
+		    "value": "",
+		    "width": "col-sm-3",
+		    "maxlength": 2,
+		    "pattern": "state",
+		    "required": "required",
+		    "placeholder": "##",
+		    "bind":"app.f1010.state"
+		}
+	    },
+	    {
+		"width":"col-sm-4",
+
+		"label": {
+		    "id":"zipcode-label",
+		    "text":"Zipcode",
+		    "width": "col-sm-4",
+		    "for":"zipcode"
+		},
+		"text": {
+		    "id": "zipcode",
+		    "type": "text",
+		    "value": "",
+		    "width": "col-sm-3",
+		    "pattern": "zipcode",
+		    "required": "required",
+		    "placeholder": "#####-####",
+		    "bind":"app.f1010.zipcode"
+		}
+	    },
+	],
+	[
+	    {
+		"width":"col-sm-4",
+		"label": {
+		    "id":"email-label",
+		    "text":"Email",
+		    "width": "col-sm-6",
+		    "for":"email"
+		},
+		"text": {
+		    "id": "email",
+		    "type": "text",
+		    "value": "",
+		    "width": "col-sm-6",
+		    "pattern": "email",
+		    "required": "required",
+		    "placeholder": "email...",
+		    "bind":"app.f1010.email"
+		}
+	    },
+	    {
+		"width":"col-sm-4",
+		"label": {
+		    "id":"ssn-label",
+		    "text":"Social Security Number",
+		    "width": "col-sm-4",
+		    "for":"ssn"
+		},
+		"text": {
+		    "id": "ssn",
+		    "type": "text",
+		    "value": "",
+		    "width": "col-sm-6",
+		    "pattern": "ssn",
+		    "required": "required",
+		    "placeholder": "###-##-####",
+		    "bind":"app.f1010.ssn"
+		}
+	    },
+	    {
+		"width":"col-sm-4",
+		"label": {
+		    "id":"phone-label",
+		    "text":"Phone Number",
+		    "width": "col-sm-4",
+		    "for":"phone"
+		},
+		"text": {
+		    "id": "phone",
+		    "type": "text",
+		    "value": "",
+		    "width": "col-sm-4",
+		    "pattern": "phone",
+		    "required": "",
+		    "placeholder": "###-###-####",
+		    "bind":"app.f1010.phone"
+		}
+	    }
+	],
+	[
+	    {
+		"checkboxes": {
+		    "width": "col-sm-12",
+		    "checkbox": [
+			{
+			    "id": "pull-credit",
+			    "width": "col-sm-12",
+			    "required": "",
+			    "value": "0",
+			    "bind":"app.f1010.pullcredit",
+			    "checked" : "",
+			    "caption": {
+				"id":"pull-credit-id",
+				"text":"&nbsp;Pull Credit",
+				"for":"pull-credit"
+			    }
+			}
+		    ]
+		},
+	    }
+	],
+	[
+	    {
+		"checkboxes": {
+		    "width": "col-sm-12",
+		    "checkbox": [
+			{
+			    "id": "authorize",
+			    "width": "col-sm-12",
+			    "required": "1",
+			    "value": "1",
+			    "bind":"app.f1010.authorize",
+			    "checked" : "",
+			    "caption": {
+				"id":"authorize-id",
+				"text":"&nbsp;Get authorization from borrower to pull credit information",
+				"for":"authorize"
+			    }
+			}
+		    ]
+		}
+	    }
+	]
+    ]
+]
