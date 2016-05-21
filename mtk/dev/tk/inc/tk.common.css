@@ -1,7 +1,11 @@
+button, input, select, textarea {    
+    border-radius:0!important;
+}
+
 pre {
-  padding: 1em;
-  overflow: auto;
-  font-size: 12px;
-  line-height: 1.33333;
-  box-shadow: 0 0 0.5em #CCC;
+    font-size: 10px!important;
+    margin: 0!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow: 0!important;
 }
