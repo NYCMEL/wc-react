@@ -1,16 +1,16 @@
 #!/Melify/bin/mac/tclkit
 
-dict set pattern phone		{"###-###-####"	{\d{3}[\-]\d{3}[\-]\d{4}}}
-dict set pattern text		{""		{[a-zA-Z ]+}}
-dict set pattern alnum		{""		{[a-zA-Z][a-zA-Z0-9\s]*}}
-dict set pattern email		{""		{[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$}}
-dict set pattern city		{""		{[A-Za-z ]+}}
-dict set pattern state		{"##"		{[A-Za-z]{2}}}
-dict set pattern zipcode	{"#####-####"	{\d{5,5}(-\d{4,4})?}}
-dict set pattern ssn		{"###-##-####	"{^(\d{3}-|(\d{3})\s)\d{2}-\d{4}$}}
-dict set pattern amount		{""		{^[$\-\s]*[\d\,]*?([\.]\d{0,2})?\s*$}}
-dict set pattern number		{""		{\d*}}
-dict set pattern date		{"mm/dd/yyyy"	{\d{1,2}/\d{1,2}/\d{4}}}
+dict set pattern phone		{placeholder "###-###-####"	pattern {\d{3}[\-]\d{3}[\-]\d{4}}}
+dict set pattern text		{placeholder ""			pattern {[a-zA-Z ]+}}
+dict set pattern alnum		{placeholder ""			pattern {[a-zA-Z][a-zA-Z0-9\s]*}}
+dict set pattern email		{placeholder ""			pattern {[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$}}
+dict set pattern city		{placeholder ""			pattern {[A-Za-z ]+}}
+dict set pattern state		{placeholder "##"		pattern {[A-Za-z]{2}}}
+dict set pattern zipcode	{placeholder "#####-####"	pattern {\d{5,5}(-\d{4,4})?}}
+dict set pattern ssn		{placeholder "###-##-####	"pattern {^(\d{3}-|(\d{3})\s)\d{2}-\d{4}$}}
+dict set pattern amount		{placeholder ""			pattern {^[$\-\s]*[\d\,]*?([\.]\d{0,2})?\s*$}}
+dict set pattern number		{placeholder ""			pattern {\d*}}
+dict set pattern date		{placeholder "mm/dd/yyyy"	pattern {\d{1,2}/\d{1,2}/\d{4}}}
 
 puts [dict get $pattern phone]
 
