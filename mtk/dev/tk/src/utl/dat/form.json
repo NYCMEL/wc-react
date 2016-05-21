@@ -260,7 +260,7 @@
 			{
 			    "id": "v(authorize)",
 			    "width": "col-sm-12",
-			    "required": "1",
+			    "required": "required",
 			    "value": "1",
 			    "bind":"app.f1010.authorize",
 			    "checked" : "",
