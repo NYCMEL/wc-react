@@ -149,7 +149,7 @@ m::proc -public tk::form::init {
 
     javascript {
 	put [subst {
-	    tkForm.init({id:"$id", method:"$method", callback:"$callback", result:"result"});
+	    tkForm.init({id:"$id", url:"$url", method:"$method", callback:"$callback", result:"result"});
 	}]
     }
 }
