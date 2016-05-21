@@ -19,5 +19,10 @@
 .form-error {
   color: red!important;
   font-family: Oswald-light;
-  font-size:12px;
+}
+button,
+input,
+select,
+textarea {
+  border-radius: 0!important;
 }
