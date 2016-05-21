@@ -132,7 +132,6 @@ m::proc -public tk::form::init {
     {-custom	       ""}
     {-host             ""}
     -guts:required
-    -result:required
     args
 } {
     DOCUMENTATION GOES HERE...
@@ -152,9 +151,13 @@ m::proc -public tk::form::init {
 
     cgi_form $url $en method=$method name="$name" id=$id class="$class" [lstring $args] {
 	uplevel $guts
+
+	division id="$id-form-result" [style padding 5px border "1px orange dashed"] {
+	    p waiting...
+	}
     }
 
-    put "<script>tkForm.init({id:'$id', url:'$url', method:'$method', callback:'$callback', result:'result'})</script>"
+    put "<script>tkForm.init({id:'$id', url:'$url', method:'$method', callback:'$callback', result:'$id-form-result'})</script>"
 }
 
 ######################################################
@@ -166,17 +169,13 @@ m::proc -public tk::form::test {
 } {
     Trace
     
-    tk::form::init -name "aform" -validate 1 -method "GET" -callback "tk::form::test:cb" -result "result" -guts {
+    tk::form::init -name "aform" -validate 1 -method "GET" -callback "tk::form::test:cb" -guts {
 	foreach i {a b c d} {
 	    text v($i)=[lorem 10] class="form-control" required
 	}
 	
 	hr
 	put "<button type='submit' class='btn btn-primary'><i class='fa fa-smile-o'></i> PUSH IT</button>"
-    }
-    
-    division id="result" {
-	p waiting...
     }
 }
 
