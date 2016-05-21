@@ -179,7 +179,7 @@ m::proc -public tk::form::test {
 	}
 	
 	hr
-	put "<button type='submit' class='btn btn-primary'><i class='fa fa-smile-o'></i> PUSH IT</button>"
+	put "<button type='submit' class='btn btn-default'>PUSH IT <i class='fa fa-chevron-right'></i></button>"
     }
 }
 
