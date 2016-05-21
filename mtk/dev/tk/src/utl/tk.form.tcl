@@ -132,6 +132,7 @@ m::proc -public tk::form::init {
     {-custom	       ""}
     {-host             ""}
     -guts:required
+    -result:required
     args
 } {
     DOCUMENTATION GOES HERE...
