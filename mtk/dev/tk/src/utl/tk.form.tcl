@@ -280,16 +280,16 @@ m::proc -public tk::form::create {
 			    }
 			    
 			    if {[dict get $n pattern] == ""} {
-				set pattern ""
+				set ptrn ""
 			    } else {
-				set pattern "pattern=$pattern([dict get $n pattern])"
+				set ptrn "pattern=$pattern([dict get $n pattern])"
 			    }
 			    
 			    text [dict get $n id]=[dict get $n value] \
 				type="[dict get $n type]" \
 				$maxlength\
 				class="form-control [dict get $n required]" \
-				$pattern\
+				$ptrn\
 				placeholder="[dict get $n placeholder]" \
 				ng-model="[dict get $n bind]" \
 				"[dict get $n required]"
@@ -304,16 +304,16 @@ m::proc -public tk::form::create {
 			    }
 			    
 			    if {[dict get $n pattern] == ""} {
-				set pattern ""
+				set ptrn ""
 			    } else {
-				set pattern "pattern=$pattern([dict get $n pattern])"
+				set ptrn "pattern=$pattern([dict get $n pattern])"
 			    }
 			    
 			    textarea [dict get $n id]=[dict get $n value] \
 				type="[dict get $n type]" \
 				class="form-control [dict get $n required]" \
 				rows="[dict get $n rows]" \
-				$pattern\
+				$ptrn\
 				placeholder="[dict get $n placeholder]" \
 				ng-model="[dict get $n bind]" \
 				"[dict get $n required]"
