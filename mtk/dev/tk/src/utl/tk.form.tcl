@@ -147,11 +147,7 @@ m::proc -public tk::form::init {
 	uplevel $guts
     }
 
-    javascript {
-	put [subst {
-	    tkForm.init({id:"$id", url:"$url", method:"$method", callback:"$callback", result:"result"});
-	}]
-    }
+    put "<script>tkForm.init({id:'$id', url:'$url', method:'$method', callback:'$callback', result:'result'})</script>"
 }
 
 ######################################################
@@ -168,6 +164,7 @@ m::proc -public tk::form::test {
 	    text v($i)=[lorem 10] class="form-control" required
 	}
 	
+	hr
 	put "<button type='submit' class='btn btn-primary'><i class='fa fa-smile-o'></i> PUSH IT</button>"
     }
     
