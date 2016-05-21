@@ -136,6 +136,9 @@ m::proc -public tk::form::init {
 } {
     Trace
     
+    set id [expr {($id == "") ? "$name" : "$id"}]
+    set en [expr {($enctype == "") ? "" : "enctype=$enctype"}]
+
     cgi_form [expr {($url == {}) ? "[URL]" : $url}] $en method=$method name="$name" id=$id class="$class" [lstring $args] {
 	uplevel $guts
     }
