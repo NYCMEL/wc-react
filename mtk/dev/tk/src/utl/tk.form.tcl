@@ -20,7 +20,7 @@
 namespace eval tk {
     namespace eval form {
 	array set pattern {
-	    text	{[A-Za-z0-9 ]}
+	    text	{[a-zA-Z0-9 ]+}
 	    phone	{^(?d{3})?[- ]?d{3}[- ]?d{4}$}
 	    email	{[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$}
 	    city	{[A-Za-z ]+}
@@ -35,7 +35,6 @@ namespace eval tk {
 
 include "/tk/inc/form.css"
 include "/tk/src/utl/inc/tk.form.js"
-include "/tk/jquery/scripts/jquery.validate.js"
 
 ######################################################
 ##### 
@@ -135,7 +134,6 @@ m::proc -public tk::form::init {
     {-method       "POST"}
     {-enctype          {}}
     {-class            {}}
-    {-validate          1}
     {-custom	       ""}
     {-host             ""}
     -guts:required
@@ -157,28 +155,14 @@ m::proc -public tk::form::init {
 	}
     }
 
-    if {$validate == 1} {
-	set validateit [subst {
-	    jQuery("#$id").validate({
-		debug: true,
-		errorClass: "form-error"
-	    });
-	}]
-    } else {
-	set validateit ""
-    }
-
     javascript {
 	put [subst {
-	    $validateit
-
 	    tkForm.init({
 		id:"$id",
 		url:"$url",
 		method:"$method",
 		callback:"$callback",
-		result:"$id-form-result",
-		validate:"$validate"
+		result:"$id-form-result"
 	    })
 	}]
     }
@@ -194,7 +178,9 @@ m::proc -public tk::form::test {
     Trace
     variable pattern
     
-    tk::form::init -name "aform" -validate 1 -method "GET" -callback "tk::form::test:cb" -guts {
+    h1 >>>$pattern(text)<<<
+
+    tk::form::init -name "aform" -method "GET" -callback "tk::form::test:cb" -guts {
 	foreach i {a b c d} {
 	    text v($i)=[lorem 10] class="form-control" required pattern="$pattern(text)"
 	}
