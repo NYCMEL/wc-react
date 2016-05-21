@@ -17,7 +17,9 @@
 #
 ###HEADE###################################################################
 
-namespace eval tk {}
+namespace eval tk {
+    namespace eval form {}
+}
 
 ######################################################
 ##### 
@@ -110,5 +112,31 @@ m::proc -public tk::form {
 		});
 	    }]
 	}
+    }
+}
+
+######################################################
+##### 
+######################################################
+m::proc -public tk::form::init {
+    -name:required
+    {-id               {}}
+    {-url              {}}
+    {-callback         {}}
+    {-method       "POST"}
+    {-enctype          {}}
+    {-class            {}}
+    {-validate          1}
+    {-custom	       ""}
+    {-host             ""}
+    -guts:required
+    args
+} {
+    DOCUMENTATION GOES HERE...
+} {
+    Trace
+    
+    cgi_form [expr {($url == {}) ? "[URL]" : $url}] $en method=$method name="$name" id=$id class="$class" [lstring $args] {
+	uplevel $guts
     }
 }
