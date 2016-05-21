@@ -194,9 +194,10 @@ m::proc -public tk::form::test {
 		}
 	    }
 	}
-
 	hr
-	put "<button type='submit' class='btn btn-default'>PUSH IT <i class='fa fa-chevron-right'></i></button>"
+	division class="clearfix" {
+	    put "<button type='submit' class='btn btn-default'>PUSH IT <i class='fa fa-chevron-right'></i></button>"
+	}
     }
 }
 
