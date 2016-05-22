@@ -155,7 +155,7 @@ m::proc -public tk::form::init {
     cgi_form $url $en method=$method name="$name" id=$id class="$class" [lstring $args] {
 	uplevel $guts
 
-	division id="$id-form-result" [style margin-top 20px padding 5px border "1px orange dashed" font-family oswald-light] {
+ 	division id="$id-form-result" [style margin-top 20px padding 5px border "1px orange dashed" font-family oswald-light] {
 	    put "Nothing submitted yet! ..."
 	}
     }
@@ -489,6 +489,22 @@ m::proc -public tk::form::upload {
 	export callback=$callback
 	
 	uplevel $guts
+
+ 	division id="$id-form-result" [style margin-top 20px padding 5px border "1px orange dashed" font-family oswald-light] {
+	    put "Nothing submitted yet! ..."
+	}
+    }
+
+    javascript {
+	put [subst {
+	    tkForm.init({
+		id:"$id",
+		url:"[URL]",
+		method:"POST",
+		callback:"$callback",
+		result:"$id-form-result"
+	    })
+	}]
     }
 }
 
