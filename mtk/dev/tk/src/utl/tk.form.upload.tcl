@@ -71,9 +71,16 @@ m::proc -public tk::form::upload::test {
     Trace
     
     tk::form::upload::init -name "test" -callback tk::form::upload::cb -guts {
-	file_button file class="btn btn-default"
-	br
-	put "<button type='submit' id='upload-file' class='btn btn-default'><i class='fa fa-cloud-upload'></i> Upload File</button>"
+	division class="clearfix" {
+	    division class="pull-left" {
+		file_button file class="btn btn-default" [style width 90%]
+	    }
+	    division class="pull-right" {
+		division [style margin-top -35px] {
+		    put "<button type='submit' id='upload-file' class='btn btn-default'><i class='fa fa-cloud-upload'></i></button>"
+		}
+	    }
+	}
     }
 
     javascript {
