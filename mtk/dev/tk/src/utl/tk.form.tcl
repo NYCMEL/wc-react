@@ -230,7 +230,7 @@ m::proc -public tk::form::test {
 		    }
 		    division {
 			division class="well" {
-			    tk::form::file
+			    tk::form::file:test
 			}
 		    }
 		}
@@ -464,6 +464,10 @@ m::proc -public tk::form::create {
 #####
 ######################################################
 m::proc -public tk::form::file {
+    -name:required
+    {-id         {}}
+    {-callback   {}}
+    -guts:required
 } {
     Documentation goes here...
 } {
@@ -474,7 +478,44 @@ m::proc -public tk::form::file {
     include "/GitHub/jasny/dist/css/jasny-bootstrap.min.css"
     include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
     
-    tk::form::upload::init -name "test" -callback tk::form::upload::cb -guts {
+    cgi_form "[URL]" enctype=multipart/form-data method="POST" name="$name" id="$id" autocomplete="off" {
+	export ajax=1
+	export callback=$callback
+
+	uplevel $guts
+    }
+}
+
+######################################################
+##### 
+######################################################
+m::proc -public tk::form::cb {
+} {
+    Documentation goes here...
+} {    
+    Trace
+
+    set cgi  [lindex $::file 0]
+    set name [file tail [lindex $::file 1]]
+
+    regsub -all {\[} $name "" name
+    regsub -all {\]} $name "" name
+
+    division class="alert alert-info" {
+	h1 ==$::file==
+	h1 "$name <small>- [commify [file size $cgi]](b)</small>"
+    }
+}
+
+######################################################
+#####
+######################################################
+m::proc -public tk::form::file:test {
+} {
+    Documentation goes here...
+} {
+    tk::form::file -name "myupload" -id "myupload" -callback "tk::form::cb" -guts {
 	include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
     }
 }
+
