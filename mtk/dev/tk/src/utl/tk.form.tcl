@@ -230,7 +230,7 @@ m::proc -public tk::form::test {
 		    }
 		    division {
 			division class="well" {
-			    tk::form::file:test
+			    tk::form::upload:test
 			}
 		    }
 		}
@@ -463,7 +463,7 @@ m::proc -public tk::form::create {
 ######################################################
 #####
 ######################################################
-m::proc -public tk::form::file {
+m::proc -public tk::form::upload {
     -name:required
     {-id         {}}
     {-callback   {}}
@@ -489,7 +489,7 @@ m::proc -public tk::form::file {
 ######################################################
 ##### 
 ######################################################
-m::proc -public tk::form::file:cb {
+m::proc -public tk::form::upload:cb {
 } {
     Documentation goes here...
 } {    
@@ -510,11 +510,11 @@ m::proc -public tk::form::file:cb {
 ######################################################
 #####
 ######################################################
-m::proc -public tk::form::file:test {
+m::proc -public tk::form::upload:test {
 } {
     Documentation goes here...
 } {
-    tk::form::file -name "myupload" -callback "tk::form::file:cb" -guts {
+    tk::form::upload -name "myupload" -callback "tk::form::upload:cb" -guts {
 	include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
     }
 }
