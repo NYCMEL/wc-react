@@ -3,7 +3,7 @@
 	[
 	    {
 		"html": "<div><h4>[string toupper [lorem 5]]<small>- [lorem 5]</small></h4>
-			<p>[lorem -language chinese 30]</p></div><HR>",
+			<p>[lorem -language chinese 20]</p></div><HR>",
 	    },
 	    {
 		"width":"col-sm-6",
