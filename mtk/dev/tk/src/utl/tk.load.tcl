@@ -37,6 +37,18 @@ m::proc -public tk::load::init {
 ######################################################
 ##### 
 ######################################################
+m::proc -public tk::load::narrative {
+} {
+    Documentation goes here...
+} {    
+    Trace
+    
+    return "HELLO"
+}
+
+######################################################
+##### 
+######################################################
 m::proc -public tk::load::init {
 } {
     Documentation goes here...
