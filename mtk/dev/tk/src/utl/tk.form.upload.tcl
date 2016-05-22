@@ -73,7 +73,25 @@ m::proc -public tk::form::upload::test {
     tk::form::upload::init -name "test" -callback tk::form::upload::cb -guts {
 	file_button file class="btn btn-default"
 	br
-	put "<button type='submit' class='btn btn-default'><i class='fa fa-cloud-upload'></i> Upload File</button>"
+	put "<button type='submit' id='upload-file' class='btn btn-default'><i class='fa fa-cloud-upload'></i> Upload File</button>"
+    }
+
+    javascript {
+	put {
+	    jQuery(document).ready(function() {
+		$("input[type=file]").addClass("form-control")
+
+		if ($("input[type=file]").val() == "") {
+		    $("#upload-file").attr("disabled","disabled");
+		}
+
+		$("input[type=file]").on("change", function() {
+		    if ($("input[type=file]").val() != "") {
+			$("#upload-file").removeAttr("disabled");
+		    }
+		});
+	    });
+	}
     }
 }
 
