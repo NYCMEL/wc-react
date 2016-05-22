@@ -227,7 +227,7 @@ m::proc -public tk::form::test {
 		    }
 		    division {
 			division class="well" {
-			    tk::form::upload::test
+			    tk::form::file
 			}
 		    }
 		}
