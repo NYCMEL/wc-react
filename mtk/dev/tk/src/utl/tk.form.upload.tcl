@@ -70,35 +70,11 @@ m::proc -public tk::form::upload::test {
 } {
     Trace
     
+    include "/GitHub/jasny/dist/css/jasny-bootstrap.min.css"
+    include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
+
     tk::form::upload::init -name "test" -callback tk::form::upload::cb -guts {
-	division class="clearfix" {
-	    division class="pull-left" {
-		file_button file class="btn btn-default" [style width 90%]
-	    }
-	    division class="pull-right" {
-		division [style margin-top -34px] {
-		    put "<button type='submit' id='upload-file' class='btn btn-default'><i class='fa fa-cloud-upload fa-lg'></i></button>"
-		}
-	    }
-	}
-    }
-
-    javascript {
-	put {
-	    jQuery(document).ready(function() {
-		$("input[type=file]").addClass("form-control")
-
-		if ($("input[type=file]").val() == "") {
-		    $("#upload-file").attr("disabled","disabled");
-		}
-
-		$("input[type=file]").on("change", function() {
-		    if ($("input[type=file]").val() != "") {
-			$("#upload-file").removeAttr("disabled");
-		    }
-		});
-	    });
-	}
+	include "/Melify/mtk/dev/app/test/doc/upload.html"
     }
 }
 
