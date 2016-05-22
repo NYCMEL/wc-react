@@ -267,7 +267,7 @@
 			    "checked" : "",
 			    "caption": {
 				"id":"v(authorize-id)",
-				"text":"&nbsp;Get authorization from borrower to pull credit information",
+				"text":"&nbsp;Get authorization",
 				"for":"authorize"
 			    }
 			}
