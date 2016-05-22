@@ -1,5 +1,9 @@
-button, input, select, textarea {    
+button, input, select, textarea {
     border-radius:2px!important;
+}
+
+label {
+    font-weight: 400!important;
 }
 
 pre {

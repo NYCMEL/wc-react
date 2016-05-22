@@ -180,8 +180,6 @@ m::proc -public tk::form::test {
     Trace
     variable pattern
     
-    variable pattern
-
     br
     division class="container" {
 	division class="row" {
