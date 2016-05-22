@@ -1,28 +1,35 @@
-button, input, select, textarea {
-    border-radius:2px!important;
+button,
+input,
+select,
+textarea {
+  border-radius: 2px!important;
 }
-
 label {
-    font-weight: 400!important;
+  font-weight: 400!important;
 }
-
 pre {
-    font-size: 10px!important;
-    margin: 0!important;
-    border:0!important;
-    border-radius:0!important;
-    box-shadow: 0!important;
+  font-size: 10px!important;
+  margin: 0!important;
+  border: 0!important;
+  border-radius: 0!important;
+  box-shadow: 0!important;
 }
-
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
   color: #cecece!important;
 }
-::-moz-placeholder { /* Firefox 19+ */
+::-moz-placeholder {
+  /* Firefox 19+ */
   color: #cecece!important;
 }
-:-ms-input-placeholder { /* IE 10+ */
+:-ms-input-placeholder {
+  /* IE 10+ */
   color: #cecece!important;
 }
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
+  /* Firefox 18- */
   color: #cecece!important;
+}
+.btn-wide {
+  min-width: 120px;
 }

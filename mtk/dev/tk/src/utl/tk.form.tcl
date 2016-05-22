@@ -211,7 +211,10 @@ m::proc -public tk::form::test {
 		division class="well" {
 		    tk::form::init -name "bform" -method "GET" -callback "tk::form::test:cb" -guts {
 			tk::form::create
-			put "<button type='submit' class='btn btn-primary'><i class='fa fa-smile-o'></i> PUSH IT</button>"
+			hr
+			division [style margin-left 20px] {
+			    put "<button type='submit' class='btn btn-info btn-wide'><i class='fa fa-smile-o fa-lg'></i> PUSH IT NOW</button>"
+			}
 		    }
 		}
 	    }
