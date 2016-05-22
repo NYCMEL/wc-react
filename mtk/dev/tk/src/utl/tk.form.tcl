@@ -466,6 +466,8 @@ m::proc -public tk::form::file {
 } {
     Trace
 
+    #git clone https://github.com/jasny/bootstrap.git jasny
+
     include "/GitHub/jasny/dist/css/jasny-bootstrap.min.css"
     include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
     
