@@ -65,6 +65,28 @@
 		    "placeholder": "mm/dd/yyyy",
 		    "bind":"app.f1010.dob"
 		}
+	    },
+	    {
+		"width":"col-sm-6",
+		"label": {
+		    "id":"v(country-label)",
+		    "text":"Pick a Country",
+		    "width": "col-sm-4",
+		    "for":"country"
+		},
+		"select": {
+		    "id": "country",
+		    "width": "col-sm-9",
+		    "size": 1,
+		    "required": "required",
+		    "bind":"app.country",
+		    "options": [
+			"", "",
+			1, "USA",
+			2, "England"
+		    ],
+		    "selected" : ""
+		}
 	    }
 	],
 	[
