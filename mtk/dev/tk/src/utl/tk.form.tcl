@@ -204,7 +204,7 @@ m::proc -public tk::form::test {
     br
     division class="container" {
 	division class="row" {
-	    division class="col-md-4" {
+	    division class="col-md-6" {
 		division {
 		    division class="well" {
 			tk::form::init -name "aform" -method "GET" -callback "tk::form::test:cb" -guts {
@@ -235,7 +235,7 @@ m::proc -public tk::form::test {
 		    }
 		}
 	    }
-	    division class="col-md-8" {
+	    division class="col-md-6" {
 		division class="well" {
 		    tk::form::init -name "bform" -method "GET" -callback "tk::form::test:cb" -guts {
 			tk::form::create

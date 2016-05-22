@@ -217,7 +217,7 @@
 		"width":"col-sm-4",
 		"label": {
 		    "id":"v(ssn-label)",
-		    "text":"Social Security Number",
+		    "text":"SSN",
 		    "width": "col-sm-4",
 		    "for":"ssn"
 		},
