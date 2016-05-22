@@ -470,6 +470,6 @@ m::proc -public tk::form::file {
     include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
     
     tk::form::upload::init -name "test" -callback tk::form::upload::cb -guts {
-	include "/Melify/mtk/dev/app/test/doc/upload.html"
+	include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
     }
 }
