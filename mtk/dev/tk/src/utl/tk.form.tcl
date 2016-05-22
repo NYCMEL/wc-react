@@ -456,3 +456,20 @@ m::proc -public tk::form::create {
 	}
     }
 }
+
+######################################################
+#####
+######################################################
+m::proc -public tk::form::file {
+} {
+    Documentation goes here...
+} {
+    Trace
+
+    include "/GitHub/jasny/dist/css/jasny-bootstrap.min.css"
+    include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
+    
+    tk::form::upload::init -name "test" -callback tk::form::upload::cb -guts {
+	include "/Melify/mtk/dev/app/test/doc/upload.html"
+    }
+}
