@@ -182,10 +182,15 @@ m::proc -public tk::form::test {
     
     put {
 	<style>
+	hr {
+	    border-top: 1px #5BC0DE dashed;
+	}
+
 	h4 {
 	    font-family: Oswald!important;
 	    color:#00838F;
 	}
+
 	h4 small {
 	    font-family: Oswald-light!important;
 	    color:#00838F;
