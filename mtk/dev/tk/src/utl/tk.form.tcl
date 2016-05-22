@@ -183,7 +183,7 @@ m::proc -public tk::form::test {
     put {
 	<style>
 	hr {
-	    border-top: 1px #5BC0DE dashed;
+	    border-top: 1px #cecece solid;
 	}
 
 	h4 {
