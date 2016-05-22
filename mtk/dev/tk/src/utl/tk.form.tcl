@@ -38,6 +38,9 @@ namespace eval tk {
 include "/tk/src/utl/inc/tk.form.css"
 include "/tk/src/utl/inc/tk.form.js"
 
+include "/GitHub/bootstrap-select/dist/css/bootstrap-select.min.css"
+include "/GitHub/bootstrap-select/dist/js/bootstrap-select.min.js"
+
 ######################################################
 ##### 
 ######################################################
@@ -380,7 +383,7 @@ m::proc -public tk::form::create {
 				set size ""
 			    }
 			    
-			    select [dict get $n id] $size class="form-control" ng-model="[dict get $n bind]" {
+			    select [dict get $n id] $size class="selectpicker show-menu-arrow form-control" ng-model="[dict get $n bind]" {
 				foreach {i j} [dict get $n options] {
 				    if {[dict get $n selected] == $i} {
 					set state "selected"
