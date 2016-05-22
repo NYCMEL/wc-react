@@ -383,9 +383,15 @@ m::proc -public tk::form::create {
 				set size ""
 			    }
 			    
+			    if {[dict exists $n selected] == 1} {
+				set selected [dict exists $n selected]
+			    } else {
+				set selected ""
+			    }
+
 			    select [dict get $n id] $size class="selectpicker show-menu-arrow form-control" ng-model="[dict get $n bind]" {
 				foreach {i j} [dict get $n options] {
-				    if {[dict get $n selected] == $i} {
+				    if {$selected == $i} {
 					set state "selected"
 				    } else {
 					set state ""
