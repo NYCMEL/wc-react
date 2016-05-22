@@ -51,12 +51,12 @@ m::proc -public tk::form::upload::cb {
 
     set cgi  [lindex $::file 0]
     set name [file tail [lindex $::file 1]]
+
     regsub -all {\[} $name "" name
     regsub -all {\]} $name "" name
 
-    set r [file:read $cgi]
-
     division class="alert alert-info" {
+	h1 ==$::file==
 	h1 "$name <small>- [commify [file size $cgi]](b)</small>"
     }
 }
@@ -71,9 +71,19 @@ m::proc -public tk::form::upload::test {
     Trace
     
     tk::form::upload::init -name "test" -callback tk::form::upload::cb -guts {
-	file_button file class="btn btn-default"
-	br
-	submit_button action=[list Upload this file] class="btn btn-default"
+	if {1} {
+	    file_button file class="btn btn-default custom-file-upload"
+	    br
+	    submit_button action=[list Upload this file] class="btn btn-default"
+	} else {
+	    put {
+		<label for="file-upload" class="custom-file-upload">
+		<i class="fa fa-cloud-upload"></i> Upload File
+		</label>
+
+		<input id="file-upload" type="file" />
+	    }
+	}
     }
 }
 
