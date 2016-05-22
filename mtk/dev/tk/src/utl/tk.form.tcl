@@ -481,7 +481,7 @@ m::proc -public tk::form::file {
     cgi_form "[URL]" enctype=multipart/form-data method="POST" name="$name" id="$id" autocomplete="off" {
 	export ajax=1
 	export callback=$callback
-
+	
 	uplevel $guts
     }
 }
@@ -489,7 +489,7 @@ m::proc -public tk::form::file {
 ######################################################
 ##### 
 ######################################################
-m::proc -public tk::form::cb {
+m::proc -public tk::form::file:cb {
 } {
     Documentation goes here...
 } {    
@@ -514,7 +514,7 @@ m::proc -public tk::form::file:test {
 } {
     Documentation goes here...
 } {
-    tk::form::file -name "myupload" -id "myupload" -callback "tk::form::cb" -guts {
+    tk::form::file -name "myupload" -id "myupload" -callback "tk::form::file:cb" -guts {
 	include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
     }
 }
