@@ -155,8 +155,8 @@ m::proc -public tk::form::init {
     cgi_form $url $en method=$method name="$name" id=$id class="$class" [lstring $args] {
 	uplevel $guts
 
-	division id="$id-form-result" [style margin-top 20px padding 5px border "1px orange dashed"] {
-	    put waiting...
+	division id="$id-form-result" [style margin-top 20px padding 5px border "1px orange dashed" font-family oswald-light] {
+	    put "Nothing submitted yet! ..."
 	}
     }
 
