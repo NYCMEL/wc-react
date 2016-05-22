@@ -180,6 +180,18 @@ m::proc -public tk::form::test {
     Trace
     variable pattern
     
+    put {
+	<style>
+	h4 {
+	    font-family: Oswald!important;
+	    color:indianred;
+	}
+	h4 small {
+	    font-family: Oswald-light!important;
+	}
+	</style>
+    }
+
     br
     division class="container" {
 	division class="row" {

@@ -2,7 +2,9 @@
     [
 	[
 	    {
-		"html": "<div class=branded><h4>We use the following information to determine <small>(need some real text here)</small></h4><p>[lorem 30]</div>",
+		"html": "<div class=branded><h4>We use the following information to determine 
+			<small>more text here goes here</small></h4>
+			<p>[lorem -language chinese 30]</p></div>",
 	    },
 	    {
 		"width":"col-sm-6",
