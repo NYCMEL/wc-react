@@ -184,7 +184,7 @@ m::proc -public tk::form::test {
 	<style>
 	h4 {
 	    font-family: Oswald!important;
-	    color:indianred;
+	    color:#00838F;
 	}
 	h4 small {
 	    font-family: Oswald-light!important;
