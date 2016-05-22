@@ -486,6 +486,7 @@ m::proc -public tk::form::upload {
     
     cgi_form "[URL]" enctype=multipart/form-data method="POST" name="$name" id="$id" autocomplete="off" {
 	export ajax=1
+	export callback=$callback
 	
 	uplevel $guts
 
@@ -494,16 +495,18 @@ m::proc -public tk::form::upload {
 	}
     }
 
-    javascript {
-	put [subst {
-	    tkForm.init({
-		id:"$id",
-		url:"[URL]",
-		method:"POST",
-		callback:"$callback",
-		result:"$id-form-result"
-	    })
-	}]
+    if {0} {
+	javascript {
+	    put [subst {
+		tkForm.init({
+		    id:"$id",
+		    url:"[URL]",
+		    method:"POST",
+		    callback:"",
+		    result:"$id-form-result"
+		})
+	    }]
+	}
     }
 }
 
@@ -515,6 +518,8 @@ m::proc -public tk::form::upload:cb {
     Documentation goes here...
 } {    
     Trace
+
+    h1 ===$::file===
 
     set cgi  [lindex $::file 0]
     set name [file tail [lindex $::file 1]]
