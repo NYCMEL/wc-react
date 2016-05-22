@@ -59,14 +59,6 @@ m::proc -public tk::form::upload::cb {
     division class="alert alert-info" {
 	p [style padding 20px border "1px brown solid" border-radius 5px] $r
     }
-
-    # javascript {
-    # 	put {
-    # 	    setTimeout(function(){
-    # 		document.location.href="/mtk/render?page=alan"
-    # 	    }, 8000);
-    # 	}
-    # }
 }
 
 ######################################################
