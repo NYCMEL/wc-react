@@ -71,7 +71,7 @@ m::proc -public tk::form::upload::test {
     Trace
     
     tk::form::upload::init -name "test" -callback tk::form::upload::cb -guts {
-	if {1} {
+	if {0} {
 	    file_button file class="btn btn-default custom-file-upload"
 	    br
 	    submit_button action=[list Upload this file] class="btn btn-default"
@@ -83,6 +83,26 @@ m::proc -public tk::form::upload::test {
 
 		<input id="file-upload" type="file" />
 	    }
+	}
+    }
+
+    javascript {
+	put {
+	    $(document).ready(function() {
+		$('input[type=file]').each(function(){
+		    $(this).addClass('file').addClass('hidden');
+		    $(this).parent().append($('<div class="fakefile" />').append
+					    ($('<input type="text" class="form-control"/>')
+					     .attr('id',$(this).attr('id')+'__fake')).append($('<img src="pix/button_select.gif" alt="" />')));
+		    
+		    $(this).bind('change', function() {
+			$('#'+$(this).attr('id')+'__fake').val($(this).val());;
+		    });
+		    $(this).bind('mouseout', function() {
+			$('#'+$(this).attr('id')+'__fake').val($(this).val());;
+		    });
+		});
+	    });
 	}
     }
 }
