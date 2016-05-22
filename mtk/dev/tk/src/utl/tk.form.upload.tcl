@@ -57,7 +57,7 @@ m::proc -public tk::form::upload::cb {
     set r [file:read $cgi]
 
     division class="alert alert-info" {
-	p [style padding 20px border "1px brown solid" border-radius 5px] $r
+	h1 "$name <small>- [commify [file size $cgi]](b)</small>"
     }
 }
 

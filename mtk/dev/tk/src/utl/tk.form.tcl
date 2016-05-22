@@ -202,25 +202,32 @@ m::proc -public tk::form::test {
     division class="container" {
 	division class="row" {
 	    division class="col-md-4" {
-		division class="well" {
-		    tk::form::init -name "aform" -method "GET" -callback "tk::form::test:cb" -guts {
-			if {0} {
-			    foreach i {A B C D} {
-				text v($i)=$i>[lorem 10] class="form-control" required
-			    }
-			}
-			
-			division class="clearfix" {
-			    foreach i [array names pattern] {
-				division class="col-md-6" {
-				    label [string totitle $i]
-				    text v($i)= class="form-control" required pattern="$pattern($i)"
+		division {
+		    division class="well" {
+			tk::form::init -name "aform" -method "GET" -callback "tk::form::test:cb" -guts {
+			    if {0} {
+				foreach i {A B C D} {
+				    text v($i)=$i>[lorem 10] class="form-control" required
 				}
 			    }
+			    
+			    division class="clearfix" {
+				foreach i [array names pattern] {
+				    division class="col-md-6" {
+					label [string totitle $i]
+					text v($i)= class="form-control" required pattern="$pattern($i)"
+				    }
+				}
+			    }
+			    hr
+			    division class="clearfix" {
+				put "<button type='submit' class='btn btn-default'>PUSH IT <i class='fa fa-chevron-right'></i></button>"
+			    }
 			}
-			hr
-			division class="clearfix" {
-			    put "<button type='submit' class='btn btn-default'>PUSH IT <i class='fa fa-chevron-right'></i></button>"
+		    }
+		    division {
+			division class="well" {
+			    tk::form::upload::test
 			}
 		    }
 		}
