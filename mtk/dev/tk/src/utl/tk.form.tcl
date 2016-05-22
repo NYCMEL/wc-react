@@ -195,7 +195,7 @@ m::proc -public tk::form::test {
 			division class="clearfix" {
 			    foreach i [array names pattern] {
 				division class="col-md-6" {
-				    put $i
+				    label $i
 				    text v($i)= class="form-control" required pattern="$pattern($i)"
 				}
 			    }
