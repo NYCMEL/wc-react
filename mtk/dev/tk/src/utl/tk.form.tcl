@@ -473,7 +473,7 @@ m::proc -public tk::form::file {
 } {
     Trace
 
-    #git clone https://github.com/jasny/bootstrap.git jasny
+    set id [expr {($id == "") ? "$name" : "$id"}]
 
     include "/GitHub/jasny/dist/css/jasny-bootstrap.min.css"
     include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
@@ -514,7 +514,7 @@ m::proc -public tk::form::file:test {
 } {
     Documentation goes here...
 } {
-    tk::form::file -name "myupload" -id "myupload" -callback "tk::form::file:cb" -guts {
+    tk::form::file -name "myupload" -callback "tk::form::file:cb" -guts {
 	include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
     }
 }
