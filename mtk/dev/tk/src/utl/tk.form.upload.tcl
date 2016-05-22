@@ -76,8 +76,8 @@ m::proc -public tk::form::upload::test {
 		file_button file class="btn btn-default" [style width 90%]
 	    }
 	    division class="pull-right" {
-		division [style margin-top -35px] {
-		    put "<button type='submit' id='upload-file' class='btn btn-default'><i class='fa fa-cloud-upload'></i></button>"
+		division [style margin-top -34px] {
+		    put "<button type='submit' id='upload-file' class='btn btn-default'><i class='fa fa-cloud-upload fa-lg'></i></button>"
 		}
 	    }
 	}
