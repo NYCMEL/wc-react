@@ -486,7 +486,6 @@ m::proc -public tk::form::upload {
     
     cgi_form "[URL]" enctype=multipart/form-data method="POST" name="$name" id="$id" autocomplete="off" {
 	export ajax=1
-	export callback=$callback
 	
 	uplevel $guts
 
