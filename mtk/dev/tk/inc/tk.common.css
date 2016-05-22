@@ -4,6 +4,9 @@ select,
 textarea {
   border-radius: 2px!important;
 }
+.btn-wide {
+  min-width: 120px;
+}
 label {
   font-weight: 400!important;
 }
@@ -14,6 +17,7 @@ pre {
   border-radius: 0!important;
   box-shadow: 0!important;
 }
+/* INPUT TEXT PLACEHOLDER */
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #cecece!important;
@@ -29,7 +33,4 @@ pre {
 :-moz-placeholder {
   /* Firefox 18- */
   color: #cecece!important;
-}
-.btn-wide {
-  min-width: 120px;
 }
