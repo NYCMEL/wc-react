@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2016-05-22 13:00:33 (melify)>
+//// Time-stamp: <2016-05-23 18:25:11 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 var tkForm = {};
 
@@ -23,6 +23,8 @@ tkForm.init = function(options) {
 /////////////////////////////////////////////////////////////////////////////
 tkForm.process = function(options) {
     console.group("tkForm.process: ", JSON.stringify(options));
+
+    alert("callback=" + options.cb + "&ajax=1&" + $("#" + options.id).serialize())
 
     $.ajax({
 	type: options.method,

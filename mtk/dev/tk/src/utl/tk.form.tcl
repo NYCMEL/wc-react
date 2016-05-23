@@ -37,6 +37,7 @@ namespace eval tk {
 
 include "/tk/src/utl/inc/tk.form.css"
 include "/tk/src/utl/inc/tk.form.js"
+include "/tk/jquery/scripts/jquery.validate.js"
 
 #include "/GitHub/bootstrap-select/dist/css/bootstrap-select.min.css"
 #include "/GitHub/bootstrap-select/dist/js/bootstrap-select.min.js"
@@ -62,6 +63,8 @@ m::proc -public tk::form {
 } {
     Trace
     
+
+
     # -custom {
     # 	jQuery(".paswd").rules("add", { 
     # 	    required:true,  
