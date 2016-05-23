@@ -38,8 +38,8 @@ namespace eval tk {
 include "/tk/src/utl/inc/tk.form.css"
 include "/tk/src/utl/inc/tk.form.js"
 
-include "/GitHub/bootstrap-select/dist/css/bootstrap-select.min.css"
-include "/GitHub/bootstrap-select/dist/js/bootstrap-select.min.js"
+#include "/GitHub/bootstrap-select/dist/css/bootstrap-select.min.css"
+#include "/GitHub/bootstrap-select/dist/js/bootstrap-select.min.js"
 
 ######################################################
 ##### 
