@@ -79,6 +79,18 @@ m::proc -public secret::init {
     Trace
     variable _id [[namespace current]::id]
     
+    # SKIP FOR LOCAL
+    if {$::env(REMOTE_ADDR) == "127.0.0.1"} {
+	javascript {
+	    put {
+		$.cookie("secret",1);
+		document.location.reload();
+	    }
+	}
+
+	return
+    }
+
     put {
 	<style>
 	body {
