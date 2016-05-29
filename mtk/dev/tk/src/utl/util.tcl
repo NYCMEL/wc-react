@@ -401,7 +401,7 @@ m::proc -public tk::prettify {
     
     if {0} {
 	put {
-	    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=tcl"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
 	}
     } else {
 	include "/tk/inc/tk.prettify.css"
