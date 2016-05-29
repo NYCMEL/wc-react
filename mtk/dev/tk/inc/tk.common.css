@@ -34,3 +34,10 @@ pre {
   /* Firefox 18- */
   color: #cecece!important;
 }
+.panel {
+  border-radius: 2px!important;
+}
+.panel .panel-heading {
+  border-radius: 2px!important;
+  border: 1px transparent solid!important;
+}
