@@ -348,8 +348,10 @@ m::proc -public tk::fonts {
 	set ::str [lorem 5]
     }
 
+    set fdir "/GitHub/fonts/ofl"
+
     table {
-	foreach i [glob -nocomplain "/GitHub/googlefontdirectory/fonts/*"] {
+	foreach i [glob -nocomplain "[file join $fdir *]"] {
 	    if {[file isdirectory $i] == 1} {
 		set t [file tail [file rootname $i]]
 		
@@ -360,7 +362,7 @@ m::proc -public tk::fonts {
 			set str [subst {
 			    @font-face {
 				font-family: "$n";
-				src: url("/GitHub/googlefontdirectory/fonts/$t/[file tail $j]") format("truetype");
+				src: url("$fdir/$t/[file tail $j]") format("truetype");
 			    }
 			}]
 
