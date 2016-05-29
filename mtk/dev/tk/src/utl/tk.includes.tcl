@@ -21,9 +21,7 @@ namespace eval tk {
     namespace eval include {}
 }
 
-if {[info exist require] == 0} {
-    set require ""
-}
+if {[info exist require] == 0} {set require ""}
 
 switch $require {
     "include" {
