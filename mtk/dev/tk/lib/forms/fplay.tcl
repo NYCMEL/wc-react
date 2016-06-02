@@ -32,7 +32,9 @@ include "/GitHub/CodeMirror/mode/javascript/javascript.js"
 
 include "/GitHub/js-beautify/js/lib/beautify-html.js"
 
-put {<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>}
+put {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
+}
 
 include "/tk/lib/forms/inc/fplay.css"
 include "/tk/lib/forms/inc/fplay.js"

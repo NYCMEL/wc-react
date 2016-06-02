@@ -1,4 +1,3 @@
-
 ###HEADS###################################################################
 #
 #  Melify Internet Toolkit (MTK) - Copyright (C) 2015  Melify LLC.
@@ -349,8 +348,10 @@ m::proc -public tk::fonts {
 	set ::str [lorem 5]
     }
 
+    set fdir "/GitHub/fonts/ofl"
+
     table {
-	foreach i [glob -nocomplain "/GitHub/googlefontdirectory/fonts/*"] {
+	foreach i [glob -nocomplain "[file join $fdir *]"] {
 	    if {[file isdirectory $i] == 1} {
 		set t [file tail [file rootname $i]]
 		
@@ -361,7 +362,7 @@ m::proc -public tk::fonts {
 			set str [subst {
 			    @font-face {
 				font-family: "$n";
-				src: url("/GitHub/googlefontdirectory/fonts/$t/[file tail $j]") format("truetype");
+				src: url("$fdir/$t/[file tail $j]") format("truetype");
 			    }
 			}]
 
@@ -401,7 +402,7 @@ m::proc -public tk::prettify {
     
     if {0} {
 	put {
-	    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=tcl"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
 	}
     } else {
 	include "/tk/inc/tk.prettify.css"

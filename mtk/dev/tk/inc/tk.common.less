@@ -1,3 +1,7 @@
+.oswald {font-family: Oswald;}
+.oswald-bold {font-family: Oswald-bold;}
+.oswald-light {font-family: Oswald-light;}
+
 button, input, select, textarea {
     border-radius:2px!important;
 }
@@ -32,3 +36,25 @@ pre {
   color: #cecece!important;
 }
 
+.panel {
+    border-radius:2px!important;
+    border:1px #ebebeb solid!important;
+
+    &.panel-default {
+	.panel-heading, .panel-footer {
+	    background:transparent!important;
+	}
+
+	.panel-heading {
+	    border-radius:2px!important;
+	    font-family: Oswald!important;
+	    border-bottom:1px #ebebeb solid!important;
+	}
+	.panel-footer {
+	    font-family: Oswald-light!important;
+	    border:0!important;
+	    border-top:1px #ebebeb solid!important;
+	    outline: none!important;
+	}
+    }
+}
