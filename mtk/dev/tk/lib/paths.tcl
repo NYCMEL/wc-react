@@ -2,6 +2,7 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/prototype\
     \
     $TKSERVER/tk/lib/common\
+    $TKSERVER/tk/lib/components/tk\
     $TKSERVER/tk/lib/components/tb\
     $TKSERVER/tk/lib/components/tk\
     $TKSERVER/tk/lib/components/tb.4\
