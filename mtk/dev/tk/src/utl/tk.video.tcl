@@ -41,7 +41,7 @@ m::proc -public tk::video {
 
     division id="$id" {
 	put [subst {
-	    <video preload="yes" $autoplay width="$width" height="$height" controls poster="$poster" [style background #000 border-radius 5px]>
+	    <video preload="no" $autoplay width="$width" height="$height" controls poster="$poster" [style background #000 border-radius 5px]>
 	    <source src="$file.mp4"  type="video/mp4">
 	    <source src="$file.ogg"  type="video/ogg">
 	    <source src="$file.webm" type="video/webm">
