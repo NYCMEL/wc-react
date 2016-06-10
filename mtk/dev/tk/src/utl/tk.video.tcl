@@ -24,7 +24,7 @@ m::proc -public tk::video {
     {-id "tk-video"}
     {-width  "100%"}
     {-height "100%"}
-    {-poster "/tk/img/common/no-html.png"}
+    {-poster "/tk/img/common/stupid.png"}
     {-file "/videos/Demo"}
     {-autoplay "autoplay"}
 } {
