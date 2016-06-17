@@ -685,3 +685,64 @@ m::proc -public tk::char {
 
     span class="$class" $char
 }
+
+######################################################
+#####
+######################################################
+m::proc -public tk::pretty {
+    {-type "lang-html"}
+    -guts:required
+} {
+    Documentation goes here...
+} {  
+    Trace
+    
+    tk::include::prettify
+    
+    preformatted class="prettyprint prettify $type linenums" {
+	uplevel $guts
+    }
+}
+
+######################################################
+#####
+######################################################
+m::proc -public tk::mirror {
+    {-height 400px}
+    -id:required
+    -guts:required
+} {
+    Documentation goes here...
+} {  
+    Trace
+    
+    # ID OF "mycode-2" WILL RETURN EDITOR OF "mycode_2" FOR JS REASONS
+    
+    tk::include::codemirror
+    
+    textarea $id=$guts id="$id" class="form-control"
+    
+    regsub -all {\-} $id "_" editor
+    
+    javascript {
+	put [subst {
+	    // MAKE TEXT AREA PRETTY
+	    $editor = CodeMirror.fromTextArea(document.getElementById("$id"), {
+		lineWrapping: true,
+		lineNumbers: true,
+		matchBrackets: true,
+		continueComments: "Enter",
+		extraKeys: {"Ctrl-Q": "toggleComment"},
+		styleActiveLine: true,
+		mode : "javascript",
+		htmlMode: true
+	    });
+	    
+	    jQuery("#$id").next(".CodeMirror").css({
+		"height":"$height",
+		"border":"1px #CCC solid",
+		"border-radius":"3px #CCC solid"
+	    });
+	}]
+    }
+}
