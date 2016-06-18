@@ -720,7 +720,7 @@ m::proc -public tk::mirror {
     
     tk::include::codemirror
     
-    textarea $id=$guts id="$id" class="form-control"
+    textarea v($id)=$guts id="$id" class="form-control"
     
     regsub -all {\-} $id "_" editor
     
