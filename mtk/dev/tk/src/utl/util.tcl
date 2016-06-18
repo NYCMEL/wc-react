@@ -696,9 +696,8 @@ m::proc -public tk::pretty {
     Documentation goes here...
 } {  
     Trace
-    
     tk::include::prettify
-    
+ 
     preformatted class="prettyprint prettify $type linenums" {
 	uplevel $guts
     }
@@ -720,7 +719,7 @@ m::proc -public tk::mirror {
     
     tk::include::codemirror
     
-    textarea $id=$guts id="$id" class="form-control"
+    textarea v($id)=$guts id="$id" class="form-control"
     
     regsub -all {\-} $id "_" editor
     
