@@ -1,4 +1,4 @@
-/Melify/bin/mac/tclkit
+#!/Melify/bin/mac/tclkit
 
 package require smtp
 package require mime
@@ -12,7 +12,9 @@ set myUname Info@TurnOnGreen.com
 set myUpassword RedOlive1
 
 set token [mime::initialize -canonical "text/plain" -encoding "7bit" -string $body]
+
 mime::setheader $token Subject $mailsubject
+
 smtp::sendmessage $token \
     -servers [list $myHost] -ports [list $myPort]\
     -usetls true\
@@ -25,6 +27,7 @@ smtp::sendmessage $token \
     -header [list To "$mailto"] \
     -header [list Subject "$mailsubject"]\
     -header [list Date "[clock format [clock seconds]]"]
+
 mime::finalize $token
-return 1
+
 
