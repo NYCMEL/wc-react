@@ -696,11 +696,10 @@ m::proc -public tk::pretty {
     Documentation goes here...
 } {  
     Trace
-   
     tk::include::prettify
  
     preformatted class="prettyprint prettify $type linenums" {
-     uplevel $guts
+	uplevel $guts
     }
 }
 
