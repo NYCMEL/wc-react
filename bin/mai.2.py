@@ -11,11 +11,10 @@ from smtplib import SMTP_SSL as SMTP       # this invokes the secure SMTP protoc
 # from email.MIMEText import MIMEText
 from email.mime.text import MIMEText
 
-sender =     "mel.heravi@gmail.com"
+sender      = "Info@TurnOnGreen.com"
 destination = ["MelifyIT@gmail.com"]
-
-USERNAME = "info@melify.com"
-PASSWORD = "Melify"
+USERNAME    = "Info@TurnOnGreen.com"
+PASSWORD    = "RedOlive1"
 
 # typical values for text_subtype are plain, html, xml
 text_subtype = "plain"
