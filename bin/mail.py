@@ -3,8 +3,12 @@
 import smtplib
 
 server = smtplib.SMTP_SSL('smtpout.secureserver.net', 465)
-#server.starttls()server.ehlo()
 
-server.login("11105844", "RedOlive")
+server.login("info@melify.com", "Melify")
 
-server.sendmail("melheravi@gmail.com", "melheravi@gmail.com", "Please work!!!!!!")
+msg = "Please work!!!!!!"
+fromaddr = "info@melify.com"
+toaddr = "mel.heravi@gmail.com"
+
+server.sendmail(fromaddr, toaddr, msg)
+
