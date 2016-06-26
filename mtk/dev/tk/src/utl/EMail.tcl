@@ -334,7 +334,7 @@ proc ::EMail::Send { ToList CCList BCCList Subject Message args } {
 
     array set state {
 	-connectwait     0
-	-timeout         3000
+	-timeout         0
 	-blocksize       1024
 	-files           ""
 	-waitquit        1
