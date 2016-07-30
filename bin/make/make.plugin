@@ -1,0 +1,14 @@
+#!/Melify/bin/mac/tclkit
+
+################################################################################
+####
+################################################################################
+if {$argc != 1} {
+    puts "\nusage: make.plugin <plugin name>\n"
+    exit
+}
+
+# LOCATION OF ALL TEMPLATES
+set templates "/Melify/mtk/dev/tk/lib/components/template"
+
+puts >>>>>>>>>>$argv
