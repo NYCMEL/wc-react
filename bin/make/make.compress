@@ -1,5 +1,9 @@
 #!/Melify/bin/mac/tclkit
 
+foreach i [glob -nocomplain "*.min.*"] {
+    file delete -force $i
+}
+
 set tmp [glob -nocomplain *.css]
 append tmp " " 
 append tmp [glob -nocomplain *.js]
