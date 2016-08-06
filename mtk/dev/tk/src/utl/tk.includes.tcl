@@ -283,7 +283,7 @@ m::proc -private tk::include::modernizer {
 ##################################################
 m::proc -private tk::include::common {
     {-jqv "/tk/jquery/scripts/jquery.min.js"}
-    {-ga "/tk/inc/min/gAnalytics.js"}
+    {-ga "/tk/inc/min/gAnalytics.min.js"}
     {-hotkeys  0} 
     {-editable 0} 
 } {
