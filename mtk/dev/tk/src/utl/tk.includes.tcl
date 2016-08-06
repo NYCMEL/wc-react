@@ -319,7 +319,7 @@ m::proc -private tk::include::common {
 
     # TK FUNCTIONS ARE HERE
     include "/tk/inc/common.min.js"
-    include "/tk/inc/mtk.buffer.js"
+    include "/tk/inc/mtk.buffer.minjs"
 
     # MELIFY ANALYTICS
     #include "/tk/inc/ma.js"
@@ -338,8 +338,8 @@ m::proc -private tk::include::common {
 
 	    if {$hotkeys == 1} {
 		include "/tk/inc/hotkeys.css"
-		include "/tk/jquery/scripts/jquery.hotkeys.js"
-		include "/tk/jquery/scripts/hotkeys.js"
+		include "/tk/jquery/scripts/jquery.hotkeys.min.js"
+		include "/tk/jquery/scripts/hotkeys.min.js"
 	    }
 		
 	    if {$editable == 1} {
