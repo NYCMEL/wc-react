@@ -318,7 +318,7 @@ m::proc -private tk::include::common {
     include "/GitHub/pace/pace.min.js"
 
     # TK FUNCTIONS ARE HERE
-    include "/tk/inc/common.js"
+    include "/tk/inc/common.min.js"
     include "/tk/inc/mtk.buffer.js"
 
     # MELIFY ANALYTICS
