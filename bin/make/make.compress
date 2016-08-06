@@ -1,6 +1,16 @@
 #!/Melify/bin/mac/tclkit
 
 set tmp [glob -nocomplain *.css]
+append tmp " " 
 append tmp [glob -nocomplain *.js]
 
-puts $tmp
+set cnt 0
+foreach i $tmp {
+    puts "[incr cnt]: $i"
+
+    if {[catch {
+	exec /usr/bin/java -jar /Melify/bin/mac/compressor/yui.jar $i > [file rootname $i].min[file extension $i]
+    } e] != 0} {
+	puts >>>$e\n
+    }
+}
