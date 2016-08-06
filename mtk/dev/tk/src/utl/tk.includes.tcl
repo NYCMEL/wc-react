@@ -241,7 +241,7 @@ m::proc -private tk::include::media {
 } {
     Trace
 
-    include "/tk/inc/media.css"
+    include "/tk/inc/media.min.css"
     include "/tk/inc/media.min.js"
 }
 
@@ -306,7 +306,7 @@ m::proc -private tk::include::common {
 
     # THESE COME AHEAD OF THEM ALL
     include "/GitHub/Font-Awesome/css/font-awesome.min.css"
-    include "/tk/inc/tk.common.css"
+    include "/tk/inc/tk.common.min.css"
 
     include "$jqv"
 
@@ -337,7 +337,7 @@ m::proc -private tk::include::common {
 	    tk::include::media
 
 	    if {$hotkeys == 1} {
-		include "/tk/inc/hotkeys.css"
+		include "/tk/inc/hotkeys.min.css"
 		include "/tk/jquery/scripts/jquery.hotkeys.min.js"
 		include "/tk/jquery/scripts/hotkeys.min.js"
 	    }
