@@ -1,8 +1,8 @@
 #!/Melify/bin/mac/tclkit
 
-foreach i [glob -nocomplain "*.min.*"] {
-    file delete -force $i
-}
+file delete -force ./min
+
+file mkdir ./min
 
 set tmp [glob -nocomplain *.css]
 append tmp " " 
@@ -13,7 +13,7 @@ foreach i $tmp {
     puts "[incr cnt]: $i"
 
     if {[catch {
-	exec /usr/bin/java -jar /Melify/bin/mac/compressor/yui.jar $i > [file rootname $i].min[file extension $i]
+	exec /usr/bin/java -jar /Melify/bin/mac/compressor/yui.jar $i > ./min/[file rootname $i].min[file extension $i]
     } e] != 0} {
 	puts >>>$e\n
     }
