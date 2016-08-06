@@ -25,7 +25,7 @@ if {[info exist require] == 0} {set require ""}
 
 switch $require {
     "include" {
-	put "<script src='/tk/inc/include.js'></script>"
+	put "<script src='/tk/inc/include.min.js'></script>"
     }
     "yepnope" {
 	put "<script src='/GitHub/yepnope.js/yepnope.1.5.4-min.js'></script>"
@@ -347,7 +347,7 @@ m::proc -private tk::include::common {
 		tke::editable
 		
 		#EDITABLE STUFF
-		include "/tk/inc/tkedit.js" ;#NEED THIS TO GET UPDATES FROM DB
+		include "/tk/inc/tkedit.min.js" ;#NEED THIS TO GET UPDATES FROM DB
 	    }
 	}
     }
