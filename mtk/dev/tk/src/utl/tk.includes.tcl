@@ -242,7 +242,7 @@ m::proc -private tk::include::media {
     Trace
 
     include "/tk/inc/media.css"
-    include "/tk/inc/media.js"
+    include "/tk/inc/media.min.js"
 }
 
 ##################################################
