@@ -1,0 +1,6 @@
+#!/Melify/bin/mac/tclkit
+
+set tmp [glob -nocomplain *.css]
+append tmp [glob -nocomplain *.js]
+
+puts $tmp
