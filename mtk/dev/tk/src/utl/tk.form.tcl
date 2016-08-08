@@ -522,16 +522,15 @@ m::proc -public tk::form::upload:cb {
 } {    
     Trace
 
-    h1 ===$::file===
-
     set cgi  [lindex $::file 0]
     set name [file tail [lindex $::file 1]]
 
     regsub -all {\[} $name "" name
     regsub -all {\]} $name "" name
 
+    catch {file rename $cgi "/tmp/$name"}
+
     division class="alert alert-info" {
-	h1 ==$::file==
 	h1 "$name <small>- [commify [file size $cgi]](b)</small>"
     }
 }
