@@ -505,6 +505,37 @@ m::proc -public tk::form::uploader {
 		    put "Nothing submitted yet! ..."
 		}
 	    }
+	    
+	    # javascript {
+	    # 	put {
+	    # 	    $(document).ready(function () {
+	    # 		$("#form-uploader").submit(function (event) {
+	    # 		    event.preventDefault();
+
+	    # 		    var formData = $(this).serialize();
+	    # 		    console.log(">>>>>>>>>>>>>>", formData);
+
+	    # 		    $.ajax({
+	    # 			url: "addProduct.php",
+	    # 			type: "POST",
+	    # 			data: formData,
+	    # 			async: false,
+	    # 			cache: false,
+	    # 			contentType: false,
+	    # 			processData: false,
+	    # 			success: function () {
+	    # 			    alert("Form Submitted!");
+	    # 			},
+	    # 			error: function(){
+	    # 			    alert("error in ajax form submission");
+	    # 			}
+	    # 		    });
+
+	    # 		    return false;
+	    # 		});
+	    # 	    });
+	    # 	}
+	    # }
 	}
     }
 }
