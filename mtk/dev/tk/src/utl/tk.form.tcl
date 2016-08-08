@@ -63,8 +63,6 @@ m::proc -public tk::form {
 } {
     Trace
     
-
-
     # -custom {
     # 	jQuery(".paswd").rules("add", { 
     # 	    required:true,  
@@ -109,7 +107,7 @@ m::proc -public tk::form {
 
 			console.log("form qstr: " + qstr);
 			
-			jQuery("#result-$id").load(tk.siteurl + "?callback=$callback&" + qstr + extra).show("slow");
+			jQuery("#result-$id").load(tk.siteurl + "?ajax=1&callback=$callback&" + qstr + extra).show("slow");
 		    }
 		});
 
@@ -488,11 +486,10 @@ m::proc -public tk::form::upload {
     include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
     
     cgi_form "[URL]" enctype=multipart/form-data method="POST" name="$name" id="$id" autocomplete="off" {
-	export ajax=1
 	export callback=$callback
 	
 	uplevel $guts
-
+	
  	division id="$id-form-result" [style margin-top 20px padding 5px border "1px orange dashed" font-family oswald-light] {
 	    put "Nothing submitted yet! ..."
 	}
@@ -530,7 +527,7 @@ m::proc -public tk::form::upload:cb {
 
     catch {file rename -force $cgi "/tmp/$name"}
 
-    division [style background wheat border "1px green solid" padding 20px margin 100px] {
+    division class="alert alert-success" [style margin 50px] {
 	h1 align="center" "$name <small>- [commify [file size $name]](b)</small>"
     }
 }
