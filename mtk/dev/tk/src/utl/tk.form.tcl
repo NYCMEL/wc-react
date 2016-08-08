@@ -496,7 +496,7 @@ m::proc -public tk::form::uploader {
     
     division [style margin 100px] {
 	division [style width 500px] {
-	    cgi_form "[URL]" enctype=multipart/form-data method="POST" {
+	    cgi_form "[URL]" enctype=multipart/form-data method="POST" id="form-uploader" {
 		export callback=tk::form::upload:cb
 		
 		include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
