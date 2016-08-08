@@ -124,7 +124,7 @@ m::proc -public tk::form {
 		    
 		    var values = jQuery("#$id").serialize();
 		    
-		    jQuery("#result-$id").load(tk.siteurl + "?ajax=1&callback=$callback&values=" + values).show("slow");
+		    jQuery("#result-$id").load(tk.siteurl + "?callback=$callback&values=" + values).show("slow");
 		});
 	    }]
 	}
@@ -528,10 +528,10 @@ m::proc -public tk::form::upload:cb {
     regsub -all {\[} $name "" name
     regsub -all {\]} $name "" name
 
-    catch {file rename $cgi "/tmp/$name"}
+    catch {file rename -force $cgi "/tmp/$name"}
 
-    division class="alert alert-info" {
-	h1 "$name <small>- [commify [file size $cgi]](b)</small>"
+    division [style background wheat border "1px green solid" padding 20px margin 100px] {
+	h1 align="center" "$name <small>- [commify [file size $name]](b)</small>"
     }
 }
 
