@@ -543,9 +543,11 @@ m::proc -public tk::form::uploader {
 } {
     Documentation goes here...
 } {
-    division [style margin 200px] {
-	tk::form::upload -name "myupload" -callback "tk::form::upload:cb" -guts {
-	    include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
+    division [style margin 100px] {
+	division [style width 400px] {
+	    tk::form::upload -name "myupload" -callback "tk::form::upload:cb" -guts {
+		include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
+	    }
 	}
     }
 }
