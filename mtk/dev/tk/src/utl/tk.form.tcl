@@ -539,12 +539,14 @@ m::proc -public tk::form::upload:cb {
 ######################################################
 #####
 ######################################################
-m::proc -public tk::form::upload:test {
+m::proc -public tk::form::uploader {
 } {
     Documentation goes here...
 } {
-    tk::form::upload -name "myupload" -callback "tk::form::upload:cb" -guts {
-	include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
+    division [style margin 200px] {
+	tk::form::upload -name "myupload" -callback "tk::form::upload:cb" -guts {
+	    include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
+	}
     }
 }
 
