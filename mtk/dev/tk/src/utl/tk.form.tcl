@@ -485,7 +485,7 @@ m::proc -public tk::form::upload {
     include "/GitHub/jasny/dist/css/jasny-bootstrap.min.css"
     include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
     
-    cgi_form "[URL]" enctype=multipart/form-data method="POST" name="$name" {
+    cgi_form "[URL]" enctype=multipart/form-data method="POST" {
 	export callback=$callback
 	
 	uplevel $guts
