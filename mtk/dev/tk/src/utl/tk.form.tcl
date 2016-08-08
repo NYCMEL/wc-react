@@ -485,27 +485,13 @@ m::proc -public tk::form::upload {
     include "/GitHub/jasny/dist/css/jasny-bootstrap.min.css"
     include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
     
-    cgi_form "[URL]" enctype=multipart/form-data method="POST" name="$name" id="$id" autocomplete="off" {
+    cgi_form "[URL]" enctype=multipart/form-data method="POST" name="$name" {
 	export callback=$callback
 	
 	uplevel $guts
 	
  	division id="$id-form-result" [style margin-top 20px padding 5px border "1px orange dashed" font-family oswald-light] {
 	    put "Nothing submitted yet! ..."
-	}
-    }
-
-    if {0} {
-	javascript {
-	    put [subst {
-		tkForm.init({
-		    id:"$id",
-		    url:"[URL]",
-		    method:"POST",
-		    callback:"",
-		    result:"$id-form-result"
-		})
-	    }]
 	}
     }
 }
