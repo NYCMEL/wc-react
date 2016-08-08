@@ -229,11 +229,6 @@ m::proc -public tk::form::test {
 			    }
 			}
 		    }
-		    division {
-			division class="well" {
-			    tk::form::upload:test
-			}
-		    }
 		}
 	    }
 	    division class="col-md-6" {
@@ -468,35 +463,6 @@ m::proc -public tk::form::create {
 }
 
 ######################################################
-#####
-######################################################
-m::proc -public tk::form::upload {
-    -name:required
-    {-id         {}}
-    {-callback   {}}
-    -guts:required
-} {
-    Documentation goes here...
-} {
-    Trace
-
-    set id [expr {($id == "") ? "$name" : "$id"}]
-
-    include "/GitHub/jasny/dist/css/jasny-bootstrap.min.css"
-    include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
-    
-    cgi_form "[URL]" enctype=multipart/form-data method="POST" {
-	export callback=$callback
-	
-	uplevel $guts
-	
- 	division id="$id-form-result" [style margin-top 20px padding 5px border "1px orange dashed" font-family oswald-light] {
-	    put "Nothing submitted yet! ..."
-	}
-    }
-}
-
-######################################################
 ##### 
 ######################################################
 m::proc -public tk::form::upload:cb {
@@ -525,12 +491,20 @@ m::proc -public tk::form::uploader {
 } {
     Documentation goes here...
 } {
+    include "/GitHub/jasny/dist/css/jasny-bootstrap.min.css"
+    include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
+    
     division [style margin 100px] {
-	division [style width 400px] {
-	    tk::form::upload -name "myupload" -callback "tk::form::upload:cb" -guts {
+	division [style width 500px] {
+	    cgi_form "[URL]" enctype=multipart/form-data method="POST" {
+		export callback=tk::form::upload:cb
+		
 		include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
+		
+		division id="uploader-form-result" [style margin-top 20px padding 5px border "1px orange dashed" font-family oswald-light] {
+		    put "Nothing submitted yet! ..."
+		}
 	    }
 	}
     }
 }
-
