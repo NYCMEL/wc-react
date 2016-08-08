@@ -528,7 +528,7 @@ m::proc -public tk::form::upload:cb {
     catch {file rename -force $cgi "/tmp/$name"}
 
     division class="alert alert-success" [style margin 50px] {
-	h1 align="center" "$name <small>- [commify [file size $name]](b)</small>"
+	h1 align="center" "$name <small>- [commify [file size /tmp/$name]](b)</small>"
     }
 }
 
