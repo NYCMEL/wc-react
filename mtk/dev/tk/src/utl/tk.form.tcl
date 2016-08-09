@@ -508,7 +508,7 @@ m::proc -public tk::form::uploader {
 		include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
 		
 		division id="uploader-form-result" class="alert alert-success" [style text-align center display none] {
-		    put "Nothing submitted yet! ..."
+		    h1 "WAITING..."
 		}
 	    }
 	    
