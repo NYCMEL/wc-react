@@ -479,8 +479,12 @@ m::proc -public tk::form::upload:cb {
 
     catch {file rename -force $cgi "/tmp/$name"}
 
-    division class="alert alert-success" [style margin 50px] {
-	h1 align="center" "$name <small>- [commify [file size /tmp/$name]](b)</small>"
+    put "$name <small>- [commify [file size /tmp/$name]](b)</small>"
+
+    javascript {
+	put {
+	    $("#uploader-form-result").removeClass("alert-info").addClass("alert-success");
+	}
     }
 }
 
@@ -491,6 +495,7 @@ m::proc -public tk::form::uploader {
 } {
     Documentation goes here...
 } {
+    include "/GitHub/form/jquery.form.js"
     include "/GitHub/jasny/dist/css/jasny-bootstrap.min.css"
     include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
     
@@ -501,41 +506,24 @@ m::proc -public tk::form::uploader {
 		
 		include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
 		
-		division id="uploader-form-result" [style margin-top 20px padding 5px border "1px orange dashed" font-family oswald-light] {
+		division id="uploader-form-result" class="alert alert-info" [style text-align center] {
 		    put "Nothing submitted yet! ..."
 		}
 	    }
 	    
-	    # javascript {
-	    # 	put {
-	    # 	    $(document).ready(function () {
-	    # 		$("#form-uploader").submit(function (event) {
-	    # 		    event.preventDefault();
+	    javascript {
+	    	put {
+	    	    $(document).ready(function () {
+			$("#form-uploader").on("submit", function(e) {
+			    e.preventDefault(); // <-- important
 
-	    # 		    var formData = $(this).serialize();
-	    # 		    console.log(">>>>>>>>>>>>>>", formData);
-
-	    # 		    $.ajax({
-	    # 			url: "addProduct.php",
-	    # 			type: "POST",
-	    # 			data: formData,
-	    # 			async: false,
-	    # 			cache: false,
-	    # 			contentType: false,
-	    # 			processData: false,
-	    # 			success: function () {
-	    # 			    alert("Form Submitted!");
-	    # 			},
-	    # 			error: function(){
-	    # 			    alert("error in ajax form submission");
-	    # 			}
-	    # 		    });
-
-	    # 		    return false;
-	    # 		});
-	    # 	    });
-	    # 	}
-	    # }
+			    $(this).ajaxSubmit({
+				target: "#uploader-form-result"
+			    });
+			});
+	    	    });
+	    	}
+	    }
 	}
     }
 }
