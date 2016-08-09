@@ -483,7 +483,7 @@ m::proc -public tk::form::upload:cb {
 
     javascript {
 	put {
-	    $("#uploader-form-result").removeClass("alert-info").addClass("alert-success");
+	    $("#uploader-form-result").slideDown("slow");
 	}
     }
 }
@@ -507,7 +507,7 @@ m::proc -public tk::form::uploader {
 		
 		include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
 		
-		division id="uploader-form-result" class="alert alert-info" [style text-align center] {
+		division id="uploader-form-result" class="alert alert-success" [style text-align center display none] {
 		    put "Nothing submitted yet! ..."
 		}
 	    }
