@@ -745,3 +745,20 @@ m::proc -public tk::mirror {
 	}]
     }
 }
+
+######################################################
+#####
+######################################################
+m::proc -public tk::zip {
+    -src:required
+} {
+    Documentation goes here...
+} {  
+    Trace
+
+    if {[catch {
+	exec /usr/bin/zip xxx.zip xxx
+    } e] != 0} {
+	h1 "ERROR(tk::zip): $e"
+    }
+}
