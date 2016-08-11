@@ -756,9 +756,15 @@ m::proc -public tk::zip {
 } {  
     Trace
 
+    set root [file rootname $src]
+    set dir  [file dirname  $src]
+    set fname [lindex [split $src "/"] end]
+
     if {[catch {
-	exec /usr/bin/zip xxx.zip xxx
+	cd $dir
+	exec /usr/bin/zip $fname.zip $fname
     } e] != 0} {
 	h1 "ERROR(tk::zip): $e"
+	exit
     }
 }
