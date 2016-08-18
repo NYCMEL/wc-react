@@ -10,7 +10,6 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/components/mtk\
     $TKSERVER/tk/lib/components/mtk/src\
     $TKSERVER/tk/lib/components/pl\
-    $TKSERVER/tk/lib/components/cap\
     $TKSERVER/tk/lib/components/d3\
     $TKSERVER/tk/lib/components/ang\
     $TKSERVER/tk/lib/components/jqw\
