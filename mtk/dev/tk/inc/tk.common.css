@@ -14,16 +14,16 @@
   font-family: "Oswald-bold";
   src: url("/GitHub/fonts/ofl/oswald/Oswald-Bold.ttf") format("truetype");
 }
-.oswald {
+.font-oswald {
   font-family: Oswald;
 }
-.oswald-bold {
+.font-oswald-bold {
   font-family: Oswald-bold;
 }
-.oswald-light {
+.font-oswald-light {
   font-family: Oswald-light;
 }
-.roboto {
+.font-roboto {
   font-family: Roboto;
 }
 button,
