@@ -63,8 +63,6 @@ m::proc -public tk::form {
 } {
     Trace
     
-
-
     # -custom {
     # 	jQuery(".paswd").rules("add", { 
     # 	    required:true,  
@@ -109,7 +107,7 @@ m::proc -public tk::form {
 
 			console.log("form qstr: " + qstr);
 			
-			jQuery("#result-$id").load(tk.siteurl + "?callback=$callback&" + qstr + extra).show("slow");
+			jQuery("#result-$id").load(tk.siteurl + "?ajax=1&callback=$callback&" + qstr + extra).show("slow");
 		    }
 		});
 
@@ -124,7 +122,7 @@ m::proc -public tk::form {
 		    
 		    var values = jQuery("#$id").serialize();
 		    
-		    jQuery("#result-$id").load(tk.siteurl + "?ajax=1&callback=$callback&values=" + values).show("slow");
+		    jQuery("#result-$id").load(tk.siteurl + "?callback=$callback&values=" + values).show("slow");
 		});
 	    }]
 	}
@@ -229,11 +227,6 @@ m::proc -public tk::form::test {
 			    division class="clearfix" {
 				put "<button type='submit' class='btn btn-default'>PUSH IT <i class='fa fa-chevron-right'></i></button>"
 			    }
-			}
-		    }
-		    division {
-			division class="well" {
-			    tk::form::upload:test
 			}
 		    }
 		}
@@ -470,50 +463,6 @@ m::proc -public tk::form::create {
 }
 
 ######################################################
-#####
-######################################################
-m::proc -public tk::form::upload {
-    -name:required
-    {-id         {}}
-    {-callback   {}}
-    -guts:required
-} {
-    Documentation goes here...
-} {
-    Trace
-
-    set id [expr {($id == "") ? "$name" : "$id"}]
-
-    include "/GitHub/jasny/dist/css/jasny-bootstrap.min.css"
-    include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
-    
-    cgi_form "[URL]" enctype=multipart/form-data method="POST" name="$name" id="$id" autocomplete="off" {
-	export ajax=1
-	export callback=$callback
-	
-	uplevel $guts
-
- 	division id="$id-form-result" [style margin-top 20px padding 5px border "1px orange dashed" font-family oswald-light] {
-	    put "Nothing submitted yet! ..."
-	}
-    }
-
-    if {0} {
-	javascript {
-	    put [subst {
-		tkForm.init({
-		    id:"$id",
-		    url:"[URL]",
-		    method:"POST",
-		    callback:"",
-		    result:"$id-form-result"
-		})
-	    }]
-	}
-    }
-}
-
-######################################################
 ##### 
 ######################################################
 m::proc -public tk::form::upload:cb {
@@ -522,29 +471,60 @@ m::proc -public tk::form::upload:cb {
 } {    
     Trace
 
-    h1 ===$::file===
-
     set cgi  [lindex $::file 0]
     set name [file tail [lindex $::file 1]]
 
     regsub -all {\[} $name "" name
     regsub -all {\]} $name "" name
 
-    division class="alert alert-info" {
-	h1 ==$::file==
-	h1 "$name <small>- [commify [file size $cgi]](b)</small>"
+    catch {file rename -force $cgi "/tmp/$name"}
+
+    put "$name <small>- [commify [file size /tmp/$name]](b)</small>"
+
+    javascript {
+	put {
+	    $("#uploader-form-result").slideDown("slow");
+	}
     }
 }
 
 ######################################################
 #####
 ######################################################
-m::proc -public tk::form::upload:test {
+m::proc -public tk::form::uploader {
 } {
     Documentation goes here...
 } {
-    tk::form::upload -name "myupload" -callback "tk::form::upload:cb" -guts {
-	include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
+    include "/GitHub/form/jquery.form.js"
+    include "/GitHub/jasny/dist/css/jasny-bootstrap.min.css"
+    include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
+    
+    division [style margin 100px] {
+	division [style width 500px] {
+	    cgi_form "[URL]" id="form-uploader" {
+		export ajax=1
+		export callback=tk::form::upload:cb
+		
+		include "/Melify/mtk/dev/tk/src/utl/html/upload.html"
+		
+		division id="uploader-form-result" class="alert alert-success" [style text-align center display none] {
+		    h1 "WAITING..."
+		}
+	    }
+	    
+	    javascript {
+	    	put {
+	    	    $(document).ready(function () {
+			$("#form-uploader").on("submit", function(e) {
+			    e.preventDefault(); // <-- important
+
+			    $(this).ajaxSubmit({
+				target: "#uploader-form-result"
+			    });
+			});
+	    	    });
+	    	}
+	    }
+	}
     }
 }
-

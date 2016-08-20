@@ -25,7 +25,7 @@ if {[info exist require] == 0} {set require ""}
 
 switch $require {
     "include" {
-	put "<script src='/tk/inc/include.js'></script>"
+	put "<script src='/tk/inc/min/include.min.js'></script>"
     }
     "yepnope" {
 	put "<script src='/GitHub/yepnope.js/yepnope.1.5.4-min.js'></script>"
@@ -241,8 +241,8 @@ m::proc -private tk::include::media {
 } {
     Trace
 
-    include "/tk/inc/media.css"
-    include "/tk/inc/media.js"
+    include "/tk/inc/min/media.min.css"
+    include "/tk/inc/min/media.min.js"
 }
 
 ##################################################
@@ -283,7 +283,7 @@ m::proc -private tk::include::modernizer {
 ##################################################
 m::proc -private tk::include::common {
     {-jqv "/tk/jquery/scripts/jquery.min.js"}
-    {-ga "/tk/inc/gAnalytics.js"}
+    {-ga "/tk/inc/min/gAnalytics.min.js"}
     {-hotkeys  0} 
     {-editable 0} 
 } {
@@ -306,7 +306,7 @@ m::proc -private tk::include::common {
 
     # THESE COME AHEAD OF THEM ALL
     include "/GitHub/Font-Awesome/css/font-awesome.min.css"
-    include "/tk/inc/tk.common.css"
+    include "/tk/inc/min/tk.common.min.css"
 
     include "$jqv"
 
@@ -318,11 +318,11 @@ m::proc -private tk::include::common {
     include "/GitHub/pace/pace.min.js"
 
     # TK FUNCTIONS ARE HERE
-    include "/tk/inc/common.js"
-    include "/tk/inc/mtk.buffer.js"
+    include "/tk/inc/min/common.min.js"
+    include "/tk/inc/min/mtk.buffer.minjs"
 
     # MELIFY ANALYTICS
-    #include "/tk/inc/ma.js"
+    #include "/tk/inc/min/ma.js"
     
     # APPLICATION SPECIFIC STUFF
     include "/inc/app.css"
@@ -337,9 +337,9 @@ m::proc -private tk::include::common {
 	    tk::include::media
 
 	    if {$hotkeys == 1} {
-		include "/tk/inc/hotkeys.css"
-		include "/tk/jquery/scripts/jquery.hotkeys.js"
-		include "/tk/jquery/scripts/hotkeys.js"
+		include "/tk/inc/min/hotkeys.min.css"
+		include "/tk/jquery/scripts/jquery.hotkeys.min.js"
+		include "/tk/jquery/scripts/hotkeys.min.js"
 	    }
 		
 	    if {$editable == 1} {
@@ -347,7 +347,7 @@ m::proc -private tk::include::common {
 		tke::editable
 		
 		#EDITABLE STUFF
-		include "/tk/inc/tkedit.js" ;#NEED THIS TO GET UPDATES FROM DB
+		include "/tk/inc/min/tkedit.min.js" ;#NEED THIS TO GET UPDATES FROM DB
 	    }
 	}
     }

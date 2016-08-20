@@ -5,12 +5,11 @@ import smtplib
 server = smtplib.SMTP_SSL('smtpout.secureserver.net', 465)
 #server.starttls()
 
-server.login("info@melify.com", "Melify")
+server.login("Info@TurnOnGreen.com", "RedOlive1")
 
 msg = "Please work!!!!!!"
-fromaddr = "info@melify.com"
-toaddr = "mel.heravi@gmail.com"
-toaddr = "melify@yahoo.com"
+fromaddr = "Info@TurnOnGreen.com"
+toaddr = "MelifyIT@gmail.com"
 
 server.sendmail(fromaddr, toaddr, msg)
 
