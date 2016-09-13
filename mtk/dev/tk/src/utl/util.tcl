@@ -691,7 +691,7 @@ m::proc -public tk::char {
 ######################################################
 m::proc -public tk::pretty {
     {-type "lang-html"}
-    -guts:required
+    -text:required
 } {
     Documentation goes here...
 } {  
@@ -699,7 +699,7 @@ m::proc -public tk::pretty {
     tk::include::prettify
  
     preformatted class="prettyprint prettify $type linenums" {
-	uplevel $guts
+	uplevel $text
     }
 }
 
