@@ -699,7 +699,7 @@ m::proc -public tk::pretty {
     tk::include::prettify
  
     preformatted class="prettyprint prettify $type linenums" {
-	uplevel $str
+	put $str
     }
 }
 
