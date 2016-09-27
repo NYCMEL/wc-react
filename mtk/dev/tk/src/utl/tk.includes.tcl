@@ -187,6 +187,9 @@ m::proc -private tk::include::bootstrap {
 } {
     Trace
 
+    include "/GitHub/tether/dist/css/tether.min.css"
+    include "/GitHub/tether/dist/js/tether.min.js"
+
     if {$local == 0} {
 	if {1} {
 	    include "/GitHub/bootstrap/dist/css/bootstrap.min.css"
@@ -195,9 +198,6 @@ m::proc -private tk::include::bootstrap {
 	    tk::include::bootstrap:4
 	}
     } else {
-	include "/GitHub/tether/dist/css/tether.min.css"
-	include "/GitHub/tether/dist/js/tether.min.js"
-
 	include "/inc/bootstrap/css/bootstrap.min.css"
 	include "/inc/bootstrap/js/bootstrap.min.js"
     }
