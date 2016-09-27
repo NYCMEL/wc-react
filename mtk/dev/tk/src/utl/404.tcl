@@ -93,20 +93,10 @@ m::proc -public 404::guts {
     division {
 	put [img /tk/img/common/404.png width=100%]
 
-	division [style text-align center] {
-	    put [url "Home Page" "[URL]" class="btn btn-default"]
-
-	    division [style padding 25px] {
-		set tmp $::env(REQUEST_URI)
-		set tmp [split $tmp "?"]
-		set uri [lrange [split [lindex $tmp 0] "/"] 1 end]
-		set par [lindex $tmp 1]
-
-		p "$uri | $par"
-
-		#set proc [lindex $uri 0]
-		#p "/${proc}?table=[lindex $uri 1]&id=[lindex $uri 2]&${par}"
-	    }
+	division [style text-align center margin-top 50px] {
+	    put [url "<i class='fa fa-phone'></i> +1 646.303.1234" "tel:6463031234"]
+	    space 40 0
+	    put [url "<i class='fa fa-envelope'></i> Info@Melify.com" "mailto:Info@Melify.com"]
 	}
     }
 }

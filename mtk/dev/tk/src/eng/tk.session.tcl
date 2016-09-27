@@ -23,7 +23,7 @@ namespace eval tk {
     }
 }
 
-include "/tk/inc/tk.session.js"
+include "/tk/inc/min/tk.session.min.js"
 
 ##############################################
 ##### 

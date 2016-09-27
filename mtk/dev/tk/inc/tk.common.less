@@ -1,3 +1,16 @@
+@import url("http://localhost/GitHub/bootstrap/less/mixins.less");
+@import url("http://localhost/GitHub/less-elements/elements.less");
+
+@font-face {font-family: "Roboto";src: url("/GitHub/fonts/apache/roboto/Roboto-Regular.ttf") format("truetype");}
+@font-face {font-family: "Oswald";src: url("/GitHub/fonts/ofl/oswald/Oswald-Regular.ttf") format("truetype");}
+@font-face {font-family: "Oswald-light";src: url("/GitHub/fonts/ofl/oswald/Oswald-Light.ttf") format("truetype");}
+@font-face {font-family: "Oswald-bold";src: url("/GitHub/fonts/ofl/oswald/Oswald-Bold.ttf") format("truetype");}
+
+.font-oswald       {font-family: Oswald;}
+.font-oswald-bold  {font-family: Oswald-bold;}
+.font-oswald-light {font-family: Oswald-light;}
+.font-roboto       {font-family: Roboto}
+
 button, input, select, textarea {
     border-radius:2px!important;
 }
@@ -32,3 +45,25 @@ pre {
   color: #cecece!important;
 }
 
+.panel {
+    border-radius:2px!important;
+    border:1px #ebebeb solid!important;
+
+    &.panel-default {
+	.panel-heading, .panel-footer {
+	    background:transparent!important;
+	}
+
+	.panel-heading {
+	    border-radius:2px!important;
+	    font-family: Oswald!important;
+	    border-bottom:1px #ebebeb solid!important;
+	}
+	.panel-footer {
+	    font-family: Oswald-light!important;
+	    border:0!important;
+	    border-top:1px #ebebeb solid!important;
+	    outline: none!important;
+	}
+    }
+}

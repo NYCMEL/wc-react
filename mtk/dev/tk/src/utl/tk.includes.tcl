@@ -21,6 +21,79 @@ namespace eval tk {
     namespace eval include {}
 }
 
+if {[info exist require] == 0} {set require ""}
+
+switch $require {
+    "include" {
+	put "<script src='/tk/inc/min/include.min.js'></script>"
+    }
+    "yepnope" {
+	put "<script src='/GitHub/yepnope.js/yepnope.1.5.4-min.js'></script>"
+    }
+}
+
+######################################################
+##### 
+######################################################
+proc include {fname} {
+    Trace
+
+    # DO NOT ALLOW DUPLICATES
+    set t $fname
+
+    if {[info exist ::_jscss_($t)] != 0} {
+ 	return
+    }
+
+    set ::_jscss_($t) 1
+    
+    if {[string range $fname 0 3] == "http"} {
+	set url "$fname"
+    } else {
+	set url "http://$::env(HTTP_HOST)$fname"
+    }
+
+    switch [file extension $t] {
+	".js" - ".json" {
+	    set func [file tail $fname]
+	    regsub -all {\-} $func "" func
+	    regsub -all {\_} $func "" func
+	    regsub -all {\.} $func "" func
+
+	    switch $::require {
+		"include" {
+		    put "<script>loadjscssfile('$url','js')</script>"
+		}
+		"yepnope" {
+		    put "<script>yepnope('$url')</script>"
+		}
+		default {
+		    put "<script type='text/javascript' media='all' src='$url'></script>"
+		}
+	    }
+	}
+	".css" {
+	    switch $::require {
+		"include" {
+		    put "<script>loadjscssfile('$url','css')</script>"
+		}
+		"yepnope" {
+		    put "<script>yepnope('$url')</script>"
+		}
+		default {
+		    put "<link type='text/css' href='$url' media='all' rel='stylesheet' />\n"
+		}
+	    }
+	}
+	".html" {
+	    put [file:read $fname]
+	}
+	".tcl" {
+	    source $fname
+	}
+    }
+}
+
 ##################################################
 ##### 
 ##################################################
@@ -44,6 +117,64 @@ m::proc -private tk::include::angular {
 	include "/tk/angular/bootstrap/ui-bootstrap.min.js"
 	include "/tk/angular/bootstrap/ui-bootstrap-tpls.min.js"
     }
+}
+
+##################################################
+##### 
+##################################################
+m::proc -private tk::include::codemirror {
+} {
+    Documentaion goes here
+} {
+    Trace
+
+    include "/GitHub/CodeMirror/lib/codemirror.css"
+    include "/GitHub/CodeMirror/theme/ambiance.css"
+    include "/GitHub/CodeMirror/theme/mdn-like.css"
+    include "/GitHub/CodeMirror/theme/3024-night.css"
+    
+    include "/GitHub/CodeMirror/lib/codemirror.js"
+    include "/GitHub/CodeMirror/addon/edit/matchbrackets.js"
+    include "/GitHub/CodeMirror/addon/comment/continuecomment.js"
+    include "/GitHub/CodeMirror/addon/comment/comment.js"
+    include "/GitHub/CodeMirror/addon/selection/active-line.js"
+    include "/GitHub/CodeMirror/mode/javascript/javascript.js"
+    include "/GitHub/CodeMirror/mode/htmlembedded/htmlembedded.js"
+    include "/GitHub/CodeMirror/mode/htmlmixed/htmlmixed.js"
+    include "/GitHub/CodeMirror/addon/search/searchcursor.js"
+    include "/GitHub/CodeMirror/addon/search/search.js"
+    include "/GitHub/CodeMirror/keymap/emacs.js"
+}
+
+##################################################
+##### 
+##################################################
+m::proc -private tk::include::prettify {
+} {
+    Documentaion goes here
+} {
+    Trace
+
+    put {
+	<style>
+	.prettyprint {padding:10px; border-radius:0;}
+	.prettyprint ol.linenums > li {list-style-type: decimal;}
+	</style>
+    }
+
+    include "https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css"
+    
+    put {
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/prettify.js"></script>
+    }
+
+    # $("#form-code-container").removeClass("prettyprinted");
+    # prettyPrint();
+
+    # EXAMPLE CODE
+    # preformatted class="prettyprint prettify lang-html linenums" {
+    # 	put [quote_html [dtcc::component::box::spec]]
+    # }
 }
 
 ##################################################
@@ -110,8 +241,8 @@ m::proc -private tk::include::media {
 } {
     Trace
 
-    include "/tk/inc/media.css"
-    include "/tk/inc/media.js"
+    include "/tk/inc/min/media.min.css"
+    include "/tk/inc/min/media.min.js"
 }
 
 ##################################################
@@ -152,7 +283,7 @@ m::proc -private tk::include::modernizer {
 ##################################################
 m::proc -private tk::include::common {
     {-jqv "/tk/jquery/scripts/jquery.min.js"}
-    {-ga "/tk/inc/gAnalytics.js"}
+    {-ga "/tk/inc/min/gAnalytics.min.js"}
     {-hotkeys  0} 
     {-editable 0} 
 } {
@@ -175,7 +306,7 @@ m::proc -private tk::include::common {
 
     # THESE COME AHEAD OF THEM ALL
     include "/GitHub/Font-Awesome/css/font-awesome.min.css"
-    include "/tk/inc/tk.common.css"
+    include "/tk/inc/min/tk.common.min.css"
 
     include "$jqv"
 
@@ -187,11 +318,11 @@ m::proc -private tk::include::common {
     include "/GitHub/pace/pace.min.js"
 
     # TK FUNCTIONS ARE HERE
-    include "/tk/inc/common.js"
-    include "/tk/inc/mtk.buffer.js"
+    include "/tk/inc/min/common.min.js"
+    include "/tk/inc/min/mtk.buffer.minjs"
 
     # MELIFY ANALYTICS
-    #include "/tk/inc/ma.js"
+    #include "/tk/inc/min/ma.js"
     
     # APPLICATION SPECIFIC STUFF
     include "/inc/app.css"
@@ -206,9 +337,9 @@ m::proc -private tk::include::common {
 	    tk::include::media
 
 	    if {$hotkeys == 1} {
-		include "/tk/inc/hotkeys.css"
-		include "/tk/jquery/scripts/jquery.hotkeys.js"
-		include "/tk/jquery/scripts/hotkeys.js"
+		include "/tk/inc/min/hotkeys.min.css"
+		include "/tk/jquery/scripts/jquery.hotkeys.min.js"
+		include "/tk/jquery/scripts/hotkeys.min.js"
 	    }
 		
 	    if {$editable == 1} {
@@ -216,7 +347,7 @@ m::proc -private tk::include::common {
 		tke::editable
 		
 		#EDITABLE STUFF
-		include "/tk/inc/tkedit.js" ;#NEED THIS TO GET UPDATES FROM DB
+		include "/tk/inc/min/tkedit.min.js" ;#NEED THIS TO GET UPDATES FROM DB
 	    }
 	}
     }

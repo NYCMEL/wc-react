@@ -1,4 +1,3 @@
-
 ###HEADS###################################################################
 #
 #  Melify Internet Toolkit (MTK) - Copyright (C) 2015  Melify LLC.
@@ -349,8 +348,10 @@ m::proc -public tk::fonts {
 	set ::str [lorem 5]
     }
 
+    set fdir "/GitHub/fonts/ofl"
+
     table {
-	foreach i [glob -nocomplain "/GitHub/googlefontdirectory/fonts/*"] {
+	foreach i [glob -nocomplain "[file join $fdir *]"] {
 	    if {[file isdirectory $i] == 1} {
 		set t [file tail [file rootname $i]]
 		
@@ -361,7 +362,7 @@ m::proc -public tk::fonts {
 			set str [subst {
 			    @font-face {
 				font-family: "$n";
-				src: url("/GitHub/googlefontdirectory/fonts/$t/[file tail $j]") format("truetype");
+				src: url("$fdir/$t/[file tail $j]") format("truetype");
 			    }
 			}]
 
@@ -401,7 +402,7 @@ m::proc -public tk::prettify {
     
     if {0} {
 	put {
-	    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=tcl"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
 	}
     } else {
 	include "/tk/inc/tk.prettify.css"
@@ -683,4 +684,87 @@ m::proc -public tk::char {
     }]
 
     span class="$class" $char
+}
+
+######################################################
+#####
+######################################################
+m::proc -public tk::pretty {
+    {-type "lang-html"}
+    -str:required
+} {
+    Documentation goes here...
+} {  
+    Trace
+    tk::include::prettify
+ 
+    preformatted class="prettyprint prettify $type linenums" {
+	put $str
+    }
+}
+
+######################################################
+#####
+######################################################
+m::proc -public tk::mirror {
+    {-height 400px}
+    -id:required
+    -guts:required
+} {
+    Documentation goes here...
+} {  
+    Trace
+    
+    # ID OF "mycode-2" WILL RETURN EDITOR OF "mycode_2" FOR JS REASONS
+    
+    tk::include::codemirror
+    
+    textarea v($id)=$guts id="$id" class="form-control"
+    
+    regsub -all {\-} $id "_" editor
+    
+    javascript {
+	put [subst {
+	    // MAKE TEXT AREA PRETTY
+	    $editor = CodeMirror.fromTextArea(document.getElementById("$id"), {
+		lineWrapping: true,
+		lineNumbers: true,
+		matchBrackets: true,
+		continueComments: "Enter",
+		extraKeys: {"Ctrl-Q": "toggleComment"},
+		styleActiveLine: true,
+		mode : "javascript",
+		htmlMode: true
+	    });
+	    
+	    jQuery("#$id").next(".CodeMirror").css({
+		"height":"$height",
+		"border":"1px #CCC solid",
+		"border-radius":"3px #CCC solid"
+	    });
+	}]
+    }
+}
+
+######################################################
+#####
+######################################################
+m::proc -public tk::zip {
+    -src:required
+} {
+    Documentation goes here...
+} {  
+    Trace
+
+    set root [file rootname $src]
+    set dir  [file dirname  $src]
+    set fname [lindex [split $src "/"] end]
+
+    if {[catch {
+	cd $dir
+	exec /usr/bin/zip $fname.zip $fname
+    } e] != 0} {
+	h1 "ERROR(tk::zip): $e"
+	exit
+    }
 }
