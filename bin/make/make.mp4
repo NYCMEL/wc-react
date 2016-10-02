@@ -1,6 +1,11 @@
 #!/Melify/bin/mac/tclkit
 
-set files [glob -nocomplain *.avi]
+if {$argc != 1} {
+    puts "Type is required: avi, etc."
+    exit
+}
+
+set files [glob -nocomplain *.[lindex $argv[0]]
 
 if {[llength $files] == 0} {
    puts "Can not find any mp4 files"
@@ -14,7 +19,6 @@ foreach i $files {
     puts "[incr cnt]: $file"
 
     catch {
-	file mkdir mp4
-	exec ffmpeg -i $i ./mp4/$file.mp4
+	exec ffmpeg -i $i $file.mp4
     }
 }
