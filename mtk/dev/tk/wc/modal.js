@@ -1,4 +1,4 @@
-XModal = document.registerElement(prefix + '-modal', {
+XModal = document.registerElement('bs-modal', {
     prototype: Object.create(HTMLElement.prototype, {
 	createdCallback: {
 	    value: function() {
