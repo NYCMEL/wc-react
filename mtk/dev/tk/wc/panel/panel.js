@@ -7,6 +7,7 @@
 
     // GETS CONTENT FROM <TEMPLATE>
     var template = thisDoc.querySelector("template").content;
+    console.log(template);
 
     // CREATES AN OBJECT BASED IN THE HTML ELEMENT PROTOTYPE
     var Panel = Object.create(HTMLElement.prototype);
