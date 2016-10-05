@@ -20,8 +20,6 @@ class AppDrawer extends HTMLElement {
 	// This is specific to CE and required by the spec.
 	super();
 
-	alert("A")
-
 	// Setup a click listener on <app-drawer> itself.
 	this.addEventListener('click', e => {
 	    // Don't toggle the drawer if it's disabled.
@@ -30,6 +28,10 @@ class AppDrawer extends HTMLElement {
 	    }
 	    this.toggleDrawer();
 	});
+    }
+
+    connectedCallback() {
+	alert("A");
     }
 
     // A getter/setter for an open property.
