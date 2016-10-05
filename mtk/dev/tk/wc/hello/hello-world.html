@@ -12,13 +12,13 @@
     var thisDoc =  (thatDoc._currentScript || thatDoc.currentScript).ownerDocument;
 
     // Gets content from <template>
-    var template = thisDoc.querySelector('template').content;
+    var template = thisDoc.querySelector("template").content;
 
     // Creates an object based in the HTML Element prototype
     var MyElementProto = Object.create(HTMLElement.prototype);
 
     // Creates the "who" attribute and sets a default value
-    MyElementProto.who = 'World';
+    MyElementProto.who = "World";
 
     // Fires when an instance of the element is created
     MyElementProto.createdCallback = function() {
@@ -30,11 +30,11 @@
         shadowRoot.appendChild(clone);
 
         // Caches <strong> DOM query
-        this.strong = shadowRoot.querySelector('strong');
+        this.strong = shadowRoot.querySelector("strong");
 
         // Checks if the "who" attribute has been overwritten
-        if (this.hasAttribute('who')) {
-            var who = this.getAttribute('who');
+        if (this.hasAttribute("who")) {
+            var who = this.getAttribute("who");
             this.setWho(who);
         }
         else {
@@ -44,7 +44,7 @@
 
     // Fires when an attribute was added, removed, or updated
     MyElementProto.attributeChangedCallback = function(attr, oldVal, newVal) {
-        if (attr === 'who') {
+        if (attr === "who") {
             this.setWho(newVal);
         }
     };
@@ -58,7 +58,7 @@
     };
 
     // Registers <hello-world> in the main document
-    window.MyElement = thatDoc.registerElement('hello-world', {
+    window.MyElement = thatDoc.registerElement("hello-world", {
         prototype: MyElementProto
     });
 })(window, document);
