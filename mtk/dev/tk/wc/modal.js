@@ -1,4 +1,3 @@
-// Modal
 XModal = document.registerElement(prefix + '-modal', {
     prototype: Object.create(HTMLElement.prototype, {
 	createdCallback: {
