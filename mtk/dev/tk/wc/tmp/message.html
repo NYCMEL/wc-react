@@ -1,0 +1,42 @@
+<template id="message">
+<style>
+.msg-wrapper
+{
+   border:1px solid;
+   padding: 9px;
+}
+.msg
+{
+   color: brown;
+}
+</style>
+
+<div class="msg-wrapper">
+  <div class="msg">
+    This is my Message!!
+  </div>
+</div>
+
+</template>
+ 
+<script>
+    var customPrototype = Object.create(HTMLElement.prototype, {
+	createdCallback: function(){
+	    var shadow = this.createShadowRoot();
+	    var template = document.querySelector('#message');
+	    alert(template);
+	    shadow.appendChild(template.content);
+	},
+	attachedCallback : function(){
+	    console.log("attached Callback");
+	},
+	detachedCallback : function(){
+	    console.log("detached Callback");
+	},
+	attributeChangedCallback : function(attrName, oldVal, newVal){
+	    console.log("attrname : "+attrname+" :: oldval : "+oldVal+" :: newval : "+newVal)
+	}
+    });
+
+    var message = document.registerElement('my-message', customPrototype);
+</script>
