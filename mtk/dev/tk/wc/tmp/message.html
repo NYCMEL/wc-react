@@ -9,6 +9,8 @@
 <script>
     var customPrototype = Object.create(HTMLElement.prototype, {
 	createdCallback: function(){
+	    alert("A")
+
 	    var shadow = this.createShadowRoot();
 	    var template = document.querySelector("#message");
 	    alert(template);

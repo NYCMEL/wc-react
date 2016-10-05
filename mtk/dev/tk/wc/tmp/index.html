@@ -1,9 +1,20 @@
 <html>
   <head>
-    <link rel="import" href="message.html">
+    <script async>
+      function handleLoad(e) {
+	  console.log('Loaded import: ' + e.target.href);
+      }
+
+      function handleError(e) {
+	  console.log('Error loading import: ' + e.target.href);
+      }
+    </script>
+
+    <link rel="import" href="message.html" onload="handleLoad(event)" onerror="handleError(event)">
   </head> 
 
   <body> 
+
     <my-message>AAAAAAAAAAAA</my-message> 
   </body> 
 </html>
