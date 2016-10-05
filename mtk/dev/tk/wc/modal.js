@@ -2,12 +2,14 @@ XModal = document.registerElement('bs-modal', {
     prototype: Object.create(HTMLElement.prototype, {
 	createdCallback: {
 	    value: function() {
-		// jQuery creates an extra looking for CSS display value
+		// JQUERY CREATES AN EXTRA LOOKING FOR CSS DISPLAY VALUE
 		if (!this.parentNode) {
 		    return false;
 		}
+		
+		var template = document.querySelector('#x-modal');
+		console.log(">>>", template)
 
-		var template = importDoc.querySelector('#x-modal');
 		var modal = template.content.cloneNode(true);
 		var elmHeader = modal.querySelector('.modal-header');
 		var attrs = this.attributes;
