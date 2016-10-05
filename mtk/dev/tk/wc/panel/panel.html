@@ -10,36 +10,36 @@
 
 <script>
     (function(window, document, undefined) {
-	// Refers to the "importer", which is index.html
+	// REFERS TO THE "IMPORTER", WHICH IS INDEX.HTML
 	var thatDoc = document;
 
-	// Refers to the "importee", which is src/hello-world.html
+	// REFERS TO THE "IMPORTEE", WHICH IS PANEL.HTML
 	var thisDoc =  (thatDoc._currentScript || thatDoc.currentScript).ownerDocument;
 
-	// Gets content from <template>
+	// GETS CONTENT FROM <TEMPLATE>
 	var template = thisDoc.querySelector("template").content;
 
-	// Creates an object based in the HTML Element prototype
+	// CREATES AN OBJECT BASED IN THE HTML ELEMENT PROTOTYPE
 	var Panel = Object.create(HTMLElement.prototype);
 
-	// Creates the "who" attribute and sets a default value
+	// CREATES THE "WHO" ATTRIBUTE AND SETS A DEFAULT VALUE
 	Panel.who = "World";
 
-	// Fires when an instance of the element is created
+	// FIRES WHEN AN INSTANCE OF THE ELEMENT IS CREATED
 	Panel.createdCallback = function() {
 	    console.group("Panel.createdCallback")
 
-            // Creates the shadow root
+            // CREATES THE SHADOW ROOT
             var shadowRoot = this.createShadowRoot();
 
-            // Adds a template clone into shadow root
+            // ADDS A TEMPLATE CLONE INTO SHADOW ROOT
             var clone = thatDoc.importNode(template, true);
             shadowRoot.appendChild(clone);
 
-            // Caches <strong> DOM query
+            // CACHES <STRONG> DOM QUERY
             this.strong = shadowRoot.querySelector("strong");
 
-            // Checks if the "who" attribute has been overwritten
+            // CHECKS IF THE "WHO" ATTRIBUTE HAS BEEN OVERWRITTEN
             if (this.hasAttribute("who")) {
 		var who = this.getAttribute("who");
 		this.setWho(who);
@@ -51,7 +51,7 @@
 	    console.groupEnd()
 	};
 
-	// Fires when an attribute was added, removed, or updated
+	// FIRES WHEN AN ATTRIBUTE WAS ADDED, REMOVED, OR UPDATED
 	Panel.attributeChangedCallback = function(attr, oldVal, newVal) {
 	    console.group("Panel.attributeChangedCallback")
 
@@ -62,7 +62,7 @@
 	    console.groupEnd();
 	};
 
-	// Sets new value to "who" attribute
+	// SETS NEW VALUE TO "WHO" ATTRIBUTE
 	Panel.setWho = function(val) {
 	    console.group("Panel.setWho")
 
@@ -74,7 +74,7 @@
 	    console.groupEnd();
 	};
 
-	// Registers <hello-world> in the main document
+	// REGISTERS <HELLO-WORLD> IN THE MAIN DOCUMENT
 	window.MyElement = thatDoc.registerElement("hello-world", {
             prototype: Panel
 	});
