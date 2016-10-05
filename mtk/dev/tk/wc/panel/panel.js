@@ -6,8 +6,7 @@
     var thisDoc =  (thatDoc._currentScript || thatDoc.currentScript).ownerDocument;
 
     // GETS CONTENT FROM <TEMPLATE>
-    var template = thisDoc.querySelector("template").content;
-    console.log(template);
+    var template = thisDoc.querySelector("#template-panel").content;
 
     // CREATES AN OBJECT BASED IN THE HTML ELEMENT PROTOTYPE
     var Panel = Object.create(HTMLElement.prototype);
