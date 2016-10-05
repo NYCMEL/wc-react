@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Web Component &middot; Bootstrap</title>
-    <link rel="import" href="imports.html">
+    <title>WC Bootstrap - Modal</title>
+
     <link rel="import" href="modal.html">
   </head>
 
@@ -12,19 +12,11 @@
       <!-- Modal -->
       <div class="row">
 	<h3 class="col-md-12">Modal</h3>
-	<div class="col-md-6">
-	  <textarea data-target="#modal-demo">
-	    <bs-modal title="Title" show="false">
-	      Dialog Contents
-	    </bs-modal>
-	  </textarea>
+	<div id="modal-demo">
+          <bs-modal title="Title" show="false">Dialog Contents</bs-modal>
 	</div>
-	<div class="col-md-6">
-	  <div id="modal-demo">
-            <bs-modal title="Title" show="false">Dialog Contents</bs-modal>
-	  </div>
-	  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-demo bs-modal">Open Modal</button>
-	</div>
+	
+	<button class="btn btn-primary" data-toggle="modal" data-target="#modal-demo bs-modal">Open Modal</button>
       </div>
     </div>
   </body>
