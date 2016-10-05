@@ -15,13 +15,13 @@
     var template = thisDoc.querySelector("template").content;
 
     // Creates an object based in the HTML Element prototype
-    var Hello = Object.create(HTMLElement.prototype);
+    var Widget = Object.create(HTMLElement.prototype);
 
     // Creates the "who" attribute and sets a default value
-    Hello.who = "World";
+    Widget.who = "World";
 
     // Fires when an instance of the element is created
-    Hello.createdCallback = function() {
+    Widget.createdCallback = function() {
         // Creates the shadow root
         var shadowRoot = this.createShadowRoot();
 
@@ -43,14 +43,14 @@
     };
 
     // Fires when an attribute was added, removed, or updated
-    Hello.attributeChangedCallback = function(attr, oldVal, newVal) {
+    Widget.attributeChangedCallback = function(attr, oldVal, newVal) {
         if (attr === "who") {
             this.setWho(newVal);
         }
     };
 
     // Sets new value to "who" attribute
-    Hello.setWho = function(val) {
+    Widget.setWho = function(val) {
         this.who = val;
 
         // Sets "who" value into <strong>
@@ -59,7 +59,7 @@
 
     // Registers <hello-world> in the main document
     window.MyElement = thatDoc.registerElement("hello-world", {
-        prototype: Hello
+        prototype: Widget
     });
 })(window, document);
 </script>
