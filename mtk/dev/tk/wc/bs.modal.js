@@ -46,10 +46,14 @@ XModal = document.registerElement('bs-modal', {
 		}
 
 		// Content
-		modal.querySelector('.modal-body').innerHTML = this.innerHTML;
+		modal.querySelector('.modal-body').innerHTML =
+		    "<style>" +
+		    "@import 'http://localhost/GitHub/bootstrap/dist/css/bootstrap.min.css'" + 
+		    "</style>" +
+		    this.innerHTML;
 		this.innerHTML = '';
 
-		if (0) {
+		if (1) {
 		    var root = this.createShadowRoot();
 		    root.appendChild(modal);
 		} else {
