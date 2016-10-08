@@ -15,6 +15,8 @@ XModal = document.registerElement('bs-modal', {
 		    return false;
 		}
 
+		//var root = this.createShadowRoot();
+
 		var template = importDoc.querySelector('#x-modal');
 		var modal = template.content.cloneNode(true);
 		var elmHeader = modal.querySelector('.modal-header');
