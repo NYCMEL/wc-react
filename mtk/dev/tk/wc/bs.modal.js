@@ -47,6 +47,8 @@ XModal = document.registerElement('bs-modal', {
 
 		// Content
 		modal.querySelector('.modal-body').innerHTML =
+		    "<script src='http://localhost/tk/jquery/scripts/jquery.min.js' type='text/javascript' media='all'></script>" +
+		    "<script src='http://localhost/tk/inc/bootstrap.min.js' type='text/javascript' media='all'></script>" +
 		    "<style>" +
 		    "@import 'http://localhost/GitHub/bootstrap/dist/css/bootstrap.min.css'" + 
 		    "</style>" +
@@ -55,7 +57,10 @@ XModal = document.registerElement('bs-modal', {
 
 		if (1) {
 		    var root = this.createShadowRoot();
-		    root.appendChild(modal);
+		    root.appendChild(
+			
+			modal
+		    );
 		} else {
 		    this.appendChild(modal);
 		}
