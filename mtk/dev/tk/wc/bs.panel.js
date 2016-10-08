@@ -21,7 +21,7 @@ Panel = document.registerElement('bs-panel', {
 		var shadow = this.createShadowRoot();
 
 		xx = template;
-		console.log(">>>", xx)
+		console.log(">>>", xx.innerHTML)
 
 		shadow.innerHTML =
 		    "<style>" +
