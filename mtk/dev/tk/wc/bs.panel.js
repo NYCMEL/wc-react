@@ -1,3 +1,5 @@
+var xx;
+
 try {
     // SOMEHOW THIS DOES NOT WORK
     var importDoc = document.currentScript.ownerDocumentdocument.currentScript === document._currentScript ? document.currentScript.ownerDocument: document._currentScript.ownerDocument;
@@ -5,7 +7,7 @@ try {
     var importDoc = document.currentScript.ownerDocument;
 }
 
-// Modal
+// PANEL
 Panel = document.registerElement('bs-panel', {
     prototype: Object.create(HTMLElement.prototype, {
 	createdCallback: {
@@ -15,12 +17,15 @@ Panel = document.registerElement('bs-panel', {
 		    return false;
 		}
 		
-		var host = document.querySelector("#mypanel");
-		var root = host.createShadowRoot();
-		var template = document.querySelector("#template-panel");
-		console.log(">>>>>>>", template)
+		var template = importDoc.querySelector("#template-panel");
+		var shadow = this.createShadowRoot();
+		console.log(">>>", template)
 
-		root.appendChild(template.content);
+		shadow.innerHTML =
+		    "<style>" +
+		    "@import 'http://localhost/GitHub/bootstrap/dist/css/bootstrap.min.css'" + 
+		    "</style>" +
+		    $(template).html();
 	    }
 	}
     })
