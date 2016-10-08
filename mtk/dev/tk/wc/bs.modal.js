@@ -15,6 +15,13 @@ XModal = document.registerElement('bs-modal', {
 		    return false;
 		}
 
+		var scripts = 
+		    "<script src='http://localhost/tk/jquery/scripts/jquery.min.js' type='text/javascript' media='all'></script>" +
+		    "<script src='http://localhost/tk/inc/bootstrap.min.js' type='text/javascript' media='all'></script>" +
+		    "<style>" +
+		    "@import 'http://localhost/GitHub/bootstrap/dist/css/bootstrap.min.css'" + 
+		    "</style>";
+
 		var template = importDoc.querySelector('#x-modal');
 		var modal = template.content.cloneNode(true);
 		var heading = modal.querySelector('.modal-header');
@@ -46,13 +53,7 @@ XModal = document.registerElement('bs-modal', {
 		}
 
 		// Content
-		modal.querySelector('.modal-body').innerHTML =
-		    "<script src='http://localhost/tk/jquery/scripts/jquery.min.js' type='text/javascript' media='all'></script>" +
-		    "<script src='http://localhost/tk/inc/bootstrap.min.js' type='text/javascript' media='all'></script>" +
-		    "<style>" +
-		    "@import 'http://localhost/GitHub/bootstrap/dist/css/bootstrap.min.css'" + 
-		    "</style>" +
-		    this.innerHTML;
+		modal.querySelector('.modal-body').innerHTML = this.innerHTML;
 		this.innerHTML = '';
 
 		if (1) {
