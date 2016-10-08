@@ -56,7 +56,7 @@ XModal = document.registerElement('bs-modal', {
 		modal.querySelector('.modal-body').innerHTML = this.innerHTML;
 		this.innerHTML = '';
 
-		if (1) {
+		if (0) {
 		    var root = this.createShadowRoot();
 		    root.appendChild(modal);
 		} else {
