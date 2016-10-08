@@ -51,7 +51,13 @@ XModal = document.registerElement('bs-modal', {
 		modal.querySelector('.modal-body').innerHTML = this.innerHTML;
 		this.innerHTML = '';
 
-		this.appendChild(modal);
+		if (0) {
+		    var root = this.createShadowRoot();
+		    root.appendChild(modal);
+		} else {
+		    this.appendChild(modal);
+		}
+		
 		$(this).modal(options);
 	    }
 	},
