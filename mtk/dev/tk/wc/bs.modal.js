@@ -17,7 +17,7 @@ XModal = document.registerElement('bs-modal', {
 
 		var template = importDoc.querySelector('#x-modal');
 		var modal = template.content.cloneNode(true);
-		var elmHeader = modal.querySelector('.modal-header');
+		var heading = modal.querySelector('.modal-header');
 		var attrs = this.attributes;
 		var options = {};
 
@@ -31,10 +31,10 @@ XModal = document.registerElement('bs-modal', {
 		    if (name === 'title') {
 			var elmTitle = modal.querySelector('.modal-title');
 			elmTitle.textContent = value;
-			elmHeader.classList.remove('x-modal-no-title');
+			heading.classList.remove('x-modal-no-title');
 
 		    } else if (name === 'close' && value === 'false') {
-			elmHeader.querySelector('.close').classList.add('hide');
+			heading.querySelector('.close').classList.add('hide');
 
 		    } else if (/backdrop|keyboard|show/i.test(name)) {
 			if (/true|false/i.test(value)) {
