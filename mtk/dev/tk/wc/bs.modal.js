@@ -1,3 +1,9 @@
+try {
+    var importDoc = document.currentScript.ownerDocumentdocument.currentScript === document._currentScript ? document.currentScript.ownerDocument: document._currentScript.ownerDocument;
+} catch(e) {
+    var importDoc = document.currentScript.ownerDocument;
+}
+
 // Modal
 XModal = document.registerElement('bs-modal', {
     prototype: Object.create(HTMLElement.prototype, {
