@@ -14,9 +14,13 @@ Panel = document.registerElement('bs-panel', {
 		if (!this.parentNode) {
 		    return false;
 		}
+		
+		var host = document.querySelector("#mypanel");
+		var root = host.createShadowRoot();
+		var template = document.querySelector("#template-panel");
+		console.log(">>>>>>>", template)
 
-		var shadow = document.querySelector('#template-panel').createShadowRoot();
-		shadow.appendChild(template.content);
+		root.appendChild(template.content);
 	    }
 	}
     })
