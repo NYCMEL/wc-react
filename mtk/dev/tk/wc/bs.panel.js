@@ -24,9 +24,9 @@ Panel = document.registerElement('bs-panel', {
 
 		//var template = importDoc.querySelector('#template-panel');
 		//alert($(template).html());
-
+		
 		xx = host;
-
+		
 		shadow.innerHTML =
 		    "<style>" +
 		    "@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
