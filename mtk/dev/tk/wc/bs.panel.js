@@ -71,7 +71,6 @@ Panel.toggle = function(id) {
 	console.group("Panel.toggle");
 	
 	var fa = shadow.querySelector(".panel-heading .fa");
-	console.log("FA:", fa);
 
 	if ($(fa).hasClass("fa-caret-down")) {
 	    handle.close(id);
