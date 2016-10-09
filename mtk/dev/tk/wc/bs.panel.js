@@ -60,15 +60,15 @@ Panel.createdCallback = function() {
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
 Panel.toggle = function(shadow) {
-    $(shadow.querySelector(".panel-body")).slideToggle("slow");
+    $(shadow.querySelector(".panel-body")).slideToggle(200, function() {
+	var fa  = $(shadow.querySelector(".panel-heading .fa"));
 
-    var fa  = $(shadow.querySelector(".panel-heading .fa"));
-
-    if (fa.hasClass("fa-caret-down")) {
-	fa.removeClass("fa-caret-down").addClass("fa-caret-right")
-    } else {
-	fa.removeClass("fa-caret-right").addClass("fa-caret-down")
-    }
+	if (fa.hasClass("fa-caret-down")) {
+	    fa.removeClass("fa-caret-down").addClass("fa-caret-right")
+	} else {
+	    fa.removeClass("fa-caret-right").addClass("fa-caret-down")
+	}
+    });
 };
 
 ////////////////////////////////////////////////////////////////////////////////////
