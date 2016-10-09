@@ -35,7 +35,7 @@ Panel.createdCallback = function() {
 	"@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';" +
 	"@import 'bootstrap.custom.css';" +
 	"</style>" +
-	$(template).html();
+	template.innerHTML;
 
     if (collapsible == "true") {
 	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-caret-down'></i></span> " + heading;
