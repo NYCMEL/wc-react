@@ -1,13 +1,13 @@
 var xx, yy;
 
-// PANEL
-var Panel = Object.create(HTMLElement.prototype);
+// MODAL
+var Modal = Object.create(HTMLElement.prototype);
 
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.createdCallback = function() {
-    console.group("Panel.createdCallback");
+Modal.createdCallback = function() {
+    console.group("Modal.createdCallback");
 
     // jQuery creates an extra looking for CSS display value
     if (!this.parentNode) {
@@ -23,7 +23,7 @@ Panel.createdCallback = function() {
     var footer  = $(this).attr("footer");
     var collapsible = $(this).attr("collapsible");
 
-    var template = importDoc.querySelector('#template-panel');
+    var template = importDoc.querySelector('#template-modal');
     xx = host;
     yy = template;
     
@@ -36,25 +36,25 @@ Panel.createdCallback = function() {
 	$(template).html();
 
     if (collapsible == "true") {
-	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-caret-down'></i></span> " + heading;
-	$(shadow.querySelector(".panel-heading")).css("cursor", "pointer");
-	$(shadow.querySelector(".panel-heading")).on("click", function() {
+	shadow.querySelector(".modal-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-caret-down'></i></span> " + heading;
+	$(shadow.querySelector(".modal-heading")).css("cursor", "pointer");
+	$(shadow.querySelector(".modal-heading")).on("click", function() {
 	    host.toggle(id);
 	});
     } else {
-	shadow.querySelector(".panel-heading").innerHTML = heading;
+	shadow.querySelector(".modal-heading").innerHTML = heading;
     }
 
-    shadow.querySelector(".panel-footer").innerHTML = footer;
-    shadow.querySelector(".panel-body").innerHTML = content;
+    shadow.querySelector(".modal-footer").innerHTML = footer;
+    shadow.querySelector(".modal-body").innerHTML = content;
 
-    $(shadow.querySelector(".panel-heading")).attr("id", id + "-heading");
-    $(shadow.querySelector(".panel-body")).attr("id", id + "-body");
-    $(shadow.querySelector(".panel-footer")).attr("id", id + "-footer");
+    $(shadow.querySelector(".modal-heading")).attr("id", id + "-heading");
+    $(shadow.querySelector(".modal-body")).attr("id", id + "-body");
+    $(shadow.querySelector(".modal-footer")).attr("id", id + "-footer");
 
     // IF WE DON'T HAVE A FOOTER
     if (typeof footer === "undefined") {
-	$(shadow).find(".panel-footer").hide();
+	$(shadow).find(".modal-footer").hide();
     }
 
     console.groupEnd();
@@ -63,14 +63,14 @@ Panel.createdCallback = function() {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.toggle = function(id) {
+Modal.toggle = function(id) {
     var handle = this;
     var shadow = this.shadowRoot;
 
-    $(shadow.querySelector(".panel-body")).slideToggle(200, function() {
-	console.group("Panel.toggle");
+    $(shadow.querySelector(".modal-body")).slideToggle(200, function() {
+	console.group("Modal.toggle");
 	
-	var fa = shadow.querySelector(".panel-heading .fa");
+	var fa = shadow.querySelector(".modal-heading .fa");
 
 	if ($(fa).hasClass("fa-caret-down")) {
 	    handle.close(id);
@@ -85,21 +85,21 @@ Panel.toggle = function(id) {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.open = function(id) {
-    console.group("Panel.open", id);
+Modal.open = function(id) {
+    console.group("Modal.open", id);
 
     if (typeof id === "undefined") {
 	id = $(this).attr("id");
     }
 
-    console.log('PUBLISHED panelOpened', id);
-    $.publish('Panel', ['panelOpened', id]);
+    console.log('PUBLISHED modalOpened', id);
+    $.publish('Modal', ['modalOpened', id]);
     
     var shadow = this.shadowRoot;
-    var fa = shadow.querySelector(".panel-heading .fa");
+    var fa = shadow.querySelector(".modal-heading .fa");
     
     $(fa).removeClass("fa-caret-right").addClass("fa-caret-down")
-    $(shadow.querySelector(".panel-body")).show();
+    $(shadow.querySelector(".modal-body")).show();
 
     console.groupEnd();
 }
@@ -107,21 +107,21 @@ Panel.open = function(id) {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.close = function(id) {
-    console.group("Panel.close", id);
+Modal.close = function(id) {
+    console.group("Modal.close", id);
     
     if (typeof id === "undefined") {
 	id = $(this).attr("id");
     }
 
-    console.log('PUBLISHED panelClosed', id);
-    $.publish('Panel', ['panelClosed', id]);
+    console.log('PUBLISHED modalClosed', id);
+    $.publish('Modal', ['modalClosed', id]);
     
     var shadow = this.shadowRoot;
-    var fa = shadow.querySelector(".panel-heading .fa");
+    var fa = shadow.querySelector(".modal-heading .fa");
 
     $(fa).removeClass("fa-caret-down").addClass("fa-caret-right")
-    $(shadow.querySelector(".panel-body")).hide();
+    $(shadow.querySelector(".modal-body")).hide();
 
     console.groupEnd();
 }
@@ -129,6 +129,6 @@ Panel.close = function(id) {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-var Panel = document.registerElement('bs-panel', {
-    prototype: Panel
+var Modal = document.registerElement('bs-modal', {
+    prototype: Modal
 });
