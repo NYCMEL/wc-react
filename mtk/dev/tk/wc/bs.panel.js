@@ -71,6 +71,7 @@ Panel.toggle = function(id) {
 	console.group("Panel.toggle");
 	
 	var fa = shadow.querySelector(".panel-heading .fa");
+	console.log("FA:", fa);
 
 	if ($(fa).hasClass("fa-caret-down")) {
 	    handle.close(id);
@@ -98,8 +99,6 @@ Panel.open = function(id) {
     var shadow = this.shadowRoot;
     var fa = shadow.querySelector(".fa");
     
-    console.log(">>>>>>>", fa, shadow.querySelector(".panel-body"));
-
     $(fa).removeClass("fa-caret-right").addClass("fa-caret-down")
     $(shadow.querySelector(".panel-body")).show();
 
@@ -116,15 +115,12 @@ Panel.close = function(id) {
 	id = $(this).attr("id");
     }
 
-    console.log(">>>>>>>", $(this).attr("id"))
-
     console.log('PUBLISHED panelClosed', id);
     $.publish('Panel', ['panelClosed', id]);
     
     var shadow = this.shadowRoot;
     var fa = shadow.querySelector(".fa");
 
-    console.log(">>>>>>>", fa, shadow.querySelector(".panel-body"));
     $(fa).removeClass("fa-caret-down").addClass("fa-caret-right")
     $(shadow.querySelector(".panel-body")).hide();
 
