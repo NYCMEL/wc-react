@@ -7,6 +7,10 @@ body {
 .panel .panel-heading {
   border-radius: 0!important;
 }
+.panel .panel-heading .fa-caret {
+  display: inline-block;
+  width: 10px;
+}
 .panel .panel-footer {
   font-size: 12px;
   padding: 5px;
