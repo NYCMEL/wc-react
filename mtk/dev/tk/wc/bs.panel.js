@@ -96,7 +96,7 @@ Panel.open = function(id) {
     $.publish('Panel', ['panelOpened', id]);
     
     var shadow = this.shadowRoot;
-    var fa = shadow.querySelector(".fa");
+    var fa = shadow.querySelector(".panel-heading .fa");
     
     $(fa).removeClass("fa-caret-right").addClass("fa-caret-down")
     $(shadow.querySelector(".panel-body")).show();
@@ -118,7 +118,7 @@ Panel.close = function(id) {
     $.publish('Panel', ['panelClosed', id]);
     
     var shadow = this.shadowRoot;
-    var fa = shadow.querySelector(".fa");
+    var fa = shadow.querySelector(".panel-heading .fa");
 
     $(fa).removeClass("fa-caret-down").addClass("fa-caret-right")
     $(shadow.querySelector(".panel-body")).hide();
