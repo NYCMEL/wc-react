@@ -1,12 +1,5 @@
 var xx, yy;
 
-try {
-    // SOMEHOW THIS DOES NOT WORK
-    var importDoc = document.currentScript.ownerDocumentdocument.currentScript === document._currentScript ? document.currentScript.ownerDocument: document._currentScript.ownerDocument;
-} catch(e) {
-    var importDoc = document.currentScript.ownerDocument;
-}
-
 // PANEL
 Panel = document.registerElement('bs-panel', {
     prototype: Object.create(HTMLElement.prototype, {

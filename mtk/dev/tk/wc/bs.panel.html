@@ -5,6 +5,15 @@
 <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>" 
 
+<script>
+try {
+    // SOMEHOW THIS DOES NOT WORK
+    var importDoc = document.currentScript.ownerDocumentdocument.currentScript === document._currentScript ? document.currentScript.ownerDocument: document._currentScript.ownerDocument;
+} catch(e) {
+    var importDoc = document.currentScript.ownerDocument;
+}
+</script>
+
 <template id="template-panel">
   <div class="panel panel-danger">
     <div class="panel-heading">PANEL HEADING</div>
