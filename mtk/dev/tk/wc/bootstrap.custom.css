@@ -10,6 +10,7 @@ body {
 .panel .panel-heading .fa-caret {
   display: inline-block;
   width: 10px;
+  text-align: right;
 }
 .panel .panel-footer {
   font-size: 12px;
