@@ -30,7 +30,7 @@ Panel = document.registerElement('bs-panel', {
 		    "</style>" +
 		    $(template).html();
 
-		shadow.querySelector(".panel-heading").innerHTML = heading;
+		shadow.querySelector(".panel-heading").innerHTML = "<i class='fa fa-caret-down'></i> " + heading;
 		shadow.querySelector(".panel-footer").innerHTML = footer;
 		shadow.querySelector(".panel-body").innerHTML = content;
 
