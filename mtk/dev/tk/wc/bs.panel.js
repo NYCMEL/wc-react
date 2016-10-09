@@ -52,6 +52,9 @@ Panel = document.registerElement('bs-panel', {
 		    $(shadow).find(".panel-footer").hide();
 		}
 	    }
+	},
+	toggle: function() {
+	    $(shadow.querySelector(".panel-body")).slideToggle("slow");
 	}
     })
 });
