@@ -18,10 +18,10 @@ Panel.createdCallback = function() {
     var host = document.querySelector("#" + id);
     var shadow = host.createShadowRoot();
 
-    var content = $("#" + id).html();
-    var heading = $(this).attr("heading");
-    var footer  = $(this).attr("footer");
-    var collapsible = $(this).attr("collapsible");
+    var content = host.innerHTML;
+    var heading = host.getAttribute("heading");
+    var footer  = host.getAttribute("footer");
+    var collapsible = host.getAttribute("collapsible");
 
     var template = importDoc.querySelector('#template-panel');
     console.log(template)
