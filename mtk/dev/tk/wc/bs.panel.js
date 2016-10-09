@@ -27,7 +27,7 @@ Panel = document.registerElement('bs-panel', {
 		    "@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
 		    "@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';" +
 		    "</style>" +
-		    $(template).html()
+		    $(template).html();
 
 		shadow.querySelector(".panel-heading").innerHTML = heading;
 		shadow.querySelector(".panel-footer").innerHTML = footer;
