@@ -18,9 +18,12 @@ Panel = document.registerElement('bs-panel', {
 		}
 		
 		var id = $(this).attr("id");
-		var content = $("#" + id).html();
 		var host = document.querySelector("#" + id);
 		var shadow = host.createShadowRoot();
+
+		var content = $("#" + id).html();
+		var heading = $(this).attr("heading");
+		var footer  = $(this).attr("footer");
 
 		var template = importDoc.querySelector('#template-panel');
 		xx = shadow;
@@ -33,12 +36,12 @@ Panel = document.registerElement('bs-panel', {
 		    "</style>" +
 		    $(template).html()
 
-		shadow.querySelector(".panel-heading").innerHTML = $(this).attr("heading");
-		shadow.querySelector(".panel-footer").innerHTML = $(this).attr("footer");
+		shadow.querySelector(".panel-heading").innerHTML = heading;
+		shadow.querySelector(".panel-footer").innerHTML = footer;
 		shadow.querySelector(".panel-body").innerHTML = content;
 
 		// IF WE DON'T HAVE A FOOTER
-		if (typeof $(this).attr("footer") === "undefined") {
+		if (typeof footer === "undefined") {
 		    $(shadow).find(".panel-footer").hide();
 		}
 	    }
