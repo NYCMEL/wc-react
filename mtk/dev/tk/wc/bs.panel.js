@@ -20,7 +20,7 @@ Panel = document.registerElement('bs-panel', {
 		var collapsible = $(this).attr("collapsible");
 
 		var template = importDoc.querySelector('#template-panel');
-		xx = shadow;
+		xx = host;
 		yy = template;
 		
 		shadow.innerHTML =
@@ -55,6 +55,7 @@ Panel = document.registerElement('bs-panel', {
 	    }
 	},
 	toggle: function() {
+	    alert("A");
 	    $(shadow.querySelector(".panel-body")).slideToggle("slow");
 	}
     })
