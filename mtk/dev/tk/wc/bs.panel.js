@@ -39,7 +39,7 @@ Panel.createdCallback = function() {
 	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-caret-down'></i></span> " + heading;
 	$(shadow.querySelector(".panel-heading")).css("cursor", "pointer");
 	$(shadow.querySelector(".panel-heading")).on("click", function() {
-	    host.toggle(id, shadow);
+	    host.toggle(id);
 	});
     } else {
 	shadow.querySelector(".panel-heading").innerHTML = heading;
@@ -63,17 +63,20 @@ Panel.createdCallback = function() {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.toggle = function(id, shadow) {
+Panel.toggle = function(id) {
     var handle = this;
+    var shadow = this.shadowRoot;
 
     $(shadow.querySelector(".panel-body")).slideToggle(200, function() {
 	console.group("Panel.toggle");
+	
+	var fa = shadow.querySelector(".panel-heading .fa");
 
-	var fa  = $(shadow.querySelector(".panel-heading .fa"));
-
-	if (fa.hasClass("fa-caret-down")) {
+	if ($(fa).hasClass("fa-caret-down")) {
+	    console.log("AAAAAAAAAAAA");
 	    handle.close(id);
 	} else {
+	    console.log("BBBBBBBBBBBBB");
 	    handle.open(id);
 	}
 
