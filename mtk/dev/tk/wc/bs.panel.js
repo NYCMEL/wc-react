@@ -17,6 +17,7 @@ Panel = document.registerElement('bs-panel', {
 		var content = $("#" + id).html();
 		var heading = $(this).attr("heading");
 		var footer  = $(this).attr("footer");
+		var collapsible = $(this).attr("collapsible");
 
 		var template = importDoc.querySelector('#template-panel');
 		xx = shadow;
@@ -30,7 +31,11 @@ Panel = document.registerElement('bs-panel', {
 		    "</style>" +
 		    $(template).html();
 
-		shadow.querySelector(".panel-heading").innerHTML = "<i class='fa fa-caret-down'></i> " + heading;
+		if (collapsible == "true") {
+		    shadow.querySelector(".panel-heading").innerHTML = "<i class='fa fa-caret-down'></i> " + heading;
+		} else {
+		    shadow.querySelector(".panel-heading").innerHTML = heading;
+		}
 		shadow.querySelector(".panel-footer").innerHTML = footer;
 		shadow.querySelector(".panel-body").innerHTML = content;
 
