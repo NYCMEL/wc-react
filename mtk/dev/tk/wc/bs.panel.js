@@ -64,13 +64,13 @@ Panel.toggle = function(id, shadow) {
 	var fa  = $(shadow.querySelector(".panel-heading .fa"));
 
 	if (fa.hasClass("fa-caret-down")) {
-	    console.log('PUBLISHED Panel: closed', id);
-	    $.publish('Panel', ['closed', id]); // PUBLISH
+	    console.log('PUBLISHED panelClosed', id);
+	    $.publish('Panel', ['panelClosed', id]); // PUBLISH
 
 	    fa.removeClass("fa-caret-down").addClass("fa-caret-right")
 	} else {
-	    console.log('PUBLISHED Panel: opened', id);
-	    $.publish('Panel', ['opened', id]); // PUBLISH
+	    console.log('PUBLISHED panelOpened', id);
+	    $.publish('Panel', ['panelOpened', id]); // PUBLISH
 
 	    fa.removeClass("fa-caret-right").addClass("fa-caret-down")
 	}
