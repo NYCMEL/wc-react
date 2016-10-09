@@ -36,6 +36,11 @@ Panel = document.registerElement('bs-panel', {
 		shadow.querySelector(".panel-heading").innerHTML = $(this).attr("heading");
 		shadow.querySelector(".panel-footer").innerHTML = $(this).attr("footer");
 		shadow.querySelector(".panel-body").innerHTML = content;
+
+		// IF WE DON'T HAVE A FOOTER
+		if (typeof $(this).attr("footer") === "undefined") {
+		    $(shadow).find(".panel-footer").hide();
+		}
 	    }
 	}
     })
