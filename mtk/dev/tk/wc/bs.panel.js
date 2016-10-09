@@ -63,13 +63,10 @@ Panel.toggle = function(shadow) {
     $(shadow.querySelector(".panel-body")).slideToggle("slow");
 
     var fa  = $(shadow.querySelector(".panel-heading .fa"));
-    var vis = $(shadow.querySelector(".panel-body")).is(":visible");
 
-    if (vis) {
-	console.log("AAAAAAAAAAAAAAA");
+    if (fa.hasClass("fa-caret-down")) {
 	fa.removeClass("fa-caret-down").addClass("fa-caret-right")
     } else {
-	console.log("BBBBBBBBBBBBBBB");
 	fa.removeClass("fa-caret-right").addClass("fa-caret-down")
     }
 };
