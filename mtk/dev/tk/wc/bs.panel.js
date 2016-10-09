@@ -104,6 +104,8 @@ Panel.open = function(id) {
 ////////////////////////////////////////////////////////////////////////////////////
 Panel.close = function(id) {
     console.group("Panel.close", id);
+    
+    console.log(">>>>>>>", $(this).attr("id"))
 
     console.log('PUBLISHED panelClosed', id);
     $.publish('Panel', ['panelClosed', id]);
