@@ -70,15 +70,9 @@ Panel.toggle = function(id, shadow) {
 	var fa  = $(shadow.querySelector(".panel-heading .fa"));
 
 	if (fa.hasClass("fa-caret-down")) {
-	    console.log('PUBLISHED panelClosed', id);
-	    $.publish('Panel', ['panelClosed', id]);
-
-	    fa.removeClass("fa-caret-down").addClass("fa-caret-right")
+	    host.close(id);
 	} else {
-	    console.log('PUBLISHED panelOpened', id);
-	    $.publish('Panel', ['panelOpened', id]);
-
-	    fa.removeClass("fa-caret-right").addClass("fa-caret-down")
+	    host.open(id);
 	}
 
 	console.groupEnd();
@@ -90,6 +84,15 @@ Panel.toggle = function(id, shadow) {
 ////////////////////////////////////////////////////////////////////////////////////
 Panel.open = function(id) {
     console.group("Panel.open", id);
+
+    var host = document.querySelector("#" + id);
+    var fa   = host.querySelector(".fa");
+
+    console.log('PUBLISHED panelOpened', id);
+    $.publish('Panel', ['panelOpened', id]);
+    
+    $(fa).removeClass("fa-caret-right").addClass("fa-caret-down")
+
     console.groupEnd();
 }
 
@@ -98,6 +101,15 @@ Panel.open = function(id) {
 ////////////////////////////////////////////////////////////////////////////////////
 Panel.close = function(id) {
     console.group("Panel.close", id);
+
+    var host = document.querySelector("#" + id);
+    var fa   = host.querySelector(".fa");
+
+    console.log('PUBLISHED panelClosed', id);
+    $.publish('Panel', ['panelClosed', id]);
+    
+    $(fa).removeClass("fa-caret-down").addClass("fa-caret-right")
+
     console.groupEnd();
 }
 
