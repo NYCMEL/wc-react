@@ -20,6 +20,8 @@ Panel = document.registerElement('bs-panel', {
 		var template = importDoc.querySelector("#template-panel");
 		var shadow = this.createShadowRoot();
 
+		console.log(template.innerHTML);
+
 		xx = shadow;
 
 		shadow.innerHTML =
