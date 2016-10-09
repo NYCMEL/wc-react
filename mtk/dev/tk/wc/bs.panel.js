@@ -1,4 +1,4 @@
-var xx;
+var xx, yy;
 
 try {
     // SOMEHOW THIS DOES NOT WORK
@@ -22,21 +22,20 @@ Panel = document.registerElement('bs-panel', {
 		var host = document.querySelector("#" + id);
 		var shadow = host.createShadowRoot();
 
-		//var template = importDoc.querySelector('#template-panel');
-		//alert($(template).html());
-		
-		xx = host;
+		var template = importDoc.querySelector('#template-panel');
+		xx = shadow;
+		yy = template;
 		
 		shadow.innerHTML =
 		    "<style>" +
 		    "@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
 		    "@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';" +
 		    "</style>" +
-		    "<div class='panel panel-danger'>" +
-		    "<div class='panel-heading'>" + $(this).attr("heading") + "</div>" +
-		    "<div class='panel-body'>" + content + "</div>" +
-		    "<div class='panel-footer'>" + $(this).attr("footer") + "</div>" +
-		    "</div>"
+		    $(template).html()
+
+		xx.querySelector(".panel-heading").innerHTML = $(this).attr("heading");
+		xx.querySelector(".panel-footer").innerHTML = $(this).attr("footer");
+		xx.querySelector(".panel-body").innerHTML = content;
 	    }
 	}
     })
