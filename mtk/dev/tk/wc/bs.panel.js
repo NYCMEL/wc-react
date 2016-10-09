@@ -23,6 +23,10 @@ Panel = document.registerElement('bs-panel', {
 		xx = shadow;
 		yy = template;
 		
+		// var heading = shadow.querySelector(".panel-heading");
+		// var body    = shadow.querySelector(".panel-body");
+		// var footer  = shadow.querySelector(".panel-footer");
+
 		shadow.innerHTML =
 		    "<style>" +
 		    "@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
