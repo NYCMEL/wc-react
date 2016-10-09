@@ -33,9 +33,9 @@ Panel = document.registerElement('bs-panel', {
 		    "</style>" +
 		    $(template).html()
 
-		xx.querySelector(".panel-heading").innerHTML = $(this).attr("heading");
-		xx.querySelector(".panel-footer").innerHTML = $(this).attr("footer");
-		xx.querySelector(".panel-body").innerHTML = content;
+		shadow.querySelector(".panel-heading").innerHTML = $(this).attr("heading");
+		shadow.querySelector(".panel-footer").innerHTML = $(this).attr("footer");
+		shadow.querySelector(".panel-body").innerHTML = content;
 	    }
 	}
     })
