@@ -33,6 +33,10 @@ Panel = document.registerElement('bs-panel', {
 		shadow.querySelector(".panel-footer").innerHTML = footer;
 		shadow.querySelector(".panel-body").innerHTML = content;
 
+		$(shadow.querySelector(".panel-heading")).attr("id", id + "-heading");
+		$(shadow.querySelector(".panel-body")).attr("id", id + "-body");
+		$(shadow.querySelector(".panel-footer")).attr("id", id + "-footer");
+
 		// IF WE DON'T HAVE A FOOTER
 		if (typeof footer === "undefined") {
 		    $(shadow).find(".panel-footer").hide();
