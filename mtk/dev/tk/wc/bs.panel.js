@@ -65,12 +65,12 @@ Panel.toggle = function(id, shadow) {
 
 	if (fa.hasClass("fa-caret-down")) {
 	    console.log('PUBLISHED panelClosed', id);
-	    $.publish('Panel', ['panelClosed', id]); // PUBLISH
+	    $.publish('Panel', ['panelClosed', id]);
 
 	    fa.removeClass("fa-caret-down").addClass("fa-caret-right")
 	} else {
 	    console.log('PUBLISHED panelOpened', id);
-	    $.publish('Panel', ['panelOpened', id]); // PUBLISH
+	    $.publish('Panel', ['panelOpened', id]);
 
 	    fa.removeClass("fa-caret-right").addClass("fa-caret-down")
 	}
