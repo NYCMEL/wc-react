@@ -24,6 +24,7 @@ Panel.createdCallback = function() {
     var collapsible = $(this).attr("collapsible");
 
     var template = importDoc.querySelector('#template-panel');
+    console.log(template)
     xx = host;
     yy = template;
     
