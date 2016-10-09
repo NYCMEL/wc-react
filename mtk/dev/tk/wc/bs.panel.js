@@ -23,10 +23,6 @@ Panel = document.registerElement('bs-panel', {
 		xx = shadow;
 		yy = template;
 		
-		// var heading = shadow.querySelector(".panel-heading");
-		// var body    = shadow.querySelector(".panel-body");
-		// var footer  = shadow.querySelector(".panel-footer");
-
 		shadow.innerHTML =
 		    "<style>" +
 		    "@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
@@ -37,6 +33,7 @@ Panel = document.registerElement('bs-panel', {
 
 		if (collapsible == "true") {
 		    shadow.querySelector(".panel-heading").innerHTML = "<i class='fa fa-caret-down'></i> " + heading;
+		    $(shadow.querySelector(".panel-heading")).css("cursor", "pointer");
 		    $(shadow.querySelector(".panel-heading")).on("click", function() {
 			$(shadow.querySelector(".panel-body")).slideToggle("slow");
 		    });
