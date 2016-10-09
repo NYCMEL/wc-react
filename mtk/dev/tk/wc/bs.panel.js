@@ -33,6 +33,9 @@ Panel = document.registerElement('bs-panel', {
 
 		if (collapsible == "true") {
 		    shadow.querySelector(".panel-heading").innerHTML = "<i class='fa fa-caret-down'></i> " + heading;
+		    $(shadow.querySelector(".panel-heading")).on("click", function() {
+			$(shadow.querySelector(".panel-body")).slideToggle("slow");
+		    });
 		} else {
 		    shadow.querySelector(".panel-heading").innerHTML = heading;
 		}
