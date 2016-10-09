@@ -1,4 +1,4 @@
-var xx, yy;
+var xx, yy, zz;
 
 // PANEL
 var Panel = Object.create(HTMLElement.prototype);
@@ -27,6 +27,7 @@ Panel.createdCallback = function() {
     console.log(template)
     xx = host;
     yy = template;
+    zz = shadow;
     
     shadow.innerHTML =
 	"<style>" +
@@ -38,8 +39,8 @@ Panel.createdCallback = function() {
 
     if (collapsible == "true") {
 	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-caret-down'></i></span> " + heading;
-	$(shadow.querySelector(".panel-heading")).css("cursor", "pointer");
-	$(shadow.querySelector(".panel-heading")).on("click", function() {
+	shadow.querySelector(".panel-heading").setAttribute("style", "cursor: pointer");
+	shadow.querySelector(".panel-heading").addEventListener("click", function() {
 	    host.toggle(id);
 	});
     } else {
@@ -48,10 +49,10 @@ Panel.createdCallback = function() {
 
     shadow.querySelector(".panel-footer").innerHTML = footer;
     shadow.querySelector(".panel-body").innerHTML = content;
-
-    $(shadow.querySelector(".panel-heading")).attr("id", id + "-heading");
-    $(shadow.querySelector(".panel-body")).attr("id", id + "-body");
-    $(shadow.querySelector(".panel-footer")).attr("id", id + "-footer");
+    
+    shadow.querySelector(".panel-heading").setAttribute("id", id + "-heading");
+    shadow.querySelector(".panel-body").setAttribute("id", id + "-body");
+    shadow.querySelector(".panel-footer").setAttribute("id", id + "-footer");
 
     // IF WE DON'T HAVE A FOOTER
     if (typeof footer === "undefined") {
