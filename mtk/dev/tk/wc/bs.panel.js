@@ -40,6 +40,7 @@ Panel = document.registerElement('bs-panel', {
 		} else {
 		    shadow.querySelector(".panel-heading").innerHTML = heading;
 		}
+
 		shadow.querySelector(".panel-footer").innerHTML = footer;
 		shadow.querySelector(".panel-body").innerHTML = content;
 
