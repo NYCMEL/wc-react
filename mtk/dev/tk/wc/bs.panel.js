@@ -35,9 +35,7 @@ Panel.createdCallback = function() {
 
     if (collapsible == "true") {
 	shadow.querySelector(".panel-heading").innerHTML = "<i class='fa fa-caret-down'></i> " + heading;
-
 	$(shadow.querySelector(".panel-heading")).css("cursor", "pointer");
-
 	$(shadow.querySelector(".panel-heading")).on("click", function() {
 	    host.toggle(shadow);
 	});
