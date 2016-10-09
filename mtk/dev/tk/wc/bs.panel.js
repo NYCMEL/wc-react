@@ -7,6 +7,8 @@ var Panel = Object.create(HTMLElement.prototype);
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
 Panel.createdCallback = function() {
+    console.group("Panel.createdCallback");
+
     // jQuery creates an extra looking for CSS display value
     if (!this.parentNode) {
 	return false;
@@ -54,12 +56,16 @@ Panel.createdCallback = function() {
     if (typeof footer === "undefined") {
 	$(shadow).find(".panel-footer").hide();
     }
+
+    console.groupEnd();
 };
 
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
 Panel.toggle = function(id, shadow) {
+    console.group("Panel.toggle");
+
     $(shadow.querySelector(".panel-body")).slideToggle(200, function() {
 	var fa  = $(shadow.querySelector(".panel-heading .fa"));
 
@@ -75,6 +81,8 @@ Panel.toggle = function(id, shadow) {
 	    fa.removeClass("fa-caret-right").addClass("fa-caret-down")
 	}
     });
+
+    console.groupEnd();
 };
 
 ////////////////////////////////////////////////////////////////////////////////////
