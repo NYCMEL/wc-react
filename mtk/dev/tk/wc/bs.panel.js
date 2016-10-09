@@ -89,7 +89,7 @@ Panel.toggle = function(id, shadow) {
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
 Panel.open = function(id) {
-    console.group("Panel.open");
+    console.group("Panel.open", id);
     console.groupEnd();
 }
 
@@ -97,7 +97,7 @@ Panel.open = function(id) {
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
 Panel.close = function(id) {
-    console.group("Panel.close");
+    console.group("Panel.close", id);
     console.groupEnd();
 }
 
