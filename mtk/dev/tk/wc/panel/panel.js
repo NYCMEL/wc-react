@@ -56,7 +56,7 @@ Panel.createdCallback = function() {
 
     // IF WE DON'T HAVE A FOOTER
     if (typeof footer === "undefined") {
-	$(shadow).find(".panel-footer").hide();
+	shadow.querySelector(".panel-footer").setAttribute("style", "display:none");
     }
 
     console.groupEnd();
