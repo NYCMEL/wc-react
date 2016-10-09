@@ -61,7 +61,7 @@ Panel.createdCallback = function() {
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
 Panel.toggle = function() {
-    alert("A");
+    alert("AAAAAAAAAAAAAAAAAAA");
     
     $(shadow.querySelector(".panel-body")).slideToggle("slow");
 };
