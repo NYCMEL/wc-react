@@ -73,10 +73,8 @@ Panel.toggle = function(id) {
 	var fa = shadow.querySelector(".panel-heading .fa");
 
 	if ($(fa).hasClass("fa-caret-down")) {
-	    console.log("AAAAAAAAAAAA");
 	    handle.close(id);
 	} else {
-	    console.log("BBBBBBBBBBBBB");
 	    handle.open(id);
 	}
 
@@ -94,8 +92,7 @@ Panel.open = function(id) {
     $.publish('Panel', ['panelOpened', id]);
     
     var shadow = this.shadowRoot;
-    var host = document.querySelector("#" + id);
-    var fa   = shadow.querySelector(".fa");
+    var fa = shadow.querySelector(".fa");
     
     $(fa).removeClass("fa-caret-right").addClass("fa-caret-down")
 
@@ -108,12 +105,12 @@ Panel.open = function(id) {
 Panel.close = function(id) {
     console.group("Panel.close", id);
 
-    var host = document.querySelector("#" + id);
-    var fa   = host.querySelector(".fa");
-
     console.log('PUBLISHED panelClosed', id);
     $.publish('Panel', ['panelClosed', id]);
     
+    var shadow = this.shadowRoot;
+    var fa = shadow.querySelector(".fa");
+
     $(fa).removeClass("fa-caret-down").addClass("fa-caret-right")
 
     console.groupEnd();
