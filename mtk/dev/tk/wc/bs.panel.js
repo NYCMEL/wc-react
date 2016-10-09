@@ -18,20 +18,25 @@ Panel = document.registerElement('bs-panel', {
 		}
 		
 		var id = $(this).attr("id");
-		alert(id);
-		var template = importDoc.querySelector("#template-panel");
-		var shadow = this.createShadowRoot();
+		var content = $("#" + id).html();
+		var host = document.querySelector("#" + id);
+		var shadow = host.createShadowRoot();
 
-		console.log(template.innerHTML);
+		//var template = importDoc.querySelector('#template-panel');
+		//alert($(template).html());
 
-		xx = shadow;
+		xx = host;
 
 		shadow.innerHTML =
 		    "<style>" +
 		    "@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
 		    "@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';" +
 		    "</style>" +
-		    template.innerHTML
+		    "<div class='panel panel-danger'>" +
+		    "<div class='panel-heading'>" + $(this).attr("heading") + "</div>" +
+		    "<div class='panel-body'>" + content + "</div>" +
+		    "<div class='panel-footer'>" + $(this).attr("footer") + "</div>" +
+		    "</div>"
 	    }
 	}
     })
