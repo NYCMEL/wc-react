@@ -87,11 +87,12 @@ Panel.toggle = function(id, shadow) {
 Panel.open = function(id) {
     console.group("Panel.open", id);
 
-    var host = document.querySelector("#" + id);
-    var fa   = host.querySelector(".fa");
-
     console.log('PUBLISHED panelOpened', id);
     $.publish('Panel', ['panelOpened', id]);
+    
+    var shadow = this.shadowRoot;
+    var host = document.querySelector("#" + id);
+    var fa   = shadow.querySelector(".fa");
     
     $(fa).removeClass("fa-caret-right").addClass("fa-caret-down")
 
