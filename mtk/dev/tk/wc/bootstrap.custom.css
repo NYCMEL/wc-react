@@ -4,3 +4,8 @@
 .panel .panel-heading {
   border-radius: 0!important;
 }
+.panel .panel-footer {
+  font-size: 12px;
+  padding: 5px;
+  padding-left: 15px;
+}
