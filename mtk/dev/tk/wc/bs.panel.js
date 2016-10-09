@@ -64,9 +64,9 @@ Panel.createdCallback = function() {
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
 Panel.toggle = function(id, shadow) {
-    console.group("Panel.toggle");
-
     $(shadow.querySelector(".panel-body")).slideToggle(200, function() {
+	console.group("Panel.toggle");
+
 	var fa  = $(shadow.querySelector(".panel-heading .fa"));
 
 	if (fa.hasClass("fa-caret-down")) {
@@ -80,9 +80,9 @@ Panel.toggle = function(id, shadow) {
 
 	    fa.removeClass("fa-caret-right").addClass("fa-caret-down")
 	}
-    });
 
-    console.groupEnd();
+	console.groupEnd();
+    });
 };
 
 ////////////////////////////////////////////////////////////////////////////////////
