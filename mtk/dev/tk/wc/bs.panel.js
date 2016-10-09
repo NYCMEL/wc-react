@@ -17,6 +17,8 @@ Panel = document.registerElement('bs-panel', {
 		    return false;
 		}
 		
+		var id = $(this).attr("id");
+		alert(id);
 		var template = importDoc.querySelector("#template-panel");
 		var shadow = this.createShadowRoot();
 
@@ -29,8 +31,6 @@ Panel = document.registerElement('bs-panel', {
 		    "@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
 		    "@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';" +
 		    "</style>" +
-		    "<script src='http://code.jquery.com/jquery-3.1.1.min.js'></script>" + 
-		    "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>" +
 		    template.innerHTML
 	    }
 	}
