@@ -12,3 +12,6 @@ body {
   width: 10px;
   text-align: right;
 }
+.panel .panel-footer {
+  color: #666;
+}
