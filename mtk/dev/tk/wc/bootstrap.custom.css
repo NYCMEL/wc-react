@@ -1,17 +1,14 @@
-body {
-  font-family: Arial,Helvetica;
-}
-.panel {
+:host .panel {
   border-radius: 0!important;
 }
-.panel .panel-heading {
+:host .panel .panel-heading {
   border-radius: 0!important;
 }
-.panel .panel-heading .fa-caret {
+:host .panel .panel-heading .fa-caret {
   display: inline-block;
   width: 10px;
   text-align: right;
 }
-.panel .panel-footer {
+:host .panel .panel-footer {
   color: #666;
 }
