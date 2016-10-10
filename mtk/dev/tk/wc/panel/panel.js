@@ -1,3 +1,4 @@
+// FOR CONSOLE TESTING PURPOSES
 var xx, yy, zz;
 
 // PANEL
@@ -24,7 +25,8 @@ Panel.createdCallback = function() {
     var collapsible = host.getAttribute("collapsible");
 
     var template = importDoc.querySelector('#template-panel');
-    console.log(template)
+
+    // FOR CONSOLE TESTING PURPOSES
     xx = host;
     yy = template;
     zz = shadow;
