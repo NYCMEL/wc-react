@@ -98,10 +98,10 @@ Panel.open = function(id) {
     var shadow = this.shadowRoot;
     var fa = shadow.querySelector(".panel-heading .fa");
     
-    //if (fa.classList.contains("fa-caret-down")) {
-
-    $(fa).removeClass("fa-caret-right").addClass("fa-caret-down")
-    $(shadow.querySelector(".panel-body")).show();
+    fa.classList.remove("fa-caret-right");
+    fa.classList.add("fa-caret-down");
+    
+    shadow.querySelector(".panel-body").setAttribute("style", "display:block");
 
     console.groupEnd();
 }
