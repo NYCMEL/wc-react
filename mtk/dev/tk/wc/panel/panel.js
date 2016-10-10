@@ -92,8 +92,8 @@ Panel.open = function(id) {
 	id = this.getAttribute("id");
     }
 
-    //console.log('PUBLISHED panelOpened', id);
-    //$.publish('Panel', ['panelOpened', id]);
+    console.log('BROADCAST panelOpened', id);
+    radio('panelOpened').broadcast(id);
     
     var shadow = this.shadowRoot;
     var fa = shadow.querySelector(".panel-heading .fa");
@@ -116,8 +116,8 @@ Panel.close = function(id) {
 	id = this.getAttribute("id");
     }
 
-    //console.log('PUBLISHED panelClosed', id);
-    //$.publish('Panel', ['panelClosed', id]);
+    console.log('BROADCAST panelClosed', id);
+    radio('panelClosed').broadcast(id);
     
     var shadow = this.shadowRoot;
     var fa = shadow.querySelector(".panel-heading .fa");
