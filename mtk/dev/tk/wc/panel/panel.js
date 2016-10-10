@@ -69,19 +69,17 @@ Panel.toggle = function(id) {
     var handle = this;
     var shadow = this.shadowRoot;
 
-    $(shadow.querySelector(".panel-body")).slideToggle(200, function() {
-	console.group("Panel.toggle");
-	
-	var fa = shadow.querySelector(".panel-heading .fa");
-
-	if ($(fa).hasClass("fa-caret-down")) {
-	    handle.close(id);
-	} else {
-	    handle.open(id);
-	}
-
-	console.groupEnd();
-    });
+    console.group("Panel.toggle");
+    
+    var fa = shadow.querySelector(".panel-heading .fa");
+    
+    if (fa.classList.contains("fa-caret-down")) {
+	handle.close(id);
+    } else {
+	handle.open(id);
+    }
+    
+    console.groupEnd();
 };
 
 ////////////////////////////////////////////////////////////////////////////////////
