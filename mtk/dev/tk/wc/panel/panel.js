@@ -94,7 +94,7 @@ Panel.open = function(id) {
 	id = this.getAttribute("id");
     }
 
-    console.log('BROADCAST panelOpened', id);
+    console.log('BROADCASTING panelOpened', id);
     radio('panelOpened').broadcast(id);
     
     var shadow = this.shadowRoot;
@@ -118,7 +118,7 @@ Panel.close = function(id) {
 	id = this.getAttribute("id");
     }
 
-    console.log('BROADCAST panelClosed', id);
+    console.log('BROADCASTING panelClosed', id);
     radio('panelClosed').broadcast(id);
     
     var shadow = this.shadowRoot;
