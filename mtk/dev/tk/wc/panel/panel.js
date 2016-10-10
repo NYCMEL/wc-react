@@ -14,7 +14,7 @@ Panel.createdCallback = function() {
 	return false;
     }
     
-    var id = $(this).attr("id");
+    var id = this.getAttribute("id");
     var host = document.querySelector("#" + id);
     var shadow = host.createShadowRoot();
 
@@ -113,17 +113,19 @@ Panel.close = function(id) {
     console.group("Panel.close", id);
     
     if (typeof id === "undefined") {
-	id = $(this).attr("id");
+	id = this.getAttribute("id");
     }
 
-    console.log('PUBLISHED panelClosed', id);
-    $.publish('Panel', ['panelClosed', id]);
+    //console.log('PUBLISHED panelClosed', id);
+    //$.publish('Panel', ['panelClosed', id]);
     
     var shadow = this.shadowRoot;
     var fa = shadow.querySelector(".panel-heading .fa");
 
-    $(fa).removeClass("fa-caret-down").addClass("fa-caret-right")
-    $(shadow.querySelector(".panel-body")).hide();
+    fa.classList.remove("fa-caret-down");
+    fa.classList.add("fa-caret-right");
+    
+    shadow.querySelector(".panel-body").setAttribute("style", "display:none");
 
     console.groupEnd();
 }
