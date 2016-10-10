@@ -89,15 +89,17 @@ Panel.open = function(id) {
     console.group("Panel.open", id);
 
     if (typeof id === "undefined") {
-	id = $(this).attr("id");
+	id = this.getAttribute("id");
     }
 
-    console.log('PUBLISHED panelOpened', id);
-    $.publish('Panel', ['panelOpened', id]);
+    //console.log('PUBLISHED panelOpened', id);
+    //$.publish('Panel', ['panelOpened', id]);
     
     var shadow = this.shadowRoot;
     var fa = shadow.querySelector(".panel-heading .fa");
     
+    //if (fa.classList.contains("fa-caret-down")) {
+
     $(fa).removeClass("fa-caret-right").addClass("fa-caret-down")
     $(shadow.querySelector(".panel-body")).show();
 
