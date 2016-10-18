@@ -32,7 +32,7 @@ Panel.createdCallback = function() {
 	template.innerHTML;
 
     if (collapsible == "true") {
-	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-caret-down'></i></span> " + heading;
+	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> " + heading;
 	shadow.querySelector(".panel-heading").setAttribute("style", "cursor: pointer");
 	shadow.querySelector(".panel-heading").addEventListener("click", function() {
 	    host.toggle(id);
@@ -65,7 +65,7 @@ Panel.toggle = function(id) {
     
     var fa = shadow.querySelector(".panel-heading .fa");
     
-    if (fa.classList.contains("fa-caret-down")) {
+    if (fa.classList.contains("fa-angle-down")) {
 	handle.close(id);
     } else {
 	handle.open(id);
@@ -90,8 +90,8 @@ Panel.open = function(id) {
     var shadow = this.shadowRoot;
     var fa = shadow.querySelector(".panel-heading .fa");
     
-    fa.classList.remove("fa-caret-right");
-    fa.classList.add("fa-caret-down");
+    fa.classList.remove("fa-angle-right");
+    fa.classList.add("fa-angle-down");
     
     shadow.querySelector(".panel-body").setAttribute("style", "display:block");
 
@@ -114,8 +114,8 @@ Panel.close = function(id) {
     var shadow = this.shadowRoot;
     var fa = shadow.querySelector(".panel-heading .fa");
 
-    fa.classList.remove("fa-caret-down");
-    fa.classList.add("fa-caret-right");
+    fa.classList.remove("fa-angle-down");
+    fa.classList.add("fa-angle-right");
     
     shadow.querySelector(".panel-body").setAttribute("style", "display:none");
 
