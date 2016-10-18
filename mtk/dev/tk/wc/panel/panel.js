@@ -21,7 +21,7 @@ Panel.createdCallback = function() {
 
     var content = host.innerHTML;
     var heading = host.getAttribute("heading");
-    var footer  = host.getAttribute("footer");
+    var footer  = host.getAttribute("footer") || null;
     var collapsible = host.getAttribute("collapsible");
 
     var template = importDoc.querySelector('#template-panel');
@@ -49,17 +49,15 @@ Panel.createdCallback = function() {
 	shadow.querySelector(".panel-heading").innerHTML = heading;
     }
 
-    shadow.querySelector(".panel-footer").innerHTML = footer;
+    if (footer == null) {
+	shadow.querySelector(".panel-footer").setAttribute("style", "display:none");
+    } else {
+	shadow.querySelector(".panel-footer").innerHTML = footer;
+	shadow.querySelector(".panel-footer").setAttribute("id", id + "-footer");
+    }
     shadow.querySelector(".panel-body").innerHTML = content;
-    
     shadow.querySelector(".panel-heading").setAttribute("id", id + "-heading");
     shadow.querySelector(".panel-body").setAttribute("id", id + "-body");
-    shadow.querySelector(".panel-footer").setAttribute("id", id + "-footer");
-
-    // IF WE DON'T HAVE A FOOTER
-    if (typeof footer === "undefined") {
-	shadow.querySelector(".panel-footer").setAttribute("style", "display:none");
-    }
 
     console.groupEnd();
 };
