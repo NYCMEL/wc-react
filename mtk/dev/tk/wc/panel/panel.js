@@ -1,6 +1,3 @@
-// FOR CONSOLE TESTING PURPOSES
-var xx, yy, zz;
-
 // PANEL
 var Panel = Object.create(HTMLElement.prototype);
 
@@ -26,11 +23,6 @@ Panel.createdCallback = function() {
 
     var template = importDoc.querySelector('#template-panel');
 
-    // FOR CONSOLE TESTING PURPOSES
-    xx = host;
-    yy = template;
-    zz = shadow;
-    
     shadow.innerHTML =
 	"<style>" +
 	"@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
