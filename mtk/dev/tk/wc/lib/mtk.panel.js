@@ -12,22 +12,14 @@ Panel.createdCallback = function() {
 	return false;
     }
     
-    var id = this.getAttribute("id");
-    var host = document.querySelector("#" + id);
-    var parent = host.parentElement;
-
-    if (parent.shadowRoot == null) {
-	var shadow = host.createShadowRoot();
-    } else {
-	var shadow = parent.shadowRoot;
-    }
-
-    var content = host.innerHTML;
-    var heading = host.getAttribute("heading");
-    var footer  = host.getAttribute("footer") || null;
-    var collapsible = host.getAttribute("collapsible");
-
-    var template = importDoc.querySelector('#template-panel');
+    let id = this.getAttribute("id");
+    let host = document.querySelector("#" + id);
+    let shadow = host.createShadowRoot();
+    let collapsible = host.getAttribute("collapsible");
+    let content = host.innerHTML;
+    let heading = host.getAttribute("heading");
+    let footer  = host.getAttribute("footer") || null;
+    let template = importDoc.querySelector('#template-panel');
 
     shadow.innerHTML =
 	"<style>" +
@@ -36,6 +28,7 @@ Panel.createdCallback = function() {
 	"@import '/tk/wc/lib/mtk.css';" +
 	"</style>" +
 	template.innerHTML;
+
 
     if (collapsible == "true") {
 	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> " + heading;
@@ -64,12 +57,12 @@ Panel.createdCallback = function() {
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
 Panel.toggle = function(id) {
-    var handle = this;
-    var shadow = this.shadowRoot;
+    let handle = this;
+    let shadow = this.shadowRoot;
 
     console.group("Panel.toggle");
     
-    var fa = shadow.querySelector(".panel-heading .fa");
+    let fa = shadow.querySelector(".panel-heading .fa");
     
     if (fa.classList.contains("fa-angle-down")) {
 	handle.close(id);
@@ -93,8 +86,8 @@ Panel.open = function(id) {
     console.log('BROADCASTING panelOpened', id);
     radio('panelOpened').broadcast(id);
     
-    var shadow = this.shadowRoot;
-    var fa = shadow.querySelector(".panel-heading .fa");
+    let shadow = this.shadowRoot;
+    let fa = shadow.querySelector(".panel-heading .fa");
     
     fa.classList.remove("fa-angle-right");
     fa.classList.add("fa-angle-down");
@@ -117,8 +110,8 @@ Panel.close = function(id) {
     console.log('BROADCASTING panelClosed', id);
     radio('panelClosed').broadcast(id);
     
-    var shadow = this.shadowRoot;
-    var fa = shadow.querySelector(".panel-heading .fa");
+    let shadow = this.shadowRoot;
+    let fa = shadow.querySelector(".panel-heading .fa");
 
     fa.classList.remove("fa-angle-down");
     fa.classList.add("fa-angle-right");
