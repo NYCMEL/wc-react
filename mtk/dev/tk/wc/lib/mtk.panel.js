@@ -14,7 +14,13 @@ Panel.createdCallback = function() {
     
     var id = this.getAttribute("id");
     var host = document.querySelector("#" + id);
-    var shadow = host.createShadowRoot();
+    var parent = host.parentElement;
+
+    if (parent.shadowRoot == null) {
+	var shadow = host.createShadowRoot();
+    } else {
+	var shadow = parent.shadowRoot;
+    }
 
     var content = host.innerHTML;
     var heading = host.getAttribute("heading");
