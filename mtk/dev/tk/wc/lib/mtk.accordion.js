@@ -14,16 +14,9 @@ Accordion.createdCallback = function() {
     
     var id = this.getAttribute("id");
     var host = document.querySelector("#" + id);
-    var shadow = host.createShadowRoot();
-
     var content = host.innerHTML;
 
-    shadow.innerHTML =
-	"<style>" +
-	"@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
-	"@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';" +
-	"@import '/tk/wc/lib/mtk.css';" +
-	"</style>" + content;
+    host.innerHTML = "<style>@import '/tk/wc/lib/mtk.css';</style>" + content;
 
     console.groupEnd();
 };
