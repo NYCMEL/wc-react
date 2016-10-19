@@ -17,7 +17,7 @@ Panel.createdCallback = function() {
     let shadow = host.createShadowRoot();
     let content = host.innerHTML;
     let heading = host.getAttribute("heading");
-    let footer  = host.getAttribute("footer") || null;
+    let footer  = host.getAttribute("footer");
     let collapsible = host.getAttribute("collapsible");
 
     let template = importDoc.querySelector('#template-panel');
