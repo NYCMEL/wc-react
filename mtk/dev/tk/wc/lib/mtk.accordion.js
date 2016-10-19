@@ -23,7 +23,7 @@ Accordion.createdCallback = function() {
 
     for (i=0; i< panels.length; i++) {
 	let pid = panels[i].getAttribute("id");
-
+	
 	if (show != i) {
 	    document.querySelector("#" + pid).close();
 	}

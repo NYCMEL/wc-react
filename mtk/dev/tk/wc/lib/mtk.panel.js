@@ -81,12 +81,10 @@ Panel.toggle = function(id) {
 Panel.open = function(id) {
     console.group("Panel.open", id);
 
-    if (typeof id === "undefined") {
-	id = this.getAttribute("id");
-    }
+    id = id || this.getAttribute("id");
 
     console.log('BROADCASTING panelOpened', id);
-    radio('panelOpened').broadcast(id);
+    radio('mtkPanel').broadcast(id);
     
     let shadow = this.shadowRoot;
     let fa = shadow.querySelector(".panel-heading .fa");
@@ -105,9 +103,7 @@ Panel.open = function(id) {
 Panel.close = function(id) {
     console.group("Panel.close", id);
     
-    if (typeof id === "undefined") {
-	id = this.getAttribute("id");
-    }
+    id = id || this.getAttribute("id");
 
     console.log('BROADCASTING panelClosed', id);
     radio('panelClosed').broadcast(id);
