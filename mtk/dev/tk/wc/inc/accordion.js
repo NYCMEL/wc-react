@@ -16,8 +16,6 @@ Accordion.createdCallback = function() {
     var host = document.querySelector("#" + id);
     var shadow = host.createShadowRoot();
 
-    console.log("XXXXXXXXXXXXXXXXXXXX", id);
-
     var content = host.innerHTML;
 
     shadow.innerHTML =
@@ -26,7 +24,7 @@ Accordion.createdCallback = function() {
 	"@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';" +
 	"@import '/tk/wc/inc/bootstrap.custom.css';" +
 	"</style>" +
-	template.innerHTML;
+	content;
 
     console.groupEnd();
 };
