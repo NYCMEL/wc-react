@@ -16,9 +16,9 @@ Accordion.createdCallback = function() {
     var host = document.querySelector("#" + id);
     var shadow = host.createShadowRoot();
 
-    var content = host.innerHTML;
+    console.log("XXXXXXXXXXXXXXXXXXXX", id);
 
-    alert(id);
+    var content = host.innerHTML;
 
     shadow.innerHTML =
 	"<style>" +
