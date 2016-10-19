@@ -22,7 +22,7 @@ Accordion.createdCallback = function() {
 	"<style>" +
 	"@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
 	"@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';" +
-	"@import '/tk/wc/inc/mtk.css';" +
+	"@import '/tk/wc/mtk.css';" +
 	"</style>" + content;
 
     console.groupEnd();
