@@ -115,8 +115,8 @@ Panel.close = function() {
     fa.classList.remove("fa-angle-down");
     fa.classList.add("fa-angle-right");
     
-    shadow.querySelector(".panel-body").setAttribute("style", "display:none");
-
+    //shadow.querySelector(".panel-body").setAttribute("style", "display:none");
+    shadow.querySelector(".panel-body").style.setProperty('display','none');
     console.groupEnd();
 }
 
