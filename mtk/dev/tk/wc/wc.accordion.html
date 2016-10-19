@@ -30,5 +30,15 @@
 	diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
       </mtk-panel>
     </mtk-accordion>
+
+    <BR>
+    <a href="#" class="btn btn-warning" onclick="update()">CLICK HERE TO UPDATE</a>
+
+    <script>
+      function update() {
+        x = document.querySelector("#my-panel-1");
+        x.configure({header:"MEL WAS HERE <i class='fa fa-smile-o'></i>", content:"/mtk/render?callback=tk::dummy::3&ajax=1"})
+      }
+    </script>
   </body>
 </html>
