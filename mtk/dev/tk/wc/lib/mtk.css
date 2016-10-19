@@ -26,6 +26,9 @@ mtk-accordion {
 mtk-accordion mtk-panel {
   display: block;
 }
+mtk-accordion mtk-panel .panel-body {
+  overflow: auto;
+}
 .tk-bugger {
   display: none;
 }
