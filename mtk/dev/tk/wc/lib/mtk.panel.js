@@ -21,6 +21,7 @@ Panel.createdCallback = function() {
     let collapsible = host.getAttribute("collapsible");
 
     let template = importDoc.querySelector('#template-panel');
+    xx = template;
 
     shadow.innerHTML =
 	"<style>" +
