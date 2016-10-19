@@ -84,6 +84,7 @@ mtk-accordion mtk-panel .panel-body {
   text-align: right;
 }
 .mtk-header .dtcc-user-container .fa-cog {
+  padding-left: 5px;
   font-size: 20px;
   color: #CCC;
 }
