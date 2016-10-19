@@ -45,7 +45,7 @@ Panel.createdCallback = function() {
 	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> " + header;
 	shadow.querySelector(".panel-heading").setAttribute("style", "cursor: pointer");
 	shadow.querySelector(".panel-heading").addEventListener("click", function() {
-	    host.toggle(id);
+	    host.toggle();
 	});
     } else {
 	shadow.querySelector(".panel-heading").innerHTML = header;
@@ -57,7 +57,7 @@ Panel.createdCallback = function() {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.toggle = function(id) {
+Panel.toggle = function() {
     let handle = this;
     let shadow = this.shadowRoot;
 
@@ -66,9 +66,9 @@ Panel.toggle = function(id) {
     let fa = shadow.querySelector(".panel-heading .fa");
     
     if (fa.classList.contains("fa-angle-down")) {
-	handle.close(id);
+	handle.close();
     } else {
-	handle.open(id);
+	handle.open();
     }
     
     console.groupEnd();
@@ -77,10 +77,10 @@ Panel.toggle = function(id) {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.open = function(id) {
-    console.group("Panel.open", id);
+Panel.open = function() {
+    console.group("Panel.open");
 
-    id = id || this.getAttribute("id");
+    let id = this.getAttribute("id");
 
     console.log('BROADCASTING mtkPanelOpened', id);
     radio('mtkPanelOpened').broadcast(id);
@@ -99,10 +99,10 @@ Panel.open = function(id) {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.close = function(id) {
-    console.group("Panel.close", id);
+Panel.close = function() {
+    console.group("Panel.close");
     
-    id = id || this.getAttribute("id");
+    let id = this.getAttribute("id");
 
     console.log('BROADCASTING mtkPanelClosed', id);
     radio('mtkPanelClosed').broadcast(id);
