@@ -32,10 +32,10 @@ Accordion.createdCallback = function() {
 
     // SUBSCRIBE TO PANEL EVENTS
     if (mode == "single") {
-	radio('mtkPanel').subscribe(function(action, eid) {
+	radio('mtkPanelOpened').subscribe(function(eid) {
 	    let panels = host.querySelectorAll("mtk-panel")
 
-	    document.querySelector("#" + eid).close();	    
+	    console.log(">>>>>>>>>>>>>>>>", eid)
 	});
     }
 

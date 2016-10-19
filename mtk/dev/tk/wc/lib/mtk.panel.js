@@ -83,8 +83,8 @@ Panel.open = function(id) {
 
     id = id || this.getAttribute("id");
 
-    console.log('BROADCASTING panelOpened', id);
-    radio('mtkPanel').broadcast(id);
+    console.log('BROADCASTING mtkPanelOpened', id);
+    radio('mtkPanelOpened').broadcast(id);
     
     let shadow = this.shadowRoot;
     let fa = shadow.querySelector(".panel-heading .fa");
@@ -105,8 +105,8 @@ Panel.close = function(id) {
     
     id = id || this.getAttribute("id");
 
-    console.log('BROADCASTING panelClosed', id);
-    radio('panelClosed').broadcast(id);
+    console.log('BROADCASTING mtkPanelClosed', id);
+    radio('mtkPanelClosed').broadcast(id);
     
     let shadow = this.shadowRoot;
     let fa = shadow.querySelector(".panel-heading .fa");
