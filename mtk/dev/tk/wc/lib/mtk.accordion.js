@@ -33,9 +33,13 @@ Accordion.createdCallback = function() {
     // SUBSCRIBE TO PANEL EVENTS
     if (mode == "single") {
 	radio('mtkPanelOpened').subscribe(function(eid) {
-	    let panels = host.querySelectorAll("mtk-panel")
-
-	    console.log(">>>>>>>>>>>>>>>>", eid)
+	    for (i=0; i< panels.length; i++) {
+		let pid = panels[i].getAttribute("id");
+		
+		if (pid != eid) {
+		    document.querySelector("#" + pid).close();
+		}
+	    }
 	});
     }
 
