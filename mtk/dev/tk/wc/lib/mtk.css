@@ -23,3 +23,6 @@ mtk-accordion {
 mtk-accordion mtk-panel {
   display: block;
 }
+.tk-bugger {
+  display: none;
+}
