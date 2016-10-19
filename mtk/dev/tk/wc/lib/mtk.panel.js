@@ -44,7 +44,7 @@ Panel.createdCallback = function() {
     }
 
     if (collapsible == "true") {
-	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> " + header;
+	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> <span class=a-header>" + header + "</span>";
 	shadow.querySelector(".panel-heading").setAttribute("style", "cursor: pointer");
 	shadow.querySelector(".panel-heading").addEventListener("click", function() {
 	    host.toggle();
@@ -136,7 +136,7 @@ Panel.configure = function(options) {
 	switch(key) 
 	{
 	    case "header":
-	    shadow.querySelector(".panel-heading").innerHTML = options[key];
+	    shadow.querySelector(".panel-heading .a-header").innerHTML = options[key];
 	    break;
 
 	    case "content":
