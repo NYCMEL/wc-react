@@ -16,12 +16,11 @@ Panel.createdCallback = function() {
     let host = document.querySelector("#" + id);
     let shadow = host.createShadowRoot();
     let content = host.innerHTML;
-    let heading = host.getAttribute("heading");
+    let header = host.getAttribute("header");
     let footer  = host.getAttribute("footer");
     let collapsible = host.getAttribute("collapsible");
 
     let template = importDoc.querySelector('#template-panel');
-    xx = template;
 
     shadow.innerHTML =
 	"<style>" +
@@ -32,7 +31,7 @@ Panel.createdCallback = function() {
 	template.innerHTML;
 
     shadow.querySelector(".panel-body").innerHTML = content;
-    shadow.querySelector(".panel-heading").setAttribute("id", id + "-heading");
+    shadow.querySelector(".panel-heading").setAttribute("id", id + "-header");
     shadow.querySelector(".panel-body").setAttribute("id", id + "-body");
 
     if (footer == null) {
@@ -43,13 +42,13 @@ Panel.createdCallback = function() {
     }
 
     if (collapsible == "true") {
-	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> " + heading;
+	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> " + header;
 	shadow.querySelector(".panel-heading").setAttribute("style", "cursor: pointer");
 	shadow.querySelector(".panel-heading").addEventListener("click", function() {
 	    host.toggle(id);
 	});
     } else {
-	shadow.querySelector(".panel-heading").innerHTML = heading;
+	shadow.querySelector(".panel-heading").innerHTML = header;
     }
 
     console.groupEnd();
@@ -118,6 +117,32 @@ Panel.close = function(id) {
 
     console.groupEnd();
 }
+
+////////////////////////////////////////////////////////////////////////////////////
+//// 
+////////////////////////////////////////////////////////////////////////////////////
+Panel.configure = function(options) {
+    console.group("Panel.close", options);
+
+    for (var key in options) {
+        console.log(">>>>>>>>>", key, options[key])
+
+	switch(n) 
+	{
+	    case "header":
+	    break;
+
+	    case "content":
+	    break;
+
+	    case "footer":
+	    break;
+	}
+
+    }
+
+    console.groupEnd();
+}    
 
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
