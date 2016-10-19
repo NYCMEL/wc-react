@@ -22,9 +22,11 @@ Accordion.createdCallback = function() {
     let panels = host.querySelectorAll("mtk-panel")
 
     for (i=0; i< panels.length; i++) {
-        console.log(">>>", i, panels[i]);
-    }
+	let pid = panels[i].getAttribute("id");
+        console.log(">>>", pid, i, panels[i]);
 
+	document.querySelector("#" + pid).close();
+    }
 
     console.groupEnd();
 };
