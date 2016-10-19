@@ -127,7 +127,7 @@ Panel.configure = function(options) {
     for (var key in options) {
         console.log(">>>>>>>>>", key, options[key])
 
-	switch(n) 
+	switch(key) 
 	{
 	    case "header":
 	    break;
