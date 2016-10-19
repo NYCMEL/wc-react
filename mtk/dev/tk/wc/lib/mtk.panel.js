@@ -124,18 +124,25 @@ Panel.close = function() {
 Panel.configure = function(options) {
     console.group("Panel.close", options);
 
+    let id = this.getAttribute("id");
+    let host = document.querySelector("#" + id);
+    let shadow = host.shadowRoot;
+
     for (var key in options) {
-        console.log(">>>>>>>>>", key, options[key])
+        console.log(key, options[key])
 
 	switch(key) 
 	{
 	    case "header":
+	    shadow.querySelector(".panel-heading").innerHTML = options[key];
 	    break;
 
 	    case "content":
+	    load(options[key], shadow.querySelector(".panel-body"))
 	    break;
 
 	    case "footer":
+	    shadow.querySelector(".panel-footer").innerHTML = options[key];
 	    break;
 	}
 
@@ -143,6 +150,15 @@ Panel.configure = function(options) {
 
     console.groupEnd();
 }    
+
+function load(url, element)
+{
+    req = new XMLHttpRequest();
+    req.open("GET", url, false);
+    req.send(null);
+
+    element.innerHTML = req.responseText; 
+}
 
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
