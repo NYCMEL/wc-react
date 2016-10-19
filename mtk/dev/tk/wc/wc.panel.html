@@ -6,9 +6,17 @@
   <body>
     <mtk-panel id="my-panel-1" header="HELLO PANEL 1" footer="THIS IS A PANEL FOOTER 1" collapsible="true">
       <h1><i class="fa fa-smile-o"></i> /Melify/mtk/dev/tk/wc/index.html</h1>
+      <p>
+      no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
+      sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+      <p>
       <pre>
 	x = document.querySelector("#my-panel-1")
-	x.close(); <b>OR</b> x.open();
+	x.close();
+	x.open();
+	x.configure({header:"Header Changed", content:"http://tk-samples.melify.com/mtk/render?callback=tk::dummy::3"});
       </pre>
     </mtk-panel>
   </body>
