@@ -13,6 +13,7 @@ Accordion.createdCallback = function() {
     }
     
     var id = this.getAttribute("id");
+    var show = this.getAttribute("show");
     var host = document.querySelector("#" + id);
     var content = host.innerHTML;
 
@@ -23,9 +24,11 @@ Accordion.createdCallback = function() {
 
     for (i=0; i< panels.length; i++) {
 	let pid = panels[i].getAttribute("id");
-        console.log(">>>", pid, i, panels[i]);
+        console.log(">>>", show, pid, i, panels[i]);
 
-	document.querySelector("#" + pid).close();
+	if (show != pid) {
+	    document.querySelector("#" + pid).close();
+	}
     }
 
     console.groupEnd();
