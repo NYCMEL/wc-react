@@ -37,19 +37,17 @@ mtk-accordion mtk-panel .panel-body {
   padding: 0;
   border-radius: 0;
   height: 85px;
-  position: relative;
+  padding-left: 72px;
 }
 .mtk-header .dtcc-logo {
-  position: absolute;
-  top: 25px;
+  margin-top: 29px;
   left: 72px;
   margin-right: 29px;
 }
-.mtk-header .dtcc-header-sep {
-  top: 15px;
-  left: 240px;
+.mtk-header .dtcc-separator {
+  padding-left: 29px;
+  margin-top: 20px;
   height: 49px;
-  position: absolute;
   border-right: 1px #666 solid;
 }
 .mtk-header-network {
