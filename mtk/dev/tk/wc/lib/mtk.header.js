@@ -16,10 +16,6 @@ Header.createdCallback = function() {
     let host = document.querySelector("#" + id);
     let shadow = host.createShadowRoot();
     let content = host.innerHTML;
-    let header = host.getAttribute("header");
-    let height = host.getAttribute("height") || "100%";
-    let footer  = host.getAttribute("footer");
-    let collapsible = host.getAttribute("collapsible");
 
     let template = importDoc.querySelector('#template-header');
 
@@ -30,28 +26,6 @@ Header.createdCallback = function() {
 	"@import '/tk/wc/lib/mtk.css';" +
 	"</style>" +
 	template.innerHTML;
-
-    shadow.querySelector(".header-body").setAttribute("style", "height:" + height);
-    shadow.querySelector(".header-body").innerHTML = content;
-    shadow.querySelector(".header-heading").setAttribute("id", id + "-header");
-    shadow.querySelector(".header-body").setAttribute("id", id + "-body");
-
-    if (footer == null) {
-	shadow.querySelector(".header-footer").setAttribute("style", "display:none");
-    } else {
-	shadow.querySelector(".header-footer").innerHTML = footer;
-	shadow.querySelector(".header-footer").setAttribute("id", id + "-footer");
-    }
-
-    if (collapsible == "true") {
-	shadow.querySelector(".header-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> <span class=the-header>" + header + "</span>";
-	shadow.querySelector(".header-heading").setAttribute("style", "cursor: pointer");
-	shadow.querySelector(".header-heading").addEventListener("click", function() {
-	    host.toggle();
-	});
-    } else {
-	shadow.querySelector(".header-heading").innerHTML = "<span class=the-header>" + header + "</span>";
-    }
 
     console.groupEnd();
 };
@@ -152,15 +126,6 @@ Header.configure = function(options) {
 
     console.groupEnd();
 }    
-
-function load(url, element)
-{
-    req = new XMLHttpRequest();
-    req.open("GET", url, false);
-    req.send(null);
-
-    element.innerHTML = req.responseText; 
-}
 
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
