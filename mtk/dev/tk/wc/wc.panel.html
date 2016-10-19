@@ -16,7 +16,11 @@
 	x = document.querySelector("#my-panel-1")
 	x.close();
 	x.open();
-	x.configure({header:"Header Changed", content:"http://tk-samples.melify.com/mtk/render?callback=tk::dummy::3"});
+	x.configure({
+	    header:"Header Changed",
+	    content:"http://tk-samples.melify.com/mtk/render?callback=tk::dummy::3",
+	    footer:"Footer Changed"
+	});
       </pre>
     </mtk-panel>
   </body>
