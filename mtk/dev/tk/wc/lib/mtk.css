@@ -1,4 +1,6 @@
 :host .panel {
+  margin: 0;
+  margin-bottom: 5px;
   border-radius: 0!important;
 }
 :host .panel .panel-heading {
@@ -16,11 +18,8 @@
   padding-left: 20px;
 }
 mtk-accordion {
-  display: block!important;
-  border: 2px red solid!important;
+  display: block;
 }
 mtk-accordion mtk-panel {
-  border: 10px red solid;
-  margin: 0;
-  padding: 0;
+  display: block;
 }
