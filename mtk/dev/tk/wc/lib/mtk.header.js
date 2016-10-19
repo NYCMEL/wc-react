@@ -1,11 +1,11 @@
-// PANEL
-var Panel = Object.create(HTMLElement.prototype);
+// HEADER
+var Header = Object.create(HTMLElement.prototype);
 
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.createdCallback = function() {
-    console.group("Panel.createdCallback");
+Header.createdCallback = function() {
+    console.group("Header.createdCallback");
 
     // jQuery creates an extra looking for CSS display value
     if (!this.parentNode) {
@@ -21,7 +21,7 @@ Panel.createdCallback = function() {
     let footer  = host.getAttribute("footer");
     let collapsible = host.getAttribute("collapsible");
 
-    let template = importDoc.querySelector('#template-panel');
+    let template = importDoc.querySelector('#template-header');
 
     shadow.innerHTML =
 	"<style>" +
@@ -31,26 +31,26 @@ Panel.createdCallback = function() {
 	"</style>" +
 	template.innerHTML;
 
-    shadow.querySelector(".panel-body").setAttribute("style", "height:" + height);
-    shadow.querySelector(".panel-body").innerHTML = content;
-    shadow.querySelector(".panel-heading").setAttribute("id", id + "-header");
-    shadow.querySelector(".panel-body").setAttribute("id", id + "-body");
+    shadow.querySelector(".header-body").setAttribute("style", "height:" + height);
+    shadow.querySelector(".header-body").innerHTML = content;
+    shadow.querySelector(".header-heading").setAttribute("id", id + "-header");
+    shadow.querySelector(".header-body").setAttribute("id", id + "-body");
 
     if (footer == null) {
-	shadow.querySelector(".panel-footer").setAttribute("style", "display:none");
+	shadow.querySelector(".header-footer").setAttribute("style", "display:none");
     } else {
-	shadow.querySelector(".panel-footer").innerHTML = footer;
-	shadow.querySelector(".panel-footer").setAttribute("id", id + "-footer");
+	shadow.querySelector(".header-footer").innerHTML = footer;
+	shadow.querySelector(".header-footer").setAttribute("id", id + "-footer");
     }
 
     if (collapsible == "true") {
-	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> <span class=the-header>" + header + "</span>";
-	shadow.querySelector(".panel-heading").setAttribute("style", "cursor: pointer");
-	shadow.querySelector(".panel-heading").addEventListener("click", function() {
+	shadow.querySelector(".header-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> <span class=the-header>" + header + "</span>";
+	shadow.querySelector(".header-heading").setAttribute("style", "cursor: pointer");
+	shadow.querySelector(".header-heading").addEventListener("click", function() {
 	    host.toggle();
 	});
     } else {
-	shadow.querySelector(".panel-heading").innerHTML = "<span class=the-header>" + header + "</span>";
+	shadow.querySelector(".header-heading").innerHTML = "<span class=the-header>" + header + "</span>";
     }
 
     console.groupEnd();
@@ -59,13 +59,13 @@ Panel.createdCallback = function() {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.toggle = function() {
+Header.toggle = function() {
     let handle = this;
     let shadow = this.shadowRoot;
 
-    console.group("Panel.toggle");
+    console.group("Header.toggle");
     
-    let fa = shadow.querySelector(".panel-heading .fa");
+    let fa = shadow.querySelector(".header-heading .fa");
     
     if (fa.classList.contains("fa-angle-down")) {
 	handle.close();
@@ -79,21 +79,21 @@ Panel.toggle = function() {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.open = function() {
-    console.group("Panel.open");
+Header.open = function() {
+    console.group("Header.open");
 
     let id = this.getAttribute("id");
     
-    console.log('BROADCASTING mtkPanelOpened', id);
-    radio('mtkPanelOpened').broadcast(id);
+    console.log('BROADCASTING mtkHeaderOpened', id);
+    radio('mtkHeaderOpened').broadcast(id);
     
     let shadow = this.shadowRoot;
-    let fa = shadow.querySelector(".panel-heading .fa");
+    let fa = shadow.querySelector(".header-heading .fa");
     
     fa.classList.remove("fa-angle-right");
     fa.classList.add("fa-angle-down");
     
-    shadow.querySelector(".panel-body").setAttribute("style", "display:block");
+    shadow.querySelector(".header-body").setAttribute("style", "display:block");
 
     console.groupEnd();
 }
@@ -101,30 +101,30 @@ Panel.open = function() {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.close = function() {
-    console.group("Panel.close");
+Header.close = function() {
+    console.group("Header.close");
     
     let id = this.getAttribute("id");
 
-    console.log('BROADCASTING mtkPanelClosed', id);
-    radio('mtkPanelClosed').broadcast(id);
+    console.log('BROADCASTING mtkHeaderClosed', id);
+    radio('mtkHeaderClosed').broadcast(id);
     
     let shadow = this.shadowRoot;
-    let fa = shadow.querySelector(".panel-heading .fa");
+    let fa = shadow.querySelector(".header-heading .fa");
 
     fa.classList.remove("fa-angle-down");
     fa.classList.add("fa-angle-right");
     
-    //shadow.querySelector(".panel-body").setAttribute("style", "display:none");
-    shadow.querySelector(".panel-body").style.setProperty('display','none');
+    //shadow.querySelector(".header-body").setAttribute("style", "display:none");
+    shadow.querySelector(".header-body").style.setProperty('display','none');
     console.groupEnd();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.configure = function(options) {
-    console.group("Panel.close", options);
+Header.configure = function(options) {
+    console.group("Header.close", options);
 
     let id = this.getAttribute("id");
     let host = document.querySelector("#" + id);
@@ -136,15 +136,15 @@ Panel.configure = function(options) {
 	switch(key) 
 	{
 	    case "header":
-	    shadow.querySelector(".panel-heading .the-header").innerHTML = options[key];
+	    shadow.querySelector(".header-heading .the-header").innerHTML = options[key];
 	    break;
 
 	    case "content":
-	    load(options[key], shadow.querySelector(".panel-body"))
+	    load(options[key], shadow.querySelector(".header-body"))
 	    break;
 
 	    case "footer":
-	    shadow.querySelector(".panel-footer").innerHTML = options[key];
+	    shadow.querySelector(".header-footer").innerHTML = options[key];
 	    break;
 	}
 
@@ -165,6 +165,6 @@ function load(url, element)
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-var Panel = document.registerElement('mtk-panel', {
-    prototype: Panel
+var Header = document.registerElement('mtk-header', {
+    prototype: Header
 });
