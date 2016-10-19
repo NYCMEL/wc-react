@@ -83,7 +83,7 @@ Panel.open = function() {
     console.group("Panel.open");
 
     let id = this.getAttribute("id");
-
+    
     console.log('BROADCASTING mtkPanelOpened', id);
     radio('mtkPanelOpened').broadcast(id);
     
