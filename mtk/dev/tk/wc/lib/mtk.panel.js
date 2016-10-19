@@ -15,10 +15,11 @@ Panel.createdCallback = function() {
     let id = this.getAttribute("id");
     let host = document.querySelector("#" + id);
     let shadow = host.createShadowRoot();
-    let collapsible = host.getAttribute("collapsible");
     let content = host.innerHTML;
     let heading = host.getAttribute("heading");
     let footer  = host.getAttribute("footer") || null;
+    let collapsible = host.getAttribute("collapsible");
+
     let template = importDoc.querySelector('#template-panel');
 
     shadow.innerHTML =
