@@ -24,9 +24,16 @@ Accordion.createdCallback = function() {
 
     for (i=0; i< panels.length; i++) {
 	let pid = panels[i].getAttribute("id");
+	console.log(">>>>>>>>>>>", i, pid);
 	
 	if (show != i) {
-	    document.querySelector("#" + pid).close();
+	    try {
+		xx = document.querySelector("#" + pid)
+		document.querySelector("#" + pid).close();
+	    }
+	    catch(e) {
+		console.error(e.name + ' > ' + e.message);
+	    }
 	}
     }
 

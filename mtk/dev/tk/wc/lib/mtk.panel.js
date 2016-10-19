@@ -44,13 +44,13 @@ Panel.createdCallback = function() {
     }
 
     if (collapsible == "true") {
-	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> <span class=a-header>" + header + "</span>";
+	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> <span class=the-header>" + header + "</span>";
 	shadow.querySelector(".panel-heading").setAttribute("style", "cursor: pointer");
 	shadow.querySelector(".panel-heading").addEventListener("click", function() {
 	    host.toggle();
 	});
     } else {
-	shadow.querySelector(".panel-heading").innerHTML = header;
+	shadow.querySelector(".panel-heading").innerHTML = "<span class=the-header>" + header + "</span>";
     }
 
     console.groupEnd();
@@ -131,12 +131,12 @@ Panel.configure = function(options) {
     let shadow = host.shadowRoot;
 
     for (var key in options) {
-        console.log(key, options[key])
+        console.log(">>>>>>>>", key, options[key])
 
 	switch(key) 
 	{
 	    case "header":
-	    shadow.querySelector(".panel-heading .a-header").innerHTML = options[key];
+	    shadow.querySelector(".panel-heading .the-header").innerHTML = options[key];
 	    break;
 
 	    case "content":
