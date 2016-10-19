@@ -17,6 +17,7 @@ Panel.createdCallback = function() {
     let shadow = host.createShadowRoot();
     let content = host.innerHTML;
     let header = host.getAttribute("header");
+    let height = host.getAttribute("height") || "100%";
     let footer  = host.getAttribute("footer");
     let collapsible = host.getAttribute("collapsible");
 
@@ -30,6 +31,7 @@ Panel.createdCallback = function() {
 	"</style>" +
 	template.innerHTML;
 
+    shadow.querySelector(".panel-body").setAttribute("style", "height:" + height);
     shadow.querySelector(".panel-body").innerHTML = content;
     shadow.querySelector(".panel-heading").setAttribute("id", id + "-header");
     shadow.querySelector(".panel-body").setAttribute("id", id + "-body");

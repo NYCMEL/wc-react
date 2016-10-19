@@ -11,6 +11,9 @@
   width: 10px;
   text-align: right;
 }
+:host .panel .panel-body {
+  overflow: auto;
+}
 :host .panel .panel-footer {
   color: #666;
   font-size: 12px;
