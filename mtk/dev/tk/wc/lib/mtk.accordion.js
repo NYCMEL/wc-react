@@ -28,7 +28,6 @@ Accordion.createdCallback = function() {
 	
 	if (show != i) {
 	    try {
-		xx = document.querySelector("#" + pid)
 		document.querySelector("#" + pid).close();
 	    }
 	    catch(e) {
