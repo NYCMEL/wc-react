@@ -38,6 +38,7 @@ mtk-accordion mtk-panel .panel-body {
   border-radius: 0;
   height: 85px;
   padding-left: 72px;
+  padding-right: 72px;
 }
 .mtk-header .dtcc-logo {
   margin-top: 29px;
@@ -49,6 +50,31 @@ mtk-accordion mtk-panel .panel-body {
   margin-top: 20px;
   height: 49px;
   border-right: 1px #666 solid;
+}
+.mtk-header .dtcc-service-container {
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-top: 19px;
+  padding-left: 29px;
+  font-size: 14px;
+  font-family: Arial Narrow;
+  color: #CCC;
+}
+.mtk-header .dtcc-application-container {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  display: block;
+  padding-left: 29px;
+  font-size: 30px;
+  font-family: Arial Narrow;
+  color: orange;
+}
+.mtk-header .dtcc-topmenu-container {
+  margin-top: 10px;
+  color: #666;
+  font-size: 16px;
 }
 .mtk-header-network {
   border-radius: 0;
