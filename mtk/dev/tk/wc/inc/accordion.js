@@ -1,11 +1,11 @@
-// PANEL
-var Panel = Object.create(HTMLElement.prototype);
+// ACCORDION
+var Accordion = Object.create(HTMLElement.prototype);
 
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.createdCallback = function() {
-    console.group("Panel.createdCallback");
+Accordion.createdCallback = function() {
+    console.group("Accordion.createdCallback");
 
     // jQuery creates an extra looking for CSS display value
     if (!this.parentNode) {
@@ -21,7 +21,7 @@ Panel.createdCallback = function() {
     var footer  = host.getAttribute("footer") || null;
     var collapsible = host.getAttribute("collapsible");
 
-    var template = importDoc.querySelector('#template-panel');
+    var template = importDoc.querySelector('#template-accordion');
 
     shadow.innerHTML =
 	"<style>" +
@@ -32,24 +32,24 @@ Panel.createdCallback = function() {
 	template.innerHTML;
 
     if (collapsible == "true") {
-	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> " + heading;
-	shadow.querySelector(".panel-heading").setAttribute("style", "cursor: pointer");
-	shadow.querySelector(".panel-heading").addEventListener("click", function() {
+	shadow.querySelector(".accordion-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> " + heading;
+	shadow.querySelector(".accordion-heading").setAttribute("style", "cursor: pointer");
+	shadow.querySelector(".accordion-heading").addEventListener("click", function() {
 	    host.toggle(id);
 	});
     } else {
-	shadow.querySelector(".panel-heading").innerHTML = heading;
+	shadow.querySelector(".accordion-heading").innerHTML = heading;
     }
 
     if (footer == null) {
-	shadow.querySelector(".panel-footer").setAttribute("style", "display:none");
+	shadow.querySelector(".accordion-footer").setAttribute("style", "display:none");
     } else {
-	shadow.querySelector(".panel-footer").innerHTML = footer;
-	shadow.querySelector(".panel-footer").setAttribute("id", id + "-footer");
+	shadow.querySelector(".accordion-footer").innerHTML = footer;
+	shadow.querySelector(".accordion-footer").setAttribute("id", id + "-footer");
     }
-    shadow.querySelector(".panel-body").innerHTML = content;
-    shadow.querySelector(".panel-heading").setAttribute("id", id + "-heading");
-    shadow.querySelector(".panel-body").setAttribute("id", id + "-body");
+    shadow.querySelector(".accordion-body").innerHTML = content;
+    shadow.querySelector(".accordion-heading").setAttribute("id", id + "-heading");
+    shadow.querySelector(".accordion-body").setAttribute("id", id + "-body");
 
     console.groupEnd();
 };
@@ -57,13 +57,13 @@ Panel.createdCallback = function() {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.toggle = function(id) {
+Accordion.toggle = function(id) {
     var handle = this;
     var shadow = this.shadowRoot;
 
-    console.group("Panel.toggle");
+    console.group("Accordion.toggle");
     
-    var fa = shadow.querySelector(".panel-heading .fa");
+    var fa = shadow.querySelector(".accordion-heading .fa");
     
     if (fa.classList.contains("fa-angle-down")) {
 	handle.close(id);
@@ -77,23 +77,23 @@ Panel.toggle = function(id) {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.open = function(id) {
-    console.group("Panel.open", id);
+Accordion.open = function(id) {
+    console.group("Accordion.open", id);
 
     if (typeof id === "undefined") {
 	id = this.getAttribute("id");
     }
 
-    console.log('BROADCASTING panelOpened', id);
-    radio('panelOpened').broadcast(id);
+    console.log('BROADCASTING accordionOpened', id);
+    radio('accordionOpened').broadcast(id);
     
     var shadow = this.shadowRoot;
-    var fa = shadow.querySelector(".panel-heading .fa");
+    var fa = shadow.querySelector(".accordion-heading .fa");
     
     fa.classList.remove("fa-angle-right");
     fa.classList.add("fa-angle-down");
     
-    shadow.querySelector(".panel-body").setAttribute("style", "display:block");
+    shadow.querySelector(".accordion-body").setAttribute("style", "display:block");
 
     console.groupEnd();
 }
@@ -101,23 +101,23 @@ Panel.open = function(id) {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-Panel.close = function(id) {
-    console.group("Panel.close", id);
+Accordion.close = function(id) {
+    console.group("Accordion.close", id);
     
     if (typeof id === "undefined") {
 	id = this.getAttribute("id");
     }
 
-    console.log('BROADCASTING panelClosed', id);
-    radio('panelClosed').broadcast(id);
+    console.log('BROADCASTING accordionClosed', id);
+    radio('accordionClosed').broadcast(id);
     
     var shadow = this.shadowRoot;
-    var fa = shadow.querySelector(".panel-heading .fa");
+    var fa = shadow.querySelector(".accordion-heading .fa");
 
     fa.classList.remove("fa-angle-down");
     fa.classList.add("fa-angle-right");
     
-    shadow.querySelector(".panel-body").setAttribute("style", "display:none");
+    shadow.querySelector(".accordion-body").setAttribute("style", "display:none");
 
     console.groupEnd();
 }
@@ -125,6 +125,6 @@ Panel.close = function(id) {
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
 ////////////////////////////////////////////////////////////////////////////////////
-var Panel = document.registerElement('mtk-panel', {
-    prototype: Panel
+var Accordion = document.registerElement('mtk-accordion', {
+    prototype: Accordion
 });
