@@ -30,6 +30,16 @@ Panel.createdCallback = function() {
 	"</style>" +
 	template.innerHTML;
 
+    shadow.querySelector(".panel-body").innerHTML = content;
+    shadow.querySelector(".panel-heading").setAttribute("id", id + "-heading");
+    shadow.querySelector(".panel-body").setAttribute("id", id + "-body");
+
+    if (footer == null) {
+	shadow.querySelector(".panel-footer").setAttribute("style", "display:none");
+    } else {
+	shadow.querySelector(".panel-footer").innerHTML = footer;
+	shadow.querySelector(".panel-footer").setAttribute("id", id + "-footer");
+    }
 
     if (collapsible == "true") {
 	shadow.querySelector(".panel-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> " + heading;
@@ -40,16 +50,6 @@ Panel.createdCallback = function() {
     } else {
 	shadow.querySelector(".panel-heading").innerHTML = heading;
     }
-
-    if (footer == null) {
-	shadow.querySelector(".panel-footer").setAttribute("style", "display:none");
-    } else {
-	shadow.querySelector(".panel-footer").innerHTML = footer;
-	shadow.querySelector(".panel-footer").setAttribute("id", id + "-footer");
-    }
-    shadow.querySelector(".panel-body").innerHTML = content;
-    shadow.querySelector(".panel-heading").setAttribute("id", id + "-heading");
-    shadow.querySelector(".panel-body").setAttribute("id", id + "-body");
 
     console.groupEnd();
 };
