@@ -17,39 +17,6 @@ Accordion.createdCallback = function() {
     var shadow = host.createShadowRoot();
 
     var content = host.innerHTML;
-    var heading = host.getAttribute("heading");
-    var footer  = host.getAttribute("footer") || null;
-    var collapsible = host.getAttribute("collapsible");
-
-    var template = importDoc.querySelector('#template-accordion');
-
-    shadow.innerHTML =
-	"<style>" +
-	"@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
-	"@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';" +
-	"@import '/tk/wc/inc/bootstrap.custom.css';" +
-	"</style>" +
-	template.innerHTML;
-
-    if (collapsible == "true") {
-	shadow.querySelector(".accordion-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> " + heading;
-	shadow.querySelector(".accordion-heading").setAttribute("style", "cursor: pointer");
-	shadow.querySelector(".accordion-heading").addEventListener("click", function() {
-	    host.toggle(id);
-	});
-    } else {
-	shadow.querySelector(".accordion-heading").innerHTML = heading;
-    }
-
-    if (footer == null) {
-	shadow.querySelector(".accordion-footer").setAttribute("style", "display:none");
-    } else {
-	shadow.querySelector(".accordion-footer").innerHTML = footer;
-	shadow.querySelector(".accordion-footer").setAttribute("id", id + "-footer");
-    }
-    shadow.querySelector(".accordion-body").innerHTML = content;
-    shadow.querySelector(".accordion-heading").setAttribute("id", id + "-heading");
-    shadow.querySelector(".accordion-body").setAttribute("id", id + "-body");
 
     console.groupEnd();
 };
