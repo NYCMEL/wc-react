@@ -73,8 +73,27 @@ mtk-accordion mtk-panel .panel-body {
 }
 .mtk-header .dtcc-topmenu-container {
   margin-top: 10px;
-  color: #666;
-  font-size: 16px;
+  color: #999;
+  font-size: 14px;
+  text-align: right;
+}
+.mtk-header .dtcc-user-container {
+  margin-top: 10px;
+  color: #FFF;
+  font-size: 14px;
+  text-align: right;
+}
+.mtk-header .dtcc-user-container .fa-cog {
+  font-size: 20px;
+  color: #CCC;
+}
+.mtk-header .dtcc-logout-container {
+  margin-top: 5px;
+  text-align: right;
+}
+.mtk-header .dtcc-logout-container a {
+  color: #999;
+  font-size: 12px;
 }
 .mtk-header-network {
   border-radius: 0;
