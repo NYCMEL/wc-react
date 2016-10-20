@@ -30,6 +30,7 @@ Header.createdCallback = function() {
 	"@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
 	"@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';" +
 	"@import '/tk/wc/lib/mtk.css';" +
+	"@import '/tk/wc/lib/dropdown.css';" +
 	"</style>" +
 	template.innerHTML;
 
@@ -50,24 +51,13 @@ Header.createdCallback = function() {
 	});
     }
 
+    
     // ACTIVATE DROPDOWN
-    if(!jQuery) {
-	console.error("jQuery is not loaded...");
-    } else {
-	console.log("jQuery is loaded...");
-	//IS BOOTSTRAP LOADED?
-	if (typeof $.fn.dropdown == 'function') { 
-	    console.log("Bootstrap is loaded...");
-
-	    let dropdowns = shadow.querySelectorAll(".dropdown-toggle")
-
-	    for (i=0; i< dropdowns.length; i++) {
-		console.log("processing dropdown:", i)
-		$(this).dropdown();
-	    }
-	} else {
-	    console.error("Bootstrap is not loaded...");
-	}
+    let dropdowns = shadow.querySelectorAll(".dropbtn")
+    
+    for (i=0; i< dropdowns.length; i++) {
+	console.log("processing dropdown:", i)
+	addEvent(dropdowns[i], "click", this.dropdown)
     }
 
     // ADD USER NAME
@@ -188,6 +178,18 @@ Header.configure = function(options) {
 
     console.groupEnd();
 }    
+
+////////////////////////////////////////////////////////////////////////////////////
+//// 
+////////////////////////////////////////////////////////////////////////////////////
+Header.dropdown = function(options) {
+    console.group(Header.dropdown)
+
+    console.log("AAAAAAAAAAAAAAAA", this);
+    this.classList.toggle("show");
+
+    console.groupEnd();
+}
 
 ////////////////////////////////////////////////////////////////////////////////////
 //// 
