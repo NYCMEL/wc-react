@@ -47,6 +47,10 @@ Header.createdCallback = function() {
 	});
     }
 
+    $(document).ready(function() {
+	$('dropdown-toggle').dropdown()
+    });
+
     xx = shadow;
 
     console.groupEnd();
