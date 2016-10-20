@@ -43,8 +43,8 @@ Header.createdCallback = function() {
     for (i=0; i< links.length; i++) {
 	links[i].addEventListener("click", function () {
 	    let lid = this.getAttribute("id");
-	    console.log('BROADCASTING mtkHeaderMenu', id);
-	    radio('mtkHeaderMenu').broadcast(id);
+	    console.log('BROADCASTING mtkHeaderMenu', lid);
+	    radio('mtkHeaderMenu').broadcast(lid);
 	});
     }
 
