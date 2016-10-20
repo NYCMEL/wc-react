@@ -105,6 +105,7 @@ mtk-accordion mtk-panel .panel-body {
   color: #999;
 }
 .mtk-header-network .dtcc-search-container .dtcc-search-field {
+  border-radius: 0;
   margin-right: -20px;
   padding-left: 10px;
   color: #EBEBEB;
@@ -117,6 +118,7 @@ mtk-accordion mtk-panel .panel-body {
   font-family: Arial Narrow;
 }
 .mtk-header-network .dtcc-search-container .fa-search {
+  font-size: 20px;
   margin-left: -10px;
   color: #CCC;
 }
