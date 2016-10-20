@@ -96,6 +96,23 @@ mtk-accordion mtk-panel .panel-body {
   font-size: 14px;
   text-align: right;
 }
+.mtk-header .navbar .dtcc-topmenu-container li {
+  margin-left: 29px;
+}
+.mtk-header .navbar .dtcc-topmenu-container li a {
+  font-family: Arial Narrow;
+  font-size: 16px;
+  color: #cccccc;
+}
+.mtk-header .navbar .dtcc-botmenu-container li {
+  margin-right: 29px;
+}
+.mtk-header .navbar .dtcc-botmenu-container li a {
+  font-family: Arial Narrow;
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFF;
+}
 .mtk-header .navbar .dtcc-user-container {
   margin-top: 10px;
   color: #FFF;
@@ -152,7 +169,6 @@ mtk-accordion mtk-panel .panel-body {
 }
 .mtk-header .dtcc-topmenu-container ul li,
 .mtk-header .dtcc-botmenu-container ul li {
-  margin-left: 29px;
   display: inline;
   list-style: none;
 }
@@ -160,7 +176,6 @@ mtk-accordion mtk-panel .panel-body {
 .mtk-header .dtcc-botmenu-container ul li a {
   font-family: Arial Narrow;
   font-size: 16px;
-  color: #CCC!important;
 }
 .mtk-header .dtcc-topmenu-container ul li a:hover,
 .mtk-header .dtcc-botmenu-container ul li a:hover {

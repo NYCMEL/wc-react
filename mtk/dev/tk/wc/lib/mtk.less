@@ -132,7 +132,28 @@ mtk-accordion {
 	    color: #999;
 	    font-size: 14px;
 	    text-align:right;
+	    li {
+		margin-left:29px;
+		a {
+		    font-family: Arial Narrow;
+		    font-size: 16px;
+		    color: #CCC
+		}
+	    }
 	}
+	.dtcc-botmenu-container {
+	    li {
+		margin-right:29px;
+
+		a {
+		    font-family: Arial Narrow;
+		    font-size: 16px;
+		    font-weight: bold;
+		    color:#FFF;
+		}
+	    }
+	}
+
 	.dtcc-user-container {
 	    margin-top:10px;
 	    color: #FFF;
@@ -198,14 +219,12 @@ mtk-accordion {
             display: inline-block;
 	    
             li {
-                margin-left:29px;
                 display: inline;
                 list-style:none;
                 
                 a {
                     font-family: Arial Narrow;
                     font-size: 16px;
-                    color:#CCC!important;
 		    
                     &:hover {
                         color: @dtcc-clearing-services-color!important;
