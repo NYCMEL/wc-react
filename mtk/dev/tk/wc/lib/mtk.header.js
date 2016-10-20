@@ -23,8 +23,6 @@ Header.createdCallback = function() {
     let sname = host.getAttribute("sname");
     let aname = host.getAttribute("aname");
 
-    console.log(">>>>>>>>>>>", sname);
-
     let template = importDoc.querySelector('#template-header');
 
     shadow.innerHTML =
