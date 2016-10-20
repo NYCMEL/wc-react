@@ -19,8 +19,9 @@ Header.createdCallback = function() {
     let tmenus = document.querySelector("menus-top");
     let bmenus = document.querySelector("menus-bot");
     let cmenus = document.querySelector("menus-cog");
-    let uname = host.getAttribute("username");
-    let sname = host.getAttribute("servicename");
+    let uname = host.getAttribute("uname");
+    let sname = host.getAttribute("sname");
+    let aname = host.getAttribute("aname");
 
     console.log(">>>>>>>>>>>", sname);
 
@@ -60,6 +61,9 @@ Header.createdCallback = function() {
 
     // ADD SERVICE NAME
     shadow.querySelector(".dtcc-service-name").innerHTML = sname;
+
+    // ADD SERVICE NAME
+    shadow.querySelector(".dtcc-application-name").innerHTML = aname;
 
     // BROADCAST SEARCH EVENTS
     let search = shadow.querySelector(".dtcc-search-field");

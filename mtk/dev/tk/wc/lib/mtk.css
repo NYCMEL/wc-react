@@ -81,10 +81,10 @@ mtk-accordion mtk-panel .panel-body {
   font-family: Arial Narrow;
   color: #7E8083;
 }
-.mtk-header .navbar .dtcc-application-container {
+.mtk-header .navbar .dtcc-application-container .dtcc-application-name {
   margin: 0;
   padding: 0;
-  margin-top: -7px;
+  margin-top: 0px;
   padding-left: 29px;
   font-family: Arial;
   display: block;
