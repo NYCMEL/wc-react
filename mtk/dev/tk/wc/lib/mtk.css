@@ -73,9 +73,9 @@ mtk-accordion mtk-panel .panel-body {
 .mtk-header .navbar .dtcc-service-container {
   margin: 0;
   padding: 0;
-  display: block;
-  margin-top: 19px;
+  margin-top: 18px;
   padding-left: 29px;
+  display: block;
   font-size: 14px;
   font-family: Arial Narrow;
   color: #CCC;
@@ -83,9 +83,10 @@ mtk-accordion mtk-panel .panel-body {
 .mtk-header .navbar .dtcc-application-container {
   margin: 0;
   padding: 0;
+  margin-top: -7px;
+  padding-left: 29px;
   font-family: Arial;
   display: block;
-  padding-left: 29px;
   font-size: 30px;
   font-family: Arial Narrow;
   color: #ffd200;
