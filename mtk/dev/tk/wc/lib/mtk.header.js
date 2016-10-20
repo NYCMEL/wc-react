@@ -50,8 +50,8 @@ Header.createdCallback = function() {
 	});
     }
 
+    // ACTIVATE DROPDOWN
     if (typeof $.fn.dropdown == 'function') { 
-	// ACTIVATE DROPDOWN
 	shadow.querySelector(".dropdown-toggle").dropdown();
     }
 
