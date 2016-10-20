@@ -54,8 +54,10 @@ Header.createdCallback = function() {
     if(!jQuery) {
 	console.error("jQuery is not loaded...");
     } else {
+	console.log("jQuery is loaded...");
 	//IS BOOTSTRAP LOADED?
 	if (typeof $.fn.dropdown == 'function') { 
+	    console.log("Bootstrap is loaded...");
 	    let tmp =shadow.querySelector(".dropdown-toggle")
 	    $(tmp).dropdown();
 	} else {
