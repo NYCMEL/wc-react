@@ -51,9 +51,8 @@ Header.createdCallback = function() {
     }
 
     if (typeof $.fn.dropdown == 'function') { 
-	let drop = shadow.querySelector('.dropdown-toggle');
-	console.log(drop)
-	drop.dropdown()
+	// ACTIVATE DROPDOWN
+	shadow.querySelector(".dropdown-toggle").dropdown();
     }
 
     // ADD USER NAME
@@ -74,9 +73,6 @@ Header.createdCallback = function() {
 	    radio('mtkHeaderSearch').broadcast(search.value);
 	}
     });
-
-    // ACTIVATE DROPDOWN
-    shadow.querySelector(".dropdown-toggle").dropdown();
 
     xx = shadow;
 
