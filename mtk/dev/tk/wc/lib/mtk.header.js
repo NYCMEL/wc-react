@@ -50,9 +50,11 @@ Header.createdCallback = function() {
 	});
     }
 
-    $(document).ready(function() {
-	$('dropdown-toggle').dropdown()
-    });
+    if (typeof $.fn.dropdown == 'function') { 
+	let drop = shadow.querySelector('.dropdown-toggle');
+	console.log(drop)
+	drop.dropdown()
+    }
 
     // ADD USER NAME
     shadow.querySelector(".dtcc-user-name").innerHTML = uname;
