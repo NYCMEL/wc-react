@@ -15,7 +15,10 @@ Dropdown.createdCallback = function() {
     let id = this.getAttribute("id");
     let lbl = this.getAttribute("label");
     let host = document.querySelector("#" + id);
+    let content = this.innerHTML;
     let template = importDoc.querySelector('#template-dropdown');
+
+    console.log(content);
 
     host.innerHTML =
 	"<style>" +
@@ -23,6 +26,9 @@ Dropdown.createdCallback = function() {
 	"@import '/tk/wc/lib/mtk.dropdown.css';" +
 	"</style>" +
 	template.innerHTML;
+
+    // ADD USER MENUS TO OUR BUTTON
+    document.querySelector(".dropdown").innerHTML += content;
 
     // CHANGE THE LABEL
     host.querySelector(".dropdown-btn").innerHTML = lbl;
