@@ -19,6 +19,7 @@ Header.createdCallback = function() {
     let tmenus = document.querySelector("menus-top");
     let bmenus = document.querySelector("menus-bot");
     let cmenus = document.querySelector("menus-cog");
+    let uname = host.getAttribute("username");
 
     let template = importDoc.querySelector('#template-header');
 
@@ -50,6 +51,8 @@ Header.createdCallback = function() {
     $(document).ready(function() {
 	$('dropdown-toggle').dropdown()
     });
+
+    shadow.querySelector(".dtcc-user-name").innerHTML = uname;
 
     xx = shadow;
 
