@@ -51,8 +51,16 @@ Header.createdCallback = function() {
     }
 
     // ACTIVATE DROPDOWN
-    if (typeof $.fn.dropdown == 'function') { 
-	//shadow.querySelector(".dropdown-toggle").dropdown();
+    if(!jQuery) {
+	console.error("jQuery is not loaded...");
+    } else {
+	//IS BOOTSTRAP LOADED?
+	if (typeof $.fn.dropdown == 'function') { 
+	    let tmp =shadow.querySelector(".dropdown-toggle")
+	    $(tmp).dropdown();
+	} else {
+	    console.error("Bootstrap is not loaded...");
+	}
     }
 
     // ADD USER NAME
