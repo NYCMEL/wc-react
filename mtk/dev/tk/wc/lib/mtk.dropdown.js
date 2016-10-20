@@ -15,10 +15,9 @@ Dropdown.createdCallback = function() {
     let id = this.getAttribute("id");
     let lbl = this.getAttribute("label");
     let host = document.querySelector("#" + id);
-    let shadow = host.createShadowRoot();
     let template = importDoc.querySelector('#template-dropdown');
 
-    shadow.innerHTML =
+    host.innerHTML =
 	"<style>" +
 	"@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
 	"@import '/tk/wc/lib/mtk.dropdown.css';" +
@@ -26,11 +25,10 @@ Dropdown.createdCallback = function() {
 	template.innerHTML;
 
     // CHANGE THE LABEL
-    shadow.querySelector(".dropdown-btn").innerHTML = lbl;
+    host.querySelector(".dropdown-btn").innerHTML = lbl;
     
-    let dropdown = document.querySelector("#" + id);
-    dropdown.addEventListener("click", function (ev) {
-	let dropdown = shadow.querySelector(".dropdown-content");
+    document.querySelector("#" + id).addEventListener("click", function (ev) {
+	let dropdown = host.querySelector(".dropdown-content");
 	dropdown.classList.toggle("show");
     });
 
