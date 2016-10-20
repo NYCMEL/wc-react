@@ -16,7 +16,6 @@ Dropdown.createdCallback = function() {
     let host = document.querySelector("#" + id);
     let shadow = host.createShadowRoot();
     let content = host.innerHTML;
-
     let template = importDoc.querySelector('#template-dropdown');
 
     shadow.innerHTML =
