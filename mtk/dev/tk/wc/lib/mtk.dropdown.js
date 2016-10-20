@@ -16,42 +16,15 @@ Dropdown.createdCallback = function() {
     let host = document.querySelector("#" + id);
     let shadow = host.createShadowRoot();
     let content = host.innerHTML;
-    let header = host.getAttribute("header");
-    let height = host.getAttribute("height") || "100%";
-    let footer  = host.getAttribute("footer");
-    let collapsible = host.getAttribute("collapsible");
 
     let template = importDoc.querySelector('#template-dropdown');
 
     shadow.innerHTML =
 	"<style>" +
 	"@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
-	"@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';" +
-	"@import '/tk/wc/lib/mtk.css';" +
+	"@import '/tk/wc/lib/mtk.dropdown.css';" +
 	"</style>" +
 	template.innerHTML;
-
-    shadow.querySelector(".dropdown-body").setAttribute("style", "height:" + height);
-    shadow.querySelector(".dropdown-body").innerHTML = content;
-    shadow.querySelector(".dropdown-heading").setAttribute("id", id + "-header");
-    shadow.querySelector(".dropdown-body").setAttribute("id", id + "-body");
-
-    if (footer == null) {
-	shadow.querySelector(".dropdown-footer").setAttribute("style", "display:none");
-    } else {
-	shadow.querySelector(".dropdown-footer").innerHTML = footer;
-	shadow.querySelector(".dropdown-footer").setAttribute("id", id + "-footer");
-    }
-
-    if (collapsible == "true") {
-	shadow.querySelector(".dropdown-heading").innerHTML = "<span class='fa-caret'><i class='fa fa-angle-down'></i></span> <span class=the-header>" + header + "</span>";
-	shadow.querySelector(".dropdown-heading").setAttribute("style", "cursor: pointer");
-	shadow.querySelector(".dropdown-heading").addEventListener("click", function() {
-	    host.toggle();
-	});
-    } else {
-	shadow.querySelector(".dropdown-heading").innerHTML = "<span class=the-header>" + header + "</span>";
-    }
 
     console.groupEnd();
 };
