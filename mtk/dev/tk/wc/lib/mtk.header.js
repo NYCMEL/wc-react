@@ -54,6 +54,16 @@ Header.createdCallback = function() {
 
     shadow.querySelector(".dtcc-user-name").innerHTML = uname;
 
+    // BROADCAST SEARCH EVENTS
+    let search = shadow.querySelector(".dtcc-search-field");
+
+    addEvent(search, "keydown", function(ev) {
+        if(ev.keyCode == 13){
+	    console.log('BROADCASTING mtkHeaderSearch', search.value);
+	    radio('mtkHeaderSearch').broadcast(search.value);
+	}
+    });
+
     xx = shadow;
 
     console.groupEnd();
@@ -162,3 +172,15 @@ Header.configure = function(options) {
 var Header = document.registerElement('mtk-header', {
     prototype: Header
 });
+
+////////////////////////////////////////////////////////////////////////////////////
+//// TEMPORARY HERE
+////////////////////////////////////////////////////////////////////////////////////
+function addEvent(element, eventName, callback) {
+    if (element.addEventListener) {
+        element.addEventListener(eventName, callback, false);
+    } else if (element.attachEvent) {
+        element.attachEvent("on" + eventName, callback);
+    }
+}
+
