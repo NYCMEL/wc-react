@@ -71,15 +71,15 @@ mtk-accordion mtk-panel .panel-body {
   height: 49px;
   border-right: 1px #666 solid;
 }
-.mtk-header .navbar .dtcc-service-container {
+.mtk-header .navbar .dtcc-service-container .dtcc-service-name {
   margin: 0;
   padding: 0;
   margin-top: 18px;
   padding-left: 29px;
   display: block;
-  font-size: 14px;
+  font-size: 13px;
   font-family: Arial Narrow;
-  color: #CCC;
+  color: #7E8083;
 }
 .mtk-header .navbar .dtcc-application-container {
   margin: 0;
@@ -95,7 +95,6 @@ mtk-accordion mtk-panel .panel-body {
 .mtk-header .navbar .dtcc-topmenu-container {
   margin-top: 10px;
   color: #999;
-  font-size: 14px;
   text-align: right;
 }
 .mtk-header .navbar .dtcc-topmenu-container li {
@@ -103,7 +102,7 @@ mtk-accordion mtk-panel .panel-body {
 }
 .mtk-header .navbar .dtcc-topmenu-container li a {
   font-family: Arial Narrow;
-  font-size: 16px;
+  font-size: 15px;
   color: #cccccc;
 }
 .mtk-header .navbar .dtcc-botmenu-container li {
