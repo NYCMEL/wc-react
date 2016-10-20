@@ -54,7 +54,6 @@ Header.createdCallback = function() {
     
     // ACTIVATE DROPDOWN
     let dropdowns = shadow.querySelectorAll(".dropbtn")
-    
     for (i=0; i< dropdowns.length; i++) {
 	console.log("processing dropdown:", i)
 	addEvent(dropdowns[i], "click", this.dropdown)
