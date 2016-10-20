@@ -23,53 +23,55 @@ try {
 </script>
 
 <template id="template-header">
-  <nav class="navbar navbar-inverse mtk-header">
-    <div class="container">
-      <div class="pull-left">
-	<img src="/tk/wc/assets/dtcc.png" class="dtcc-logo">
-      </div>
-      <div class="pull-left dtcc-separator">
-      </div>
-      <div class="pull-left">
-	<div class="dtcc-service-container">
-	  SERVICE NAME
+  <div class="mtk-header">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+	<div class="pull-left">
+	  <img src="/tk/wc/assets/dtcc.png" class="dtcc-logo">
 	</div>
-
-	<div class="dtcc-application-container">
-	  Application Name
+	<div class="pull-left dtcc-separator">
 	</div>
-      </div>
-
-      <div class="pull-right">
-	<div class="dtcc-topmenu-container">
-	  TOP-MENU-CONTAINER
-	</div>
-	<div class="dtcc-user-container">
-	  <span class="dtcc-user-name">USER NAME</span> <i class="fa fa-cog"></i>
-	</div>
-	<div class="dtcc-logout-container">
-	  <a href="#">LOGOUT</a>
-	</div>
-      </div>
-    </div>
-  </nav>
-
-  <nav class="navbar navbar-inverse mtk-header-network">
-    <div class="container">
-      <div class="dtcc-botmenu-container pull-left">
-	BOTTOM-MENU-CONTAINER
-      </div>
-
-      <div class="dtcc-search-container pull-right">
-	<form class="navbar-form navbar-left" role="search">
-	  <div class="form-group">
-            <input type="text" class="form-control dtcc-search-field" placeholder="Search for ...">
+	<div class="pull-left">
+	  <div class="dtcc-service-container">
+	    SERVICE NAME
 	  </div>
-	  <span class="fa fa-search"></span>
-	</form>
+
+	  <div class="dtcc-application-container">
+	    Application Name
+	  </div>
+	</div>
+
+	<div class="pull-right">
+	  <div class="dtcc-topmenu-container">
+	    TOP-MENU-CONTAINER
+	  </div>
+	  <div class="dtcc-user-container">
+	    <span class="dtcc-user-name">USER NAME</span> <i class="fa fa-cog"></i>
+	  </div>
+	  <div class="dtcc-logout-container">
+	    <a href="#">LOGOUT</a>
+	  </div>
+	</div>
       </div>
-    </div>
-  </nav>
+    </nav>
+
+    <nav class="navbar navbar-inverse mtk-header-network">
+      <div class="container">
+	<div class="dtcc-botmenu-container pull-left">
+	  BOTTOM-MENU-CONTAINER
+	</div>
+
+	<div class="dtcc-search-container pull-right">
+	  <form class="navbar-form navbar-left" role="search">
+	    <div class="form-group">
+              <input type="text" class="form-control dtcc-search-field" placeholder="Search for ...">
+	    </div>
+	    <span class="fa fa-search"></span>
+	  </form>
+	</div>
+      </div>
+    </nav>
+  </div>
 </template>
 
 <script src="/tk/wc/lib/mtk.header.js"></script>

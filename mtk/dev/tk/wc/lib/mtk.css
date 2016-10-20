@@ -32,24 +32,24 @@ mtk-accordion mtk-panel .panel-body {
 .tk-bugger {
   display: none;
 }
-.mtk-header {
+.mtk-header .navbar {
   margin: 0;
   padding: 0;
   border-radius: 0;
   height: 85px;
 }
-.mtk-header .dtcc-logo {
+.mtk-header .navbar .dtcc-logo {
   margin-top: 29px;
   left: 72px;
   margin-right: 29px;
 }
-.mtk-header .dtcc-separator {
+.mtk-header .navbar .dtcc-separator {
   padding-left: 29px;
   margin-top: 20px;
   height: 49px;
   border-right: 1px #666 solid;
 }
-.mtk-header .dtcc-service-container {
+.mtk-header .navbar .dtcc-service-container {
   margin: 0;
   padding: 0;
   display: block;
@@ -59,7 +59,7 @@ mtk-accordion mtk-panel .panel-body {
   font-family: Arial Narrow;
   color: #CCC;
 }
-.mtk-header .dtcc-application-container {
+.mtk-header .navbar .dtcc-application-container {
   margin: 0;
   padding: 0;
   font-family: Arial;
@@ -69,42 +69,43 @@ mtk-accordion mtk-panel .panel-body {
   font-family: Arial Narrow;
   color: orange;
 }
-.mtk-header .dtcc-topmenu-container {
+.mtk-header .navbar .dtcc-topmenu-container {
   margin-top: 10px;
   color: #999;
   font-size: 14px;
   text-align: right;
 }
-.mtk-header .dtcc-user-container {
+.mtk-header .navbar .dtcc-user-container {
   margin-top: 10px;
   color: #FFF;
   font-size: 14px;
   text-align: right;
 }
-.mtk-header .dtcc-user-container .fa-cog {
+.mtk-header .navbar .dtcc-user-container .fa-cog {
   padding-left: 5px;
   font-size: 20px;
   color: #CCC;
 }
-.mtk-header .dtcc-logout-container {
+.mtk-header .navbar .dtcc-logout-container {
   margin-top: 5px;
   text-align: right;
 }
-.mtk-header .dtcc-logout-container a {
+.mtk-header .navbar .dtcc-logout-container a {
   color: #999;
   font-size: 12px;
 }
-.mtk-header-network {
+.mtk-header .mtk-header-network {
+  height: 55px;
   border-radius: 0;
   background: #333;
   border-bottom: 5px orange solid;
 }
-.mtk-header-network .dtcc-botmenu-container {
+.mtk-header .mtk-header-network .dtcc-botmenu-container {
   font-size: 16px;
   margin-top: 25px;
   color: #999;
 }
-.mtk-header-network .dtcc-search-container .dtcc-search-field {
+.mtk-header .mtk-header-network .dtcc-search-container .dtcc-search-field {
   border-radius: 0;
   margin-right: -30px;
   padding-left: 10px;
@@ -117,7 +118,7 @@ mtk-accordion mtk-panel .panel-body {
   font-size: 18px;
   font-family: Arial Narrow;
 }
-.mtk-header-network .dtcc-search-container .fa-search {
+.mtk-header .mtk-header-network .dtcc-search-container .fa-search {
   font-size: 20px;
   margin-left: -5px;
   color: #CCC;
