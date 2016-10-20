@@ -125,6 +125,9 @@ mtk-accordion mtk-panel .panel-body {
   font-size: 20px;
   color: #CCC;
 }
+.mtk-header .navbar .dtcc-user-container .fa-cog:hover {
+  color: #ffd200 !important;
+}
 .mtk-header .navbar .dtcc-logout-container {
   margin-top: 5px;
   text-align: right;
