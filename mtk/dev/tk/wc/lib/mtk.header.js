@@ -16,6 +16,9 @@ Header.createdCallback = function() {
     let host = document.querySelector("#" + id);
     let shadow = host.createShadowRoot();
     let content = host.innerHTML;
+    let tmenus = document.querySelector("menus-top");
+    let bmenus = document.querySelector("menus-bot");
+    let cmenus = document.querySelector("menus-cog");
 
     let template = importDoc.querySelector('#template-header');
 
@@ -27,7 +30,6 @@ Header.createdCallback = function() {
 	"</style>" +
 	template.innerHTML;
 
-    xx = shadow;
     console.groupEnd();
 };
 
