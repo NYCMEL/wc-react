@@ -156,14 +156,14 @@ mtk-accordion mtk-panel .panel-body {
   width: 264px;
   height: 35px;
   border: 0;
-  background: #666;
+  background: #5F6062;
   font-size: 18px;
   font-family: Arial Narrow;
 }
 .mtk-header .mtk-header-network .dtcc-search-container .fa-search {
   font-size: 20px;
   margin-left: -25px;
-  color: #CCC;
+  color: #999;
 }
 .mtk-header .dtcc-topmenu-container ul,
 .mtk-header .dtcc-botmenu-container ul {
