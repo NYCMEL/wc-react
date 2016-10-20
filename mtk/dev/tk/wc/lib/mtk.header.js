@@ -20,6 +20,9 @@ Header.createdCallback = function() {
     let bmenus = document.querySelector("menus-bot");
     let cmenus = document.querySelector("menus-cog");
     let uname = host.getAttribute("username");
+    let sname = host.getAttribute("servicename");
+
+    console.log(">>>>>>>>>>>", sname);
 
     let template = importDoc.querySelector('#template-header');
 
@@ -52,7 +55,11 @@ Header.createdCallback = function() {
 	$('dropdown-toggle').dropdown()
     });
 
+    // ADD USER NAME
     shadow.querySelector(".dtcc-user-name").innerHTML = uname;
+
+    // ADD SERVICE NAME
+    shadow.querySelector(".dtcc-service-name").innerHTML = sname;
 
     // BROADCAST SEARCH EVENTS
     let search = shadow.querySelector(".dtcc-search-field");
