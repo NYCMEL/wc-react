@@ -48,3 +48,6 @@
 .dropdown .show {
   display: block;
 }
+.dropdown .hide {
+  display: none;
+}
