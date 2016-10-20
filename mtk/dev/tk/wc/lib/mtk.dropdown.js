@@ -25,6 +25,12 @@ Dropdown.createdCallback = function() {
 	"</style>" +
 	template.innerHTML;
 
+    let dropdown = document.querySelector("#" + id);
+    dropdown.addEventListener("click", function (ev) {
+	let dropdown = shadow.querySelector(".dropdown-content");
+	dropdown.classList.toggle("show");
+    });
+
     console.groupEnd();
 };
 
