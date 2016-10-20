@@ -31,6 +31,8 @@ Header.createdCallback = function() {
 	"@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';" +
 	"@import '/tk/wc/lib/mtk.css';" +
 	"</style>" +
+	"<script src='/tk/jquery/scripts/jquery.min.js'></script>" +
+	"<script src='/tk/inc/bootstrap.min.js'></script>" +
 	template.innerHTML;
 
     let topc = shadow.querySelector(".dtcc-topmenu-container")
@@ -72,6 +74,9 @@ Header.createdCallback = function() {
 	    radio('mtkHeaderSearch').broadcast(search.value);
 	}
     });
+
+    // ACTIVATE DROPDOWN
+    shadow.querySelector(".dropdown-toggle").dropdown();
 
     xx = shadow;
 
