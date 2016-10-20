@@ -28,7 +28,7 @@ Dropdown.createdCallback = function() {
 	template.innerHTML;
 
     // ADD USER MENUS TO OUR BUTTON
-    document.querySelector(".dropdown").innerHTML += content;
+    document.querySelector("#" + id + " .dropdown").innerHTML += content;
 
     // CHANGE THE LABEL
     host.querySelector(".dropdown-btn").innerHTML = lbl;

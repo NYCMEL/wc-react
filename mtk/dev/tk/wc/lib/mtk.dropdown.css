@@ -32,6 +32,7 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   border-bottom: 5px orange solid;
+  z-index: 99999999;
 }
 .dropdown .dropdown-content a {
   color: #cecece;
