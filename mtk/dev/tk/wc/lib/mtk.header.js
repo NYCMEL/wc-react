@@ -52,7 +52,7 @@ Header.createdCallback = function() {
 
     // ACTIVATE DROPDOWN
     if (typeof $.fn.dropdown == 'function') { 
-	shadow.querySelector(".dropdown-toggle").dropdown();
+	//shadow.querySelector(".dropdown-toggle").dropdown();
     }
 
     // ADD USER NAME
