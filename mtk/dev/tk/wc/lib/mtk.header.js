@@ -27,6 +27,7 @@ Header.createdCallback = function() {
 	"</style>" +
 	template.innerHTML;
 
+    xx = shadow;
     console.groupEnd();
 };
 
