@@ -153,8 +153,6 @@ Header.configure = function(options) {
     let shadow = host.shadowRoot;
 
     for (var key in options) {
-        console.log(">>>>>>>>", key, options[key])
-
 	switch(key) 
 	{
 	    case "header":

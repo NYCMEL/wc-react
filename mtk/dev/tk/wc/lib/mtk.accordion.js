@@ -24,7 +24,6 @@ Accordion.createdCallback = function() {
 
     for (i=0; i< panels.length; i++) {
 	let pid = panels[i].getAttribute("id");
-	console.log(">>>>>>>>>>>", i, pid);
 	
 	if (show != i) {
 	    try {
