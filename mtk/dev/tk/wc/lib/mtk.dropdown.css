@@ -4,11 +4,12 @@
   /* Dropdown Content (Hidden by Default) */
 }
 .dropdown .dropbtn {
-  background-color: transparent;
+  background-color: #000;
   color: white;
   font-size: 16px;
   border: none;
   cursor: pointer;
+  outline: none;
   /* Dropdown button on hover & focus */
 }
 .dropdown .dropbtn:hover,
