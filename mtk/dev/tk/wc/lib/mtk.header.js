@@ -37,7 +37,7 @@ Header.createdCallback = function() {
     botc.innerHTML = bmenus.innerHTML;
 
     // BORADCAST CLICK CALLBACKS ON MENU ITEMS
-    let links = shadow.querySelectorAll("li a");
+    let links = shadow.querySelectorAll("a");
 
     for (i=0; i< links.length; i++) {
 	links[i].addEventListener("click", function () {
