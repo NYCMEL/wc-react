@@ -13,9 +13,9 @@ Dropdown.createdCallback = function() {
     }
     
     let id = this.getAttribute("id");
+    let lbl = this.getAttribute("label");
     let host = document.querySelector("#" + id);
     let shadow = host.createShadowRoot();
-    let content = host.innerHTML;
     let template = importDoc.querySelector('#template-dropdown');
 
     shadow.innerHTML =
@@ -25,6 +25,9 @@ Dropdown.createdCallback = function() {
 	"</style>" +
 	template.innerHTML;
 
+    // CHANGE THE LABEL
+    shadow.querySelector(".dropdown-btn").innerHTML = lbl;
+    
     let dropdown = document.querySelector("#" + id);
     dropdown.addEventListener("click", function (ev) {
 	let dropdown = shadow.querySelector(".dropdown-content");
