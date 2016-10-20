@@ -137,6 +137,7 @@ mtk-accordion mtk-panel .panel-body {
   border-radius: 0;
   background: #333;
   border-bottom: 5px #ffd200 solid;
+  background: url("/tk/wc/assets/patterns/ClearingServices.png");
 }
 .mtk-header .mtk-header-network .dtcc-botmenu-container {
   font-size: 16px;
