@@ -30,6 +30,16 @@ Header.createdCallback = function() {
 	"</style>" +
 	template.innerHTML;
 
+    let topc = shadow.querySelector(".dtcc-topmenu-container")
+    let botc = shadow.querySelector(".dtcc-botmenu-container")
+
+    topc.innerHTML = tmenus.innerHTML;
+    botc.innerHTML = bmenus.innerHTML;
+
+    console.log(topc, botc);
+
+    xx = shadow;
+
     console.groupEnd();
 };
 
