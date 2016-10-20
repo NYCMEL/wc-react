@@ -16,6 +16,11 @@
 .dropdown .mtk-dropdown .dropbtn:focus {
   color: orange;
 }
+.dropdown .mtk-dropdown:after {
+  padding-left: 5px;
+  font-family: fontAwesome;
+  content: "\f107";
+}
 .dropdown .dropdown {
   position: relative;
   display: inline-block;
