@@ -5,7 +5,33 @@
 
   <body style="margin:0;padding:0">
     <mtk-header id="my-header-1">
-      <h1>AAA</h1>
+      <cog-menus>
+      </cog-menus>
+
+      <top-menus>
+	<ul>
+	  <li><a href="#" id="Support">Support</a></li>
+	  <li><a href="#" id="contactus">Contact Us</a></li>
+	  <li class="dropdown">
+	    <a href="#" class="dropdown-toggle" id="dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	      DTCC.com <span class="caret"></span>
+	    </a>
+	    <ul class="dropdown-menu pull-right collapse" aria-labelledby="dropdown-1" style=display:none>
+	      <li><a href="#" id="menu-item-1">Go Here</a></li>
+	      <li><a href="#" id="menu-item-2">Go There</a></li>
+	      <li><a href="#" id="menu-item-3">Somewhere else</a></li>
+	    </ul>
+	  </li>
+	</ul>
+      </top-menus>
+
+      <bot-menus>
+	<ul>
+	  <li><a href="#" id="menu-1">Home</a></li>
+	  <li><a href="#" id="menu-2">Products</a></li>
+	  <li><a href="#" id="menu-3">Contact Us</a></li>
+	</ul>
+      </bot-menus>
     </mtk-header>
   </body>
 </html>
