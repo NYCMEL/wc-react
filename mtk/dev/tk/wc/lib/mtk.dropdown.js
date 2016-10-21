@@ -38,6 +38,8 @@ Dropdown.createdCallback = function() {
 	dropdown.classList.toggle("show");
     });
 
+    xx = host;
+    //alert($(xx))
     console.groupEnd();
 };
 
