@@ -28,7 +28,7 @@ if {$argc != 1} {
 }
 
 set name [lindex $argv 0]
-puts "\ncreate $name component now...";flush stdout
+puts "\nCREATE $name COMPONENT NOW...";flush stdout
 
 file mkdir lib
 
@@ -48,4 +48,4 @@ foreach i {css less html js} {
     fwrite wc.name.$i $r
 }
 
-puts "done.\n";flush stdout
+puts "DONE.\n";flush stdout
