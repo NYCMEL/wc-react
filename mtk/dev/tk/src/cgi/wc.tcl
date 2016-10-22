@@ -34,15 +34,28 @@ namespace eval mtk {
 	uplevel 1 [lindex $args end]
 	_cgi_close_proc
     }
-}
 
-namespace eval mtk {
     ######################################################
     ##### 
     ######################################################
     proc accordion {args} {
 	cgi_put "<mtk-accordion"
 	_cgi_close_proc_push "cgi_put </mtk-accordion>"
+
+	if {[llength $args]} {
+	    cgi_put "[_cgi_lrange $args 0 [expr {[llength $args]-2}]]"
+	}
+	cgi_put ">"
+	uplevel 1 [lindex $args end]
+	_cgi_close_proc
+    }
+
+    ######################################################
+    ##### 
+    ######################################################
+    proc tabs {args} {
+	cgi_put "<mtk-tabs"
+	_cgi_close_proc_push "cgi_put </mtk-tabs>"
 
 	if {[llength $args]} {
 	    cgi_put "[_cgi_lrange $args 0 [expr {[llength $args]-2}]]"
