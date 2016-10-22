@@ -36,7 +36,7 @@ file mkdir lib
 puts "\tcreating wc.$name.html...";flush stdout
 set r [fread "/Melify/mtk/dev/tk/lib/components/wc/wc.MAKER.html"]
 regsub -nocase -all "maker" $r "$name" r
-fwrite wc.name.html $r
+fwrite wc.$name.html $r
 
 cd lib
 
@@ -45,7 +45,7 @@ foreach i {css less html js} {
     puts "\tcreating mtk.$name.$i...";flush stdout
     set r [fread "/Melify/mtk/dev/tk/lib/components/wc/lib/mtk.MAKER.$i"]
     regsub -nocase -all "maker" $r "$name" r
-    fwrite wc.name.$i $r
+    fwrite mtk.$name.$i $r
 }
 
 puts "DONE.\n";flush stdout
