@@ -33,10 +33,17 @@ puts "\ncreate $name component now...";flush stdout
 file mkdir lib
 
 # PROCESS THE HTML FILE
+puts "\tcreating wc.$name.html...";flush stdout
 set r [fread "/Melify/mtk/dev/tk/lib/components/wc/wc.MAKER.html"]
 regsub -nocase -all "maker" $r "$name" r
 fwrite wc.name.html $r
 
 cd lib
+
+# PROCESS THE LESS FILE
+puts "\tcreating mtk.$name.less...";flush stdout
+set r [fread "/Melify/mtk/dev/tk/lib/components/wc/lib/mtk.MAKER.less"]
+regsub -nocase -all "maker" $r "$name" r
+fwrite wc.name.less $r
 
 puts "done.\n";flush stdout
