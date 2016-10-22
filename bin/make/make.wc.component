@@ -40,10 +40,12 @@ fwrite wc.name.html $r
 
 cd lib
 
-# PROCESS THE LESS FILE
-puts "\tcreating mtk.$name.less...";flush stdout
-set r [fread "/Melify/mtk/dev/tk/lib/components/wc/lib/mtk.MAKER.less"]
-regsub -nocase -all "maker" $r "$name" r
-fwrite wc.name.less $r
+# PROCESS THE COMPONENT FILES
+foreach i {css less html js} {
+    puts "\tcreating mtk.$name.$i...";flush stdout
+    set r [fread "/Melify/mtk/dev/tk/lib/components/wc/lib/mtk.MAKER.$i"]
+    regsub -nocase -all "maker" $r "$name" r
+    fwrite wc.name.$i $r
+}
 
 puts "done.\n";flush stdout
