@@ -28,13 +28,15 @@ if {$argc != 1} {
 }
 
 set name [lindex $argv 0]
+puts "\ncreate $name component now...";flush stdout
 
 file mkdir lib
 
 # PROCESS THE HTML FILE
 set r [fread "/Melify/mtk/dev/tk/lib/components/wc/wc.MAKER.html"]
 regsub -nocase -all "maker" $r "$name" r
-
 fwrite wc.name.html $r
 
-puts ">>>>>>>>>$name"
+cd lib
+
+puts "done.\n";flush stdout
