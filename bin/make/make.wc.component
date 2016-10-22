@@ -1,5 +1,24 @@
 #!/Melify/bin/mac/tclkit
 
+###############################################
+##### 
+###############################################
+proc fread {file} {
+    set fp [open $file r]
+    set txt [read $fp]
+    close $fp
+    return $txt
+}
+
+###############################################
+##### 
+###############################################
+proc fwrite {file txt} {
+    set fp [open $file w]
+    puts $fp $txt
+    close $fp
+}
+
 ################################################################################
 ####
 ################################################################################
@@ -13,90 +32,9 @@ set name [lindex $argv 0]
 file mkdir lib
 
 # PROCESS THE HTML FILE
-set html "/Melify/mtk/dev/tk/lib/components/wc/wc.MAKER.html"
-set f [open $html r]
-set r [read $f]
+set r [fread "/Melify/mtk/dev/tk/lib/components/wc/wc.MAKER.html"]
 regsub -nocase -all "maker" $r "$name" r
-close $f
 
-set f [open wc.name.html w]
-puts $f $r
-close $f
+fwrite wc.name.html $r
 
 puts ">>>>>>>>>$name"
-exit
-
-set XX  [file tail [pwd]]
-set sp  [split $argv .]
-set YY  "${XX}::component::[join $sp ::]"
-set FN  ${XX}.component.[join $sp .]
-
-# COMPONENT NAME
-set CNAME ${XX}-component-[join $sp "-"]
-
-# JS FUNCTION NAME
-set JNAME "${XX}Component"
-foreach i $sp {
-    append JNAME [string totitle $i]
-}
-
-# NAMESPACE
-set NSPACE ""
-append NSPACE "namespace eval $XX \{\n"
-append NSPACE "namespace eval component \{\n"
-
-foreach i $sp {
-    append NSPACE "namespace eval $i \{\n"
-}
-foreach i $sp {
-    append NSPACE "\}\n"
-}
-append NSPACE "\}\n\}\n"
-
-################################################################################
-#### TCL
-################################################################################
-set f [open $templates/xx.component.yy.tcl r]
-set r [read $f]
-close $f
-
-#COMPONENT ID
-set CID "MTK[clock seconds]"
-
-regsub -all "NSPACE" $r "$NSPACE" r
-regsub -all "YY"     $r "$YY"     r
-regsub -all "XX"     $r "$XX"     r
-regsub -all "FN"     $r "$FN"     r
-regsub -all "CNAME"  $r "$CNAME"  r
-regsub -all "CID"    $r "$CID"    r
-regsub -all "JNAME"  $r "$JNAME"  r
-
-set f [open "$FN.tcl" w]
-puts $f $r
-close $f
-
-################################################################################
-#### LESS
-################################################################################
-set f [open $templates/xx.component.yy.less r]
-set r [read $f]
-close $f
-
-regsub -all "CNAME" $r "$CNAME" r
-
-set f [open "./inc/$FN.less" w]
-puts $f $r
-close $f
-
-################################################################################
-####
-################################################################################
-set f [open $templates/xx.component.yy.js r]
-set r [read $f]
-close $f
-
-regsub -all "JNAME" $r "$JNAME" r
-
-set f [open "./inc/$FN.js" w]
-puts $f $r
-close $f
