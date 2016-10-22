@@ -8,10 +8,23 @@ if {$argc != 1} {
     exit
 }
 
-# LOCATION OF ALL TEMPLATES
-set templates "/Melify/mtk/dev/tk/lib/components/template"
+set name [lindex $argv 0]
 
-file mkdir inc
+file mkdir lib
+
+# PROCESS THE HTML FILE
+set html "/Melify/mtk/dev/tk/lib/components/wc/wc.MAKER.html"
+set f [open $html r]
+set r [read $f]
+regsub -nocase -all "maker" $r "$name" r
+close $f
+
+set f [open wc.name.html w]
+puts $f $r
+close $f
+
+puts ">>>>>>>>>$name"
+exit
 
 set XX  [file tail [pwd]]
 set sp  [split $argv .]
