@@ -1,1 +1,0 @@
-Example of using bootstap css styles
