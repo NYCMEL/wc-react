@@ -1,0 +1,34 @@
+<!doctype html>
+<head>
+  <title>Web Components Demo &ndash; All 4 Specs</title>
+  <link href="http://melify.com/GitHub/bootstrap/dist/css/bootstrap.min.css" media="all" rel="stylesheet" />
+  <link rel="import" href="my-demo.html">
+  
+</head>
+
+<body>
+  <BR>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+	<my-demo demo="I will be changed in 3 seconds...!">
+	  <p>A paragraph outside the shadow root.</p>
+	</my-demo>
+	
+	<div style="margin:1em 0;">
+	  <button class="btn btn-warning btn-sm" onclick="document.querySelector('my-demo').talk();">Call .talk() on the &lt;my-demo&gt;</button>
+	</div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    el = document.querySelector("my-demo");
+
+    setTimeout(function(){
+    el.attributes.demo.value = "Mel was here :)"
+    }, 3000);
+    }, false);
+  </script>
+</body>

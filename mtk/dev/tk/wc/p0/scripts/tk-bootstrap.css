@@ -1,0 +1,6713 @@
+.tk-component {
+  /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+  /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+}
+.tk-component html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+.tk-component body {
+  margin: 0;
+}
+.tk-component article,
+.tk-component aside,
+.tk-component details,
+.tk-component figcaption,
+.tk-component figure,
+.tk-component footer,
+.tk-component header,
+.tk-component hgroup,
+.tk-component main,
+.tk-component menu,
+.tk-component nav,
+.tk-component section,
+.tk-component summary {
+  display: block;
+}
+.tk-component audio,
+.tk-component canvas,
+.tk-component progress,
+.tk-component video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+.tk-component audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+.tk-component [hidden],
+.tk-component template {
+  display: none;
+}
+.tk-component a {
+  background-color: transparent;
+}
+.tk-component a:active,
+.tk-component a:hover {
+  outline: 0;
+}
+.tk-component abbr[title] {
+  border-bottom: 1px dotted;
+}
+.tk-component b,
+.tk-component strong {
+  font-weight: bold;
+}
+.tk-component dfn {
+  font-style: italic;
+}
+.tk-component h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.tk-component mark {
+  background: #ff0;
+  color: #000;
+}
+.tk-component small {
+  font-size: 80%;
+}
+.tk-component sub,
+.tk-component sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.tk-component sup {
+  top: -0.5em;
+}
+.tk-component sub {
+  bottom: -0.25em;
+}
+.tk-component img {
+  border: 0;
+}
+.tk-component svg:not(:root) {
+  overflow: hidden;
+}
+.tk-component figure {
+  margin: 1em 40px;
+}
+.tk-component hr {
+  box-sizing: content-box;
+  height: 0;
+}
+.tk-component pre {
+  overflow: auto;
+}
+.tk-component code,
+.tk-component kbd,
+.tk-component pre,
+.tk-component samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.tk-component button,
+.tk-component input,
+.tk-component optgroup,
+.tk-component select,
+.tk-component textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.tk-component button {
+  overflow: visible;
+}
+.tk-component button,
+.tk-component select {
+  text-transform: none;
+}
+.tk-component button,
+.tk-component html input[type="button"],
+.tk-component input[type="reset"],
+.tk-component input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+.tk-component button[disabled],
+.tk-component html input[disabled] {
+  cursor: default;
+}
+.tk-component button::-moz-focus-inner,
+.tk-component input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.tk-component input {
+  line-height: normal;
+}
+.tk-component input[type="checkbox"],
+.tk-component input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+.tk-component input[type="number"]::-webkit-inner-spin-button,
+.tk-component input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+.tk-component input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+.tk-component input[type="search"]::-webkit-search-cancel-button,
+.tk-component input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.tk-component fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+.tk-component legend {
+  border: 0;
+  padding: 0;
+}
+.tk-component textarea {
+  overflow: auto;
+}
+.tk-component optgroup {
+  font-weight: bold;
+}
+.tk-component table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.tk-component td,
+.tk-component th {
+  padding: 0;
+}
+@media print {
+  .tk-component *,
+  .tk-component *:before,
+  .tk-component *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  .tk-component a,
+  .tk-component a:visited {
+    text-decoration: underline;
+  }
+  .tk-component a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  .tk-component abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .tk-component a[href^="#"]:after,
+  .tk-component a[href^="javascript:"]:after {
+    content: "";
+  }
+  .tk-component pre,
+  .tk-component blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  .tk-component thead {
+    display: table-header-group;
+  }
+  .tk-component tr,
+  .tk-component img {
+    page-break-inside: avoid;
+  }
+  .tk-component img {
+    max-width: 100% !important;
+  }
+  .tk-component p,
+  .tk-component h2,
+  .tk-component h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  .tk-component h2,
+  .tk-component h3 {
+    page-break-after: avoid;
+  }
+  .tk-component .navbar {
+    display: none;
+  }
+  .tk-component .btn > .caret,
+  .tk-component .dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
+  .tk-component .label {
+    border: 1px solid #000;
+  }
+  .tk-component .table {
+    border-collapse: collapse !important;
+  }
+  .tk-component .table td,
+  .tk-component .table th {
+    background-color: #fff !important;
+  }
+  .tk-component .table-bordered th,
+  .tk-component .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+}
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.tk-component .glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.tk-component .glyphicon-asterisk:before {
+  content: "\002a";
+}
+.tk-component .glyphicon-plus:before {
+  content: "\002b";
+}
+.tk-component .glyphicon-euro:before,
+.tk-component .glyphicon-eur:before {
+  content: "\20ac";
+}
+.tk-component .glyphicon-minus:before {
+  content: "\2212";
+}
+.tk-component .glyphicon-cloud:before {
+  content: "\2601";
+}
+.tk-component .glyphicon-envelope:before {
+  content: "\2709";
+}
+.tk-component .glyphicon-pencil:before {
+  content: "\270f";
+}
+.tk-component .glyphicon-glass:before {
+  content: "\e001";
+}
+.tk-component .glyphicon-music:before {
+  content: "\e002";
+}
+.tk-component .glyphicon-search:before {
+  content: "\e003";
+}
+.tk-component .glyphicon-heart:before {
+  content: "\e005";
+}
+.tk-component .glyphicon-star:before {
+  content: "\e006";
+}
+.tk-component .glyphicon-star-empty:before {
+  content: "\e007";
+}
+.tk-component .glyphicon-user:before {
+  content: "\e008";
+}
+.tk-component .glyphicon-film:before {
+  content: "\e009";
+}
+.tk-component .glyphicon-th-large:before {
+  content: "\e010";
+}
+.tk-component .glyphicon-th:before {
+  content: "\e011";
+}
+.tk-component .glyphicon-th-list:before {
+  content: "\e012";
+}
+.tk-component .glyphicon-ok:before {
+  content: "\e013";
+}
+.tk-component .glyphicon-remove:before {
+  content: "\e014";
+}
+.tk-component .glyphicon-zoom-in:before {
+  content: "\e015";
+}
+.tk-component .glyphicon-zoom-out:before {
+  content: "\e016";
+}
+.tk-component .glyphicon-off:before {
+  content: "\e017";
+}
+.tk-component .glyphicon-signal:before {
+  content: "\e018";
+}
+.tk-component .glyphicon-cog:before {
+  content: "\e019";
+}
+.tk-component .glyphicon-trash:before {
+  content: "\e020";
+}
+.tk-component .glyphicon-home:before {
+  content: "\e021";
+}
+.tk-component .glyphicon-file:before {
+  content: "\e022";
+}
+.tk-component .glyphicon-time:before {
+  content: "\e023";
+}
+.tk-component .glyphicon-road:before {
+  content: "\e024";
+}
+.tk-component .glyphicon-download-alt:before {
+  content: "\e025";
+}
+.tk-component .glyphicon-download:before {
+  content: "\e026";
+}
+.tk-component .glyphicon-upload:before {
+  content: "\e027";
+}
+.tk-component .glyphicon-inbox:before {
+  content: "\e028";
+}
+.tk-component .glyphicon-play-circle:before {
+  content: "\e029";
+}
+.tk-component .glyphicon-repeat:before {
+  content: "\e030";
+}
+.tk-component .glyphicon-refresh:before {
+  content: "\e031";
+}
+.tk-component .glyphicon-list-alt:before {
+  content: "\e032";
+}
+.tk-component .glyphicon-lock:before {
+  content: "\e033";
+}
+.tk-component .glyphicon-flag:before {
+  content: "\e034";
+}
+.tk-component .glyphicon-headphones:before {
+  content: "\e035";
+}
+.tk-component .glyphicon-volume-off:before {
+  content: "\e036";
+}
+.tk-component .glyphicon-volume-down:before {
+  content: "\e037";
+}
+.tk-component .glyphicon-volume-up:before {
+  content: "\e038";
+}
+.tk-component .glyphicon-qrcode:before {
+  content: "\e039";
+}
+.tk-component .glyphicon-barcode:before {
+  content: "\e040";
+}
+.tk-component .glyphicon-tag:before {
+  content: "\e041";
+}
+.tk-component .glyphicon-tags:before {
+  content: "\e042";
+}
+.tk-component .glyphicon-book:before {
+  content: "\e043";
+}
+.tk-component .glyphicon-bookmark:before {
+  content: "\e044";
+}
+.tk-component .glyphicon-print:before {
+  content: "\e045";
+}
+.tk-component .glyphicon-camera:before {
+  content: "\e046";
+}
+.tk-component .glyphicon-font:before {
+  content: "\e047";
+}
+.tk-component .glyphicon-bold:before {
+  content: "\e048";
+}
+.tk-component .glyphicon-italic:before {
+  content: "\e049";
+}
+.tk-component .glyphicon-text-height:before {
+  content: "\e050";
+}
+.tk-component .glyphicon-text-width:before {
+  content: "\e051";
+}
+.tk-component .glyphicon-align-left:before {
+  content: "\e052";
+}
+.tk-component .glyphicon-align-center:before {
+  content: "\e053";
+}
+.tk-component .glyphicon-align-right:before {
+  content: "\e054";
+}
+.tk-component .glyphicon-align-justify:before {
+  content: "\e055";
+}
+.tk-component .glyphicon-list:before {
+  content: "\e056";
+}
+.tk-component .glyphicon-indent-left:before {
+  content: "\e057";
+}
+.tk-component .glyphicon-indent-right:before {
+  content: "\e058";
+}
+.tk-component .glyphicon-facetime-video:before {
+  content: "\e059";
+}
+.tk-component .glyphicon-picture:before {
+  content: "\e060";
+}
+.tk-component .glyphicon-map-marker:before {
+  content: "\e062";
+}
+.tk-component .glyphicon-adjust:before {
+  content: "\e063";
+}
+.tk-component .glyphicon-tint:before {
+  content: "\e064";
+}
+.tk-component .glyphicon-edit:before {
+  content: "\e065";
+}
+.tk-component .glyphicon-share:before {
+  content: "\e066";
+}
+.tk-component .glyphicon-check:before {
+  content: "\e067";
+}
+.tk-component .glyphicon-move:before {
+  content: "\e068";
+}
+.tk-component .glyphicon-step-backward:before {
+  content: "\e069";
+}
+.tk-component .glyphicon-fast-backward:before {
+  content: "\e070";
+}
+.tk-component .glyphicon-backward:before {
+  content: "\e071";
+}
+.tk-component .glyphicon-play:before {
+  content: "\e072";
+}
+.tk-component .glyphicon-pause:before {
+  content: "\e073";
+}
+.tk-component .glyphicon-stop:before {
+  content: "\e074";
+}
+.tk-component .glyphicon-forward:before {
+  content: "\e075";
+}
+.tk-component .glyphicon-fast-forward:before {
+  content: "\e076";
+}
+.tk-component .glyphicon-step-forward:before {
+  content: "\e077";
+}
+.tk-component .glyphicon-eject:before {
+  content: "\e078";
+}
+.tk-component .glyphicon-chevron-left:before {
+  content: "\e079";
+}
+.tk-component .glyphicon-chevron-right:before {
+  content: "\e080";
+}
+.tk-component .glyphicon-plus-sign:before {
+  content: "\e081";
+}
+.tk-component .glyphicon-minus-sign:before {
+  content: "\e082";
+}
+.tk-component .glyphicon-remove-sign:before {
+  content: "\e083";
+}
+.tk-component .glyphicon-ok-sign:before {
+  content: "\e084";
+}
+.tk-component .glyphicon-question-sign:before {
+  content: "\e085";
+}
+.tk-component .glyphicon-info-sign:before {
+  content: "\e086";
+}
+.tk-component .glyphicon-screenshot:before {
+  content: "\e087";
+}
+.tk-component .glyphicon-remove-circle:before {
+  content: "\e088";
+}
+.tk-component .glyphicon-ok-circle:before {
+  content: "\e089";
+}
+.tk-component .glyphicon-ban-circle:before {
+  content: "\e090";
+}
+.tk-component .glyphicon-arrow-left:before {
+  content: "\e091";
+}
+.tk-component .glyphicon-arrow-right:before {
+  content: "\e092";
+}
+.tk-component .glyphicon-arrow-up:before {
+  content: "\e093";
+}
+.tk-component .glyphicon-arrow-down:before {
+  content: "\e094";
+}
+.tk-component .glyphicon-share-alt:before {
+  content: "\e095";
+}
+.tk-component .glyphicon-resize-full:before {
+  content: "\e096";
+}
+.tk-component .glyphicon-resize-small:before {
+  content: "\e097";
+}
+.tk-component .glyphicon-exclamation-sign:before {
+  content: "\e101";
+}
+.tk-component .glyphicon-gift:before {
+  content: "\e102";
+}
+.tk-component .glyphicon-leaf:before {
+  content: "\e103";
+}
+.tk-component .glyphicon-fire:before {
+  content: "\e104";
+}
+.tk-component .glyphicon-eye-open:before {
+  content: "\e105";
+}
+.tk-component .glyphicon-eye-close:before {
+  content: "\e106";
+}
+.tk-component .glyphicon-warning-sign:before {
+  content: "\e107";
+}
+.tk-component .glyphicon-plane:before {
+  content: "\e108";
+}
+.tk-component .glyphicon-calendar:before {
+  content: "\e109";
+}
+.tk-component .glyphicon-random:before {
+  content: "\e110";
+}
+.tk-component .glyphicon-comment:before {
+  content: "\e111";
+}
+.tk-component .glyphicon-magnet:before {
+  content: "\e112";
+}
+.tk-component .glyphicon-chevron-up:before {
+  content: "\e113";
+}
+.tk-component .glyphicon-chevron-down:before {
+  content: "\e114";
+}
+.tk-component .glyphicon-retweet:before {
+  content: "\e115";
+}
+.tk-component .glyphicon-shopping-cart:before {
+  content: "\e116";
+}
+.tk-component .glyphicon-folder-close:before {
+  content: "\e117";
+}
+.tk-component .glyphicon-folder-open:before {
+  content: "\e118";
+}
+.tk-component .glyphicon-resize-vertical:before {
+  content: "\e119";
+}
+.tk-component .glyphicon-resize-horizontal:before {
+  content: "\e120";
+}
+.tk-component .glyphicon-hdd:before {
+  content: "\e121";
+}
+.tk-component .glyphicon-bullhorn:before {
+  content: "\e122";
+}
+.tk-component .glyphicon-bell:before {
+  content: "\e123";
+}
+.tk-component .glyphicon-certificate:before {
+  content: "\e124";
+}
+.tk-component .glyphicon-thumbs-up:before {
+  content: "\e125";
+}
+.tk-component .glyphicon-thumbs-down:before {
+  content: "\e126";
+}
+.tk-component .glyphicon-hand-right:before {
+  content: "\e127";
+}
+.tk-component .glyphicon-hand-left:before {
+  content: "\e128";
+}
+.tk-component .glyphicon-hand-up:before {
+  content: "\e129";
+}
+.tk-component .glyphicon-hand-down:before {
+  content: "\e130";
+}
+.tk-component .glyphicon-circle-arrow-right:before {
+  content: "\e131";
+}
+.tk-component .glyphicon-circle-arrow-left:before {
+  content: "\e132";
+}
+.tk-component .glyphicon-circle-arrow-up:before {
+  content: "\e133";
+}
+.tk-component .glyphicon-circle-arrow-down:before {
+  content: "\e134";
+}
+.tk-component .glyphicon-globe:before {
+  content: "\e135";
+}
+.tk-component .glyphicon-wrench:before {
+  content: "\e136";
+}
+.tk-component .glyphicon-tasks:before {
+  content: "\e137";
+}
+.tk-component .glyphicon-filter:before {
+  content: "\e138";
+}
+.tk-component .glyphicon-briefcase:before {
+  content: "\e139";
+}
+.tk-component .glyphicon-fullscreen:before {
+  content: "\e140";
+}
+.tk-component .glyphicon-dashboard:before {
+  content: "\e141";
+}
+.tk-component .glyphicon-paperclip:before {
+  content: "\e142";
+}
+.tk-component .glyphicon-heart-empty:before {
+  content: "\e143";
+}
+.tk-component .glyphicon-link:before {
+  content: "\e144";
+}
+.tk-component .glyphicon-phone:before {
+  content: "\e145";
+}
+.tk-component .glyphicon-pushpin:before {
+  content: "\e146";
+}
+.tk-component .glyphicon-usd:before {
+  content: "\e148";
+}
+.tk-component .glyphicon-gbp:before {
+  content: "\e149";
+}
+.tk-component .glyphicon-sort:before {
+  content: "\e150";
+}
+.tk-component .glyphicon-sort-by-alphabet:before {
+  content: "\e151";
+}
+.tk-component .glyphicon-sort-by-alphabet-alt:before {
+  content: "\e152";
+}
+.tk-component .glyphicon-sort-by-order:before {
+  content: "\e153";
+}
+.tk-component .glyphicon-sort-by-order-alt:before {
+  content: "\e154";
+}
+.tk-component .glyphicon-sort-by-attributes:before {
+  content: "\e155";
+}
+.tk-component .glyphicon-sort-by-attributes-alt:before {
+  content: "\e156";
+}
+.tk-component .glyphicon-unchecked:before {
+  content: "\e157";
+}
+.tk-component .glyphicon-expand:before {
+  content: "\e158";
+}
+.tk-component .glyphicon-collapse-down:before {
+  content: "\e159";
+}
+.tk-component .glyphicon-collapse-up:before {
+  content: "\e160";
+}
+.tk-component .glyphicon-log-in:before {
+  content: "\e161";
+}
+.tk-component .glyphicon-flash:before {
+  content: "\e162";
+}
+.tk-component .glyphicon-log-out:before {
+  content: "\e163";
+}
+.tk-component .glyphicon-new-window:before {
+  content: "\e164";
+}
+.tk-component .glyphicon-record:before {
+  content: "\e165";
+}
+.tk-component .glyphicon-save:before {
+  content: "\e166";
+}
+.tk-component .glyphicon-open:before {
+  content: "\e167";
+}
+.tk-component .glyphicon-saved:before {
+  content: "\e168";
+}
+.tk-component .glyphicon-import:before {
+  content: "\e169";
+}
+.tk-component .glyphicon-export:before {
+  content: "\e170";
+}
+.tk-component .glyphicon-send:before {
+  content: "\e171";
+}
+.tk-component .glyphicon-floppy-disk:before {
+  content: "\e172";
+}
+.tk-component .glyphicon-floppy-saved:before {
+  content: "\e173";
+}
+.tk-component .glyphicon-floppy-remove:before {
+  content: "\e174";
+}
+.tk-component .glyphicon-floppy-save:before {
+  content: "\e175";
+}
+.tk-component .glyphicon-floppy-open:before {
+  content: "\e176";
+}
+.tk-component .glyphicon-credit-card:before {
+  content: "\e177";
+}
+.tk-component .glyphicon-transfer:before {
+  content: "\e178";
+}
+.tk-component .glyphicon-cutlery:before {
+  content: "\e179";
+}
+.tk-component .glyphicon-header:before {
+  content: "\e180";
+}
+.tk-component .glyphicon-compressed:before {
+  content: "\e181";
+}
+.tk-component .glyphicon-earphone:before {
+  content: "\e182";
+}
+.tk-component .glyphicon-phone-alt:before {
+  content: "\e183";
+}
+.tk-component .glyphicon-tower:before {
+  content: "\e184";
+}
+.tk-component .glyphicon-stats:before {
+  content: "\e185";
+}
+.tk-component .glyphicon-sd-video:before {
+  content: "\e186";
+}
+.tk-component .glyphicon-hd-video:before {
+  content: "\e187";
+}
+.tk-component .glyphicon-subtitles:before {
+  content: "\e188";
+}
+.tk-component .glyphicon-sound-stereo:before {
+  content: "\e189";
+}
+.tk-component .glyphicon-sound-dolby:before {
+  content: "\e190";
+}
+.tk-component .glyphicon-sound-5-1:before {
+  content: "\e191";
+}
+.tk-component .glyphicon-sound-6-1:before {
+  content: "\e192";
+}
+.tk-component .glyphicon-sound-7-1:before {
+  content: "\e193";
+}
+.tk-component .glyphicon-copyright-mark:before {
+  content: "\e194";
+}
+.tk-component .glyphicon-registration-mark:before {
+  content: "\e195";
+}
+.tk-component .glyphicon-cloud-download:before {
+  content: "\e197";
+}
+.tk-component .glyphicon-cloud-upload:before {
+  content: "\e198";
+}
+.tk-component .glyphicon-tree-conifer:before {
+  content: "\e199";
+}
+.tk-component .glyphicon-tree-deciduous:before {
+  content: "\e200";
+}
+.tk-component .glyphicon-cd:before {
+  content: "\e201";
+}
+.tk-component .glyphicon-save-file:before {
+  content: "\e202";
+}
+.tk-component .glyphicon-open-file:before {
+  content: "\e203";
+}
+.tk-component .glyphicon-level-up:before {
+  content: "\e204";
+}
+.tk-component .glyphicon-copy:before {
+  content: "\e205";
+}
+.tk-component .glyphicon-paste:before {
+  content: "\e206";
+}
+.tk-component .glyphicon-alert:before {
+  content: "\e209";
+}
+.tk-component .glyphicon-equalizer:before {
+  content: "\e210";
+}
+.tk-component .glyphicon-king:before {
+  content: "\e211";
+}
+.tk-component .glyphicon-queen:before {
+  content: "\e212";
+}
+.tk-component .glyphicon-pawn:before {
+  content: "\e213";
+}
+.tk-component .glyphicon-bishop:before {
+  content: "\e214";
+}
+.tk-component .glyphicon-knight:before {
+  content: "\e215";
+}
+.tk-component .glyphicon-baby-formula:before {
+  content: "\e216";
+}
+.tk-component .glyphicon-tent:before {
+  content: "\26fa";
+}
+.tk-component .glyphicon-blackboard:before {
+  content: "\e218";
+}
+.tk-component .glyphicon-bed:before {
+  content: "\e219";
+}
+.tk-component .glyphicon-apple:before {
+  content: "\f8ff";
+}
+.tk-component .glyphicon-erase:before {
+  content: "\e221";
+}
+.tk-component .glyphicon-hourglass:before {
+  content: "\231b";
+}
+.tk-component .glyphicon-lamp:before {
+  content: "\e223";
+}
+.tk-component .glyphicon-duplicate:before {
+  content: "\e224";
+}
+.tk-component .glyphicon-piggy-bank:before {
+  content: "\e225";
+}
+.tk-component .glyphicon-scissors:before {
+  content: "\e226";
+}
+.tk-component .glyphicon-bitcoin:before {
+  content: "\e227";
+}
+.tk-component .glyphicon-btc:before {
+  content: "\e227";
+}
+.tk-component .glyphicon-xbt:before {
+  content: "\e227";
+}
+.tk-component .glyphicon-yen:before {
+  content: "\00a5";
+}
+.tk-component .glyphicon-jpy:before {
+  content: "\00a5";
+}
+.tk-component .glyphicon-ruble:before {
+  content: "\20bd";
+}
+.tk-component .glyphicon-rub:before {
+  content: "\20bd";
+}
+.tk-component .glyphicon-scale:before {
+  content: "\e230";
+}
+.tk-component .glyphicon-ice-lolly:before {
+  content: "\e231";
+}
+.tk-component .glyphicon-ice-lolly-tasted:before {
+  content: "\e232";
+}
+.tk-component .glyphicon-education:before {
+  content: "\e233";
+}
+.tk-component .glyphicon-option-horizontal:before {
+  content: "\e234";
+}
+.tk-component .glyphicon-option-vertical:before {
+  content: "\e235";
+}
+.tk-component .glyphicon-menu-hamburger:before {
+  content: "\e236";
+}
+.tk-component .glyphicon-modal-window:before {
+  content: "\e237";
+}
+.tk-component .glyphicon-oil:before {
+  content: "\e238";
+}
+.tk-component .glyphicon-grain:before {
+  content: "\e239";
+}
+.tk-component .glyphicon-sunglasses:before {
+  content: "\e240";
+}
+.tk-component .glyphicon-text-size:before {
+  content: "\e241";
+}
+.tk-component .glyphicon-text-color:before {
+  content: "\e242";
+}
+.tk-component .glyphicon-text-background:before {
+  content: "\e243";
+}
+.tk-component .glyphicon-object-align-top:before {
+  content: "\e244";
+}
+.tk-component .glyphicon-object-align-bottom:before {
+  content: "\e245";
+}
+.tk-component .glyphicon-object-align-horizontal:before {
+  content: "\e246";
+}
+.tk-component .glyphicon-object-align-left:before {
+  content: "\e247";
+}
+.tk-component .glyphicon-object-align-vertical:before {
+  content: "\e248";
+}
+.tk-component .glyphicon-object-align-right:before {
+  content: "\e249";
+}
+.tk-component .glyphicon-triangle-right:before {
+  content: "\e250";
+}
+.tk-component .glyphicon-triangle-left:before {
+  content: "\e251";
+}
+.tk-component .glyphicon-triangle-bottom:before {
+  content: "\e252";
+}
+.tk-component .glyphicon-triangle-top:before {
+  content: "\e253";
+}
+.tk-component .glyphicon-console:before {
+  content: "\e254";
+}
+.tk-component .glyphicon-superscript:before {
+  content: "\e255";
+}
+.tk-component .glyphicon-subscript:before {
+  content: "\e256";
+}
+.tk-component .glyphicon-menu-left:before {
+  content: "\e257";
+}
+.tk-component .glyphicon-menu-right:before {
+  content: "\e258";
+}
+.tk-component .glyphicon-menu-down:before {
+  content: "\e259";
+}
+.tk-component .glyphicon-menu-up:before {
+  content: "\e260";
+}
+.tk-component * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.tk-component *:before,
+.tk-component *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.tk-component html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.tk-component body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #ffffff;
+}
+.tk-component input,
+.tk-component button,
+.tk-component select,
+.tk-component textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.tk-component a {
+  color: #337ab7;
+  text-decoration: none;
+}
+.tk-component a:hover,
+.tk-component a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+.tk-component a:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.tk-component figure {
+  margin: 0;
+}
+.tk-component img {
+  vertical-align: middle;
+}
+.tk-component .img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.tk-component .img-rounded {
+  border-radius: 6px;
+}
+.tk-component .img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+.tk-component .img-circle {
+  border-radius: 50%;
+}
+.tk-component hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+.tk-component .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.tk-component .sr-only-focusable:active,
+.tk-component .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.tk-component [role="button"] {
+  cursor: pointer;
+}
+.tk-component h1,
+.tk-component h2,
+.tk-component h3,
+.tk-component h4,
+.tk-component h5,
+.tk-component h6,
+.tk-component .h1,
+.tk-component .h2,
+.tk-component .h3,
+.tk-component .h4,
+.tk-component .h5,
+.tk-component .h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+.tk-component h1 small,
+.tk-component h2 small,
+.tk-component h3 small,
+.tk-component h4 small,
+.tk-component h5 small,
+.tk-component h6 small,
+.tk-component .h1 small,
+.tk-component .h2 small,
+.tk-component .h3 small,
+.tk-component .h4 small,
+.tk-component .h5 small,
+.tk-component .h6 small,
+.tk-component h1 .small,
+.tk-component h2 .small,
+.tk-component h3 .small,
+.tk-component h4 .small,
+.tk-component h5 .small,
+.tk-component h6 .small,
+.tk-component .h1 .small,
+.tk-component .h2 .small,
+.tk-component .h3 .small,
+.tk-component .h4 .small,
+.tk-component .h5 .small,
+.tk-component .h6 .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #777777;
+}
+.tk-component h1,
+.tk-component .h1,
+.tk-component h2,
+.tk-component .h2,
+.tk-component h3,
+.tk-component .h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.tk-component h1 small,
+.tk-component .h1 small,
+.tk-component h2 small,
+.tk-component .h2 small,
+.tk-component h3 small,
+.tk-component .h3 small,
+.tk-component h1 .small,
+.tk-component .h1 .small,
+.tk-component h2 .small,
+.tk-component .h2 .small,
+.tk-component h3 .small,
+.tk-component .h3 .small {
+  font-size: 65%;
+}
+.tk-component h4,
+.tk-component .h4,
+.tk-component h5,
+.tk-component .h5,
+.tk-component h6,
+.tk-component .h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.tk-component h4 small,
+.tk-component .h4 small,
+.tk-component h5 small,
+.tk-component .h5 small,
+.tk-component h6 small,
+.tk-component .h6 small,
+.tk-component h4 .small,
+.tk-component .h4 .small,
+.tk-component h5 .small,
+.tk-component .h5 .small,
+.tk-component h6 .small,
+.tk-component .h6 .small {
+  font-size: 75%;
+}
+.tk-component h1,
+.tk-component .h1 {
+  font-size: 36px;
+}
+.tk-component h2,
+.tk-component .h2 {
+  font-size: 30px;
+}
+.tk-component h3,
+.tk-component .h3 {
+  font-size: 24px;
+}
+.tk-component h4,
+.tk-component .h4 {
+  font-size: 18px;
+}
+.tk-component h5,
+.tk-component .h5 {
+  font-size: 14px;
+}
+.tk-component h6,
+.tk-component .h6 {
+  font-size: 12px;
+}
+.tk-component p {
+  margin: 0 0 10px;
+}
+.tk-component .lead {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+@media (min-width: 768px) {
+  .tk-component .lead {
+    font-size: 21px;
+  }
+}
+.tk-component small,
+.tk-component .small {
+  font-size: 85%;
+}
+.tk-component mark,
+.tk-component .mark {
+  background-color: #fcf8e3;
+  padding: .2em;
+}
+.tk-component .text-left {
+  text-align: left;
+}
+.tk-component .text-right {
+  text-align: right;
+}
+.tk-component .text-center {
+  text-align: center;
+}
+.tk-component .text-justify {
+  text-align: justify;
+}
+.tk-component .text-nowrap {
+  white-space: nowrap;
+}
+.tk-component .text-lowercase {
+  text-transform: lowercase;
+}
+.tk-component .text-uppercase {
+  text-transform: uppercase;
+}
+.tk-component .text-capitalize {
+  text-transform: capitalize;
+}
+.tk-component .text-muted {
+  color: #777777;
+}
+.tk-component .text-primary {
+  color: #337ab7;
+}
+a.tk-component .text-primary:hover,
+a.tk-component .text-primary:focus {
+  color: #286090;
+}
+.tk-component .text-success {
+  color: #3c763d;
+}
+a.tk-component .text-success:hover,
+a.tk-component .text-success:focus {
+  color: #2b542c;
+}
+.tk-component .text-info {
+  color: #31708f;
+}
+a.tk-component .text-info:hover,
+a.tk-component .text-info:focus {
+  color: #245269;
+}
+.tk-component .text-warning {
+  color: #8a6d3b;
+}
+a.tk-component .text-warning:hover,
+a.tk-component .text-warning:focus {
+  color: #66512c;
+}
+.tk-component .text-danger {
+  color: #a94442;
+}
+a.tk-component .text-danger:hover,
+a.tk-component .text-danger:focus {
+  color: #843534;
+}
+.tk-component .bg-primary {
+  color: #fff;
+  background-color: #337ab7;
+}
+a.tk-component .bg-primary:hover,
+a.tk-component .bg-primary:focus {
+  background-color: #286090;
+}
+.tk-component .bg-success {
+  background-color: #dff0d8;
+}
+a.tk-component .bg-success:hover,
+a.tk-component .bg-success:focus {
+  background-color: #c1e2b3;
+}
+.tk-component .bg-info {
+  background-color: #d9edf7;
+}
+a.tk-component .bg-info:hover,
+a.tk-component .bg-info:focus {
+  background-color: #afd9ee;
+}
+.tk-component .bg-warning {
+  background-color: #fcf8e3;
+}
+a.tk-component .bg-warning:hover,
+a.tk-component .bg-warning:focus {
+  background-color: #f7ecb5;
+}
+.tk-component .bg-danger {
+  background-color: #f2dede;
+}
+a.tk-component .bg-danger:hover,
+a.tk-component .bg-danger:focus {
+  background-color: #e4b9b9;
+}
+.tk-component .page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+.tk-component ul,
+.tk-component ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.tk-component ul ul,
+.tk-component ol ul,
+.tk-component ul ol,
+.tk-component ol ol {
+  margin-bottom: 0;
+}
+.tk-component .list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.tk-component .list-inline {
+  padding-left: 0;
+  list-style: none;
+  margin-left: -5px;
+}
+.tk-component .list-inline > li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.tk-component dl {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.tk-component dt,
+.tk-component dd {
+  line-height: 1.42857143;
+}
+.tk-component dt {
+  font-weight: bold;
+}
+.tk-component dd {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .tk-component .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .tk-component .dl-horizontal dd {
+    margin-left: 180px;
+  }
+}
+.tk-component abbr[title],
+.tk-component abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #777777;
+}
+.tk-component .initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+.tk-component blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #eeeeee;
+}
+.tk-component blockquote p:last-child,
+.tk-component blockquote ul:last-child,
+.tk-component blockquote ol:last-child {
+  margin-bottom: 0;
+}
+.tk-component blockquote footer,
+.tk-component blockquote small,
+.tk-component blockquote .small {
+  display: block;
+  font-size: 80%;
+  line-height: 1.42857143;
+  color: #777777;
+}
+.tk-component blockquote footer:before,
+.tk-component blockquote small:before,
+.tk-component blockquote .small:before {
+  content: '\2014 \00A0';
+}
+.tk-component .blockquote-reverse,
+.tk-component blockquote.pull-right {
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid #eeeeee;
+  border-left: 0;
+  text-align: right;
+}
+.tk-component .blockquote-reverse footer:before,
+.tk-component blockquote.pull-right footer:before,
+.tk-component .blockquote-reverse small:before,
+.tk-component blockquote.pull-right small:before,
+.tk-component .blockquote-reverse .small:before,
+.tk-component blockquote.pull-right .small:before {
+  content: '';
+}
+.tk-component .blockquote-reverse footer:after,
+.tk-component blockquote.pull-right footer:after,
+.tk-component .blockquote-reverse small:after,
+.tk-component blockquote.pull-right small:after,
+.tk-component .blockquote-reverse .small:after,
+.tk-component blockquote.pull-right .small:after {
+  content: '\00A0 \2014';
+}
+.tk-component address {
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 1.42857143;
+}
+.tk-component code,
+.tk-component kbd,
+.tk-component pre,
+.tk-component samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.tk-component code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+.tk-component kbd {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #ffffff;
+  background-color: #333333;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.tk-component kbd kbd {
+  padding: 0;
+  font-size: 100%;
+  font-weight: bold;
+  box-shadow: none;
+}
+.tk-component pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333333;
+  background-color: #f5f5f5;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+.tk-component pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+.tk-component .pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+.tk-component .container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .tk-component .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .tk-component .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .tk-component .container {
+    width: 1170px;
+  }
+}
+.tk-component .container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.tk-component .row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.tk-component .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.tk-component .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+  float: left;
+}
+.tk-component .col-xs-12 {
+  width: 100%;
+}
+.tk-component .col-xs-11 {
+  width: 91.66666667%;
+}
+.tk-component .col-xs-10 {
+  width: 83.33333333%;
+}
+.tk-component .col-xs-9 {
+  width: 75%;
+}
+.tk-component .col-xs-8 {
+  width: 66.66666667%;
+}
+.tk-component .col-xs-7 {
+  width: 58.33333333%;
+}
+.tk-component .col-xs-6 {
+  width: 50%;
+}
+.tk-component .col-xs-5 {
+  width: 41.66666667%;
+}
+.tk-component .col-xs-4 {
+  width: 33.33333333%;
+}
+.tk-component .col-xs-3 {
+  width: 25%;
+}
+.tk-component .col-xs-2 {
+  width: 16.66666667%;
+}
+.tk-component .col-xs-1 {
+  width: 8.33333333%;
+}
+.tk-component .col-xs-pull-12 {
+  right: 100%;
+}
+.tk-component .col-xs-pull-11 {
+  right: 91.66666667%;
+}
+.tk-component .col-xs-pull-10 {
+  right: 83.33333333%;
+}
+.tk-component .col-xs-pull-9 {
+  right: 75%;
+}
+.tk-component .col-xs-pull-8 {
+  right: 66.66666667%;
+}
+.tk-component .col-xs-pull-7 {
+  right: 58.33333333%;
+}
+.tk-component .col-xs-pull-6 {
+  right: 50%;
+}
+.tk-component .col-xs-pull-5 {
+  right: 41.66666667%;
+}
+.tk-component .col-xs-pull-4 {
+  right: 33.33333333%;
+}
+.tk-component .col-xs-pull-3 {
+  right: 25%;
+}
+.tk-component .col-xs-pull-2 {
+  right: 16.66666667%;
+}
+.tk-component .col-xs-pull-1 {
+  right: 8.33333333%;
+}
+.tk-component .col-xs-pull-0 {
+  right: auto;
+}
+.tk-component .col-xs-push-12 {
+  left: 100%;
+}
+.tk-component .col-xs-push-11 {
+  left: 91.66666667%;
+}
+.tk-component .col-xs-push-10 {
+  left: 83.33333333%;
+}
+.tk-component .col-xs-push-9 {
+  left: 75%;
+}
+.tk-component .col-xs-push-8 {
+  left: 66.66666667%;
+}
+.tk-component .col-xs-push-7 {
+  left: 58.33333333%;
+}
+.tk-component .col-xs-push-6 {
+  left: 50%;
+}
+.tk-component .col-xs-push-5 {
+  left: 41.66666667%;
+}
+.tk-component .col-xs-push-4 {
+  left: 33.33333333%;
+}
+.tk-component .col-xs-push-3 {
+  left: 25%;
+}
+.tk-component .col-xs-push-2 {
+  left: 16.66666667%;
+}
+.tk-component .col-xs-push-1 {
+  left: 8.33333333%;
+}
+.tk-component .col-xs-push-0 {
+  left: auto;
+}
+.tk-component .col-xs-offset-12 {
+  margin-left: 100%;
+}
+.tk-component .col-xs-offset-11 {
+  margin-left: 91.66666667%;
+}
+.tk-component .col-xs-offset-10 {
+  margin-left: 83.33333333%;
+}
+.tk-component .col-xs-offset-9 {
+  margin-left: 75%;
+}
+.tk-component .col-xs-offset-8 {
+  margin-left: 66.66666667%;
+}
+.tk-component .col-xs-offset-7 {
+  margin-left: 58.33333333%;
+}
+.tk-component .col-xs-offset-6 {
+  margin-left: 50%;
+}
+.tk-component .col-xs-offset-5 {
+  margin-left: 41.66666667%;
+}
+.tk-component .col-xs-offset-4 {
+  margin-left: 33.33333333%;
+}
+.tk-component .col-xs-offset-3 {
+  margin-left: 25%;
+}
+.tk-component .col-xs-offset-2 {
+  margin-left: 16.66666667%;
+}
+.tk-component .col-xs-offset-1 {
+  margin-left: 8.33333333%;
+}
+.tk-component .col-xs-offset-0 {
+  margin-left: 0%;
+}
+@media (min-width: 768px) {
+  .tk-component .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    float: left;
+  }
+  .tk-component .col-sm-12 {
+    width: 100%;
+  }
+  .tk-component .col-sm-11 {
+    width: 91.66666667%;
+  }
+  .tk-component .col-sm-10 {
+    width: 83.33333333%;
+  }
+  .tk-component .col-sm-9 {
+    width: 75%;
+  }
+  .tk-component .col-sm-8 {
+    width: 66.66666667%;
+  }
+  .tk-component .col-sm-7 {
+    width: 58.33333333%;
+  }
+  .tk-component .col-sm-6 {
+    width: 50%;
+  }
+  .tk-component .col-sm-5 {
+    width: 41.66666667%;
+  }
+  .tk-component .col-sm-4 {
+    width: 33.33333333%;
+  }
+  .tk-component .col-sm-3 {
+    width: 25%;
+  }
+  .tk-component .col-sm-2 {
+    width: 16.66666667%;
+  }
+  .tk-component .col-sm-1 {
+    width: 8.33333333%;
+  }
+  .tk-component .col-sm-pull-12 {
+    right: 100%;
+  }
+  .tk-component .col-sm-pull-11 {
+    right: 91.66666667%;
+  }
+  .tk-component .col-sm-pull-10 {
+    right: 83.33333333%;
+  }
+  .tk-component .col-sm-pull-9 {
+    right: 75%;
+  }
+  .tk-component .col-sm-pull-8 {
+    right: 66.66666667%;
+  }
+  .tk-component .col-sm-pull-7 {
+    right: 58.33333333%;
+  }
+  .tk-component .col-sm-pull-6 {
+    right: 50%;
+  }
+  .tk-component .col-sm-pull-5 {
+    right: 41.66666667%;
+  }
+  .tk-component .col-sm-pull-4 {
+    right: 33.33333333%;
+  }
+  .tk-component .col-sm-pull-3 {
+    right: 25%;
+  }
+  .tk-component .col-sm-pull-2 {
+    right: 16.66666667%;
+  }
+  .tk-component .col-sm-pull-1 {
+    right: 8.33333333%;
+  }
+  .tk-component .col-sm-pull-0 {
+    right: auto;
+  }
+  .tk-component .col-sm-push-12 {
+    left: 100%;
+  }
+  .tk-component .col-sm-push-11 {
+    left: 91.66666667%;
+  }
+  .tk-component .col-sm-push-10 {
+    left: 83.33333333%;
+  }
+  .tk-component .col-sm-push-9 {
+    left: 75%;
+  }
+  .tk-component .col-sm-push-8 {
+    left: 66.66666667%;
+  }
+  .tk-component .col-sm-push-7 {
+    left: 58.33333333%;
+  }
+  .tk-component .col-sm-push-6 {
+    left: 50%;
+  }
+  .tk-component .col-sm-push-5 {
+    left: 41.66666667%;
+  }
+  .tk-component .col-sm-push-4 {
+    left: 33.33333333%;
+  }
+  .tk-component .col-sm-push-3 {
+    left: 25%;
+  }
+  .tk-component .col-sm-push-2 {
+    left: 16.66666667%;
+  }
+  .tk-component .col-sm-push-1 {
+    left: 8.33333333%;
+  }
+  .tk-component .col-sm-push-0 {
+    left: auto;
+  }
+  .tk-component .col-sm-offset-12 {
+    margin-left: 100%;
+  }
+  .tk-component .col-sm-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .tk-component .col-sm-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .tk-component .col-sm-offset-9 {
+    margin-left: 75%;
+  }
+  .tk-component .col-sm-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .tk-component .col-sm-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .tk-component .col-sm-offset-6 {
+    margin-left: 50%;
+  }
+  .tk-component .col-sm-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .tk-component .col-sm-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .tk-component .col-sm-offset-3 {
+    margin-left: 25%;
+  }
+  .tk-component .col-sm-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .tk-component .col-sm-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .tk-component .col-sm-offset-0 {
+    margin-left: 0%;
+  }
+}
+@media (min-width: 992px) {
+  .tk-component .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+  }
+  .tk-component .col-md-12 {
+    width: 100%;
+  }
+  .tk-component .col-md-11 {
+    width: 91.66666667%;
+  }
+  .tk-component .col-md-10 {
+    width: 83.33333333%;
+  }
+  .tk-component .col-md-9 {
+    width: 75%;
+  }
+  .tk-component .col-md-8 {
+    width: 66.66666667%;
+  }
+  .tk-component .col-md-7 {
+    width: 58.33333333%;
+  }
+  .tk-component .col-md-6 {
+    width: 50%;
+  }
+  .tk-component .col-md-5 {
+    width: 41.66666667%;
+  }
+  .tk-component .col-md-4 {
+    width: 33.33333333%;
+  }
+  .tk-component .col-md-3 {
+    width: 25%;
+  }
+  .tk-component .col-md-2 {
+    width: 16.66666667%;
+  }
+  .tk-component .col-md-1 {
+    width: 8.33333333%;
+  }
+  .tk-component .col-md-pull-12 {
+    right: 100%;
+  }
+  .tk-component .col-md-pull-11 {
+    right: 91.66666667%;
+  }
+  .tk-component .col-md-pull-10 {
+    right: 83.33333333%;
+  }
+  .tk-component .col-md-pull-9 {
+    right: 75%;
+  }
+  .tk-component .col-md-pull-8 {
+    right: 66.66666667%;
+  }
+  .tk-component .col-md-pull-7 {
+    right: 58.33333333%;
+  }
+  .tk-component .col-md-pull-6 {
+    right: 50%;
+  }
+  .tk-component .col-md-pull-5 {
+    right: 41.66666667%;
+  }
+  .tk-component .col-md-pull-4 {
+    right: 33.33333333%;
+  }
+  .tk-component .col-md-pull-3 {
+    right: 25%;
+  }
+  .tk-component .col-md-pull-2 {
+    right: 16.66666667%;
+  }
+  .tk-component .col-md-pull-1 {
+    right: 8.33333333%;
+  }
+  .tk-component .col-md-pull-0 {
+    right: auto;
+  }
+  .tk-component .col-md-push-12 {
+    left: 100%;
+  }
+  .tk-component .col-md-push-11 {
+    left: 91.66666667%;
+  }
+  .tk-component .col-md-push-10 {
+    left: 83.33333333%;
+  }
+  .tk-component .col-md-push-9 {
+    left: 75%;
+  }
+  .tk-component .col-md-push-8 {
+    left: 66.66666667%;
+  }
+  .tk-component .col-md-push-7 {
+    left: 58.33333333%;
+  }
+  .tk-component .col-md-push-6 {
+    left: 50%;
+  }
+  .tk-component .col-md-push-5 {
+    left: 41.66666667%;
+  }
+  .tk-component .col-md-push-4 {
+    left: 33.33333333%;
+  }
+  .tk-component .col-md-push-3 {
+    left: 25%;
+  }
+  .tk-component .col-md-push-2 {
+    left: 16.66666667%;
+  }
+  .tk-component .col-md-push-1 {
+    left: 8.33333333%;
+  }
+  .tk-component .col-md-push-0 {
+    left: auto;
+  }
+  .tk-component .col-md-offset-12 {
+    margin-left: 100%;
+  }
+  .tk-component .col-md-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .tk-component .col-md-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .tk-component .col-md-offset-9 {
+    margin-left: 75%;
+  }
+  .tk-component .col-md-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .tk-component .col-md-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .tk-component .col-md-offset-6 {
+    margin-left: 50%;
+  }
+  .tk-component .col-md-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .tk-component .col-md-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .tk-component .col-md-offset-3 {
+    margin-left: 25%;
+  }
+  .tk-component .col-md-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .tk-component .col-md-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .tk-component .col-md-offset-0 {
+    margin-left: 0%;
+  }
+}
+@media (min-width: 1200px) {
+  .tk-component .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: left;
+  }
+  .tk-component .col-lg-12 {
+    width: 100%;
+  }
+  .tk-component .col-lg-11 {
+    width: 91.66666667%;
+  }
+  .tk-component .col-lg-10 {
+    width: 83.33333333%;
+  }
+  .tk-component .col-lg-9 {
+    width: 75%;
+  }
+  .tk-component .col-lg-8 {
+    width: 66.66666667%;
+  }
+  .tk-component .col-lg-7 {
+    width: 58.33333333%;
+  }
+  .tk-component .col-lg-6 {
+    width: 50%;
+  }
+  .tk-component .col-lg-5 {
+    width: 41.66666667%;
+  }
+  .tk-component .col-lg-4 {
+    width: 33.33333333%;
+  }
+  .tk-component .col-lg-3 {
+    width: 25%;
+  }
+  .tk-component .col-lg-2 {
+    width: 16.66666667%;
+  }
+  .tk-component .col-lg-1 {
+    width: 8.33333333%;
+  }
+  .tk-component .col-lg-pull-12 {
+    right: 100%;
+  }
+  .tk-component .col-lg-pull-11 {
+    right: 91.66666667%;
+  }
+  .tk-component .col-lg-pull-10 {
+    right: 83.33333333%;
+  }
+  .tk-component .col-lg-pull-9 {
+    right: 75%;
+  }
+  .tk-component .col-lg-pull-8 {
+    right: 66.66666667%;
+  }
+  .tk-component .col-lg-pull-7 {
+    right: 58.33333333%;
+  }
+  .tk-component .col-lg-pull-6 {
+    right: 50%;
+  }
+  .tk-component .col-lg-pull-5 {
+    right: 41.66666667%;
+  }
+  .tk-component .col-lg-pull-4 {
+    right: 33.33333333%;
+  }
+  .tk-component .col-lg-pull-3 {
+    right: 25%;
+  }
+  .tk-component .col-lg-pull-2 {
+    right: 16.66666667%;
+  }
+  .tk-component .col-lg-pull-1 {
+    right: 8.33333333%;
+  }
+  .tk-component .col-lg-pull-0 {
+    right: auto;
+  }
+  .tk-component .col-lg-push-12 {
+    left: 100%;
+  }
+  .tk-component .col-lg-push-11 {
+    left: 91.66666667%;
+  }
+  .tk-component .col-lg-push-10 {
+    left: 83.33333333%;
+  }
+  .tk-component .col-lg-push-9 {
+    left: 75%;
+  }
+  .tk-component .col-lg-push-8 {
+    left: 66.66666667%;
+  }
+  .tk-component .col-lg-push-7 {
+    left: 58.33333333%;
+  }
+  .tk-component .col-lg-push-6 {
+    left: 50%;
+  }
+  .tk-component .col-lg-push-5 {
+    left: 41.66666667%;
+  }
+  .tk-component .col-lg-push-4 {
+    left: 33.33333333%;
+  }
+  .tk-component .col-lg-push-3 {
+    left: 25%;
+  }
+  .tk-component .col-lg-push-2 {
+    left: 16.66666667%;
+  }
+  .tk-component .col-lg-push-1 {
+    left: 8.33333333%;
+  }
+  .tk-component .col-lg-push-0 {
+    left: auto;
+  }
+  .tk-component .col-lg-offset-12 {
+    margin-left: 100%;
+  }
+  .tk-component .col-lg-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .tk-component .col-lg-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .tk-component .col-lg-offset-9 {
+    margin-left: 75%;
+  }
+  .tk-component .col-lg-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .tk-component .col-lg-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .tk-component .col-lg-offset-6 {
+    margin-left: 50%;
+  }
+  .tk-component .col-lg-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .tk-component .col-lg-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .tk-component .col-lg-offset-3 {
+    margin-left: 25%;
+  }
+  .tk-component .col-lg-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .tk-component .col-lg-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .tk-component .col-lg-offset-0 {
+    margin-left: 0%;
+  }
+}
+.tk-component table {
+  background-color: transparent;
+}
+.tk-component caption {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #777777;
+  text-align: left;
+}
+.tk-component th {
+  text-align: left;
+}
+.tk-component .table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.tk-component .table > thead > tr > th,
+.tk-component .table > tbody > tr > th,
+.tk-component .table > tfoot > tr > th,
+.tk-component .table > thead > tr > td,
+.tk-component .table > tbody > tr > td,
+.tk-component .table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+.tk-component .table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+.tk-component .table > caption + thead > tr:first-child > th,
+.tk-component .table > colgroup + thead > tr:first-child > th,
+.tk-component .table > thead:first-child > tr:first-child > th,
+.tk-component .table > caption + thead > tr:first-child > td,
+.tk-component .table > colgroup + thead > tr:first-child > td,
+.tk-component .table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.tk-component .table > tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+.tk-component .table .table {
+  background-color: #ffffff;
+}
+.tk-component .table-condensed > thead > tr > th,
+.tk-component .table-condensed > tbody > tr > th,
+.tk-component .table-condensed > tfoot > tr > th,
+.tk-component .table-condensed > thead > tr > td,
+.tk-component .table-condensed > tbody > tr > td,
+.tk-component .table-condensed > tfoot > tr > td {
+  padding: 5px;
+}
+.tk-component .table-bordered {
+  border: 1px solid #dddddd;
+}
+.tk-component .table-bordered > thead > tr > th,
+.tk-component .table-bordered > tbody > tr > th,
+.tk-component .table-bordered > tfoot > tr > th,
+.tk-component .table-bordered > thead > tr > td,
+.tk-component .table-bordered > tbody > tr > td,
+.tk-component .table-bordered > tfoot > tr > td {
+  border: 1px solid #dddddd;
+}
+.tk-component .table-bordered > thead > tr > th,
+.tk-component .table-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+}
+.tk-component .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+.tk-component .table-hover > tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+.tk-component table col[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-column;
+}
+.tk-component table td[class*="col-"],
+.tk-component table th[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-cell;
+}
+.tk-component .table > thead > tr > td.active,
+.tk-component .table > tbody > tr > td.active,
+.tk-component .table > tfoot > tr > td.active,
+.tk-component .table > thead > tr > th.active,
+.tk-component .table > tbody > tr > th.active,
+.tk-component .table > tfoot > tr > th.active,
+.tk-component .table > thead > tr.active > td,
+.tk-component .table > tbody > tr.active > td,
+.tk-component .table > tfoot > tr.active > td,
+.tk-component .table > thead > tr.active > th,
+.tk-component .table > tbody > tr.active > th,
+.tk-component .table > tfoot > tr.active > th {
+  background-color: #f5f5f5;
+}
+.tk-component .table-hover > tbody > tr > td.active:hover,
+.tk-component .table-hover > tbody > tr > th.active:hover,
+.tk-component .table-hover > tbody > tr.active:hover > td,
+.tk-component .table-hover > tbody > tr:hover > .active,
+.tk-component .table-hover > tbody > tr.active:hover > th {
+  background-color: #e8e8e8;
+}
+.tk-component .table > thead > tr > td.success,
+.tk-component .table > tbody > tr > td.success,
+.tk-component .table > tfoot > tr > td.success,
+.tk-component .table > thead > tr > th.success,
+.tk-component .table > tbody > tr > th.success,
+.tk-component .table > tfoot > tr > th.success,
+.tk-component .table > thead > tr.success > td,
+.tk-component .table > tbody > tr.success > td,
+.tk-component .table > tfoot > tr.success > td,
+.tk-component .table > thead > tr.success > th,
+.tk-component .table > tbody > tr.success > th,
+.tk-component .table > tfoot > tr.success > th {
+  background-color: #dff0d8;
+}
+.tk-component .table-hover > tbody > tr > td.success:hover,
+.tk-component .table-hover > tbody > tr > th.success:hover,
+.tk-component .table-hover > tbody > tr.success:hover > td,
+.tk-component .table-hover > tbody > tr:hover > .success,
+.tk-component .table-hover > tbody > tr.success:hover > th {
+  background-color: #d0e9c6;
+}
+.tk-component .table > thead > tr > td.info,
+.tk-component .table > tbody > tr > td.info,
+.tk-component .table > tfoot > tr > td.info,
+.tk-component .table > thead > tr > th.info,
+.tk-component .table > tbody > tr > th.info,
+.tk-component .table > tfoot > tr > th.info,
+.tk-component .table > thead > tr.info > td,
+.tk-component .table > tbody > tr.info > td,
+.tk-component .table > tfoot > tr.info > td,
+.tk-component .table > thead > tr.info > th,
+.tk-component .table > tbody > tr.info > th,
+.tk-component .table > tfoot > tr.info > th {
+  background-color: #d9edf7;
+}
+.tk-component .table-hover > tbody > tr > td.info:hover,
+.tk-component .table-hover > tbody > tr > th.info:hover,
+.tk-component .table-hover > tbody > tr.info:hover > td,
+.tk-component .table-hover > tbody > tr:hover > .info,
+.tk-component .table-hover > tbody > tr.info:hover > th {
+  background-color: #c4e3f3;
+}
+.tk-component .table > thead > tr > td.warning,
+.tk-component .table > tbody > tr > td.warning,
+.tk-component .table > tfoot > tr > td.warning,
+.tk-component .table > thead > tr > th.warning,
+.tk-component .table > tbody > tr > th.warning,
+.tk-component .table > tfoot > tr > th.warning,
+.tk-component .table > thead > tr.warning > td,
+.tk-component .table > tbody > tr.warning > td,
+.tk-component .table > tfoot > tr.warning > td,
+.tk-component .table > thead > tr.warning > th,
+.tk-component .table > tbody > tr.warning > th,
+.tk-component .table > tfoot > tr.warning > th {
+  background-color: #fcf8e3;
+}
+.tk-component .table-hover > tbody > tr > td.warning:hover,
+.tk-component .table-hover > tbody > tr > th.warning:hover,
+.tk-component .table-hover > tbody > tr.warning:hover > td,
+.tk-component .table-hover > tbody > tr:hover > .warning,
+.tk-component .table-hover > tbody > tr.warning:hover > th {
+  background-color: #faf2cc;
+}
+.tk-component .table > thead > tr > td.danger,
+.tk-component .table > tbody > tr > td.danger,
+.tk-component .table > tfoot > tr > td.danger,
+.tk-component .table > thead > tr > th.danger,
+.tk-component .table > tbody > tr > th.danger,
+.tk-component .table > tfoot > tr > th.danger,
+.tk-component .table > thead > tr.danger > td,
+.tk-component .table > tbody > tr.danger > td,
+.tk-component .table > tfoot > tr.danger > td,
+.tk-component .table > thead > tr.danger > th,
+.tk-component .table > tbody > tr.danger > th,
+.tk-component .table > tfoot > tr.danger > th {
+  background-color: #f2dede;
+}
+.tk-component .table-hover > tbody > tr > td.danger:hover,
+.tk-component .table-hover > tbody > tr > th.danger:hover,
+.tk-component .table-hover > tbody > tr.danger:hover > td,
+.tk-component .table-hover > tbody > tr:hover > .danger,
+.tk-component .table-hover > tbody > tr.danger:hover > th {
+  background-color: #ebcccc;
+}
+.tk-component .table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%;
+}
+@media screen and (max-width: 767px) {
+  .tk-component .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #dddddd;
+  }
+  .tk-component .table-responsive > .table {
+    margin-bottom: 0;
+  }
+  .tk-component .table-responsive > .table > thead > tr > th,
+  .tk-component .table-responsive > .table > tbody > tr > th,
+  .tk-component .table-responsive > .table > tfoot > tr > th,
+  .tk-component .table-responsive > .table > thead > tr > td,
+  .tk-component .table-responsive > .table > tbody > tr > td,
+  .tk-component .table-responsive > .table > tfoot > tr > td {
+    white-space: nowrap;
+  }
+  .tk-component .table-responsive > .table-bordered {
+    border: 0;
+  }
+  .tk-component .table-responsive > .table-bordered > thead > tr > th:first-child,
+  .tk-component .table-responsive > .table-bordered > tbody > tr > th:first-child,
+  .tk-component .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+  .tk-component .table-responsive > .table-bordered > thead > tr > td:first-child,
+  .tk-component .table-responsive > .table-bordered > tbody > tr > td:first-child,
+  .tk-component .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+    border-left: 0;
+  }
+  .tk-component .table-responsive > .table-bordered > thead > tr > th:last-child,
+  .tk-component .table-responsive > .table-bordered > tbody > tr > th:last-child,
+  .tk-component .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+  .tk-component .table-responsive > .table-bordered > thead > tr > td:last-child,
+  .tk-component .table-responsive > .table-bordered > tbody > tr > td:last-child,
+  .tk-component .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+    border-right: 0;
+  }
+  .tk-component .table-responsive > .table-bordered > tbody > tr:last-child > th,
+  .tk-component .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+  .tk-component .table-responsive > .table-bordered > tbody > tr:last-child > td,
+  .tk-component .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+    border-bottom: 0;
+  }
+}
+.tk-component fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+.tk-component legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.tk-component label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.tk-component input[type="search"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.tk-component input[type="radio"],
+.tk-component input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+.tk-component input[type="file"] {
+  display: block;
+}
+.tk-component input[type="range"] {
+  display: block;
+  width: 100%;
+}
+.tk-component select[multiple],
+.tk-component select[size] {
+  height: auto;
+}
+.tk-component input[type="file"]:focus,
+.tk-component input[type="radio"]:focus,
+.tk-component input[type="checkbox"]:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.tk-component output {
+  display: block;
+  padding-top: 7px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+}
+.tk-component .form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.tk-component .form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.tk-component .form-control::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+.tk-component .form-control:-ms-input-placeholder {
+  color: #999999;
+}
+.tk-component .form-control::-webkit-input-placeholder {
+  color: #999999;
+}
+.tk-component .form-control::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.tk-component .form-control[disabled],
+.tk-component .form-control[readonly],
+fieldset[disabled] .tk-component .form-control {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.tk-component .form-control[disabled],
+fieldset[disabled] .tk-component .form-control {
+  cursor: not-allowed;
+}
+textarea.tk-component .form-control {
+  height: auto;
+}
+.tk-component input[type="search"] {
+  -webkit-appearance: none;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .tk-component input[type="date"].form-control,
+  .tk-component input[type="time"].form-control,
+  .tk-component input[type="datetime-local"].form-control,
+  .tk-component input[type="month"].form-control {
+    line-height: 34px;
+  }
+  .tk-component input[type="date"].input-sm,
+  .tk-component input[type="time"].input-sm,
+  .tk-component input[type="datetime-local"].input-sm,
+  .tk-component input[type="month"].input-sm,
+  .input-group-sm .tk-component input[type="date"],
+  .input-group-sm .tk-component input[type="time"],
+  .input-group-sm .tk-component input[type="datetime-local"],
+  .input-group-sm .tk-component input[type="month"] {
+    line-height: 30px;
+  }
+  .tk-component input[type="date"].input-lg,
+  .tk-component input[type="time"].input-lg,
+  .tk-component input[type="datetime-local"].input-lg,
+  .tk-component input[type="month"].input-lg,
+  .input-group-lg .tk-component input[type="date"],
+  .input-group-lg .tk-component input[type="time"],
+  .input-group-lg .tk-component input[type="datetime-local"],
+  .input-group-lg .tk-component input[type="month"] {
+    line-height: 46px;
+  }
+}
+.tk-component .form-group {
+  margin-bottom: 15px;
+}
+.tk-component .radio,
+.tk-component .checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.tk-component .radio label,
+.tk-component .checkbox label {
+  min-height: 20px;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+.tk-component .radio input[type="radio"],
+.tk-component .radio-inline input[type="radio"],
+.tk-component .checkbox input[type="checkbox"],
+.tk-component .checkbox-inline input[type="checkbox"] {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 4px \9;
+}
+.tk-component .radio + .radio,
+.tk-component .checkbox + .checkbox {
+  margin-top: -5px;
+}
+.tk-component .radio-inline,
+.tk-component .checkbox-inline {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+}
+.tk-component .radio-inline + .radio-inline,
+.tk-component .checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 10px;
+}
+.tk-component input[type="radio"][disabled],
+.tk-component input[type="checkbox"][disabled],
+.tk-component input[type="radio"].disabled,
+.tk-component input[type="checkbox"].disabled,
+fieldset[disabled] .tk-component input[type="radio"],
+fieldset[disabled] .tk-component input[type="checkbox"] {
+  cursor: not-allowed;
+}
+.tk-component .radio-inline.disabled,
+.tk-component .checkbox-inline.disabled,
+fieldset[disabled] .tk-component .radio-inline,
+fieldset[disabled] .tk-component .checkbox-inline {
+  cursor: not-allowed;
+}
+.tk-component .radio.disabled label,
+.tk-component .checkbox.disabled label,
+fieldset[disabled] .tk-component .radio label,
+fieldset[disabled] .tk-component .checkbox label {
+  cursor: not-allowed;
+}
+.tk-component .form-control-static {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 0;
+  min-height: 34px;
+}
+.tk-component .form-control-static.input-lg,
+.tk-component .form-control-static.input-sm {
+  padding-left: 0;
+  padding-right: 0;
+}
+.tk-component .input-sm {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+select.tk-component .input-sm {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.tk-component .input-sm,
+select[multiple].tk-component .input-sm {
+  height: auto;
+}
+.tk-component .form-group-sm .form-control {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.tk-component .form-group-sm select.form-control {
+  height: 30px;
+  line-height: 30px;
+}
+.tk-component .form-group-sm textarea.form-control,
+.tk-component .form-group-sm select[multiple].form-control {
+  height: auto;
+}
+.tk-component .form-group-sm .form-control-static {
+  height: 30px;
+  min-height: 32px;
+  padding: 6px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.tk-component .input-lg {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+select.tk-component .input-lg {
+  height: 46px;
+  line-height: 46px;
+}
+textarea.tk-component .input-lg,
+select[multiple].tk-component .input-lg {
+  height: auto;
+}
+.tk-component .form-group-lg .form-control {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.tk-component .form-group-lg select.form-control {
+  height: 46px;
+  line-height: 46px;
+}
+.tk-component .form-group-lg textarea.form-control,
+.tk-component .form-group-lg select[multiple].form-control {
+  height: auto;
+}
+.tk-component .form-group-lg .form-control-static {
+  height: 46px;
+  min-height: 38px;
+  padding: 11px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+.tk-component .has-feedback {
+  position: relative;
+}
+.tk-component .has-feedback .form-control {
+  padding-right: 42.5px;
+}
+.tk-component .form-control-feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  pointer-events: none;
+}
+.tk-component .input-lg + .form-control-feedback,
+.tk-component .input-group-lg + .form-control-feedback,
+.tk-component .form-group-lg .form-control + .form-control-feedback {
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+}
+.tk-component .input-sm + .form-control-feedback,
+.tk-component .input-group-sm + .form-control-feedback,
+.tk-component .form-group-sm .form-control + .form-control-feedback {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+.tk-component .has-success .help-block,
+.tk-component .has-success .control-label,
+.tk-component .has-success .radio,
+.tk-component .has-success .checkbox,
+.tk-component .has-success .radio-inline,
+.tk-component .has-success .checkbox-inline,
+.tk-component .has-success.radio label,
+.tk-component .has-success.checkbox label,
+.tk-component .has-success.radio-inline label,
+.tk-component .has-success.checkbox-inline label {
+  color: #3c763d;
+}
+.tk-component .has-success .form-control {
+  border-color: #3c763d;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.tk-component .has-success .form-control:focus {
+  border-color: #2b542c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+}
+.tk-component .has-success .input-group-addon {
+  color: #3c763d;
+  border-color: #3c763d;
+  background-color: #dff0d8;
+}
+.tk-component .has-success .form-control-feedback {
+  color: #3c763d;
+}
+.tk-component .has-warning .help-block,
+.tk-component .has-warning .control-label,
+.tk-component .has-warning .radio,
+.tk-component .has-warning .checkbox,
+.tk-component .has-warning .radio-inline,
+.tk-component .has-warning .checkbox-inline,
+.tk-component .has-warning.radio label,
+.tk-component .has-warning.checkbox label,
+.tk-component .has-warning.radio-inline label,
+.tk-component .has-warning.checkbox-inline label {
+  color: #8a6d3b;
+}
+.tk-component .has-warning .form-control {
+  border-color: #8a6d3b;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.tk-component .has-warning .form-control:focus {
+  border-color: #66512c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+}
+.tk-component .has-warning .input-group-addon {
+  color: #8a6d3b;
+  border-color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+.tk-component .has-warning .form-control-feedback {
+  color: #8a6d3b;
+}
+.tk-component .has-error .help-block,
+.tk-component .has-error .control-label,
+.tk-component .has-error .radio,
+.tk-component .has-error .checkbox,
+.tk-component .has-error .radio-inline,
+.tk-component .has-error .checkbox-inline,
+.tk-component .has-error.radio label,
+.tk-component .has-error.checkbox label,
+.tk-component .has-error.radio-inline label,
+.tk-component .has-error.checkbox-inline label {
+  color: #a94442;
+}
+.tk-component .has-error .form-control {
+  border-color: #a94442;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.tk-component .has-error .form-control:focus {
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+.tk-component .has-error .input-group-addon {
+  color: #a94442;
+  border-color: #a94442;
+  background-color: #f2dede;
+}
+.tk-component .has-error .form-control-feedback {
+  color: #a94442;
+}
+.tk-component .has-feedback label ~ .form-control-feedback {
+  top: 25px;
+}
+.tk-component .has-feedback label.sr-only ~ .form-control-feedback {
+  top: 0;
+}
+.tk-component .help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373;
+}
+@media (min-width: 768px) {
+  .tk-component .form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .tk-component .form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+  .tk-component .form-inline .form-control-static {
+    display: inline-block;
+  }
+  .tk-component .form-inline .input-group {
+    display: inline-table;
+    vertical-align: middle;
+  }
+  .tk-component .form-inline .input-group .input-group-addon,
+  .tk-component .form-inline .input-group .input-group-btn,
+  .tk-component .form-inline .input-group .form-control {
+    width: auto;
+  }
+  .tk-component .form-inline .input-group > .form-control {
+    width: 100%;
+  }
+  .tk-component .form-inline .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .tk-component .form-inline .radio,
+  .tk-component .form-inline .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .tk-component .form-inline .radio label,
+  .tk-component .form-inline .checkbox label {
+    padding-left: 0;
+  }
+  .tk-component .form-inline .radio input[type="radio"],
+  .tk-component .form-inline .checkbox input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
+  .tk-component .form-inline .has-feedback .form-control-feedback {
+    top: 0;
+  }
+}
+.tk-component .form-horizontal .radio,
+.tk-component .form-horizontal .checkbox,
+.tk-component .form-horizontal .radio-inline,
+.tk-component .form-horizontal .checkbox-inline {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 7px;
+}
+.tk-component .form-horizontal .radio,
+.tk-component .form-horizontal .checkbox {
+  min-height: 27px;
+}
+.tk-component .form-horizontal .form-group {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+@media (min-width: 768px) {
+  .tk-component .form-horizontal .control-label {
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: 7px;
+  }
+}
+.tk-component .form-horizontal .has-feedback .form-control-feedback {
+  right: 15px;
+}
+@media (min-width: 768px) {
+  .tk-component .form-horizontal .form-group-lg .control-label {
+    padding-top: 11px;
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) {
+  .tk-component .form-horizontal .form-group-sm .control-label {
+    padding-top: 6px;
+    font-size: 12px;
+  }
+}
+.tk-component .btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.tk-component .btn:focus,
+.tk-component .btn:active:focus,
+.tk-component .btn.active:focus,
+.tk-component .btn.focus,
+.tk-component .btn:active.focus,
+.tk-component .btn.active.focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.tk-component .btn:hover,
+.tk-component .btn:focus,
+.tk-component .btn.focus {
+  color: #333333;
+  text-decoration: none;
+}
+.tk-component .btn:active,
+.tk-component .btn.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.tk-component .btn.disabled,
+.tk-component .btn[disabled],
+fieldset[disabled] .tk-component .btn {
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+a.tk-component .btn.disabled,
+fieldset[disabled] a.tk-component .btn {
+  pointer-events: none;
+}
+.tk-component .btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+.tk-component .btn-default:focus,
+.tk-component .btn-default.focus {
+  color: #333333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.tk-component .btn-default:hover {
+  color: #333333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.tk-component .btn-default:active,
+.tk-component .btn-default.active,
+.open > .dropdown-toggle.tk-component .btn-default {
+  color: #333333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.tk-component .btn-default:active:hover,
+.tk-component .btn-default.active:hover,
+.open > .dropdown-toggle.tk-component .btn-default:hover,
+.tk-component .btn-default:active:focus,
+.tk-component .btn-default.active:focus,
+.open > .dropdown-toggle.tk-component .btn-default:focus,
+.tk-component .btn-default:active.focus,
+.tk-component .btn-default.active.focus,
+.open > .dropdown-toggle.tk-component .btn-default.focus {
+  color: #333333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+.tk-component .btn-default:active,
+.tk-component .btn-default.active,
+.open > .dropdown-toggle.tk-component .btn-default {
+  background-image: none;
+}
+.tk-component .btn-default.disabled:hover,
+.tk-component .btn-default[disabled]:hover,
+fieldset[disabled] .tk-component .btn-default:hover,
+.tk-component .btn-default.disabled:focus,
+.tk-component .btn-default[disabled]:focus,
+fieldset[disabled] .tk-component .btn-default:focus,
+.tk-component .btn-default.disabled.focus,
+.tk-component .btn-default[disabled].focus,
+fieldset[disabled] .tk-component .btn-default.focus {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+.tk-component .btn-default .badge {
+  color: #ffffff;
+  background-color: #333333;
+}
+.tk-component .btn-primary {
+  color: #ffffff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.tk-component .btn-primary:focus,
+.tk-component .btn-primary.focus {
+  color: #ffffff;
+  background-color: #286090;
+  border-color: #122b40;
+}
+.tk-component .btn-primary:hover {
+  color: #ffffff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+.tk-component .btn-primary:active,
+.tk-component .btn-primary.active,
+.open > .dropdown-toggle.tk-component .btn-primary {
+  color: #ffffff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+.tk-component .btn-primary:active:hover,
+.tk-component .btn-primary.active:hover,
+.open > .dropdown-toggle.tk-component .btn-primary:hover,
+.tk-component .btn-primary:active:focus,
+.tk-component .btn-primary.active:focus,
+.open > .dropdown-toggle.tk-component .btn-primary:focus,
+.tk-component .btn-primary:active.focus,
+.tk-component .btn-primary.active.focus,
+.open > .dropdown-toggle.tk-component .btn-primary.focus {
+  color: #ffffff;
+  background-color: #204d74;
+  border-color: #122b40;
+}
+.tk-component .btn-primary:active,
+.tk-component .btn-primary.active,
+.open > .dropdown-toggle.tk-component .btn-primary {
+  background-image: none;
+}
+.tk-component .btn-primary.disabled:hover,
+.tk-component .btn-primary[disabled]:hover,
+fieldset[disabled] .tk-component .btn-primary:hover,
+.tk-component .btn-primary.disabled:focus,
+.tk-component .btn-primary[disabled]:focus,
+fieldset[disabled] .tk-component .btn-primary:focus,
+.tk-component .btn-primary.disabled.focus,
+.tk-component .btn-primary[disabled].focus,
+fieldset[disabled] .tk-component .btn-primary.focus {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.tk-component .btn-primary .badge {
+  color: #337ab7;
+  background-color: #ffffff;
+}
+.tk-component .btn-success {
+  color: #ffffff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.tk-component .btn-success:focus,
+.tk-component .btn-success.focus {
+  color: #ffffff;
+  background-color: #449d44;
+  border-color: #255625;
+}
+.tk-component .btn-success:hover {
+  color: #ffffff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.tk-component .btn-success:active,
+.tk-component .btn-success.active,
+.open > .dropdown-toggle.tk-component .btn-success {
+  color: #ffffff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.tk-component .btn-success:active:hover,
+.tk-component .btn-success.active:hover,
+.open > .dropdown-toggle.tk-component .btn-success:hover,
+.tk-component .btn-success:active:focus,
+.tk-component .btn-success.active:focus,
+.open > .dropdown-toggle.tk-component .btn-success:focus,
+.tk-component .btn-success:active.focus,
+.tk-component .btn-success.active.focus,
+.open > .dropdown-toggle.tk-component .btn-success.focus {
+  color: #ffffff;
+  background-color: #398439;
+  border-color: #255625;
+}
+.tk-component .btn-success:active,
+.tk-component .btn-success.active,
+.open > .dropdown-toggle.tk-component .btn-success {
+  background-image: none;
+}
+.tk-component .btn-success.disabled:hover,
+.tk-component .btn-success[disabled]:hover,
+fieldset[disabled] .tk-component .btn-success:hover,
+.tk-component .btn-success.disabled:focus,
+.tk-component .btn-success[disabled]:focus,
+fieldset[disabled] .tk-component .btn-success:focus,
+.tk-component .btn-success.disabled.focus,
+.tk-component .btn-success[disabled].focus,
+fieldset[disabled] .tk-component .btn-success.focus {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.tk-component .btn-success .badge {
+  color: #5cb85c;
+  background-color: #ffffff;
+}
+.tk-component .btn-info {
+  color: #ffffff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.tk-component .btn-info:focus,
+.tk-component .btn-info.focus {
+  color: #ffffff;
+  background-color: #31b0d5;
+  border-color: #1b6d85;
+}
+.tk-component .btn-info:hover {
+  color: #ffffff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+.tk-component .btn-info:active,
+.tk-component .btn-info.active,
+.open > .dropdown-toggle.tk-component .btn-info {
+  color: #ffffff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+.tk-component .btn-info:active:hover,
+.tk-component .btn-info.active:hover,
+.open > .dropdown-toggle.tk-component .btn-info:hover,
+.tk-component .btn-info:active:focus,
+.tk-component .btn-info.active:focus,
+.open > .dropdown-toggle.tk-component .btn-info:focus,
+.tk-component .btn-info:active.focus,
+.tk-component .btn-info.active.focus,
+.open > .dropdown-toggle.tk-component .btn-info.focus {
+  color: #ffffff;
+  background-color: #269abc;
+  border-color: #1b6d85;
+}
+.tk-component .btn-info:active,
+.tk-component .btn-info.active,
+.open > .dropdown-toggle.tk-component .btn-info {
+  background-image: none;
+}
+.tk-component .btn-info.disabled:hover,
+.tk-component .btn-info[disabled]:hover,
+fieldset[disabled] .tk-component .btn-info:hover,
+.tk-component .btn-info.disabled:focus,
+.tk-component .btn-info[disabled]:focus,
+fieldset[disabled] .tk-component .btn-info:focus,
+.tk-component .btn-info.disabled.focus,
+.tk-component .btn-info[disabled].focus,
+fieldset[disabled] .tk-component .btn-info.focus {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.tk-component .btn-info .badge {
+  color: #5bc0de;
+  background-color: #ffffff;
+}
+.tk-component .btn-warning {
+  color: #ffffff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.tk-component .btn-warning:focus,
+.tk-component .btn-warning.focus {
+  color: #ffffff;
+  background-color: #ec971f;
+  border-color: #985f0d;
+}
+.tk-component .btn-warning:hover {
+  color: #ffffff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+.tk-component .btn-warning:active,
+.tk-component .btn-warning.active,
+.open > .dropdown-toggle.tk-component .btn-warning {
+  color: #ffffff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+.tk-component .btn-warning:active:hover,
+.tk-component .btn-warning.active:hover,
+.open > .dropdown-toggle.tk-component .btn-warning:hover,
+.tk-component .btn-warning:active:focus,
+.tk-component .btn-warning.active:focus,
+.open > .dropdown-toggle.tk-component .btn-warning:focus,
+.tk-component .btn-warning:active.focus,
+.tk-component .btn-warning.active.focus,
+.open > .dropdown-toggle.tk-component .btn-warning.focus {
+  color: #ffffff;
+  background-color: #d58512;
+  border-color: #985f0d;
+}
+.tk-component .btn-warning:active,
+.tk-component .btn-warning.active,
+.open > .dropdown-toggle.tk-component .btn-warning {
+  background-image: none;
+}
+.tk-component .btn-warning.disabled:hover,
+.tk-component .btn-warning[disabled]:hover,
+fieldset[disabled] .tk-component .btn-warning:hover,
+.tk-component .btn-warning.disabled:focus,
+.tk-component .btn-warning[disabled]:focus,
+fieldset[disabled] .tk-component .btn-warning:focus,
+.tk-component .btn-warning.disabled.focus,
+.tk-component .btn-warning[disabled].focus,
+fieldset[disabled] .tk-component .btn-warning.focus {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.tk-component .btn-warning .badge {
+  color: #f0ad4e;
+  background-color: #ffffff;
+}
+.tk-component .btn-danger {
+  color: #ffffff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.tk-component .btn-danger:focus,
+.tk-component .btn-danger.focus {
+  color: #ffffff;
+  background-color: #c9302c;
+  border-color: #761c19;
+}
+.tk-component .btn-danger:hover {
+  color: #ffffff;
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+.tk-component .btn-danger:active,
+.tk-component .btn-danger.active,
+.open > .dropdown-toggle.tk-component .btn-danger {
+  color: #ffffff;
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+.tk-component .btn-danger:active:hover,
+.tk-component .btn-danger.active:hover,
+.open > .dropdown-toggle.tk-component .btn-danger:hover,
+.tk-component .btn-danger:active:focus,
+.tk-component .btn-danger.active:focus,
+.open > .dropdown-toggle.tk-component .btn-danger:focus,
+.tk-component .btn-danger:active.focus,
+.tk-component .btn-danger.active.focus,
+.open > .dropdown-toggle.tk-component .btn-danger.focus {
+  color: #ffffff;
+  background-color: #ac2925;
+  border-color: #761c19;
+}
+.tk-component .btn-danger:active,
+.tk-component .btn-danger.active,
+.open > .dropdown-toggle.tk-component .btn-danger {
+  background-image: none;
+}
+.tk-component .btn-danger.disabled:hover,
+.tk-component .btn-danger[disabled]:hover,
+fieldset[disabled] .tk-component .btn-danger:hover,
+.tk-component .btn-danger.disabled:focus,
+.tk-component .btn-danger[disabled]:focus,
+fieldset[disabled] .tk-component .btn-danger:focus,
+.tk-component .btn-danger.disabled.focus,
+.tk-component .btn-danger[disabled].focus,
+fieldset[disabled] .tk-component .btn-danger.focus {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.tk-component .btn-danger .badge {
+  color: #d9534f;
+  background-color: #ffffff;
+}
+.tk-component .btn-link {
+  color: #337ab7;
+  font-weight: normal;
+  border-radius: 0;
+}
+.tk-component .btn-link,
+.tk-component .btn-link:active,
+.tk-component .btn-link.active,
+.tk-component .btn-link[disabled],
+fieldset[disabled] .tk-component .btn-link {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.tk-component .btn-link,
+.tk-component .btn-link:hover,
+.tk-component .btn-link:focus,
+.tk-component .btn-link:active {
+  border-color: transparent;
+}
+.tk-component .btn-link:hover,
+.tk-component .btn-link:focus {
+  color: #23527c;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.tk-component .btn-link[disabled]:hover,
+fieldset[disabled] .tk-component .btn-link:hover,
+.tk-component .btn-link[disabled]:focus,
+fieldset[disabled] .tk-component .btn-link:focus {
+  color: #777777;
+  text-decoration: none;
+}
+.tk-component .btn-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.tk-component .btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.tk-component .btn-xs {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.tk-component .btn-block {
+  display: block;
+  width: 100%;
+}
+.tk-component .btn-block + .btn-block {
+  margin-top: 5px;
+}
+.tk-component input[type="submit"].btn-block,
+.tk-component input[type="reset"].btn-block,
+.tk-component input[type="button"].btn-block {
+  width: 100%;
+}
+.tk-component .fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+.tk-component .fade.in {
+  opacity: 1;
+}
+.tk-component .collapse {
+  display: none;
+}
+.tk-component .collapse.in {
+  display: block;
+}
+tr.tk-component .collapse.in {
+  display: table-row;
+}
+tbody.tk-component .collapse.in {
+  display: table-row-group;
+}
+.tk-component .collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+.tk-component .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid \9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.tk-component .dropup,
+.tk-component .dropdown {
+  position: relative;
+}
+.tk-component .dropdown-toggle:focus {
+  outline: 0;
+}
+.tk-component .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+.tk-component .dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+.tk-component .dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.tk-component .dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333333;
+  white-space: nowrap;
+}
+.tk-component .dropdown-menu > li > a:hover,
+.tk-component .dropdown-menu > li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: #f5f5f5;
+}
+.tk-component .dropdown-menu > .active > a,
+.tk-component .dropdown-menu > .active > a:hover,
+.tk-component .dropdown-menu > .active > a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  outline: 0;
+  background-color: #337ab7;
+}
+.tk-component .dropdown-menu > .disabled > a,
+.tk-component .dropdown-menu > .disabled > a:hover,
+.tk-component .dropdown-menu > .disabled > a:focus {
+  color: #777777;
+}
+.tk-component .dropdown-menu > .disabled > a:hover,
+.tk-component .dropdown-menu > .disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: not-allowed;
+}
+.tk-component .open > .dropdown-menu {
+  display: block;
+}
+.tk-component .open > a {
+  outline: 0;
+}
+.tk-component .dropdown-menu-right {
+  left: auto;
+  right: 0;
+}
+.tk-component .dropdown-menu-left {
+  left: 0;
+  right: auto;
+}
+.tk-component .dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.42857143;
+  color: #777777;
+  white-space: nowrap;
+}
+.tk-component .dropdown-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 990;
+}
+.tk-component .pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+.tk-component .dropup .caret,
+.tk-component .navbar-fixed-bottom .dropdown .caret {
+  border-top: 0;
+  border-bottom: 4px dashed;
+  border-bottom: 4px solid \9;
+  content: "";
+}
+.tk-component .dropup .dropdown-menu,
+.tk-component .navbar-fixed-bottom .dropdown .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 2px;
+}
+@media (min-width: 768px) {
+  .tk-component .navbar-right .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+  .tk-component .navbar-right .dropdown-menu-left {
+    left: 0;
+    right: auto;
+  }
+}
+.tk-component .btn-group,
+.tk-component .btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.tk-component .btn-group > .btn,
+.tk-component .btn-group-vertical > .btn {
+  position: relative;
+  float: left;
+}
+.tk-component .btn-group > .btn:hover,
+.tk-component .btn-group-vertical > .btn:hover,
+.tk-component .btn-group > .btn:focus,
+.tk-component .btn-group-vertical > .btn:focus,
+.tk-component .btn-group > .btn:active,
+.tk-component .btn-group-vertical > .btn:active,
+.tk-component .btn-group > .btn.active,
+.tk-component .btn-group-vertical > .btn.active {
+  z-index: 2;
+}
+.tk-component .btn-group .btn + .btn,
+.tk-component .btn-group .btn + .btn-group,
+.tk-component .btn-group .btn-group + .btn,
+.tk-component .btn-group .btn-group + .btn-group {
+  margin-left: -1px;
+}
+.tk-component .btn-toolbar {
+  margin-left: -5px;
+}
+.tk-component .btn-toolbar .btn,
+.tk-component .btn-toolbar .btn-group,
+.tk-component .btn-toolbar .input-group {
+  float: left;
+}
+.tk-component .btn-toolbar > .btn,
+.tk-component .btn-toolbar > .btn-group,
+.tk-component .btn-toolbar > .input-group {
+  margin-left: 5px;
+}
+.tk-component .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+.tk-component .btn-group > .btn:first-child {
+  margin-left: 0;
+}
+.tk-component .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.tk-component .btn-group > .btn:last-child:not(:first-child),
+.tk-component .btn-group > .dropdown-toggle:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.tk-component .btn-group > .btn-group {
+  float: left;
+}
+.tk-component .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.tk-component .btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.tk-component .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.tk-component .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.tk-component .btn-group .dropdown-toggle:active,
+.tk-component .btn-group.open .dropdown-toggle {
+  outline: 0;
+}
+.tk-component .btn-group > .btn + .dropdown-toggle {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.tk-component .btn-group > .btn-lg + .dropdown-toggle {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.tk-component .btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.tk-component .btn-group.open .dropdown-toggle.btn-link {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.tk-component .btn .caret {
+  margin-left: 0;
+}
+.tk-component .btn-lg .caret {
+  border-width: 5px 5px 0;
+  border-bottom-width: 0;
+}
+.tk-component .dropup .btn-lg .caret {
+  border-width: 0 5px 5px;
+}
+.tk-component .btn-group-vertical > .btn,
+.tk-component .btn-group-vertical > .btn-group,
+.tk-component .btn-group-vertical > .btn-group > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+.tk-component .btn-group-vertical > .btn-group > .btn {
+  float: none;
+}
+.tk-component .btn-group-vertical > .btn + .btn,
+.tk-component .btn-group-vertical > .btn + .btn-group,
+.tk-component .btn-group-vertical > .btn-group + .btn,
+.tk-component .btn-group-vertical > .btn-group + .btn-group {
+  margin-top: -1px;
+  margin-left: 0;
+}
+.tk-component .btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.tk-component .btn-group-vertical > .btn:first-child:not(:last-child) {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.tk-component .btn-group-vertical > .btn:last-child:not(:first-child) {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.tk-component .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.tk-component .btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.tk-component .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.tk-component .btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.tk-component .btn-group-justified {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+}
+.tk-component .btn-group-justified > .btn,
+.tk-component .btn-group-justified > .btn-group {
+  float: none;
+  display: table-cell;
+  width: 1%;
+}
+.tk-component .btn-group-justified > .btn-group .btn {
+  width: 100%;
+}
+.tk-component .btn-group-justified > .btn-group .dropdown-menu {
+  left: auto;
+}
+.tk-component [data-toggle="buttons"] > .btn input[type="radio"],
+.tk-component [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
+.tk-component [data-toggle="buttons"] > .btn input[type="checkbox"],
+.tk-component [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+.tk-component .input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+.tk-component .input-group[class*="col-"] {
+  float: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+.tk-component .input-group .form-control {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+}
+.tk-component .input-group .form-control:focus {
+  z-index: 3;
+}
+.tk-component .input-group-lg > .form-control,
+.tk-component .input-group-lg > .input-group-addon,
+.tk-component .input-group-lg > .input-group-btn > .btn {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+select.tk-component .input-group-lg > .form-control,
+select.tk-component .input-group-lg > .input-group-addon,
+select.tk-component .input-group-lg > .input-group-btn > .btn {
+  height: 46px;
+  line-height: 46px;
+}
+textarea.tk-component .input-group-lg > .form-control,
+textarea.tk-component .input-group-lg > .input-group-addon,
+textarea.tk-component .input-group-lg > .input-group-btn > .btn,
+select[multiple].tk-component .input-group-lg > .form-control,
+select[multiple].tk-component .input-group-lg > .input-group-addon,
+select[multiple].tk-component .input-group-lg > .input-group-btn > .btn {
+  height: auto;
+}
+.tk-component .input-group-sm > .form-control,
+.tk-component .input-group-sm > .input-group-addon,
+.tk-component .input-group-sm > .input-group-btn > .btn {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+select.tk-component .input-group-sm > .form-control,
+select.tk-component .input-group-sm > .input-group-addon,
+select.tk-component .input-group-sm > .input-group-btn > .btn {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.tk-component .input-group-sm > .form-control,
+textarea.tk-component .input-group-sm > .input-group-addon,
+textarea.tk-component .input-group-sm > .input-group-btn > .btn,
+select[multiple].tk-component .input-group-sm > .form-control,
+select[multiple].tk-component .input-group-sm > .input-group-addon,
+select[multiple].tk-component .input-group-sm > .input-group-btn > .btn {
+  height: auto;
+}
+.tk-component .input-group-addon,
+.tk-component .input-group-btn,
+.tk-component .input-group .form-control {
+  display: table-cell;
+}
+.tk-component .input-group-addon:not(:first-child):not(:last-child),
+.tk-component .input-group-btn:not(:first-child):not(:last-child),
+.tk-component .input-group .form-control:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.tk-component .input-group-addon,
+.tk-component .input-group-btn {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.tk-component .input-group-addon {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555555;
+  text-align: center;
+  background-color: #eeeeee;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+.tk-component .input-group-addon.input-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.tk-component .input-group-addon.input-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+.tk-component .input-group-addon input[type="radio"],
+.tk-component .input-group-addon input[type="checkbox"] {
+  margin-top: 0;
+}
+.tk-component .input-group .form-control:first-child,
+.tk-component .input-group-addon:first-child,
+.tk-component .input-group-btn:first-child > .btn,
+.tk-component .input-group-btn:first-child > .btn-group > .btn,
+.tk-component .input-group-btn:first-child > .dropdown-toggle,
+.tk-component .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.tk-component .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.tk-component .input-group-addon:first-child {
+  border-right: 0;
+}
+.tk-component .input-group .form-control:last-child,
+.tk-component .input-group-addon:last-child,
+.tk-component .input-group-btn:last-child > .btn,
+.tk-component .input-group-btn:last-child > .btn-group > .btn,
+.tk-component .input-group-btn:last-child > .dropdown-toggle,
+.tk-component .input-group-btn:first-child > .btn:not(:first-child),
+.tk-component .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.tk-component .input-group-addon:last-child {
+  border-left: 0;
+}
+.tk-component .input-group-btn {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+}
+.tk-component .input-group-btn > .btn {
+  position: relative;
+}
+.tk-component .input-group-btn > .btn + .btn {
+  margin-left: -1px;
+}
+.tk-component .input-group-btn > .btn:hover,
+.tk-component .input-group-btn > .btn:focus,
+.tk-component .input-group-btn > .btn:active {
+  z-index: 2;
+}
+.tk-component .input-group-btn:first-child > .btn,
+.tk-component .input-group-btn:first-child > .btn-group {
+  margin-right: -1px;
+}
+.tk-component .input-group-btn:last-child > .btn,
+.tk-component .input-group-btn:last-child > .btn-group {
+  z-index: 2;
+  margin-left: -1px;
+}
+.tk-component .nav {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.tk-component .nav > li {
+  position: relative;
+  display: block;
+}
+.tk-component .nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.tk-component .nav > li > a:hover,
+.tk-component .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+.tk-component .nav > li.disabled > a {
+  color: #777777;
+}
+.tk-component .nav > li.disabled > a:hover,
+.tk-component .nav > li.disabled > a:focus {
+  color: #777777;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: not-allowed;
+}
+.tk-component .nav .open > a,
+.tk-component .nav .open > a:hover,
+.tk-component .nav .open > a:focus {
+  background-color: #eeeeee;
+  border-color: #337ab7;
+}
+.tk-component .nav .nav-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.tk-component .nav > li > a > img {
+  max-width: none;
+}
+.tk-component .nav-tabs {
+  border-bottom: 1px solid #dddddd;
+}
+.tk-component .nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+.tk-component .nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.tk-component .nav-tabs > li > a:hover {
+  border-color: #eeeeee #eeeeee #dddddd;
+}
+.tk-component .nav-tabs > li.active > a,
+.tk-component .nav-tabs > li.active > a:hover,
+.tk-component .nav-tabs > li.active > a:focus {
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+.tk-component .nav-tabs.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+.tk-component .nav-tabs.nav-justified > li {
+  float: none;
+}
+.tk-component .nav-tabs.nav-justified > li > a {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.tk-component .nav-tabs.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  .tk-component .nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .tk-component .nav-tabs.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.tk-component .nav-tabs.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+.tk-component .nav-tabs.nav-justified > .active > a,
+.tk-component .nav-tabs.nav-justified > .active > a:hover,
+.tk-component .nav-tabs.nav-justified > .active > a:focus {
+  border: 1px solid #dddddd;
+}
+@media (min-width: 768px) {
+  .tk-component .nav-tabs.nav-justified > li > a {
+    border-bottom: 1px solid #dddddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .tk-component .nav-tabs.nav-justified > .active > a,
+  .tk-component .nav-tabs.nav-justified > .active > a:hover,
+  .tk-component .nav-tabs.nav-justified > .active > a:focus {
+    border-bottom-color: #ffffff;
+  }
+}
+.tk-component .nav-pills > li {
+  float: left;
+}
+.tk-component .nav-pills > li > a {
+  border-radius: 4px;
+}
+.tk-component .nav-pills > li + li {
+  margin-left: 2px;
+}
+.tk-component .nav-pills > li.active > a,
+.tk-component .nav-pills > li.active > a:hover,
+.tk-component .nav-pills > li.active > a:focus {
+  color: #ffffff;
+  background-color: #337ab7;
+}
+.tk-component .nav-stacked > li {
+  float: none;
+}
+.tk-component .nav-stacked > li + li {
+  margin-top: 2px;
+  margin-left: 0;
+}
+.tk-component .nav-justified {
+  width: 100%;
+}
+.tk-component .nav-justified > li {
+  float: none;
+}
+.tk-component .nav-justified > li > a {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.tk-component .nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  .tk-component .nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .tk-component .nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.tk-component .nav-tabs-justified {
+  border-bottom: 0;
+}
+.tk-component .nav-tabs-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+.tk-component .nav-tabs-justified > .active > a,
+.tk-component .nav-tabs-justified > .active > a:hover,
+.tk-component .nav-tabs-justified > .active > a:focus {
+  border: 1px solid #dddddd;
+}
+@media (min-width: 768px) {
+  .tk-component .nav-tabs-justified > li > a {
+    border-bottom: 1px solid #dddddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .tk-component .nav-tabs-justified > .active > a,
+  .tk-component .nav-tabs-justified > .active > a:hover,
+  .tk-component .nav-tabs-justified > .active > a:focus {
+    border-bottom-color: #ffffff;
+  }
+}
+.tk-component .tab-content > .tab-pane {
+  display: none;
+}
+.tk-component .tab-content > .active {
+  display: block;
+}
+.tk-component .nav-tabs .dropdown-menu {
+  margin-top: -1px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.tk-component .navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+@media (min-width: 768px) {
+  .tk-component .navbar {
+    border-radius: 4px;
+  }
+}
+@media (min-width: 768px) {
+  .tk-component .navbar-header {
+    float: left;
+  }
+}
+.tk-component .navbar-collapse {
+  overflow-x: visible;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-top: 1px solid transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  -webkit-overflow-scrolling: touch;
+}
+.tk-component .navbar-collapse.in {
+  overflow-y: auto;
+}
+@media (min-width: 768px) {
+  .tk-component .navbar-collapse {
+    width: auto;
+    border-top: 0;
+    box-shadow: none;
+  }
+  .tk-component .navbar-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+  }
+  .tk-component .navbar-collapse.in {
+    overflow-y: visible;
+  }
+  .navbar-fixed-top .tk-component .navbar-collapse,
+  .navbar-static-top .tk-component .navbar-collapse,
+  .navbar-fixed-bottom .tk-component .navbar-collapse {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.tk-component .navbar-fixed-top .navbar-collapse,
+.tk-component .navbar-fixed-bottom .navbar-collapse {
+  max-height: 340px;
+}
+@media (max-device-width: 480px) and (orientation: landscape) {
+  .tk-component .navbar-fixed-top .navbar-collapse,
+  .tk-component .navbar-fixed-bottom .navbar-collapse {
+    max-height: 200px;
+  }
+}
+.tk-component .container > .navbar-header,
+.tk-component .container-fluid > .navbar-header,
+.tk-component .container > .navbar-collapse,
+.tk-component .container-fluid > .navbar-collapse {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+@media (min-width: 768px) {
+  .tk-component .container > .navbar-header,
+  .tk-component .container-fluid > .navbar-header,
+  .tk-component .container > .navbar-collapse,
+  .tk-component .container-fluid > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+.tk-component .navbar-static-top {
+  z-index: 1000;
+  border-width: 0 0 1px;
+}
+@media (min-width: 768px) {
+  .tk-component .navbar-static-top {
+    border-radius: 0;
+  }
+}
+.tk-component .navbar-fixed-top,
+.tk-component .navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+@media (min-width: 768px) {
+  .tk-component .navbar-fixed-top,
+  .tk-component .navbar-fixed-bottom {
+    border-radius: 0;
+  }
+}
+.tk-component .navbar-fixed-top {
+  top: 0;
+  border-width: 0 0 1px;
+}
+.tk-component .navbar-fixed-bottom {
+  bottom: 0;
+  margin-bottom: 0;
+  border-width: 1px 0 0;
+}
+.tk-component .navbar-brand {
+  float: left;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+  height: 50px;
+}
+.tk-component .navbar-brand:hover,
+.tk-component .navbar-brand:focus {
+  text-decoration: none;
+}
+.tk-component .navbar-brand > img {
+  display: block;
+}
+@media (min-width: 768px) {
+  .navbar > .container .tk-component .navbar-brand,
+  .navbar > .container-fluid .tk-component .navbar-brand {
+    margin-left: -15px;
+  }
+}
+.tk-component .navbar-toggle {
+  position: relative;
+  float: right;
+  margin-right: 15px;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.tk-component .navbar-toggle:focus {
+  outline: 0;
+}
+.tk-component .navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+.tk-component .navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+@media (min-width: 768px) {
+  .tk-component .navbar-toggle {
+    display: none;
+  }
+}
+.tk-component .navbar-nav {
+  margin: 7.5px -15px;
+}
+.tk-component .navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+@media (max-width: 767px) {
+  .tk-component .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  .tk-component .navbar-nav .open .dropdown-menu > li > a,
+  .tk-component .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: 5px 15px 5px 25px;
+  }
+  .tk-component .navbar-nav .open .dropdown-menu > li > a {
+    line-height: 20px;
+  }
+  .tk-component .navbar-nav .open .dropdown-menu > li > a:hover,
+  .tk-component .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-image: none;
+  }
+}
+@media (min-width: 768px) {
+  .tk-component .navbar-nav {
+    float: left;
+    margin: 0;
+  }
+  .tk-component .navbar-nav > li {
+    float: left;
+  }
+  .tk-component .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+.tk-component .navbar-form {
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 10px 15px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+@media (min-width: 768px) {
+  .tk-component .navbar-form .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .tk-component .navbar-form .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+  .tk-component .navbar-form .form-control-static {
+    display: inline-block;
+  }
+  .tk-component .navbar-form .input-group {
+    display: inline-table;
+    vertical-align: middle;
+  }
+  .tk-component .navbar-form .input-group .input-group-addon,
+  .tk-component .navbar-form .input-group .input-group-btn,
+  .tk-component .navbar-form .input-group .form-control {
+    width: auto;
+  }
+  .tk-component .navbar-form .input-group > .form-control {
+    width: 100%;
+  }
+  .tk-component .navbar-form .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .tk-component .navbar-form .radio,
+  .tk-component .navbar-form .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .tk-component .navbar-form .radio label,
+  .tk-component .navbar-form .checkbox label {
+    padding-left: 0;
+  }
+  .tk-component .navbar-form .radio input[type="radio"],
+  .tk-component .navbar-form .checkbox input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
+  .tk-component .navbar-form .has-feedback .form-control-feedback {
+    top: 0;
+  }
+}
+@media (max-width: 767px) {
+  .tk-component .navbar-form .form-group {
+    margin-bottom: 5px;
+  }
+  .tk-component .navbar-form .form-group:last-child {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 768px) {
+  .tk-component .navbar-form {
+    width: auto;
+    border: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+.tk-component .navbar-nav > li > .dropdown-menu {
+  margin-top: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.tk-component .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
+  margin-bottom: 0;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.tk-component .navbar-btn {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.tk-component .navbar-btn.btn-sm {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.tk-component .navbar-btn.btn-xs {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.tk-component .navbar-text {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .tk-component .navbar-text {
+    float: left;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+@media (min-width: 768px) {
+  .tk-component .navbar-left {
+    float: left !important;
+  }
+  .tk-component .navbar-right {
+    float: right !important;
+    margin-right: -15px;
+  }
+  .tk-component .navbar-right ~ .navbar-right {
+    margin-right: 0;
+  }
+}
+.tk-component .navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+.tk-component .navbar-default .navbar-brand {
+  color: #777777;
+}
+.tk-component .navbar-default .navbar-brand:hover,
+.tk-component .navbar-default .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.tk-component .navbar-default .navbar-text {
+  color: #777777;
+}
+.tk-component .navbar-default .navbar-nav > li > a {
+  color: #777777;
+}
+.tk-component .navbar-default .navbar-nav > li > a:hover,
+.tk-component .navbar-default .navbar-nav > li > a:focus {
+  color: #333333;
+  background-color: transparent;
+}
+.tk-component .navbar-default .navbar-nav > .active > a,
+.tk-component .navbar-default .navbar-nav > .active > a:hover,
+.tk-component .navbar-default .navbar-nav > .active > a:focus {
+  color: #555555;
+  background-color: #e7e7e7;
+}
+.tk-component .navbar-default .navbar-nav > .disabled > a,
+.tk-component .navbar-default .navbar-nav > .disabled > a:hover,
+.tk-component .navbar-default .navbar-nav > .disabled > a:focus {
+  color: #cccccc;
+  background-color: transparent;
+}
+.tk-component .navbar-default .navbar-toggle {
+  border-color: #dddddd;
+}
+.tk-component .navbar-default .navbar-toggle:hover,
+.tk-component .navbar-default .navbar-toggle:focus {
+  background-color: #dddddd;
+}
+.tk-component .navbar-default .navbar-toggle .icon-bar {
+  background-color: #888888;
+}
+.tk-component .navbar-default .navbar-collapse,
+.tk-component .navbar-default .navbar-form {
+  border-color: #e7e7e7;
+}
+.tk-component .navbar-default .navbar-nav > .open > a,
+.tk-component .navbar-default .navbar-nav > .open > a:hover,
+.tk-component .navbar-default .navbar-nav > .open > a:focus {
+  background-color: #e7e7e7;
+  color: #555555;
+}
+@media (max-width: 767px) {
+  .tk-component .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #777777;
+  }
+  .tk-component .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .tk-component .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333333;
+    background-color: transparent;
+  }
+  .tk-component .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .tk-component .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .tk-component .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555555;
+    background-color: #e7e7e7;
+  }
+  .tk-component .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
+  .tk-component .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .tk-component .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #cccccc;
+    background-color: transparent;
+  }
+}
+.tk-component .navbar-default .navbar-link {
+  color: #777777;
+}
+.tk-component .navbar-default .navbar-link:hover {
+  color: #333333;
+}
+.tk-component .navbar-default .btn-link {
+  color: #777777;
+}
+.tk-component .navbar-default .btn-link:hover,
+.tk-component .navbar-default .btn-link:focus {
+  color: #333333;
+}
+.tk-component .navbar-default .btn-link[disabled]:hover,
+fieldset[disabled] .tk-component .navbar-default .btn-link:hover,
+.tk-component .navbar-default .btn-link[disabled]:focus,
+fieldset[disabled] .tk-component .navbar-default .btn-link:focus {
+  color: #cccccc;
+}
+.tk-component .navbar-inverse {
+  background-color: #222222;
+  border-color: #080808;
+}
+.tk-component .navbar-inverse .navbar-brand {
+  color: #9d9d9d;
+}
+.tk-component .navbar-inverse .navbar-brand:hover,
+.tk-component .navbar-inverse .navbar-brand:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+.tk-component .navbar-inverse .navbar-text {
+  color: #9d9d9d;
+}
+.tk-component .navbar-inverse .navbar-nav > li > a {
+  color: #9d9d9d;
+}
+.tk-component .navbar-inverse .navbar-nav > li > a:hover,
+.tk-component .navbar-inverse .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+.tk-component .navbar-inverse .navbar-nav > .active > a,
+.tk-component .navbar-inverse .navbar-nav > .active > a:hover,
+.tk-component .navbar-inverse .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #080808;
+}
+.tk-component .navbar-inverse .navbar-nav > .disabled > a,
+.tk-component .navbar-inverse .navbar-nav > .disabled > a:hover,
+.tk-component .navbar-inverse .navbar-nav > .disabled > a:focus {
+  color: #444444;
+  background-color: transparent;
+}
+.tk-component .navbar-inverse .navbar-toggle {
+  border-color: #333333;
+}
+.tk-component .navbar-inverse .navbar-toggle:hover,
+.tk-component .navbar-inverse .navbar-toggle:focus {
+  background-color: #333333;
+}
+.tk-component .navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.tk-component .navbar-inverse .navbar-collapse,
+.tk-component .navbar-inverse .navbar-form {
+  border-color: #101010;
+}
+.tk-component .navbar-inverse .navbar-nav > .open > a,
+.tk-component .navbar-inverse .navbar-nav > .open > a:hover,
+.tk-component .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #080808;
+  color: #ffffff;
+}
+@media (max-width: 767px) {
+  .tk-component .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
+    border-color: #080808;
+  }
+  .tk-component .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+    background-color: #080808;
+  }
+  .tk-component .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #9d9d9d;
+  }
+  .tk-component .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
+  .tk-component .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+    background-color: transparent;
+  }
+  .tk-component .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
+  .tk-component .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .tk-component .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #080808;
+  }
+  .tk-component .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
+  .tk-component .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .tk-component .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #444444;
+    background-color: transparent;
+  }
+}
+.tk-component .navbar-inverse .navbar-link {
+  color: #9d9d9d;
+}
+.tk-component .navbar-inverse .navbar-link:hover {
+  color: #ffffff;
+}
+.tk-component .navbar-inverse .btn-link {
+  color: #9d9d9d;
+}
+.tk-component .navbar-inverse .btn-link:hover,
+.tk-component .navbar-inverse .btn-link:focus {
+  color: #ffffff;
+}
+.tk-component .navbar-inverse .btn-link[disabled]:hover,
+fieldset[disabled] .tk-component .navbar-inverse .btn-link:hover,
+.tk-component .navbar-inverse .btn-link[disabled]:focus,
+fieldset[disabled] .tk-component .navbar-inverse .btn-link:focus {
+  color: #444444;
+}
+.tk-component .breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+.tk-component .breadcrumb > li {
+  display: inline-block;
+}
+.tk-component .breadcrumb > li + li:before {
+  content: "/\00a0";
+  padding: 0 5px;
+  color: #cccccc;
+}
+.tk-component .breadcrumb > .active {
+  color: #777777;
+}
+.tk-component .pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+.tk-component .pagination > li {
+  display: inline;
+}
+.tk-component .pagination > li > a,
+.tk-component .pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #337ab7;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  margin-left: -1px;
+}
+.tk-component .pagination > li:first-child > a,
+.tk-component .pagination > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.tk-component .pagination > li:last-child > a,
+.tk-component .pagination > li:last-child > span {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.tk-component .pagination > li > a:hover,
+.tk-component .pagination > li > span:hover,
+.tk-component .pagination > li > a:focus,
+.tk-component .pagination > li > span:focus {
+  z-index: 2;
+  color: #23527c;
+  background-color: #eeeeee;
+  border-color: #dddddd;
+}
+.tk-component .pagination > .active > a,
+.tk-component .pagination > .active > span,
+.tk-component .pagination > .active > a:hover,
+.tk-component .pagination > .active > span:hover,
+.tk-component .pagination > .active > a:focus,
+.tk-component .pagination > .active > span:focus {
+  z-index: 3;
+  color: #ffffff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+  cursor: default;
+}
+.tk-component .pagination > .disabled > span,
+.tk-component .pagination > .disabled > span:hover,
+.tk-component .pagination > .disabled > span:focus,
+.tk-component .pagination > .disabled > a,
+.tk-component .pagination > .disabled > a:hover,
+.tk-component .pagination > .disabled > a:focus {
+  color: #777777;
+  background-color: #ffffff;
+  border-color: #dddddd;
+  cursor: not-allowed;
+}
+.tk-component .pagination-lg > li > a,
+.tk-component .pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+.tk-component .pagination-lg > li:first-child > a,
+.tk-component .pagination-lg > li:first-child > span {
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+}
+.tk-component .pagination-lg > li:last-child > a,
+.tk-component .pagination-lg > li:last-child > span {
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.tk-component .pagination-sm > li > a,
+.tk-component .pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.tk-component .pagination-sm > li:first-child > a,
+.tk-component .pagination-sm > li:first-child > span {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.tk-component .pagination-sm > li:last-child > a,
+.tk-component .pagination-sm > li:last-child > span {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.tk-component .pager {
+  padding-left: 0;
+  margin: 20px 0;
+  list-style: none;
+  text-align: center;
+}
+.tk-component .pager li {
+  display: inline;
+}
+.tk-component .pager li > a,
+.tk-component .pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+}
+.tk-component .pager li > a:hover,
+.tk-component .pager li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+.tk-component .pager .next > a,
+.tk-component .pager .next > span {
+  float: right;
+}
+.tk-component .pager .previous > a,
+.tk-component .pager .previous > span {
+  float: left;
+}
+.tk-component .pager .disabled > a,
+.tk-component .pager .disabled > a:hover,
+.tk-component .pager .disabled > a:focus,
+.tk-component .pager .disabled > span {
+  color: #777777;
+  background-color: #ffffff;
+  cursor: not-allowed;
+}
+.tk-component .label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+a.tk-component .label:hover,
+a.tk-component .label:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.tk-component .label:empty {
+  display: none;
+}
+.btn .tk-component .label {
+  position: relative;
+  top: -1px;
+}
+.tk-component .label-default {
+  background-color: #777777;
+}
+.tk-component .label-default[href]:hover,
+.tk-component .label-default[href]:focus {
+  background-color: #5e5e5e;
+}
+.tk-component .label-primary {
+  background-color: #337ab7;
+}
+.tk-component .label-primary[href]:hover,
+.tk-component .label-primary[href]:focus {
+  background-color: #286090;
+}
+.tk-component .label-success {
+  background-color: #5cb85c;
+}
+.tk-component .label-success[href]:hover,
+.tk-component .label-success[href]:focus {
+  background-color: #449d44;
+}
+.tk-component .label-info {
+  background-color: #5bc0de;
+}
+.tk-component .label-info[href]:hover,
+.tk-component .label-info[href]:focus {
+  background-color: #31b0d5;
+}
+.tk-component .label-warning {
+  background-color: #f0ad4e;
+}
+.tk-component .label-warning[href]:hover,
+.tk-component .label-warning[href]:focus {
+  background-color: #ec971f;
+}
+.tk-component .label-danger {
+  background-color: #d9534f;
+}
+.tk-component .label-danger[href]:hover,
+.tk-component .label-danger[href]:focus {
+  background-color: #c9302c;
+}
+.tk-component .badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  background-color: #777777;
+  border-radius: 10px;
+}
+.tk-component .badge:empty {
+  display: none;
+}
+.btn .tk-component .badge {
+  position: relative;
+  top: -1px;
+}
+.btn-xs .tk-component .badge,
+.btn-group-xs > .btn .tk-component .badge {
+  top: 0;
+  padding: 1px 5px;
+}
+a.tk-component .badge:hover,
+a.tk-component .badge:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.list-group-item.active > .tk-component .badge,
+.nav-pills > .active > a > .tk-component .badge {
+  color: #337ab7;
+  background-color: #ffffff;
+}
+.list-group-item > .tk-component .badge {
+  float: right;
+}
+.list-group-item > .tk-component .badge + .tk-component .badge {
+  margin-right: 5px;
+}
+.nav-pills > li > a > .tk-component .badge {
+  margin-left: 3px;
+}
+.tk-component .jumbotron {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #eeeeee;
+}
+.tk-component .jumbotron h1,
+.tk-component .jumbotron .h1 {
+  color: inherit;
+}
+.tk-component .jumbotron p {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+}
+.tk-component .jumbotron > hr {
+  border-top-color: #d5d5d5;
+}
+.container .tk-component .jumbotron,
+.container-fluid .tk-component .jumbotron {
+  border-radius: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.tk-component .jumbotron .container {
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .tk-component .jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container .tk-component .jumbotron,
+  .container-fluid .tk-component .jumbotron {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .tk-component .jumbotron h1,
+  .tk-component .jumbotron .h1 {
+    font-size: 63px;
+  }
+}
+.tk-component .thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-transition: border 0.2s ease-in-out;
+  -o-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+}
+.tk-component .thumbnail > img,
+.tk-component .thumbnail a > img {
+  margin-left: auto;
+  margin-right: auto;
+}
+a.tk-component .thumbnail:hover,
+a.tk-component .thumbnail:focus,
+a.tk-component .thumbnail.active {
+  border-color: #337ab7;
+}
+.tk-component .thumbnail .caption {
+  padding: 9px;
+  color: #333333;
+}
+.tk-component .alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.tk-component .alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.tk-component .alert .alert-link {
+  font-weight: bold;
+}
+.tk-component .alert > p,
+.tk-component .alert > ul {
+  margin-bottom: 0;
+}
+.tk-component .alert > p + p {
+  margin-top: 5px;
+}
+.tk-component .alert-dismissable,
+.tk-component .alert-dismissible {
+  padding-right: 35px;
+}
+.tk-component .alert-dismissable .close,
+.tk-component .alert-dismissible .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+.tk-component .alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+.tk-component .alert-success hr {
+  border-top-color: #c9e2b3;
+}
+.tk-component .alert-success .alert-link {
+  color: #2b542c;
+}
+.tk-component .alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+}
+.tk-component .alert-info hr {
+  border-top-color: #a6e1ec;
+}
+.tk-component .alert-info .alert-link {
+  color: #245269;
+}
+.tk-component .alert-warning {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+.tk-component .alert-warning hr {
+  border-top-color: #f7e1b5;
+}
+.tk-component .alert-warning .alert-link {
+  color: #66512c;
+}
+.tk-component .alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+.tk-component .alert-danger hr {
+  border-top-color: #e4b9c0;
+}
+.tk-component .alert-danger .alert-link {
+  color: #843534;
+}
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+.tk-component .progress {
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.tk-component .progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #337ab7;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+}
+.tk-component .progress-striped .progress-bar,
+.tk-component .progress-bar-striped {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.tk-component .progress.active .progress-bar,
+.tk-component .progress-bar.active {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+.tk-component .progress-bar-success {
+  background-color: #5cb85c;
+}
+.progress-striped .tk-component .progress-bar-success {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.tk-component .progress-bar-info {
+  background-color: #5bc0de;
+}
+.progress-striped .tk-component .progress-bar-info {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.tk-component .progress-bar-warning {
+  background-color: #f0ad4e;
+}
+.progress-striped .tk-component .progress-bar-warning {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.tk-component .progress-bar-danger {
+  background-color: #d9534f;
+}
+.progress-striped .tk-component .progress-bar-danger {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.tk-component .media {
+  margin-top: 15px;
+}
+.tk-component .media:first-child {
+  margin-top: 0;
+}
+.tk-component .media,
+.tk-component .media-body {
+  zoom: 1;
+  overflow: hidden;
+}
+.tk-component .media-body {
+  width: 10000px;
+}
+.tk-component .media-object {
+  display: block;
+}
+.tk-component .media-object.img-thumbnail {
+  max-width: none;
+}
+.tk-component .media-right,
+.tk-component .media > .pull-right {
+  padding-left: 10px;
+}
+.tk-component .media-left,
+.tk-component .media > .pull-left {
+  padding-right: 10px;
+}
+.tk-component .media-left,
+.tk-component .media-right,
+.tk-component .media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+.tk-component .media-middle {
+  vertical-align: middle;
+}
+.tk-component .media-bottom {
+  vertical-align: bottom;
+}
+.tk-component .media-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.tk-component .media-list {
+  padding-left: 0;
+  list-style: none;
+}
+.tk-component .list-group {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+.tk-component .list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+}
+.tk-component .list-group-item:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.tk-component .list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.tk-component a.list-group-item,
+.tk-component button.list-group-item {
+  color: #555555;
+}
+.tk-component a.list-group-item .list-group-item-heading,
+.tk-component button.list-group-item .list-group-item-heading {
+  color: #333333;
+}
+.tk-component a.list-group-item:hover,
+.tk-component button.list-group-item:hover,
+.tk-component a.list-group-item:focus,
+.tk-component button.list-group-item:focus {
+  text-decoration: none;
+  color: #555555;
+  background-color: #f5f5f5;
+}
+.tk-component button.list-group-item {
+  width: 100%;
+  text-align: left;
+}
+.tk-component .list-group-item.disabled,
+.tk-component .list-group-item.disabled:hover,
+.tk-component .list-group-item.disabled:focus {
+  background-color: #eeeeee;
+  color: #777777;
+  cursor: not-allowed;
+}
+.tk-component .list-group-item.disabled .list-group-item-heading,
+.tk-component .list-group-item.disabled:hover .list-group-item-heading,
+.tk-component .list-group-item.disabled:focus .list-group-item-heading {
+  color: inherit;
+}
+.tk-component .list-group-item.disabled .list-group-item-text,
+.tk-component .list-group-item.disabled:hover .list-group-item-text,
+.tk-component .list-group-item.disabled:focus .list-group-item-text {
+  color: #777777;
+}
+.tk-component .list-group-item.active,
+.tk-component .list-group-item.active:hover,
+.tk-component .list-group-item.active:focus {
+  z-index: 2;
+  color: #ffffff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.tk-component .list-group-item.active .list-group-item-heading,
+.tk-component .list-group-item.active:hover .list-group-item-heading,
+.tk-component .list-group-item.active:focus .list-group-item-heading,
+.tk-component .list-group-item.active .list-group-item-heading > small,
+.tk-component .list-group-item.active:hover .list-group-item-heading > small,
+.tk-component .list-group-item.active:focus .list-group-item-heading > small,
+.tk-component .list-group-item.active .list-group-item-heading > .small,
+.tk-component .list-group-item.active:hover .list-group-item-heading > .small,
+.tk-component .list-group-item.active:focus .list-group-item-heading > .small {
+  color: inherit;
+}
+.tk-component .list-group-item.active .list-group-item-text,
+.tk-component .list-group-item.active:hover .list-group-item-text,
+.tk-component .list-group-item.active:focus .list-group-item-text {
+  color: #c7ddef;
+}
+.tk-component .list-group-item-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+a.tk-component .list-group-item-success,
+button.tk-component .list-group-item-success {
+  color: #3c763d;
+}
+a.tk-component .list-group-item-success .list-group-item-heading,
+button.tk-component .list-group-item-success .list-group-item-heading {
+  color: inherit;
+}
+a.tk-component .list-group-item-success:hover,
+button.tk-component .list-group-item-success:hover,
+a.tk-component .list-group-item-success:focus,
+button.tk-component .list-group-item-success:focus {
+  color: #3c763d;
+  background-color: #d0e9c6;
+}
+a.tk-component .list-group-item-success.active,
+button.tk-component .list-group-item-success.active,
+a.tk-component .list-group-item-success.active:hover,
+button.tk-component .list-group-item-success.active:hover,
+a.tk-component .list-group-item-success.active:focus,
+button.tk-component .list-group-item-success.active:focus {
+  color: #fff;
+  background-color: #3c763d;
+  border-color: #3c763d;
+}
+.tk-component .list-group-item-info {
+  color: #31708f;
+  background-color: #d9edf7;
+}
+a.tk-component .list-group-item-info,
+button.tk-component .list-group-item-info {
+  color: #31708f;
+}
+a.tk-component .list-group-item-info .list-group-item-heading,
+button.tk-component .list-group-item-info .list-group-item-heading {
+  color: inherit;
+}
+a.tk-component .list-group-item-info:hover,
+button.tk-component .list-group-item-info:hover,
+a.tk-component .list-group-item-info:focus,
+button.tk-component .list-group-item-info:focus {
+  color: #31708f;
+  background-color: #c4e3f3;
+}
+a.tk-component .list-group-item-info.active,
+button.tk-component .list-group-item-info.active,
+a.tk-component .list-group-item-info.active:hover,
+button.tk-component .list-group-item-info.active:hover,
+a.tk-component .list-group-item-info.active:focus,
+button.tk-component .list-group-item-info.active:focus {
+  color: #fff;
+  background-color: #31708f;
+  border-color: #31708f;
+}
+.tk-component .list-group-item-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+a.tk-component .list-group-item-warning,
+button.tk-component .list-group-item-warning {
+  color: #8a6d3b;
+}
+a.tk-component .list-group-item-warning .list-group-item-heading,
+button.tk-component .list-group-item-warning .list-group-item-heading {
+  color: inherit;
+}
+a.tk-component .list-group-item-warning:hover,
+button.tk-component .list-group-item-warning:hover,
+a.tk-component .list-group-item-warning:focus,
+button.tk-component .list-group-item-warning:focus {
+  color: #8a6d3b;
+  background-color: #faf2cc;
+}
+a.tk-component .list-group-item-warning.active,
+button.tk-component .list-group-item-warning.active,
+a.tk-component .list-group-item-warning.active:hover,
+button.tk-component .list-group-item-warning.active:hover,
+a.tk-component .list-group-item-warning.active:focus,
+button.tk-component .list-group-item-warning.active:focus {
+  color: #fff;
+  background-color: #8a6d3b;
+  border-color: #8a6d3b;
+}
+.tk-component .list-group-item-danger {
+  color: #a94442;
+  background-color: #f2dede;
+}
+a.tk-component .list-group-item-danger,
+button.tk-component .list-group-item-danger {
+  color: #a94442;
+}
+a.tk-component .list-group-item-danger .list-group-item-heading,
+button.tk-component .list-group-item-danger .list-group-item-heading {
+  color: inherit;
+}
+a.tk-component .list-group-item-danger:hover,
+button.tk-component .list-group-item-danger:hover,
+a.tk-component .list-group-item-danger:focus,
+button.tk-component .list-group-item-danger:focus {
+  color: #a94442;
+  background-color: #ebcccc;
+}
+a.tk-component .list-group-item-danger.active,
+button.tk-component .list-group-item-danger.active,
+a.tk-component .list-group-item-danger.active:hover,
+button.tk-component .list-group-item-danger.active:hover,
+a.tk-component .list-group-item-danger.active:focus,
+button.tk-component .list-group-item-danger.active:focus {
+  color: #fff;
+  background-color: #a94442;
+  border-color: #a94442;
+}
+.tk-component .list-group-item-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.tk-component .list-group-item-text {
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+.tk-component .panel {
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.tk-component .panel-body {
+  padding: 15px;
+}
+.tk-component .panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.tk-component .panel-heading > .dropdown .dropdown-toggle {
+  color: inherit;
+}
+.tk-component .panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
+}
+.tk-component .panel-title > a,
+.tk-component .panel-title > small,
+.tk-component .panel-title > .small,
+.tk-component .panel-title > small > a,
+.tk-component .panel-title > .small > a {
+  color: inherit;
+}
+.tk-component .panel-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #dddddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.tk-component .panel > .list-group,
+.tk-component .panel > .panel-collapse > .list-group {
+  margin-bottom: 0;
+}
+.tk-component .panel > .list-group .list-group-item,
+.tk-component .panel > .panel-collapse > .list-group .list-group-item {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+.tk-component .panel > .list-group:first-child .list-group-item:first-child,
+.tk-component .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
+  border-top: 0;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.tk-component .panel > .list-group:last-child .list-group-item:last-child,
+.tk-component .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.tk-component .panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.tk-component .panel-heading + .list-group .list-group-item:first-child {
+  border-top-width: 0;
+}
+.tk-component .list-group + .panel-footer {
+  border-top-width: 0;
+}
+.tk-component .panel > .table,
+.tk-component .panel > .table-responsive > .table,
+.tk-component .panel > .panel-collapse > .table {
+  margin-bottom: 0;
+}
+.tk-component .panel > .table caption,
+.tk-component .panel > .table-responsive > .table caption,
+.tk-component .panel > .panel-collapse > .table caption {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.tk-component .panel > .table:first-child,
+.tk-component .panel > .table-responsive:first-child > .table:first-child {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.tk-component .panel > .table:first-child > thead:first-child > tr:first-child,
+.tk-component .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+.tk-component .panel > .table:first-child > tbody:first-child > tr:first-child,
+.tk-component .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.tk-component .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.tk-component .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.tk-component .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.tk-component .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.tk-component .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.tk-component .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.tk-component .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.tk-component .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+  border-top-left-radius: 3px;
+}
+.tk-component .panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.tk-component .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.tk-component .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.tk-component .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.tk-component .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.tk-component .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.tk-component .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.tk-component .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+  border-top-right-radius: 3px;
+}
+.tk-component .panel > .table:last-child,
+.tk-component .panel > .table-responsive:last-child > .table:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.tk-component .panel > .table:last-child > tbody:last-child > tr:last-child,
+.tk-component .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+.tk-component .panel > .table:last-child > tfoot:last-child > tr:last-child,
+.tk-component .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.tk-component .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.tk-component .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.tk-component .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.tk-component .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.tk-component .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.tk-component .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.tk-component .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.tk-component .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+  border-bottom-left-radius: 3px;
+}
+.tk-component .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.tk-component .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.tk-component .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.tk-component .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.tk-component .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.tk-component .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.tk-component .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.tk-component .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+  border-bottom-right-radius: 3px;
+}
+.tk-component .panel > .panel-body + .table,
+.tk-component .panel > .panel-body + .table-responsive,
+.tk-component .panel > .table + .panel-body,
+.tk-component .panel > .table-responsive + .panel-body {
+  border-top: 1px solid #dddddd;
+}
+.tk-component .panel > .table > tbody:first-child > tr:first-child th,
+.tk-component .panel > .table > tbody:first-child > tr:first-child td {
+  border-top: 0;
+}
+.tk-component .panel > .table-bordered,
+.tk-component .panel > .table-responsive > .table-bordered {
+  border: 0;
+}
+.tk-component .panel > .table-bordered > thead > tr > th:first-child,
+.tk-component .panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
+.tk-component .panel > .table-bordered > tbody > tr > th:first-child,
+.tk-component .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+.tk-component .panel > .table-bordered > tfoot > tr > th:first-child,
+.tk-component .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+.tk-component .panel > .table-bordered > thead > tr > td:first-child,
+.tk-component .panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
+.tk-component .panel > .table-bordered > tbody > tr > td:first-child,
+.tk-component .panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+.tk-component .panel > .table-bordered > tfoot > tr > td:first-child,
+.tk-component .panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+  border-left: 0;
+}
+.tk-component .panel > .table-bordered > thead > tr > th:last-child,
+.tk-component .panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
+.tk-component .panel > .table-bordered > tbody > tr > th:last-child,
+.tk-component .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+.tk-component .panel > .table-bordered > tfoot > tr > th:last-child,
+.tk-component .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+.tk-component .panel > .table-bordered > thead > tr > td:last-child,
+.tk-component .panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
+.tk-component .panel > .table-bordered > tbody > tr > td:last-child,
+.tk-component .panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+.tk-component .panel > .table-bordered > tfoot > tr > td:last-child,
+.tk-component .panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+  border-right: 0;
+}
+.tk-component .panel > .table-bordered > thead > tr:first-child > td,
+.tk-component .panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
+.tk-component .panel > .table-bordered > tbody > tr:first-child > td,
+.tk-component .panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+.tk-component .panel > .table-bordered > thead > tr:first-child > th,
+.tk-component .panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
+.tk-component .panel > .table-bordered > tbody > tr:first-child > th,
+.tk-component .panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+  border-bottom: 0;
+}
+.tk-component .panel > .table-bordered > tbody > tr:last-child > td,
+.tk-component .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+.tk-component .panel > .table-bordered > tfoot > tr:last-child > td,
+.tk-component .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+.tk-component .panel > .table-bordered > tbody > tr:last-child > th,
+.tk-component .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+.tk-component .panel > .table-bordered > tfoot > tr:last-child > th,
+.tk-component .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+  border-bottom: 0;
+}
+.tk-component .panel > .table-responsive {
+  border: 0;
+  margin-bottom: 0;
+}
+.tk-component .panel-group {
+  margin-bottom: 20px;
+}
+.tk-component .panel-group .panel {
+  margin-bottom: 0;
+  border-radius: 4px;
+}
+.tk-component .panel-group .panel + .panel {
+  margin-top: 5px;
+}
+.tk-component .panel-group .panel-heading {
+  border-bottom: 0;
+}
+.tk-component .panel-group .panel-heading + .panel-collapse > .panel-body,
+.tk-component .panel-group .panel-heading + .panel-collapse > .list-group {
+  border-top: 1px solid #dddddd;
+}
+.tk-component .panel-group .panel-footer {
+  border-top: 0;
+}
+.tk-component .panel-group .panel-footer + .panel-collapse .panel-body {
+  border-bottom: 1px solid #dddddd;
+}
+.tk-component .panel-default {
+  border-color: #dddddd;
+}
+.tk-component .panel-default > .panel-heading {
+  color: #333333;
+  background-color: #f5f5f5;
+  border-color: #dddddd;
+}
+.tk-component .panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #dddddd;
+}
+.tk-component .panel-default > .panel-heading .badge {
+  color: #f5f5f5;
+  background-color: #333333;
+}
+.tk-component .panel-default > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #dddddd;
+}
+.tk-component .panel-primary {
+  border-color: #337ab7;
+}
+.tk-component .panel-primary > .panel-heading {
+  color: #ffffff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.tk-component .panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #337ab7;
+}
+.tk-component .panel-primary > .panel-heading .badge {
+  color: #337ab7;
+  background-color: #ffffff;
+}
+.tk-component .panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #337ab7;
+}
+.tk-component .panel-success {
+  border-color: #d6e9c6;
+}
+.tk-component .panel-success > .panel-heading {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.tk-component .panel-success > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #d6e9c6;
+}
+.tk-component .panel-success > .panel-heading .badge {
+  color: #dff0d8;
+  background-color: #3c763d;
+}
+.tk-component .panel-success > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #d6e9c6;
+}
+.tk-component .panel-info {
+  border-color: #bce8f1;
+}
+.tk-component .panel-info > .panel-heading {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.tk-component .panel-info > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #bce8f1;
+}
+.tk-component .panel-info > .panel-heading .badge {
+  color: #d9edf7;
+  background-color: #31708f;
+}
+.tk-component .panel-info > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #bce8f1;
+}
+.tk-component .panel-warning {
+  border-color: #faebcc;
+}
+.tk-component .panel-warning > .panel-heading {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.tk-component .panel-warning > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #faebcc;
+}
+.tk-component .panel-warning > .panel-heading .badge {
+  color: #fcf8e3;
+  background-color: #8a6d3b;
+}
+.tk-component .panel-warning > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #faebcc;
+}
+.tk-component .panel-danger {
+  border-color: #ebccd1;
+}
+.tk-component .panel-danger > .panel-heading {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.tk-component .panel-danger > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ebccd1;
+}
+.tk-component .panel-danger > .panel-heading .badge {
+  color: #f2dede;
+  background-color: #a94442;
+}
+.tk-component .panel-danger > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ebccd1;
+}
+.tk-component .embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.tk-component .embed-responsive .embed-responsive-item,
+.tk-component .embed-responsive iframe,
+.tk-component .embed-responsive embed,
+.tk-component .embed-responsive object,
+.tk-component .embed-responsive video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+.tk-component .embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+.tk-component .embed-responsive-4by3 {
+  padding-bottom: 75%;
+}
+.tk-component .well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.tk-component .well blockquote {
+  border-color: #ddd;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.tk-component .well-lg {
+  padding: 24px;
+  border-radius: 6px;
+}
+.tk-component .well-sm {
+  padding: 9px;
+  border-radius: 3px;
+}
+.tk-component .close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.tk-component .close:hover,
+.tk-component .close:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+button.tk-component .close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+.tk-component .modal-open {
+  overflow: hidden;
+}
+.tk-component .modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+.tk-component .modal.fade .modal-dialog {
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  -o-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+.tk-component .modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.tk-component .modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.tk-component .modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+.tk-component .modal-content {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  outline: 0;
+}
+.tk-component .modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000000;
+}
+.tk-component .modal-backdrop.fade {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.tk-component .modal-backdrop.in {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.tk-component .modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.tk-component .modal-header .close {
+  margin-top: -2px;
+}
+.tk-component .modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+.tk-component .modal-body {
+  position: relative;
+  padding: 15px;
+}
+.tk-component .modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+.tk-component .modal-footer .btn + .btn {
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+.tk-component .modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.tk-component .modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+.tk-component .modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+@media (min-width: 768px) {
+  .tk-component .modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+  .tk-component .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  .tk-component .modal-sm {
+    width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .tk-component .modal-lg {
+    width: 900px;
+  }
+}
+.tk-component .tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: 1.42857143;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  font-size: 12px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.tk-component .tooltip.in {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.tk-component .tooltip.top {
+  margin-top: -3px;
+  padding: 5px 0;
+}
+.tk-component .tooltip.right {
+  margin-left: 3px;
+  padding: 0 5px;
+}
+.tk-component .tooltip.bottom {
+  margin-top: 3px;
+  padding: 5px 0;
+}
+.tk-component .tooltip.left {
+  margin-left: -3px;
+  padding: 0 5px;
+}
+.tk-component .tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #000000;
+  border-radius: 4px;
+}
+.tk-component .tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tk-component .tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000000;
+}
+.tk-component .tooltip.top-left .tooltip-arrow {
+  bottom: 0;
+  right: 5px;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000000;
+}
+.tk-component .tooltip.top-right .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000000;
+}
+.tk-component .tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000000;
+}
+.tk-component .tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #000000;
+}
+.tk-component .tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000000;
+}
+.tk-component .tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000000;
+}
+.tk-component .tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000000;
+}
+.tk-component .popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+  display: none;
+  max-width: 276px;
+  padding: 1px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: 1.42857143;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  font-size: 14px;
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.tk-component .popover.top {
+  margin-top: -10px;
+}
+.tk-component .popover.right {
+  margin-left: 10px;
+}
+.tk-component .popover.bottom {
+  margin-top: 10px;
+}
+.tk-component .popover.left {
+  margin-left: -10px;
+}
+.tk-component .popover-title {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+}
+.tk-component .popover-content {
+  padding: 9px 14px;
+}
+.tk-component .popover > .arrow,
+.tk-component .popover > .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tk-component .popover > .arrow {
+  border-width: 11px;
+}
+.tk-component .popover > .arrow:after {
+  border-width: 10px;
+  content: "";
+}
+.tk-component .popover.top > .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-bottom-width: 0;
+  border-top-color: #999999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  bottom: -11px;
+}
+.tk-component .popover.top > .arrow:after {
+  content: " ";
+  bottom: 1px;
+  margin-left: -10px;
+  border-bottom-width: 0;
+  border-top-color: #ffffff;
+}
+.tk-component .popover.right > .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-left-width: 0;
+  border-right-color: #999999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+}
+.tk-component .popover.right > .arrow:after {
+  content: " ";
+  left: 1px;
+  bottom: -10px;
+  border-left-width: 0;
+  border-right-color: #ffffff;
+}
+.tk-component .popover.bottom > .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  top: -11px;
+}
+.tk-component .popover.bottom > .arrow:after {
+  content: " ";
+  top: 1px;
+  margin-left: -10px;
+  border-top-width: 0;
+  border-bottom-color: #ffffff;
+}
+.tk-component .popover.left > .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #999999;
+  border-left-color: rgba(0, 0, 0, 0.25);
+}
+.tk-component .popover.left > .arrow:after {
+  content: " ";
+  right: 1px;
+  border-right-width: 0;
+  border-left-color: #ffffff;
+  bottom: -10px;
+}
+.tk-component .carousel {
+  position: relative;
+}
+.tk-component .carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.tk-component .carousel-inner > .item {
+  display: none;
+  position: relative;
+  -webkit-transition: 0.6s ease-in-out left;
+  -o-transition: 0.6s ease-in-out left;
+  transition: 0.6s ease-in-out left;
+}
+.tk-component .carousel-inner > .item > img,
+.tk-component .carousel-inner > .item > a > img {
+  line-height: 1;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .tk-component .carousel-inner > .item {
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+    -moz-transition: -moz-transform 0.6s ease-in-out;
+    -o-transition: -o-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+  }
+  .tk-component .carousel-inner > .item.next,
+  .tk-component .carousel-inner > .item.active.right {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    left: 0;
+  }
+  .tk-component .carousel-inner > .item.prev,
+  .tk-component .carousel-inner > .item.active.left {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    left: 0;
+  }
+  .tk-component .carousel-inner > .item.next.left,
+  .tk-component .carousel-inner > .item.prev.right,
+  .tk-component .carousel-inner > .item.active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    left: 0;
+  }
+}
+.tk-component .carousel-inner > .active,
+.tk-component .carousel-inner > .next,
+.tk-component .carousel-inner > .prev {
+  display: block;
+}
+.tk-component .carousel-inner > .active {
+  left: 0;
+}
+.tk-component .carousel-inner > .next,
+.tk-component .carousel-inner > .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.tk-component .carousel-inner > .next {
+  left: 100%;
+}
+.tk-component .carousel-inner > .prev {
+  left: -100%;
+}
+.tk-component .carousel-inner > .next.left,
+.tk-component .carousel-inner > .prev.right {
+  left: 0;
+}
+.tk-component .carousel-inner > .active.left {
+  left: -100%;
+}
+.tk-component .carousel-inner > .active.right {
+  left: 100%;
+}
+.tk-component .carousel-control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15%;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
+}
+.tk-component .carousel-control.left {
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+}
+.tk-component .carousel-control.right {
+  left: auto;
+  right: 0;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+}
+.tk-component .carousel-control:hover,
+.tk-component .carousel-control:focus {
+  outline: 0;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.tk-component .carousel-control .icon-prev,
+.tk-component .carousel-control .icon-next,
+.tk-component .carousel-control .glyphicon-chevron-left,
+.tk-component .carousel-control .glyphicon-chevron-right {
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  z-index: 5;
+  display: inline-block;
+}
+.tk-component .carousel-control .icon-prev,
+.tk-component .carousel-control .glyphicon-chevron-left {
+  left: 50%;
+  margin-left: -10px;
+}
+.tk-component .carousel-control .icon-next,
+.tk-component .carousel-control .glyphicon-chevron-right {
+  right: 50%;
+  margin-right: -10px;
+}
+.tk-component .carousel-control .icon-prev,
+.tk-component .carousel-control .icon-next {
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+  font-family: serif;
+}
+.tk-component .carousel-control .icon-prev:before {
+  content: '\2039';
+}
+.tk-component .carousel-control .icon-next:before {
+  content: '\203a';
+}
+.tk-component .carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  margin-left: -30%;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+.tk-component .carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #000 \9;
+  background-color: rgba(0, 0, 0, 0);
+}
+.tk-component .carousel-indicators .active {
+  margin: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff;
+}
+.tk-component .carousel-caption {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 20px;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.tk-component .carousel-caption .btn {
+  text-shadow: none;
+}
+@media screen and (min-width: 768px) {
+  .tk-component .carousel-control .glyphicon-chevron-left,
+  .tk-component .carousel-control .glyphicon-chevron-right,
+  .tk-component .carousel-control .icon-prev,
+  .tk-component .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 30px;
+  }
+  .tk-component .carousel-control .glyphicon-chevron-left,
+  .tk-component .carousel-control .icon-prev {
+    margin-left: -10px;
+  }
+  .tk-component .carousel-control .glyphicon-chevron-right,
+  .tk-component .carousel-control .icon-next {
+    margin-right: -10px;
+  }
+  .tk-component .carousel-caption {
+    left: 20%;
+    right: 20%;
+    padding-bottom: 30px;
+  }
+  .tk-component .carousel-indicators {
+    bottom: 20px;
+  }
+}
+.tk-component .clearfix:before,
+.tk-component .clearfix:after,
+.tk-component .tk-component .dl-horizontal dd:before,
+.tk-component .tk-component .dl-horizontal dd:after,
+.tk-component .tk-component .container:before,
+.tk-component .tk-component .container:after,
+.tk-component .tk-component .container-fluid:before,
+.tk-component .tk-component .container-fluid:after,
+.tk-component .tk-component .row:before,
+.tk-component .tk-component .row:after,
+.tk-component .tk-component .form-horizontal .form-group:before,
+.tk-component .tk-component .form-horizontal .form-group:after,
+.tk-component .tk-component .btn-toolbar:before,
+.tk-component .tk-component .btn-toolbar:after,
+.tk-component .tk-component .btn-group-vertical > .btn-group:before,
+.tk-component .tk-component .btn-group-vertical > .btn-group:after,
+.tk-component .tk-component .nav:before,
+.tk-component .tk-component .nav:after,
+.tk-component .tk-component .navbar:before,
+.tk-component .tk-component .navbar:after,
+.tk-component .tk-component .navbar-header:before,
+.tk-component .tk-component .navbar-header:after,
+.tk-component .tk-component .navbar-collapse:before,
+.tk-component .tk-component .navbar-collapse:after,
+.tk-component .tk-component .pager:before,
+.tk-component .tk-component .pager:after,
+.tk-component .tk-component .panel-body:before,
+.tk-component .tk-component .panel-body:after,
+.tk-component .tk-component .modal-header:before,
+.tk-component .tk-component .modal-header:after,
+.tk-component .tk-component .modal-footer:before,
+.tk-component .tk-component .modal-footer:after {
+  content: " ";
+  display: table;
+}
+.tk-component .clearfix:after,
+.tk-component .tk-component .dl-horizontal dd:after,
+.tk-component .tk-component .container:after,
+.tk-component .tk-component .container-fluid:after,
+.tk-component .tk-component .row:after,
+.tk-component .tk-component .form-horizontal .form-group:after,
+.tk-component .tk-component .btn-toolbar:after,
+.tk-component .tk-component .btn-group-vertical > .btn-group:after,
+.tk-component .tk-component .nav:after,
+.tk-component .tk-component .navbar:after,
+.tk-component .tk-component .navbar-header:after,
+.tk-component .tk-component .navbar-collapse:after,
+.tk-component .tk-component .pager:after,
+.tk-component .tk-component .panel-body:after,
+.tk-component .tk-component .modal-header:after,
+.tk-component .tk-component .modal-footer:after {
+  clear: both;
+}
+.tk-component .center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tk-component .pull-right {
+  float: right !important;
+}
+.tk-component .pull-left {
+  float: left !important;
+}
+.tk-component .hide {
+  display: none !important;
+}
+.tk-component .show {
+  display: block !important;
+}
+.tk-component .invisible {
+  visibility: hidden;
+}
+.tk-component .text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.tk-component .hidden {
+  display: none !important;
+}
+.tk-component .affix {
+  position: fixed;
+}
+@-ms-viewport {
+  width: device-width;
+}
+.tk-component .visible-xs,
+.tk-component .visible-sm,
+.tk-component .visible-md,
+.tk-component .visible-lg {
+  display: none !important;
+}
+.tk-component .visible-xs-block,
+.tk-component .visible-xs-inline,
+.tk-component .visible-xs-inline-block,
+.tk-component .visible-sm-block,
+.tk-component .visible-sm-inline,
+.tk-component .visible-sm-inline-block,
+.tk-component .visible-md-block,
+.tk-component .visible-md-inline,
+.tk-component .visible-md-inline-block,
+.tk-component .visible-lg-block,
+.tk-component .visible-lg-inline,
+.tk-component .visible-lg-inline-block {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .tk-component .visible-xs {
+    display: block !important;
+  }
+  table.tk-component .visible-xs {
+    display: table !important;
+  }
+  tr.tk-component .visible-xs {
+    display: table-row !important;
+  }
+  th.tk-component .visible-xs,
+  td.tk-component .visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (max-width: 767px) {
+  .tk-component .visible-xs-block {
+    display: block !important;
+  }
+}
+@media (max-width: 767px) {
+  .tk-component .visible-xs-inline {
+    display: inline !important;
+  }
+}
+@media (max-width: 767px) {
+  .tk-component .visible-xs-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .tk-component .visible-sm {
+    display: block !important;
+  }
+  table.tk-component .visible-sm {
+    display: table !important;
+  }
+  tr.tk-component .visible-sm {
+    display: table-row !important;
+  }
+  th.tk-component .visible-sm,
+  td.tk-component .visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .tk-component .visible-sm-block {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .tk-component .visible-sm-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .tk-component .visible-sm-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .tk-component .visible-md {
+    display: block !important;
+  }
+  table.tk-component .visible-md {
+    display: table !important;
+  }
+  tr.tk-component .visible-md {
+    display: table-row !important;
+  }
+  th.tk-component .visible-md,
+  td.tk-component .visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .tk-component .visible-md-block {
+    display: block !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .tk-component .visible-md-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .tk-component .visible-md-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 1200px) {
+  .tk-component .visible-lg {
+    display: block !important;
+  }
+  table.tk-component .visible-lg {
+    display: table !important;
+  }
+  tr.tk-component .visible-lg {
+    display: table-row !important;
+  }
+  th.tk-component .visible-lg,
+  td.tk-component .visible-lg {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  .tk-component .visible-lg-block {
+    display: block !important;
+  }
+}
+@media (min-width: 1200px) {
+  .tk-component .visible-lg-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 1200px) {
+  .tk-component .visible-lg-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (max-width: 767px) {
+  .tk-component .hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .tk-component .hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .tk-component .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .tk-component .hidden-lg {
+    display: none !important;
+  }
+}
+.tk-component .visible-print {
+  display: none !important;
+}
+@media print {
+  .tk-component .visible-print {
+    display: block !important;
+  }
+  table.tk-component .visible-print {
+    display: table !important;
+  }
+  tr.tk-component .visible-print {
+    display: table-row !important;
+  }
+  th.tk-component .visible-print,
+  td.tk-component .visible-print {
+    display: table-cell !important;
+  }
+}
+.tk-component .visible-print-block {
+  display: none !important;
+}
+@media print {
+  .tk-component .visible-print-block {
+    display: block !important;
+  }
+}
+.tk-component .visible-print-inline {
+  display: none !important;
+}
+@media print {
+  .tk-component .visible-print-inline {
+    display: inline !important;
+  }
+}
+.tk-component .visible-print-inline-block {
+  display: none !important;
+}
+@media print {
+  .tk-component .visible-print-inline-block {
+    display: inline-block !important;
+  }
+}
+@media print {
+  .tk-component .hidden-print {
+    display: none !important;
+  }
+}

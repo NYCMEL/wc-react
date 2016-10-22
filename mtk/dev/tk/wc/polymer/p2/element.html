@@ -1,0 +1,21 @@
+<script src="/Melify/mtk/dev/tk/jquery/scripts/jquery.min.js"></script>
+
+<link rel="import" href="/GitHub/hello-polymer-examples/bower_components/polymer/polymer.html">
+<link rel="import" href="/GitHub/hello-polymer-examples/bower_components/core-ajax/core-ajax.html">
+
+<polymer-element name="my-element" noscript>
+  <template>
+    <style> @import "/GitHub/bootstrap/dist/css/bootstrap.min.css" </style>
+    <style> @import "/GitHub/Font-Awesome/css/font-awesome.min.css" </style>
+    <style> @import "/wc/polymer/p2/element.css" </style>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">UNSET PANEL HEADING</div>
+      <div class="panel-body">UNSET PANEL CONTENT</div>
+    </div>
+
+    <core-ajax url="http://tk-samples/mtk/render?callback=tk::dummy::3" auto response="{{resp}}"></core-ajax>
+    <textarea class="form-control" value="{{resp}}"></textarea>
+
+  </template>
+</polymer-element>

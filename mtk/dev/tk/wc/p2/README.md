@@ -1,0 +1,1 @@
+Example of configuring a component with config object

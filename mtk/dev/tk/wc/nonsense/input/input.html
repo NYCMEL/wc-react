@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CUSTOM ELEMENTS</title>
+    
+    <script>
+      /////////////////////////////
+      //// CREATING AN ELEMENT ////
+      /////////////////////////////
+      
+      // THIS IS THE OBJECT THAT OUR NEW ELEMENT WILL INHERIT FROM
+      var demoPrototype = Object.create(HTMLElement.prototype);
+      
+      // ADDING LIFECYCLE CALLBACKS
+      // OPEN THE CONSOLE AND TRY INSERTING/DELETING <my-demo> ELEMENTS TO SEE THESE FIRED
+	demoPrototype.createdCallback = function() {
+        console.log('created');
+        
+        this.innerHTML = 'This is a my-demo element!';
+	};
+	
+	demoPrototype.attachedCallback = function() {
+        console.log('attached');
+	};
+	
+	demoPrototype.detachedCallback = function() {
+        console.log('detached');
+	};
+	
+	demoPrototype.attributeChangedCallback = function(name, oldVal, newVal) {
+        // TRY CHANGING AN ATTRIBUTE ON THE ELEMENT!
+        console.log(arguments);
+	};
+	
+	
+	// ADDING A METHOD - YOU CAN CALL THIS DIRECTLY ON THE ELEMENT
+	// document.querySelector('my-demo').talk();
+	demoPrototype.talk = function() {
+        alert('hi');
+	};
+	
+	// registering
+	document.registerElement('my-demo', {
+        prototype: demoPrototype
+	});
+	
+	//////////////////////////////
+	//// EXTENDING AN ELEMENT ////
+	//////////////////////////////
+	var inputPrototype = Object.create(HTMLInputElement.prototype);
+	
+	inputPrototype.createdCallback = function() {
+        this.value = 'this is a my-input extension!';
+	};
+	
+	document.registerElement('my-input', {
+        prototype: inputPrototype,
+        extends: 'input'
+	});
+	
+    </script>
+  </head>
+  <body>
+    
+    <h1>Custom Elements</h1>
+    
+    <my-demo></my-demo>
+
+    <input is="my-input" />
+    
+  </body>
+</html>

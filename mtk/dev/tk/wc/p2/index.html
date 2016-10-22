@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title>Web Components Demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    
+    <!-- Custom Elements Polyfill -->
+    <script src="polyfill/document-register-element.max.js"></script>
+    <!-- Progressbar Component JS and CSS -->
+    <link href="progressbar/style.css" rel="stylesheet" />
+    <script src="progressbar/Progressbar.js"></script>
+  </head>
+
+  <body>
+    <!-- Create instances of a component -->
+    <progress-bar id="1"></progress-bar>
+    <script>
+     $(document).ready(function () {
+       var progressbar = document.getElementById("1");
+       // Configure the component with a data object
+       progressbar.init({
+         max: 100, 
+         color:"orange"
+       });
+     });
+   </script>
+  </body>
+
+</html>

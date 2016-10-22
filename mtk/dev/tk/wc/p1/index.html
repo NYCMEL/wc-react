@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title>Web Components Demo</title>
+
+    <!-- Custom Elements Polyfill -->
+    <script src="polyfill/document-register-element.max.js"></script>
+    <!-- Progressbar Component JS and CSS -->
+    <link href="progressbar/style.css" rel="stylesheet" />
+    <script src="progressbar/Progressbar.js"></script>
+  </head>
+
+  <body>
+
+    <script>
+      function move(id) {
+      var progressbar = document.getElementById(id);
+      progressbar.move();
+      }
+    </script>
+
+    <button onclick="move(1)">Start 1st</button>
+    <button onclick="move(2)">Start 2nd</button>
+    <button onclick="move(3)">Start 3rd</button>
+    <br>
+    <!-- OPTION 1: Delclarative way to create instances of a component -->
+    <progress-bar id="1"></progress-bar>
+
+    <script>
+      // OPTION 2: First Imperative way to create an instance of a web component 
+      const pb2 = document.createElement("progress-bar")
+      pb2.id = "2"
+      document.body.appendChild(pb2);
+
+      // OPTION 3: Second Imperative way to create an instance of a web component 
+      const pb3 = new Progressbar()
+      pb3.id = "3"
+      document.body.appendChild(pb3)
+    </script>
+
+  </body>
+
+</html>

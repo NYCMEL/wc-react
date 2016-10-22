@@ -1,0 +1,27 @@
+<tk-message>
+  <h2 class="heading">This is a Heading</h2>
+  <p class="main-message">This is my Message !</p>
+</tk-message>
+
+<template id="message">
+  <style> @import "/GitHub/bootstrap/dist/css/bootstrap.min.css" </style>
+  <style> @import "/GitHub/Font-Awesome/css/font-awesome.min.css" </style>
+  
+  <div class="msg-wrapper alert alert-danger">
+    <i class="fa fa-smile-o"></i>
+    <h1>
+      <content select=".heading"></content>
+    </h1>  
+
+    <span class="msg">
+      <content select=".main-message"></content>
+    </span>
+  </div>
+</template>
+
+<script>
+  var host = document.querySelector("tk-message");
+  var root = host.createShadowRoot();
+  var template = document.querySelector("#message");
+  root.appendChild(template.content);
+</script>
