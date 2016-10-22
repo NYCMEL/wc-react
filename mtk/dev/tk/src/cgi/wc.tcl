@@ -64,4 +64,19 @@ namespace eval mtk {
 	uplevel 1 [lindex $args end]
 	_cgi_close_proc
     }
+
+    ######################################################
+    ##### 
+    ######################################################
+    proc tab {args} {
+	cgi_put "<mtk-tab"
+	_cgi_close_proc_push "cgi_put </mtk-tab>"
+
+	if {[llength $args]} {
+	    cgi_put "[_cgi_lrange $args 0 [expr {[llength $args]-2}]]"
+	}
+	cgi_put ">"
+	uplevel 1 [lindex $args end]
+	_cgi_close_proc
+    }
 }
