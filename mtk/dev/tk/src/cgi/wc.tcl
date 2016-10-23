@@ -17,15 +17,13 @@
 #
 ###HEADE###################################################################
 
-#<mtk-panel title="Hello Mel 1" id="my-panel-1" heading="HELLO PANEL 1" footer="THIS IS A PANEL FOOTER 1" collapsible="true">
-
-namespace eval mtk {
+namespace eval c {
     ######################################################
     ##### 
     ######################################################
     proc panel {args} {
-	cgi_put "<mtk-panel"
-	_cgi_close_proc_push "cgi_put </mtk-panel>"
+	cgi_put "<c-panel"
+	_cgi_close_proc_push "cgi_put </c-panel>"
 
 	if {[llength $args]} {
 	    cgi_put "[_cgi_lrange $args 0 [expr {[llength $args]-2}]]"
@@ -39,8 +37,8 @@ namespace eval mtk {
     ##### 
     ######################################################
     proc accordion {args} {
-	cgi_put "<mtk-accordion"
-	_cgi_close_proc_push "cgi_put </mtk-accordion>"
+	cgi_put "<c-accordion"
+	_cgi_close_proc_push "cgi_put </c-accordion>"
 
 	if {[llength $args]} {
 	    cgi_put "[_cgi_lrange $args 0 [expr {[llength $args]-2}]]"
@@ -54,8 +52,8 @@ namespace eval mtk {
     ##### 
     ######################################################
     proc tabs {args} {
-	cgi_put "<mtk-tabs"
-	_cgi_close_proc_push "cgi_put </mtk-tabs>"
+	cgi_put "<c-tabs"
+	_cgi_close_proc_push "cgi_put </c-tabs>"
 
 	if {[llength $args]} {
 	    cgi_put "[_cgi_lrange $args 0 [expr {[llength $args]-2}]]"
@@ -69,8 +67,8 @@ namespace eval mtk {
     ##### 
     ######################################################
     proc tab {args} {
-	cgi_put "<mtk-tab"
-	_cgi_close_proc_push "cgi_put </mtk-tab>"
+	cgi_put "<c-tab"
+	_cgi_close_proc_push "cgi_put </c-tab>"
 
 	if {[llength $args]} {
 	    cgi_put "[_cgi_lrange $args 0 [expr {[llength $args]-2}]]"

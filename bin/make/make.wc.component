@@ -33,19 +33,19 @@ puts "\nCREATE $name COMPONENT NOW...";flush stdout
 file mkdir lib
 
 # PROCESS THE HTML FILE
-puts "\tcreating wc.$name.html...";flush stdout
-set r [fread "/Melify/mtk/dev/tk/lib/components/wc/wc.MAKER.html"]
+puts "\tcreating demo.$name.html...";flush stdout
+set r [fread "/Melify/mtk/dev/tk/lib/components/wc/demo.MAKER.html"]
 regsub -nocase -all "maker" $r "$name" r
-fwrite wc.$name.html $r
+fwrite demo.$name.html $r
 
 cd lib
 
 # PROCESS THE COMPONENT FILES
 foreach i {css less html js} {
-    puts "\tcreating mtk.$name.$i...";flush stdout
-    set r [fread "/Melify/mtk/dev/tk/lib/components/wc/lib/mtk.MAKER.$i"]
+    puts "\tcreating c.$name.$i...";flush stdout
+    set r [fread "/Melify/mtk/dev/tk/lib/components/wc/lib/c.MAKER.$i"]
     regsub -nocase -all "maker" $r "$name" r
-    fwrite mtk.$name.$i $r
+    fwrite c.$name.$i $r
 }
 
 puts "DONE.\n";flush stdout
