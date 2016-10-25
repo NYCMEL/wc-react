@@ -78,5 +78,6 @@ module.exports = "It works from content.js.";
 document.write(__webpack_require__(0));
 
 
+
 /***/ }
 /******/ ]);
