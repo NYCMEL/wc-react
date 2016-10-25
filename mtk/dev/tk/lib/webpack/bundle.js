@@ -61,7 +61,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,15 +73,8 @@ module.exports = "It works from content.js.";
 
 /***/ },
 /* 1 */
-/***/ function(module, exports) {
-
-throw new Error("Module parse failed: /Volumes/MELIFY-128/MTK/Melify/mtk/dev/tk/lib/webpack/style.css Unexpected token (1:5)\nYou may need an appropriate loader to handle this file type.\n| body {\n|     background: yellow;\n| }");
-
-/***/ },
-/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-__webpack_require__(1)
 document.write(__webpack_require__(0));
 
 

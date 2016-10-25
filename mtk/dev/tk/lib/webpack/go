@@ -1,1 +1,1 @@
-webpack --progress --colors
+webpack --module-bind 'css=style!css' --progress --colors
