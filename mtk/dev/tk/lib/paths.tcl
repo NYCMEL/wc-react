@@ -8,6 +8,7 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/components/jq\
     $TKSERVER/tk/lib/components/ch\
     $TKSERVER/tk/lib/components/mtk\
+    $TKSERVER/tk/lib/components/polymer\
     $TKSERVER/tk/lib/components/mtk/src\
     $TKSERVER/tk/lib/components/pl\
     $TKSERVER/tk/lib/components/d3\
