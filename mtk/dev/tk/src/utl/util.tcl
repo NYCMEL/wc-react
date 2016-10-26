@@ -621,8 +621,8 @@ m::proc -public tk::test:procs {
 	set cnt 0
 
 	division [style padding 50px] id="test-procs" {
-	    division class="page-header" {
-		h1 "Test <small>- play around and be happy <i class='fa fa-smile-o'></i></small>"
+	    division class="page-header" [style margin-top 0] {
+		h1 "[string toupper $::page] <small>- play around and be happy <i class='fa fa-smile-o'></i></small>"
 	    }
 
 	    number_list {
