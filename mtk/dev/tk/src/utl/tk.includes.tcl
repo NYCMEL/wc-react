@@ -35,7 +35,7 @@ switch $require {
 ######################################################
 ##### 
 ######################################################
-proc include {fname} {
+proc include {fname {type ""}} {
     Trace
 
     # DO NOT ALLOW DUPLICATES
@@ -86,7 +86,11 @@ proc include {fname} {
 	    }
 	}
 	".html" {
-	    put [file:read $fname]
+	    if {$type == ""} {
+		put [file:read $fname]
+	    } else {
+		put "<link rel='$type' href='$fname' />"
+	    }
 	}
 	".tcl" {
 	    source $fname
