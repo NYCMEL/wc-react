@@ -17,6 +17,12 @@
 #
 ###HEADE###################################################################
 
+include "/MTK/Polymer/polymer/polymer.html"			"import"
+include "/MTK/Polymer/paper-button/paper-button.html"		"import"
+include "/MTK/Polymer/paper-card/paper-card.html"		"import"
+
+include "/Melify/mtk/dev/app/_samples/inc/polymer/button.style" is="custom-style"
+
 namespace eval polymer {
     ######################################################
     ##### 
