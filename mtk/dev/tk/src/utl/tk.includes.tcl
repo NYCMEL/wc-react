@@ -72,6 +72,9 @@ proc include {fname {type ""}} {
 		}
 	    }
 	}
+	".style" {
+	    put "<style $type>[file:read $fname]</style>"
+	}
 	".css" {
 	    switch $::require {
 		"include" {
