@@ -34,8 +34,9 @@ file mkdir lib
 
 # PROCESS THE HTML FILE
 puts "\tcreating demo.$name.html...";flush stdout
-set r [fread "/Melify/mtk/dev/tk/lib/components/wc/demo.p.MAKER.html"]
+set r [fread "/Melify/mtk/dev/tk/lib/components/web-components/demo.MAKER.p.html"]
 regsub -all "maker" $r "$name" r
+regsub -all "MAKER" $r "$name" r
 regsub -all "Maker" $r [string totitle "$name"] r
 fwrite demo.$name.html $r
 
@@ -44,10 +45,11 @@ cd lib
 # PROCESS THE COMPONENT FILES
 foreach i {css less js} {
     puts "\tcreating c.$name.$i...";flush stdout
-    set r [fread "/Melify/mtk/dev/tk/lib/components/wc/lib/p.MAKER.$i"]
+    set r [fread "/Melify/mtk/dev/tk/lib/components/web-components/lib/p.MAKER.$i"]
     regsub -all "maker" $r "$name" r
+    regsub -all "MAKER" $r "$name" r
     regsub -all "Maker" $r [string totitle "$name"] r
-    fwrite c.$name.$i $r
+    fwrite p.$name.$i $r
 }
 
 puts "DONE.\n";flush stdout
