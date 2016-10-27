@@ -38,7 +38,7 @@ set r [fread "/Melify/mtk/dev/tk/lib/components/web-components/demo.MAKER.p.html
 regsub -all "maker" $r "$name" r
 regsub -all "MAKER" $r "$name" r
 regsub -all "Maker" $r [string totitle "$name"] r
-fwrite demo.$name.html $r
+fwrite demo.p.$name.html $r
 
 cd lib
 
