@@ -43,7 +43,7 @@ fwrite demo.$name.html $r
 cd lib
 
 # PROCESS THE COMPONENT FILES
-foreach i {css less js} {
+foreach i {css less js html} {
     puts "\tcreating c.$name.$i...";flush stdout
     set r [fread "/Melify/mtk/dev/tk/lib/components/web-components/lib/p.MAKER.$i"]
     regsub -all "maker" $r "$name" r
