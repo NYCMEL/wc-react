@@ -33,7 +33,7 @@ puts "\nCREATE $name COMPONENT NOW...";flush stdout
 file mkdir lib
 
 # PROCESS THE HTML FILE
-puts "\tcreating demo.$name.html...";flush stdout
+puts "\tcreating demo.p$name.html...";flush stdout
 set r [fread "/Melify/mtk/dev/tk/lib/components/web-components/demo.MAKER.p.html"]
 regsub -all "maker" $r "$name" r
 regsub -all "MAKER" $r "$name" r
