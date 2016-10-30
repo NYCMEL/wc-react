@@ -217,6 +217,9 @@ proc tag {args} {
     _cgi_close_proc
 }
 
+######################################################
+##### 
+######################################################
 proc section {args} {
     cgi_put "<section"
     _cgi_close_proc_push "cgi_put </section>"
