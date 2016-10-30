@@ -35,7 +35,7 @@ switch $require {
 ######################################################
 ##### 
 ######################################################
-proc include {fname {type ""}} {
+proc include {fname {type "is='custom-style'"}} {
     Trace
 
     # DO NOT ALLOW DUPLICATES
