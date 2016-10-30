@@ -210,7 +210,7 @@ proc tag {args} {
     _cgi_close_proc_push "cgi_put </$t>"
 
     if {[llength $args]} {
-	cgi_put "[_cgi_lrange $args 1 [expr {[llength $args]-3}]]"
+	cgi_put "[_cgi_lrange $args 1 [expr {[llength $args]-2}]]"
     }
     cgi_put ">"
     uplevel 1 [lindex $args end]
