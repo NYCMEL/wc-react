@@ -135,8 +135,37 @@ m::proc -private tk::include::polymer {
 } {
     Trace
 
-    include "/MTK/Polymer/webcomponentsjs/webcomponents-lite.js"
-    include "/MTK/Polymer/polymer/polymer.html" "import"
+    put {
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="generator" content="Polymer Starter Kit">
+
+	<!-- Chrome for Android theme color -->
+	<meta name="theme-color" content="#2E3AA1">
+
+	<!-- Tile color for Win8 -->
+	<meta name="msapplication-TileColor" content="#3372DF">
+	
+	<!-- Add to homescreen for Chrome on Android -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="PSK">
+	
+	<!-- Add to homescreen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+	<link rel="apple-touch-icon" href="/images/touch/apple-touch-icon.png">
+
+	<!-- Tile icon for Win8 (144x144) -->
+	<meta name="msapplication-TileImage" content="/images/touch/ms-touch-icon-144x144-precomposed.png">
+
+	<!-- For shared styles, shared-styles.html import in elements.html -->
+	<style is="custom-style" include="shared-styles"></style>
+
+	<script src="/MTK/Polymer/webcomponentsjs/webcomponents-lite.js"></script>
+	<link rel="impoert" href="/MTK/Polymer/polymer/polymer.html">
+    }
 }
 
 ##################################################

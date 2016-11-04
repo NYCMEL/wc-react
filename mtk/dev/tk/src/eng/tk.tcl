@@ -90,11 +90,13 @@ proc tk::start {} {
 		}
 	    }
 	    
-	    cgi_body ng-app=[expr {([info exist ::ngapp] == "0") ? "melified" : "$::ngapp"}] ng-controller="MelifiedCtrl" {
-		put {
-		    <!--[if IE]>
-		    <script>document.location.href="/tk/noie.html"</script>
-		    <![endif]-->
+	    cgi_body unresolved ng-app=[expr {([info exist ::ngapp] == "0") ? "melified" : "$::ngapp"}] ng-controller="MelifiedCtrl" {
+		if {[info exist ::void] == 0} {
+		    put {
+			<!--[if IE]>
+			<script>document.location.href="/tk/noie.html"</script>
+			<![endif]-->
+		    }
 		}
 
 		#put "<script>ma.event({type:'SESSION', custom:'new page request'})</script>"
@@ -105,7 +107,7 @@ proc tk::start {} {
 
 		tk::session::restore
 		
-		if {$::tk(local) == 1} {
+		if {$::tk(local) == 1 && [info exist ::void] == 0} {
 		    # LOWER RIGHT CORNER INFO WHEN LOCAL
 		    set style [style position fixed right 0 bottom 0 color red font-size 12px background yellow padding 2px z-index 9999999]
 
