@@ -139,7 +139,6 @@ m::proc -private tk::include::polymer {
 	<meta charset="utf-8">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="generator" content="Polymer Starter Kit">
 
 	<!-- Chrome for Android theme color -->
 	<meta name="theme-color" content="#2E3AA1">
@@ -160,9 +159,8 @@ m::proc -private tk::include::polymer {
 	<!-- Tile icon for Win8 (144x144) -->
 	<meta name="msapplication-TileImage" content="/images/touch/ms-touch-icon-144x144-precomposed.png">
 
-	<link rel="import" href="/elements/elements.html">
-
 	<!-- For shared styles, shared-styles.html import in elements.html -->
+	<link rel="import" href="/elements/elements.html">
 	<style is="custom-style" include="shared-styles"></style>
 
 	<script src="/MTK/Polymer/webcomponentsjs/webcomponents-lite.js"></script>
