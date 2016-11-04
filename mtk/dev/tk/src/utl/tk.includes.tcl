@@ -136,7 +136,7 @@ m::proc -private tk::include::polymer {
     Trace
 
     include "/MTK/Polymer/webcomponentsjs/webcomponents-lite.js"
-    include href="/MTK/Polymer/polymer/polymer.html" "import"
+    include "/MTK/Polymer/polymer/polymer.html" "import"
 }
 
 ##################################################
