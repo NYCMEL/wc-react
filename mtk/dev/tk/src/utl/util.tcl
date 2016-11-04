@@ -703,7 +703,7 @@ m::proc -public tk::pretty {
     Trace
     tk::include::prettify
  
-    preformatted class="prettyprint prettify $type linenums" {
+    preformatted class="prettyprint prettify $type linenums" [style padding 20px] {
 	put $str
     }
 }

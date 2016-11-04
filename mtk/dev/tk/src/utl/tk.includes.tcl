@@ -129,6 +129,19 @@ m::proc -private tk::include::angular {
 ##################################################
 ##### 
 ##################################################
+m::proc -private tk::include::polymer {
+} {
+    Documentaion goes here
+} {
+    Trace
+
+    include "/MTK/Polymer/webcomponentsjs/webcomponents-lite.js"
+    include href="/MTK/Polymer/polymer/polymer.html" "import"
+}
+
+##################################################
+##### 
+##################################################
 m::proc -private tk::include::codemirror {
 } {
     Documentaion goes here
