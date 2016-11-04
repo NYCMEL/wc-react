@@ -149,6 +149,7 @@ m::proc -private tk::include::polymer {
 	<!-- Add to homescreen for Chrome on Android -->
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="application-name" content="PSK">
+	<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 	
 	<!-- Add to homescreen for Safari on iOS -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -159,12 +160,18 @@ m::proc -private tk::include::polymer {
 	<!-- Tile icon for Win8 (144x144) -->
 	<meta name="msapplication-TileImage" content="/images/touch/ms-touch-icon-144x144-precomposed.png">
 
-	<!-- For shared styles, shared-styles.html import in elements.html -->
-	<link rel="import" href="/elements/elements.html">
-	<style is="custom-style" include="shared-styles"></style>
+	<!-- build:css styles/main.css -->
+	<link rel="stylesheet" href="/inc/styles/main.css">
+	<!-- endbuild-->
 
 	<script src="/MTK/Polymer/webcomponentsjs/webcomponents-lite.js"></script>
-	<link rel="import" href="/MTK/Polymer/polymer/polymer.html">
+
+	<!-- Because this project uses vulcanize this should be your only html import
+	in this file. All other imports should go in elements.html -->
+	<link rel="import" href="/elements/elements.html">
+
+	<!-- For shared styles, shared-styles.html import in elements.html -->
+	<style is="custom-style" include="shared-styles"></style>
     }
 }
 
