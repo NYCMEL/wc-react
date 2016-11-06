@@ -90,8 +90,7 @@ proc tk::start {} {
 		}
 	    }
 	    
-	    #cgi_body unresolved ng-app=[expr {([info exist ::ngapp] == "0") ? "melified" : "$::ngapp"}] ng-controller="MelifiedCtrl"
-	    cgi_body unresolved {
+	    cgi_body ng-app=[expr {([info exist ::ngapp] == "0") ? "melified" : "$::ngapp"}] ng-controller="MelifiedCtrl" {
 		if {[info exist ::void] == 0} {
 		    put {
 			<!--[if IE]>
