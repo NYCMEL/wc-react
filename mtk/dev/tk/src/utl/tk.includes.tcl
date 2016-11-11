@@ -143,6 +143,9 @@ m::proc -private tk::include::polymer {
 	<!-- Chrome for Android theme color -->
 	<meta name="theme-color" content="#2E3AA1">
 
+	<!-- Web Application Manifest -->
+	<link rel="manifest" href="/manifest.json">
+
 	<!-- Tile color for Win8 -->
 	<meta name="msapplication-TileColor" content="#3372DF">
 	
