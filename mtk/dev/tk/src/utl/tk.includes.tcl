@@ -246,12 +246,22 @@ m::proc -private tk::include::bootstrap {
 } {
     Trace
 
-    if {$local == 0} {
-	include "/tk/inc/bootstrap.min.css"
-	include "/tk/inc/bootstrap.min.js"
-    } else {
-	include "/inc/bootstrap/css/bootstrap.min.css"
-	include "/inc/bootstrap/js/bootstrap.min.js"
+    switch $local {
+	0 {
+	    # BOOTSTRAP 3
+	    include "/tk/inc/bootstrap.min.css"
+	    include "/tk/inc/bootstrap.min.js"
+	}
+	1 {
+	    # BOOTSTRAP LOCAL
+	    include "/inc/bootstrap/css/bootstrap.min.css"
+	    include "/inc/bootstrap/js/bootstrap.min.js"
+	}
+	2 {
+	    # BOOTSTRAP 4
+	    include "/GitHub/bootstrap/dist/css/bootstrap.min.css"
+	    include "/GitHub/bootstrap/dist/js/bootstrap.min.js"
+	}
     }
 }
 
