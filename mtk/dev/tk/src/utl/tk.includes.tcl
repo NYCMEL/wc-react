@@ -259,7 +259,10 @@ m::proc -private tk::include::bootstrap {
 	}
 	2 {
 	    # BOOTSTRAP 4
+	    include "/GitHub/tether/dist/css/tether.min.css"
 	    include "/GitHub/bootstrap/dist/css/bootstrap.min.css"
+
+	    include "/GitHub/tether/dist/js/tether.min.js"
 	    include "/GitHub/bootstrap/dist/js/bootstrap.min.js"
 	}
     }
