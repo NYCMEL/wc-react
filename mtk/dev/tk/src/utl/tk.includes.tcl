@@ -257,14 +257,6 @@ m::proc -private tk::include::bootstrap {
 	    include "/inc/bootstrap/css/bootstrap.min.css"
 	    include "/inc/bootstrap/js/bootstrap.min.js"
 	}
-	2 {
-	    # BOOTSTRAP 4
-	    include "/GitHub/tether/dist/css/tether.min.css"
-	    include "/GitHub/bootstrap/dist/css/bootstrap.min.css"
-
-	    include "/GitHub/tether/dist/js/tether.min.js"
-	    include "/GitHub/bootstrap/dist/js/bootstrap.min.js"
-	}
     }
 }
 
@@ -277,8 +269,12 @@ m::proc -private tk::include::bootstrap:4 {
 } {
     Trace
 
-    include "/GitHub/bootstrap.4/dist/css/bootstrap-theme.min.css"
-    include "/GitHub/bootstrap.4/dist/js/bootstrap.min.js"
+    # BOOTSTRAP 4
+    include "/GitHub/tether/dist/css/tether.min.css"
+    include "/GitHub/bootstrap/dist/css/bootstrap.min.css"
+    
+    include "/GitHub/tether/dist/js/tether.min.js"
+    include "/GitHub/bootstrap/dist/js/bootstrap.min.js"
 }
 
 ##################################################
