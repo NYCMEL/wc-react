@@ -1,6 +1,0 @@
-tclkit tclhttpd3.5.1.kit \
-       -library /Melify/mtk/dev/tk/kits/tclhttpd/htdocs \
-       -docRoot /Melify/mtk/dev/tk/kits/tclhttpd/htdocs \
-       -debug 1
-
-#      -config /Melify/mtk/dev/tk/kits/tclhttpd/config
