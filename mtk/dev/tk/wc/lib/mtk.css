@@ -42,7 +42,7 @@ mtk-accordion mtk-panel .panel-body {
   border-radius: 0;
   background: #000;
   border: 1px #666 solid;
-  border-bottom: 5px #ffd200 solid !important;
+  border-bottom: 5px #FFD200 solid !important;
 }
 .mtk-header .dropdown-menu li a {
   text-decoration: none!important;
@@ -90,7 +90,7 @@ mtk-accordion mtk-panel .panel-body {
   display: block;
   font-size: 30px;
   font-family: Arial Narrow;
-  color: #ffd200;
+  color: #FFD200;
 }
 .mtk-header .navbar .dtcc-topmenu-container {
   margin-top: 10px;
@@ -103,7 +103,7 @@ mtk-accordion mtk-panel .panel-body {
 .mtk-header .navbar .dtcc-topmenu-container li a {
   font-family: Arial Narrow;
   font-size: 15px;
-  color: #cccccc;
+  color: #CCC;
 }
 .mtk-header .navbar .dtcc-botmenu-container li {
   margin-right: 29px;
@@ -126,7 +126,7 @@ mtk-accordion mtk-panel .panel-body {
   color: #CCC;
 }
 .mtk-header .navbar .dtcc-user-container .fa-cog:hover {
-  color: #ffd200 !important;
+  color: #FFD200 !important;
 }
 .mtk-header .navbar .dtcc-logout-container {
   margin-top: 5px;
@@ -139,9 +139,9 @@ mtk-accordion mtk-panel .panel-body {
 .mtk-header .mtk-header-network {
   height: 55px;
   border-radius: 0;
-  background: #333;
-  border-bottom: 5px #ffd200 solid;
-  background: url("/tk/wc/assets/patterns/ClearingServices.png");
+  border-bottom: 5px #FFD200 solid;
+  background-color: #000;
+  background-image: url("/tk/wc/assets/patterns/ClearingServices.png");
 }
 .mtk-header .mtk-header-network .dtcc-botmenu-container {
   font-size: 16px;
@@ -183,5 +183,5 @@ mtk-accordion mtk-panel .panel-body {
 }
 .mtk-header .dtcc-topmenu-container ul li a:hover,
 .mtk-header .dtcc-botmenu-container ul li a:hover {
-  color: #ffd200 !important;
+  color: #FFD200 !important;
 }
