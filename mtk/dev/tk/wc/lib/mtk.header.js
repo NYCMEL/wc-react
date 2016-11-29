@@ -30,7 +30,7 @@ Header.createdCallback = function() {
 	"@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';" +
 	"@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';" +
 	"@import '/tk/wc/lib/mtk.css';" +
-	"@import '/tk/wc/lib/dropdown.css';" +
+	"@import '/tk/wc/lib/mtk.dropdown.css';" +
 	"</style>" +
 	template.innerHTML;
 
