@@ -773,3 +773,13 @@ m::proc -public tk::zip {
 	exit
     }
 }
+
+######################################################
+##### 
+######################################################
+proc tk::directory {} {
+    set dir [file dirname [dict get [info frame 0] file]]
+    set s1 [string first "/Melify" $dir]
+    return [string range $dir $s1 end]
+}
+
