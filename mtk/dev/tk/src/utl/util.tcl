@@ -779,10 +779,11 @@ m::proc -public tk::zip {
 ######################################################
 proc tk::cdir {} {
     uplevel {
-	set dir [file dirname [dict get [info frame 0] file]]
-	set s1 [string first "/Melify" $dir]
+	set dispScriptFile [file normalize [info script]]
+	set scriptFolder [file dirname $dispScriptFile]
+	set s1 [string first "/Melify" $scriptFolder]
 	
-	return [string range $dir $s1 end]
+	return [string range $scriptFolder $s1 end]
     }
 }
 
