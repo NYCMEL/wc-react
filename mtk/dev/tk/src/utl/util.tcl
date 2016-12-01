@@ -778,7 +778,7 @@ m::proc -public tk::zip {
 ##### 
 ######################################################
 proc tk::cdir {} {
-    set dir [file dirname [dict get [info frame 0] file]]
+    set dir [file dirname [dict get [info frame 4] file]]
     set s1 [string first "/Melify" $dir]
     
     return [string range $dir $s1 end]
