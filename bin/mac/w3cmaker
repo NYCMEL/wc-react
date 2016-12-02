@@ -1,0 +1,67 @@
+#!/Melify/bin/mac/tclkit
+
+###############################################
+##### 
+###############################################
+proc fread {file} {
+    set fp [open $file r]
+    set txt [read $fp]
+    close $fp
+    return $txt
+}
+
+###############################################
+##### 
+###############################################
+proc fwrite {file txt} {
+    set fp [open $file w]
+    puts $fp $txt
+    close $fp
+}
+
+################################################################################
+####
+################################################################################
+if {$argc != 1} {
+    puts "\nusage: component <component name like tabs etc.>\n"
+    exit
+}
+
+set name [lindex $argv 0]
+set cdir [file tail [pwd]]
+
+puts "\nCREATE $name COMPONENT NOW...";flush stdout
+
+# JUST IN CASE
+file mkdir lib
+
+# PROCESS THE HTML FILE
+puts "\tcreating $cdir.$name.html...";flush stdout
+
+set r [fread "mtk.maker.html"]
+regsub -all "maker" $r "$name" r
+regsub -all "mtk"   $r "$cdir" r
+regsub -all "Maker" $r [string totitle "$name"] r
+
+#RE REPLACE THESE
+regsub -all "w3c.bootstrap.css" $r "mtk.bootstrap.css" r
+regsub -all "w3c.common.js"     $r "mtk.common.js"     r
+regsub -all "w3c.common.css"    $r "mtk.common.css"    r
+regsub -all "\"w3c\""           $r "\"mtk\""           r
+
+fwrite $name.html $r
+
+# PROCESS THE COMPONENT FILES
+foreach i {js} {
+    puts "\tcreating $name.$i...";flush stdout
+    set r [fread "mtk.maker.$i"]
+
+    regsub -all "mtk"     $r "$cdir" r
+    regsub -all "maker"   $r "$name" r
+    regsub -all "Maker"	  $r [string totitle "$name"] r
+    regsub -all "\"w3c\"" $r "\"mtk\"" r
+
+    fwrite lib/$name.$i $r
+}
+
+puts "DONE.\n";flush stdout
