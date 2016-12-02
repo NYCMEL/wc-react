@@ -7,4 +7,4 @@ if {$argc != 1} {
 
 set fname [file rootname [lindex $argv 0]]
 
-exec /usr/local/bin/babel $fname.js --out-file $fname.es6 --presets=/usr/local/lib/node_modules/babel-preset-es2016
+exec /usr/local/bin/babel $fname.js --out-file $fname.es6 --presets=/usr/local/lib/node_modules/babel-preset-latest
