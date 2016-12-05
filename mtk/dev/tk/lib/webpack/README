@@ -1,4 +1,0 @@
-1. download https://webpack.github.io
-2. cd <there> sudo npm install -g
-3. sudo npm install -g css-loader
-4. sudo npm install -g style-loader
