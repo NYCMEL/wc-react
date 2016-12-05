@@ -794,7 +794,7 @@ proc tk::viewsource {} {
     division class="container" {
 	division class="row" {
 	    division class="col-md-12" {
-		division class="page-header" {
+		division class="page-header" [style margin-top 0] {
 		    h1 [file tail $::file]
 		}
 	    }
