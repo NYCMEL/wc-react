@@ -787,3 +787,28 @@ proc tk::cdir {} {
     }
 }
 
+######################################################
+##### 
+######################################################
+proc tk::viewsource {} {
+    division class="container" {
+	division class="row" {
+	    division class="col-md-12" {
+		division class="page-header" {
+		    h1 [file tail $::file]
+		}
+	    }
+	}
+	division class="row" {
+	    division class="col-md-12" {
+		tk::pretty -type "lang-html" -guts [quote_html [file:read $::file]]
+	    }
+	}
+    }
+
+    javascript {
+	put {
+	    prettyPrint();
+	}
+    }
+}
