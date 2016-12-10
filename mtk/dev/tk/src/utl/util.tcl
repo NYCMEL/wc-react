@@ -812,3 +812,21 @@ proc tk::viewsource {} {
 	}
     }
 }
+
+######################################################
+##### HUMAN READABLE FILE SIZE
+######################################################
+proc tk::hformat {x} {
+    # MEGABYTES
+    set q [expr {($x * 1.0) / pow(2,20)}]
+
+    if {$q < 7} {
+	# 0.XY SHOW TWO DECIMAL PLACES
+	set q [expr {entier($q * 100) / 100.0}]
+    } else {
+	# ROUND IT OUT, ITS BIG
+	set q [expr {round($q)}]
+    }
+
+    return "[commify $q] MB"
+}
