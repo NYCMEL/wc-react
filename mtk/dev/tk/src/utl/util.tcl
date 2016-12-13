@@ -812,3 +812,30 @@ proc tk::viewsource {} {
 	}
     }
 }
+
+######################################################
+##### CAT FILES INTO ONE
+#####   tk::cat *.es6 wc.components.es6
+######################################################
+proc tk::cat {files outfile} {
+    file delete -force $outfile
+
+    puts $outfile
+
+    set out [open /tmp/tk.cat w]
+
+    fconfigure $out -translation binary
+
+    foreach fname [glob -nocomplain -type f "$files"] {
+	set in [open $fname]
+	fconfigure $in -translation binary
+	fcopy $in $out
+	close $in
+    }
+
+    close $out
+
+    file rename /tmp/tk.cat $outfile
+}
+
+
