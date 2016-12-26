@@ -15,7 +15,7 @@ file mkdir inc
 
 set XX  [file tail [pwd]]
 set sp  [split $argv .]
-set YY  "${XX}::component::[join $sp ::]"
+set YY  "${XX}::[join $sp ::]"
 set FN  ${XX}.[join $sp .]
 
 # COMPONENT NAME
@@ -30,7 +30,6 @@ foreach i $sp {
 # NAMESPACE
 set NSPACE ""
 append NSPACE "namespace eval $XX \{\n"
-append NSPACE "namespace eval component \{\n"
 
 foreach i $sp {
     append NSPACE "namespace eval $i \{\n"
@@ -38,7 +37,7 @@ foreach i $sp {
 foreach i $sp {
     append NSPACE "\}\n"
 }
-append NSPACE "\}\n\}\n"
+append NSPACE "\}\n"
 
 ################################################################################
 #### TCL
