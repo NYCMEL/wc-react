@@ -14,7 +14,7 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/components/d3\
     $TKSERVER/tk/lib/components/ang\
     $TKSERVER/tk/lib/components/jqw\
-    $TKSERVER/tk/lib/components/dtcc\
+    $TKSERVER/tk/lib/components/wc\
     $TKSERVER/tk/lib/components/fm\
     $TKSERVER/tk/lib/components/tmp\
     \
