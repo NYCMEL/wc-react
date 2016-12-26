@@ -27,5 +27,7 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/modules/play\
     $TKSERVER/tk/lib/modules/db/sqlite/viewer\
     \
-    $TKSERVER/tk/lib/forms
+    $TKSERVER/tk/lib/forms\
+    \
+    /tmp
 

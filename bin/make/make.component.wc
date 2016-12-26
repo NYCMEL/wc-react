@@ -9,17 +9,17 @@ if {$argc != 1} {
 }
 
 # LOCATION OF ALL TEMPLATES
-set templates "/Melify/mtk/dev/tk/lib/components/template"
+set templates "/Melify/mtk/dev/tk/lib/components/template/wc"
 
 file mkdir inc
 
 set XX  [file tail [pwd]]
 set sp  [split $argv .]
 set YY  "${XX}::component::[join $sp ::]"
-set FN  ${XX}.component.[join $sp .]
+set FN  ${XX}.[join $sp .]
 
 # COMPONENT NAME
-set CNAME ${XX}-component-[join $sp "-"]
+set CNAME ${XX}-[join $sp "-"]
 
 # JS FUNCTION NAME
 set JNAME "${XX}Component"
@@ -65,7 +65,7 @@ close $f
 ################################################################################
 #### LESS
 ################################################################################
-set f [open $templates/xx.component.yy.less r]
+set f [open $templates/xx.component.yy.scss r]
 set r [read $f]
 close $f
 
