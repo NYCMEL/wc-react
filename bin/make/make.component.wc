@@ -71,7 +71,7 @@ close $f
 
 regsub -all "CNAME" $r "$CNAME" r
 
-set f [open "./inc/$FN.less" w]
+set f [open "./inc/$FN.scss" w]
 puts $f $r
 close $f
 
