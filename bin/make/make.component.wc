@@ -22,7 +22,7 @@ set FN  ${XX}.[join $sp .]
 set CNAME ${XX}-[join $sp "-"]
 
 # JS FUNCTION NAME
-set JNAME "${XX}Component"
+set JNAME "${XX}"
 foreach i $sp {
     append JNAME [string totitle $i]
 }
