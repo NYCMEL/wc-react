@@ -1,0 +1,15 @@
+#!/Melify/bin/mac/tclkit
+
+if {$argc != 1} {
+    puts "\nUSAGE: minify <javascript-file-name>\n"
+    exit
+}
+
+set name [lindex $argv 0]
+
+set fname  [file rootname  $name]
+set suffix [file extension $name]
+
+puts >>>$fname|$suffix<<<
+
+exec /usr/bin/java -jar $name > /tmp/$fname.min.$suffix
