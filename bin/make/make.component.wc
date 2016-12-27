@@ -15,21 +15,21 @@ file mkdir inc
 
 set XX  [file tail [pwd]]
 set sp  [split $argv .]
-set YY  "${XX}::[join $sp ::]"
-set FN  ${XX}.[join $sp .]
+set YY  "wc::[join $sp ::]"
+set FN  wc.[join $sp .]
 
 # COMPONENT NAME
-set CNAME ${XX}-[join $sp "-"]
+set CNAME wc-[join $sp "-"]
 
 # JS FUNCTION NAME
-set JNAME "${XX}"
+set JNAME "wc"
 foreach i $sp {
     append JNAME [string totitle $i]
 }
 
 # NAMESPACE
 set NSPACE ""
-append NSPACE "namespace eval $XX \{\n"
+append NSPACE "namespace eval wc \{\n"
 
 foreach i $sp {
     append NSPACE "namespace eval $i \{\n"
@@ -70,7 +70,7 @@ close $f
 
 regsub -all "CNAME" $r "$CNAME" r
 
-set f [open "./inc/$FN.scss" w]
+set f [open "inc/$FN.scss" w]
 puts $f $r
 close $f
 
@@ -83,6 +83,6 @@ close $f
 
 regsub -all "JNAME" $r "$JNAME" r
 
-set f [open "./inc/$FN.js" w]
+set f [open "inc/$FN.js" w]
 puts $f $r
 close $f
