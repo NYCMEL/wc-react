@@ -19,6 +19,7 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/components/tmp\
     \
     $TKSERVER/tk/lib/components/w3c/tcl\
+    $TKSERVER/tk/lib/components/w3c/mtk\
     \
     $TKSERVER/tk/lib/modules/videos\
     $TKSERVER/tk/lib/modules/email\

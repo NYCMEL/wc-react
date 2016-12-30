@@ -221,12 +221,9 @@ m::proc -private tk::include::prettify {
 	</style>
     }
 
-    include "https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css"
+    include "/tk/inc/prettify.css"
+    include "/tk/inc/prettify.js"
     
-    put {
-	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/prettify.js"></script>
-    }
-
     # $("#form-code-container").removeClass("prettyprinted");
     # prettyPrint();
 
