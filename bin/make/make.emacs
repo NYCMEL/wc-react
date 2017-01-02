@@ -4,7 +4,7 @@ set ::env(HTTP_HOST) localhost
 
 lappend ::auto_path\
     /Melify/mtk/dev/tk/src\
-    /Melify/mtk/dev/tk/src/util\
+    /Melify/mtk/dev/tk/src/utl\
     /Melify/mtk/dev/tk/lib/cgi\
     /Melify/mtk/dev/tk/lib/components/tcl
 
@@ -22,7 +22,7 @@ foreach i [exec find . -name "*.tcl"] {
 	continue
     }
 
-    catch {
+    if {[catch {
 	source $i
 
 	set tmp "[lreplace  [split $t .] end end]"
@@ -53,6 +53,8 @@ foreach i [exec find . -name "*.tcl"] {
 	}
 
 	puts $f $x
+    } e] != 0} {
+	puts >>>$e
     }
 }
 
