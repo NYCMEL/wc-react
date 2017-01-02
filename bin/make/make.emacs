@@ -54,7 +54,7 @@ foreach i [exec find . -name "*.tcl"] {
 
 	puts $f $x
     } e] != 0} {
-	puts >>>$e
+	#puts >>>$e
     }
 }
 
