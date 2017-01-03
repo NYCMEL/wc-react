@@ -4,7 +4,7 @@ PATH=/opt/someApp/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/b
 # cd /Melify/mtk/dev && sass --watch --style compressed .
 
 MYPROG="sass"
-RESTART="sass --watch --style compressed /Melify/  > /tmp/less.log"
+RESTART="sass --watch --style compressed /Melify/*  >> /tmp/less.log"
 PGREP="/usr/bin/pgrep"
 
 # FIND MYPROG PID
