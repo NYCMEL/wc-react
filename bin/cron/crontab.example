@@ -1,0 +1,2 @@
+* * * * * /Melify/bin/cron/watch.sass.sh > /tmp/sass.log
+* * * * * /Melify/bin/cron/watch.less.sh > /tmp/less.log
