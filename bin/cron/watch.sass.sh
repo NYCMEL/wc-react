@@ -1,7 +1,9 @@
 #!/bin/sh
 
+cd /Melify/mtk/dev
+
 MYPROG="sass"
-RESTART="cd /Melify/mtk/dev && /usr/local/bin/sass --watch --style compressed /Melify/"
+RESTART="/usr/local/bin/sass --watch --style compressed /Melify/ >> /tmp/less.log"
 PGREP="/usr/bin/pgrep"
 
 # FIND MYPROG PID
@@ -10,6 +12,5 @@ $PGREP ${MYPROG}
 # IF NOT RUNNING
 if [ $? -ne 0 ]
 then
-    echo $RESTART
     $RESTART
 fi
