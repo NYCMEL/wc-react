@@ -10,5 +10,6 @@ $PGREP ${MYPROG}
 # IF NOT RUNNING
 if [ $? -ne 0 ]
 then
-   $RESTART
+    echo $RESTART
+    $RESTART
 fi
