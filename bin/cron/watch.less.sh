@@ -1,5 +1,7 @@
 #!/bin/sh
 
+PATH=$:PATH:/usr/local/bin
+
 cd /Melify/mtk/dev
 
 MYPROG="watch-less"
