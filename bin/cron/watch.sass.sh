@@ -3,7 +3,7 @@
 cd /Melify/mtk/dev
 
 MYPROG="sass"
-RESTART="/usr/local/bin/sass --watch --style compressed /Melify/ >> /tmp/less.log"
+RESTART="/usr/local/bin/sass --watch --style compressed /Melify/*"
 PGREP="/usr/bin/pgrep"
 
 # FIND MYPROG PID
