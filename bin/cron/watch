@@ -1,0 +1,2 @@
+cd /Melify && /usr/local/bin/watch-less
+cd /Melify && /usr/local/bin/sass --watch --style compressed .
