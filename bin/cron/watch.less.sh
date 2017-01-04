@@ -4,13 +4,12 @@ PATH=$PATH:/usr/local/bin
 
 cd /Melify/mtk/dev
 
-MYPROG="watch.less.sh"
-RESTART="/usr/local/bin/watch-less -e css"
+MYPROG="less"
+RESTART="/usr/local/bin/watch-less -e css >> /tmp/cron.less.log"
 PGREP="/usr/bin/pgrep"
 
 # FIND MYPROG PID
-#$PGREP ${MYPROG}
-/bin/ps -ef | /usr/bin/grep ${MYPROG} | /usr/bin/awk '{print $2}'
+$PGREP ${MYPROG}
 
 # IF NOT RUNNING
 if [ $? -ne 0 ]

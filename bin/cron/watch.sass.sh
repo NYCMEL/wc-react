@@ -4,13 +4,12 @@ PATH=$PATH:/usr/local/bin
 
 cd /Melify/mtk/dev
 
-MYPROG="watch.sass.sh"
-RESTART="/usr/local/bin/sass --trace --watch --style compressed /Melify/*"
+MYPROG="sass"
+RESTART="/usr/local/bin/sass --trace --watch --style compressed /Melify/* >> /tmp/cron.sass.log"
 PGREP="/usr/bin/pgrep"
 
 # FIND MYPROG PID
-#$PGREP ${MYPROG}
-/bin/ps -ef | /usr/bin/grep ${MYPROG} | /usr/bin/awk '{print $2}'
+$PGREP ${MYPROG}
 
 # IF NOT RUNNING
 if [ $? -ne 0 ]
