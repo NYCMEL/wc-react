@@ -9,7 +9,7 @@ RESTART="/usr/local/bin/watch-less -e css >> /tmp/cron.less.log"
 PGREP="/usr/bin/pgrep"
 
 # FIND MYPROG PID
-$PGREP ${MYPROG}
+$PGREP -f ${MYPROG}
 
 # IF NOT RUNNING
 if [ $? -ne 0 ]

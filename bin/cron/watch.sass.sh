@@ -9,7 +9,7 @@ RESTART="/usr/local/bin/sass --trace --watch --style compressed /Melify/* >> /tm
 PGREP="/usr/bin/pgrep"
 
 # FIND MYPROG PID
-$PGREP ${MYPROG}
+$PGREP -f ${MYPROG}
 
 # IF NOT RUNNING
 if [ $? -ne 0 ]
