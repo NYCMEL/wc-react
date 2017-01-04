@@ -5,7 +5,7 @@ PATH=$PATH:/usr/local/bin
 cd /Melify/mtk/dev
 
 MYPROG="sass"
-RESTART="/usr/local/bin/sass --trace --watch --style compressed /Melify/* >> /tmp/cron.sass.log"
+RESTART="/usr/local/bin/sass --trace --watch --style compressed /Melify/*"
 PGREP="/usr/bin/pgrep"
 
 # FIND MYPROG PID
