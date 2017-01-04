@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PATH=$:PATH:/usr/local/bin
+PATH=$PATH:/usr/local/bin
 
 cd /Melify/mtk/dev
 
