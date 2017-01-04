@@ -4,7 +4,7 @@ PATH=$PATH:/usr/local/bin
 
 cd /Melify/mtk/dev
 
-MYPROG="sass"
+MYPROG="watch.sass.sh"
 RESTART="/usr/local/bin/sass --trace --watch --style compressed /Melify/*"
 PGREP="/usr/bin/pgrep"
 

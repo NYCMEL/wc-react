@@ -4,7 +4,7 @@ PATH=$PATH:/usr/local/bin
 
 cd /Melify/mtk/dev
 
-MYPROG="less"
+MYPROG="watch.less.sh"
 RESTART="/usr/local/bin/watch-less -e css"
 PGREP="/usr/bin/pgrep"
 
