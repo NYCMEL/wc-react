@@ -12,7 +12,9 @@ PGREP="/usr/bin/pgrep"
 $PGREP -f ${MYPROG}
 
 # IF NOT RUNNING
-if [ $? -ne 0 ]
-then
+if [ $? -ne 0 ]; then
+    echo "$?"
+else
+    echo "$RESTART"
     $RESTART
 fi
