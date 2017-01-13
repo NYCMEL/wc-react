@@ -6,7 +6,7 @@ cd /Melify/mtk/dev
 
 MYPROG="watch.sass.sh"
 RESTART="/usr/bin/sass --trace --watch --style compressed /Melify/*"
-PGREP="/bin/pgrep"
+PGREP="/bin/grep"
 
 # FIND MYPROG PID
 $PGREP -f ${MYPROG}
