@@ -16,5 +16,5 @@ if [ $? -ne 0 ]; then
     echo "$?"
 else
     echo "$RESTART"
-    $RESTART
+    $RESTART&
 fi
