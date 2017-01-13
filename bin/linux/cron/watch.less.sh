@@ -7,7 +7,7 @@ rm -f Watchfile
 
 MYPROG="watch.less.sh"
 RESTART="/home/DTCC/mheravi/node_modules/watch-compile/bin/watchcompile -c"
-PGREP="/bin/pgrep"
+PGREP="/usr/bin/pgrep"
 
 # FIND MYPROG PID
 $PGREP -f ${MYPROG}
