@@ -1,2 +1,2 @@
-*/10 * * * * /Melify/bin/cron/watch.sass.sh > /tmp/cron.sass.log
-*/10 * * * * /Melify/bin/cron/watch.less.sh > /tmp/cron.less.log
+*/10 * * * * /Melify/bin/mac/cron/watch.sass.sh > /tmp/cron.sass.log
+*/10 * * * * /Melify/bin/mac/cron/watch.less.sh > /tmp/cron.less.log
