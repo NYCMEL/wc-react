@@ -232,3 +232,14 @@ proc section {args} {
     _cgi_close_proc
 }
 
+proc button {value args} {
+    cgi_put "<button"
+    foreach a $args {
+	if {[regexp "^onClick=(.*)" $a dummy str]} {
+	    cgi_put " onClick=\"$str\""
+	} else {
+	    cgi_put " $a"
+	}
+    }
+    cgi_put ">$value</button>"
+}
