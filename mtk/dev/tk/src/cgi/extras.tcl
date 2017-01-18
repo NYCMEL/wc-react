@@ -233,7 +233,7 @@ proc section {args} {
 }
 
 proc button {value args} {
-    cgi_put "<button"
+    cgi_put "<button type='button' "
     foreach a $args {
 	if {[regexp "^onClick=(.*)" $a dummy str]} {
 	    cgi_put " onClick=\"$str\""
