@@ -34,7 +34,7 @@ m::proc -public mdb::button {
     {-floating      0}
     {-outline       0}
     {-size       "md"}
-    {-type   "button"}
+    {-submit        0}
 } {
     Documentation goes here...
 } {
@@ -47,15 +47,16 @@ m::proc -public mdb::button {
     set ol [expr {($outline   ==  0) ? "" :                            "outline-"}]
     set sz [expr {($size      == "") ? "" :                           "btn-$size"}]
     
-    if {$type == "submit"} {
-	put "<input type='$type' name='$label' value='$label' class='btn btn-$class waves-effect'>"
-	return
+    if {$submit == "1"} {
+	set extra {onclick="$(this).closest('form').submit()"}
+    } else {
+	set extra ""
     }
 
     if {$floating} {
-	put "<a type='$type' class='btn $r $fl btn-$ol$class waves-effect'>$fa $label</a>$b"
+	put "<a type='button' class='btn $r $fl btn-$ol$class waves-effect' $extra>$fa $label</a>$b"
     } else {
-	put "<a type='$type' class='btn $sz $r $fl btn-$ol$class waves-effect'>$fa $label</a>$b"
+	put "<a type='button' class='btn $sz $r $fl btn-$ol$class waves-effect' $extra>$fa $label</a>$b"
     }
 }
 
