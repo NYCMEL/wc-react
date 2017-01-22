@@ -1,4 +1,4 @@
-#!/Melify/bin/mac/tclkit
+#!/usr/bin/env tclkit
 
 if {$argc != 1} {
     puts "\nUSAGE: bab <javascript-file-name>\n"
