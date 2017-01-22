@@ -47,6 +47,11 @@ m::proc -public mdb::button {
     set ol [expr {($outline   ==  0) ? "" :                            "outline-"}]
     set sz [expr {($size      == "") ? "" :                           "btn-$size"}]
     
+    if {$type == "submit"} {
+	put "<input type='$type' name='$label' value='$label' class='btn btn-$class waves-effect'>"
+	return
+    }
+
     if {$floating} {
 	put "<a type='$type' class='btn $r $fl btn-$ol$class waves-effect'>$fa $label</a>$b"
     } else {
