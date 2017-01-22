@@ -50,7 +50,7 @@ m::proc -public mdb::button {
     if {$floating} {
 	put "<a type='$type' class='btn $r $fl btn-$ol$class waves-effect'>$fa $label</a>$b"
     } else {
-	put "<a type='$type' class='btn $sz $r $fl btn-$ol$class waves-effect' type='$type'>$fa $label</a>$b"
+	put "<a type='$type' class='btn $sz $r $fl btn-$ol$class waves-effect'>$fa $label</a>$b"
     }
 }
 
