@@ -34,6 +34,7 @@ m::proc -public mdb::button {
     {-floating      0}
     {-outline       0}
     {-size       "md"}
+    {-type   "button"}
 } {
     Documentation goes here...
 } {
@@ -47,9 +48,9 @@ m::proc -public mdb::button {
     set sz [expr {($size      == "") ? "" :                           "btn-$size"}]
     
     if {$floating} {
-	put "<a type='button' class='btn $r $fl btn-$ol$class waves-effect'>$fa $label</a>$b"
+	put "<a type='$type' class='btn $r $fl btn-$ol$class waves-effect'>$fa $label</a>$b"
     } else {
-	put "<a type='button' class='btn $sz $r $fl btn-$ol$class waves-effect'>$fa $label</a>$b"
+	put "<a type='$type' class='btn $sz $r $fl btn-$ol$class waves-effect' type='$type'>$fa $label</a>$b"
     }
 }
 
