@@ -83,7 +83,7 @@ m::proc -public tk::form {
 
 	uplevel $guts
 
-	division id="result-$id" style=display:none\;padding:5px\;background:yellow {
+	division id="result-$id" [style display none background yellow] {
 	}
     }
 
@@ -110,6 +110,7 @@ m::proc -public tk::form {
 				url: obj.attr("action"),
 				success: function(response) {
 				    console.info("form post success...");
+				    jQuery("#result-$id").html(response).show();
 				},
 				error: function(XMLHttpRequest, textStatus, errorThrown) {
 				    jQuery("#result-$id").html(textStatus + ", " + errorThrown + ", " + XMLHttpRequest.status).show();
@@ -152,6 +153,7 @@ m::proc -public tk::form {
 				url: obj.attr("action"),
 				success: function(response) {
 				    console.info("form post success...");
+				    jQuery("#result-$id").html(response).show();
 				},
 				error: function(XMLHttpRequest, textStatus, errorThrown) {
 				    jQuery("#result-$id").html(textStatus + ", " + errorThrown + ", " + XMLHttpRequest.status).show();
