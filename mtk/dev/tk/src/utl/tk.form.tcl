@@ -95,19 +95,28 @@ m::proc -public tk::form {
 		    errorClass: "form-error",
 
 		    submitHandler: function(form) {
-			var qstr = jQuery("#$id").serialize();
+			let obj = jQuery("#$id");
 
-			var file = jQuery("#file-upload").val();
+			switch(obj.attr("method").toLowerCase()) 
+			{
+			    case "get":
+			    jQuery("#result-$id").load(tk.siteurl + "?ajax=1&callback=$callback&" + obj.serialize()).show("slow");
+			    break;
 
-			if (file != "") {
-			    var extra = "&file=" + escape(file);
-			} else {
-			    var extra = "";
+			    case "post":
+			    jQuery.ajax({
+				data: obj.serialize(),
+				type: obj.attr("method"),
+				url: obj.attr("action"),
+				success: function(response) {
+				    console.info("form post success...");
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+				    jQuery("#result-$id").html(textStatus + ", " + errorThrown + ", " + XMLHttpRequest.status).show();
+				}
+			    });
+			    break;
 			}
-
-			console.log("form qstr: " + qstr);
-			
-			jQuery("#result-$id").load(tk.siteurl + "?ajax=1&callback=$callback&" + qstr + extra).show("slow");
 		    }
 		});
 
