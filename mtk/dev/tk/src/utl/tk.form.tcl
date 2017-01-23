@@ -115,16 +115,40 @@ m::proc -public tk::form {
 	    }]
 	}
     } else {
-	javascript {
-	    put [subst {
-		jQuery("#$id").submit(function(e) {
-		    e.preventDefault();
-		    
-		    var values = jQuery("#$id").serialize();
-		    
-		    jQuery("#result-$id").load(tk.siteurl + "?callback=$callback&values=" + values).show("slow");
-		});
-	    }]
+	switch [string tolower $method] {
+	    "get" {
+		javascript {
+		    put [subst {
+			jQuery("#$id").submit(function(e) {
+			    e.preventDefault();
+			    
+			    var values = jQuery("#$id").serialize();
+			    
+			    jQuery("#result-$id").load(tk.siteurl + "?callback=$callback&values=" + values).show("slow");
+			});
+		    }]
+		}
+	    }
+	    "post" {
+		javascript {
+		    put [subst {
+			jQuery("#$id").submit(function(e) {
+			    e.preventDefault();
+			    
+			    let obj = jQuery(this);
+
+			    jQuery.ajax({
+				data: obj.serialize(),
+				type: "POST",
+				url: obj.attr('action'),
+				success: function(response) {
+				    jQuery("#result-$id").html(response).show();
+				}
+			    });
+			});
+		    }]
+		}
+	    }
 	}
     }
 }
@@ -527,4 +551,33 @@ m::proc -public tk::form::uploader {
 	    }
 	}
     }
+}
+
+######################################################
+#####
+######################################################
+m::proc -public tk::form::test:2 {
+} {
+    Documentation goes here...
+} {
+    set str "[lorem] [lorem] [lorem]"
+
+    division {
+	tk::form -method "POST" -name "form-test" -callback "tk::form::test:2:cb" -validate 0 -guts {
+	    export v(name)=[list MEL HERAVI]
+	    textarea v(ta)=$str class="form-control" rows=10
+	    br
+	    submit_button action=SUBMIT class="btn btn-default"
+	}
+    }
+}
+
+######################################################
+#####
+######################################################
+m::proc -public tk::form::test:2:cb {
+} {
+    Documentation goes here...
+} {
+    parray ::v
 }
