@@ -63,23 +63,11 @@ m::proc -public tk::form {
 } {
     Trace
     
-    # -custom {
-    # 	jQuery(".paswd").rules("add", { 
-    # 	    required:true,  
-    # 	    minlength: 6,
-    # 	    messages: {
-    # 		required: "minimum length is 6 alpha numeric characters"
-    # 	    }
-    # 	});	    
-    # }
-
     set id [expr {($id == "") ? "$name" : "$id"}]
     set en [expr {($enctype == "") ? "" : "enctype=$enctype"}]
 
     cgi_form [expr {($url == {}) ? "[URL]" : $url}] $en method=$method name="$name" id=$id class="$class" [lstring $args] {
-	if {$validate == 0} {
-	    export callback=$callback
-	}
+	export callback=$callback
 
 	uplevel $guts
 
@@ -87,83 +75,25 @@ m::proc -public tk::form {
 	}
     }
 
-    if {$validate == 1} {
-	javascript {
-	    put [subst {
-		jQuery("#$id").validate({
-		    debug: true,
-		    errorClass: "form-error",
-
-		    submitHandler: function(form) {
-			let obj = jQuery("#$id");
-
-			switch(obj.attr("method").toLowerCase()) 
-			{
-			    case "get":
-			    jQuery("#result-$id").load(tk.siteurl + "?ajax=1&callback=$callback&" + obj.serialize()).show("slow");
-			    break;
-
-			    case "post":
-			    jQuery.ajax({
-				data: obj.serialize(),
-				type: obj.attr("method"),
-				url: obj.attr("action"),
-				success: function(response) {
-				    console.info("form post success...");
-				    jQuery("#result-$id").html(response).show();
-				},
-				error: function(XMLHttpRequest, textStatus, errorThrown) {
-				    jQuery("#result-$id").html(textStatus + ", " + errorThrown + ", " + XMLHttpRequest.status).show();
-				}
-			    });
-			    break;
-			}
+    javascript {
+	put [subst {
+	    jQuery("#$id").submit(function(e) {
+		e.preventDefault();
+		
+		jQuery.ajax({
+		    data: jQuery(this).serialize(),
+		    type: jQuery(this).attr("method"),
+		    url: jQuery(this).attr("action"),
+		    success: function(response) {
+			console.info("form post success...");
+			jQuery("#result-$id").html(response).show();
+		    },
+		    error: function(XMLHttpRequest, textStatus, errorThrown) {
+			jQuery("#result-$id").html(textStatus + ", " + errorThrown + ", " + XMLHttpRequest.status).show();
 		    }
 		});
-
-		$custom
-	    }]
-	}
-    } else {
-	switch [string tolower $method] {
-	    "get" {
-		javascript {
-		    put [subst {
-			jQuery("#$id").submit(function(e) {
-			    e.preventDefault();
-			    
-			    var values = jQuery("#$id").serialize();
-			    
-			    jQuery("#result-$id").load(tk.siteurl + "?callback=$callback&values=" + values).show("slow");
-			});
-		    }]
-		}
-	    }
-	    "post" {
-		javascript {
-		    put [subst {
-			jQuery("#$id").submit(function(e) {
-			    e.preventDefault();
-			    
-			    let obj = jQuery(this);
-
-			    jQuery.ajax({
-				data: obj.serialize(),
-				type: obj.attr("method"),
-				url: obj.attr("action"),
-				success: function(response) {
-				    console.info("form post success...");
-				    jQuery("#result-$id").html(response).show();
-				},
-				error: function(XMLHttpRequest, textStatus, errorThrown) {
-				    jQuery("#result-$id").html(textStatus + ", " + errorThrown + ", " + XMLHttpRequest.status).show();
-				}
-			    });
-			});
-		    }]
-		}
-	    }
-	}
+	    });
+	}]
     }
 }
 
@@ -577,7 +507,7 @@ m::proc -public tk::form::test:2 {
     set str "[lorem] [lorem] [lorem]"
 
     division {
-	tk::form -method "POST" -name "form-test" -callback "tk::form::test:2:cb" -validate 0 -guts {
+	tk::form -method "POST" -name "form-test" -callback "tk::form::test:2:cb" -guts {
 	    export v(name)=[list MEL HERAVI]
 	    textarea v(ta)=$str class="form-control" rows=10
 	    br
