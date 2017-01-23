@@ -139,8 +139,8 @@ m::proc -public tk::form {
 
 			    jQuery.ajax({
 				data: obj.serialize(),
-				type: "POST",
-				url: obj.attr('action'),
+				type: obj.attr("method")
+				url: obj.attr("action"),
 				success: function(response) {
 				    jQuery("#result-$id").html(response).show();
 				}
