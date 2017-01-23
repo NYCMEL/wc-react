@@ -142,7 +142,10 @@ m::proc -public tk::form {
 				type: obj.attr("method"),
 				url: obj.attr("action"),
 				success: function(response) {
-				    jQuery("#result-$id").html(response).show();
+				    console.info("form post success...");
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+				    jQuery("#result-$id").html(textStatus + ", " + errorThrown + ", " + XMLHttpRequest.status).show();
 				}
 			    });
 			});
