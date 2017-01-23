@@ -13,8 +13,8 @@ $PGREP -f ${MYPROG}
 
 # IF NOT RUNNING
 if [ $? -ne 0 ]; then
-    echo "$?"
+    echo "ALREADY RUNNING: $?"
 else
-    echo "$RESTART"
-    $RESTART&
+    echo "$RESTART REQUIRED"
+    $RESTART
 fi
