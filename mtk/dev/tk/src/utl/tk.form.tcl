@@ -83,7 +83,7 @@ m::proc -public tk::form {
 
 	uplevel $guts
 
-	division id="result-$id" style=display:none\;padding:5px {
+	division id="result-$id" style=display:none\;padding:5px\;background:yellow {
 	}
     }
 
@@ -139,7 +139,7 @@ m::proc -public tk::form {
 
 			    jQuery.ajax({
 				data: obj.serialize(),
-				type: obj.attr("method")
+				type: obj.attr("method"),
 				url: obj.attr("action"),
 				success: function(response) {
 				    jQuery("#result-$id").html(response).show();
