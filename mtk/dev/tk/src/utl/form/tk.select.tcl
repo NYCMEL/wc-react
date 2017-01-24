@@ -65,7 +65,7 @@ m::proc -public tk::select:test {
     Trace
 
     tk::select -id "my-select" -name "v(select)" -options [subst {
-	"" "Please Select"
+	"" "PLEASE SELECT"
 	1 "Option 1"
 	2 "Option 2"
 	3 "Option 3"
