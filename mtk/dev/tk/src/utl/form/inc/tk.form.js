@@ -1,36 +1,35 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2016-08-08 18:53:10 (melify)>
+//// Time-stamp: <2017-01-24 08:24:10 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 var tkForm = {};
 
 /////////////////////////////////////////////////////////////////////////////
 //// 
 /////////////////////////////////////////////////////////////////////////////
-tkForm.init = function(options) {
-    console.group("tkForm.init: ", JSON.stringify(options));
+tkForm.init = function(id) {
+    console.group("tkForm.init:", id);
 
-    $("#" + options.id).submit( function(e){ 
+    let obj = $(this);
+
+    obj.submit(function(e){ 
+	console.log(">>>>>>>>>>>>>>>>>>");
+
 	e.preventDefault();
 
-	tkForm.process({id:options.id, method:options.method, url:options.url, cb:options.callback, result:options.result});
-    });
+	alert(id);
 
-    console.groupEnd();
-};
-
-/////////////////////////////////////////////////////////////////////////////
-//// 
-/////////////////////////////////////////////////////////////////////////////
-tkForm.process = function(options) {
-    console.group("tkForm.process: ", JSON.stringify(options));
-
-    $.ajax({
-	type: options.method,
-	url: options.url,
-	data: "callback=" + options.cb + "&ajax=1&" + $("#" + options.id).serialize(),
-	success: function(data) {   
-	    $("#" + options.result).html(data);
-	}
+	$.ajax({
+	    data: obj.serialize(),
+	    type: obj.attr("method"),
+	    url: obj.attr("action"),
+	    success: function(response) {
+		console.info("form post success...");
+		$("#form-result-" + id).html(response).show();
+	    },
+	    error: function(XMLHttpRequest, textStatus, errorThrown) {
+		$("#form-result-" + id).html(textStatus + ", " + errorThrown + ", " + XMLHttpRequest.status).show();
+	    }
+	});
     });
 
     console.groupEnd();

@@ -35,6 +35,8 @@ namespace eval tk {
     }
 }
 
+include "/tk/src/utl/form/inc/tk.form.js"
+
 ######################################################
 ##### 
 ######################################################
@@ -65,30 +67,12 @@ m::proc -public tk::form {
 
 	uplevel $guts
 
-	division id="result-$id" [style display none background yellow] {
+	division id="form-result-$id" [style display none background yellow] {
+	    # CONTAINER FOR RESULT
 	}
     }
 
-    javascript {
-	put [subst {
-	    jQuery("#$id").submit(function(e) {
-		e.preventDefault();
-		
-		jQuery.ajax({
-		    data: jQuery(this).serialize(),
-		    type: jQuery(this).attr("method"),
-		    url: jQuery(this).attr("action"),
-		    success: function(response) {
-			console.info("form post success...");
-			jQuery("#result-$id").html(response).show();
-		    },
-		    error: function(XMLHttpRequest, textStatus, errorThrown) {
-			jQuery("#result-$id").html(textStatus + ", " + errorThrown + ", " + XMLHttpRequest.status).show();
-		    }
-		});
-	    });
-	}]
-    }
+    put "<script>tkForm.init('$id')</script>"
 }
 
 ######################################################
