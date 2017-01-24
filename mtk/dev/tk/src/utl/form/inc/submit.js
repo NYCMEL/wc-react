@@ -14,7 +14,7 @@ function submitState(el) {
 	$form.data('empty', 'false');
 
 	$requiredInputs.each(function() {
-            if ($(this).val() === '') {
+            if ($(this).val() === "") {
 		$form.data('empty', 'true');
             }
 	});
