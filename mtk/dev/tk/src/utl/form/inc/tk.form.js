@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-01-24 08:24:10 (melify)>
+//// Time-stamp: <2017-01-24 08:25:44 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 var tkForm = {};
 
@@ -9,14 +9,10 @@ var tkForm = {};
 tkForm.init = function(id) {
     console.group("tkForm.init:", id);
 
-    let obj = $(this);
+    let obj = $("#" + id);
 
     obj.submit(function(e){ 
-	console.log(">>>>>>>>>>>>>>>>>>");
-
 	e.preventDefault();
-
-	alert(id);
 
 	$.ajax({
 	    data: obj.serialize(),
