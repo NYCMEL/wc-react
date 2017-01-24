@@ -540,7 +540,10 @@ m::proc -public tk::text {
     Trace
 
     division class="form-group" {
-	label for="$id-label" "$label"
+	if {$label != ""} {
+	    label for="$id-label" "$label"
+	}
+
 	put "<input class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args]>"
 
 	if {$help != ""} {
