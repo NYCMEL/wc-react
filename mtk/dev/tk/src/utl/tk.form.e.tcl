@@ -58,7 +58,7 @@ m::proc -public tk::text:test {
     tk::text\
 	-id fname\
 	-label "Email"\
-	-help "We'll never share your email with anyone else."\
+	-help "help text goes here..."\
 	-value "mel@melify.com"\
 	placeholder="your email" pattern="$tk::form::pattern(email)" required
 }
@@ -71,6 +71,7 @@ m::proc -public tk::select {
     {-label ""}
     -options:required
     {-selected ""}
+    {-help  ""}
     args
 } {
     Documentation goes here...
@@ -86,6 +87,10 @@ m::proc -public tk::select {
 	    foreach {i j} $options {
 		option $j value=$i [expr {($i == $selected) ? "selected" : ""}]
 	    }
+	}
+
+	if {$help != ""} {
+	    put "<small id='$id-help' class='form-text text-muted'>$help</small>"
 	}
     }    
 }
@@ -105,5 +110,50 @@ m::proc -public tk::select:test {
 	2 "Option 2"
 	3 "Option 3"
 	4 "Option 4"
-    }] -selected 2 required
+    }] -selected 2 -help "help text goes here..." required
 }
+
+######################################################
+#####
+######################################################
+m::proc -public tk::textarea {
+    -id:required
+    {-label ""}
+    {-help  ""}
+    {-value ""}
+    args
+} {
+    Documentation goes here...
+} {
+    Trace
+
+    division class="form-group" {
+	if {$label != ""} {
+	    label for="$id-label" "$label"
+	}
+
+	put "<textarea class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args]>$value</textarea>"
+
+	if {$help != ""} {
+	    put "<small id='$id-help' class='form-text text-muted'>$help</small>"
+	}
+    }
+}
+
+######################################################
+##### TEST
+######################################################
+m::proc -public tk::textarea:test {
+} {
+    Documentation goes here...
+} {    
+    Trace
+    
+    tk::textarea\
+	-id address\
+	-label "Address"\
+	-help "help text goes here..."\
+	-value "100 C. Columbus Drive"\
+	placeholder="home address" pattern="$tk::form::pattern(email)" rows=5 required 
+}
+
