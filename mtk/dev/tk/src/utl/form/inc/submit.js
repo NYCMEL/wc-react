@@ -1,3 +1,6 @@
+////////////////////////////////////////////////////////////////////////////////
+//// KEEP SUBMIT BUTTON DISABLED UNTIL ALL REQUIRED FIELS HAVE VALUES
+////////////////////////////////////////////////////////////////////////////////
 function submitState(el) {
     console.group("submitState", el);
     
@@ -7,7 +10,7 @@ function submitState(el) {
 
     $submit.attr('disabled', 'disabled');
 
-    $requiredInputs.keyup(function () {
+    $("input").bind("change paste keyup", function() {
 	$form.data('empty', 'false');
 
 	$requiredInputs.each(function() {
