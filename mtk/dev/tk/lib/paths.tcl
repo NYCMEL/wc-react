@@ -26,7 +26,5 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/modules/users\
     $TKSERVER/tk/lib/modules/post\
     $TKSERVER/tk/lib/modules/play\
-    $TKSERVER/tk/lib/modules/db/sqlite/viewer\
-    \
-    $TKSERVER/tk/src/form
+    $TKSERVER/tk/lib/modules/db/sqlite/viewer
 
