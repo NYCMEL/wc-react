@@ -28,10 +28,10 @@ include "/GitHub/bootstrap-datepicker2/dist/js/bootstrap-datepicker.min.js"
 m::proc -public tk::calendar {
     -id:required
     -name:required
-    {-label ""}
-    -options:required
+    {-label    ""}
     {-selected ""}
-    {-help  ""}
+    {-help     ""}
+    {-value    ""}
     args
 } {
     Documentation goes here...
@@ -43,13 +43,11 @@ m::proc -public tk::calendar {
 	    label id="$id-label" for="$id-label" "$label"
 	}
 	
-	put {
-<div class="input-group date" data-provide="datepicker">
-    <input type="text" class="form-control">
-    <div class="input-group-addon">
-        <span class="glyphicon glyphicon-th"></span>
-    </div>
-</div>
+	division class="input-group date" data-provide="datepicker" {
+	    put "<input name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args] value='$value'>"
+	    division class="input-group-addon" {
+		put "<span class='fa fa-calendar'></span>"
+	    }
 	}
 	
 	if {$help != ""} {
@@ -67,11 +65,5 @@ m::proc -public tk::calendar:test {
 } {    
     Trace
 
-    tk::calendar -id "my-select" -name "v(select)" -options [subst {
-	"" "PLEASE SELECT"
-	1 "Option 1"
-	2 "Option 2"
-	3 "Option 3"
-	4 "Option 4"
-    }] -selected 2 -help "help text goes here..." required
+    tk::calendar -id "my-select" -name "v(calendar)" -help "help text goes here..." -value "12/10/2017" required 
 }
