@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-01-24 11:41:54 (melify)>
+//// Time-stamp: <2017-01-24 12:48:03 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 var tkForm = {};
 
@@ -21,9 +21,33 @@ tkForm.submitState = function(el) {
 	$form.data('empty', 'false');
 
 	$requiredInputs.each(function() {
-            if ($(this).val() === "") {
-		$form.data('empty', 'true');
-            }
+	    let type = $(this).attr("type");
+
+	    switch(type) 
+	    {
+		case "radio":
+		// NEED TO CHECK IF ANY RADIO BUTTON IN THIS GROUP IS CHECKED
+		if ($(this).is(":checked")) {
+		    $form.data('empty', 'false');
+		} else {
+		    $form.data('empty', 'true');
+		}
+		break;
+
+		case "checkbox":
+		if ($(this).is(":checked")) {
+		    $form.data('empty', 'false');
+		} else {
+		    $form.data('empty', 'true');
+		}
+		break;
+
+		default:
+		if ($(this).val() === "") {
+		    $form.data('empty', 'true');
+		}
+		break;
+	    }
 	});
 
 	if ($form.data('empty') === 'true') {
