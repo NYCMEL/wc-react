@@ -537,6 +537,8 @@ m::proc -public tk::text {
 } {
     Documentation goes here...
 } {
+    Trace
+
     division class="form-group" {
 	label for="$id-label" "$label"
 	put "<input class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args]>"
@@ -555,7 +557,6 @@ m::proc -public tk::text:test {
     Documentation goes here...
 } {    
     Trace
-    variable _id [id]
     
-    tk::text -id fname -label "First Name" -help "We'll never share your email with anyone else." placeholder="your first name" type="email" 
+    tk::text -id fname -label "Email" -help "We'll never share your email with anyone else." placeholder="your email" pattern="$tk::form::pattern(email)" required
 }
