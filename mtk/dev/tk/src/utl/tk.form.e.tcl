@@ -105,5 +105,5 @@ m::proc -public tk::select:test {
 	2 "Option 2"
 	3 "Option 3"
 	4 "Option 4"
-    }] required
+    }] -selected 2 required
 }
