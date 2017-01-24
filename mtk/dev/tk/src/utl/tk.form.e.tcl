@@ -195,3 +195,40 @@ m::proc -public tk::radio:test {
     tk::radio -id "rb-2" -name "rb" -label "Do you Agree II?" -value "2" required
 }
 
+######################################################
+#####
+######################################################
+m::proc -public tk::check {
+    -id:required
+    -name:required
+    {-label ""}
+    {-value ""}
+    args
+} {
+    Documentation goes here...
+} {
+    Trace
+
+    division class="form-group" {
+	division class="form-check" {
+	    put "\
+	    	<label id='$id-label' class='form-check-label'>\
+	    	<input type='checkbox' class='form-check-input' name='$name' id='$id-check' value='$value' [lstring $args]>\
+		$label\
+		</label>"
+	}
+    }
+}
+
+######################################################
+##### TEST
+######################################################
+m::proc -public tk::check:test {
+} {
+    Documentation goes here...
+} {    
+    Trace
+    
+    tk::check -id "cb-1" -name "cb" -label "Do you Agree II?" -value "2" required
+}
+
