@@ -36,7 +36,7 @@ namespace eval tk {
 }
 
 # http://www.formvalidator.net
-include "/tk/src/utl/form/inc/submit.js"
+include "/tk/src/utl/form/inc/tk.form.js"
 include "/GitHub/bootstrap-validator/docs/dist/validator.min.js"
 include "/GitHub/jquery-validation/lib/jquery.form.js"
 
@@ -77,7 +77,7 @@ m::proc -public tk::form {
 
     javascript {
 	put [subst {
-	    submitState("#$id")
+	    tkForm.submitState("#$id")
 
 	    jQuery("#$id").on("submit", function(e) {
 		e.preventDefault();
