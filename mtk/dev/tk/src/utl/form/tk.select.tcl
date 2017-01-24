@@ -19,6 +19,9 @@
 
 namespace eval tk {}
 
+include "/GitHub/bootstrap-select/dist/css/bootstrap-select.min.css"
+include "/GitHub/bootstrap-select/dist/js/bootstrap-select.min.js"
+
 ######################################################
 ##### 
 ######################################################
@@ -39,8 +42,8 @@ m::proc -public tk::select {
 	if {$label != ""} {
 	    label id="$id-label" for="$id-label" "$label"
 	}
-
-	cgi_select "$name" id="$id-select" class="form-control" [lstring $args] {
+	
+	cgi_select "$name" id="$id-select" class="selectpicker form-control" [lstring $args] {
 	    foreach {i j} $options {
 		option $j value=$i [expr {($i == $selected) ? "selected" : ""}]
 	    }
@@ -62,7 +65,7 @@ m::proc -public tk::select:test {
     Trace
 
     tk::select -id "my-select" -name "v(select)" -options [subst {
-	"" ""
+	"" "Please Select"
 	1 "Option 1"
 	2 "Option 2"
 	3 "Option 3"
