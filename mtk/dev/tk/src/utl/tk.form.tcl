@@ -563,3 +563,47 @@ m::proc -public tk::text:test {
     
     tk::text -id fname -label "Email" -help "We'll never share your email with anyone else." placeholder="your email" pattern="$tk::form::pattern(email)" required
 }
+
+######################################################
+##### 
+######################################################
+m::proc -public tk::select {
+    -id:required
+    {-label ""}
+    -options:required
+    {-selected ""}
+    args
+} {
+    Documentation goes here...
+} {    
+    Trace
+
+    division class="form-group" {
+	if {$label != ""} {
+	    label for="$id-label" "$label"
+	}
+
+	cgi_select id="$id-select" class="form-control" {
+	    foreach {i j} $options {
+		option $j value=$i [expr {($i == $selected) ? "selected" : ""}]
+	    }
+	}
+    }    
+}
+
+######################################################
+##### TEST
+######################################################
+m::proc -public tk::select:test {
+} {
+    Documentation goes here...
+} {    
+    Trace
+
+    tk::select -id "my-select" -options [subst {
+	1 "Option 1"
+	2 "Option 2"
+	3 "Option 3"
+	4 "Option 4"
+    }] -selected 2
+}
