@@ -525,3 +525,24 @@ m::proc -public tk::form::test:2:cb {
 } {
     parray ::v
 }
+
+######################################################
+#####
+######################################################
+m::proc -public tk::text {
+    -id:required
+    {-label ""}
+    {-help  ""}
+    args
+} {
+    Documentation goes here...
+} {
+    division class="form-group" {
+	label for="$id-label" "$label"
+	put "<input class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args]>"
+
+	if {$help != ""} {
+	    put "<small id='$id-help' class='form-text text-muted'>$help</small>"
+	}
+    }
+}
