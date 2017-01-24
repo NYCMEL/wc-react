@@ -533,6 +533,7 @@ m::proc -public tk::text {
     -id:required
     {-label ""}
     {-help  ""}
+    {-value ""}
     args
 } {
     Documentation goes here...
@@ -544,7 +545,7 @@ m::proc -public tk::text {
 	    label for="$id-label" "$label"
 	}
 
-	put "<input class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args]>"
+	put "<input class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args] value='$value'>"
 
 	if {$help != ""} {
 	    put "<small id='$id-help' class='form-text text-muted'>$help</small>"
@@ -561,7 +562,12 @@ m::proc -public tk::text:test {
 } {    
     Trace
     
-    tk::text -id fname -label "Email" -help "We'll never share your email with anyone else." placeholder="your email" pattern="$tk::form::pattern(email)" required
+    tk::text\
+	-id fname\
+	-label "Email"\
+	-help "We'll never share your email with anyone else."\
+	-value "mel@melify.com"\
+	placeholder="your email" pattern="$tk::form::pattern(email)" required
 }
 
 ######################################################
@@ -583,7 +589,7 @@ m::proc -public tk::select {
 	    label for="$id-label" "$label"
 	}
 
-	cgi_select id="$id-select" class="form-control" {
+	cgi_select id="$id-select" class="form-control" [lstring $args] {
 	    foreach {i j} $options {
 		option $j value=$i [expr {($i == $selected) ? "selected" : ""}]
 	    }
@@ -601,9 +607,10 @@ m::proc -public tk::select:test {
     Trace
 
     tk::select -id "my-select" -options [subst {
+	"" ""
 	1 "Option 1"
 	2 "Option 2"
 	3 "Option 3"
 	4 "Option 4"
-    }] -selected 2
+    }] required
 }
