@@ -35,7 +35,7 @@ namespace eval tk {
     }
 }
 
-include "/tk/src/utl/form/inc/tk.form.js"
+include "/GitHub/jquery-validation/lib/jquery.form.js"
 
 ######################################################
 ##### 
@@ -67,12 +67,22 @@ m::proc -public tk::form {
 
 	uplevel $guts
 
-	division id="form-result-$id" [style display none background yellow] {
+	division id="form-result-$id" [style background yellow] {
 	    # CONTAINER FOR RESULT
 	}
     }
 
-    put "<script>tkForm.init('$id')</script>"
+    javascript {
+	put [subst {
+	    jQuery("#$id").on("submit", function(e) {
+		e.preventDefault();
+
+		jQuery(this).ajaxSubmit({
+		    target: "#form-result-$id"
+		});
+	    });
+	}]
+    }
 }
 
 ######################################################
