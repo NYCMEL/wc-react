@@ -35,7 +35,7 @@ m::proc -public tk::text {
 
     division class="form-group" {
 	if {$label != ""} {
-	    label for="$id-label" "$label"
+	    label id="$id-label" for="$id-label" "$label"
 	}
 
 	put "<input class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args] value='$value'>"
@@ -80,7 +80,7 @@ m::proc -public tk::select {
 
     division class="form-group" {
 	if {$label != ""} {
-	    label for="$id-label" "$label"
+	    label id="$id-label" for="$id-label" "$label"
 	}
 
 	cgi_select id="$id-select" class="form-control" [lstring $args] {
@@ -155,5 +155,43 @@ m::proc -public tk::textarea:test {
 	-help "help text goes here..."\
 	-value "100 C. Columbus Drive"\
 	placeholder="home address" pattern="$tk::form::pattern(email)" rows=5 required 
+}
+
+######################################################
+#####
+######################################################
+m::proc -public tk::radio {
+    -id:required
+    -name:required
+    {-label ""}
+    {-value ""}
+    args
+} {
+    Documentation goes here...
+} {
+    Trace
+
+    division class="form-group" {
+	division class="form-check" {
+	    put "\
+	    	<label id='$id-label' class='form-check-label'>\
+	    	<input type='radio' class='form-check-input' name='$name' id='$id-radio' value='$value' [lstring $args]>\
+		$label\
+		</label>"
+	}
+    }
+}
+
+######################################################
+##### TEST
+######################################################
+m::proc -public tk::radio:test {
+} {
+    Documentation goes here...
+} {    
+    Trace
+    
+    tk::radio -id "rb-1" -name "rb" -label "Do you Agree  I?" -value "1" required
+    tk::radio -id "rb-2" -name "rb" -label "Do you Agree II?" -value "2" required
 }
 
