@@ -24,6 +24,7 @@ namespace eval tk {}
 ######################################################
 m::proc -public tk::text {
     -id:required
+    -name:required
     {-label ""}
     {-help  ""}
     {-value ""}
@@ -38,7 +39,7 @@ m::proc -public tk::text {
 	    label id="$id-label" for="$id-label" "$label"
 	}
 
-	put "<input class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args] value='$value'>"
+	put "<input name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args] value='$value'>"
 
 	if {$help != ""} {
 	    put "<small id='$id-help' class='form-text text-muted'>$help</small>"
@@ -57,6 +58,7 @@ m::proc -public tk::text:test {
     
     tk::text\
 	-id fname\
+	-name "v(email)"\
 	-label "Email"\
 	-help "help text goes here..."\
 	-value "mel@melify.com"\
@@ -68,6 +70,7 @@ m::proc -public tk::text:test {
 ######################################################
 m::proc -public tk::select {
     -id:required
+    -name:required
     {-label ""}
     -options:required
     {-selected ""}
@@ -83,7 +86,7 @@ m::proc -public tk::select {
 	    label id="$id-label" for="$id-label" "$label"
 	}
 
-	cgi_select id="$id-select" class="form-control" [lstring $args] {
+	cgi_select "$name" id="$id-select" class="form-control" [lstring $args] {
 	    foreach {i j} $options {
 		option $j value=$i [expr {($i == $selected) ? "selected" : ""}]
 	    }
@@ -104,7 +107,7 @@ m::proc -public tk::select:test {
 } {    
     Trace
 
-    tk::select -id "my-select" -options [subst {
+    tk::select -id "my-select" -name "v(select)" -options [subst {
 	"" ""
 	1 "Option 1"
 	2 "Option 2"
@@ -118,6 +121,7 @@ m::proc -public tk::select:test {
 ######################################################
 m::proc -public tk::textarea {
     -id:required
+    -name:required
     {-label ""}
     {-help  ""}
     {-value ""}
@@ -132,7 +136,7 @@ m::proc -public tk::textarea {
 	    label for="$id-label" "$label"
 	}
 
-	put "<textarea class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args]>$value</textarea>"
+	put "<textarea name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args]>$value</textarea>"
 
 	if {$help != ""} {
 	    put "<small id='$id-help' class='form-text text-muted'>$help</small>"
@@ -151,6 +155,7 @@ m::proc -public tk::textarea:test {
     
     tk::textarea\
 	-id address\
+	-name "v(address)"\
 	-label "Address"\
 	-help "help text goes here..."\
 	-value "100 C. Columbus Drive"\
@@ -191,8 +196,8 @@ m::proc -public tk::radio:test {
 } {    
     Trace
     
-    tk::radio -id "rb-1" -name "rb" -label "Do you Agree  I?" -value "1" required
-    tk::radio -id "rb-2" -name "rb" -label "Do you Agree II?" -value "2" required
+    tk::radio -id "rb-1" -name "v(rb)" -label "Do you Agree  I?" -value "1" required checked
+    tk::radio -id "rb-2" -name "v(rb)" -label "Do you Agree II?" -value "2" required
 }
 
 ######################################################
@@ -229,6 +234,6 @@ m::proc -public tk::check:test {
 } {    
     Trace
     
-    tk::check -id "cb-1" -name "cb" -label "Do you Agree II?" -value "2" required
+    tk::check -id "cb-1" -name "v(cb)" -label "Do you Agree II?" -value "2" required
 }
 
