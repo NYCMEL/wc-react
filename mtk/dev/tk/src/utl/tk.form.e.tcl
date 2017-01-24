@@ -34,12 +34,12 @@ m::proc -public tk::text {
 } {
     Trace
 
-    division class="md-form" {
+    division class="form-group" {
 	if {$label != ""} {
 	    label id="$id-label" for="$id-label" "$label"
 	}
 
-	put "<input name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args] value='$value' type='text'>"
+	put "<input name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args] value='$value'>"
 
 	if {$help != ""} {
 	    put "<small id='$id-help' class='form-text text-muted'>$help</small>"
@@ -60,7 +60,9 @@ m::proc -public tk::text:test {
 	-id fname\
 	-name "v(email)"\
 	-label "Email"\
-	pattern="$tk::form::pattern(email)" required
+	-help "help text goes here..."\
+	-value "mel@melify.com"\
+	placeholder="your email" pattern="$tk::form::pattern(email)" required
 }
 
 ######################################################
@@ -111,7 +113,7 @@ m::proc -public tk::select:test {
 	2 "Option 2"
 	3 "Option 3"
 	4 "Option 4"
-    }] -selected 2 required
+    }] -selected 2 -help "help text goes here..." required
 }
 
 ######################################################
@@ -134,7 +136,7 @@ m::proc -public tk::textarea {
 	    label for="$id-label" "$label"
 	}
 
-	put "<textarea name='$name' class='md-textarea form-control' id='$id-text' aria-describedby='$id-help' [lstring $args]>$value</textarea>"
+	put "<textarea name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args]>$value</textarea>"
 
 	if {$help != ""} {
 	    put "<small id='$id-help' class='form-text text-muted'>$help</small>"
@@ -151,14 +153,13 @@ m::proc -public tk::textarea:test {
 } {    
     Trace
     
-    division class="md-form" {
-	tk::textarea\
-	    -id address\
-	    -name "v(address)"\
-	    -label "Address"\
-	    -value ""\
-	    rows=5 required
-    }
+    tk::textarea\
+	-id address\
+	-name "v(address)"\
+	-label "Address"\
+	-help "help text goes here..."\
+	-value "100 C. Columbus Drive"\
+	placeholder="home address" pattern="$tk::form::pattern(email)" rows=5 required 
 }
 
 ######################################################
@@ -178,8 +179,10 @@ m::proc -public tk::radio {
     division class="form-group" {
 	division class="form-check" {
 	    put "\
+	    	<label id='$id-label' class='form-check-label'>\
 	    	<input type='radio' class='form-check-input' name='$name' id='$id-radio' value='$value' [lstring $args]>\
-	    	<label for='$id-radio' id='$id-label' class='form-check-label'>$label</label>"
+		$label\
+		</label>"
 	}
     }
 }
@@ -220,8 +223,10 @@ m::proc -public tk::check {
     division class="form-group" {
 	division class="form-check" {
 	    put "\
-	    	<input class='form-check-input' name='$name' id='$id-check' value='$value' [lstring $args] type='checkbox'>\
-     	        <label for='$id-check' id='$id-label' class='form-check-label'>$label</label>"  
+	    	<label id='$id-label' class='form-check-label'>\
+	    	<input type='checkbox' class='form-check-input' name='$name' id='$id-check' value='$value' [lstring $args]>\
+		$label\
+		</label>"
 	}
     }
 }
@@ -235,6 +240,6 @@ m::proc -public tk::check:test {
 } {    
     Trace
     
-    tk::check -id "cb-1" -name "v(cb)" -label "Do you Agree II?" -value "2" required
+    tk::check -id "cb-1" -name "v(cb)" -label "Do you Agree II?" -value "2" required checked
 }
 
