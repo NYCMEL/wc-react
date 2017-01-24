@@ -546,3 +546,16 @@ m::proc -public tk::text {
 	}
     }
 }
+
+######################################################
+##### TEST
+######################################################
+m::proc -public tk::text:test {
+} {
+    Documentation goes here...
+} {    
+    Trace
+    variable _id [id]
+    
+    tk::text -id fname -label "First Name" -help "We'll never share your email with anyone else." placeholder="your first name" type="email" 
+}
