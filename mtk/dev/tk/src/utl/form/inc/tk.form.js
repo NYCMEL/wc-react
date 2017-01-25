@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-01-24 12:48:03 (melify)>
+//// Time-stamp: <2017-01-25 09:24:05 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 var tkForm = {};
 
@@ -21,9 +21,9 @@ tkForm.submitState = function(el) {
 	$form.data('empty', 'false');
 
 	$requiredInputs.each(function() {
-	    let type = $(this).attr("type");
-
-	    switch(type) 
+	    console.log(">>>>", $(this).attr("type"), $(this));
+	    
+	    switch($(this).attr("type")) 
 	    {
 		case "radio":
 		// NEED TO CHECK IF ANY RADIO BUTTON IN THIS GROUP IS CHECKED

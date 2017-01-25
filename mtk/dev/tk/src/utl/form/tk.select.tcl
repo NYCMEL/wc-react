@@ -43,7 +43,7 @@ m::proc -public tk::select {
 	    label id="$id-label" for="$id-label" "$label"
 	}
 	
-	cgi_select "$name" id="$id-select" class="selectpicker form-control" [lstring $args] {
+	cgi_select "$name" id="$id-select" class="selectpicker form-control" [lstring $args] type="select" {
 	    foreach {i j} $options {
 		option $j value=$i [expr {($i == $selected) ? "selected" : ""}]
 	    }
