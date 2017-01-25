@@ -40,7 +40,7 @@ m::proc -public tk::select {
 
     division class="form-group" {
 	if {$label != ""} {
-	    label id="$id-label" for="$id-label" "$label"
+	    label id="$id-label" for="$id-label" class="select-label" "$label"
 	}
 	
 	cgi_select "$name" id="$id-select" class="selectpicker form-control" [lstring $args] {
@@ -70,5 +70,5 @@ m::proc -public tk::select:test {
 	2 "Option 2"
 	3 "Option 3"
 	4 "Option 4"
-    }] -selected 2 -help "help text goes here..." required
+    }] -selected 2 -help "help text goes here..." -label "Pick One" required
 }
