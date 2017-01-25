@@ -65,5 +65,5 @@ m::proc -public tk::calendar:test {
 } {    
     Trace
 
-    tk::calendar -id "my-select" -name "v(calendar)" -help "help text goes here..." required 
+    tk::calendar -id "my-select" -name "v(calendar)" -help "help text goes here..." -label "Which Date?" required 
 }
