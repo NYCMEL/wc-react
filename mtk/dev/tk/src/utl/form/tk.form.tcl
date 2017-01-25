@@ -78,7 +78,7 @@ m::proc -public tk::form {
 
     javascript {
 	put [subst {
-	    tkForm.submitState("#$id")
+	    //tkForm.submitState("#$id")
 
 	    jQuery("#$id").on("submit", function(e) {
 		e.preventDefault();
