@@ -21,3 +21,24 @@
     color:red!important;
     font-family: Oswald-light;
 }
+
+.select-wrapper {
+    position: relative;
+    
+    select {
+	border-radius:0;
+	decoration: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+    }
+
+    &:after {
+	position: absolute;
+	font-family: fontAwesome;
+	content: "\f0d7";
+	content: "\f107";
+	top:7px;
+	right:10px;
+    }
+}
