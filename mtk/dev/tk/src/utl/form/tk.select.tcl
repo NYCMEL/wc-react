@@ -70,5 +70,5 @@ m::proc -public tk::select:test {
 	2 "Option 2"
 	3 "Option 3"
 	4 "Option 4"
-    }] -selected 2 -help "help text goes here..." -label "Pick One" required
+    }] -selected "" -help "help text goes here..." -label "Pick One" required
 }
