@@ -1,3 +1,5 @@
+@import "/GitHub/bootstrap/scss/bootstrap.scss";
+
 @font-face {font-family: "Roboto"      ;src: url("/GitHub/fonts/apache/roboto/Roboto-Regular.ttf") format("truetype");}
 @font-face {font-family: "Oswald"      ;src: url("/GitHub/fonts/ofl/oswald/Oswald-Regular.ttf") format("truetype");}
 @font-face {font-family: "Oswald-light";src: url("/GitHub/fonts/ofl/oswald/Oswald-Light.ttf") format("truetype");}
@@ -19,5 +21,6 @@ code,kbd,pre,.img-rounded,.img-thumbnail,.img-circle,.form-control,.btn,.btn-lin
 
 .btn-wide {
     min-width: 120px;
+    @extend .btn;
 }
 
