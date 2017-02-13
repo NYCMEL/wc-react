@@ -34,3 +34,18 @@ code,kbd,pre,.img-rounded,.img-thumbnail,.img-circle,.form-control,.btn,.btn-lin
     @extend .form-control-lg;
     @extend .btn-lg;
 }
+
+label {
+    &.sm {
+	padding-left:0;
+	font-size: 14px;
+    }
+    &.md {
+	padding-left:0;
+	font-size: 16px;
+    }
+    &.lg {
+	padding-left:0;
+	font-size: 18px;
+    }
+}
