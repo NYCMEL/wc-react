@@ -26,6 +26,10 @@ code,kbd,pre,.img-rounded,.img-thumbnail,.img-circle,.form-control,.btn,.btn-lin
     @extend .btn-sm;
 }
 
+.md {
+    font-size: 16px;
+}
+
 .lg {
     @extend .form-control-lg;
     @extend .btn-lg;
