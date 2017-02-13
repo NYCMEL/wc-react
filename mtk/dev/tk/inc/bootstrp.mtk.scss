@@ -1,3 +1,12 @@
-input, button, .alert, .btn {
-    border-radius: 0!important;
+code,kbd,pre,.img-rounded,.img-thumbnail,.img-circle,.form-control,.btn,.btn-link,.dropdown-menu,.list-group-item,
+.input-group-addon,.input-group-btn,.nav-tabs a,.nav-pills a,.navbar,.navbar-toggle,.icon-bar,.breadcrumb,.pagination,
+.pager *,.label,.badge,.jumbotron,.thumbnail,.alert,.progress,.panel,.well,.modal-content,.tooltip-inner,.popover,
+.popover-title,.carousel-indicators li {
+    border-radius:                    0px!important;
+    -webkit-border-radius:            0px!important;
+    -moz-border-radius:               0px!important;
+}
+
+.btn-wide {
+    min-width: 120px;
 }
