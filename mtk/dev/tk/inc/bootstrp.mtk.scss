@@ -1,3 +1,13 @@
+@font-face {font-family: "Roboto"      ;src: url("/GitHub/fonts/apache/roboto/Roboto-Regular.ttf") format("truetype");}
+@font-face {font-family: "Oswald"      ;src: url("/GitHub/fonts/ofl/oswald/Oswald-Regular.ttf") format("truetype");}
+@font-face {font-family: "Oswald-light";src: url("/GitHub/fonts/ofl/oswald/Oswald-Light.ttf") format("truetype");}
+@font-face {font-family: "Oswald-bold" ;src: url("/GitHub/fonts/ofl/oswald/Oswald-Bold.ttf") format("truetype");}
+
+.oswald       {font-family: Oswald!important;}
+.oswald-bold  {font-family: Oswald-bold;}
+.oswald-light {font-family: Oswald-light;}
+.roboto       {font-family: Roboto}
+
 code,kbd,pre,.img-rounded,.img-thumbnail,.img-circle,.form-control,.btn,.btn-link,.dropdown-menu,.list-group-item,
 .input-group-addon,.input-group-btn,.nav-tabs a,.nav-pills a,.navbar,.navbar-toggle,.icon-bar,.breadcrumb,.pagination,
 .pager *,.label,.badge,.jumbotron,.thumbnail,.alert,.progress,.panel,.well,.modal-content,.tooltip-inner,.popover,
@@ -10,3 +20,4 @@ code,kbd,pre,.img-rounded,.img-thumbnail,.img-circle,.form-control,.btn,.btn-lin
 .btn-wide {
     min-width: 120px;
 }
+
