@@ -1,9 +1,9 @@
-@import "/GitHub/bootstrap/scss/bootstrap.scss";
+@import "/GitHub/bootstrap/scss/bootstrap";
 
-@font-face {font-family: "Roboto"      ;src: url("/GitHub/fonts/apache/roboto/Roboto-Regular.ttf") format("truetype");}
-@font-face {font-family: "Oswald"      ;src: url("/GitHub/fonts/ofl/oswald/Oswald-Regular.ttf") format("truetype");}
-@font-face {font-family: "Oswald-light";src: url("/GitHub/fonts/ofl/oswald/Oswald-Light.ttf") format("truetype");}
-@font-face {font-family: "Oswald-bold" ;src: url("/GitHub/fonts/ofl/oswald/Oswald-Bold.ttf") format("truetype");}
+@font-face {
+    font-family: "Roboto";
+    src: url("/GitHub/fonts/apache/roboto/Roboto-Regular.ttf") format("truetype");
+}
 
 .oswald       {font-family: Oswald!important;}
 .oswald-bold  {font-family: Oswald-bold;}
@@ -24,3 +24,12 @@ code,kbd,pre,.img-rounded,.img-thumbnail,.img-circle,.form-control,.btn,.btn-lin
     @extend .btn;
 }
 
+.sm {
+    @extend .form-control-sm;
+    @extend .btn-sm;
+}
+
+.lg {
+    @extend .form-control-lg;
+    @extend .btn-lg;
+}
