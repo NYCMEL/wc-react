@@ -16,36 +16,14 @@ code,kbd,pre,.img-rounded,.img-thumbnail,.img-circle,.form-control,.btn,.btn-lin
     -moz-border-radius:               0px!important;
 }
 
-.btn-wide {
-    min-width: 120px;
-    @extend .btn;
-}
+.btn-wide {min-width: 120px;@extend .btn;}
 
-.sm {
-    @extend .form-control-sm;
-    @extend .btn-sm;
-}
-
-.md {
-    font-size: 16px;
-}
-
-.lg {
-    @extend .form-control-lg;
-    @extend .btn-lg;
-}
+.sm {@extend .form-control-sm;@extend .btn-sm;}
+.md {font-size: 16px;}
+.lg {@extend .form-control-lg;@extend .btn-lg;}
 
 label {
-    &.sm {
-	padding-left:0;
-	font-size: 14px;
-    }
-    &.md {
-	padding-left:0;
-	font-size: 16px;
-    }
-    &.lg {
-	padding-left:0;
-	font-size: 18px;
-    }
+    &.sm {padding-left:0;font-size: 14px;}
+    &.md {padding-left:0;font-size: 16px;}
+    &.lg {padding-left:0;font-size: 18px;}
 }
