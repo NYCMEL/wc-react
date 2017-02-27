@@ -19,6 +19,7 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/components/fm\
     $TKSERVER/tk/lib/components/tmp\
     \
+    $TKSERVER/tk/lib/components/wc/mtk\
     $TKSERVER/tk/lib/components/w3c/mtk\
     \
     $TKSERVER/tk/lib/modules/videos\
