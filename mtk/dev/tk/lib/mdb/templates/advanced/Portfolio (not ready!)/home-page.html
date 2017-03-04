@@ -49,7 +49,7 @@
         }
         
         .view {
-            background: url("http://mdbootstrap.com/images/regular/people/img%20(63).jpg")no-repeat center center fixed;
+            background: url("https://mdbootstrap.com/images/regular/people/img%20(63).jpg")no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -69,51 +69,47 @@
     <header>
 
         <!--Navbar-->
-        <nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
-
-            <!-- Collapse button-->
-            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
-            <i class="fa fa-bars"></i></button>
-
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-dark scrolling-navbar">
             <div class="container">
-
-                <!--Collapse content-->
-                <div class="collapse navbar-toggleable-xs" id="collapseEx">
-
-                    <!--Links-->
-                    <ul class="nav navbar-nav smooth-scroll">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="https://mdbootstrap.com/img/logo/mdb-transparent-sm-shadows.png" class="d-inline-block align-top" alt="MDBootstrap">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#my-work">My work</a>
+                            <a class="nav-link">Features</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about-me">About me</a>
+                            <a class="nav-link">Pricing</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
+                        <li class="nav-item btn-group">
+                            <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <a class="dropdown-item">Action</a>
+                                <a class="dropdown-item">Another action</a>
+                                <a class="dropdown-item">Something else here</a>
+                            </div>
                         </li>
                     </ul>
-
-                    <!--Navbar icons-->
-                    <ul class="nav navbar-nav nav-flex-icons">
-                        <li class="nav-item wow fadeInRight" data-wow-delay="0.2s">
+                    <ul class="navbar-nav nav-flex-icons">
+                        <li class="nav-item">
                             <a class="nav-link"><i class="fa fa-facebook"></i></a>
                         </li>
-                        <li class="nav-item wow fadeInRight" data-wow-delay="0.3s">
+                        <li class="nav-item">
                             <a class="nav-link"><i class="fa fa-twitter"></i></a>
                         </li>
-                        <li class="nav-item wow fadeInRight" data-wow-delay="0.4s">
+                        <li class="nav-item">
                             <a class="nav-link"><i class="fa fa-instagram"></i></a>
                         </li>
                     </ul>
-
                 </div>
-                <!--/.Collapse content-->
-
             </div>
-
         </nav>
         <!--/.Navbar-->
 

@@ -141,6 +141,14 @@
     }
 }
 
+.btn-slack {
+    background-color: $slack-color;
+    &:hover,
+    &:focus {
+        background-color: lighten($slack-color, 5%);
+    }
+}
+
 /* Icons */
 
 .icons-sm {
@@ -258,6 +266,14 @@
     &:hover,
     &:focus {
         color: $so-color;
+    } 
+}
+
+.slack-ic {
+   color: $slack-color!important;
+    &:hover,
+    &:focus {
+        color: $slack-color;
     } 
 }
 

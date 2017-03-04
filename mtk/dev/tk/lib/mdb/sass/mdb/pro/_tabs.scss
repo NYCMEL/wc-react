@@ -148,7 +148,7 @@
 }
 
 .classic-tabs {
-    @include flexbox();
+    @include flexbox()
     white-space: nowrap;
     overflow-x:auto;
     @media (min-width: 62rem) {
@@ -166,8 +166,9 @@
             text-transform:uppercase;
             color:rgba(255,255,255,.7);
             text-align:center;
+            border-radius:0;
             &.active {
-                border-bottom:2px solid #ffeb3b;
+                border-bottom:3px solid #ffeb3b;
                 color:#fff;
             }
         }

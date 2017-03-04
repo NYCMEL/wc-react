@@ -1,1624 +1,2111 @@
-// Skins
-$blue-skin-color: #062A64;
-$green-skin-color: #003830;
-$purple-skin-color: #650696;
-$deep-orange-skin-color: #8A1A00;
-$pink-skin-color: #c2185b;
-$light-grey-skin-color: #757575; 
-
-// Blue skin
-.blue-skin {
-    .primary-color {
-        background-color: $blue-skin-color!important;
-    }
-    .navbar,
-    .page-footer {
-        background-color: lighten( $blue-skin-color, 2%);
-    }
-    .side-nav {
-        @extend .blue-gradient;
-        .logo-wrapper {
-            background: url("http://mdbootstrap.com/images/sidenavs/blue.jpg") no-repeat center center;
-            background-size: cover;
-        }
-        .sn-avatar-wrapper img {
-            border: 3px solid lighten( $primary-color, 5%);
-        }
-        .social a {
-            &:hover {
-                background-color: lighten( $blue-skin-color, 0%);
-                @include transition (all 0.3s linear);
-            }
-        }
-        .collapsible li {
-            background-color: transparent;
-            a {
-                &.active {
-                    background-color: $blue-skin-color;
-                }
-                &:hover {
-                    background-color: lighten( $blue-skin-color, 1%);
-                    @include transition (all 0.3s linear);
-                }
-            }
-        }
-        .fa {
-            color: rgba(227, 242, 253, 0.64);
-        }
-    }
-    .navbar .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
-        background-color: lighten( $blue-skin-color, 0%);
-    }
-    .btn-primary {
-        background: $primary-color;
-        &:hover,
-        &:focus {
-            background-color: lighten( $primary-color, 5%)!important;
-        }
-        &.active {
-            background-color: darken( $primary-color, 20%)!important;
-        }
-    }
-    .btn-secondary {
-        background: #5C4AF5;
-        &:hover,
-        &:focus {
-            background-color: lighten( #5C4AF5, 5%)!important;
-        }
-        &.active {
-            background-color: darken( #5C4AF5, 20%)!important;
-        }
-    }
-    .btn-default,
-    .card .btn-action {
-        background: $primary-color-dark;
-        &:hover,
-        &:focus {
-            background-color: lighten( $primary-color-dark, 5%)!important;
-        }
-        &.active {
-            background-color: darken( $primary-color-dark, 20%)!important;
-        }
-    }
-    .btn-primary-outline {
-        border: 2px solid $primary-color;
-        color: $primary-color!important;
-    }
-    .btn-secondary-outline {
-        border: 2px solid #5C4AF5;
-        color: #5C4AF5!important;
-    }
-    .btn-default-outline {
-        border: 2px solid $primary-color-dark;
-        color: $primary-color-dark!important;
-    }
-
-    input[type=checkbox].filled-in:checked {
-        &+label {
-            &:before {
-                border-right: 2px solid #fff;
-                border-bottom: 2px solid #fff;
-            }
-
-            &:after {
-                background-color: $primary-color-dark;
-                border-color: $primary-color-dark;
-            }
-        }
-    }
-
-    .top-nav-collapse {
-        background-color: lighten( $blue-skin-color, 2%);
-    }
-
-    .carousel-multi-item {
-        .controls-top > a, .carousel-indicators li, .carousel-indicators li.active {
-            background-color: lighten( $blue-skin-color, 2%);
-        }
-    }
-    .tag, .form-header, .card-header {
-        background-color: lighten( $blue-skin-color, 2%);
-    }
+// Sidenav background variants
+.sn-bg-1 {
+    background-image: url(http://mdbootstrap.com/img/Photos/Others/sidenav1.jpg);
 }
 
-// Red skin
-.red-skin {
+.sn-bg-2 {
+    background-image: url(http://mdbootstrap.com/img/Photos/Others/sidenav2.jpg);
+}
+
+.sn-bg-3 {
+    background-image: url(http://mdbootstrap.com/img/Photos/Others/sidenav3.jpg);
+}
+
+.sn-bg-4 {
+    background-image: url(http://mdbootstrap.com/img/Photos/Others/sidenav4.jpg);
+}
+
+// Deep Purple skin
+$deep-purple-skin-primary-color: #d0637c;
+$deep-purple-skin-navbar: #4b415a;
+$deep-purple-skin-accent: #d0637c;
+$deep-purple-skin-flat: #383048;
+// Gradients
+$deep-purple-skin-gradient-start: #282233;
+$deep-purple-skin-gradient-end: #776598;
+// Masks
+$deep-purple-skin-mask-slight: rgba(22, 5, 34, 0.5);
+$deep-purple-skin-mask-light: rgba(22, 5, 34, 0.65);
+$deep-purple-skin-mask-strong: rgba(22, 5, 34, 0.8);
+// Buttons
+$deep-purple-skin-btn-primary: #d0637c;
+$deep-purple-skin-btn-secondary: #5b477b;
+$deep-purple-skin-btn-default: #372e5f;
+$elegant-dark-skin-text: #fff;
+.deep-purple-skin {
+    .gradient {
+        background: $deep-purple-skin-gradient-start;
+        /* Old browsers */
+        background: -moz-linear-gradient(-45deg, $deep-purple-skin-gradient-start 0%, $deep-purple-skin-gradient-end 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, $deep-purple-skin-gradient-start 0%, $deep-purple-skin-gradient-end 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, $deep-purple-skin-gradient-start 0%, $deep-purple-skin-gradient-end 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
     .primary-color {
-        background-color: #79000C!important;
+        background-color: $deep-purple-skin-primary-color!important;
     }
     .navbar {
-        background-color: darken( $danger-color-dark, 10%);
+        background-color: $deep-purple-skin-navbar;
+        .navbar-nav {
+            .nav-item {
+                .dropdown-menu a {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: darken( $deep-purple-skin-accent, 5%);
+                    }
+                }
+            }
+        }
     }
     .page-footer {
-        background-color: darken( $danger-color-dark, 25%);
+        background-color: $deep-purple-skin-navbar;
     }
     .side-nav {
-        @extend .red-gradient;
+        background-color: $deep-purple-skin-flat;
         .logo-wrapper {
-            background: url("http://mdbootstrap.com/images/sidenavs/red.jpg") no-repeat center center;
-            background-size: cover;
+            &> div {
+                background-color: transparent!important;
+            }
         }
         .sn-avatar-wrapper img {
-            border: 3px solid darken( $danger-color-dark, 25%);
+            border: 3px solid darken( $deep-purple-skin-accent, 15%);
         }
         .social a {
             &:hover {
-                background-color: darken( $danger-color-dark, 25%);
-                @include transition (all 0.3s linear);
+                .fa {
+                    color: $deep-purple-skin-accent;
+                    @include transition (all 0.3s linear);
+                }
             }
         }
         .collapsible li {
             background-color: transparent;
             a {
-                &.active {
-                    background-color: darken( $danger-color-dark, 25%);
-                }
+                color: #fff;
+                @include transition (all 0.3s linear);
                 &:hover {
-                    background-color: darken( $danger-color-dark, 25%);
-                    @include transition (all 0.3s linear);
+                    background-color: $deep-purple-skin-accent;
+                }
+                &.active {
+                    background-color: $deep-purple-skin-accent;
                 }
             }
         }
         .fa {
-            color: rgba(227, 242, 253, 0.64);
+            color: #fff;
         }
-    }
-    .navbar .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
-        background-color: darken( $danger-color-dark, 10%);
+        .sidenav-bg {
+            &:after,
+            &.mask-strong:after,
+            {
+                background: $deep-purple-skin-mask-strong;
+            }
+            &.mask-light:after {
+                background: $deep-purple-skin-mask-light;
+            }
+            &.mask-slight:after {
+                background: $deep-purple-skin-mask-slight;
+            }
+        }
     }
     .btn-primary {
-        background: $danger-color-dark;
+        background: $deep-purple-skin-btn-primary;
         &:hover,
         &:focus {
-            background-color: lighten( $danger-color-dark, 5%)!important;
+            background-color: lighten( $deep-purple-skin-btn-primary, 5%)!important;
         }
         &.active {
-            background-color: darken( $danger-color-dark, 20%)!important;
+            background-color: darken( $deep-purple-skin-btn-primary, 20%)!important;
         }
     }
     .btn-secondary {
-        background: #7D2900;
+        background: $deep-purple-skin-btn-secondary;
         &:hover,
         &:focus {
-            background-color: lighten( #7D2900, 5%)!important;
+            background-color: lighten( $deep-purple-skin-btn-secondary, 5%)!important;
         }
         &.active {
-            background-color: darken( #7D2900, 20%)!important;
+            background-color: darken( $deep-purple-skin-btn-secondary, 20%)!important;
         }
     }
     .btn-default,
     .card .btn-action {
-        background: #79000C;
+        background: $deep-purple-skin-btn-default;
         &:hover,
         &:focus {
-            background-color: lighten( #79000C, 5%)!important;
+            background-color: lighten( $deep-purple-skin-btn-default, 5%)!important;
         }
         &.active {
-            background-color: darken( #79000C, 20%)!important;
+            background-color: darken( $deep-purple-skin-btn-default, 20%)!important;
         }
     }
-    .btn-primary-outline {
-        border: 2px solid $danger-color-dark;
-        color: $danger-color-dark!important;
-    }
-    .btn-secondary-outline {
-        border: 2px solid #7D2900;
-        color: #7D2900!important;
-    }
-    .btn-default-outline {
-        border: 2px solid #79000C;
-        color: #79000C!important;
-    }
-
     // Custom inputs
-    input[type="email"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]) {
-        border-color:$danger-color-dark;
-        box-shadow:0 1px 0 0 $danger-color-dark;
+    input[type="email"]:focus:not([readonly]),
+    input[type="text"]:focus:not([readonly]),
+    input[type="password"]:focus:not([readonly]),
+    textarea.md-textarea:focus:not([readonly]) {
+        border-color: $deep-purple-skin-accent;
+        box-shadow: 0 1px 0 0 $deep-purple-skin-accent;
         &+label {
-            color:$danger-color-dark;
+            color: $deep-purple-skin-accent;
         }
     }
-
     input[type=checkbox]:checked {
         &+label {
             &:before {
-                border-right: 2px solid $danger-color-dark;
-                border-bottom: 2px solid $danger-color-dark;
+                border-right: 2px solid $deep-purple-skin-accent;
+                border-bottom: 2px solid $deep-purple-skin-accent;
             }
         }
     }
-
     input[type=checkbox].filled-in:checked {
         &+label {
             &:before {
                 border-right: 2px solid #fff;
                 border-bottom: 2px solid #fff;
             }
-
             &:after {
-                background-color: $danger-color-dark;
-                border-color: $danger-color-dark;
+                background-color: $deep-purple-skin-accent;
+                border-color: $deep-purple-skin-accent;
             }
         }
     }
-
     .md-form {
         .prefix {
             &.active {
-                color: $danger-color-dark;
+                color: $deep-purple-skin-accent;
             }
         }
     }
-
     /* Select colors */
     .dropdown-content {
         li:not(.disabled) {
             span {
-                color: $danger-color-dark;
+                color: $deep-purple-skin-accent;
             }
         }
     }
-
     .top-nav-collapse {
-        background-color: darken( $danger-color-dark, 10%);
+        background-color: $deep-purple-skin-navbar;
     }
-
     .carousel-multi-item {
-        .controls-top > a, .carousel-indicators li, .carousel-indicators li.active {
-            background-color: darken( $danger-color-dark, 10%);
+        .controls-top > a,
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            background-color: $deep-purple-skin-accent;
         }
     }
-    .tag, .form-header, .card-header {
-        background-color: darken( $danger-color-dark, 10%);
+    // Form-header, card-header
+    .form-header,
+    .card-header {
+        background-color: lighten( $deep-purple-skin-accent, 2%);
+    }
+    .spinner-primary-color,
+    .spinner-primary-color-only {
+        border-color: $deep-purple-skin-primary-color;
+    }
+    .pagination-primary-color {
+        .page-item.active .page-link,
+        .page-item.active .page-link:focus,
+        .page-item.active .page-link:hover {
+            color: #fff;
+            background-color: $deep-purple-skin-primary-color;
+            border-color: $deep-purple-skin-primary-color;
+        }
+        .page-link {
+            color: $deep-purple-skin-primary-color;
+        }
     }
 }
 
-// Green skin
-.green-skin {
+// Navy Blue skin
+$navy-blue-skin-primary-color: #309e9e;
+$navy-blue-skin-navbar: #353b50;
+$navy-blue-skin-accent: #309e9e;
+$navy-blue-skin-flat: #383048;
+// Gradients
+$navy-blue-skin-gradient-start: #222735;
+$navy-blue-skin-gradient-end: #63739c;
+// Masks
+$navy-blue-skin-mask-slight: rgba(14, 15, 32, 0.5);
+$navy-blue-skin-mask-light: rgba(14, 15, 32, 0.65);
+$navy-blue-skin-mask-strong: rgba(14, 15, 32, 0.8);
+// Buttons
+$navy-blue-skin-btn-primary: #309e9e;
+$navy-blue-skin-btn-secondary: #324f7b;
+$navy-blue-skin-btn-default: #293756;
+.navy-blue-skin {
+    .gradient {
+        background: $navy-blue-skin-gradient-start;
+        /* Old browsers */
+        background: -moz-linear-gradient(-45deg, $navy-blue-skin-gradient-start 0%, $navy-blue-skin-gradient-end 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, $navy-blue-skin-gradient-start 0%, $navy-blue-skin-gradient-end 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, $navy-blue-skin-gradient-start 0%, $navy-blue-skin-gradient-end 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
     .primary-color {
-        background-color: #003830!important;
+        background-color: $navy-blue-skin-primary-color!important;
     }
     .navbar {
-        background-color: darken( $green-skin-color, 0%);
+        background-color: $navy-blue-skin-navbar;
+        .navbar-nav {
+            .nav-item {
+                .dropdown-menu a {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: darken( $navy-blue-skin-accent, 5%);
+                    }
+                }
+            }
+        }
     }
     .page-footer {
-        background-color: darken( $green-skin-color, 5%);
+        background-color: $navy-blue-skin-navbar;
     }
     .side-nav {
-        @extend .green-gradient;
+        background-color: $navy-blue-skin-flat;
         .logo-wrapper {
-            background: url("http://mdbootstrap.com/images/sidenavs/green.jpg") no-repeat center center;
-            background-size: cover;
+            &> div {
+                background-color: transparent!important;
+            }
         }
         .sn-avatar-wrapper img {
-            border: 3px solid darken( $green-skin-color, 5%);
+            border: 3px solid darken( $navy-blue-skin-accent, 15%);
         }
         .social a {
             &:hover {
-                background-color: darken( $green-skin-color, 5%);
-                @include transition (all 0.3s linear);
+                .fa {
+                    color: $navy-blue-skin-accent;
+                    @include transition (all 0.3s linear);
+                }
             }
         }
         .collapsible li {
             background-color: transparent;
             a {
-                &.active {
-                    background-color: darken( $green-skin-color, 3%);
-                }
+                color: #fff;
+                @include transition (all 0.3s linear);
                 &:hover {
-                    background-color: darken( $green-skin-color, 3%);
-                    @include transition (all 0.3s linear);
+                    background-color: $navy-blue-skin-accent;
+                }
+                &.active {
+                    background-color: $navy-blue-skin-accent;
                 }
             }
         }
         .fa {
-            color: rgba(227, 242, 253, 0.64);
+            color: #fff;
         }
-    }
-    .navbar .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
-        background-color: darken( $green-skin-color, 0%);
+        .sidenav-bg {
+            &:after,
+            &.mask-strong:after,
+            {
+                background: $navy-blue-skin-mask-strong;
+            }
+            &.mask-light:after {
+                background: $navy-blue-skin-mask-light;
+            }
+            &.mask-slight:after {
+                background: $navy-blue-skin-mask-slight;
+            }
+        }
     }
     .btn-primary {
-        background: $green-skin-color;
+        background: $navy-blue-skin-btn-primary;
         &:hover,
         &:focus {
-            background-color: lighten( $green-skin-color, 5%)!important;
+            background-color: lighten( $navy-blue-skin-btn-primary, 5%)!important;
         }
         &.active {
-            background-color: darken( $green-skin-color, 20%)!important;
+            background-color: darken( $navy-blue-skin-btn-primary, 20%)!important;
         }
     }
     .btn-secondary {
-        background: #294F6F;
+        background: $navy-blue-skin-btn-secondary;
         &:hover,
         &:focus {
-            background-color: lighten( #294F6F, 5%)!important;
+            background-color: lighten( $navy-blue-skin-btn-secondary, 5%)!important;
         }
         &.active {
-            background-color: darken( #294F6F, 20%)!important;
+            background-color: darken( $navy-blue-skin-btn-secondary, 20%)!important;
         }
     }
     .btn-default,
     .card .btn-action {
-        background: #226568;
+        background: $navy-blue-skin-btn-default;
         &:hover,
         &:focus {
-            background-color: lighten( #226568, 5%)!important;
+            background-color: lighten( $navy-blue-skin-btn-default, 5%)!important;
         }
         &.active {
-            background-color: darken( #226568, 20%)!important;
+            background-color: darken( $navy-blue-skin-btn-default, 20%)!important;
         }
     }
-    .btn-primary-outline {
-        border: 2px solid $green-skin-color;
-        color: $green-skin-color!important;
-    }
-    .btn-secondary-outline {
-        border: 2px solid #294F6F;
-        color: #294F6F!important;
-    }
-    .btn-default-outline {
-        border: 2px solid #226568;
-        color: #226568!important;
-    }
-
     // Custom inputs
-    input[type="email"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]) {
-        border-color:$green-skin-color;
-        box-shadow:0 1px 0 0 $green-skin-color;
+    input[type="email"]:focus:not([readonly]),
+    input[type="text"]:focus:not([readonly]),
+    input[type="password"]:focus:not([readonly]),
+    textarea.md-textarea:focus:not([readonly]) {
+        border-color: $navy-blue-skin-accent;
+        box-shadow: 0 1px 0 0 $navy-blue-skin-accent;
         &+label {
-            color:$green-skin-color;
+            color: $navy-blue-skin-accent;
         }
     }
-
     input[type=checkbox]:checked {
         &+label {
             &:before {
-                border-right: 2px solid $green-skin-color;
-                border-bottom: 2px solid $green-skin-color;
+                border-right: 2px solid $navy-blue-skin-accent;
+                border-bottom: 2px solid $navy-blue-skin-accent;
             }
         }
     }
-
     input[type=checkbox].filled-in:checked {
         &+label {
             &:before {
                 border-right: 2px solid #fff;
                 border-bottom: 2px solid #fff;
             }
-
             &:after {
-                background-color: $green-skin-color;
-                border-color: $green-skin-color;
+                background-color: $navy-blue-skin-accent;
+                border-color: $navy-blue-skin-accent;
             }
         }
     }
-
     .md-form {
         .prefix {
             &.active {
-                color: $green-skin-color;
+                color: $navy-blue-skin-accent;
             }
         }
     }
-
     /* Select colors */
     .dropdown-content {
         li:not(.disabled) {
             span {
-                color: $green-skin-color;
+                color: $navy-blue-skin-accent;
             }
         }
     }
-
     .top-nav-collapse {
-        background-color: darken( $green-skin-color, 0%);
+        background-color: $navy-blue-skin-navbar;
     }
-
     .carousel-multi-item {
-        .controls-top > a, .carousel-indicators li, .carousel-indicators li.active {
-            background-color: darken( $green-skin-color, 0%);
+        .controls-top > a,
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            background-color: $navy-blue-skin-accent;
         }
     }
-    .tag, .form-header, .card-header {
-        background-color: darken( $green-skin-color, 0%);
+    // Tags, form-header, card-header
+    .form-header,
+    .card-header {
+        background-color: lighten( $navy-blue-skin-accent, 2%);
+    }
+    .spinner-primary-color,
+    .spinner-primary-color-only {
+        border-color: $navy-blue-skin-primary-color;
+    }
+    .pagination-primary-color {
+        .page-item.active .page-link,
+        .page-item.active .page-link:focus,
+        .page-item.active .page-link:hover {
+            color: #fff;
+            background-color: $navy-blue-skin-primary-color;
+            border-color: $navy-blue-skin-primary-color;
+        }
+        .page-link {
+            color: $navy-blue-skin-primary-color;
+        }
     }
 }
 
-// Purple skin
-.purple-skin {
+// Cyan skin
+$cyan-skin-primary-color: #4fada7;
+$cyan-skin-navbar: #21403f;
+$cyan-skin-accent: #4fada7;
+$cyan-skin-flat: #1e5252;
+// Gradients
+$cyan-skin-gradient-start: #153535;
+$cyan-skin-gradient-end: #4b9292;
+// Masks
+$cyan-skin-mask-slight: rgba(7, 45, 42, 0.5);
+$cyan-skin-mask-light: rgba(7, 45, 42, 0.65);
+$cyan-skin-mask-strong: rgba(7, 45, 42, 0.8);
+// Buttons
+$cyan-skin-btn-primary: #4fada7;
+$cyan-skin-btn-secondary: #145b5f;
+$cyan-skin-btn-default: #053638;
+.cyan-skin {
+    .gradient {
+        background: $cyan-skin-gradient-start;
+        /* Old browsers */
+        background: -moz-linear-gradient(-45deg, $cyan-skin-gradient-start 0%, $cyan-skin-gradient-end 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, $cyan-skin-gradient-start 0%, $cyan-skin-gradient-end 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, $cyan-skin-gradient-start 0%, $cyan-skin-gradient-end 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
     .primary-color {
-        background-color: #650696!important;
+        background-color: $cyan-skin-primary-color!important;
     }
     .navbar {
-        background-color: darken( $purple-skin-color, 5%);
+        background-color: $cyan-skin-navbar;
+        .navbar-nav {
+            .nav-item {
+                .dropdown-menu a {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: darken( $cyan-skin-accent, 5%);
+                    }
+                }
+            }
+        }
     }
     .page-footer {
-        background-color: darken( $purple-skin-color, 15%);
+        background-color: $cyan-skin-navbar;
     }
     .side-nav {
-        @extend .purple-gradient;
+        background-color: $cyan-skin-flat;
         .logo-wrapper {
-            background: url("http://mdbootstrap.com/images/sidenavs/purple.jpg") no-repeat center center;
-            background-size: cover;
+            &> div {
+                background-color: transparent!important;
+            }
         }
         .sn-avatar-wrapper img {
-            border: 3px solid darken( $purple-skin-color, 15%);
+            border: 3px solid darken( $cyan-skin-accent, 15%);
         }
         .social a {
             &:hover {
-                background-color: darken( $purple-skin-color, 10%);
-                @include transition (all 0.3s linear);
+                .fa {
+                    color: $cyan-skin-accent;
+                    @include transition (all 0.3s linear);
+                }
             }
         }
         .collapsible li {
             background-color: transparent;
             a {
-                &.active {
-                    background-color: darken( $purple-skin-color, 5%);
-                }
+                color: #fff;
+                @include transition (all 0.3s linear);
                 &:hover {
-                    background-color: darken( $purple-skin-color, 5%);
-                    @include transition (all 0.3s linear);
+                    background-color: $cyan-skin-accent;
+                }
+                &.active {
+                    background-color: $cyan-skin-accent;
                 }
             }
         }
         .fa {
-            color: rgba(227, 242, 253, 0.64);
+            color: #fff;
         }
-    }
-    .navbar .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
-        background-color: darken( $purple-skin-color, 5%);
+        .sidenav-bg {
+            &:after,
+            &.mask-strong:after,
+            {
+                background: $cyan-skin-mask-strong;
+            }
+            &.mask-light:after {
+                background: $cyan-skin-mask-light;
+            }
+            &.mask-slight:after {
+                background: $cyan-skin-mask-slight;
+            }
+        }
     }
     .btn-primary {
-        background: $purple-skin-color;
+        background: $cyan-skin-btn-primary;
         &:hover,
         &:focus {
-            background-color: lighten( $purple-skin-color, 5%)!important;
+            background-color: lighten( $cyan-skin-btn-primary, 5%)!important;
         }
         &.active {
-            background-color: darken( $purple-skin-color, 20%)!important;
+            background-color: darken( $cyan-skin-btn-primary, 20%)!important;
         }
     }
     .btn-secondary {
-        background: #A6007D;
+        background: $cyan-skin-btn-secondary;
         &:hover,
         &:focus {
-            background-color: lighten( #A6007D, 5%)!important;
+            background-color: lighten( $cyan-skin-btn-secondary, 5%)!important;
         }
         &.active {
-            background-color: darken( #A6007D, 20%)!important;
+            background-color: darken( $cyan-skin-btn-secondary, 20%)!important;
         }
     }
     .btn-default,
     .card .btn-action {
-        background: #21109C;
+        background: $cyan-skin-btn-default;
         &:hover,
         &:focus {
-            background-color: lighten( #21109C, 5%)!important;
+            background-color: lighten( $cyan-skin-btn-default, 5%)!important;
         }
         &.active {
-            background-color: darken( #21109C, 20%)!important;
+            background-color: darken( $cyan-skin-btn-default, 20%)!important;
         }
     }
-    .btn-primary-outline {
-        border: 2px solid $purple-skin-color;
-        color: $purple-skin-color!important;
-    }
-    .btn-secondary-outline {
-        border: 2px solid #A6007D;
-        color: #A6007D!important;
-    }
-    .btn-default-outline {
-        border: 2px solid #21109C;
-        color: #21109C!important;
-    }
-
     // Custom inputs
-    input[type="email"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]) {
-        border-color:$purple-skin-color;
-        box-shadow:0 1px 0 0 $purple-skin-color;
+    input[type="email"]:focus:not([readonly]),
+    input[type="text"]:focus:not([readonly]),
+    input[type="password"]:focus:not([readonly]),
+    textarea.md-textarea:focus:not([readonly]) {
+        border-color: $cyan-skin-accent;
+        box-shadow: 0 1px 0 0 $cyan-skin-accent;
         &+label {
-            color:$purple-skin-color;
+            color: $cyan-skin-accent;
         }
     }
-
     input[type=checkbox]:checked {
         &+label {
             &:before {
-                border-right: 2px solid $purple-skin-color;
-                border-bottom: 2px solid $purple-skin-color;
+                border-right: 2px solid $cyan-skin-accent;
+                border-bottom: 2px solid $cyan-skin-accent;
             }
         }
     }
-
     input[type=checkbox].filled-in:checked {
         &+label {
             &:before {
                 border-right: 2px solid #fff;
                 border-bottom: 2px solid #fff;
             }
-
             &:after {
-                background-color: $purple-skin-color;
-                border-color: $purple-skin-color;
+                background-color: $cyan-skin-accent;
+                border-color: $cyan-skin-accent;
             }
         }
     }
-
     .md-form {
         .prefix {
             &.active {
-                color: $purple-skin-color;
+                color: $cyan-skin-accent;
             }
         }
     }
-
     /* Select colors */
     .dropdown-content {
         li:not(.disabled) {
             span {
-                color: $purple-skin-color;
+                color: $cyan-skin-accent;
             }
         }
     }
-
     .top-nav-collapse {
-        background-color: darken( $purple-skin-color, 5%);
+        background-color: $cyan-skin-navbar;
     }
-
     .carousel-multi-item {
-        .controls-top > a, .carousel-indicators li, .carousel-indicators li.active {
-            background-color: darken( $purple-skin-color, 5%);
+        .controls-top > a,
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            background-color: $cyan-skin-accent;
+        }
+    }
+    // Tags, form-header, card-header
+    .form-header,
+    .card-header {
+        background-color: lighten( $cyan-skin-accent, 2%);
+    }
+    .spinner-primary-color,
+    .spinner-primary-color-only {
+        border-color: $cyan-skin-primary-color;
+    }
+    .pagination-primary-color {
+        .page-item.active .page-link,
+        .page-item.active .page-link:focus,
+        .page-item.active .page-link:hover {
+            color: #fff;
+            background-color: $cyan-skin-primary-color;
+            border-color: $cyan-skin-primary-color;
+        }
+        .page-link {
+            color: $cyan-skin-primary-color;
         }
-    }
-    .tag, .form-header, .card-header {
-        background-color: darken( $purple-skin-color, 5%);
-    }
-}
-
-// Dark skin
-.dark-skin {
-    .primary-color {
-        background-color: $elegant-color!important;
-    }
-    .navbar {
-        background-color: lighten( $elegant-color, 5%);
-    }
-    .page-footer {
-        background-color: darken( $elegant-color, 5%);
-    }
-    .side-nav {
-        @extend .dark-gradient;
-        .logo-wrapper {
-            background: url("http://mdbootstrap.com/images/sidenavs/dark.jpg") no-repeat center center;
-            background-size: cover;
-        }
-        .sn-avatar-wrapper img {
-            border: 3px solid darken( $elegant-color, 15%);
-        }
-        .social a {
-            &:hover {
-                background-color: lighten( $elegant-color, 0%);
-                @include transition (all 0.3s linear);
-            }
-        }
-        .collapsible li {
-            background-color: transparent;
-            a {
-                &.active {
-                    background-color: lighten( $elegant-color, 0%);
-                }
-                &:hover {
-                    background-color: lighten( $elegant-color, 0%);
-                    @include transition (all 0.3s linear);
-                }
-            }
-        }
-        .fa {
-            color: rgba(227, 242, 253, 0.64);
-        }
-    }
-    .navbar .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
-        background-color: lighten( $elegant-color, 5%);
-    }
-    .btn-primary {
-        background: $elegant-color;
-        &:hover,
-        &:focus {
-            background-color: lighten( $elegant-color, 5%)!important;
-        }
-        &.active {
-            background-color: darken( $elegant-color, 20%)!important;
-        }
-    }
-    .btn-secondary {
-        background: #3F729B;
-        &:hover,
-        &:focus {
-            background-color: lighten( #3F729B, 5%)!important;
-        }
-        &.active {
-            background-color: darken( #3F729B, 20%)!important;
-        }
-    }
-    .btn-default,
-    .card .btn-action {
-        background: #676767;
-        &:hover,
-        &:focus {
-            background-color: lighten( #676767, 5%)!important;
-        }
-        &.active {
-            background-color: darken( #676767, 20%)!important;
-        }
-    }
-    .btn-primary-outline {
-        border: 2px solid $elegant-color;
-        color: $elegant-color!important;
-    }
-    .btn-secondary-outline {
-        border: 2px solid #3F729B;
-        color: #3F729B!important;
-    }
-    .btn-default-outline {
-        border: 2px solid #676767;
-        color: #676767!important;
-    }
-
-    // Custom inputs
-    input[type="email"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]) {
-        border-color:$elegant-color;
-        box-shadow:0 1px 0 0 $elegant-color;
-        &+label {
-            color:$elegant-color;
-        }
-    }
-
-    input[type=checkbox]:checked {
-        &+label {
-            &:before {
-                border-right: 2px solid $elegant-color;
-                border-bottom: 2px solid $elegant-color;
-            }
-        }
-    }
-
-    input[type=checkbox].filled-in:checked {
-        &+label {
-            &:before {
-                border-right: 2px solid #fff;
-                border-bottom: 2px solid #fff;
-            }
-
-            &:after {
-                background-color: $elegant-color;
-                border-color: $elegant-color;
-            }
-        }
-    }
-
-    .md-form {
-        .prefix {
-            &.active {
-                color:$elegant-color;
-            }
-        }
-    }
-
-    /* Select colors */
-    .dropdown-content {
-        li:not(.disabled) {
-            span {
-                color: $elegant-color;
-            }
-        }
-    }
-
-    .top-nav-collapse {
-        background-color: lighten( $elegant-color, 5%);
-    }
-
-    .carousel-multi-item {
-        .controls-top > a, .carousel-indicators li, .carousel-indicators li.active {
-            background-color: lighten( $elegant-color, 5%);
-        }
-    }
-    .tag, .form-header, .card-header {
-        background-color: lighten( $elegant-color, 5%);
-    }
-}
-
-// Grey skin
-.grey-skin {
-    .primary-color {
-        background-color: $stylish-color!important;
-    }
-    .navbar {
-        background-color: lighten( $stylish-color, 5%);
-    }
-    .page-footer {
-        background-color: darken( $stylish-color, 5%);
-    }
-    .side-nav {
-        @extend .grey-gradient;
-        .logo-wrapper {
-            background: url("http://mdbootstrap.com/images/sidenavs/grey.jpg") no-repeat center center;
-            background-size: cover;
-        }
-        .sn-avatar-wrapper img {
-            border: 3px solid darken( $stylish-color, 15%);
-        }
-        .social a {
-            &:hover {
-                background-color: darken( $stylish-color, 5%);
-                @include transition (all 0.3s linear);
-            }
-        }
-        .collapsible li {
-            background-color: transparent;
-            a {
-                &.active {
-                    background-color: darken( $stylish-color, 5%);
-                }
-                &:hover {
-                    background-color: darken( $stylish-color, 5%);
-                    @include transition (all 0.3s linear);
-                }
-            }
-        }
-        .fa {
-            color: rgba(227, 242, 253, 0.64);
-        }
-    }
-    .navbar .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
-        background-color: lighten( $stylish-color, 5%);
-    }
-    .btn-primary {
-        background: $stylish-color;
-        &:hover,
-        &:focus {
-            background-color: lighten( $stylish-color, 5%)!important;
-        }
-        &.active {
-            background-color: darken( $stylish-color, 20%)!important;
-        }
-    }
-    .btn-secondary {
-        background: #3F729B;
-        &:hover,
-        &:focus {
-            background-color: lighten( #3F729B, 5%)!important;
-        }
-        &.active {
-            background-color: darken( #3F729B, 20%)!important;
-        }
-    }
-    .btn-default,
-    .card .btn-action {
-        background: #17202F;
-        &:hover,
-        &:focus {
-            background-color: lighten( #17202F, 5%)!important;
-        }
-        &.active {
-            background-color: darken( #17202F, 20%)!important;
-        }
-    }
-    .btn-primary-outline {
-        border: 2px solid $stylish-color;
-        color: $stylish-color!important;
-    }
-    .btn-secondary-outline {
-        border: 2px solid #3F729B;
-        color: #3F729B!important;
-    }
-    .btn-default-outline {
-        border: 2px solid #17202F;
-        color: #17202F!important;
-    }
-
-    // Custom inputs
-    input[type="email"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]) {
-        border-color:$stylish-color;
-        box-shadow:0 1px 0 0 $stylish-color;
-        &+label {
-            color:$stylish-color;
-        }
-    }
-
-    input[type=checkbox]:checked {
-        &+label {
-            &:before {
-                border-right: 2px solid $stylish-color;
-                border-bottom: 2px solid $stylish-color;
-            }
-        }
-    }
-
-    input[type=checkbox].filled-in:checked {
-        &+label {
-            &:before {
-                border-right: 2px solid #fff;
-                border-bottom: 2px solid #fff;
-            }
-
-            &:after {
-                background-color: $stylish-color;
-                border-color: $stylish-color;
-            }
-        }
-    }
-
-    .md-form {
-        .prefix {
-            &.active {
-                color:$stylish-color;
-            }
-        }
-    }
-
-    /* Select colors */
-    .dropdown-content {
-        li:not(.disabled) {
-            span {
-                color: $stylish-color;
-            }
-        }
-    }
-
-    .top-nav-collapse {
-        background-color: lighten( $stylish-color, 5%);
-    }
-    
-    .carousel-multi-item {
-        .controls-top > a, .carousel-indicators li, .carousel-indicators li.active {
-            background-color: lighten( $stylish-color, 5%);
-        }
-    }
-    .tag, .form-header, .card-header {
-        background-color: lighten( $stylish-color, 5%);
-    }
-}
-
-// MDB skin
-.mdb-skin {
-    .primary-color {
-        background-color: $unique-color!important;
-    }
-    .navbar {
-        background-color: lighten( $unique-color, 0%);
-    }
-    .page-footer {
-        background-color: darken( $unique-color, 15%);
-    }
-    .side-nav {
-        @extend .mdb-gradient;
-        .logo-wrapper {
-            background: url("http://mdbootstrap.com/images/sidenavs/mdb.jpg") no-repeat center center;
-            background-size: cover;
-        }
-        .sn-avatar-wrapper img {
-            border: 3px solid darken( $unique-color, 15%);
-        }
-        .social a {
-            &:hover {
-                background-color: darken( $unique-color, 15%);
-                @include transition (all 0.3s linear);
-            }
-        }
-        .collapsible li {
-            background-color: transparent;
-            a {
-                &.active {
-                    background-color: darken( $unique-color, 15%);
-                }
-                &:hover {
-                    background-color: darken( $unique-color, 15%);
-                    @include transition (all 0.3s linear);
-                }
-            }
-        }
-        .fa {
-            color: rgba(227, 242, 253, 0.64);
-        }
-    }
-    .navbar .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
-        background-color: lighten( $unique-color, 0%);
-    }
-    .btn-primary {
-        background: $unique-color;
-        &:hover,
-        &:focus {
-            background-color: lighten( $unique-color, 5%)!important;
-        }
-        &.active {
-            background-color: darken( $unique-color, 20%)!important;
-        }
-    }
-    .btn-secondary {
-        background: $unique-color-dark;
-        &:hover,
-        &:focus {
-            background-color: lighten( $unique-color-dark, 5%)!important;
-        }
-        &.active {
-            background-color: darken( $unique-color-dark, 20%)!important;
-        }
-    }  
-    .btn-default,
-    .card .btn-action {
-        background: #154771;
-        &:hover,
-        &:focus {
-            background-color: lighten( #154771, 5%)!important;
-        }
-        &.active {
-            background-color: darken( #154771, 20%)!important;
-        }
-    }
-    .btn-primary-outline {
-        border: 2px solid $unique-color;
-        color: $unique-color!important;
-    }
-    .btn-secondary-outline {
-        border: 2px solid $unique-color-dark;
-        color: $unique-color-dark!important;
-    }
-    .btn-default-outline {
-        border: 2px solid #154771;
-        color: #154771!important;
-    }
-
-    // Custom inputs
-    input[type="email"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]) {
-        border-color:$unique-color;
-        box-shadow:0 1px 0 0 $unique-color;
-        &+label {
-            color:$unique-color;
-        }
-    }
-
-    input[type=checkbox]:checked {
-        &+label {
-            &:before {
-                border-right: 2px solid $unique-color;
-                border-bottom: 2px solid $unique-color;
-            }
-        }
-    }
-
-    input[type=checkbox].filled-in:checked {
-        &+label {
-            &:before {
-                border-right: 2px solid #fff;
-                border-bottom: 2px solid #fff;
-            }
-
-            &:after {
-                background-color: $unique-color;
-                border-color: $unique-color;
-            }
-        }
-    }
-
-    .md-form {
-        .prefix {
-            &.active {
-                color:$unique-color;
-            }
-        }
-    }
-
-    /* Select colors */
-    .dropdown-content {
-        li:not(.disabled) {
-            span {
-                color: $unique-color;
-            }
-        }
-    }
-
-    .top-nav-collapse {
-        background-color: lighten( $unique-color, 0%);
-    }
-
-    .carousel-multi-item {
-        .controls-top > a, .carousel-indicators li, .carousel-indicators li.active {
-            background-color: lighten( $unique-color, 0%);
-        }
-    }
-    .tag, .form-header, .card-header {
-        background-color: lighten( $unique-color, 0%);
-    }
-}
-
-//Deep Orange skin
-.deep-orange-skin {
-    .primary-color {
-        background-color: $deep-orange-skin-color!important;
-    }
-    .navbar {
-        background-color: lighten( $deep-orange-skin-color, 0%);
-        .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
-            background-color: lighten($deep-orange-skin-color, 0%);
-        }
-    }
-    .page-footer {
-        background-color: darken( $deep-orange-skin-color, 15%);
-    }
-    .side-nav {
-        @extend .deep-orange-gradient;
-        .logo-wrapper {
-            background: url("http://mdbootstrap.com/images/sidenavs/deep-orange.jpg") no-repeat center center;
-            background-size: cover;
-        }
-        .sn-avatar-wrapper img {
-            border: 3px solid darken( $deep-orange-skin-color, 15%);
-        }
-        .social a {
-            &:hover {
-                background-color: darken($deep-orange-skin-color, 5%);
-                @include transition (all 0.3s linear);
-            }
-        }
-        .collapsible li {
-            background-color: transparent;
-            a {
-                &.active {
-                    background-color: darken( $deep-orange-skin-color, 5%);
-                }
-                &:hover {
-                    background-color: darken( $deep-orange-skin-color, 5%);
-                    @include transition (all 0.3s linear);
-                }
-            }
-        }
-        .fa {
-            color: rgba(227, 242, 253, 0.64);
-        }
-    }
-    .btn-primary {
-        background: $deep-orange-skin-color;
-        &:hover,
-        &:focus {
-            background-color: lighten( $deep-orange-skin-color, 5%)!important;
-        }
-        &.active {
-            background-color: darken( $deep-orange-skin-color, 20%)!important;
-        }
-    }
-    .btn-secondary {
-        background: #DD6000;
-        &:hover,
-        &:focus {
-            background-color: lighten( #DD6000, 5%)!important;
-        }
-        &.active {
-            background-color: darken( #DD6000, 20%)!important;
-        }
-    }
-    .btn-default,
-    .card .btn-action {
-        background: #830012;
-        &:hover,
-        &:focus {
-            background-color: lighten( #830012, 5%)!important;
-        }
-        &.active {
-            background-color: darken( #830012, 20%)!important;
-        }
-    }
-    .btn-primary-outline {
-        border: 2px solid $deep-orange-skin-color;
-        color: $deep-orange-skin-color!important;
-    }
-    .btn-secondary-outline {
-        border: 2px solid #DD6000;
-        color: #DD6000!important;
-    }
-    .btn-default-outline {
-        border: 2px solid #830012;
-        color: #830012!important;
-    }
-
-    // Custom inputs
-    input[type="email"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]) {
-        border-color:$deep-orange-skin-color;
-        box-shadow:0 1px 0 0 $deep-orange-skin-color;
-        &+label {
-            color:$deep-orange-skin-color;
-        }
-    }
-
-    input[type=checkbox]:checked {
-        &+label {
-            &:before {
-                border-right: 2px solid $deep-orange-skin-color;
-                border-bottom: 2px solid $deep-orange-skin-color;
-            }
-        }
-    }
-
-    input[type=checkbox].filled-in:checked {
-        &+label {
-            &:before {
-                border-right: 2px solid #fff;
-                border-bottom: 2px solid #fff;
-            }
-
-            &:after {
-                background-color: $deep-orange-skin-color;
-                border-color: $deep-orange-skin-color;
-            }
-        }
-    }
-
-    .md-form {
-        .prefix {
-            &.active {
-                color:$deep-orange-skin-color;
-            }
-        }
-    }
-
-    /* Select colors */
-    .dropdown-content {
-        li:not(.disabled) {
-            span {
-                color: $deep-orange-skin-color;
-            }
-        }
-    }
-
-    .top-nav-collapse {
-        background-color: lighten( $deep-orange-skin-color, 0%);
-    }
-
-    .carousel-multi-item {
-        .controls-top > a, .carousel-indicators li, .carousel-indicators li.active {
-            background-color: lighten( $deep-orange-skin-color, 0%);
-        }
-    }
-    .tag, .form-header, .card-header {
-        background-color: lighten( $deep-orange-skin-color, 0%);
-    }
-}
-
-// Graphite skin
-.graphite-skin {
-    .primary-color {
-        background-color: $special-color!important;
-    }
-    .navbar {
-        background-color: lighten( $special-color, 0%);
-        .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
-            background-color: lighten( $special-color, 0%);
-        }
-    }
-    .page-footer {
-        background-color: darken( $special-color, 5%);
-    }
-    .side-nav {
-        @extend .graphite-gradient;
-        .logo-wrapper {
-            background: url("http://mdbootstrap.com/images/sidenavs/graphite.jpg") no-repeat center center;
-            background-size: cover;
-        }
-        .sn-avatar-wrapper img {
-            border: 3px solid darken( $special-color, 15%);
-        }
-        .social a {
-            &:hover {
-                background-color: darken( $special-color, 5%);
-                @include transition (all 0.3s linear);
-            }
-        }
-        .collapsible li {
-            background-color: transparent;
-            a {
-                &.active {
-                    background-color: darken( $special-color, 5%);
-                }
-                &:hover {
-                    background-color: darken( $special-color, 5%);
-                    @include transition (all 0.3s linear);
-                }
-            }
-        }
-        .fa {
-            color: rgba(227, 242, 253, 0.64);
-        }
-    }
-    .btn-primary {
-        background: $special-color;
-        &:hover,
-        &:focus {
-            background-color: lighten( $special-color, 5%)!important;
-        }
-        &.active {
-            background-color: darken( $special-color, 20%)!important;
-        }
-    }
-    .btn-secondary {
-        background: #453D55;
-        &:hover,
-        &:focus {
-            background-color: lighten( #453D55, 5%)!important;
-        }
-        &.active {
-            background-color: darken( #453D55, 20%)!important;
-        }
-    }
-    .btn-default,
-    .card .btn-action {
-        background: #154771;
-        &:hover,
-        &:focus {
-            background-color: lighten( #154771, 5%)!important;
-        }
-        &.active {
-            background-color: darken( #154771, 20%)!important;
-        }
-    }
-    .btn-primary-outline {
-        border: 2px solid $special-color;
-        color: $special-color!important;
-    }
-    .btn-secondary-outline {
-        border: 2px solid #453D55;
-        color: #453D55!important;
-    }
-    .btn-default-outline {
-        border: 2px solid #154771;
-        color: #154771!important;
-    }
-
-    // Custom inputs
-    input[type="email"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]) {
-        border-color:$special-color;
-        box-shadow:0 1px 0 0 $special-color;
-        &+label {
-            color:$special-color;
-        }
-    }
-
-    input[type=checkbox]:checked {
-        &+label {
-            &:before {
-                border-right: 2px solid $special-color;
-                border-bottom: 2px solid $special-color;
-            }
-        }
-    }
-
-    input[type=checkbox].filled-in:checked {
-        &+label {
-            &:before {
-                border-right: 2px solid #fff;
-                border-bottom: 2px solid #fff;
-            }
-
-            &:after {
-                background-color: $special-color;
-                border-color: $special-color;
-            }
-        }
-    }
-
-    .md-form {
-        .prefix {
-            &.active {
-                color:$special-color;
-            }
-        }
-    }
-
-    /* Select colors */
-    .dropdown-content {
-        li:not(.disabled) {
-            span {
-                color: $special-color;
-            }
-        }
-    }
-
-    .top-nav-collapse {
-        background-color: lighten( $special-color, 0%);
-    }
-
-    .carousel-multi-item {
-        .controls-top > a, .carousel-indicators li, .carousel-indicators li.active {
-            background-color: lighten( $special-color, 0%);
-        }
-    }
-    .tag, .form-header, .card-header {
-        background-color: lighten( $special-color, 2%);
     }
 }
 
 // Pink skin
+$pink-skin-primary-color: #bd5d70;
+$pink-skin-navbar: #532a3c;
+$pink-skin-accent: #bd5d70;
+$pink-skin-flat: #673348;
+// Gradients
+$pink-skin-gradient-start: #2d0c1a;
+$pink-skin-gradient-end: #b16382;
+// Masks
+$pink-skin-mask-slight: rgba(72, 24, 43, 0.5);
+$pink-skin-mask-light: rgba(72, 24, 43, 0.65);
+$pink-skin-mask-strong: rgba(72, 24, 43, 0.8);
+// Buttons
+$pink-skin-btn-primary: #bd5d70;
+$pink-skin-btn-secondary: #3f4f7d;
+$pink-skin-btn-default: #532a3c;
 .pink-skin {
+    .gradient {
+        background: $pink-skin-gradient-start;
+        /* Old browsers */
+        background: -moz-linear-gradient(-45deg, $pink-skin-gradient-start 0%, $pink-skin-gradient-end 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, $pink-skin-gradient-start 0%, $pink-skin-gradient-end 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, $pink-skin-gradient-start 0%, $pink-skin-gradient-end 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
     .primary-color {
-        background-color: #880e4f!important;
+        background-color: $pink-skin-primary-color!important;
     }
     .navbar {
-        background-color: darken( $pink-skin-color, 5%);
+        background-color: $pink-skin-navbar;
+        .navbar-nav {
+            .nav-item {
+                .dropdown-menu a {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: darken( $pink-skin-accent, 5%);
+                    }
+                }
+            }
+        }
     }
     .page-footer {
-        background-color: darken( $pink-skin-color, 15%);
+        background-color: $pink-skin-navbar;
     }
     .side-nav {
-        @extend .pink-gradient;
+        background-color: $pink-skin-flat;
         .logo-wrapper {
-            background: url("http://mdbootstrap.com/images/regular/nature/img%20(73).jpg") no-repeat center center;
-            background-size: cover;
+            &> div {
+                background-color: transparent!important;
+            }
         }
         .sn-avatar-wrapper img {
-            border: 3px solid darken( $pink-skin-color, 15%);
+            border: 3px solid darken( $pink-skin-accent, 15%);
         }
         .social a {
             &:hover {
-                background-color: darken( $pink-skin-color, 10%);
-                @include transition (all 0.3s linear);
+                .fa {
+                    color: $pink-skin-accent;
+                    @include transition (all 0.3s linear);
+                }
             }
         }
         .collapsible li {
             background-color: transparent;
             a {
-                &.active {
-                    background-color: darken( $pink-skin-color, 5%);
-                }
+                color: #fff;
+                @include transition (all 0.3s linear);
                 &:hover {
-                    background-color: darken( $pink-skin-color, 5%);
-                    @include transition (all 0.3s linear);
+                    background-color: $pink-skin-accent;
+                }
+                &.active {
+                    background-color: $pink-skin-accent;
                 }
             }
         }
         .fa {
-            color: rgba(227, 242, 253, 0.64);
+            color: #fff;
         }
-    }
-    .navbar .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
-        background-color: darken( $pink-skin-color, 5%);
+        .sidenav-bg {
+            &:after,
+            &.mask-strong:after,
+            {
+                background: $pink-skin-mask-strong;
+            }
+            &.mask-light:after {
+                background: $pink-skin-mask-light;
+            }
+            &.mask-slight:after {
+                background: $pink-skin-mask-slight;
+            }
+        }
     }
     .btn-primary {
-        background: $pink-skin-color;
+        background: $pink-skin-btn-primary;
         &:hover,
         &:focus {
-            background-color: lighten( $pink-skin-color, 5%)!important;
+            background-color: lighten( $pink-skin-btn-primary, 5%)!important;
         }
         &.active {
-            background-color: darken( $pink-skin-color, 20%)!important;
+            background-color: darken( $pink-skin-btn-primary, 20%)!important;
         }
     }
     .btn-secondary {
-        background: #303f9f;
+        background: $pink-skin-btn-secondary;
         &:hover,
         &:focus {
-            background-color: lighten( #303f9f, 5%)!important;
+            background-color: lighten( $pink-skin-btn-secondary, 5%)!important;
         }
         &.active {
-            background-color: darken( #303f9f, 20%)!important;
+            background-color: darken( $pink-skin-btn-secondary, 20%)!important;
         }
     }
     .btn-default,
     .card .btn-action {
-        background: #21109C;
+        background: $pink-skin-btn-default;
         &:hover,
         &:focus {
-            background-color: lighten( #21109C, 5%)!important;
+            background-color: lighten( $pink-skin-btn-default, 5%)!important;
         }
         &.active {
-            background-color: darken( #21109C, 20%)!important;
+            background-color: darken( $pink-skin-btn-default, 20%)!important;
         }
     }
-
     // Custom inputs
-    input[type="email"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]) {
-        border-color:$pink-skin-color;
-        box-shadow:0 1px 0 0 $pink-skin-color;
+    input[type="email"]:focus:not([readonly]),
+    input[type="text"]:focus:not([readonly]),
+    input[type="password"]:focus:not([readonly]),
+    textarea.md-textarea:focus:not([readonly]) {
+        border-color: $pink-skin-accent;
+        box-shadow: 0 1px 0 0 $pink-skin-accent;
         &+label {
-            color:$pink-skin-color;
+            color: $pink-skin-accent;
         }
     }
-
     input[type=checkbox]:checked {
         &+label {
             &:before {
-                border-right: 2px solid $pink-skin-color;
-                border-bottom: 2px solid $pink-skin-color;
+                border-right: 2px solid $pink-skin-accent;
+                border-bottom: 2px solid $pink-skin-accent;
             }
         }
     }
-
     input[type=checkbox].filled-in:checked {
         &+label {
             &:before {
                 border-right: 2px solid #fff;
                 border-bottom: 2px solid #fff;
             }
-
             &:after {
-                background-color: $pink-skin-color;
-                border-color: $pink-skin-color;
+                background-color: $pink-skin-accent;
+                border-color: $pink-skin-accent;
             }
         }
     }
-
     .md-form {
         .prefix {
             &.active {
-                color:$pink-skin-color;
+                color: $pink-skin-accent;
             }
         }
     }
-
     /* Select colors */
     .dropdown-content {
         li:not(.disabled) {
             span {
-                color: $pink-skin-color;
+                color: $pink-skin-accent;
             }
         }
     }
-
     .top-nav-collapse {
-        background-color: $pink-skin-color;
+        background-color: $pink-skin-navbar;
     }
-
-    // Carousel
     .carousel-multi-item {
-        .controls-top > a, .carousel-indicators li, .carousel-indicators li.active {
-            background-color: $pink-skin-color;
+        .controls-top > a,
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            background-color: $pink-skin-accent;
         }
     }
-
     // Tags, form-header, card-header
-    .tag, .form-header, .card-header {
-        background-color: lighten( $pink-skin-color, 2%);
+    .form-header,
+    .card-header {
+        background-color: lighten( $pink-skin-accent, 2%);
     }
-
+    .spinner-primary-color,
+    .spinner-primary-color-only {
+        border-color: $pink-skin-primary-color;
+    }
+    .pagination-primary-color {
+        .page-item.active .page-link,
+        .page-item.active .page-link:focus,
+        .page-item.active .page-link:hover {
+            color: #fff;
+            background-color: $pink-skin-primary-color;
+            border-color: $pink-skin-primary-color;
+        }
+        .page-link {
+            color: $pink-skin-primary-color;
+        }
+    }
 }
 
-// Light grey skin
-.light-grey-skin {
+// Indigo skin
+$indigo-skin-primary-color: #7f82c5;
+$indigo-skin-navbar: #3d466d;
+$indigo-skin-accent: #7f82c5;
+$indigo-skin-flat: #26294e;
+// Gradients
+$indigo-skin-gradient-start: #181a31;
+$indigo-skin-gradient-end: #6f74b7;
+// Masks
+$indigo-skin-mask-slight: rgba(31, 38, 76, 0.5);
+$indigo-skin-mask-light: rgba(31, 38, 76, 0.65);
+$indigo-skin-mask-strong: rgba(31, 38, 76, 0.8);
+// Buttons
+$indigo-skin-btn-primary: #7f82c5;
+$indigo-skin-btn-secondary: #313f67;
+$indigo-skin-btn-default: #13204a;
+.indigo-skin {
+    .gradient {
+        background: $indigo-skin-gradient-start;
+        /* Old browsers */
+        background: -moz-linear-gradient(-45deg, $indigo-skin-gradient-start 0%, $indigo-skin-gradient-end 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, $indigo-skin-gradient-start 0%, $indigo-skin-gradient-end 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, $indigo-skin-gradient-start 0%, $indigo-skin-gradient-end 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
     .primary-color {
-        background-color: #353535!important;
+        background-color: $indigo-skin-primary-color!important;
     }
     .navbar {
-        background-color: darken( $light-grey-skin-color, 5%);
+        background-color: $indigo-skin-navbar;
+        .navbar-nav {
+            .nav-item {
+                .dropdown-menu a {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: darken( $indigo-skin-accent, 5%);
+                    }
+                }
+            }
+        }
     }
     .page-footer {
-        background-color: darken( $light-grey-skin-color, 15%);
+        background-color: $indigo-skin-navbar;
     }
     .side-nav {
-        background-color: darken( $light-grey-skin-color, 5%);
+        background-color: $indigo-skin-flat;
         .logo-wrapper {
-            background: url("http://mdbootstrap.com/images/regular/nature/img%20(32).jpg") no-repeat center center;
-            @include background-size(cover);
+            &> div {
+                background-color: transparent!important;
+            }
         }
         .sn-avatar-wrapper img {
-            border: 3px solid darken( $light-grey-skin-color, 15%);
+            border: 3px solid darken( $indigo-skin-accent, 15%);
         }
         .social a {
             &:hover {
-                background-color: darken( $light-grey-skin-color, 10%);
-                @include transition (all 0.3s linear);
+                .fa {
+                    color: $indigo-skin-accent;
+                    @include transition (all 0.3s linear);
+                }
             }
         }
         .collapsible li {
             background-color: transparent;
             a {
-                &.active {
-                    background-color: darken( $light-grey-skin-color, 15%);
-                }
+                color: #fff;
+                @include transition (all 0.3s linear);
                 &:hover {
-                    background-color: darken( $light-grey-skin-color, 20%);
-                    @include transition (all 0.3s linear);
+                    background-color: $indigo-skin-accent;
+                }
+                &.active {
+                    background-color: $indigo-skin-accent;
                 }
             }
         }
         .fa {
-            color: rgba(227, 242, 253, 0.64);
+            color: #fff;
         }
-    }
-    .navbar .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
-        background-color: darken( $light-grey-skin-color, 5%);
+        .sidenav-bg {
+            &:after,
+            &.mask-strong:after,
+            {
+                background: $indigo-skin-mask-strong;
+            }
+            &.mask-light:after {
+                background: $indigo-skin-mask-light;
+            }
+            &.mask-slight:after {
+                background: $indigo-skin-mask-slight;
+            }
+        }
     }
     .btn-primary {
-        background: #353535;
+        background: $indigo-skin-btn-primary;
         &:hover,
         &:focus {
-            background-color: lighten( #353535, 5%)!important;
+            background-color: lighten( $indigo-skin-btn-primary, 5%)!important;
         }
         &.active {
-            background-color: darken( #353535, 20%)!important;
+            background-color: darken( $indigo-skin-btn-primary, 20%)!important;
         }
     }
     .btn-secondary {
-        background: #3F729B;
+        background: $indigo-skin-btn-secondary;
         &:hover,
         &:focus {
-            background-color: lighten( #3F729B, 5%)!important;
+            background-color: lighten( $indigo-skin-btn-secondary, 5%)!important;
         }
         &.active {
-            background-color: darken( #3F729B, 20%)!important;
+            background-color: darken( $indigo-skin-btn-secondary, 20%)!important;
         }
     }
     .btn-default,
     .card .btn-action {
-        background: #0F0F0F;
+        background: $indigo-skin-btn-default;
         &:hover,
         &:focus {
-            background-color: lighten( #0F0F0F, 5%)!important;
+            background-color: lighten( $indigo-skin-btn-default, 5%)!important;
         }
         &.active {
-            background-color: darken( #0F0F0F, 20%)!important;
+            background-color: darken( $indigo-skin-btn-default, 20%)!important;
         }
     }
-
     // Custom inputs
-    input[type="email"]:focus:not([readonly]), input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]) {
-        border-color:$light-grey-skin-color;
-        box-shadow:0 1px 0 0 $light-grey-skin-color;
+    input[type="email"]:focus:not([readonly]),
+    input[type="text"]:focus:not([readonly]),
+    input[type="password"]:focus:not([readonly]),
+    textarea.md-textarea:focus:not([readonly]) {
+        border-color: $indigo-skin-accent;
+        box-shadow: 0 1px 0 0 $indigo-skin-accent;
         &+label {
-            color:$light-grey-skin-color;
+            color: $indigo-skin-accent;
         }
     }
-
     input[type=checkbox]:checked {
         &+label {
             &:before {
-                border-right: 2px solid $light-grey-skin-color;
-                border-bottom: 2px solid $light-grey-skin-color;
+                border-right: 2px solid $indigo-skin-accent;
+                border-bottom: 2px solid $indigo-skin-accent;
             }
         }
     }
-
     input[type=checkbox].filled-in:checked {
         &+label {
             &:before {
                 border-right: 2px solid #fff;
                 border-bottom: 2px solid #fff;
             }
-
             &:after {
-                background-color: $light-grey-skin-color;
-                border-color: $light-grey-skin-color;
+                background-color: $indigo-skin-accent;
+                border-color: $indigo-skin-accent;
             }
         }
     }
-
     .md-form {
         .prefix {
             &.active {
-                color:$light-grey-skin-color;
+                color: $indigo-skin-accent;
             }
         }
     }
-
     /* Select colors */
     .dropdown-content {
         li:not(.disabled) {
             span {
-                color: $light-grey-skin-color;
+                color: $indigo-skin-accent;
             }
         }
     }
-
     .top-nav-collapse {
-        background-color: $light-grey-skin-color;
+        background-color: $indigo-skin-navbar;
     }
-
     .carousel-multi-item {
-        .controls-top > a, .carousel-indicators li, .carousel-indicators li.active {
-            background-color: $light-grey-skin-color;
+        .controls-top > a,
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            background-color: $indigo-skin-accent;
         }
     }
-
     // Tags, form-header, card-header
-    .tag, .form-header, .card-header {
-        background-color: lighten( $light-grey-skin-color, 2%);
+    .form-header,
+    .card-header {
+        background-color: lighten( $indigo-skin-accent, 2%);
+    }
+    .spinner-primary-color,
+    .spinner-primary-color-only {
+        border-color: $indigo-skin-primary-color;
+    }
+    .pagination-primary-color {
+        .page-item.active .page-link,
+        .page-item.active .page-link:focus,
+        .page-item.active .page-link:hover {
+            color: #fff;
+            background-color: $indigo-skin-primary-color;
+            border-color: $indigo-skin-primary-color;
+        }
+        .page-link {
+            color: $indigo-skin-primary-color;
+        }
+    }
+}
+
+// Light blue skin
+$light-blue-skin-primary-color: #3d799c;
+$light-blue-skin-navbar: #5da4b5;
+$light-blue-skin-accent: rgba(21, 73, 103, 0.73);
+$light-blue-skin-flat: #318594;
+// Gradients
+$light-blue-skin-gradient-start: #295a67;
+$light-blue-skin-gradient-end: #56abb9;
+// Masks
+$light-blue-skin-mask-slight: rgba(47, 115, 132, 0.5);
+$light-blue-skin-mask-light: rgba(47, 115, 132, 0.65);
+$light-blue-skin-mask-strong: rgba(47, 115, 132, 0.8);
+// Buttons
+$light-blue-skin-btn-primary: #3d799c;
+$light-blue-skin-btn-secondary: #51aabf;
+$light-blue-skin-btn-default: #1f567d;
+.light-blue-skin {
+    .gradient {
+        background: $light-blue-skin-gradient-start;
+        /* Old browsers */
+        background: -moz-linear-gradient(-45deg, $light-blue-skin-gradient-start 0%, $light-blue-skin-gradient-end 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, $light-blue-skin-gradient-start 0%, $light-blue-skin-gradient-end 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, $light-blue-skin-gradient-start 0%, $light-blue-skin-gradient-end 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+    .primary-color {
+        background-color: $light-blue-skin-primary-color!important;
+    }
+    .navbar {
+        background-color: $light-blue-skin-navbar;
+        .navbar-nav {
+            .nav-item {
+                .dropdown-menu a {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: darken( $light-blue-skin-accent, 5%);
+                    }
+                }
+            }
+        }
+    }
+    .page-footer {
+        background-color: $light-blue-skin-navbar;
+    }
+    .side-nav {
+        background-color: $light-blue-skin-flat;
+        .logo-wrapper {
+            &> div {
+                background-color: transparent!important;
+            }
+        }
+        .sn-avatar-wrapper img {
+            border: 3px solid darken( $light-blue-skin-accent, 15%);
+        }
+        .social a {
+            &:hover {
+                .fa {
+                    color: $light-blue-skin-accent;
+                    @include transition (all 0.3s linear);
+                }
+            }
+        }
+        .collapsible li {
+            background-color: transparent;
+            a {
+                color: #fff;
+                @include transition (all 0.3s linear);
+                &:hover {
+                    background-color: $light-blue-skin-accent;
+                }
+                &.active {
+                    background-color: $light-blue-skin-accent;
+                }
+            }
+        }
+        .fa {
+            color: #fff;
+        }
+        .sidenav-bg {
+            &:after,
+            &.mask-strong:after,
+            {
+                background: $light-blue-skin-mask-strong;
+            }
+            &.mask-light:after {
+                background: $light-blue-skin-mask-light;
+            }
+            &.mask-slight:after {
+                background: $light-blue-skin-mask-slight;
+            }
+        }
+    }
+    .btn-primary {
+        background: $light-blue-skin-btn-primary;
+        &:hover,
+        &:focus {
+            background-color: lighten( $light-blue-skin-btn-primary, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $light-blue-skin-btn-primary, 20%)!important;
+        }
+    }
+    .btn-secondary {
+        background: $light-blue-skin-btn-secondary;
+        &:hover,
+        &:focus {
+            background-color: lighten( $light-blue-skin-btn-secondary, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $light-blue-skin-btn-secondary, 20%)!important;
+        }
+    }
+    .btn-default,
+    .card .btn-action {
+        background: $light-blue-skin-btn-default;
+        &:hover,
+        &:focus {
+            background-color: lighten( $light-blue-skin-btn-default, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $light-blue-skin-btn-default, 20%)!important;
+        }
+    }
+    // Custom inputs
+    input[type="email"]:focus:not([readonly]),
+    input[type="text"]:focus:not([readonly]),
+    input[type="password"]:focus:not([readonly]),
+    textarea.md-textarea:focus:not([readonly]) {
+        border-color: $light-blue-skin-accent;
+        box-shadow: 0 1px 0 0 $light-blue-skin-accent;
+        &+label {
+            color: $light-blue-skin-accent;
+        }
+    }
+    input[type=checkbox]:checked {
+        &+label {
+            &:before {
+                border-right: 2px solid $light-blue-skin-accent;
+                border-bottom: 2px solid $light-blue-skin-accent;
+            }
+        }
+    }
+    input[type=checkbox].filled-in:checked {
+        &+label {
+            &:before {
+                border-right: 2px solid #fff;
+                border-bottom: 2px solid #fff;
+            }
+            &:after {
+                background-color: $light-blue-skin-accent;
+                border-color: $light-blue-skin-accent;
+            }
+        }
+    }
+    .md-form {
+        .prefix {
+            &.active {
+                color: $light-blue-skin-accent;
+            }
+        }
+    }
+    /* Select colors */
+    .dropdown-content {
+        li:not(.disabled) {
+            span {
+                color: $light-blue-skin-accent;
+            }
+        }
+    }
+    .top-nav-collapse {
+        background-color: $light-blue-skin-navbar;
+    }
+    .carousel-multi-item {
+        .controls-top > a,
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            background-color: $light-blue-skin-accent;
+        }
+    }
+    // Tags, form-header, card-header
+    .form-header,
+    .card-header {
+        background-color: lighten( $light-blue-skin-accent, 2%);
+    }
+    .spinner-primary-color,
+    .spinner-primary-color-only {
+        border-color: $light-blue-skin-primary-color;
+    }
+    .pagination-primary-color {
+        .page-item.active .page-link,
+        .page-item.active .page-link:focus,
+        .page-item.active .page-link:hover {
+            color: #fff;
+            background-color: $light-blue-skin-primary-color;
+            border-color: $light-blue-skin-primary-color;
+        }
+        .page-link {
+            color: $light-blue-skin-primary-color;
+        }
+    }
+}
+
+// Grey skin
+$grey-skin-primary-color: #ad495c;
+$grey-skin-navbar: #7d8488;
+$grey-skin-accent: rgba(187, 33, 77, 0.79);
+$grey-skin-flat: #a5a4a4;
+// Gradients
+$grey-skin-gradient-start: #383838;
+$grey-skin-gradient-end: #a5a4a4;
+// Masks
+$grey-skin-mask-slight: rgba(121, 121, 121, 0.5);
+$grey-skin-mask-light: rgba(121, 121, 121, 0.65);
+$grey-skin-mask-strong: rgba(121, 121, 121, 0.8);
+// Buttons
+$grey-skin-btn-primary: #ad495c;
+$grey-skin-btn-secondary: #7d8488;
+$grey-skin-btn-default: #393b44;
+.grey-skin {
+    .gradient {
+        background: $grey-skin-gradient-start;
+        /* Old browsers */
+        background: -moz-linear-gradient(-45deg, $grey-skin-gradient-start 0%, $grey-skin-gradient-end 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, $grey-skin-gradient-start 0%, $grey-skin-gradient-end 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, $grey-skin-gradient-start 0%, $grey-skin-gradient-end 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+    .primary-color {
+        background-color: $grey-skin-primary-color!important;
+    }
+    .navbar {
+        background-color: $grey-skin-navbar;
+        .navbar-nav {
+            .nav-item {
+                .dropdown-menu a {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: darken( $grey-skin-accent, 5%);
+                    }
+                }
+            }
+        }
+    }
+    .page-footer {
+        background-color: $grey-skin-navbar;
+    }
+    .side-nav {
+        background-color: $grey-skin-flat;
+        .logo-wrapper {
+            &> div {
+                background-color: transparent!important;
+            }
+        }
+        .sn-avatar-wrapper img {
+            border: 3px solid darken( $grey-skin-accent, 15%);
+        }
+        .social a {
+            &:hover {
+                .fa {
+                    color: $grey-skin-accent;
+                    @include transition (all 0.3s linear);
+                }
+            }
+        }
+        .collapsible li {
+            background-color: transparent;
+            a {
+                color: #fff;
+                @include transition (all 0.3s linear);
+                &:hover {
+                    background-color: $grey-skin-accent;
+                }
+                &.active {
+                    background-color: $grey-skin-accent;
+                }
+            }
+        }
+        .fa {
+            color: #fff;
+        }
+        .sidenav-bg {
+            &:after,
+            &.mask-strong:after,
+            {
+                background: $grey-skin-mask-strong;
+            }
+            &.mask-light:after {
+                background: $grey-skin-mask-light;
+            }
+            &.mask-slight:after {
+                background: $grey-skin-mask-slight;
+            }
+        }
+    }
+    .navbar .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
+        background-color: darken( $grey-skin-accent, 5%);
+    }
+    .btn-primary {
+        background: $grey-skin-btn-primary;
+        &:hover,
+        &:focus {
+            background-color: lighten( $grey-skin-btn-primary, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $grey-skin-btn-primary, 20%)!important;
+        }
+    }
+    .btn-secondary {
+        background: $grey-skin-btn-secondary;
+        &:hover,
+        &:focus {
+            background-color: lighten( $grey-skin-btn-secondary, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $grey-skin-btn-secondary, 20%)!important;
+        }
+    }
+    .btn-default,
+    .card .btn-action {
+        background: $grey-skin-btn-default;
+        &:hover,
+        &:focus {
+            background-color: lighten( $grey-skin-btn-default, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $grey-skin-btn-default, 20%)!important;
+        }
+    }
+    // Custom inputs
+    input[type="email"]:focus:not([readonly]),
+    input[type="text"]:focus:not([readonly]),
+    input[type="password"]:focus:not([readonly]),
+    textarea.md-textarea:focus:not([readonly]) {
+        border-color: $grey-skin-accent;
+        box-shadow: 0 1px 0 0 $grey-skin-accent;
+        &+label {
+            color: $grey-skin-accent;
+        }
+    }
+    input[type=checkbox]:checked {
+        &+label {
+            &:before {
+                border-right: 2px solid $grey-skin-accent;
+                border-bottom: 2px solid $grey-skin-accent;
+            }
+        }
+    }
+    input[type=checkbox].filled-in:checked {
+        &+label {
+            &:before {
+                border-right: 2px solid #fff;
+                border-bottom: 2px solid #fff;
+            }
+            &:after {
+                background-color: $grey-skin-accent;
+                border-color: $grey-skin-accent;
+            }
+        }
+    }
+    .md-form {
+        .prefix {
+            &.active {
+                color: $grey-skin-accent;
+            }
+        }
+    }
+    /* Select colors */
+    .dropdown-content {
+        li:not(.disabled) {
+            span {
+                color: $grey-skin-accent;
+            }
+        }
+    }
+    .top-nav-collapse {
+        background-color: $grey-skin-navbar;
+    }
+    .carousel-multi-item {
+        .controls-top > a,
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            background-color: $grey-skin-accent;
+        }
+    }
+    // Tags, form-header, card-header
+    .form-header,
+    .card-header {
+        background-color: lighten( $grey-skin-accent, 2%);
+    }
+    .spinner-primary-color,
+    .spinner-primary-color-only {
+        border-color: $grey-skin-primary-color;
+    }
+    .pagination-primary-color {
+        .page-item.active .page-link,
+        .page-item.active .page-link:focus,
+        .page-item.active .page-link:hover {
+            color: #fff;
+            background-color: $grey-skin-primary-color;
+            border-color: $grey-skin-primary-color;
+        }
+        .page-link {
+            color: $grey-skin-primary-color;
+        }
+    }
+}
+
+// white skin
+$white-skin-text-color: #424242;
+$white-skin-primary-color: #4285F4;
+$white-skin-navbar: #fff;
+$white-skin-footer: #797979;
+$white-skin-accent: #4285F4;
+$white-skin-flat: #F9F9F9;
+// Gradients
+$white-skin-gradient-start: #ababab;
+$white-skin-gradient-end: #fff;
+// Masks
+$white-skin-mask-slight: rgba(255, 255, 255, 0.5);
+$white-skin-mask-light: rgba(255, 255, 255, 0.65);
+$white-skin-mask-strong: rgba(255, 255, 255, 0.9);
+// Buttons
+$white-skin-btn-primary: #4285F4;
+$white-skin-btn-secondary: #D25048;
+$white-skin-btn-default: #0F0F0F;
+.white-skin {
+    .gradient {
+        background: $white-skin-gradient-start;
+        /* Old browsers */
+        background: -moz-linear-gradient(-45deg, $white-skin-gradient-start 0%, $white-skin-gradient-end 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, $white-skin-gradient-start 0%, $white-skin-gradient-end 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, $white-skin-gradient-start 0%, $white-skin-gradient-end 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+    .primary-color {
+        background-color: $white-skin-primary-color!important;
+    }
+    .navbar {
+        color: $white-skin-text-color;
+        background-color: $white-skin-navbar;
+        .navbar-nav {
+            .nav-item {
+                .dropdown-menu a {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: darken( $white-skin-accent, 5%);
+                    }
+                }
+            }
+        }
+        a:not(.dropdown-item) {
+            color: $white-skin-text-color !important;
+        }
+        .form-control {
+            border-bottom: 1px solid rgba(153, 153, 153, 0.298039);
+            color: $white-skin-text-color;
+            @include placeholder {
+                color: rgba($white-skin-text-color, .5) !important;
+            }
+        }
+    }
+    .page-footer {
+        background-color: $white-skin-footer;
+    }
+    .double-nav a {
+        color: $white-skin-text-color;
+    }
+    .side-nav {
+        background-color: $white-skin-flat;
+        .logo-wrapper {
+            &> div {
+                background-color: transparent!important;
+            }
+        }
+        .sn-avatar-wrapper img {
+            border: 3px solid darken( $white-skin-accent, 15%);
+        }
+        .social a {
+            &:hover {
+                .fa {
+                    color: $white-skin-accent;
+                    @include transition (all 0.3s linear);
+                }
+            }
+        }
+        .search-form {
+            input[type="text"].form-control {
+                border-bottom: 1px solid rgba(153, 153, 153, 0.298039);
+                color: #424242;
+                @include placeholder {
+                    color: rgba($white-skin-text-color, .5) !important;
+                }
+            }
+        }
+        .collapsible li {
+            background-color: transparent;
+            a {
+                font-weight: 400;
+                color: $white-skin-text-color;
+                @include transition (all 0.3s linear);
+                &:hover {
+                    background-color: rgba(0, 0, 0, .05);
+                }
+                &.active {
+                    font-weight: 500;
+                    color: $white-skin-accent;
+                    .fa {
+                        color: $white-skin-accent;
+                        @include transition (color 0.3s linear);
+                    }
+                }
+            }
+        }
+        .fa {
+            color: $white-skin-text-color;
+            @include transition (color 0.3s linear);
+        }
+        .sidenav-bg {
+            &:after,
+            &.mask-strong:after,
+            {
+                background: $white-skin-mask-strong;
+            }
+            &.mask-light:after {
+                background: $white-skin-mask-light;
+            }
+            &.mask-slight:after {
+                background: $white-skin-mask-slight;
+            }
+        }
+    }
+    .navbar .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
+        background-color: darken( $white-skin-accent, 5%);
+    }
+    .btn-primary {
+        background: $white-skin-btn-primary;
+        &:hover,
+        &:focus {
+            background-color: lighten( $white-skin-btn-primary, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $white-skin-btn-primary, 20%)!important;
+        }
+    }
+    .btn-secondary {
+        background: $white-skin-btn-secondary;
+        &:hover,
+        &:focus {
+            background-color: lighten( $white-skin-btn-secondary, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $white-skin-btn-secondary, 20%)!important;
+        }
+    }
+    .btn-default,
+    .card .btn-action {
+        background: $white-skin-btn-default;
+        &:hover,
+        &:focus {
+            background-color: lighten( $white-skin-btn-default, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $white-skin-btn-default, 20%)!important;
+        }
+    }
+    // Custom inputs
+    input[type="email"]:focus:not([readonly]),
+    input[type="text"]:focus:not([readonly]),
+    input[type="password"]:focus:not([readonly]),
+    textarea.md-textarea:focus:not([readonly]) {
+        border-color: $white-skin-accent;
+        box-shadow: 0 1px 0 0 $white-skin-accent;
+        &+label {
+            color: $white-skin-accent;
+        }
+    }
+    input[type=checkbox]:checked {
+        &+label {
+            &:before {
+                border-right: 2px solid $white-skin-accent;
+                border-bottom: 2px solid $white-skin-accent;
+            }
+        }
+    }
+    input[type=checkbox].filled-in:checked {
+        &+label {
+            &:before {
+                border-right: 2px solid #fff;
+                border-bottom: 2px solid #fff;
+            }
+            &:after {
+                background-color: $white-skin-accent;
+                border-color: $white-skin-accent;
+            }
+        }
+    }
+    .md-form {
+        .prefix {
+            &.active {
+                color: $white-skin-accent;
+            }
+        }
+    }
+    /* Select colors */
+    .dropdown-content {
+        li:not(.disabled) {
+            span {
+                color: $white-skin-accent;
+            }
+        }
+    }
+    .top-nav-collapse {
+        background-color: $white-skin-navbar;
+    }
+    .carousel-multi-item {
+        .controls-top > a,
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            background-color: $white-skin-accent;
+        }
+    }
+    // Tags, form-header, card-header
+    .form-header,
+    .card-header {
+        background-color: lighten( $white-skin-accent, 2%);
+    }
+    .spinner-primary {
+        border-color: $white-skin-primary-color;
+    }
+    .spinner-primary-color,
+    .spinner-primary-color-only {
+        border-color: $white-skin-primary-color;
+    }
+    .pagination-primary-color {
+        .page-item.active .page-link,
+        .page-item.active .page-link:focus,
+        .page-item.active .page-link:hover {
+            color: #fff;
+            background-color: $white-skin-primary-color;
+            border-color: $white-skin-primary-color;
+        }
+        .page-link {
+            color: $white-skin-primary-color;
+        }
+    }
+}
+
+// black skin
+$black-skin-primary-color: #2AD1A3;
+$black-skin-navbar: #222;
+$black-skin-accent: #2AD1A3;
+$black-skin-flat: #222;
+// Gradients
+$black-skin-gradient-start: #000;
+$black-skin-gradient-end: #616161;
+// Masks
+$black-skin-mask-slight: rgba(0, 0, 0, 0.5);
+$black-skin-mask-light: rgba(0, 0, 0, 0.65);
+$black-skin-mask-strong: rgba(0, 0, 0, 0.8);
+// Buttons
+$black-skin-btn-primary: #2AD1A3;
+$black-skin-btn-secondary: #00684B;
+$black-skin-btn-default: #0F0F0F;
+.black-skin {
+    .gradient {
+        background: $black-skin-gradient-start;
+        /* Old browsers */
+        background: -moz-linear-gradient(-45deg, $black-skin-gradient-start 0%, $black-skin-gradient-end 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, $black-skin-gradient-start 0%, $black-skin-gradient-end 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, $black-skin-gradient-start 0%, $black-skin-gradient-end 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+    .primary-color {
+        background-color: $black-skin-primary-color!important;
+    }
+    .navbar {
+        background-color: $black-skin-navbar;
+        .navbar-nav {
+            .nav-item {
+                .dropdown-menu a {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: darken( $black-skin-accent, 5%);
+                    }
+                }
+            }
+        }
+    }
+    .page-footer {
+        background-color: $black-skin-navbar;
+    }
+    .side-nav {
+        background-color: $black-skin-flat;
+        .logo-wrapper {
+            &> div {
+                background-color: transparent!important;
+            }
+        }
+        .sn-avatar-wrapper img {
+            border: 3px solid darken( $black-skin-accent, 15%);
+        }
+        .social a {
+            &:hover {
+                .fa {
+                    color: $black-skin-accent;
+                    @include transition (all 0.3s linear);
+                }
+            }
+        }
+        .collapsible li {
+            background-color: transparent;
+            a {
+                color: #fff;
+                @include transition (all 0.3s linear);
+                &:hover {
+                    background-color: $black-skin-accent;
+                }
+                &.active {
+                    background-color: $black-skin-accent;
+                }
+            }
+        }
+        .fa {
+            color: #fff;
+        }
+        .sidenav-bg {
+            &:after,
+            &.mask-strong:after,
+            {
+                background: $black-skin-mask-strong;
+            }
+            &.mask-light:after {
+                background: $black-skin-mask-light;
+            }
+            &.mask-slight:after {
+                background: $black-skin-mask-slight;
+            }
+        }
+    }
+    .btn-primary {
+        background: $black-skin-btn-primary;
+        &:hover,
+        &:focus {
+            background-color: lighten( $black-skin-btn-primary, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $black-skin-btn-primary, 20%)!important;
+        }
+    }
+    .btn-secondary {
+        background: $black-skin-btn-secondary;
+        &:hover,
+        &:focus {
+            background-color: lighten( $black-skin-btn-secondary, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $black-skin-btn-secondary, 20%)!important;
+        }
+    }
+    .btn-default,
+    .card .btn-action {
+        background: $black-skin-btn-default;
+        &:hover,
+        &:focus {
+            background-color: lighten( $black-skin-btn-default, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $black-skin-btn-default, 20%)!important;
+        }
+    }
+    // Custom inputs
+    input[type="email"]:focus:not([readonly]),
+    input[type="text"]:focus:not([readonly]),
+    input[type="password"]:focus:not([readonly]),
+    textarea.md-textarea:focus:not([readonly]) {
+        border-color: $black-skin-accent;
+        box-shadow: 0 1px 0 0 $black-skin-accent;
+        &+label {
+            color: $black-skin-accent;
+        }
+    }
+    input[type=checkbox]:checked {
+        &+label {
+            &:before {
+                border-right: 2px solid $black-skin-accent;
+                border-bottom: 2px solid $black-skin-accent;
+            }
+        }
+    }
+    input[type=checkbox].filled-in:checked {
+        &+label {
+            &:before {
+                border-right: 2px solid #fff;
+                border-bottom: 2px solid #fff;
+            }
+            &:after {
+                background-color: $black-skin-accent;
+                border-color: $black-skin-accent;
+            }
+        }
+    }
+    .md-form {
+        .prefix {
+            &.active {
+                color: $black-skin-accent;
+            }
+        }
+    }
+    /* Select colors */
+    .dropdown-content {
+        li:not(.disabled) {
+            span {
+                color: $black-skin-accent;
+            }
+        }
+    }
+    .top-nav-collapse {
+        background-color: $black-skin-navbar;
+    }
+    .carousel-multi-item {
+        .controls-top > a,
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            background-color: $black-skin-accent;
+        }
+    }
+    // Tags, form-header, card-header
+    .form-header,
+    .card-header {
+        background-color: lighten( $black-skin-accent, 2%);
+    }
+    .spinner-primary-color,
+    .spinner-primary-color-only {
+        border-color: $black-skin-primary-color;
+    }
+    .pagination-primary-color {
+        .page-item.active .page-link,
+        .page-item.active .page-link:focus,
+        .page-item.active .page-link:hover {
+            color: #fff;
+            background-color: $black-skin-primary-color;
+            border-color: $black-skin-primary-color;
+        }
+        .page-link {
+            color: $black-skin-primary-color;
+        }
+    }
+}
+
+// mdb skin
+$mdb-skin-primary-color: #33b5e5;
+$mdb-skin-navbar: #293a48;
+$mdb-skin-accent: #33b5e5;
+$mdb-skin-flat: #293a48;
+// Gradients
+$mdb-skin-gradient-start: #3684b7;
+$mdb-skin-gradient-end: #091827;
+// Masks
+$mdb-skin-mask-slight: rgba(9, 24, 39, 0.5);
+$mdb-skin-mask-light: rgba(9, 24, 39, 0.65);
+$mdb-skin-mask-strong: rgba(9, 24, 39, 0.8);
+// Buttons
+$mdb-skin-btn-primary: #33b5e5;
+$mdb-skin-btn-secondary: #0e3d67;
+$mdb-skin-btn-default: #1a6398;
+.mdb-skin {
+    .gradient {
+        background: $mdb-skin-gradient-start;
+        /* Old browsers */
+        background: -moz-linear-gradient(-45deg, $mdb-skin-gradient-start 0%, $mdb-skin-gradient-end 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, $mdb-skin-gradient-start 0%, $mdb-skin-gradient-end 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, $mdb-skin-gradient-start 0%, $mdb-skin-gradient-end 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+    .primary-color {
+        background-color: $mdb-skin-primary-color!important;
+    }
+    .navbar {
+        background-color: $mdb-skin-navbar;
+        .navbar-nav {
+            .nav-item {
+                .dropdown-menu a {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: darken( $mdb-skin-accent, 5%);
+                    }
+                }
+            }
+        }
+    }
+    .page-footer {
+        background-color: $mdb-skin-navbar;
+    }
+    .side-nav {
+        background-color: $mdb-skin-flat;
+        .logo-wrapper {
+            &> div {
+                background-color: transparent!important;
+            }
+        }
+        .sn-avatar-wrapper img {
+            border: 3px solid darken( $mdb-skin-accent, 15%);
+        }
+        .social a {
+            &:hover {
+                .fa {
+                    color: $mdb-skin-accent;
+                    @include transition (all 0.3s linear);
+                }
+            }
+        }
+        .collapsible li {
+            background-color: transparent;
+            a {
+                color: #fff;
+                @include transition (all 0.3s linear);
+                &:hover {
+                    background-color: $mdb-skin-accent;
+                }
+                &.active {
+                    background-color: $mdb-skin-accent;
+                }
+            }
+        }
+        .fa {
+            color: #fff;
+        }
+        .sidenav-bg {
+            &:after,
+            &.mask-strong:after,
+            {
+                background: $mdb-skin-mask-strong;
+            }
+            &.mask-light:after {
+                background: $mdb-skin-mask-light;
+            }
+            &.mask-slight:after {
+                background: $mdb-skin-mask-slight;
+            }
+        }
+    }
+    .navbar .navbar-nav .dropdown .dropdown-primary .dropdown-item:hover {
+        background-color: darken( $mdb-skin-accent, 5%);
+    }
+    .btn-primary {
+        background: $mdb-skin-btn-primary;
+        &:hover,
+        &:focus {
+            background-color: lighten( $mdb-skin-btn-primary, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $mdb-skin-btn-primary, 20%)!important;
+        }
+    }
+    .btn-secondary {
+        background: $mdb-skin-btn-secondary;
+        &:hover,
+        &:focus {
+            background-color: lighten( $mdb-skin-btn-secondary, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $mdb-skin-btn-secondary, 20%)!important;
+        }
+    }
+    .btn-default,
+    .card .btn-action {
+        background: $mdb-skin-btn-default;
+        &:hover,
+        &:focus {
+            background-color: lighten( $mdb-skin-btn-default, 5%)!important;
+        }
+        &.active {
+            background-color: darken( $mdb-skin-btn-default, 20%)!important;
+        }
+    }
+    // Custom inputs
+    input[type="email"]:focus:not([readonly]),
+    input[type="text"]:focus:not([readonly]),
+    input[type="password"]:focus:not([readonly]),
+    textarea.md-textarea:focus:not([readonly]) {
+        border-color: $mdb-skin-accent;
+        box-shadow: 0 1px 0 0 $mdb-skin-accent;
+        &+label {
+            color: $mdb-skin-accent;
+        }
+    }
+    input[type=checkbox]:checked {
+        &+label {
+            &:before {
+                border-right: 2px solid $mdb-skin-accent;
+                border-bottom: 2px solid $mdb-skin-accent;
+            }
+        }
+    }
+    input[type=checkbox].filled-in:checked {
+        &+label {
+            &:before {
+                border-right: 2px solid #fff;
+                border-bottom: 2px solid #fff;
+            }
+            &:after {
+                background-color: $mdb-skin-accent;
+                border-color: $mdb-skin-accent;
+            }
+        }
+    }
+    .md-form {
+        .prefix {
+            &.active {
+                color: $mdb-skin-accent;
+            }
+        }
+    }
+    /* Select colors */
+    .dropdown-content {
+        li:not(.disabled) {
+            span {
+                color: $mdb-skin-accent;
+            }
+        }
+    }
+    .top-nav-collapse {
+        background-color: $mdb-skin-navbar;
+    }
+    .carousel-multi-item {
+        .controls-top > a,
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            background-color: $mdb-skin-accent;
+        }
+    }
+    // Tags, form-header, card-header
+    .form-header,
+    .card-header {
+        background-color: lighten( $mdb-skin-accent, 2%);
+    }
+    .spinner-primary-color,
+    .spinner-primary-color-only {
+        border-color: $mdb-skin-primary-color;
+    }
+    .pagination-primary-color {
+        .page-item.active .page-link,
+        .page-item.active .page-link:focus,
+        .page-item.active .page-link:hover {
+            color: #fff;
+            background-color: $mdb-skin-primary-color;
+            border-color: $mdb-skin-primary-color;
+        }
+        .page-link {
+            color: $mdb-skin-primary-color;
+        }
     }
 }

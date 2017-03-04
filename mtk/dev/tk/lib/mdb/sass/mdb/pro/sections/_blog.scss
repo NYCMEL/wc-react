@@ -19,7 +19,7 @@
 .comments-list,
 .reply-form {
     margin-bottom: 3rem;
-    .tag {
+    .badge {
         @extend .z-depth-1-half;
     }
     img {
@@ -52,6 +52,9 @@
         .md-form {
             text-align: left;
         }
+    }
+    .text-center {
+        flex:1;
     }
 }
 
