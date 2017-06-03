@@ -25,9 +25,9 @@ set bs  [expr {([info exist      bs] == "0") ? "3" : "4"}]
 set cdn [expr {([info exist     CDN] == "0") ? "0" : "$::CDN"}]
 
 ######################################################
-##### 
+##### type can be set to "is='custom-style'"
 ######################################################
-proc include {fname {type "is='custom-style'"}} {
+proc include {fname {type ""}} {
     Trace
 
     # DO NOT ALLOW DUPLICATES
