@@ -267,11 +267,19 @@ m::proc -private tk::include::bootstrap:4 {
     Trace
 
     # BOOTSTRAP 4
-    include "/GitHub/tether/dist/css/tether.min.css"
-    include "/GitHub/bootstrap/dist/css/bootstrap.min.css"
-    
-    include "/GitHub/tether/dist/js/tether.min.js"
-    include "/GitHub/bootstrap/dist/js/bootstrap.min.js"
+    if {0} {
+	put {
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	}
+    } else {
+	include "/GitHub/tether/dist/css/tether.min.css"
+	include "/GitHub/bootstrap/dist/css/bootstrap.min.css"
+	
+	include "/GitHub/tether/dist/js/tether.min.js"
+	include "/GitHub/bootstrap/dist/js/bootstrap.min.js"
+    }
 }
 
 ##################################################
