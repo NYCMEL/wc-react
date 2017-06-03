@@ -21,7 +21,6 @@ namespace eval tk {}
 
 set lang [expr {([info exist lang] == "0") ? "en" : "$lang"}]
 set ajax [expr {([info exist ajax] == "0") ? "0"  : "$ajax"}]
-set bs   [expr {([info exist ::bs] == 0) ? "" : ":4"}]
 
 #PREVENTITIVE ! SOMETIMES IT DUPLICATIONS LIKE "1 1" INSTEAD OF JUST 1
 if {$ajax != 0} {set ajax 1}

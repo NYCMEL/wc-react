@@ -6,6 +6,8 @@
 # element name is the name of a command and the value is
 # a script that loads the command.
 
+set auto_index(::ccolor::initialize) [list source [file join $dir ccolors.tcl]]
+set auto_index(::ccolor::replace) [list source [file join $dir ccolors.tcl]]
 set auto_index(::tcl::dict::init) [list source [file join $dir dict.tcl]]
 set auto_index(::tcl::dict::save) [list source [file join $dir dict.tcl]]
 set auto_index(::tcl::dict::restore) [list source [file join $dir dict.tcl]]
@@ -131,7 +133,6 @@ set auto_index(tk::include::polymer) [list source [file join $dir tk.includes.tc
 set auto_index(tk::include::codemirror) [list source [file join $dir tk.includes.tcl]]
 set auto_index(tk::include::prettify) [list source [file join $dir tk.includes.tcl]]
 set auto_index(tk::include::bootstrap) [list source [file join $dir tk.includes.tcl]]
-set auto_index(tk::include::bootstrap:4) [list source [file join $dir tk.includes.tcl]]
 set auto_index(tk::include::waypoints) [list source [file join $dir tk.includes.tcl]]
 set auto_index(tk::include::media) [list source [file join $dir tk.includes.tcl]]
 set auto_index(tk::include::viewport) [list source [file join $dir tk.includes.tcl]]
