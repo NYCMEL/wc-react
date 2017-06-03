@@ -21,16 +21,8 @@ namespace eval tk {
     namespace eval include {}
 }
 
-if {[info exist require] == 0} {set require ""}
-
-switch $require {
-    "include" {
-	put "<script src='/tk/inc/min/include.min.js'></script>"
-    }
-    "yepnope" {
-	put "<script src='/GitHub/yepnope.js/yepnope.1.5.4-min.js'></script>"
-    }
-}
+set bs  [expr {([info exist      bs] == "0") ? "3" : "4"}]
+set cdn [expr {([info exist     CDN] == "0") ? "0" : "$::CDN"}]
 
 ######################################################
 ##### 
@@ -60,33 +52,13 @@ proc include {fname {type "is='custom-style'"}} {
 	    regsub -all {\_} $func "" func
 	    regsub -all {\.} $func "" func
 
-	    switch $::require {
-		"include" {
-		    put "<script>loadjscssfile('$url','js')</script>"
-		}
-		"yepnope" {
-		    put "<script>yepnope('$url')</script>"
-		}
-		default {
-		    put "<script type='text/javascript' media='all' src='$url'></script>"
-		}
-	    }
+	    put "<script type='text/javascript' media='all' src='$url'></script>"
 	}
 	".style" {
 	    put "<style $type>[file:read $fname]</style>"
 	}
 	".css" {
-	    switch $::require {
-		"include" {
-		    put "<script>loadjscssfile('$url','css')</script>"
-		}
-		"yepnope" {
-		    put "<script>yepnope('$url')</script>"
-		}
-		default {
-		    put "<link type='text/css' href='$url' media='all' rel='stylesheet' />\n"
-		}
-	    }
+	    put "<link type='text/css' href='$url' media='all' rel='stylesheet' />\n"
 	}
 	".html" {
 	    if {$type == ""} {
@@ -243,25 +215,28 @@ m::proc -private tk::include::bootstrap {
 } {
     Trace
 
-    switch [expr {([info exist ::bs] == 0) ? "3" : "4"}] {
+    switch $::bs {
 	"3" {
 	    include "/tk/inc/bootstrap.min.css"
 	    include "/tk/inc/bootstrap.min.js"
 	}
 	"4" {
 	    # BOOTSTRAP 4
-	    if {0} {
-		put {
-		    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-		    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-		    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	    switch $::cdn {
+		"0" {
+		    include "/GitHub/tether/dist/css/tether.min.css"
+		    include "/GitHub/bootstrap/dist/css/bootstrap.min.css"
+		    
+		    include "/GitHub/tether/dist/js/tether.min.js"
+		    include "/GitHub/bootstrap/dist/js/bootstrap.min.js"
 		}
-	    } else {
-		include "/GitHub/tether/dist/css/tether.min.css"
-		include "/GitHub/bootstrap/dist/css/bootstrap.min.css"
-		
-		include "/GitHub/tether/dist/js/tether.min.js"
-		include "/GitHub/bootstrap/dist/js/bootstrap.min.js"
+		"1" {
+		    put {
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+		    }
+		}
 	    }
 	}
     }
