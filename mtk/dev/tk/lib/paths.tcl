@@ -1,7 +1,6 @@
 lappend ::auto_path\
     $TKSERVER/tk/lib/prototype\
     \
-    $TKSERVER/tk/lib/common\
     $TKSERVER/tk/lib/components/tk\
     $TKSERVER/tk/lib/components/tb\
     $TKSERVER/tk/lib/components/tb4\
@@ -17,7 +16,6 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/components/jqw\
     $TKSERVER/tk/lib/components/wc\
     $TKSERVER/tk/lib/components/fm\
-    $TKSERVER/tk/lib/components/tmp\
     \
     $TKSERVER/tk/lib/components/wc/mtk\
     $TKSERVER/tk/lib/components/w3c/mtk\
