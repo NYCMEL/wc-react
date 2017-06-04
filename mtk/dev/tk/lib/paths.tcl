@@ -4,6 +4,7 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/components/tk\
     $TKSERVER/tk/lib/components/tb\
     $TKSERVER/tk/lib/components/tb4\
+    $TKSERVER/tk/lib/components/bs4\
     $TKSERVER/tk/lib/components/tk\
     $TKSERVER/tk/lib/components/jq\
     $TKSERVER/tk/lib/components/ch\
