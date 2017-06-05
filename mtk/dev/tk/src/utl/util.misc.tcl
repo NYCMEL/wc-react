@@ -76,7 +76,7 @@ m::proc -public tk::translate {
 } {    
     Trace
 
-    set display [expr {($hidden == "1") ? "block" : "none"}]
+    set display [expr {($hidden == "1") ? "none" : "block"}]
 
     division id="google_translate_element" [style position absolute top $top right $right z-index 9999 display $display] {
 	# GOOGLE TRANSLATE PLACEHOLDER
