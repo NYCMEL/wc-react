@@ -546,12 +546,16 @@ m::proc -public tk::replace {
 ##### 
 ######################################################
 m::proc -public tk::placeholder {
-    {-width 100%}
+    {-width  100%}
     {-height 100%}
+    {-hidden    0}
 } {
     Documentation goes here...
 } {
     Trace
+
+    if {$hidden == 1} {
+    }
 
     put [img /tk/img/common/placeholder.png [style width $width height $height border-radius 3px]]
 }

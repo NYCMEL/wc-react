@@ -68,14 +68,17 @@ m::proc -public tk::pop:image {
 ##### 
 ######################################################
 m::proc -public tk::translate {
-    {-top    "7px"}
+    {-top     "7px"}
     {-right "100px"}
+    {-hidden      0}
 } {
     Documentation goes here...
 } {    
     Trace
 
-    division id="google_translate_element" [style position absolute top $top right $right z-index 9999] {
+    set display [expr {($hidden == "1") ? "block" : "none"}]
+
+    division id="google_translate_element" [style position absolute top $top right $right z-index 9999 display $display] {
 	# GOOGLE TRANSLATE PLACEHOLDER
     }
 
