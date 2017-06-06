@@ -862,19 +862,16 @@ proc tk::hformat {x} {
 ######################################################
 m::proc -public tk::holder {
     -size:required
-    {-text ""}
+    {-text        ""}
     {-theme "social"}
 } {
     Documentation goes here...
 } {    
     Trace
-    variable _id [id]
 
     include "/GitHub/holder/holder.min.js"
 
     # THEMES ARE: sky, vine, lava, gray, industrial, and social.
 
-    put {
-	<img src="holder.js/$size?text=$text&theme=$theme">
-    }
+    put "<img src='holder.js/$size?theme=$theme&text=$text'>"
 }
