@@ -84,13 +84,9 @@ m::proc -public tk::translate {
 
     put {
 	<style>
-	.goog-te-banner-frame.skiptranslate {
-	    display: none !important;
-	} 
-
-	body {
-	    top: 0px !important; 
-	}
+	.goog-te-gadget-icon {display: none;}
+	.goog-te-gadget-simple {border:1px #cecece solid;}
+	.goog-te-banner-frame.skiptranslate {display: none;} 
 	</style>
 
 	<meta name="google-translate-customization" content="c78679481a22af91-2d34ce791c1e343d-g2a8a98b31d5899f2-a"></meta>
