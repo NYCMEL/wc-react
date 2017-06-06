@@ -68,9 +68,9 @@ m::proc -public tk::pop:image {
 ##### 
 ######################################################
 m::proc -public tk::translate {
-    {-top     "7px"}
-    {-right "100px"}
-    {-hidden      0}
+    {-top    ""}
+    {-right  ""}
+    {-hidden  0}
 } {
     Documentation goes here...
 } {    
@@ -78,8 +78,14 @@ m::proc -public tk::translate {
 
     set display [expr {($hidden == "1") ? "none" : "block"}]
 
-    division id="google_translate_element" [style position absolute top $top right $right z-index 9999 display $display] {
+    if {$top == ""} {
+	put "<span id='google_translate_element' style=display=$display>"
 	# GOOGLE TRANSLATE PLACEHOLDER
+	put "</span>"
+    } else {
+	division id="google_translate_element" [style position absolute top $top right $right z-index 9999 display $display] {
+	    # GOOGLE TRANSLATE PLACEHOLDER
+	}
     }
 
     put {
