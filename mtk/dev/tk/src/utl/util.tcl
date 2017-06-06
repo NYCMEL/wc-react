@@ -554,9 +554,6 @@ m::proc -public tk::placeholder {
 } {
     Trace
 
-    if {$hidden == 1} {
-    }
-
     put [img /tk/img/common/placeholder.png [style width $width height $height border-radius 3px]]
 }
 
@@ -860,3 +857,24 @@ proc tk::hformat {x} {
     return "[commify $q] MB"
 }
 
+######################################################
+##### 
+######################################################
+m::proc -public tk::holder {
+    -size:required
+    {-text ""}
+    {-theme "social"}
+} {
+    Documentation goes here...
+} {    
+    Trace
+    variable _id [id]
+
+    include "/GitHub/holder/holder.min.js"
+
+    # THEMES ARE: sky, vine, lava, gray, industrial, and social.
+
+    put {
+	<img src="holder.js/$size?text=$text&theme=$theme">
+    }
+}
