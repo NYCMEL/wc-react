@@ -707,6 +707,8 @@ m::proc -public tk::pretty {
     preformatted class="prettyprint prettify $type linenums" [style padding 20px] {
 	put $guts
     }
+
+    put "<script>prettyPrint()</script>"
 }
 
 ######################################################
