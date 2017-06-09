@@ -111,7 +111,7 @@ m::proc -public tk::dummy::3 {
     set x [clock format [clock seconds] -format "%T"]
 
     for {set i 0} {$i <= $size} {incr i} {
-	division {
+	division style=padding-bottom:10px {
 	    put "[string toupper [lorem -language $language 4]] - $x";br
 	    put [lorem -language $language 30]
 	}
