@@ -877,3 +877,16 @@ m::proc -public tk::holder {
 
     put "<img src='holder.js/$size?theme=$theme&text=$text'>"
 }
+
+######################################################
+##### 
+######################################################
+m::proc -public tk::lorempixel {
+    {-type "technics"}
+} {
+    Documentation goes here...
+} {    
+    Trace
+
+    put "<img src='http://lorempixel.com/300/200/technics/' />"
+}
