@@ -879,14 +879,16 @@ m::proc -public tk::holder {
 }
 
 ######################################################
-##### 
+##### TYPES: sports technics nature food 
 ######################################################
 m::proc -public tk::lorempixel {
+    {-width  400}
+    {-height 200}
     {-type "technics"}
 } {
     Documentation goes here...
 } {    
     Trace
 
-    put "<img src='http://lorempixel.com/300/200/technics/' />"
+    put "<img src='http://lorempixel.com/$width/$height/$type/' />"
 }
