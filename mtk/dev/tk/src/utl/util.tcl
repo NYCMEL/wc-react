@@ -907,6 +907,13 @@ m::proc -public tk::lorempixel:test {
     br
     division class="container" {
 	division class="row" {
+	    division class="col-md-12" {
+		division class="page-header" {
+		    h1 "Lorem <small>- Pixel</small>"
+		}
+	    }
+	}
+	division class="row" {
 	    foreach i {abstract animals business cats city food nightlife fashion people nature sports technics transport} {
 		division class="col-md-3" [style margin-bottom 10px] {
 		    put $i;br
