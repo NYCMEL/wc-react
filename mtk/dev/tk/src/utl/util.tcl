@@ -892,7 +892,7 @@ m::proc -public tk::lorempixel {
 } {    
     Trace
 
-    put "<img src='http://lorempixel.com/$width/$height/$type/' />"
+    put "<img src='http://lorempixel.com/$width/$height/$type/$type' />"
 }
 
 ######################################################
@@ -916,7 +916,6 @@ m::proc -public tk::lorempixel:test {
 	division class="row" {
 	    foreach i {abstract animals business cats city food nightlife fashion people nature sports technics transport} {
 		division class="col-md-3" [style margin-bottom 10px] {
-		    put $i;br
 		    tk::lorempixel -type $i -width 200
 		}
 	    }
