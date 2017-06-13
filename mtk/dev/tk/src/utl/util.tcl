@@ -879,7 +879,9 @@ m::proc -public tk::holder {
 }
 
 ######################################################
-##### TYPES: sports technics nature food 
+#### TYPES: 
+####   abstract animals business cats city food nightlife
+####   fashion people natures ports technics transport
 ######################################################
 m::proc -public tk::lorempixel {
     {-width  400}
@@ -891,4 +893,26 @@ m::proc -public tk::lorempixel {
     Trace
 
     put "<img src='http://lorempixel.com/$width/$height/$type/' />"
+}
+
+######################################################
+##### 
+######################################################
+m::proc -public tk::lorempixel:test {
+} {
+    Documentation goes here...
+} {    
+    Trace
+
+    br
+    division class="container" {
+	division class="row" {
+	    foreach i {abstract animals business cats city food nightlife fashion people nature sports technics transport} {
+		division class="col-md-3" [style margin-bottom 10px] {
+		    put $i;br
+		    tk::lorempixel -type $i -width 200
+		}
+	    }
+	}
+    }
 }
