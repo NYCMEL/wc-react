@@ -893,7 +893,7 @@ m::proc -public tk::lorempixel {
 } {    
     Trace
 
-    if {$text == ""} {set text $type}
+    if {$text == ""} {set text [string toupper $type]}
 
     put "<img src='http://lorempixel.com/$width/$height/$type/$text' />"
 }
