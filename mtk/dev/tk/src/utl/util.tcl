@@ -887,12 +887,15 @@ m::proc -public tk::lorempixel {
     {-width  400}
     {-height 200}
     {-type "technics"}
+    {-text ""}
 } {
     Documentation goes here...
 } {    
     Trace
 
-    put "<img src='http://lorempixel.com/$width/$height/$type/$type' />"
+    if {$text == ""} {set text $type}
+
+    put "<img src='http://lorempixel.com/$width/$height/$type/$text' />"
 }
 
 ######################################################
