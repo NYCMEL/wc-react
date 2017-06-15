@@ -926,3 +926,27 @@ m::proc -public tk::lorempixel:test {
 	}
     }
 }
+
+######################################################
+##### 
+######################################################
+m::proc -public tk::imgsize {
+    -file:required
+} {
+    Documentation goes here...
+} {    
+    Trace
+
+    set fd [open $file]
+    fconfigure $fd -translation binary
+    set ch1 "00"
+    while { ! [ eof $fd ] } {
+	binary scan [ read $fd 1 ] "H2" ch2
+	if { ( $ch1 == "ff" ) && ( $ch2 >= "c0" ) && ($ch2 <= "c3" ) } {
+	    binary scan [ read $fd 7 ] "x3SS" height width
+	    return [ list $height $width ]
+	}
+	set ch1 $ch2
+    }
+    error "Couldn't find JPG header for $file"
+}
