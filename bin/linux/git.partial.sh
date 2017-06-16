@@ -30,8 +30,10 @@ case $1 in
     shift
 done
 
-echo '\n\tEXECUTING: git.partial -repo' $REPO ' -folder' $FOLDER
-echo '\n-------------------------------------------------------'
+echo ''
+echo '\tEXECUTING: git.partial -repo' $REPO ' -folder' $FOLDER
+echo ''
+echo '-------------------------------------------------------'
 
 # EXECUTE REQUIRED COMMANDS
 cd /tmp
