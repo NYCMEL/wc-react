@@ -2,7 +2,7 @@
 
 usage ()
 {
-  echo 'Usage : git.partial -path <path-to-git-repo> -folder <partial-folder-name>'
+  echo 'Usage : git.partial -repo <path-to-git-repo> -folder <partial-folder-name>'
   exit
 }
 
@@ -15,26 +15,13 @@ fi
 # ASSIGN VARIABLES FROM OPTIONS
 while [ "$1" != "" ]; do
 case $1 in
-        -path )        shift
+        -repo )        shift
                        REPO=$1
                        ;;
         -folder )      shift
                        FOLDER=$1
                        ;;
     esac
-    shift
-done
-
-while [ "$1" != "" ]; do
-case $1 in
-        -path   ) shift
-                  REPO=$1
-                  ;;
-
-        -folder ) shift
-                  FOLDER=$1
-                  ;;
-esac
     shift
 done
 
