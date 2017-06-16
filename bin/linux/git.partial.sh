@@ -1,6 +1,7 @@
 #!/bin/sh
 
-# USE IT LIKE: ./git.partial "jq/*"
+# USE IT LIKE:
+#    ./git.partial "jq/*"
 
 cd /tmp
 rm -rf test
