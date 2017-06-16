@@ -26,8 +26,8 @@ case $1 in
     shift
 done
 
-echo '\tEXECUTING: git.partial -repo' $REPO ' -folder' $FOLDER
-echo '\tCREATED /tmp/test folder'
+echo '\n\tEXECUTING: git.partial -repo' $REPO ' -folder' $FOLDER
+echo '\n-------------------------------------------------------'
 
 # EXECUTE REQUIRED COMMANDS
 cd /tmp
@@ -39,4 +39,6 @@ git remote add origin $REPO
 git config core.sparsecheckout true
 echo "$FOLDER/*" >> .git/info/sparse-checkout
 git pull --depth=1 origin master
+echo '-------------------------------------------------------'
+echo '\tCREATED /tmp/test folder\n'
 
