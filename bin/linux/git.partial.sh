@@ -25,6 +25,9 @@ case $1 in
     shift
 done
 
+echo '\tEXECUTING: git.partial -repo' $REPO ' -folder' $FOLDER
+echo '\tCREATED /tmp/test folder'
+
 # EXECUTE REQUIRED COMMANDS
 cd /tmp
 rm -rf test
