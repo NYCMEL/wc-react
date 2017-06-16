@@ -15,12 +15,13 @@ fi
 # ASSIGN VARIABLES FROM OPTIONS
 while [ "$1" != "" ]; do
 case $1 in
-        -repo )        shift
-                       REPO=$1
-                       ;;
-        -folder )      shift
-                       FOLDER=$1
-                       ;;
+        -repo   ) shift
+                  REPO=$1
+                  ;;
+
+        -folder ) shift
+                  FOLDER=$1
+                  ;;
     esac
     shift
 done
