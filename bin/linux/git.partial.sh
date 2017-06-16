@@ -2,7 +2,11 @@
 
 usage ()
 {
-  echo 'Usage : git.partial -repo <path-to-git-repo> -folder <partial-folder-name>'
+  echo ''
+  echo 'USAGE : git.partial -repo <path-to-git-repo> -folder <partial-folder-name>'
+  echo ''
+  echo 'EXAMPLE: git.partial.sh -repo https://github.com/NYCMEl/tk-components.git -folder fm'
+  echo ''
   exit
 }
 
