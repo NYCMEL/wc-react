@@ -1,7 +1,7 @@
 /*
 Error: Invalid CSS after "...clude flexbox()": expected "}", was "white-space: no..."
-        on line 152 of tk/lib/mdb/sass/mdb/pro/_tabs.scss
-        from line 60 of ./tk/lib/mdb/sass/mdb.scss
+        on line 152 of lib/mdb/sass/mdb/pro/_tabs.scss
+        from line 60 of ./lib/mdb/sass/mdb.scss
 
 147:     overflow-x: hidden;
 148: }
@@ -16,8 +16,8 @@ Error: Invalid CSS after "...clude flexbox()": expected "}", was "white-space: n
 157:     li {
 
 Backtrace:
-tk/lib/mdb/sass/mdb/pro/_tabs.scss:152
-./tk/lib/mdb/sass/mdb.scss:60
+lib/mdb/sass/mdb/pro/_tabs.scss:152
+./lib/mdb/sass/mdb.scss:60
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1137:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1132:in `tok!'
@@ -71,4 +71,4 @@ tk/lib/mdb/sass/mdb/pro/_tabs.scss:152
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...clude flexbox()\": expected \"}\", was \"white-space: no...\"\A         on line 152 of tk/lib/mdb/sass/mdb/pro/_tabs.scss\A         from line 60 of ./tk/lib/mdb/sass/mdb.scss\A \A 147:     overflow-x: hidden;\A 148: }\A 149: \A 150: .classic-tabs {\A 151:     @include flexbox()\A 152:     white-space: nowrap;\A 153:     overflow-x:auto;\A 154:     @media (min-width: 62rem) {\A 155:         overflow-x:hidden;\A 156:     }\A 157:     li {"; }
+  content: "Error: Invalid CSS after \"...clude flexbox()\": expected \"}\", was \"white-space: no...\"\A         on line 152 of lib/mdb/sass/mdb/pro/_tabs.scss\A         from line 60 of ./lib/mdb/sass/mdb.scss\A \A 147:     overflow-x: hidden;\A 148: }\A 149: \A 150: .classic-tabs {\A 151:     @include flexbox()\A 152:     white-space: nowrap;\A 153:     overflow-x:auto;\A 154:     @media (min-width: 62rem) {\A 155:         overflow-x:hidden;\A 156:     }\A 157:     li {"; }
