@@ -41,6 +41,9 @@ include "/GitHub/bootstrap-validator/docs/dist/validator.min.js"
 include "/GitHub/jquery-validation/lib/jquery.form.js"
 include "/tk/src/utl/form/inc/tk.form.css"
 
+# DATA BINDING
+include "/GitHub/databind/src/DataBind.min.js"
+
 ######################################################
 ##### 
 ######################################################
