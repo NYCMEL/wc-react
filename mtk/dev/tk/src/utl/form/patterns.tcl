@@ -1,6 +1,5 @@
 namespace eval tk {
-    namespace eval form {
-    }
+    namespace eval form {}
 }
 
 array set tk::form::pattern {
@@ -15,6 +14,4 @@ array set tk::form::pattern {
     number	{\d*}
 }
 
-parray tk::form::pattern
-
-h1 $tk::form::pattern(email)
+#parray tk::form::pattern
