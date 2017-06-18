@@ -35,7 +35,6 @@ namespace eval tk {
     }
 }
 
-# http://www.formvalidator.net
 include "/tk/src/utl/form/inc/tk.form.js"
 include "/GitHub/bootstrap-validator/docs/dist/validator.min.js"
 include "/GitHub/jquery-validation/lib/jquery.form.js"
