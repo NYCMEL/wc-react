@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-06-18 15:18:08 (melify)>
+//// Time-stamp: <2017-06-18 15:55:29 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 var tkForm = {};
 
@@ -67,6 +67,7 @@ function bind(id, model, callback) {
     console.group("bind", id);
 
     var watchable = DataBind.bind($('#' + id), model);
+
     watchable.watch(callback);
 
     console.groupEnd();
