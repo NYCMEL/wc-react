@@ -105,10 +105,10 @@ m::proc -public tk::form::test:2 {
 	tk::form -name "form-name" -callback "test::form:callback" -guts {
 	    export ajax=1
 
-	    tk::text -id fname -name "v(email)" -label "Email" -help "help text goes here..." -value "mel@melify.com"\
+	    tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com"\
 		placeholder="your email" pattern="$tk::form::pattern(email)" required
 	    
-	    tk::calendar -id "my-select" -name "v(calendar)" -help "help text goes here..." -label "Which Date?" required 
+	    tk::calendar -id "my-select" -name "v(calendar)" -label "Which Date?" required 
 
 	    tk::select -id "my-select" -name "v(select)" -options [subst {
 		"" "PLEASE SELECT"
@@ -116,9 +116,9 @@ m::proc -public tk::form::test:2 {
 		2 "Option 2"
 		3 "Option 3"
 		4 "Option 4"
-	    }] -selected "" -help "help text goes here..." -label "Pick One" required
+	    }] -selected "" -label "Pick One" required
 
-	    tk::textarea -id address -name "v(address)" -label "Address" -help "help text goes here..."\
+	    tk::textarea -id address -name "v(address)" -label "Address"\
 		-value "100 C. Columbus Drive" placeholder="home address" rows="3" required 
 	    
 	    label "Please select your Gender:"
