@@ -35,7 +35,7 @@ namespace eval tk {
     }
 }
 
-include "/GitHub/jquery-validation/lib/jquery.form.js"
+include "/GitHub/bootstrap-validator/dist/validator.min.js"
 
 ######################################################
 ##### 
@@ -62,7 +62,7 @@ m::proc -public tk::form {
     set en [expr {($enctype == "") ? "" : "enctype=$enctype"}]
 
     cgi_form [expr {($url == {}) ? "[URL]" : $url}] $en method=$method name="$name" id=$id class="$class" [lstring $args] {
-	export ajax=1
+	export ajax=0
 	export callback=$callback
 
 	uplevel $guts
@@ -73,17 +73,15 @@ m::proc -public tk::form {
     }
 
     javascript {
-	put [subst {
-	    //tkForm.submitState("#$id")
-
-	    jQuery("#$id").on("submit", function(e) {
-		e.preventDefault();
-
-		jQuery(this).ajaxSubmit({
-		    target: "#form-result-$id"
-		});
-	    });
-	}]
+	put {
+	    $("form").validator().on('submit', function (e) {
+		if (e.isDefaultPrevented()) {
+		    console.log(">>>>> handle the invalid form");
+		} else {
+		    console.log(">>>>> everything looks good");
+		}
+	    })
+	}
     }
 }
 
