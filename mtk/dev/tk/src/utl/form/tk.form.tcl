@@ -101,37 +101,42 @@ m::proc -public tk::form::test:2 {
 } {
     br
 
-    division class="col-md-4" {
-	tk::form -name "form-name" -callback "test::form:callback" -guts {
-	    export ajax=1
 
-	    tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com"\
-		placeholder="your email" pattern="$tk::form::pattern(email)" required
-	    
-	    tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" required 
+    division class="container" {
+	division class="row" {
+	    division class="col-md-3" {
+		tk::form -name "form-name" -callback "test::form:callback" -guts {
+		    export ajax=1
 
-	    tk::select -id "my-select" -name "v(select)" -label "Box Color" -options [subst {
-		"" "please select"
-		1 "Red"
-		2 "White"
-		3 "Blue"
-	    }] -selected "" required
+		    tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com"\
+			placeholder="your email" pattern="$tk::form::pattern(email)" required
+		    
+		    tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" required 
 
-	    tk::textarea -id address -name "v(address)" -label "Address" placeholder="home address" rows="3" required 
-	    
-	    label "Please select your Gender:"
-	    division class="clearfix" {
-		division class="pull-left" [style margin-right 30px] {
-		    tk::radio -id "rb-1" -name "v(rb)" -label "I am a Male" -value "1" required
-		}
-		division class="pull-left" {
-		    tk::radio -id "rb-2" -name "v(rb)" -label "I am a Female" -value "2" required
+		    tk::select -id "my-select" -name "v(select)" -label "Box Color" -options [subst {
+			"" "please select"
+			1 "Red"
+			2 "White"
+			3 "Blue"
+		    }] -selected "" required
+
+		    tk::textarea -id address -name "v(address)" -label "Address" placeholder="home address" rows="3" required 
+		    
+		    label "Please select your Gender:"
+		    division class="clearfix" {
+			division class="pull-left" [style margin-right 30px] {
+			    tk::radio -id "rb-1" -name "v(rb)" -label "I am a Male" -value "1" required
+			}
+			division class="pull-left" {
+			    tk::radio -id "rb-2" -name "v(rb)" -label "I am a Female" -value "2" required
+			}
+		    }
+
+		    tk::checkbox -id "cb-1" -name "v(cb)" -label "Do you Agree ?" -value "2" required
+		    
+		    submit_button action=Submit class="btn btn-primary"
 		}
 	    }
-
-	    tk::checkbox -id "cb-1" -name "v(cb)" -label "Do you Agree ?" -value "2" required
-	    
-	    submit_button action=Submit class="btn btn-default"
 	}
     }
 }
