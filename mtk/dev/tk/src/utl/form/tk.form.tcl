@@ -105,12 +105,7 @@ m::proc -public tk::form::test:2 {
 	tk::form -name "form-name" -callback "test::form:callback" -guts {
 	    export ajax=1
 
-	    tk::text\
-		-id fname\
-		-name "v(email)"\
-		-label "Email"\
-		-help "help text goes here..."\
-		-value "mel@melify.com"\
+	    tk::text -id fname -name "v(email)" -label "Email" -help "help text goes here..." -value "mel@melify.com"\
 		placeholder="your email" pattern="$tk::form::pattern(email)" required
 	    
 	    tk::calendar -id "my-select" -name "v(calendar)" -help "help text goes here..." -label "Which Date?" required 
