@@ -111,7 +111,7 @@ m::proc -public tk::form::test:2 {
 	    tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" required 
 
 	    tk::select -id "my-select" -name "v(select)" -label "Box Color" -options [subst {
-		"" ""
+		"" "please select"
 		1 "Red"
 		2 "White"
 		3 "Blue"
