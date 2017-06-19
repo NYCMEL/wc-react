@@ -113,12 +113,15 @@ m::proc -public tk::form::test:2 {
 		-value "mel@melify.com"\
 		placeholder="your email" pattern="$tk::form::pattern(email)" required
 	    
-	    division class="clearfix" {
-		division class="pull-left" [style margin-right 30px] {
-		    tk::radio -id "rb-1" -name "v(rb)" -label "Do you Agree  I?" -value "1" required
-		}
-		division class="pull-left" {
-		    tk::radio -id "rb-2" -name "v(rb)" -label "Do you Agree II?" -value "2" required
+	    division {
+		label "Please select your Gender:"
+		division class="clearfix" {
+		    division class="pull-left" [style margin-right 30px] {
+			tk::radio -id "rb-1" -name "v(rb)" -label "I am a Male" -value "1" required
+		    }
+		    division class="pull-left" {
+			tk::radio -id "rb-2" -name "v(rb)" -label "I am a Female" -value "2" required
+		    }
 		}
 	    }
 
