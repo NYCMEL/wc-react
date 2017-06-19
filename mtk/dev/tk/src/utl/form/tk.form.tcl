@@ -38,6 +38,14 @@ namespace eval tk {
 include "/GitHub/form/dist/jquery.form.min.js"
 include "/GitHub/bootstrap-validator/dist/validator.min.js"
 
+put {
+    <style>
+    .has-error label {
+	color: #A94442;
+    }
+    </style>
+}
+
 ######################################################
 ##### 
 ######################################################
