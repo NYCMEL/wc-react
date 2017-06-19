@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-06-19 09:13:51 (melify)>
+//// Time-stamp: <2017-06-19 09:17:12 (melify)>
 /////////////////////////////////////////////////////////////////////////////
 var tkForm = {};
 
@@ -59,20 +59,3 @@ tkForm.submitState = function(el) {
 
     console.groupEnd();
 }
-
-////////////////////////////////////////////////////////////////////////////////////
-//// data binding functions
-////////////////////////////////////////////////////////////////////////////////////
-function databind(id, callback) {
-    console.group("bind", id);
-
-    // IF MODEL DOES NOT EXIST CREATE IT
-    app.model = app.model || [];
-
-    var watchable = DataBind.bind($('#' + id), model);
-
-    watchable.watch(callback);
-
-    console.groupEnd();
-}
-
