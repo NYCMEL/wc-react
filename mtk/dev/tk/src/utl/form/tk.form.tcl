@@ -103,7 +103,7 @@ m::proc -public tk::form::test {
     division class="container" {
 	division class="row" {
 	    division class="col-md-4 well" {
-		tk::form -name "form-name" -callback "test::form:callback" -guts {
+		tk::form -name "form-name" -callback "tk::form::test:cb" -guts {
 		    export ajax=1
 
 		    tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com"\
