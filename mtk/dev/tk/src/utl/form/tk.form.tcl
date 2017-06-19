@@ -118,8 +118,7 @@ m::proc -public tk::form::test:2 {
 		4 "Option 4"
 	    }] -selected "" -label "Pick One" required
 
-	    tk::textarea -id address -name "v(address)" -label "Address"\
-		-value "100 C. Columbus Drive" placeholder="home address" rows="3" required 
+	    tk::textarea -id address -name "v(address)" -label "Address" placeholder="home address" rows="3" required 
 	    
 	    label "Please select your Gender:"
 	    division class="clearfix" {
