@@ -114,7 +114,7 @@ m::proc -public tk::form::test:2 {
 		placeholder="your email" pattern="$tk::form::pattern(email)" required
 	    
 	    division {
-		tk::check:test
+		tk::check -id "cb-1" -name "v(cb)" -label "Do you Agree II?" -value "2" required
 	    }
 	    
 	    division {
