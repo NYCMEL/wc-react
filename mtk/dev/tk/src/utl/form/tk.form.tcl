@@ -114,6 +114,10 @@ m::proc -public tk::form::test:2 {
 		placeholder="your email" pattern="$tk::form::pattern(email)" required
 	    
 	    division {
+		tk::check:test
+	    }
+	    
+	    division {
 		label "Please select your Gender:"
 		division class="clearfix" {
 		    division class="pull-left" [style margin-right 30px] {
