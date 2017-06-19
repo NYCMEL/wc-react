@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAmBA,WAAY,CACR,KAAK,CAAC,cAAa,CACnB,WAAW,CAAE,YAAY,CAK5B,6BAAQ,CACJ,KAAK,CAAE,GAAG,CACV,UAAU,CAAE,MAAM",
-"sources": ["tk.form.scss"],
-"names": [],
-"file": "tk.form.css"
-}
