@@ -22,7 +22,7 @@ namespace eval tk {}
 ######################################################
 #####
 ######################################################
-m::proc -public tk::check {
+m::proc -public tk::checkbox {
     -id:required
     -name:required
     {-label ""}
@@ -47,12 +47,12 @@ m::proc -public tk::check {
 ######################################################
 ##### TEST
 ######################################################
-m::proc -public tk::check:test {
+m::proc -public tk::checkbox:test {
 } {
     Documentation goes here...
 } {    
     Trace
     
-    tk::check -id "cb-1" -name "v(cb)" -label "Do you Agree II?" -value "2" required checked
+    tk::checkbox -id "cb-1" -name "v(cb)" -label "Do you Agree II?" -value "2" required checked
 }
 
