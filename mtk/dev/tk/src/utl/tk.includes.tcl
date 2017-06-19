@@ -357,6 +357,9 @@ m::proc -private tk::include::common {
     include "/inc/app.css"
     include "/inc/app.js"
 
+    # TWO WAY DATA BINDING
+    include "/GitHub/databind/src/DataBind.min.js"
+
     # GOOGLE ANALYTICS
     include "$ga"
     
