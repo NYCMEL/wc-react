@@ -95,7 +95,7 @@ m::proc -public tk::form {
 ######################################################
 #####
 ######################################################
-m::proc -public tk::form::test:2 {
+m::proc -public tk::form::test {
 } {
     Documentation goes here...
 } {
@@ -142,7 +142,7 @@ m::proc -public tk::form::test:2 {
 ######################################################
 #####
 ######################################################
-m::proc -public tk::form::test:2:cb {
+m::proc -public tk::form::test:cb {
 } {
     Documentation goes here...
 } {
