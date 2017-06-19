@@ -35,6 +35,7 @@ namespace eval tk {
     }
 }
 
+include "/GitHub/form/dist/jquery.form.min.js"
 include "/GitHub/bootstrap-validator/dist/validator.min.js"
 
 ######################################################
@@ -73,15 +74,19 @@ m::proc -public tk::form {
     }
 
     javascript {
-	put {
-	    $("form").validator().on('submit', function (e) {
+	put [subst {
+	    jQuery("form").validator().on('submit', function (e) {
 		if (e.isDefaultPrevented()) {
-		    console.log(">>>>> handle the invalid form");
+		    console.error("INVALID FORM");
 		} else {
-		    console.log(">>>>> everything looks good");
+		    e.preventDefault();
+
+		    jQuery(this).ajaxSubmit({
+			target: "#form-result-$id"
+		    });
 		}
 	    })
-	}
+	}]
     }
 }
 
