@@ -35,7 +35,7 @@ var tk = {
 	// IF MODEL DOES NOT EXIST CREATE IT
 	app.model = app.model || [];
 
-	var watchable = DataBind.bind($('#' + id), model);
+	var watchable = DataBind.bind($('#' + id), app.model);
 
 	watchable.watch(callback);
 
