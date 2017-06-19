@@ -108,15 +108,14 @@ m::proc -public tk::form::test:2 {
 	    tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com"\
 		placeholder="your email" pattern="$tk::form::pattern(email)" required
 	    
-	    tk::calendar -id "my-select" -name "v(calendar)" -label "Which Date?" required 
+	    tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" required 
 
-	    tk::select -id "my-select" -name "v(select)" -options [subst {
-		"" "PLEASE SELECT"
-		1 "Option 1"
-		2 "Option 2"
-		3 "Option 3"
-		4 "Option 4"
-	    }] -selected "" -label "Pick One" required
+	    tk::select -id "my-select" -name "v(select)" -label "Box Color" -options [subst {
+		"" ""
+		1 "Red"
+		2 "White"
+		3 "Blue"
+	    }] -selected "" required
 
 	    tk::textarea -id address -name "v(address)" -label "Address" placeholder="home address" rows="3" required 
 	    
