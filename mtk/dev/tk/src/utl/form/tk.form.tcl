@@ -104,7 +104,7 @@ m::proc -public tk::form::test:2 {
 
     division class="container" {
 	division class="row" {
-	    division class="col-md-3" {
+	    division class="col-md-4 well" {
 		tk::form -name "form-name" -callback "test::form:callback" -guts {
 		    export ajax=1
 
