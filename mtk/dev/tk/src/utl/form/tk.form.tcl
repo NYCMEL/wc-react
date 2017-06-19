@@ -70,7 +70,7 @@ m::proc -public tk::form {
 
 	uplevel $guts
 
-	division id="form-result-$id" [style background yellow] {
+	division id="form-result-$id" {
 	    # CONTAINER FOR RESULT
 	}
     }
