@@ -65,7 +65,6 @@ m::proc -public tk::form {
     set en [expr {($enctype == "") ? "" : "enctype=$enctype"}]
 
     cgi_form [expr {($url == {}) ? "[URL]" : $url}] $en method=$method name="$name" id=$id class="$class" [lstring $args] {
-	export ajax=0
 	export callback=$callback
 
 	uplevel $guts
