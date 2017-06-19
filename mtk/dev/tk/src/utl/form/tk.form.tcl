@@ -132,7 +132,7 @@ m::proc -public tk::form::test:2 {
 			}
 		    }
 
-		    tk::checkbox -id "cb-1" -name "v(cb)" -label "Do you Agree ?" -value "2" required
+		    tk::checkbox -id "cb-1" -name "v(cb)" -label "I Agree with Terms & Conditions" -value "2" required
 		    
 		    submit_button action=Submit class="btn btn-primary"
 		}
