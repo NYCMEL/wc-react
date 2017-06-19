@@ -99,14 +99,30 @@ m::proc -public tk::form::test:2 {
 } {
     Documentation goes here...
 } {
-    set str "[lorem] [lorem] [lorem]"
+    br
 
-    division {
-	tk::form -method "POST" -name "form-test" -callback "tk::form::test:2:cb" -guts {
-	    export v(name)=[list MEL HERAVI]
-	    textarea v(ta)=$str class="form-control" rows=10
-	    br
-	    submit_button action=SUBMIT class="btn btn-default"
+    division class="col-md-4" {
+	tk::form -name "form-name" -callback "test::form:callback" -guts {
+	    export ajax=1
+
+	    tk::text\
+		-id fname\
+		-name "v(email)"\
+		-label "Email"\
+		-help "help text goes here..."\
+		-value "mel@melify.com"\
+		placeholder="your email" pattern="$tk::form::pattern(email)" required
+	    
+	    division class="clearfix" {
+		division class="pull-left" [style margin-right 30px] {
+		    tk::radio -id "rb-1" -name "v(rb)" -label "Do you Agree  I?" -value "1" required
+		}
+		division class="pull-left" {
+		    tk::radio -id "rb-2" -name "v(rb)" -label "Do you Agree II?" -value "2" required
+		}
+	    }
+
+	    submit_button action=Submit class="btn btn-default"
 	}
     }
 }
