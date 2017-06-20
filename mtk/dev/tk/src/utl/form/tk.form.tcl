@@ -139,7 +139,7 @@ m::proc -public tk::form::test:content {
     tk::form -name "$id" -callback "tk::form::test:cb" -guts {
 	export ajax=1
 
-	tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com" -columns "$columns"\
+	tk::text -id email -name "v(email)" -label "Email" -value "mel@melify.com" -columns "$columns"\
 	    placeholder="your email" pattern="$tk::form::pattern(email)" required\
 	    data-error="your email is required!" data-key="email"
 	
@@ -190,6 +190,7 @@ m::proc -public tk::form::test:content {
 		console.groupEnd();
 	    }
 
+	    tk.bind("email-child",	changeHandler);
 	    tk.bind("rb-1-child",	changeHandler);
 	    tk.bind("rb-2-child",	changeHandler);
 	    tk.bind("rb-3-child",	changeHandler);
@@ -204,7 +205,7 @@ m::proc -public tk::form::test:content {
 	    app.model.rb3 = true;
 	    app.model.address = "100 Columbus Drive";
 	    app.model.date = "12/10/2017"
-	    app.model.color = 2;
+	    app.model.color = 1;
 	}
     }
 }
