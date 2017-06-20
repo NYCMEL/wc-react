@@ -40,6 +40,8 @@ m::proc -public tk::radio {
 	    	<input type='radio' class='form-check-input' name='$name' id='$id-radio' value='$value' [lstring $args]>\
 		$label\
 		</label>"
+
+	    #put "<small id='$id-help' class='form-text help-block with-errors text-muted'></small>"
 	}
     }
 }

@@ -40,6 +40,8 @@ m::proc -public tk::checkbox {
 	    	<input type='checkbox' class='form-check-input' name='$name' id='$id-check' value='$value' [lstring $args]>\
 		$label\
 		</label>"
+
+	    #put "<small id='$id-help' class='form-text help-block with-errors text-muted'></small>"
 	}
     }
 }
