@@ -38,10 +38,8 @@ m::proc -public tk::textarea {
     set c1 [lindex $columns 0]
     set c2 [lindex $columns 1]
     
-    division class="form-group" {
-	if {$label != ""} {
-	    label for="$id-label" class="$c1" "$label"
-	}
+    division class="form-group clearfix" {
+	label for="$id-label" class="$c1" "$label"
 
 	division class="$c2" {
 	    put "<textarea name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args]>$value</textarea>"

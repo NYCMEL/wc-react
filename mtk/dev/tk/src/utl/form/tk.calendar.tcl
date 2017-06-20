@@ -42,10 +42,8 @@ m::proc -public tk::calendar {
     set c1 [lindex $columns 0]
     set c2 [lindex $columns 1]
     
-    division class="form-group" {
-	if {$label != ""} {
-	    label id="$id-label" for="$id-label" class="$c1" "$label"
-	}
+    division class="form-group clearfix" {
+	label id="$id-label" for="$id-label" class="$c1" "$label"
 	
 	division class="$c2" {
 	    division class="input-group date" data-provide="datepicker" {

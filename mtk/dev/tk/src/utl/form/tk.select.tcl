@@ -42,10 +42,8 @@ m::proc -public tk::select {
     set c1 [lindex $columns 0]
     set c2 [lindex $columns 1]
     
-    division class="form-group" {
-	if {$label != ""} {
-	    label id="$id-label" for="$id-label" class="select-label $c1" "$label"
-	}
+    division class="form-group clearfix" {
+	label id="$id-label" for="$id-label" class="select-label $c1" "$label"
 	
 	division class="$c2" {
 	    cgi_select "$name" id="$id-select" class="selectpicker form-control" [lstring $args] {
