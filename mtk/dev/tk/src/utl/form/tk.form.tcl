@@ -104,13 +104,13 @@ m::proc -public tk::form::test {
 	    division class="col-md-6" {
 		h3 "Form <small>- vertical</small>"
 		division class="well" {
-		    tk::form::test:content -columns ""
+		    tk::form::test:content -id "form-1" -columns ""
 		}
 	    }
 	    division class="col-md-6" {
 		h3 "Form <small>- horizontal</small>"
 		division class="well" {
-		    tk::form::test:content -columns "col-sm-4 col-sm-8"
+		    tk::form::test:content -id "form-1" -columns "col-sm-4 col-sm-8"
 		}
 	    }
 	}
@@ -131,27 +131,28 @@ m::proc -public tk::form::test:cb {
 #####
 ######################################################
 m::proc -public tk::form::test:content {
+    -id:required
     -columns:required
 } {
     Documentation goes here...
 } {
     Trace
     
-    tk::form -name "form-name" -callback "tk::form::test:cb" -guts {
+    tk::form -name "$id" -callback "tk::form::test:cb" -guts {
 	export ajax=1
 
 	tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com" -columns "$columns"\
 	    placeholder="your email" pattern="$tk::form::pattern(email)" required\
 	    data-error="your email is required!"
 	
-	tk::select -id "my-select" -name "v(select)" -label "Box Color" -options [subst {
+	tk::select -id "my-select" -name "v(color)" -label "Box Color" -options [subst {
 	    "" "Please Select"
 	    1 "Red"
 	    2 "White"
 	    3 "Blue"
 	}] -selected "" -columns "$columns" required data-error="Pick a color from the list..."  
 
-	tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" -columns "$columns"\
+	tk::calendar -id "my-select" -name "v(date)" -label "Shipping Date" -columns "$columns"\
 	    required placeholder="mm/dd/yyyy" data-error="Shipping date is required!"
 
 	tk::textarea -id "my-address" -name "v(address)" -label "Address" -columns "$columns"\
@@ -159,18 +160,18 @@ m::proc -public tk::form::test:content {
 	
 	tk::groupbox -id "my-groupbox-1" -label "Select Box Size" -columns $columns -guts {
 	    division class="pull-left" [style margin-right 30px] {
-		tk::radio -id "rb-1" -name "v(rb)" -label "Small" -value "1" required
+		tk::radio -id "rb-1" -name "v(size)" -label "Small" -value "1" required
 	    }
 	    division class="pull-left" [style margin-right 30px] {
-		tk::radio -id "rb-2" -name "v(rb)" -label "Medium" -value "2" required
+		tk::radio -id "rb-2" -name "v(size)" -label "Medium" -value "2" required
 	    }
 	    division class="pull-left" {
-		tk::radio -id "rb-3" -name "v(rb)" -label "Large" -value "3" required
+		tk::radio -id "rb-3" -name "v(size)" -label "Large" -value "3" required
 	    }
 	}
 
 	tk::groupbox -id "my-groupbox-2" -label "You must Agree" -columns "$columns" -guts {
-	    tk::checkbox -id "cb-1" -name "v(cb)" -label "I agree with Terms & Conditions" -value "1" required
+	    tk::checkbox -id "cb-1" -name "v(agree)" -label "I agree with Terms & Conditions" -value "1" required
 	}
 	
 	tk::groupbox -id "my-groupbox-3" -label "" -columns "$columns" -guts {
