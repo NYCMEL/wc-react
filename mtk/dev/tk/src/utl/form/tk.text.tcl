@@ -28,20 +28,25 @@ m::proc -public tk::text {
     {-label ""}
     {-help  ""}
     {-value ""}
+    {-columns ""}
     args
 } {
     Documentation goes here...
 } {
     Trace
 
+    set c1 [lindex $columns 0]
+    set c2 [lindex $columns 1]
+    
     division class="form-group" {
 	if {$label != ""} {
-	    label id="$id-label" for="$id-label" "$label"
+	    label id="$id-label" for="$id-label" class="$c1" "$label"
 	}
-
-	put "<input name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args] value='$value' type='text' autocomplete='off'>"
 	
-	put "<small id='$id-help' class='form-text help-block with-errors text-muted'>$help</small>"
+	division class="$c2" {
+	    put "<input name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args] value='$value' type='text' autocomplete='off'>"
+	    put "<small id='$id-help' class='form-text help-block with-errors text-muted'>$help</small>"
+	}
     }
 }
 

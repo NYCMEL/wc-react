@@ -98,28 +98,31 @@ m::proc -public tk::form::test {
     Documentation goes here...
 } {
     br
+
+    set columns "col-sm-3 col-sm-9"
+
     division class="container" {
 	division class="row" {
-	    division class="col-md-4 well" {
+	    division class="col-md-6 well" {
 		tk::form -name "form-name" -callback "tk::form::test:cb" -guts {
 		    export ajax=1
 
-		    tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com"\
+		    tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com" -columns "$columns"\
 			placeholder="your email" pattern="$tk::form::pattern(email)" required\
 			data-error="your email is required!"
 		    
-		    tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" required\
-			placeholder="mm/dd/yyyy" data-error="Shipping date is required!"
+		    tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" -columns "$columns"\
+			required placeholder="mm/dd/yyyy" data-error="Shipping date is required!"
 
 		    tk::select -id "my-select" -name "v(select)" -label "Box Color" -options [subst {
 			"" "Please Select"
 			1 "Red"
 			2 "White"
 			3 "Blue"
-		    }] -selected "" required data-error="Pick a color from the list..."
+		    }] -selected "" -columns "$columns" required data-error="Pick a color from the list..."  
 
-		    tk::textarea -id address -name "v(address)" -label "Address" placeholder="Shipping Address" rows="3"\
-			required  data-error="An address is required"
+		    tk::textarea -id address -name "v(address)" -label "Address" -columns "$columns"\
+			placeholder="Shipping Address" rows="3"	required  data-error="An address is required"
 		    
 		    label "Select Box Size:"
 		    division class="clearfix" {

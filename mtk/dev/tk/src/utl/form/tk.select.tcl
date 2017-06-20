@@ -32,20 +32,26 @@ m::proc -public tk::select {
     -options:required
     {-selected ""}
     {-help  ""}
+    {-columns ""}
     args
 } {
     Documentation goes here...
 } {    
     Trace
 
+    set c1 [lindex $columns 0]
+    set c2 [lindex $columns 1]
+    
     division class="form-group" {
 	if {$label != ""} {
-	    label id="$id-label" for="$id-label" class="select-label" "$label"
+	    label id="$id-label" for="$id-label" class="select-label $c1" "$label"
 	}
 	
-	cgi_select "$name" id="$id-select" class="selectpicker form-control" [lstring $args] {
-	    foreach {i j} $options {
-		option $j value=$i [expr {($i == $selected) ? "selected" : ""}]
+	division class="$c2" {
+	    cgi_select "$name" id="$id-select" class="selectpicker form-control" [lstring $args] {
+		foreach {i j} $options {
+		    option $j value=$i [expr {($i == $selected) ? "selected" : ""}]
+		}
 	    }
 	}
 

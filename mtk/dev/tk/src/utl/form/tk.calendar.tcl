@@ -32,21 +32,27 @@ m::proc -public tk::calendar {
     {-selected ""}
     {-help     ""}
     {-value    ""}
+    {-columns  ""}
     args
 } {
     Documentation goes here...
 } {    
     Trace
 
+    set c1 [lindex $columns 0]
+    set c2 [lindex $columns 1]
+    
     division class="form-group" {
 	if {$label != ""} {
-	    label id="$id-label" for="$id-label" "$label"
+	    label id="$id-label" for="$id-label" class="$c1" "$label"
 	}
 	
-	division class="input-group date" data-provide="datepicker" {
-	    put "<input name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args] value='$value'>"
-	    division class="input-group-addon" {
-		put "<span class='fa fa-calendar'></span>"
+	division class="$c2" {
+	    division class="input-group date" data-provide="datepicker" {
+		put "<input name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args] value='$value'>"
+		division class="input-group-addon" {
+		    put "<span class='fa fa-calendar'></span>"
+		}
 	    }
 	}
 	
