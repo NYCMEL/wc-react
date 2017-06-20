@@ -99,52 +99,18 @@ m::proc -public tk::form::test {
 } {
     br
 
-    if {1} {
-	set columns "col-sm-3 col-sm-9"
-    } else {
-	set columns ""
-    }
-
     division class="container" {
 	division class="row" {
-	    division class="col-md-6 well" {
-		tk::form -name "form-name" -callback "tk::form::test:cb" -guts {
-		    export ajax=1
-
-		    tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com" -columns "$columns"\
-			placeholder="your email" pattern="$tk::form::pattern(email)" required\
-			data-error="your email is required!"
-		    
-		    tk::select -id "my-select" -name "v(select)" -label "Box Color" -options [subst {
-			"" "Please Select"
-			1 "Red"
-			2 "White"
-			3 "Blue"
-		    }] -selected "" -columns "$columns" required data-error="Pick a color from the list..."  
-
-		    tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" -columns "$columns"\
-			required placeholder="mm/dd/yyyy" data-error="Shipping date is required!"
-
-		    tk::textarea -id "my-address" -name "v(address)" -label "Address" -columns "$columns"\
-			placeholder="Shipping Address" rows="3"	required  data-error="An address is required"
-		    
-		    tk::groupbox -id "my-groupbox-1" -label "Select Box Size" -columns $columns -guts {
-			division class="pull-left" [style margin-right 30px] {
-			    tk::radio -id "rb-1" -name "v(rb)" -label "Small" -value "1" required
-			}
-			division class="pull-left" [style margin-right 30px] {
-			    tk::radio -id "rb-2" -name "v(rb)" -label "Medium" -value "2" required
-			}
-			division class="pull-left" {
-			    tk::radio -id "rb-3" -name "v(rb)" -label "Large" -value "3" required
-			}
-		    }
-
-		    tk::groupbox -id "my-groupbox-2" -label "You must Agree" -columns "$columns" -guts {
-			tk::checkbox -id "cb-1" -name "v(cb)" -label "I agree with Terms & Conditions" -value "1" required
-		    }
-		    
-		    submit_button action=Submit class="btn btn-primary"
+	    division class="col-md-6" {
+		h3 "Form <small>- vertical</small>"
+		division class="well" {
+		    tk::form::test:form -columns ""
+		}
+	    }
+	    division class="col-md-6" {
+		h3 "Form <small>- horizontal</small>"
+		division class="well" {
+		    tk::form::test:form -columns "col-sm-4 col-sm-8"
 		}
 	    }
 	}
@@ -159,4 +125,56 @@ m::proc -public tk::form::test:cb {
     Documentation goes here...
 } {
     parray ::v
+}
+
+######################################################
+#####
+######################################################
+m::proc -public tk::form::test:form {
+    -columns:required
+} {
+    Documentation goes here...
+} {
+    Trace
+    
+    tk::form -name "form-name" -callback "tk::form::test:cb" -guts {
+	export ajax=1
+
+	tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com" -columns "$columns"\
+	    placeholder="your email" pattern="$tk::form::pattern(email)" required\
+	    data-error="your email is required!"
+	
+	tk::select -id "my-select" -name "v(select)" -label "Box Color" -options [subst {
+	    "" "Please Select"
+	    1 "Red"
+	    2 "White"
+	    3 "Blue"
+	}] -selected "" -columns "$columns" required data-error="Pick a color from the list..."  
+
+	tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" -columns "$columns"\
+	    required placeholder="mm/dd/yyyy" data-error="Shipping date is required!"
+
+	tk::textarea -id "my-address" -name "v(address)" -label "Address" -columns "$columns"\
+	    placeholder="Shipping Address" rows="3"	required  data-error="An address is required"
+	
+	tk::groupbox -id "my-groupbox-1" -label "Select Box Size" -columns $columns -guts {
+	    division class="pull-left" [style margin-right 30px] {
+		tk::radio -id "rb-1" -name "v(rb)" -label "Small" -value "1" required
+	    }
+	    division class="pull-left" [style margin-right 30px] {
+		tk::radio -id "rb-2" -name "v(rb)" -label "Medium" -value "2" required
+	    }
+	    division class="pull-left" {
+		tk::radio -id "rb-3" -name "v(rb)" -label "Large" -value "3" required
+	    }
+	}
+
+	tk::groupbox -id "my-groupbox-2" -label "You must Agree" -columns "$columns" -guts {
+	    tk::checkbox -id "cb-1" -name "v(cb)" -label "I agree with Terms & Conditions" -value "1" required
+	}
+	
+	tk::groupbox -id "my-groupbox-3" -label "" -columns "$columns" -guts {
+	    submit_button action=Submit class="btn btn-primary"
+	}
+    }
 }
