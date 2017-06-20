@@ -99,7 +99,7 @@ m::proc -public tk::form::test {
 } {
     br
 
-    if {0} {
+    if {1} {
 	set columns "col-sm-3 col-sm-9"
     } else {
 	set columns ""
@@ -132,8 +132,11 @@ m::proc -public tk::form::test {
 			division class="pull-left" [style margin-right 30px] {
 			    tk::radio -id "rb-1" -name "v(rb)" -label "Small" -value "1" required
 			}
+			division class="pull-left" [style margin-right 30px] {
+			    tk::radio -id "rb-2" -name "v(rb)" -label "Medium" -value "2" required
+			}
 			division class="pull-left" {
-			    tk::radio -id "rb-2" -name "v(rb)" -label "Large" -value "2" required
+			    tk::radio -id "rb-3" -name "v(rb)" -label "Large" -value "3" required
 			}
 		    }
 
