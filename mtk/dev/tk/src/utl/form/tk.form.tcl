@@ -141,39 +141,71 @@ m::proc -public tk::form::test:content {
 
 	tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com" -columns "$columns"\
 	    placeholder="your email" pattern="$tk::form::pattern(email)" required\
-	    data-error="your email is required!"
+	    data-error="your email is required!" data-key="email"
 	
-	tk::select -id "my-select" -name "v(color)" -label "Box Color" -options [subst {
+	tk::select -id "color" -name "v(color)" -label "Box Color" -options [subst {
 	    "" "Please Select"
 	    1 "Red"
 	    2 "White"
 	    3 "Blue"
-	}] -selected "" -columns "$columns" required data-error="Pick a color from the list..."  
+	}] -selected "" -columns "$columns" required data-error="Pick a color from the list..."\
+	    data-key="color"
 
-	tk::calendar -id "my-select" -name "v(date)" -label "Shipping Date" -columns "$columns"\
-	    required placeholder="mm/dd/yyyy" data-error="Shipping date is required!"
+	tk::calendar -id "date" -name "v(date)" -label "Shipping Date" -columns "$columns"\
+	    required placeholder="mm/dd/yyyy" data-error="Shipping date is required!" data-key="date"
 
-	tk::textarea -id "my-address" -name "v(address)" -label "Address" -columns "$columns"\
-	    placeholder="Shipping Address" rows="3"	required  data-error="An address is required"
+	tk::textarea -id "address" -name "v(address)" -label "Address" -columns "$columns"\
+	    placeholder="Shipping Address" rows="3" required  data-error="An address is required"\
+	    data-key="address"
 	
-	tk::groupbox -id "my-groupbox-1" -label "Select Box Size" -columns $columns -guts {
+	tk::groupbox -id "groupbox-1" -label "Select Box Size" -columns $columns -guts {
 	    division class="pull-left" [style margin-right 30px] {
-		tk::radio -id "rb-1" -name "v(size)" -label "Small" -value "1" required
+		tk::radio -id "rb-1" -name "v(size)" -label "Small" -value "1" required data-key="rb1"
 	    }
 	    division class="pull-left" [style margin-right 30px] {
-		tk::radio -id "rb-2" -name "v(size)" -label "Medium" -value "2" required
+		tk::radio -id "rb-2" -name "v(size)" -label "Medium" -value "2" required data-key="rb2"
 	    }
 	    division class="pull-left" {
-		tk::radio -id "rb-3" -name "v(size)" -label "Large" -value "3" required
+		tk::radio -id "rb-3" -name "v(size)" -label "Large" -value "3" required data-key="rb3"
 	    }
 	}
 
-	tk::groupbox -id "my-groupbox-2" -label "You must Agree" -columns "$columns" -guts {
-	    tk::checkbox -id "cb-1" -name "v(agree)" -label "I agree with Terms & Conditions" -value "1" required
+	tk::groupbox -id "groupbox-2" -label "You must Agree" -columns "$columns" -guts {
+	    tk::checkbox -id "cb-1" -name "v(agree)" -label "I agree with Terms & Conditions" -value "1" required\
+		data-key="agree"
 	}
 	
-	tk::groupbox -id "my-groupbox-3" -label "" -columns "$columns" -guts {
+	tk::groupbox -id "groupbox-3" -label "" -columns "$columns" -guts {
 	    submit_button action=Submit class="btn btn-primary"
+	}
+    }
+
+    javascript {
+	put {
+	    function changeHandler(ev) {
+		console.group("changeHandler");
+		
+		console.log(this.id, ev.type, ev.data.newValue);
+		
+		console.groupEnd();
+	    }
+
+	    tk.bind("rb-1-radio",	changeHandler);
+	    tk.bind("rb-2-radio",	changeHandler);
+	    tk.bind("rb-3-radio",	changeHandler);
+	    tk.bind("cb-1-check",	changeHandler);
+	    tk.bind("address-text",	changeHandler);
+	    tk.bind("date-text",	changeHandler);
+	    tk.bind("color-select",	changeHandler);
+
+	    app.model.agree = true;
+
+	    app.model.rb1 = false;
+	    app.model.rb2 = false;
+	    app.model.rb3 = true;
+	    app.model.address = "100 Columbus Drive";
+	    app.model.date = "12/10/2017"
+	    app.model.color = 2;
 	}
     }
 }
