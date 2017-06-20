@@ -49,9 +49,7 @@ m::proc -public tk::select {
 	    }
 	}
 
-	if {$help != ""} {
-	    put "<small id='$id-help' class='form-text text-muted'>$help</small>"
-	}
+	put "<small id='$id-help' class='form-text help-block with-errors text-muted'>$help</small>"
     }    
 }
 

@@ -40,10 +40,8 @@ m::proc -public tk::text {
 	}
 
 	put "<input name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args] value='$value' type='text' autocomplete='off'>"
-
-	if {$help != ""} {
-	    put "<small id='$id-help' class='form-text text-muted'>$help</small>"
-	}
+	
+	put "<small id='$id-help' class='form-text help-block with-errors text-muted'>$help</small>"
     }
 }
 

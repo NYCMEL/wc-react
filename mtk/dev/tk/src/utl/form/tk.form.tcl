@@ -105,18 +105,21 @@ m::proc -public tk::form::test {
 		    export ajax=1
 
 		    tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com"\
-			placeholder="your email" pattern="$tk::form::pattern(email)" required
+			placeholder="your email" pattern="$tk::form::pattern(email)" required\
+			data-error="your email is required!"
 		    
-		    tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" required placeholder="mm/dd/yyyy"
+		    tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" required\
+			placeholder="mm/dd/yyyy" data-error="Shipping date is required!"
 
 		    tk::select -id "my-select" -name "v(select)" -label "Box Color" -options [subst {
 			"" "Please Select"
 			1 "Red"
 			2 "White"
 			3 "Blue"
-		    }] -selected "" required
+		    }] -selected "" required data-error="Pick a color from the list..."
 
-		    tk::textarea -id address -name "v(address)" -label "Address" placeholder="Shipping Address" rows="3" required 
+		    tk::textarea -id address -name "v(address)" -label "Address" placeholder="Shipping Address" rows="3"\
+			required  data-error="An address is required"
 		    
 		    label "Select Box Size:"
 		    division class="clearfix" {
