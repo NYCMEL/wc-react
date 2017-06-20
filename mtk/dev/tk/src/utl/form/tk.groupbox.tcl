@@ -55,14 +55,12 @@ m::proc -public tk::groupbox:test {
 } {    
     Trace
     
-    division [style padding 50px] {
-	tk::groupbox -id "my-groupbox" -label "Please select" -columns "col-sm-2 col-sm-8" -guts {
-	    division class="pull-left" [style margin-right 30px] {
-		tk::radio -id "rb-1" -name "v(rb)" -label "Apples" -value "1" required
-	    }
-	    division class="pull-left" {
-		tk::radio -id "rb-2" -name "v(rb)" -label "Oranges" -value "2" required
-	    }
+    tk::groupbox -id "my-groupbox" -label "Please select" -columns "col-sm-2 col-sm-8" -guts {
+	division class="pull-left" [style margin-right 30px] {
+	    tk::radio -id "rb-1" -name "v(rb)" -label "Apples" -value "1" required
+	}
+	division class="pull-left" {
+	    tk::radio -id "rb-2" -name "v(rb)" -label "Oranges" -value "2" required
 	}
     }
 }

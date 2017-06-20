@@ -125,11 +125,10 @@ m::proc -public tk::form::test {
 			3 "Blue"
 		    }] -selected "" -columns "$columns" required data-error="Pick a color from the list..."  
 
-		    tk::textarea -id address -name "v(address)" -label "Address" -columns "$columns"\
+		    tk::textarea -id "my-address" -name "v(address)" -label "Address" -columns "$columns"\
 			placeholder="Shipping Address" rows="3"	required  data-error="An address is required"
 		    
-		    label "Select Box Size:"
-		    division class="clearfix" {
+		    tk::groupbox -id "my-groupbox" -label "Select Box Size" -columns $columns -guts {
 			division class="pull-left" [style margin-right 30px] {
 			    tk::radio -id "rb-1" -name "v(rb)" -label "Small" -value "1" required
 			}
@@ -138,7 +137,9 @@ m::proc -public tk::form::test {
 			}
 		    }
 
-		    tk::checkbox -id "cb-1" -name "v(cb)" -label "I Agree with Terms & Conditions" -value "2" required
+		    tk::groupbox -id "my-groupbox-2" -label "You must Agree" -columns "$columns" -guts {
+			tk::checkbox -id "cb-1" -name "v(cb)" -label "I have read 'Terms & Conditions'" -value "2" required
+		    }
 		    
 		    submit_button action=Submit class="btn btn-primary"
 		}
