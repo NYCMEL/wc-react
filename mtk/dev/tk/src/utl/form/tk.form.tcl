@@ -102,13 +102,13 @@ m::proc -public tk::form::test {
 	    division class="col-md-6" {
 		h3 "Form <small>- vertical + two way data binding</small>"
 		division class="well" {
-		    tk::form::test:content -id "form1" -columns ""
+		    tk::form::test:content -id "f1" -columns ""
 		}
 	    }
 	    division class="col-md-6" {
 		h3 "Form <small>- horizontal</small>"
 		division class="well" {
-		    tk::form::test:content -id "form2" -columns "col-sm-4 col-sm-8"
+		    tk::form::test:content -id "f2" -columns "col-sm-4 col-sm-8"
 		}
 	    }
 	}
@@ -141,7 +141,7 @@ m::proc -public tk::form::test:content {
 
 	tk::text -id "$id-email" -name "v(email)" -label "Email" -value "mel@melify.com" -columns "$columns"\
 	    placeholder="your email" pattern="$tk::form::pattern(email)" required\
-	    data-error="your email is required!" data-key="email"
+	    data-error="your email is required!" data-key="${id}email"
 	
 	tk::select -id "$id-color" -name "v(color)" -label "Box Color" -options [subst {
 	    "" "Please Select"
@@ -149,30 +149,30 @@ m::proc -public tk::form::test:content {
 	    2 "White"
 	    3 "Blue"
 	}] -selected "" -columns "$columns" required data-error="Pick a color from the list..."\
-	    data-key="color"
+	    data-key="${id}color"
 
 	tk::calendar -id "$id-date" -name "v(date)" -label "Shipping Date" -columns "$columns"\
-	    required placeholder="mm/dd/yyyy" data-error="Shipping date is required!" data-key="date"
+	    required placeholder="mm/dd/yyyy" data-error="Shipping date is required!" data-key="${id}date"
 
 	tk::textarea -id "$id-address" -name "v(address)" -label "Address" -columns "$columns"\
 	    placeholder="Shipping Address" rows="3" required  data-error="An address is required"\
-	    data-key="address"
+	    data-key="${id}address"
 	
 	tk::groupbox -id "$id-groupbox-1" -label "Select Box Size" -columns $columns -guts {
 	    division class="pull-left" [style margin-right 30px] {
-		tk::radio -id "$id-rb1" -name "v(size)" -label "Small" -value "1" required data-key="rb1"
+		tk::radio -id "$id-rb1" -name "v(size)" -label "Small" -value "1" required data-key="${id}rb1"
 	    }
 	    division class="pull-left" [style margin-right 30px] {
-		tk::radio -id "$id-rb2" -name "v(size)" -label "Medium" -value "2" required data-key="rb2"
+		tk::radio -id "$id-rb2" -name "v(size)" -label "Medium" -value "2" required data-key="${id}rb2"
 	    }
 	    division class="pull-left" {
-		tk::radio -id "$id-rb3" -name "v(size)" -label "Large" -value "3" required data-key="rb3"
+		tk::radio -id "$id-rb3" -name "v(size)" -label "Large" -value "3" required data-key="${id}rb3"
 	    }
 	}
 
 	tk::groupbox -id "$id-groupbox-2" -label "You must Agree" -columns "$columns" -guts {
 	    tk::checkbox -id "$id-cb1" -name "v(agree)" -label "I agree with Terms & Conditions" -value "1" required\
-		data-key="agree"
+		data-key="${id}agree"
 	}
 	
 	tk::groupbox -id "$id-groupbox-3" -label "" -columns "$columns" -guts {
@@ -193,18 +193,18 @@ m::proc -public tk::form::test:content {
 	    tk.bind("$id-rb2-child",	changeHandler);
 	    tk.bind("$id-rb3-child",	changeHandler);
 	    tk.bind("$id-cb1-child",	changeHandler);
-	    tk.bind("$id-address-child",	changeHandler);
+	    tk.bind("$id-address-child",changeHandler);
 	    tk.bind("$id-date-child",	changeHandler);
 	    tk.bind("$id-color-child",	changeHandler);
 
-	    app.model.agree = true;
-	    app.model.rb1 = false;
-	    app.model.rb2 = false;
-	    app.model.rb3 = true;
-	    app.model.address = "100 Columbus Drive";
-	    app.model.date = "12/10/2017"
-	    app.model.color = 1;
-	    app.model.email = "mel.heravi@gmail.com";
+	    app.model.${id}agree = true;
+	    app.model.${id}rb1 = false;
+	    app.model.${id}rb2 = false;
+	    app.model.${id}rb3 = true;
+	    app.model.${id}address = "100 Columbus Drive";
+	    app.model.${id}date = "12/10/2017"
+	    app.model.${id}color = 1;
+	    app.model.${id}email = "mel.heravi@gmail.com";
 	}]
     }
 }
