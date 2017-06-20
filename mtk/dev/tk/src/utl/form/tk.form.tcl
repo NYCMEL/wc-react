@@ -51,7 +51,6 @@ m::proc -public tk::form {
     {-method       "POST"}
     {-enctype          {}}
     {-class            {}}
-    {-validate          1}
     {-custom	       ""}
     {-host             ""}
     -guts:required
@@ -76,7 +75,7 @@ m::proc -public tk::form {
 
     javascript {
 	put [subst {
-	    jQuery("form").validator().on('submit', function (e) {
+	    jQuery("#$id").validator().on('submit', function (e) {
 		if (e.isDefaultPrevented()) {
 		    console.error("INVALID FORM");
 		} else {
