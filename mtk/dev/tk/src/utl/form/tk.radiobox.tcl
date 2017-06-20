@@ -22,7 +22,7 @@ namespace eval tk {}
 ######################################################
 #####
 ######################################################
-m::proc -public tk::radiobox {
+m::proc -public tk::groupbox {
     -id:required
     -guts:required
     {-label ""}
@@ -49,14 +49,14 @@ m::proc -public tk::radiobox {
 ######################################################
 ##### TEST
 ######################################################
-m::proc -public tk::radiobox:test {
+m::proc -public tk::groupbox:test {
 } {
     Documentation goes here...
 } {    
     Trace
     
     division [style padding 50px] {
-	tk::radiobox -id "my-radiobox" -label "Please select" -guts {
+	tk::groupbox -id "my-groupbox" -label "Please select" -guts {
 	    division class="pull-left" [style margin-right 30px] {
 		tk::radio -id "rb-1" -name "v(rb)" -label "Apples" -value "1" required
 	    }
