@@ -187,12 +187,14 @@ m::proc -public tk::form::test:content {
     
     javascript {
 	put [subst {
+	    // CALLBACK FUNCTION WHEN VALUES UPDATED
 	    function changeHandler(ev) {
 		console.group("changeHandler");
 		console.log(this.id, ev.type, ev.data.newValue);
 		console.groupEnd();
 	    }
 
+	    // BIND ELEMENT WITH A CALLBACK
 	    tk.bind("$id-email-child",	changeHandler);
 	    tk.bind("$id-rb1-child",	changeHandler);
 	    tk.bind("$id-rb2-child",	changeHandler);
@@ -202,6 +204,7 @@ m::proc -public tk::form::test:content {
 	    tk.bind("$id-date-child",	changeHandler);
 	    tk.bind("$id-color-child",	changeHandler);
 
+	    // INITIALIZE FORM VALUES 
 	    app.model.${id}agree = true;
 	    app.model.${id}rb1 = false;
 	    app.model.${id}rb2 = false;
@@ -210,6 +213,9 @@ m::proc -public tk::form::test:content {
 	    app.model.${id}date = "12/10/2017"
 	    app.model.${id}color = 1;
 	    app.model.${id}email = "mel.heravi@gmail.com";
+
+	    // UPDATES REQUIRE MANUAL VALIDATOR TRIGGERED
+	    jQuery("#$id").validator("validate")
 	}]
     }
 }
