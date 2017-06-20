@@ -42,7 +42,7 @@ m::proc -public tk::textarea {
 	label for="$id-label" class="$c1" "$label"
 
 	division class="$c2" {
-	    put "<textarea name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args]>$value</textarea>"
+	    put "<textarea name='$name' class='form-control' id='$id-child' aria-describedby='$id-help' [lstring $args]>$value</textarea>"
 	    put "<small id='$id-help' class='form-text help-block with-errors text-muted'>$help</small>"
 	}
     }

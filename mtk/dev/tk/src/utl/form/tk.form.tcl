@@ -190,13 +190,13 @@ m::proc -public tk::form::test:content {
 		console.groupEnd();
 	    }
 
-	    tk.bind("rb-1-radio",	changeHandler);
-	    tk.bind("rb-2-radio",	changeHandler);
-	    tk.bind("rb-3-radio",	changeHandler);
-	    tk.bind("cb-1-check",	changeHandler);
-	    tk.bind("address-text",	changeHandler);
-	    tk.bind("date-text",	changeHandler);
-	    tk.bind("color-select",	changeHandler);
+	    tk.bind("rb-1-child",	changeHandler);
+	    tk.bind("rb-2-child",	changeHandler);
+	    tk.bind("rb-3-child",	changeHandler);
+	    tk.bind("cb-1-child",	changeHandler);
+	    tk.bind("address-child",	changeHandler);
+	    tk.bind("date-child",	changeHandler);
+	    tk.bind("color-child",	changeHandler);
 
 	    app.model.agree = true;
 

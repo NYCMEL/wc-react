@@ -37,7 +37,7 @@ m::proc -public tk::radio {
 	division class="form-check" {
 	    put "\
 	    	<label id='$id-label' class='form-check-label'>\
-	    	<input type='radio' class='form-check-input' name='$name' id='$id-radio' value='$value' [lstring $args]>\
+	    	<input type='radio' class='form-check-input' name='$name' id='$id-child' value='$value' [lstring $args]>\
 		$label\
 		</label>"
 

@@ -47,7 +47,7 @@ m::proc -public tk::calendar {
 	
 	division class="$c2" {
 	    division class="input-group date" data-provide="datepicker" {
-		put "<input name='$name' class='form-control' id='$id-text' aria-describedby='$id-help' [lstring $args] value='$value'>"
+		put "<input name='$name' class='form-control' id='$id-child' aria-describedby='$id-help' [lstring $args] value='$value'>"
 		division class="input-group-addon" {
 		    put "<span class='fa fa-calendar'></span>"
 		}
