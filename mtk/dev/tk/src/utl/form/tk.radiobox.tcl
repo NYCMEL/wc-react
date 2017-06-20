@@ -35,11 +35,13 @@ m::proc -public tk::radiobox {
     set c1 [lindex $columns 0]
     set c2 [lindex $columns 1]
 
-    division class="form-group" {
-	label id="$id-label" for="$id-label" class="$c1" "$label"
-
-	division class="$c2" [style background wheat] {
-	    uplevel $guts
+    division class="form-group" [style background wheat border "1px lime solid"] {
+	division class="$c1" {
+	    label id="$id-label" for="$id-label" "$label"
+	}
+	
+	division class="$c2" [style border "1px red solid"] {
+	    eval $guts
 	}
     }
 }
