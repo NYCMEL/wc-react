@@ -180,6 +180,11 @@ m::proc -public tk::form::test:content {
 	}
     }
 
+    #SKIP SECOND FORM
+    if {$id == "f2"} {
+	return
+    }
+    
     javascript {
 	put [subst {
 	    function changeHandler(ev) {
