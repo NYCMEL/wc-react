@@ -100,7 +100,7 @@ m::proc -public tk::form::test {
     division class="container" {
 	division class="row" {
 	    division class="col-md-6" {
-		h3 "Form <small>- vertical</small>"
+		h3 "Form <small>- vertical + two way data binding</small>"
 		division class="well" {
 		    tk::form::test:content -id "form-1" -columns ""
 		}
@@ -199,7 +199,6 @@ m::proc -public tk::form::test:content {
 	    tk.bind("color-child",	changeHandler);
 
 	    app.model.agree = true;
-
 	    app.model.rb1 = false;
 	    app.model.rb2 = false;
 	    app.model.rb3 = true;
