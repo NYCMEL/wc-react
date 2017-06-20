@@ -160,18 +160,18 @@ m::proc -public tk::form::test:content {
 	
 	tk::groupbox -id "groupbox-1" -label "Select Box Size" -columns $columns -guts {
 	    division class="pull-left" [style margin-right 30px] {
-		tk::radio -id "rb-1" -name "v(size)" -label "Small" -value "1" required data-key="rb1"
+		tk::radio -id "rb1" -name "v(size)" -label "Small" -value "1" required data-key="rb1"
 	    }
 	    division class="pull-left" [style margin-right 30px] {
-		tk::radio -id "rb-2" -name "v(size)" -label "Medium" -value "2" required data-key="rb2"
+		tk::radio -id "rb2" -name "v(size)" -label "Medium" -value "2" required data-key="rb2"
 	    }
 	    division class="pull-left" {
-		tk::radio -id "rb-3" -name "v(size)" -label "Large" -value "3" required data-key="rb3"
+		tk::radio -id "rb3" -name "v(size)" -label "Large" -value "3" required data-key="rb3"
 	    }
 	}
 
 	tk::groupbox -id "groupbox-2" -label "You must Agree" -columns "$columns" -guts {
-	    tk::checkbox -id "cb-1" -name "v(agree)" -label "I agree with Terms & Conditions" -value "1" required\
+	    tk::checkbox -id "cb1" -name "v(agree)" -label "I agree with Terms & Conditions" -value "1" required\
 		data-key="agree"
 	}
 	
@@ -191,10 +191,10 @@ m::proc -public tk::form::test:content {
 	    }
 
 	    tk.bind("email-child",	changeHandler);
-	    tk.bind("rb-1-child",	changeHandler);
-	    tk.bind("rb-2-child",	changeHandler);
-	    tk.bind("rb-3-child",	changeHandler);
-	    tk.bind("cb-1-child",	changeHandler);
+	    tk.bind("rb1-child",	changeHandler);
+	    tk.bind("rb2-child",	changeHandler);
+	    tk.bind("rb3-child",	changeHandler);
+	    tk.bind("cb1-child",	changeHandler);
 	    tk.bind("address-child",	changeHandler);
 	    tk.bind("date-child",	changeHandler);
 	    tk.bind("color-child",	changeHandler);
