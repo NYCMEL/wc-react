@@ -102,13 +102,13 @@ m::proc -public tk::form::test {
 	    division class="col-md-6" {
 		h3 "Form <small>- vertical + two way data binding</small>"
 		division class="well" {
-		    tk::form::test:content -id "form-1" -columns ""
+		    tk::form::test:content -id "form1" -columns ""
 		}
 	    }
 	    division class="col-md-6" {
 		h3 "Form <small>- horizontal</small>"
 		division class="well" {
-		    tk::form::test:content -id "form-1" -columns "col-sm-4 col-sm-8"
+		    tk::form::test:content -id "form2" -columns "col-sm-4 col-sm-8"
 		}
 	    }
 	}
@@ -139,11 +139,11 @@ m::proc -public tk::form::test:content {
     tk::form -name "$id" -callback "tk::form::test:cb" -guts {
 	export ajax=1
 
-	tk::text -id email -name "v(email)" -label "Email" -value "mel@melify.com" -columns "$columns"\
+	tk::text -id "$id-email" -name "v(email)" -label "Email" -value "mel@melify.com" -columns "$columns"\
 	    placeholder="your email" pattern="$tk::form::pattern(email)" required\
 	    data-error="your email is required!" data-key="email"
 	
-	tk::select -id "color" -name "v(color)" -label "Box Color" -options [subst {
+	tk::select -id "$id-color" -name "v(color)" -label "Box Color" -options [subst {
 	    "" "Please Select"
 	    1 "Red"
 	    2 "White"
@@ -151,31 +151,31 @@ m::proc -public tk::form::test:content {
 	}] -selected "" -columns "$columns" required data-error="Pick a color from the list..."\
 	    data-key="color"
 
-	tk::calendar -id "date" -name "v(date)" -label "Shipping Date" -columns "$columns"\
+	tk::calendar -id "$id-date" -name "v(date)" -label "Shipping Date" -columns "$columns"\
 	    required placeholder="mm/dd/yyyy" data-error="Shipping date is required!" data-key="date"
 
-	tk::textarea -id "address" -name "v(address)" -label "Address" -columns "$columns"\
+	tk::textarea -id "$id-address" -name "v(address)" -label "Address" -columns "$columns"\
 	    placeholder="Shipping Address" rows="3" required  data-error="An address is required"\
 	    data-key="address"
 	
-	tk::groupbox -id "groupbox-1" -label "Select Box Size" -columns $columns -guts {
+	tk::groupbox -id "$id-groupbox-1" -label "Select Box Size" -columns $columns -guts {
 	    division class="pull-left" [style margin-right 30px] {
-		tk::radio -id "rb1" -name "v(size)" -label "Small" -value "1" required data-key="rb1"
+		tk::radio -id "$id-rb1" -name "v(size)" -label "Small" -value "1" required data-key="rb1"
 	    }
 	    division class="pull-left" [style margin-right 30px] {
-		tk::radio -id "rb2" -name "v(size)" -label "Medium" -value "2" required data-key="rb2"
+		tk::radio -id "$id-rb2" -name "v(size)" -label "Medium" -value "2" required data-key="rb2"
 	    }
 	    division class="pull-left" {
-		tk::radio -id "rb3" -name "v(size)" -label "Large" -value "3" required data-key="rb3"
+		tk::radio -id "$id-rb3" -name "v(size)" -label "Large" -value "3" required data-key="rb3"
 	    }
 	}
 
-	tk::groupbox -id "groupbox-2" -label "You must Agree" -columns "$columns" -guts {
-	    tk::checkbox -id "cb1" -name "v(agree)" -label "I agree with Terms & Conditions" -value "1" required\
+	tk::groupbox -id "$id-groupbox-2" -label "You must Agree" -columns "$columns" -guts {
+	    tk::checkbox -id "$id-cb1" -name "v(agree)" -label "I agree with Terms & Conditions" -value "1" required\
 		data-key="agree"
 	}
 	
-	tk::groupbox -id "groupbox-3" -label "" -columns "$columns" -guts {
+	tk::groupbox -id "$id-groupbox-3" -label "" -columns "$columns" -guts {
 	    submit_button action=Submit class="btn btn-primary"
 	}
     }
