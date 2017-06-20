@@ -45,14 +45,12 @@ put "<style>.has-error label {color: #A94442;}</style>"
 ######################################################
 m::proc -public tk::form {
     -name:required
-    {-url              {}}
     {-id               {}}
+    {-url              {}}
     {-callback         {}}
     {-method       "POST"}
     {-enctype          {}}
     {-class            {}}
-    {-custom	       ""}
-    {-host             ""}
     -guts:required
     args
 } {
