@@ -53,9 +53,8 @@ m::proc -public tk::select {
 		    option $j value=$i [expr {($i == $selected) ? "selected" : ""}]
 		}
 	    }
+	    put "<small id='$id-help' class='form-text help-block with-errors text-muted'>$help</small>"
 	}
-
-	put "<small id='$id-help' class='form-text help-block with-errors text-muted'>$help</small>"
     }    
 }
 

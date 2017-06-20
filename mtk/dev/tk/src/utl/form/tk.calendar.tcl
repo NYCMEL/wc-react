@@ -54,9 +54,8 @@ m::proc -public tk::calendar {
 		    put "<span class='fa fa-calendar'></span>"
 		}
 	    }
+	    put "<small id='$id-help' class='form-text help-block with-errors text-muted'>$help</small>"
 	}
-	
-	put "<small id='$id-help' class='form-text help-block with-errors text-muted'>$help</small>"
     }    
 }
 
