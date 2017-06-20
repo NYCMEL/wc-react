@@ -37,7 +37,7 @@ m::proc -public tk::groupbox {
 
     division class="form-group" {
 	division class="$c1" {
-	    label id="$id-label" for="$id-label" class="$c1" "$label"
+	    label id="$id-label" for="$id-label" "$label"
 	}
 	
 	division class="$c2" {
@@ -56,7 +56,7 @@ m::proc -public tk::groupbox:test {
     Trace
     
     division [style padding 50px] {
-	tk::groupbox -id "my-groupbox" -label "Please select" -columns "col-sm-3 col-sm-9" -guts {
+	tk::groupbox -id "my-groupbox" -label "Please select" -columns "col-sm-2 col-sm-8" -guts {
 	    division class="pull-left" [style margin-right 30px] {
 		tk::radio -id "rb-1" -name "v(rb)" -label "Apples" -value "1" required
 	    }
