@@ -107,24 +107,24 @@ m::proc -public tk::form::test {
 		    tk::text -id fname -name "v(email)" -label "Email" -value "mel@melify.com"\
 			placeholder="your email" pattern="$tk::form::pattern(email)" required
 		    
-		    tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" required 
+		    tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" required placeholder="mm/dd/yyyy"
 
 		    tk::select -id "my-select" -name "v(select)" -label "Box Color" -options [subst {
-			"" "please select"
+			"" "Please Select"
 			1 "Red"
 			2 "White"
 			3 "Blue"
 		    }] -selected "" required
 
-		    tk::textarea -id address -name "v(address)" -label "Address" placeholder="home address" rows="3" required 
+		    tk::textarea -id address -name "v(address)" -label "Address" placeholder="Shipping Address" rows="3" required 
 		    
-		    label "Please select your Gender:"
+		    label "Select Box Size:"
 		    division class="clearfix" {
 			division class="pull-left" [style margin-right 30px] {
-			    tk::radio -id "rb-1" -name "v(rb)" -label "I am a Male" -value "1" required
+			    tk::radio -id "rb-1" -name "v(rb)" -label "Small" -value "1" required
 			}
 			division class="pull-left" {
-			    tk::radio -id "rb-2" -name "v(rb)" -label "I am a Female" -value "2" required
+			    tk::radio -id "rb-2" -name "v(rb)" -label "Large" -value "2" required
 			}
 		    }
 
