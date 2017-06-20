@@ -204,6 +204,7 @@ m::proc -public tk::form::test:content {
 	    app.model.address = "100 Columbus Drive";
 	    app.model.date = "12/10/2017"
 	    app.model.color = 1;
+	    app.model.email = "mel.heravi@gmail.com";
 	}
     }
 }
