@@ -141,7 +141,7 @@ m::proc -public tk::form::test {
 		    }
 
 		    tk::groupbox -id "my-groupbox-2" -label "You must Agree" -columns "$columns" -guts {
-			tk::checkbox -id "cb-1" -name "v(cb)" -label "I have read 'Terms & Conditions'" -value "1" required
+			tk::checkbox -id "cb-1" -name "v(cb)" -label "I agree with Terms & Conditions" -value "1" required
 		    }
 		    
 		    submit_button action=Submit class="btn btn-primary"
