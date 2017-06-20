@@ -128,7 +128,7 @@ m::proc -public tk::form::test {
 		    tk::textarea -id "my-address" -name "v(address)" -label "Address" -columns "$columns"\
 			placeholder="Shipping Address" rows="3"	required  data-error="An address is required"
 		    
-		    tk::groupbox -id "my-groupbox" -label "Select Box Size" -columns $columns -guts {
+		    tk::groupbox -id "my-groupbox-1" -label "Select Box Size" -columns $columns -guts {
 			division class="pull-left" [style margin-right 30px] {
 			    tk::radio -id "rb-1" -name "v(rb)" -label "Small" -value "1" required
 			}
@@ -138,7 +138,7 @@ m::proc -public tk::form::test {
 		    }
 
 		    tk::groupbox -id "my-groupbox-2" -label "You must Agree" -columns "$columns" -guts {
-			tk::checkbox -id "cb-1" -name "v(cb)" -label "I have read 'Terms & Conditions'" -value "2" required
+			tk::checkbox -id "cb-1" -name "v(cb)" -label "I have read 'Terms & Conditions'" -value "1" required
 		    }
 		    
 		    submit_button action=Submit class="btn btn-primary"
