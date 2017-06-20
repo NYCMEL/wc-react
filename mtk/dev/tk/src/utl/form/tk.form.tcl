@@ -107,7 +107,7 @@ m::proc -public tk::form::test {
 
     division class="container" {
 	division class="row" {
-	    division class="col-md-5 well" {
+	    division class="col-md-6 well" {
 		tk::form -name "form-name" -callback "tk::form::test:cb" -guts {
 		    export ajax=1
 
@@ -115,15 +115,15 @@ m::proc -public tk::form::test {
 			placeholder="your email" pattern="$tk::form::pattern(email)" required\
 			data-error="your email is required!"
 		    
-		    tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" -columns "$columns"\
-			required placeholder="mm/dd/yyyy" data-error="Shipping date is required!"
-
 		    tk::select -id "my-select" -name "v(select)" -label "Box Color" -options [subst {
 			"" "Please Select"
 			1 "Red"
 			2 "White"
 			3 "Blue"
 		    }] -selected "" -columns "$columns" required data-error="Pick a color from the list..."  
+
+		    tk::calendar -id "my-select" -name "v(calendar)" -label "Shipping Date" -columns "$columns"\
+			required placeholder="mm/dd/yyyy" data-error="Shipping date is required!"
 
 		    tk::textarea -id "my-address" -name "v(address)" -label "Address" -columns "$columns"\
 			placeholder="Shipping Address" rows="3"	required  data-error="An address is required"
