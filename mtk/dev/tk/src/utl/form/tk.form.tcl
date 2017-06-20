@@ -99,7 +99,7 @@ m::proc -public tk::form::test {
 } {
     br
 
-    if {1} {
+    if {0} {
 	set columns "col-sm-3 col-sm-9"
     } else {
 	set columns ""

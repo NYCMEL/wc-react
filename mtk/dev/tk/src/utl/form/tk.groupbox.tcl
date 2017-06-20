@@ -35,7 +35,7 @@ m::proc -public tk::groupbox {
     set c1 [lindex $columns 0]
     set c2 [lindex $columns 1]
 
-    division class="form-group" {
+    division class="clearfix" {
 	division class="$c1" {
 	    label id="$id-label" for="$id-label" "$label"
 	}
