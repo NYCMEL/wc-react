@@ -184,9 +184,7 @@ m::proc -public tk::form::test:content {
 	put {
 	    function changeHandler(ev) {
 		console.group("changeHandler");
-		
 		console.log(this.id, ev.type, ev.data.newValue);
-		
 		console.groupEnd();
 	    }
 
