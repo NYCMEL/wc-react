@@ -104,13 +104,13 @@ m::proc -public tk::form::test {
 	    division class="col-md-6" {
 		h3 "Form <small>- vertical</small>"
 		division class="well" {
-		    tk::form::test:form -columns ""
+		    tk::form::test:content -columns ""
 		}
 	    }
 	    division class="col-md-6" {
 		h3 "Form <small>- horizontal</small>"
 		division class="well" {
-		    tk::form::test:form -columns "col-sm-4 col-sm-8"
+		    tk::form::test:content -columns "col-sm-4 col-sm-8"
 		}
 	    }
 	}
@@ -130,7 +130,7 @@ m::proc -public tk::form::test:cb {
 ######################################################
 #####
 ######################################################
-m::proc -public tk::form::test:form {
+m::proc -public tk::form::test:content {
     -columns:required
 } {
     Documentation goes here...
