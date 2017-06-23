@@ -218,7 +218,7 @@ m::proc -public tk::form::show {
     division class="container" {
 	division class="row" {
 	    division class="col-md-6" {
-		set columns "col-md-2 col-md-4"
+		set columns "col-md-4 col-md-8"
 		put [url "Horizontal" "#" class="btn btn-default" onclick="document.location.href='[URL callback tk::form::test columns $columns]'"]
 		space 20 0
 		set columns ""
