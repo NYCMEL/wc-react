@@ -57,11 +57,15 @@ m::proc -public tk::text:test {
 } {    
     Trace
     
-    tk::text\
-	-id fname\
-	-name "v(email)"\
-	-label "Email"\
-	-help "help text goes here..."\
-	-value "mel@melify.com"\
-	placeholder="your email" pattern="$tk::form::pattern(email)" required
+    tk::form -name "my-form" -callback "tk::form::test:cb" -guts {
+	export ajax=1
+
+	tk::text\
+	    -id fname\
+	    -name "v(email)"\
+	    -label "Email"\
+	    -help "help text goes here..."\
+	    -value "mel@melify.com"\
+	    placeholder="your email" pattern="$tk::form::pattern(email)" required
+    }
 }
