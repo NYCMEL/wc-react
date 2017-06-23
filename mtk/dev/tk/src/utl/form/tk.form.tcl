@@ -230,6 +230,7 @@ m::proc -public tk::form::show {
 } {
     Trace
     
+    br
     division class="container" {
 	division class="row" {
 	    division class="col-md-12" {
@@ -238,7 +239,11 @@ m::proc -public tk::form::show {
 		put [url "Vertical" "#" class="btn btn-default" onclick="jQuery('.form-group .horizontal').removeClass('horizontal').addClass('vertical')"]
 		hr
 
-		uplevel $guts
+		tk::form -name "my-form" -callback "tk::form::test:cb" -guts {
+		    export ajax=1
+
+		    uplevel $guts
+		}
 	    }
 	}
     }

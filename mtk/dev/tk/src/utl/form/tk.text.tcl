@@ -62,29 +62,15 @@ m::proc -public tk::text:test {
 } {    
     Trace
     
-    br
-    division class="container" {
-	division class="row" {
-	    division class="col-md-12" {
-		put [url "Horizontal" "#" class="btn btn-default" onclick="jQuery('.form-group .vertical').removeClass('vertical').addClass('horizontal')"]
-		space 20 0
-		put [url "Vertical" "#" class="btn btn-default" onclick="jQuery('.form-group .horizontal').removeClass('horizontal').addClass('vertical')"]
-		hr
-
-		tk::form -name "my-form" -callback "tk::form::test:cb" -guts {
-		    export ajax=1
-
-		    tk::text\
-			-id fname\
-			-name "v(email)"\
-			-label "Email"\
-			-help "help text goes here..."\
-			-value "mel@melify.com"\
-			-columns "col-md-1 col-md-3"\
-			-class "vertical"\
-			placeholder="your email" pattern="$tk::form::pattern(email)" required
-		}
-	    }
-	}
+    tk::form::show -guts {
+	tk::text\
+	    -id fname\
+	    -name "v(email)"\
+	    -label "Email"\
+	    -help "help text goes here..."\
+	    -value "mel@melify.com"\
+	    -columns "col-md-1 col-md-3"\
+	    -class "vertical"\
+	    placeholder="your email" pattern="$tk::form::pattern(email)" required
     }
 }
