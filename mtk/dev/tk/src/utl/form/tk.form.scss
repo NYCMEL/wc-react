@@ -3,8 +3,6 @@ form {
     
     .form-group-lhs, .form-group-rhs {
 	&.horizontal {
-	    border: 1px red solid;
-	    background: wheat;
 	    float: left;
 	}
     }
@@ -13,8 +11,6 @@ form {
 	&.vertical {
 	    display: block;
 	    clear: both;
-	    border: 1px lime solid;
-	    background: khaki;
 	}
     }
 }

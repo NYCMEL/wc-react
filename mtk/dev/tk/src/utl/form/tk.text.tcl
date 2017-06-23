@@ -31,6 +31,7 @@ m::proc -public tk::text {
     {-help  ""}
     {-value ""}
     {-columns ""}
+    {-class "horizontal"}
     args
 } {
     Documentation goes here...
@@ -41,11 +42,11 @@ m::proc -public tk::text {
     set c2 [lindex $columns 1]
     
     division class="form-group clearfix" {
-	division class="form-group-lhs horizontal" {
+	division class="form-group-lhs $class" {
 	    label id="$id-label" for="$id-label" class="$c1" "$label"
 	}
 	
-	division class="form-group-rhs horizontal $c2" {
+	division class="form-group-rhs $class $c2" {
 	    put "<input name='$name' class='form-control' id='$id-child' aria-describedby='$id-help' [lstring $args] value='$value' type='text' autocomplete='off'>"
 	    put "<small id='$id-help' class='form-text help-block with-errors text-muted'>$help</small>"
 	}
@@ -65,9 +66,9 @@ m::proc -public tk::text:test {
     division class="container" {
 	division class="row" {
 	    division class="col-md-12" {
-		put [url "Horizontal" "#" class="btn btn-default" onclick="jQuery('.form-group-lhs').removeClass('vertical').addClass('horizontal')"]
+		put [url "Horizontal" "#" class="btn btn-default" onclick="jQuery('.form-group .vertical').removeClass('vertical').addClass('horizontal')"]
 		space 20 0
-		put [url "Vertical" "#" class="btn btn-default" onclick="jQuery('.form-group-lhs').removeClass('horizontal').addClass('vertical')"]
+		put [url "Vertical" "#" class="btn btn-default" onclick="jQuery('.form-group .horizontal').removeClass('horizontal').addClass('vertical')"]
 		hr
 
 		tk::form -name "my-form" -callback "tk::form::test:cb" -guts {
@@ -80,6 +81,7 @@ m::proc -public tk::text:test {
 			-help "help text goes here..."\
 			-value "mel@melify.com"\
 			-columns "col-md-1 col-md-3"\
+			-class "vertical"\
 			placeholder="your email" pattern="$tk::form::pattern(email)" required
 		}
 	    }
