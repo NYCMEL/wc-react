@@ -218,11 +218,13 @@ m::proc -public tk::form::show {
     division class="container" {
 	division class="row" {
 	    division class="col-md-6" {
-		set onclick "document.location.href='[URL callback tk::form::test columns {col-md-4 col-md-8}]'"
+		set url "[URL callback tk::form::test columns {col-md-4 col-md-8}]"
+		set onclick "document.location.href='$url'"
 		put [url "HORIZONTAL" "#" class="btn btn-default" onclick="$onclick"]
 		space 20 0
 
-		set onclick "document.location.href='[URL callback tk::form::test columns {}]'"
+		set url "[URL callback tk::form::test columns {}]"
+		set onclick "document.location.href='$url'"
 		put [url "VERTICAL" "#" class="btn btn-default" onclick="$onclick"]
 		hr
 
