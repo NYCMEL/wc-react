@@ -219,3 +219,27 @@ m::proc -public tk::form::test:content {
 	}]
     }
 }
+
+######################################################
+#####
+######################################################
+m::proc -public tk::form::show {
+    -guts:required
+} {
+    Documentation goes here...
+} {
+    Trace
+    
+    division class="container" {
+	division class="row" {
+	    division class="col-md-12" {
+		put [url "Horizontal" "#" class="btn btn-default" onclick="jQuery('.form-group .vertical').removeClass('vertical').addClass('horizontal')"]
+		space 20 0
+		put [url "Vertical" "#" class="btn btn-default" onclick="jQuery('.form-group .horizontal').removeClass('horizontal').addClass('vertical')"]
+		hr
+
+		uplevel $guts
+	    }
+	}
+    }
+}
