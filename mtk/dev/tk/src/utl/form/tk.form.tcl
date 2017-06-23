@@ -97,20 +97,13 @@ m::proc -public tk::form::test {
 } {
     br
 
-    division class="container" {
-	division class="row" {
-	    division class="col-md-6" {
-		h3 "Form <small>- vertical + two way data binding</small>"
-		division class="well" {
-		    tk::form::test:content -id "f1" -columns ""
-		}
-	    }
-	    division class="col-md-6" {
-		h3 "Form <small>- horizontal</small>"
-		division class="well" {
-		    tk::form::test:content -id "f2" -columns "col-sm-4 col-sm-8"
-		}
-	    }
+    if {[info exist ::columns] == 0} {
+	set ::columns "col-md-2 col-md-4"
+    }
+
+    tk::form::show -guts {
+	division class="well" {
+	    tk::form::test:content -id "f1" -columns $::columns
 	}
     }
 }
@@ -136,55 +129,46 @@ m::proc -public tk::form::test:content {
 } {
     Trace
     
-    tk::form -name "$id" -callback "tk::form::test:cb" -guts {
-	export ajax=1
+    tk::text -id "$id-email" -name "v(email)" -label "Email" -value "mel@melify.com" -columns "$columns"\
+	placeholder="your email" pattern="$tk::form::pattern(email)" required\
+	data-error="your email is required!" data-key="${id}email"
+    
+    tk::select -id "$id-color" -name "v(color)" -label "Box Color" -options [subst {
+	"" "Please Select"
+	1 "Red"
+	2 "White"
+	3 "Blue"
+    }] -selected "" -columns "$columns" required data-error="Pick a color from the list..."\
+	data-key="${id}color"
 
-	tk::text -id "$id-email" -name "v(email)" -label "Email" -value "mel@melify.com" -columns "$columns"\
-	    placeholder="your email" pattern="$tk::form::pattern(email)" required\
-	    data-error="your email is required!" data-key="${id}email"
-	
-	tk::select -id "$id-color" -name "v(color)" -label "Box Color" -options [subst {
-	    "" "Please Select"
-	    1 "Red"
-	    2 "White"
-	    3 "Blue"
-	}] -selected "" -columns "$columns" required data-error="Pick a color from the list..."\
-	    data-key="${id}color"
+    tk::calendar -id "$id-date" -name "v(date)" -label "Shipping Date" -columns "$columns"\
+	required placeholder="mm/dd/yyyy" data-error="Shipping date is required!" data-key="${id}date"
 
-	tk::calendar -id "$id-date" -name "v(date)" -label "Shipping Date" -columns "$columns"\
-	    required placeholder="mm/dd/yyyy" data-error="Shipping date is required!" data-key="${id}date"
-
-	tk::textarea -id "$id-address" -name "v(address)" -label "Address" -columns "$columns"\
-	    placeholder="Shipping Address" rows="3" required  data-error="An address is required"\
-	    data-key="${id}address"
-	
-	tk::groupbox -id "$id-groupbox-1" -label "Select Box Size" -columns $columns -guts {
-	    division class="pull-left" [style margin-right 30px] {
-		tk::radio -id "$id-rb1" -name "v(size)" -label "Small" -value "1" required data-key="${id}rb1"
-	    }
-	    division class="pull-left" [style margin-right 30px] {
-		tk::radio -id "$id-rb2" -name "v(size)" -label "Medium" -value "2" required data-key="${id}rb2"
-	    }
-	    division class="pull-left" {
-		tk::radio -id "$id-rb3" -name "v(size)" -label "Large" -value "3" required data-key="${id}rb3"
-	    }
+    tk::textarea -id "$id-address" -name "v(address)" -label "Address" -columns "$columns"\
+	placeholder="Shipping Address" rows="3" required  data-error="An address is required"\
+	data-key="${id}address"
+    
+    tk::groupbox -id "$id-groupbox-1" -label "Select Box Size" -columns $columns -guts {
+	division class="pull-left" [style margin-right 30px] {
+	    tk::radio -id "$id-rb1" -name "v(size)" -label "Small" -value "1" required data-key="${id}rb1"
 	}
-
-	tk::groupbox -id "$id-groupbox-2" -label "You must Agree" -columns "$columns" -guts {
-	    tk::checkbox -id "$id-cb1" -name "v(agree)" -label "I agree with Terms & Conditions" -value "1" required\
-		data-key="${id}agree"
+	division class="pull-left" [style margin-right 30px] {
+	    tk::radio -id "$id-rb2" -name "v(size)" -label "Medium" -value "2" required data-key="${id}rb2"
 	}
-	
-	tk::groupbox -id "$id-groupbox-3" -label "" -columns "$columns" -guts {
-	    submit_button action=Submit class="btn btn-primary"
+	division class="pull-left" {
+	    tk::radio -id "$id-rb3" -name "v(size)" -label "Large" -value "3" required data-key="${id}rb3"
 	}
     }
 
-    #SKIP SECOND FORM
-    if {$id == "f2"} {
-	return
+    tk::groupbox -id "$id-groupbox-2" -label "You must Agree" -columns "$columns" -guts {
+	tk::checkbox -id "$id-cb1" -name "v(agree)" -label "I agree with Terms & Conditions" -value "1" required\
+	    data-key="${id}agree"
     }
     
+    tk::groupbox -id "$id-groupbox-3" -label "" -columns "$columns" -guts {
+	submit_button action=Submit class="btn btn-primary"
+    }
+
     javascript {
 	put [subst {
 	    // CALLBACK FUNCTION WHEN VALUES UPDATED
@@ -233,10 +217,12 @@ m::proc -public tk::form::show {
     br
     division class="container" {
 	division class="row" {
-	    division class="col-md-12" {
-		put [url "Horizontal" "#" class="btn btn-default" onclick="jQuery('.form-group .vertical').removeClass('vertical').addClass('horizontal')"]
+	    division class="col-md-6" {
+		set columns "col-md-2 col-md-4"
+		put [url "Horizontal" "#" class="btn btn-default" onclick="document.location.href='[URL callback tk::form::test columns $columns]'"]
 		space 20 0
-		put [url "Vertical" "#" class="btn btn-default" onclick="jQuery('.form-group .horizontal').removeClass('horizontal').addClass('vertical')"]
+		set columns ""
+		put [url "Vertical" "#" class="btn btn-default" onclick="document.location.href='[URL callback tk::form::test columns $columns]'"]
 		hr
 
 		tk::form -name "my-form" -callback "tk::form::test:cb" -guts {
