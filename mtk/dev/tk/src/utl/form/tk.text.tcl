@@ -19,6 +19,8 @@
 
 namespace eval tk {}
 
+include "/tk/src/utl/form/tk.form.css"
+
 ######################################################
 #####
 ######################################################
@@ -39,9 +41,11 @@ m::proc -public tk::text {
     set c2 [lindex $columns 1]
     
     division class="form-group clearfix" {
-	label id="$id-label" for="$id-label" class="$c1" "$label"
+	division class="form-group-lhs horizontal" {
+	    label id="$id-label" for="$id-label" class="$c1" "$label"
+	}
 	
-	division class="$c2" {
+	division class="form-group-rhs horizontal $c2" {
 	    put "<input name='$name' class='form-control' id='$id-child' aria-describedby='$id-help' [lstring $args] value='$value' type='text' autocomplete='off'>"
 	    put "<small id='$id-help' class='form-text help-block with-errors text-muted'>$help</small>"
 	}
@@ -57,15 +61,28 @@ m::proc -public tk::text:test {
 } {    
     Trace
     
-    tk::form -name "my-form" -callback "tk::form::test:cb" -guts {
-	export ajax=1
+    br
+    division class="container" {
+	division class="row" {
+	    division class="col-md-12" {
+		put [url "Horizontal" "#" class="btn btn-default" onclick="jQuery('.form-group-lhs').removeClass('vertical').addClass('horizontal')"]
+		space 20 0
+		put [url "Vertical" "#" class="btn btn-default" onclick="jQuery('.form-group-lhs').removeClass('horizontal').addClass('vertical')"]
+		hr
 
-	tk::text\
-	    -id fname\
-	    -name "v(email)"\
-	    -label "Email"\
-	    -help "help text goes here..."\
-	    -value "mel@melify.com"\
-	    placeholder="your email" pattern="$tk::form::pattern(email)" required
+		tk::form -name "my-form" -callback "tk::form::test:cb" -guts {
+		    export ajax=1
+
+		    tk::text\
+			-id fname\
+			-name "v(email)"\
+			-label "Email"\
+			-help "help text goes here..."\
+			-value "mel@melify.com"\
+			-columns "col-md-1 col-md-3"\
+			placeholder="your email" pattern="$tk::form::pattern(email)" required
+		}
+	    }
+	}
     }
 }

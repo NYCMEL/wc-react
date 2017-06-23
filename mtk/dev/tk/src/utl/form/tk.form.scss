@@ -1,0 +1,13 @@
+form {
+    .form-group-lhs, .form-group-rhs { {
+	&.horizontal {
+	    float: left;
+	}
+    }
+
+    .form-group-lhs, .form-group-rhs { {
+	&.horizontal {
+	    display: block;
+	}
+    }
+}
