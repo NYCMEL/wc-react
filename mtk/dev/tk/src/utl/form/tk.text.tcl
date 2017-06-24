@@ -17,7 +17,9 @@
 #
 ###HEADE###################################################################
 
-namespace eval tk {}
+namespace eval tk {
+    namespace eval text {}
+}
 
 include "/tk/src/utl/form/inc/tk.form.css"
 
@@ -54,20 +56,20 @@ m::proc -public tk::text {
 ######################################################
 ##### TEST
 ######################################################
-m::proc -public tk::text:test {
+m::proc -public tk::text::test {
 } {
     Documentation goes here...
 } {    
     Trace
     
-    tk::form::show -guts {
+    tk::form::show -callback "tk::text::test" -guts {
 	tk::text\
 	    -id fname\
 	    -name "v(email)"\
 	    -label "Email"\
 	    -help "help text goes here..."\
 	    -value "mel@melify.com"\
-	    -columns "col-md-1 col-md-3"\
+	    -columns "col-md-2 col-md-8"\
 	    placeholder="your email" pattern="$tk::form::pattern(email)" required
     }
 }

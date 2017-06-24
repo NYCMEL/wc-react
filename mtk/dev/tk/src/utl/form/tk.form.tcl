@@ -209,23 +209,24 @@ m::proc -public tk::form::test:content {
 ######################################################
 m::proc -public tk::form::show {
     -guts:required
+    -callback:required
 } {
     Documentation goes here...
 } {
     Trace
     
+    #parray ::env
+
     br
     division class="container" {
 	division class="row" {
 	    division class="col-md-6" {
-		set url "[URL callback tk::form::test columns {col-md-4 col-md-8}]"
-		set onclick "document.location.href='$url'"
-		put [url "HORIZONTAL" "#" class="btn btn-default" onclick="$onclick"]
+		set url [URL callback $callback columns "col-md-4 col-md-8"]
+		put [url "HORIZONTAL" "#" class="btn btn-default" onclick="document.location.href='$url'"]
 		space 20 0
 
-		set url "[URL callback tk::form::test columns {}]"
-		set onclick "document.location.href='$url'"
-		put [url "VERTICAL" "#" class="btn btn-default" onclick="$onclick"]
+		set url [URL callback $callback columns ""]
+		put [url "VERTICAL" "#"   class="btn btn-default" onclick="document.location.href='$url'"]
 		hr
 
 		tk::form -name "my-form" -callback "tk::form::test:cb" -guts {
