@@ -101,10 +101,12 @@ m::proc -public tk::form::test {
 	set ::columns "col-md-2 col-md-4"
     }
 
+    set fid f1
+
     tk::form::show -callback "tk::form::test" -guts {
-	h4 id="title" data-key="f1name" "HELLO"
+	h4 id="title" data-key="${fid}name" ""
 	division class="well" {
-	    tk::form::test:content -id "f1" -columns $::columns
+	    tk::form::test:content -id "${fid}" -columns $::columns
 	}
     }
 }
