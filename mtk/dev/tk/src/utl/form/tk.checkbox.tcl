@@ -17,7 +17,9 @@
 #
 ###HEADE###################################################################
 
-namespace eval tk {}
+namespace eval tk {
+    namespace eval checkbox {}
+}
 
 ######################################################
 #####
@@ -25,8 +27,8 @@ namespace eval tk {}
 m::proc -public tk::checkbox {
     -id:required
     -name:required
-    {-label ""}
-    {-value ""}
+    {-label   ""}
+    {-value   ""}
     args
 } {
     Documentation goes here...
@@ -49,12 +51,14 @@ m::proc -public tk::checkbox {
 ######################################################
 ##### TEST
 ######################################################
-m::proc -public tk::checkbox:test {
+m::proc -public tk::checkbox::test {
 } {
     Documentation goes here...
 } {    
     Trace
     
-    tk::checkbox -id "cb-1" -name "v(cb)" -label "Do you Agree II?" -value "2" required checked
+    tk::form::show -callback "tk::checkbox::test" -guts {
+	tk::checkbox -id "cb-1" -name "v(cb)" -label "Do you Agree II?" -value "2" required checked
+    }
 }
 

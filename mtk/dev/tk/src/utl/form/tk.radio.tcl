@@ -17,7 +17,9 @@
 #
 ###HEADE###################################################################
 
-namespace eval tk {}
+namespace eval tk {
+    namespace eval radio {}
+}
 
 ######################################################
 #####
@@ -49,18 +51,24 @@ m::proc -public tk::radio {
 ######################################################
 ##### TEST
 ######################################################
-m::proc -public tk::radio:test {
+m::proc -public tk::radio::test {
 } {
     Documentation goes here...
 } {    
     Trace
     
-    division class="clearfix" {
-	division class="pull-left" [style margin-right 30px] {
-	    tk::radio -id "rb-1" -name "v(rb)" -label "Do you Agree  I?" -value "1" required
-	}
-	division class="pull-left" {
-	    tk::radio -id "rb-2" -name "v(rb)" -label "Do you Agree II?" -value "2" required
+    if {[info exist ::columns] == 0} {
+	set ::columns "col-md-3 col-md-6"
+    }
+
+    tk::form::show -callback "tk::radio::test" -guts {
+	division class="clearfix" {
+	    division class="pull-left" [style margin-right 30px] {
+		tk::radio -id "rb-1" -name "v(rb)" -label "Do you Agree  I?" -value "1" required
+	    }
+	    division class="pull-left" {
+		tk::radio -id "rb-2" -name "v(rb)" -label "Do you Agree II?" -value "2" required
+	    }
 	}
     }
 }
