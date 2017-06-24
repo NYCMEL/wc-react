@@ -129,9 +129,17 @@ m::proc -public tk::form::test:content {
 } {
     Trace
     
+    tk::text -id "$id-name" -name "v(name)" -label "Name" -value "Mel Heravi" -columns "$columns"\
+	placeholder="your name" required\
+	data-error="your name is required!" data-key="${id}name"
+    
     tk::text -id "$id-email" -name "v(email)" -label "Email" -value "mel@melify.com" -columns "$columns"\
 	placeholder="your email" pattern="$tk::form::pattern(email)" required\
 	data-error="your email is required!" data-key="${id}email"
+    
+    tk::text -id "$id-phone" -name "v(phone)" -label "Phone" -value "212-555-1212" -columns "$columns"\
+	placeholder="your phone" pattern="$tk::form::pattern(phone)" required\
+	data-error="your phone is required!" data-key="${id}phone"
     
     tk::select -id "$id-color" -name "v(color)" -label "Box Color" -options [subst {
 	"" "Please Select"
@@ -179,6 +187,8 @@ m::proc -public tk::form::test:content {
 	    }
 
 	    // BIND ELEMENT WITH A CALLBACK
+	    tk.bind("$id-name-child",	changeHandler);
+	    tk.bind("$id-phone-child",	changeHandler);
 	    tk.bind("$id-email-child",	changeHandler);
 	    tk.bind("$id-rb1-child",	changeHandler);
 	    tk.bind("$id-rb2-child",	changeHandler);
@@ -189,14 +199,16 @@ m::proc -public tk::form::test:content {
 	    tk.bind("$id-color-child",	changeHandler);
 
 	    // INITIALIZE FORM VALUES 
-	    app.model.${id}agree = true;
-	    app.model.${id}rb1 = false;
-	    app.model.${id}rb2 = false;
-	    app.model.${id}rb3 = true;
-	    app.model.${id}address = "100 Columbus Drive";
-	    app.model.${id}date = "12/10/2017"
-	    app.model.${id}color = 1;
-	    app.model.${id}email = "mel.heravi@gmail.com";
+	    app.model.${id}agree	= true;
+	    app.model.${id}rb1		= false;
+	    app.model.${id}rb2		= false;
+	    app.model.${id}rb3		= true;
+	    app.model.${id}address	= "100 Columbus Drive";
+	    app.model.${id}date		= "12/10/2017"
+	    app.model.${id}color	= 1;
+	    app.model.${id}email	= "mel@melify.com";
+	    app.model.${id}name		= "Mel DaMan";
+	    app.model.${id}phone	= "646-303-1234";
 
 	    // UPDATES REQUIRE MANUAL VALIDATOR TRIGGERED
 	    jQuery("#$id").validator("validate")
