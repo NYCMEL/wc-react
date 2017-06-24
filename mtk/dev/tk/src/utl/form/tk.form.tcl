@@ -101,7 +101,7 @@ m::proc -public tk::form::test {
 	set ::columns "col-md-2 col-md-4"
     }
 
-    tk::form::show -guts {
+    tk::form::show -callback "tk::form::test" -guts {
 	division class="well" {
 	    tk::form::test:content -id "f1" -columns $::columns
 	}
@@ -221,7 +221,7 @@ m::proc -public tk::form::show {
     division class="container" {
 	division class="row" {
 	    division class="col-md-6" {
-		set url [URL callback $callback columns "col-md-3 col-md-6"]
+		set url [URL callback $callback columns "col-md-4 col-md-8"]
 		put [url "HORIZONTAL" "#" class="btn btn-default" onclick="document.location.href='$url'"]
 		space 20 0
 
