@@ -17,7 +17,9 @@
 #
 ###HEADE###################################################################
 
-namespace eval tk {}
+namespace eval tk {
+    namespace eval textarea {}
+}
 
 ######################################################
 #####
@@ -51,17 +53,24 @@ m::proc -public tk::textarea {
 ######################################################
 ##### TEST
 ######################################################
-m::proc -public tk::textarea:test {
+m::proc -public tk::textarea::test {
 } {
     Documentation goes here...
 } {    
     Trace
     
-    tk::textarea\
-	-id address\
-	-name "v(address)"\
-	-label "Address"\
-	-help "help text goes here..."\
-	-value "100 C. Columbus Drive"\
-	placeholder="home address" pattern="$tk::form::pattern(email)" rows=5 required 
+    if {[info exist ::columns] == 0} {
+	set ::columns "col-md-3 col-md-6"
+    }
+
+    tk::form::show -callback "tk::textarea::test" -guts {
+	tk::textarea\
+	    -id address\
+	    -name "v(address)"\
+	    -label "Address"\
+	    -help "help text goes here..."\
+	    -value "100 C. Columbus Drive"\
+	    -columns $::columns\
+	    placeholder="home address" pattern="$tk::form::pattern(email)" rows=5 required 
+    }
 }
