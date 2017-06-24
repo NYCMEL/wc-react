@@ -17,7 +17,9 @@
 #
 ###HEADE###################################################################
 
-namespace eval tk {}
+namespace eval tk {
+    namespace eval groupbox {}
+}
 
 ######################################################
 #####
@@ -25,7 +27,7 @@ namespace eval tk {}
 m::proc -public tk::groupbox {
     -id:required
     -guts:required
-    {-label ""}
+    {-label   ""}
     {-columns ""}
 } {
     Documentation goes here...
@@ -35,10 +37,8 @@ m::proc -public tk::groupbox {
     set c1 [lindex $columns 0]
     set c2 [lindex $columns 1]
 
-    division class="clearfix" {
-	division class="$c1" {
-	    label id="$id-label" for="$id-label" "$label"
-	}
+    division class="form-group clearfix" {
+	label id="$id-label" for="$id-label" class="$c1" "$label"
 	
 	division class="$c2" {
 	    uplevel $guts
@@ -49,18 +49,26 @@ m::proc -public tk::groupbox {
 ######################################################
 ##### TEST
 ######################################################
-m::proc -public tk::groupbox:test {
+m::proc -public tk::groupbox::test {
 } {
     Documentation goes here...
 } {    
     Trace
     
-    tk::groupbox -id "my-groupbox" -label "Please select" -columns "col-sm-2 col-sm-8" -guts {
-	division class="pull-left" [style margin-right 30px] {
-	    tk::radio -id "rb-1" -name "v(rb)" -label "Apples" -value "1" required
-	}
-	division class="pull-left" {
-	    tk::radio -id "rb-2" -name "v(rb)" -label "Oranges" -value "2" required
+    if {[info exist ::columns] == 0} {
+	set ::columns "col-md-4 col-md-6"
+    }
+
+    h1 ==$::columns==
+
+    tk::form::show -callback "tk::groupbox::test" -guts {
+	tk::groupbox -id "my-groupbox" -columns "$::columns" -label "Please select" -columns "col-sm-2 col-sm-8" -guts {
+	    division class="pull-left" [style margin-right 30px] {
+		tk::radio -id "rb-1" -name "v(rb)" -label "Apples" -value "1" required
+	    }
+	    division class="pull-left" {
+		tk::radio -id "rb-2" -name "v(rb)" -label "Oranges" -value "2" required
+	    }
 	}
     }
 }
