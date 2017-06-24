@@ -17,7 +17,9 @@
 #
 ###HEADE###################################################################
 
-namespace eval tk {}
+namespace eval tk {
+    namespace eval calendar {}
+}
 
 include "/GitHub/bootstrap-datepicker2/dist/css/bootstrap-datepicker3.standalone.min.css"
 include "/GitHub/bootstrap-datepicker2/dist/js/bootstrap-datepicker.min.js"
@@ -60,11 +62,17 @@ m::proc -public tk::calendar {
 ######################################################
 ##### TEST
 ######################################################
-m::proc -public tk::calendar:test {
+m::proc -public tk::calendar::test {
 } {
     Documentation goes here...
 } {    
     Trace
 
-    tk::calendar -id "my-select" -name "v(calendar)" -help "help text goes here..." -label "Which Date?" required 
+    if {[info exist ::columns] == 0} {
+	set ::columns "col-md-3 col-md-6"
+    }
+
+    tk::form::show -callback "tk::calendar::test" -guts {
+	tk::calendar -id "my-select" -name "v(calendar)" -help "help text goes here..." -label "Which Date?" -columns "$::columns" required
+    }
 }

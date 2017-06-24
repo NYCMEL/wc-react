@@ -7,7 +7,7 @@
 # a script that loads the command.
 
 set auto_index(tk::calendar) [list source [file join $dir tk.calendar.tcl]]
-set auto_index(tk::calendar:test) [list source [file join $dir tk.calendar.tcl]]
+set auto_index(tk::calendar::test) [list source [file join $dir tk.calendar.tcl]]
 set auto_index(tk::checkbox) [list source [file join $dir tk.checkbox.tcl]]
 set auto_index(tk::checkbox:test) [list source [file join $dir tk.checkbox.tcl]]
 set auto_index(tk::form) [list source [file join $dir tk.form.tcl]]
