@@ -59,10 +59,8 @@ m::proc -public tk::groupbox::test {
 	set ::columns "col-md-4 col-md-6"
     }
 
-    h1 ==$::columns==
-
     tk::form::show -callback "tk::groupbox::test" -guts {
-	tk::groupbox -id "my-groupbox" -columns "$::columns" -label "Please select" -columns "col-sm-2 col-sm-8" -guts {
+	tk::groupbox -id "my-groupbox" -columns "$::columns" -label "Please select" -guts {
 	    division class="pull-left" [style margin-right 30px] {
 		tk::radio -id "rb-1" -name "v(rb)" -label "Apples" -value "1" required
 	    }
