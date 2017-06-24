@@ -66,8 +66,6 @@ m::proc -public tk::text::test {
 	set ::columns "col-md-3 col-md-6"
     }
 
-    h3 $::columns
-
     tk::form::show -callback "tk::text::test" -guts {
 	tk::text\
 	    -id fname\

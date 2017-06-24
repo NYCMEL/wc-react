@@ -17,7 +17,9 @@
 #
 ###HEADE###################################################################
 
-namespace eval tk {}
+namespace eval tk {
+    namespace eval select {}
+}
 
 include "/GitHub/bootstrap-select/dist/css/bootstrap-select.min.css"
 include "/GitHub/bootstrap-select/dist/js/bootstrap-select.min.js"
@@ -59,17 +61,23 @@ m::proc -public tk::select {
 ######################################################
 ##### TEST
 ######################################################
-m::proc -public tk::select:test {
+m::proc -public tk::select::test {
 } {
     Documentation goes here...
 } {    
     Trace
 
-    tk::select -id "my-select" -name "v(select)" -options [subst {
-	"" "PLEASE SELECT"
-	1 "Option 1"
-	2 "Option 2"
-	3 "Option 3"
-	4 "Option 4"
-    }] -selected "" -help "help text goes here..." -label "Pick One" required
+    if {[info exist ::columns] == 0} {
+	set ::columns "col-md-3 col-md-6"
+    }
+
+    tk::form::show -callback "tk::select::test" -guts {
+	tk::select -id "my-select" -name "v(select)" -options [subst {
+	    "" "PLEASE SELECT"
+	    1 "Option 1"
+	    2 "Option 2"
+	    3 "Option 3"
+	    4 "Option 4"
+	}] -selected "" -help "help text goes here..." -label "Pick One" required
+    }
 }
