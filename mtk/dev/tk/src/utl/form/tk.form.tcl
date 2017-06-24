@@ -102,6 +102,7 @@ m::proc -public tk::form::test {
     }
 
     tk::form::show -callback "tk::form::test" -guts {
+	h4 id="title" data-key="f1name" "HELLO"
 	division class="well" {
 	    tk::form::test:content -id "f1" -columns $::columns
 	}
@@ -197,6 +198,7 @@ m::proc -public tk::form::test:content {
 	    tk.bind("$id-address-child",changeHandler);
 	    tk.bind("$id-date-child",	changeHandler);
 	    tk.bind("$id-color-child",	changeHandler);
+	    tk.bind("title",		changeHandler);
 
 	    // INITIALIZE FORM VALUES 
 	    app.model.${id}agree	= true;
@@ -207,7 +209,7 @@ m::proc -public tk::form::test:content {
 	    app.model.${id}date		= "12/10/2017"
 	    app.model.${id}color	= 1;
 	    app.model.${id}email	= "mel@melify.com";
-	    app.model.${id}name		= "Mel DaMan";
+	    app.model.${id}name		= "";
 	    app.model.${id}phone	= "646-303-1234";
 
 	    // UPDATES REQUIRE MANUAL VALIDATOR TRIGGERED
