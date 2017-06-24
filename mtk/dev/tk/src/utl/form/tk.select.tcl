@@ -72,7 +72,7 @@ m::proc -public tk::select::test {
     }
 
     tk::form::show -callback "tk::select::test" -guts {
-	tk::select -id "my-select" -name "v(select)" -options [subst {
+	tk::select -id "my-select" -name "v(select)" -columns $::columns -options [subst {
 	    "" "PLEASE SELECT"
 	    1 "Option 1"
 	    2 "Option 2"
