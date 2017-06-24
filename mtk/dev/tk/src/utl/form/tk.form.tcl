@@ -221,12 +221,14 @@ m::proc -public tk::form::show {
     division class="container" {
 	division class="row" {
 	    division class="col-md-6" {
+		set style [style width 140px]
+
 		set url [URL callback $callback columns "col-md-4 col-md-8"]
-		put [url "HORIZONTAL" "#" class="btn btn-default" onclick="document.location.href='$url'"]
-		space 20 0
+		put [url "HORIZONTAL" "#" class="btn btn-default" onclick="document.location.href='$url'" $style]
+		space 5 0
 
 		set url [URL callback $callback columns ""]
-		put [url "VERTICAL" "#"   class="btn btn-default" onclick="document.location.href='$url'"]
+		put [url "VERTICAL" "#"   class="btn btn-default" onclick="document.location.href='$url'" $style]
 		hr
 
 		tk::form -name "my-form" -callback "tk::form::test:cb" -guts {
