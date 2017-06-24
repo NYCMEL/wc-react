@@ -221,7 +221,7 @@ m::proc -public tk::form::show {
     division class="container" {
 	division class="row" {
 	    division class="col-md-6" {
-		set url [URL callback $callback columns "col-md-4 col-md-8"]
+		set url [URL callback $callback columns "col-md-3 col-md-6"]
 		put [url "HORIZONTAL" "#" class="btn btn-default" onclick="document.location.href='$url'"]
 		space 20 0
 

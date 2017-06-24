@@ -62,6 +62,12 @@ m::proc -public tk::text::test {
 } {    
     Trace
     
+    if {[info exist ::columns] == 0} {
+	set ::columns "col-md-3 col-md-6"
+    }
+
+    h3 $::columns
+
     tk::form::show -callback "tk::text::test" -guts {
 	tk::text\
 	    -id fname\
@@ -69,7 +75,7 @@ m::proc -public tk::text::test {
 	    -label "Email"\
 	    -help "help text goes here..."\
 	    -value "mel@melify.com"\
-	    -columns "col-md-2 col-md-8"\
+	    -columns $::columns\
 	    placeholder="your email" pattern="$tk::form::pattern(email)" required
     }
 }
