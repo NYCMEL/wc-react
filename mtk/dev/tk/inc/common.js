@@ -33,9 +33,9 @@ var tk = {
 	console.group("bind", id);
 
 	// IF MODEL DOES NOT EXIST CREATE IT
-	tk.model = tk.model || [];
+	app.model = app.model || [];
 
-	var watchable = DataBind.bind($('#' + id), tk.model);
+	var watchable = DataBind.bind($('#' + id), app.model);
 
 	watchable.watch(callback);
 
