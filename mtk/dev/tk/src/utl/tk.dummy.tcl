@@ -108,6 +108,10 @@ m::proc -public tk::dummy::3 {
 } {
     Trace
 
+    if {[info exist ::size] == 1} {
+	set size $::size
+    }
+
     set x [clock format [clock seconds] -format "%T"]
 
     for {set i 0} {$i <= $size} {incr i} {

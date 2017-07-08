@@ -30,7 +30,7 @@ var tk = {
     //// DATA BINDING FUNCTION
     ////////////////////////////////////////////////////////////////////////////////////
     bind: function(id, callback) {
-	console.group("bind", id);
+	console.group("tk.bind", id);
 
 	// IF MODEL DOES NOT EXIST CREATE IT
 	app.model = app.model || [];
