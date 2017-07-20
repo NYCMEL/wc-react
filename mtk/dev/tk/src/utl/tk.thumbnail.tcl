@@ -30,6 +30,8 @@ m::proc -public tk::thumbnail {
 } {    
     Trace
 
-    put [url [img "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" data-url="$url"] $name]
+    put [img "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" data-url="$url" [style width 100% height 100%]]
+
+    include "/GitHub/url2img/url2img.js"
 }    
 
