@@ -159,22 +159,42 @@ m::proc -private tk::include::codemirror {
 } {
     Trace
 
-    include "/GitHub/CodeMirror/lib/codemirror.css"
-    include "/GitHub/CodeMirror/theme/ambiance.css"
-    include "/GitHub/CodeMirror/theme/mdn-like.css"
-    include "/GitHub/CodeMirror/theme/3024-night.css"
-    
-    include "/GitHub/CodeMirror/lib/codemirror.js"
-    include "/GitHub/CodeMirror/addon/edit/matchbrackets.js"
-    include "/GitHub/CodeMirror/addon/comment/continuecomment.js"
-    include "/GitHub/CodeMirror/addon/comment/comment.js"
-    include "/GitHub/CodeMirror/addon/selection/active-line.js"
-    include "/GitHub/CodeMirror/mode/javascript/javascript.js"
-    include "/GitHub/CodeMirror/mode/htmlembedded/htmlembedded.js"
-    include "/GitHub/CodeMirror/mode/htmlmixed/htmlmixed.js"
-    include "/GitHub/CodeMirror/addon/search/searchcursor.js"
-    include "/GitHub/CodeMirror/addon/search/search.js"
-    include "/GitHub/CodeMirror/keymap/emacs.js"
+    if {0} {
+	include "/GitHub/CodeMirror/lib/codemirror.css"
+	include "/GitHub/CodeMirror/theme/ambiance.css"
+	include "/GitHub/CodeMirror/theme/mdn-like.css"
+	include "/GitHub/CodeMirror/theme/3024-night.css"
+	
+	include "/GitHub/CodeMirror/lib/codemirror.js"
+	include "/GitHub/CodeMirror/addon/edit/matchbrackets.js"
+	include "/GitHub/CodeMirror/addon/comment/continuecomment.js"
+	include "/GitHub/CodeMirror/addon/comment/comment.js"
+	include "/GitHub/CodeMirror/addon/selection/active-line.js"
+	include "/GitHub/CodeMirror/mode/javascript/javascript.js"
+	include "/GitHub/CodeMirror/mode/htmlembedded/htmlembedded.js"
+	include "/GitHub/CodeMirror/mode/htmlmixed/htmlmixed.js"
+	include "/GitHub/CodeMirror/addon/search/searchcursor.js"
+	include "/GitHub/CodeMirror/addon/search/search.js"
+	include "/GitHub/CodeMirror/keymap/emacs.js"
+    } else {
+	put {
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.min.css" />
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/theme/ambiance.min.css" />
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/theme/mdn-like.min.css" />	    
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/theme/3024-night.min.css" />
+	    
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/addon/edit/matchbrackets.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/addon/comment/continuecomment.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/addon/comment/comment.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/addon/selection/active-line.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/mode/javascript/javascript.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/mode/htmlembedded/htmlembedded.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/addon/search/searchcursor.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/addon/search/search.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/keymap/emacs.min.js"></script>
+	}
+    }
 }
 
 ##################################################
