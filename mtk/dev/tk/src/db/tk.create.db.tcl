@@ -100,13 +100,13 @@ m::proc -public tk::create::db {
 		    set new [file mtime $i]
 		    set fil $i
 		}
-	    }
 
-	    puts " USING: latest dump file $fil..."
-	    set f [open $fil r];set r [read $f];close $f
+		puts " USING: latest dump file $fil..."
+		set f [open $fil r];set r [read $f];close $f
 
-	    if {[catch {dbh eval $r} e] != 0} {
-		puts ">>>$e\n$r";exit
+		if {[catch {dbh eval $r} e] != 0} {
+		    puts ">>>$e\n$r";exit
+		}
 	    }
 	}
     }
