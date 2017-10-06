@@ -93,7 +93,9 @@ m::proc -public tk::create::db {
 	} else {
 	    #USE THE LATEST DUMP
 	    set new 0
-	    foreach i [glob setup.*] {
+	    foreach i [lsort [glob setup.*]] {
+		puts "PROCESSING $i"
+
 		if {[file mtime $i] > $new} {
 		    set new [file mtime $i]
 		    set fil $i
