@@ -91,6 +91,8 @@ proc tk::start {} {
 	    }
 	    
 	    cgi_body ng-app=[expr {([info exist ::ngapp] == "0") ? "melified" : "$::ngapp"}] ng-controller="MelifiedCtrl" {
+		put "<!-- MELIFIED -->"
+
 		if {[info exist ::void] == 0} {
 		    put {
 			<!--[if IE]>
@@ -128,6 +130,8 @@ proc tk::start {} {
 		tk::site::init
 
 		tk::session::save
+
+		put "<!-- MELIFIED -->"
 	    }
 	}
     }
