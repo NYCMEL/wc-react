@@ -82,8 +82,11 @@ proc tk::start {} {
 		cgi_head {
 		    put "\n\
                          <!----------------------------------------------------------------------------------->\n\
-                         <!-- This code is automatically generated from Melify's 4GL Internet Toolkit (MTK) -->\n\
-                         <!--                    Info@Melify.com | 1.646.303.1234                           -->\n\
+                         <!-- THIS CODE IS AUTOMATICALLY GENERATED FROM MELIFY'S 4GL INTERNET TOOLKIT (MTK) -->\n\
+			 <!--                                                                               -->\n\
+                         <!--                    INFO@MELIFY.COM | 1.646.303.1234                           -->\n\
+			 <!--                                                                               -->\n\
+			 <!--                 YOU MUST BE A ROBOT TO BE LOOKING AT THIS                     -->\n\
                          <!----------------------------------------------------------------------------------->\n"
 		    
 		    tk::site::head
