@@ -87,7 +87,7 @@ proc tk::start {} {
 			 <!--                                                                               -->\n\
                          <!--                    INFO@MELIFY.COM | 1.646.303.1234                           -->\n\
 			 <!--                                                                               -->\n\
-			 <!--                 YOU MUST BE A ROBOT TO BE LOOKING AT THIS :(                  -->\n\
+			 <!--                 YOU MUST BE A ROBOT TO BE LOOKING AT THIS                     -->\n\
 			 <!--                                                                               -->\n\
                          <!----------------------------------------------------------------------------------->\n"
 		    
