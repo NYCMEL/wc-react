@@ -87,7 +87,9 @@ proc tk::start {} {
 			 <!--                                                                               -->\n\
                          <!--                    WWW.Melify.Com | Info@Melify.com                           -->\n\
 			 <!--                                                                               -->\n\
-			 <!--                 YOU MUST BE A ROBOT TO BE LOOKING AT THIS                     -->\n\
+			 <!--                    YOU MUST BE A ROBOT TO BE LOOKING AT THIS                  -->\n\
+			 <!--                                                                               -->\n\
+			 <!--                           HELLO ROBOT !!!                                     -->\n\
 			 <!--                                                                               -->\n\
                          <!----------------------------------------------------------------------------------->\n"
 		    
