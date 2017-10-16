@@ -1,0 +1,56 @@
+#!/Melify/bin/mac/tclkit
+
+#######################################################
+###### SERVER CODE
+#######################################################
+source /Melify/mtk/dev/tk/src/cgi/cgi.tcl
+
+set ENV		"dev"
+set env(HOME)	"/"
+
+lappend auto_path\
+    /Melify/mtk/$ENV/tk/src\
+    /Melify/mtk/$ENV/tk/src/utl\
+    /Melify/mtk/$ENV/tk/src/eng
+
+#DUMMY IT UP
+proc Trace {args} {}
+
+cgi_input
+foreach i [import_list] {
+    import $i
+}
+
+#FOR TESTING ONLY. THIS SHOULD NEVER BE THE CASE
+if {[info exist key] == 0} {
+    set key "TEST"
+}
+
+# INTRODUCE A RANDOM DELAY
+after [math::random 0 3000]
+
+switch $key {
+    "TEST" {
+	puts "TESTING...TESTING...TESTING..."
+    }
+    "RANDOM" {
+	puts [subst {
+	    func({id:"[clock seconds]", fname:"[lorem 3]", lname:"[lorem 3]"})
+	}]
+    }
+    "USER_DATA" {
+	tk::use:db "/Melify/mtk/$ENV/app/void/db/sqlite.db"
+	sqlite dbh $::DB
+
+	set res [dbh eval "select id,fname,lname from users where id=$id"]
+	
+	puts [subst {
+	    func({id:"[lindex $res 0]", fname:"[lindex $res 1]", lname:"[lindex $res 2]"})
+	}]
+    }
+    default {
+	puts {
+	    func({id:"NULL", fname:"NULL" , lname:"NULL"})
+	}
+    }
+}
