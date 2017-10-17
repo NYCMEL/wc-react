@@ -101,6 +101,26 @@ m::proc -private tk::include::angular {
 ##################################################
 ##### 
 ##################################################
+m::proc -private tk::include::angular:light {
+} {
+    Documentaion goes here
+} {
+    Trace
+
+    include "/GitHub/light-angularjs/lib/Utils.js"
+    include "/GitHub/light-angularjs/lib/Scope.js"
+    include "/GitHub/light-angularjs/lib/Provider.js"
+    include "/GitHub/light-angularjs/lib/DOMCompiler.js"
+    include "/GitHub/light-angularjs/lib/directives/ngl-click.js"
+    include "/GitHub/light-angularjs/lib/directives/ngl-repeat.js"
+    include "/GitHub/light-angularjs/lib/directives/ngl-controller.js"
+    include "/GitHub/light-angularjs/lib/directives/ngl-bind.js"
+    include "/GitHub/light-angularjs/lib/directives/ngl-model.js"
+}
+
+##################################################
+##### 
+##################################################
 m::proc -private tk::include::polymer {
 } {
     Documentaion goes here
