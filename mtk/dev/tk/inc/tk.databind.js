@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-21 15:57:54 (melify)>
+//// Time-stamp: <2017-10-21 15:59:37 (melify)>
 ////   Example: test::databind (tk-samples)
 /////////////////////////////////////////////////////////////////////////////////
 var tk = tk || {};
@@ -15,7 +15,7 @@ tk.databind = function(ele, bvar, callback) {
 	let id = $(this).attr("id");
 	let ky = $(this).attr("data-key");
 
-	console.group("Binding:", id, ky)
+	console.group("binding:", id, ky)
 	
 	var watchable = DataBind.bind($('#' + id), bvar);
 	
