@@ -1,33 +1,25 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-21 15:47:40 (melify)>
+//// Time-stamp: <2017-10-21 15:49:36 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var tk = tk || {};
 
 /////////////////////////////////////////////////////////////////////////
 //// 
 /////////////////////////////////////////////////////////////////////////////
-tk.databind = function(ele, bvar, binder) {
+tk.databind = function(ele, bvar, callback) {
     console.group("tk.databind:", ele, bvar);
 
     // BIND VARIABLE TO HANDLER
     $("#" + ele + " [data-key]").each(function() {
 	console.group("BIND VARIABLE TO HANDLER")
 	
-	// CUSTOM BINDING
-	tk._bind($(this).attr("id"), binder);
+	let id = $(this).attr("id");
+	var watchable = DataBind.bind($('#' + id), bvar);
+	
+	watchable.watch(callback);
 
 	console.groupEnd();
     });
 
     console.groupEnd();
 };
-
-/////////////////////////////////////////////////////////////////////////
-//// 
-/////////////////////////////////////////////////////////////////////////////
-tk._bind = function(options) {
-    console.group("tk._bind");
-    
-    console.groupEnd();
-};
-
