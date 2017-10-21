@@ -1,5 +1,6 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-21 15:51:28 (melify)>
+//// Time-stamp: <2017-10-21 15:57:54 (melify)>
+////   Example: test::databind (tk-samples)
 /////////////////////////////////////////////////////////////////////////////////
 var tk = tk || {};
 
@@ -25,3 +26,29 @@ tk.databind = function(ele, bvar, callback) {
 
     console.groupEnd();
 };
+
+// // EXAMPLE
+// mybinder = function(ev) {
+//     console.group("mybinder:", this.id, ev.type, ev.data.newValue);
+    
+//     let type = $("#" + this.id).prop("nodeName");
+    
+//     switch(type) 
+//     {
+// 	case "SELECT":
+// 	console.log("Do something for:", type);
+// 	break;
+//     }
+    
+//     console.groupEnd();
+// }
+
+// // INITIALIZE FORM
+// tk.form		= tk.form || {};
+// tk.form.key_name	= "Mel";
+// tk.form.key_select	= 2;
+// tk.form.key_checkbox	= true;
+// tk.form.key_radio	= true;
+// tk.form.key_h1		= "Heravi";
+
+// tk.databind("id-test", tk.form, mybinder);
