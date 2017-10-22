@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-22 08:54:06 (melify)>
+//// Time-stamp: <2017-10-22 08:54:27 (melify)>
 ////   Example: test::databind (tk-samples)
 /////////////////////////////////////////////////////////////////////////////////
 var tk = tk || {};
@@ -18,7 +18,7 @@ tk.databind = function(bvar, callback=null) {
 	
 	var watchable = DataBind.bind($('#' + id), bvar);
 	
-	// MARK IT
+	// MARK IT. DO NOT PROCESS NEXT ROUND
 	$("#" + id).addClass("databind");
 
 	if (callback) {
