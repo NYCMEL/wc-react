@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-22 09:17:30 (melify)>
+//// Time-stamp: <2017-10-22 09:21:41 (melify)>
 ////   Example: test::databind (tk-samples)
 /////////////////////////////////////////////////////////////////////////////////
 var tk = tk || {};
@@ -7,7 +7,7 @@ var tk = tk || {};
 /////////////////////////////////////////////////////////////////////////
 //// 
 /////////////////////////////////////////////////////////////////////////////
-tk.databind = function(bvar, callback=null, cookie=false) {
+tk.databind = function(bvar, callback=null) {
     console.group("tk.databind:", bvar);
 
     // BIND VARIABLE TO HANDLER
@@ -28,9 +28,9 @@ tk.databind = function(bvar, callback=null, cookie=false) {
 	}
 
 	// ADD TO COOKIES IF REQUIRED
-	if (cookie) {
-	    $.cookie("databind_" + key, bvar[key]);
-	}
+	// if (cookie) {
+	//     $.cookie("databind_" + key, bvar[key]);
+	// }
     });
 
     console.groupEnd();
