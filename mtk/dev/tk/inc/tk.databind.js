@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-22 08:46:20 (melify)>
+//// Time-stamp: <2017-10-22 08:52:43 (melify)>
 ////   Example: test::databind (tk-samples)
 /////////////////////////////////////////////////////////////////////////////////
 var tk = tk || {};
@@ -7,17 +7,20 @@ var tk = tk || {};
 /////////////////////////////////////////////////////////////////////////
 //// 
 /////////////////////////////////////////////////////////////////////////////
-tk.databind = function(ele, bvar, callback=null) {
-    console.group("tk.databind:", ele, bvar);
+tk.databind = function(bvar, callback=null) {
+    console.group("tk.databind:", bvar);
 
     // BIND VARIABLE TO HANDLER
-    $("#" + ele + " [data-key]").each(function() {
+    $(":not(.databind)[data-key]").each(function() {
 	let id = $(this).attr("id");
 
 	console.log("binding", id, $(this).attr("data-key"), {dom: true, model: true, children: true});
 	
 	var watchable = DataBind.bind($('#' + id), bvar);
 	
+	// MARK IT
+	$("#" + id).addClass("databind");
+
 	if (callback) {
 	    watchable.watch(callback);
 	}
