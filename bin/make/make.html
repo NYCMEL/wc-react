@@ -5,6 +5,23 @@ if {$argc != 1} {
     exit
 }
 
+set folder [lindex $argv 0]
+
 puts "\n---------------------------------------------------"
 puts "1) Making a new html folder \"$argv\". Please wait..."
 
+file mkdir $folder
+cd $folder
+
+set files {
+    /GitHub/Font-Awesome/css/font-awesome.min.css		font-awesome.min.css
+    /GitHub/bootstrap/dist/css/bootstrap.min.css		bootstrap.min.css
+    /Melify/mtk/dev/tk/jquery/scripts/jquery-2.1.4.min.js	jquery.min.js
+    /GitHub/bootstrap/dist/js/bootstrap.min.js			bootstrap.min.js
+}
+
+foreach {i j} $files {
+    file copy -force $i $j
+}
+
+puts "DONE\n"
