@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-28 15:16:53 (melify)>
+//// Time-stamp: <2017-10-28 15:17:30 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var comps = {};
 
@@ -31,6 +31,7 @@ comps.card = function(obj) {
     html = html.replace("CARD_TITLE", title);
     html = html.replace("CARD_BODY",   body);
 
+    // REPLACE HTML CONTENT
     obj.html(html);
 
     console.groupEnd();
