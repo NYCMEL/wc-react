@@ -35,4 +35,7 @@ foreach {i j} $files {
     file copy -force $i $j
 }
 
+cd $folder
+file copy -force /Melify/bin/make/doc/make.html.doc [lindex $argv 0].html
+
 puts "DONE\n"
