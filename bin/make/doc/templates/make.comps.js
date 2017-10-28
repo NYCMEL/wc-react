@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-28 11:50:14 (melify)>
+//// Time-stamp: <2017-10-28 11:52:01 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var comps = {};
 
@@ -10,8 +10,8 @@ comps.card = function(obj) {
     console.group("comps.card:", obj);
 
     let html = `
-	<div class="card" style="width: 20rem;">
-	  <img class="card-img-top" src="CARD_IMG">
+	<div class="card" style="width:300px;background:wheat">
+	  <img class="card-img-top" src="CARD_IMG" width="100%">
 	  <div class="card-block">
 	    <h4 class="card-title">Card Title</h4>
 	    <p class="card-description">Card Description</p>
