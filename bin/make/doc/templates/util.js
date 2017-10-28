@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-28 10:35:34 (melify)>
+//// Time-stamp: <2017-10-28 10:44:30 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var wc = {};
 
@@ -9,11 +9,12 @@ var wc = {};
 wc.process = function(options) {
     console.group("wc.process");
 
-    let tags = $(':tagNameContains(wc-)')
-    console.log(">>>>>>>", tags);
+    // PROCESS ALL UNPROCESSED TAGS
+    let tags = $(':tagNameContains(wc-):not(.wc-processed)')
+    console.log(">>>>>>>", tags.length);
     
     tags.each(function() {
-	$(this).attr("processed","true");
+	$(this).addClass("wc-processed");
     });
 
     console.groupEnd();
