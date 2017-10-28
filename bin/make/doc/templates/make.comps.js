@@ -1,0 +1,23 @@
+/////////////////////////////////////////////////////////////////////////////////
+//// Time-stamp: <2017-10-28 11:37:47 (melify)>
+/////////////////////////////////////////////////////////////////////////////////
+var comps = {};
+
+/////////////////////////////////////////////////////////////////////////
+//// 
+/////////////////////////////////////////////////////////////////////////////
+comps.card = function(options) {
+    console.group("comps.card");
+
+    let html = `
+	<div class="card" style="width: 20rem;">
+	  <img class="card-img-top" src="IMG">
+	  <div class="card-block">
+	    <h4 class="card-title">TITLE</h4>
+	    <p class="card-text">DESCRIPTION</p>
+	    <a href="#" class="btn btn-primary">Go somewhere</a>
+	  </div>
+	</div>`
+
+    console.groupEnd();
+};
