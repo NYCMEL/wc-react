@@ -7,6 +7,7 @@
 	<script src="./js/jquery.min.js"    type="text/javascript" media="all"></script>
 	<script src="./js/bootstrap.min.js" type="text/javascript" media="all"></script>
 	<script src="./js/ready.js"         type="text/javascript" media="all"></script>
+	<script src="./js/comps.js"         type="text/javascript" media="all"></script>
 	<script src="./js/app.js"           type="text/javascript" media="all"></script>
     </head>
 
@@ -15,8 +16,12 @@
 	    <div class="row">
 		<div class="col-md-12">
 		    <h1>HELLO MEL <i class="fa fa-smile-o"></i></h1>
-		    <wc-card class="wc" id="card-a">Card A</wc-card><BR>
-		    <wc-card class="wc" id="card-b">Card B</wc-card>
+
+		    <wc-card class="wc" id="card-a">
+			<card-img src="/Melify/mtk/dev/tk/img/common/mel.cartoon.png"></card-img>
+			<card-title>MEL WAS HERE</card-title>
+			<card-body>blah... blah... blah... blah... </card-body>
+		    </wc-card>
 		</div>
 	    </div>
 	</div>
@@ -27,7 +32,7 @@
 
 	 // MUTATION OBSERVER AT WORK
 	 setTimeout(function(){
-	     $(".col-md-12").append("<BR><wc-card class='wc' id='card-c'>Card C</wc-card>")
+	     //$(".col-md-12").append("<BR><wc-card class='wc' id='card-c'>Card C</wc-card>")
 	 }, 2000);
 	</script>
     </body>

@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-28 11:27:26 (melify)>
+//// Time-stamp: <2017-10-28 11:44:30 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var app = {};
 
@@ -16,6 +16,8 @@ app.init = function(options) {
 	console.log("FOUND", $(this).attr("id"));
 	
 	$(this).removeClass("wc");
+
+	comps.card($(this));
     });
     
     console.groupEnd();
