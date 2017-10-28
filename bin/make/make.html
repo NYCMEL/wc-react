@@ -16,8 +16,8 @@ file mkdir $folder/css
 # PROCESS CSS FOLODER
 cd $folder/css
 set files {
-    /GitHub/Font-Awesome/css/font-awesome.min.css		font-awesome.min.css
-    /GitHub/bootstrap/dist/css/bootstrap.min.css		bootstrap.min.css
+    /GitHub/Font-Awesome/css/font-awesome.min.css	font-awesome.min.css
+    /Melify/mtk/dev/tk/inc/bootstrap.min.css		bootstrap.min.css
 }
 
 foreach {i j} $files {
@@ -28,7 +28,7 @@ foreach {i j} $files {
 cd $folder/js
 set files {
     /Melify/mtk/dev/tk/jquery/scripts/jquery-2.1.4.min.js	jquery.min.js
-    /GitHub/bootstrap/dist/js/bootstrap.min.js			bootstrap.min.js
+    /Melify/mtk/dev/tk/inc/bootstrap.min.js			bootstrap.min.js
 }
 
 foreach {i j} $files {
@@ -37,5 +37,8 @@ foreach {i j} $files {
 
 cd $folder
 file copy -force /Melify/bin/make/doc/make.html.doc [lindex $argv 0].html
+
+# FONTS FOLDER
+file copy -force /GitHub/Font-Awesome/fonts .
 
 puts "DONE\n"
