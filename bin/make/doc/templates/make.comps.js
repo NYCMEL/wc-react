@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-28 15:01:59 (melify)>
+//// Time-stamp: <2017-10-28 15:08:40 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var comps = {};
 
@@ -23,7 +23,7 @@ comps.card = function(obj) {
 	  <img class="card-img-top" src="CARD_IMG" style="height:${imgh}">
 	  <div class="card-block">
 	    <h4 class="card-title">CARD_TITLE</h4>
-	    <p class="card-body" style=height:${ch};overflow:auto;>CARD_BODY</p>
+	    <p class="card-body" style=height:${ch}>CARD_BODY</p>
 	  </div>
 	</div>`
     
