@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-28 10:46:23 (melify)>
+//// Time-stamp: <2017-10-28 11:27:26 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var app = {};
 
@@ -12,7 +12,11 @@ app.init = function(options) {
     console.log("ALL SYSTEMS GO!");
 
     // PROCESS ALL WC-* TAGS 
-    wc.process();
-
+    ready(".wc", function(element) {
+	console.log("FOUND", $(this).attr("id"));
+	
+	$(this).removeClass("wc");
+    });
+    
     console.groupEnd();
 };
