@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-28 14:42:27 (melify)>
+//// Time-stamp: <2017-10-28 14:45:10 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var comps = {};
 
@@ -10,7 +10,7 @@ comps.card = function(obj) {
     console.group("comps.card:", obj);
 
     let img     = obj.find("card-img").attr("src");
-    let iheight = obj.attr("img-height") || "100%"
+    let iheight = obj.find("card-img").attr("height") || "100%"
     let title   = obj.find("card-title").html();
     let descr   = obj.find("card-description").html();
 
