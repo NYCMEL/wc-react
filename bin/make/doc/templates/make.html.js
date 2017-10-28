@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-28 09:56:36 (melify)>
+//// Time-stamp: <2017-10-28 10:45:17 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var app = {};
 
@@ -9,7 +9,7 @@ var app = {};
 app.init = function(options) {
     console.group("app.init");
 
-    alert("ALL SYSTEMS GO!");
+    console.log("ALL SYSTEMS GO!");
 
     console.groupEnd();
 };
