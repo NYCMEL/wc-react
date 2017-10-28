@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-28 11:52:57 (melify)>
+//// Time-stamp: <2017-10-28 11:58:38 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var comps = {};
 
@@ -26,9 +26,9 @@ comps.card = function(obj) {
     html = html.replace("CARD_TITLE", title);
     html = html.replace("CARD_DESCRIPTION", descr);
 
-    $("body").append(html);
+    let card = obj.parent().find("wc-card");
 
-    console.log(">>>>>>>>IMG=", img);
+    card.html(html);
 
     console.groupEnd();
 };
