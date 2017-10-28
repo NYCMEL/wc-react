@@ -1,11 +1,11 @@
-#app {
-    h1 {
-	color: lighten(red,20%);
+wc-card {
+    border: 1px #CCC solid;
+
+    .card-img-top {
+	width: 100%;
     }
 
-    border: 10px red solid;
-
-    .fa {
-	color: lime;
+    .card-block {
+	padding:10px;
     }
 }
