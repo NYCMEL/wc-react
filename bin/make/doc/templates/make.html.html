@@ -6,6 +6,7 @@
 	
 	<script src="./js/jquery.min.js"    type="text/javascript" media="all"></script>
 	<script src="./js/bootstrap.min.js" type="text/javascript" media="all"></script>
+	<script src="./js/util.js"          type="text/javascript" media="all"></script>
 	<script src="./js/app.js"           type="text/javascript" media="all"></script>
     </head>
 
@@ -14,12 +15,17 @@
 	    <div class="row">
 		<div class="col-md-12">
 		    <h1>HELLO MEL <i class="fa fa-smile-o"></i></h1>
+		    <wc-card>HELLO</wc-card>
 		</div>
 	    </div>
 	</div>
 
 	<script>
+	 // INITIALIZE THE APPLICATION
 	 app.init();
+
+	 // PROCESS ALL TAGS 
+	 wc.process();
 	</script>
     </body>
 </html>

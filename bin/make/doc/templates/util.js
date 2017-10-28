@@ -1,0 +1,35 @@
+/////////////////////////////////////////////////////////////////////////////////
+//// Time-stamp: <2017-10-28 10:35:34 (melify)>
+/////////////////////////////////////////////////////////////////////////////////
+var wc = {};
+
+/////////////////////////////////////////////////////////////////////////
+//// 
+/////////////////////////////////////////////////////////////////////////////
+wc.process = function(options) {
+    console.group("wc.process");
+
+    let tags = $(':tagNameContains(wc-)')
+    console.log(">>>>>>>", tags);
+    
+    tags.each(function() {
+	$(this).attr("processed","true");
+    });
+
+    console.groupEnd();
+};
+
+/////////////////////////////////////////////////////////////////////////
+//// 
+/////////////////////////////////////////////////////////////////////////////
+function icontains(elem, tagName) {
+    return elem.nodeName.toLowerCase().indexOf((tagName || "").toLowerCase() ) > -1;
+}
+
+$.expr.pseudos.tagNameContains = $.expr.createPseudo ? $.expr.createPseudo(function( tagName ) {
+    return function(elem) {
+        return icontains(elem, tagName);
+    };
+}) : function(elem, i, match) {
+    return icontains(elem, match[3]);
+};
