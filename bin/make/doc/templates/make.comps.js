@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-28 15:15:30 (melify)>
+//// Time-stamp: <2017-10-28 15:16:53 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var comps = {};
 
@@ -12,7 +12,7 @@ comps.card = function(obj) {
     obj.css("display","inline-block");
 
     let cw    = obj.attr("width");
-    let ch    = obj.attr("body-height");
+    let bh    = obj.attr("body-height");
     let img   = obj.find("card-img").attr("src");
     let imgh  = obj.find("card-img").attr("height") || "100%"
     let title = obj.find("card-title").html();
@@ -23,7 +23,7 @@ comps.card = function(obj) {
 	  <img class="card-img-top" src="CARD_IMG" style="height:${imgh}">
 	  <div class="card-block">
 	    <h4 class="card-title">CARD_TITLE</h4>
-	    <p class="card-body" style=height:${ch}>CARD_BODY</p>
+	    <div class="card-body" style=height:${bh}>CARD_BODY</div>
 	  </div>
 	</div>`
     
