@@ -8,7 +8,7 @@ if {$argc != 1} {
 set folder "[pwd]/[lindex $argv 0]"
 
 puts "\n---------------------------------------------------"
-puts "1) Making a new html folder \"$argv\". Please wait..."
+puts "Making a new html folder $folder"
 
 file mkdir $folder/js
 file mkdir $folder/css
@@ -44,4 +44,5 @@ file copy -force /Melify/bin/make/doc/templates/make.html.html index.html
 # FONTS FOLDER
 file copy -force /GitHub/Font-Awesome/fonts .
 
-puts "DONE\n"
+puts "DONE"
+puts "---------------------------------------------------\n"
