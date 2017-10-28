@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//// Time-stamp: <2017-10-28 10:44:30 (melify)>
+//// Time-stamp: <2017-10-28 10:48:11 (melify)>
 /////////////////////////////////////////////////////////////////////////////////
 var wc = {};
 
@@ -11,7 +11,7 @@ wc.process = function(options) {
 
     // PROCESS ALL UNPROCESSED TAGS
     let tags = $(':tagNameContains(wc-):not(.wc-processed)')
-    console.log(">>>>>>>", tags.length);
+    console.log(tags.length +  " wc tags found...");
     
     tags.each(function() {
 	$(this).addClass("wc-processed");
