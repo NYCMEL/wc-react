@@ -22,7 +22,7 @@ namespace eval tk {
 }
 
 set bs  [expr {([info exist      bs] == "0") ? "3" : "4"}]
-set cdn [expr {([info exist     CDN] == "0") ? "0" : "$::CDN"}]
+set cdn [expr {([info exist     cdn] == "0") ? "0" : "$::cdn"}]
 
 ######################################################
 ##### type can be set to "is='custom-style'"
