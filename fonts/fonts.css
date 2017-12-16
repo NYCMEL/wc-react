@@ -2,55 +2,55 @@
 
 @font-face {
     font-family: 'Amplitude';
-    src: url('/Melify/fonts/Amplitude-Light.woff2') format('woff2'), url('/Melify/fonts/Amplitude-Light.woff') format('woff');
+    src: url('/Melify/fonts/Amplitude-Light.woff') format('woff'), url('/Melify/fonts/Amplitude-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Amplitude';
-    src: url('/Melify/fonts/Amplitude-Light.woff2') format('woff2'),  url('/Melify/fonts/Amplitude-Light.woff') format('woff');
+    src: url('/Melify/fonts/Amplitude-Light.woff') format('woff'),  url('/Melify/fonts/Amplitude-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'Amplitude';
-    src: url('/Melify/fonts/Amplitude-Medium.woff2') format('woff2'), url('/Melify/fonts/Amplitude-Medium.woff') format('woff');
+    src: url('/Melify/fonts/Amplitude-Medium.woff') format('woff'), url('/Melify/fonts/Amplitude-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Amplitude';
-    src: url('/Melify/fonts/Amplitude-Medium.woff2') format('woff2'), url('/Melify/fonts/Amplitude-Medium.woff') format('woff');
+    src: url('/Melify/fonts/Amplitude-Medium.woff') format('woff'), url('/Melify/fonts/Amplitude-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Amplitude';
-    src: url('/Melify/fonts/Amplitude-Regular.woff2') format('woff2'),  url('/Melify/fonts/Amplitude-Regular.woff') format('woff');
+    src: url('/Melify/fonts/Amplitude-Regular.woff') format('woff'),  url('/Melify/fonts/Amplitude-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Amplitude';
-    src: url('/Melify/fonts/Amplitude-Regular.woff2') format('woff2'), url('/Melify/fonts/Amplitude-Regular.woff') format('woff');
+    src: url('/Melify/fonts/Amplitude-Regular.woff') format('woff'), url('/Melify/fonts/Amplitude-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Amplitude';
-    src: url('/Melify/fonts/Amplitude-Bold.woff2') format('woff2'), url('/Melify/fonts/Amplitude-Bold.woff') format('woff');
+    src: url('/Melify/fonts/Amplitude-Bold.woff') format('woff'), url('/Melify/fonts/Amplitude-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Amplitude';
-    src: url('/Melify/fonts/Amplitude-Bold.woff2') format('woff2'), url('/Melify/fonts/Amplitude-Bold.woff') format('woff');
+    src: url('/Melify/fonts/Amplitude-Bold.woff') format('woff'), url('/Melify/fonts/Amplitude-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
