@@ -1,11 +1,7 @@
-'use strict';
-
-// Preloading script
+//Preloading script
 
 $(document).ready(function () {
-  $('#preloader-markup').load('mdb-addons/preloader.html', function () {
-    $(window).load(function () {
-      $('#mdb-preloader').fadeOut('slow');
+    $('#preloader-markup').load("mdb-addons/preloader.html", function() {
+        $('#preloader-markup').fadeOut('slow');
     });
-  });
 });

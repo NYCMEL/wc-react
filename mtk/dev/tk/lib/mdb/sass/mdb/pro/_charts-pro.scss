@@ -1,5 +1,6 @@
 // Charts Pro
 
+
 .min-chart {
   position: relative;
   display: inline-block;
@@ -8,19 +9,20 @@
   margin-top: 50px;
   margin-bottom: 50px;
   text-align: center;
-  canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-  } 
-  .percent {
-    display: inline-block;
-    line-height: 110px;
-    z-index: 2;
-    &:after {
-      content: '%';
-      margin-left: 0.1em;
-      font-size: .8em;
-    }
-  }
 }
+.min-chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+} 
+.percent {
+  display: inline-block;
+  line-height: 110px;
+  z-index: 2;
+}
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: .8em;
+}
+
