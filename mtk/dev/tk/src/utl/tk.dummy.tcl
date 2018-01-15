@@ -31,6 +31,8 @@ m::proc -public tk::dummy::1 {
 } {
     Trace
     
+    catch {h1 $::title}
+
     table width=100% cellspacing=0 cellpadding=10 border=0 class="tk-normal" {
 	table_row {
 	    table_data valign=top width=65% [style padding-right 50px] {
@@ -82,6 +84,8 @@ m::proc -public tk::dummy::2 {
 } {
     Trace
     
+    catch {h1 $::title}
+
     table width=100% cellspacing=0 cellpadding=10 border=0 class="tk-normal" {
 	table_row {
 	    table_data valign=top width=65% {
@@ -107,6 +111,8 @@ m::proc -public tk::dummy::3 {
     DOCUMENTATION GOES HERE...
 } {
     Trace
+
+    catch {h1 $::title}
 
     if {[info exist ::size] == 1} {
 	set size $::size
