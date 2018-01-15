@@ -37,8 +37,8 @@ m::proc -public lorem {
     Trace
 
     # FOR CALLS FROM URLS
-    if {[info exist ::size]    == 1} {set size     $::size}
-    if {[info exist ::languae] == 1} {set size $::language}
+    if {[info exist ::size]     == 1} {set size $::size}
+    if {[info exist ::language] == 1} {set language $::language}
 
     array set str {
 	"latin" {
