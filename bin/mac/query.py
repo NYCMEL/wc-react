@@ -19,4 +19,4 @@ print json.dumps( [dict(ix) for ix in rows] ) #CREATE JSON
 
 
 ####
-#### ./query.py .../db/sqlite.db "select * from users where fname='Isac'"
+#### ./query.py path-top/sqlite.db "select * from users where fname='Isac'"
