@@ -21,6 +21,7 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/components/jpmc\
     \
     $TKSERVER/tk/lib/components/wc/mtk\
+    $TKSERVER/tk/lib/components/mc/mtk\
     $TKSERVER/tk/lib/components/w3c/mtk\
     \
     $TKSERVER/tk/lib/modules/videos\
