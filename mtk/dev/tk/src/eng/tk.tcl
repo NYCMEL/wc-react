@@ -97,7 +97,7 @@ proc tk::start {} {
 		}
 	    }
 	    
-	    cgi_body ng-app=[expr {([info exist ::ngapp] == "0") ? "melified" : "$::ngapp"}] ng-controller="MelifiedCtrl" {
+	    cgi_body id="wc" ng-app=[expr {([info exist ::ngapp] == "0") ? "melified" : "$::ngapp"}] ng-controller="MelifiedCtrl" {
 		put "<!-- MELIFIED -->"
 
 		if {[info exist ::void] == 0} {
