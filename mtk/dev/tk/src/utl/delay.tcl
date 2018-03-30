@@ -20,9 +20,6 @@ namespace eval delay {
     # busywaiting delay
     proc delay-bw {sec} {
         variable c/ms
-
-
-
 	# do nothing
     }
     
