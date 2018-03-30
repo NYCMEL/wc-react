@@ -950,3 +950,17 @@ m::proc -public tk::imgsize {
     }
     error "Couldn't find JPG header for $file"
 }
+
+######################################################
+##### 
+######################################################
+m::proc -public tk::sleep {
+    -time:required
+} {
+    Documentation goes here...
+} {    
+    Trace
+
+    after $time set end 1
+    vwait end
+}
