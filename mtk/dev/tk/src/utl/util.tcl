@@ -734,7 +734,7 @@ m::proc -public tk::mirror {
     javascript {
 	put [subst {
 	    // MAKE TEXT AREA PRETTY
-	    $editor = CodeMirror.fromTextArea(document.getElementById("$id"), {
+	    editor = CodeMirror.fromTextArea(document.getElementById("$id"), {
 		lineWrapping: true,
 		lineNumbers: true,
 		matchBrackets: true,
