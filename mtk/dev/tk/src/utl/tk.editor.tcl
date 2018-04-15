@@ -19,6 +19,9 @@
 
 namespace eval tk {}
 
+include "/GitHub/jquery-tiny-pubsub/dist/ba-tiny-pubsub.min.js"
+tk::include::codemirror
+
 ######################################################
 #####
 ######################################################
@@ -32,8 +35,6 @@ m::proc -public tk::mirror {
     Trace
     
     # ID OF "mycode-2" WILL RETURN EDITOR OF "mycode_2" FOR JS REASONS
-    
-    tk::include::codemirror
     
     textarea v($id)=$guts id="$id" class="form-control"
     
@@ -74,7 +75,7 @@ m::proc -public tk::editor {
     
     division [style margin-bottom 50px border 0] {
 	division [style padding-left 25px position fixed top 0 left 0 width 100% z-index 100 background #f7f7f7 border-bottom "1px #cecece solid" line-height 70px] {
-	    button "Save Changes" class="btn btn-outline-primary" [style min-width 120px]
+	    button "Save Changes" class="btn btn-outline-primary" [style min-width 120px] onclick="publishIt()"
 	    space 20 0
 	    button "Format" class="btn btn-outline-success" onclick="autoformat()" [style min-width 120px]
 	}
@@ -86,6 +87,11 @@ m::proc -public tk::editor {
 	javascript {
 	    put {
 		autoformat();
+
+		function publishIt() {
+		    console.log('PUBLISHED name: click', "card");
+		    jQuery.publish('tk.editor', ['click', "card"]); // PUBLISH
+		}
 	    }
 	}
     }
