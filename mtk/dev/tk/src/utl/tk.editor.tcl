@@ -66,12 +66,16 @@ m::proc -public tk::mirror {
 ##### 
 ######################################################
 m::proc -public tk::editor {
-    -file:required
+    {-file ""}
 } {
     Documentation goes here...
 } {
     Trace
     
+    if {[info exist ::file] == 1} {
+	set file $::file
+    }
+
     division [style margin-bottom 50px border 0] {
 	division [style padding-left 25px position fixed top 0 left 0 width 100% z-index 100 background #f7f7f7 border-bottom "1px #cecece solid" line-height 70px] {
 	    button "Save Changes" class="btn btn-outline-primary" [style min-width 120px] onclick="publishIt()"
@@ -92,6 +96,42 @@ m::proc -public tk::editor {
 		    jQuery.publish("tk-editor", ["click", "card"]);
 		}
 	    }
+	}
+    }
+}
+
+######################################################
+##### 
+######################################################
+m::proc -public tk::viewer {
+    {-file ""}
+} {
+    Documentation goes here...
+} {
+    Trace
+
+    if {[info exist ::file] == 1} {
+	set file $::file
+    }
+
+    division class="container" {
+	division class="row" {
+	    division class="col-md-12" {
+		division class="page-header" [style margin-top 0] {
+		    h1 [file tail $::file]
+		}
+	    }
+	}
+	division class="row" {
+	    division class="col-md-12" {
+		tk::pretty -type "lang-html" -guts [quote_html [file:read $::file]]
+	    }
+	}
+    }
+
+    javascript {
+	put {
+	    prettyPrint();
 	}
     }
 }
