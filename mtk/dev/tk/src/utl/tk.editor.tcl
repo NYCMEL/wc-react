@@ -105,6 +105,7 @@ m::proc -public tk::editor {
 ######################################################
 m::proc -public tk::viewer {
     {-file ""}
+    {-lang "lang-html"}
 } {
     Documentation goes here...
 } {
@@ -124,7 +125,7 @@ m::proc -public tk::viewer {
 	}
 	division class="row" {
 	    division class="col-md-12" {
-		tk::pretty -type "lang-html" -guts [quote_html [file:read $file]]
+		tk::pretty -type "$lang" -guts [quote_html [file:read $file]]
 	    }
 	}
     }
