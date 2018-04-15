@@ -88,12 +88,6 @@ m::proc -public tk::editor {
 		autoformat();
 
 		function publishIt() {
-		    var o = $({});
-		    
-		    jQuery.publish = function() {
-			o.trigger.apply(o, arguments);
-		    };
-		    
 		    console.log("PUBLISHED name: click", "card");
 		    jQuery.publish("tk-editor", ["click", "card"]);
 		}
