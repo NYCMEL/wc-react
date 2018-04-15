@@ -714,49 +714,6 @@ m::proc -public tk::pretty {
 ######################################################
 #####
 ######################################################
-m::proc -public tk::mirror {
-    {-height 400px}
-    -id:required
-    -guts:required
-} {
-    Documentation goes here...
-} {  
-    Trace
-    
-    # ID OF "mycode-2" WILL RETURN EDITOR OF "mycode_2" FOR JS REASONS
-    
-    tk::include::codemirror
-    
-    textarea v($id)=$guts id="$id" class="form-control"
-    
-    regsub -all {\-} $id "_" editor
-    
-    javascript {
-	put [subst {
-	    // MAKE TEXT AREA PRETTY
-	    editor = CodeMirror.fromTextArea(document.getElementById("$id"), {
-		lineWrapping: true,
-		lineNumbers: true,
-		matchBrackets: true,
-		continueComments: "Enter",
-		extraKeys: {"Ctrl-Q": "toggleComment"},
-		styleActiveLine: true,
-		mode : "javascript",
-		htmlMode: true
-	    });
-	    
-	    jQuery("#$id").next(".CodeMirror").css({
-		"height":"$height",
-		"border":"1px #CCC solid",
-		"font-size": "13px"
-	    });
-	}]
-    }
-}
-
-######################################################
-#####
-######################################################
 m::proc -public tk::zip {
     -src:required
 } {
