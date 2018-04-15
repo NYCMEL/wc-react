@@ -748,7 +748,7 @@ m::proc -public tk::mirror {
 	    jQuery("#$id").next(".CodeMirror").css({
 		"height":"$height",
 		"border":"1px #CCC solid",
-		"border-radius":"3px #CCC solid"
+		"font-size": "13px"
 	    });
 	}]
     }
