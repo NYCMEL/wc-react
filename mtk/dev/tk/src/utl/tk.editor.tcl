@@ -19,7 +19,6 @@
 
 namespace eval tk {}
 
-include "/GitHub/jquery-tiny-pubsub/dist/ba-tiny-pubsub.min.js"
 tk::include::codemirror
 
 ######################################################
@@ -89,8 +88,14 @@ m::proc -public tk::editor {
 		autoformat();
 
 		function publishIt() {
-		    console.log('PUBLISHED name: click', "card");
-		    jQuery.publish('tk.editor', ['click', "card"]); // PUBLISH
+		    var o = $({});
+		    
+		    jQuery.publish = function() {
+			o.trigger.apply(o, arguments);
+		    };
+		    
+		    console.log("PUBLISHED name: click", "card");
+		    jQuery.publish("tk-editor", ["click", "card"]);
 		}
 	    }
 	}
