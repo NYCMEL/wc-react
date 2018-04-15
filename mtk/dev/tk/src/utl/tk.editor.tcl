@@ -100,9 +100,9 @@ m::proc -public tk::editor {
     }
 }
 
-######################################################
-##### 
-######################################################
+#############################################################################
+##### tk::viewer -file "/Melify/mtk/dev/app/test/inc/app.js" -lang "lang-js"
+#############################################################################
 m::proc -public tk::viewer {
     {-file ""}
     {-lang "lang-html"}
@@ -111,9 +111,8 @@ m::proc -public tk::viewer {
 } {
     Trace
 
-    if {[info exist ::file] == 1} {
-	set file $::file
-    }
+    if {[info exist ::file] == 1} {set file $::file}
+    if {[info exist ::lang] == 1} {set file $::lang}
 
     division class="container" {
 	division class="row" {
