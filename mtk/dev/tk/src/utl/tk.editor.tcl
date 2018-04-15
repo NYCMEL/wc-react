@@ -118,13 +118,13 @@ m::proc -public tk::viewer {
 	division class="row" {
 	    division class="col-md-12" {
 		division class="page-header" [style margin-top 0] {
-		    h1 [file tail $::file]
+		    h1 [file tail $file]
 		}
 	    }
 	}
 	division class="row" {
 	    division class="col-md-12" {
-		tk::pretty -type "lang-html" -guts [quote_html [file:read $::file]]
+		tk::pretty -type "lang-html" -guts [quote_html [file:read $file]]
 	    }
 	}
     }
