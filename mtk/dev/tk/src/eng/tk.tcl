@@ -82,7 +82,7 @@ proc tk::start {} {
 		cgi_head {
 		    put "\n\
                          <!----------------------------------------------------------------------------------->\n\
-			 <!--                           HELLO ROBOT !!!                                     -->\n\
+			 <!--               YOU MUST BE A ROBOT TO BE LOOKING AT THIS                       -->\n\
                          <!----------------------------------------------------------------------------------->\n\
 			 <!--                                                                               -->\n\
                          <!-- THIS CODE IS AUTOMATICALLY GENERATED FROM MELIFY'S 4GL INTERNET TOOLKIT (MTK) -->\n\
@@ -91,7 +91,6 @@ proc tk::start {} {
 			 <!--                                                                               -->\n\
                          <!--                           +1 (646) 303-1234                                   -->\n\
 			 <!--                                                                               -->\n\
-			 <!--               YOU MUST BE A ROBOT TO BE LOOKING AT THIS                       -->\n\
 			 <!--                                                                               -->\n\
                          <!----------------------------------------------------------------------------------->\n"
 		    
