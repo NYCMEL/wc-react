@@ -87,7 +87,7 @@ proc tk::start {} {
 			 <!--                                                                               -->\n\
                          <!-- THIS CODE IS AUTOMATICALLY GENERATED FROM MELIFY'S 4GL INTERNET TOOLKIT (MTK) -->\n\
 			 <!--                                                                               -->\n\
-                         <!--                    WWW.Melify.Com | Info@Melify.com                           -->\n\
+                         <!--                    www.Melify.com | Info@Melify.com                           -->\n\
 			 <!--                                                                               -->\n\
 			 <!--               YOU MUST BE A ROBOT TO BE LOOKING AT THIS                       -->\n\
 			 <!--                                                                               -->\n\
