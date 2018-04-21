@@ -85,12 +85,11 @@ proc tk::start {} {
 			 <!--               YOU MUST BE A ROBOT TO BE LOOKING AT THIS                       -->\n\
                          <!----------------------------------------------------------------------------------->\n\
 			 <!--                                                                               -->\n\
-                         <!-- THIS CODE IS AUTOMATICALLY GENERATED FROM MELIFY'S 4GL INTERNET TOOLKIT (MTK) -->\n\
+                         <!--        AUTO GENERATED CODE FROM MELIFY'S 4GL INTERNET TOOLKIT (MTK)           -->\n\
 			 <!--                                                                               -->\n\
                          <!--                    www.Melify.com | Info@Melify.com                           -->\n\
 			 <!--                                                                               -->\n\
                          <!--                           +1 (646) 303-1234                                   -->\n\
-			 <!--                                                                               -->\n\
 			 <!--                                                                               -->\n\
                          <!----------------------------------------------------------------------------------->\n"
 		    
