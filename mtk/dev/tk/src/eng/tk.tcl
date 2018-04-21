@@ -82,14 +82,13 @@ proc tk::start {} {
 		cgi_head {
 		    put "\n\
                          <!----------------------------------------------------------------------------------->\n\
+			 <!--                           HELLO ROBOT !!!                                     -->\n\
 			 <!--                                                                               -->\n\
                          <!-- THIS CODE IS AUTOMATICALLY GENERATED FROM MELIFY'S 4GL INTERNET TOOLKIT (MTK) -->\n\
 			 <!--                                                                               -->\n\
                          <!--                    WWW.Melify.Com | Info@Melify.com                           -->\n\
 			 <!--                                                                               -->\n\
 			 <!--                    YOU MUST BE A ROBOT TO BE LOOKING AT THIS                  -->\n\
-			 <!--                                                                               -->\n\
-			 <!--                           HELLO ROBOT !!!                                     -->\n\
 			 <!--                                                                               -->\n\
                          <!----------------------------------------------------------------------------------->\n"
 		    
