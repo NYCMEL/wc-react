@@ -358,7 +358,7 @@ m::proc -private tk::include::common {
     }
 
     # THESE COME AHEAD OF THEM ALL
-    include "/GitHub/Font-Awesome/css/font-awesome.min.css"
+    include "/GitHub/font-awesome/web-fonts-with-css/css/fontawesome-all.css"
     include "/tk/inc/min/tk.common.min.css"
 
     include "$jqv"
