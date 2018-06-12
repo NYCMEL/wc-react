@@ -20,9 +20,10 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/components/dtcc\
     $TKSERVER/tk/lib/components/jpmc\
     \
-    $TKSERVER/tk/lib/components/wc/mtk\
     $TKSERVER/tk/lib/components/w/mtk\
+    $TKSERVER/tk/lib/components/wc/mtk\
     $TKSERVER/tk/lib/components/w3c/mtk\
+    $TKSERVER/tk/lib/components/mwc/mtk\
     \
     $TKSERVER/tk/lib/modules/videos\
     $TKSERVER/tk/lib/modules/email\
