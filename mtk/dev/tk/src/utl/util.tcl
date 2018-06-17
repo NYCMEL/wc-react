@@ -753,14 +753,12 @@ proc tk::cdir {} {
 proc tk::viewsource {} {
     division class="container-fluid" {
 	division class="row" {
-	    division class="col-md-12" {
-		division class="page-header" [style margin-top 0] {
-		    h1 [file tail $::file]
-		}
+	    division class="col-md-12 alert-info" {
+		h1 [style margin 0 padding 0 padding 20px] [file tail $::file]
 	    }
 	}
 	division class="row" {
-	    division class="col-md-12" {
+	    division class="col-md-12" [style margin 0 padding 0] {
 		tk::pretty -type "lang-html" -guts [quote_html [file:read $::file]]
 	    }
 	}
