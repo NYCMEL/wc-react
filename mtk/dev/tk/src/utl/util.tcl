@@ -751,6 +751,8 @@ proc tk::cdir {} {
 ##### 
 ######################################################
 proc tk::viewsource {} {
+    put "<style>body {background: #F5F5F5;}</style>"
+
     division class="container-fluid" {
 	division class="row" {
 	    division class="col-md-12 alert-info" {
