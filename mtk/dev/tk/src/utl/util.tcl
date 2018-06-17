@@ -754,7 +754,7 @@ proc tk::viewsource {} {
     division class="container-fluid" {
 	division class="row" {
 	    division class="col-md-12 alert-info" {
-		h1 [style margin 0 padding 0 padding 20px] [file tail $::file]
+		h2 [style margin 0 padding 0 padding 20px] [string toupper [file tail $::file]]
 	    }
 	}
 	division class="row" {
