@@ -751,7 +751,7 @@ proc tk::cdir {} {
 ##### 
 ######################################################
 proc tk::viewsource {} {
-    division class="container" {
+    division class="container-fluid" {
 	division class="row" {
 	    division class="col-md-12" {
 		division class="page-header" [style margin-top 0] {
