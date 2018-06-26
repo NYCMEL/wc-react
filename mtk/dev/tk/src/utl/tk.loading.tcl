@@ -19,19 +19,20 @@
 
 namespace eval tk {}
 
-if {$::ajax == 0} {
+if {$::ajax == 1} {
+    proc tk::loading {} {}
+} else {
     include "/tk/inc/loading.css"
     include "/tk/inc/loading.js"
+
+    ######################################################
+    ##### 
+    ######################################################
+    proc tk::loading {} {
+	Trace
+
+	division class="modal" {
+	    #<!-- PLACE AT BOTTOM OF PAGE --></div>
+	}
+    }    
 }
-
-######################################################
-##### 
-######################################################
-proc tk::loading {} {
-    Trace
-
-    division class="modal" {
-	#<!-- PLACE AT BOTTOM OF PAGE --></div>
-    }
-}    
-
