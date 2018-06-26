@@ -19,8 +19,10 @@
 
 namespace eval tk {}
 
-include "/tk/inc/loading.css"
-include "/tk/inc/loading.js"
+if {$::ajax == 0} {
+    include "/tk/inc/loading.css"
+    include "/tk/inc/loading.js"
+}
 
 ######################################################
 ##### 

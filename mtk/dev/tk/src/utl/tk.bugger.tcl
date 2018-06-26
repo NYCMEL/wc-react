@@ -19,7 +19,9 @@
 
 namespace eval tk {}
 
-include "/tk/inc/tk.bugger.css"
+if {$::ajax == 0} {
+    include "/tk/inc/tk.bugger.css"
+}
 
 ##################################################
 ##### 

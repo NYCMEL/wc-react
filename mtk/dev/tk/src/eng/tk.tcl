@@ -114,7 +114,9 @@ proc tk::start {} {
 		# IMPORT ALL COOKIES
 		tk::import
 
-		tk::session::restore
+		if {$::ajax == 0} {
+		    tk::session::restore
+		}
 		
 		if {$::tk(local) == 1 && [info exist ::void] == 0} {
 		    # LOWER RIGHT CORNER INFO WHEN LOCAL
@@ -136,7 +138,9 @@ proc tk::start {} {
 		# NOW PROCESS THE REQUESTED PAGE
 		tk::site::init
 
-		tk::session::save
+		if {$::ajax == 0} {
+		    tk::session::save
+		}
 
 		put "<!-- MELIFIED -->"
 	    }
