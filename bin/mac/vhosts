@@ -1,51 +1,50 @@
 #!/Melify/bin/mac/tclkit
 
 set tmp {
-    ########################################################################
-    #### xxx
-    ########################################################################
-    <VirtualHost *>
-    ServerAdmin        support@melify.com
-    ServerAlias           xxx
-    ServerName         xxx
-    DocumentRoot   /Melify/mtk/dev/app/xxx/doc
-    
-    ErrorLog                /Melify/apache/xxx.error.log
-    TransferLog          /Melify/apache/xxx.access.log
-    CustomLog           /Melify/apache/xxx.access.log combined
-    
-    ScriptAlias             /mtk/                     /Melify/mtk/dev/app/xxx/bin/mac/
-    
-    Alias                       /images/               /Melify/mtk/dev/app/xxx/img/
-    Alias                       /img/                      /Melify/mtk/dev/app/xxx/img/
-    Alias                       /inc/                       /Melify/mtk/dev/app/xxx/inc/
-    Alias                       /tk/                         /Melify/mtk/dev/tk/
-    Alias                       /baurl-gim/           /Melify/baurl-gim/
-    Alias                       /videos/ /Melify/videos/
-    Alias                       /tk/                         /Melify/mtk/dev/tk/
-    
-    <ifModule mod_headers.so>
-    Header set Access-Control-Allow-Origin: *
-    </ifModule>
-    </VirtualHost>
-    
+########################################################################
+#### xxx
+########################################################################
+<VirtualHost *:80>
+	ServerAdmin	support@melify.com
+	ServerAlias	xxx
+	ServerName	xxx.melify.com
+	DocumentRoot	/Melify/mtk/dev/app/xxx/doc
+
+	ErrorLog	/var/log/apache2/xxx.error.log
+	TransferLog	/var/log/apache2/xxx.access.log
+	CustomLog	/var/log/apache2/xxx.access.log combined
+
+	ScriptAlias	/mtk/		/Melify/mtk/dev/app/xxx/bin/mac/
+
+	Alias		/images/	/Melify/mtk/dev/app/xxx/img/
+	Alias		/img/		/Melify/mtk/dev/app/xxx/img/
+	Alias		/inc/		/Melify/mtk/dev/app/xxx/inc/
+	Alias		/tk/		/Melify/mtk/dev/tk/
+
+	<ifModule mod_headers.so>
+	    Header set Access-Control-Allow-Origin: *
+	</ifModule>
+</VirtualHost>
 }
 
 set hosts [list]
 
-foreach i [glob "/Melify/mtk/dev/app/*"] {
+foreach i [lsort [glob "/Melify/mtk/dev/app/*"]] {
     if {[file isdirectory $i]} {
 	set t [file tail $i]
+	
+	regsub -all "xxx" $tmp "$t" vh
 	
 	if {[string index $t 0] == "_"} {
 	    regsub "_" $t "tk-" t
 	}
 	
 	lappend hosts $t
-	regsub -all "xxx" $tmp "$t" vh
-	
+
 	puts $vh
     }
 }
 
-puts $hosts
+foreach i [lsort $hosts] {
+    puts "127.0.0.1 $i"
+}
