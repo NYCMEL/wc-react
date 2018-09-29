@@ -6,8 +6,8 @@ set tmp {
 ########################################################################
 <VirtualHost *:80>
 	ServerAdmin	support@melify.com
-	ServerAlias	xxx
-	ServerName	xxx.melify.com
+	ServerAlias	yyy
+	ServerName	yyy.melify.com
 	DocumentRoot	/Melify/mtk/dev/app/xxx/doc
 
 	ErrorLog	/var/log/apache2/xxx.error.log
@@ -39,6 +39,8 @@ foreach i [lsort [glob "/Melify/mtk/dev/app/*"]] {
 	    regsub "_" $t "tk-" t
 	}
 	
+	regsub -all "yyy" $vh "$t" vh
+
 	lappend hosts $t
 
 	puts $vh
