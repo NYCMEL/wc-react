@@ -640,10 +640,10 @@ m::proc -public tk::test:procs {
 			default {
 			    incr cnt
 			    if {[info exist ::testcallback] == 0} {
-				li class="btn btn-xs btn-default" [style min-width 120px] [url $i [URL callback [string range [namespace current] 2 end]::$i]]
+				li class="btn btn-xs btn-outline-secondary" [style min-width 180px] [url $i [URL callback [string range [namespace current] 2 end]::$i]]
 			    } else {
 				set url [url $i [URL callback $::testcallback widget [string range [namespace current] 2 end]::$i]]
-				li class="btn btn-xs btn-default" [style min-width 120px] $url
+				li class="btn btn-xs btn-outline-secondary" [style min-width 180px] $url
 			    }
 			}
 		    }
