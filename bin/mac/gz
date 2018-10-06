@@ -1,0 +1,8 @@
+#!/Melify/bin/mac/tclkit
+
+exec /usr/bin/gzip -k $argv
+
+regsub -all "js.gz" "$argv.gz" "gz.js" tmp
+
+file rename -force "$argv.gz" "$tmp"
+
