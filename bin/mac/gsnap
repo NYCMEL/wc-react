@@ -5,7 +5,7 @@ if {[file exist ".git"] == 0} {
     exit
 }
 
-mkdir /Users/melify/snapshots
+file mkdir /Users/melify/snapshots
 
 set folder [lindex [split [pwd] /] end]
 puts $folder
