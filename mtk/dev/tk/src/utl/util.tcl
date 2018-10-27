@@ -751,12 +751,17 @@ proc tk::cdir {} {
 ##### 
 ######################################################
 proc tk::viewsource {} {
-    put "<style>body {background: #F5F5F5;}</style>"
+    put {
+	<style>
+	body {background: #F5F5F5;}
+	pre.prettyprint {border:0!important;}
+	</style>
+    }
 
     division class="container-fluid" {
 	division class="row" {
-	    division class="col-md-12 alert-info" {
-		h2 [style margin 0 padding 0 padding 20px] [string toupper [file tail $::file]]
+	    division class="col-md-12 alert-dark bg-dark text-light" {
+		h4 [style margin 0 padding 0 padding 20px] [string toupper [file tail $::file]]
 	    }
 	}
 	division class="row" {
