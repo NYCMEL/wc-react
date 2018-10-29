@@ -2411,9 +2411,9 @@ proc cgi_td {args} {
 # stylesheets - not yet documented
 ##################################################
 
-# proc cgi_stylesheet {href} {
-#     puts "<link rel=stylesheet href=\"$href\" type=\"text/css\"></link>"
-# }
+proc cgi_stylesheet {href} {
+    puts "<link rel=stylesheet href=\"$href\" type=\"text/css\"></link>"
+}
 
 proc cgi_span {args} {
     set buf "<span"
