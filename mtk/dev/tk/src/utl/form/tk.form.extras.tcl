@@ -35,7 +35,7 @@ namespace eval tk {
     }
 }
 
-include "/tk/src/utl/form/inc/tk.form.js"
+#include "/tk/src/utl/form/inc/tk.form.js"
 
 ######################################################
 ##### 
@@ -441,9 +441,9 @@ m::proc -public tk::form::uploader {
 } {
     Documentation goes here...
 } {
-    include "/GitHub/form/jquery.form.js"
-    include "/GitHub/jasny/dist/css/jasny-bootstrap.min.css"
-    include "/GitHub/jasny/dist/js/jasny-bootstrap.min.js"
+    include "/GitHub/form/dist/jquery.form.min.js"
+    include "/GitHub/jasny.bootstrap.git/scss/jasny-bootstrap.scss"
+    include "/GitHub/jasny.bootstrap.git/docs/dist/js/jasny-bootstrap.min.js"
     
     division [style margin 100px] {
 	division [style width 500px] {
