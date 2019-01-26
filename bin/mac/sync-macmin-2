@@ -1,0 +1,3 @@
+$RSYNC /Melify/ /Volumes/Macintosh\ HD/Meify
+$RSYNC /GitHub/ /Volumes/Macintosh\ HD/GitHub
+$RSYNC /Repos/  /Volumes/Macintosh\ HD/Repos
