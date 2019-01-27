@@ -1,3 +1,3 @@
-$RSYNC /Melify/ /Volumes/Macintosh\ HD/Meify
-$RSYNC /GitHub/ /Volumes/Macintosh\ HD/GitHub
-$RSYNC /Repos/  /Volumes/Macintosh\ HD/Repos
+rsync -avp --delete --exclude .cache /Melify/ /Volumes/Macintosh\ HD/Meify
+rsync -avp --delete --exclude .cache /GitHub/ /Volumes/Macintosh\ HD/GitHub
+rsync -avp --delete --exclude .cache /Repos/  /Volumes/Macintosh\ HD/Repos
