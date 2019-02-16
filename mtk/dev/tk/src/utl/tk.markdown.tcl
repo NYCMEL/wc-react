@@ -27,25 +27,18 @@ m::proc -public tk::markdown {
     Documentation goes here...
 } {    
     Trace
-    variable _id [id]
 
     if {[info exist ::file] == 0} {
 	h1 "file is required in url"
 	exit
     }
 
-    include "/GitHub/zero-md/highlight-themes/default.css"
-    include "/GitHub/zero-md/markdown-themes/default.css"
-    include "/GitHub/core/lib/webcomponents-lite.js"
+    include "https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.js"
+    include "https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/build/zero-md.min.js"
+    include "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css"
 
-    put {
-	<link rel="import" href="/GitHub/zero-md/build/zero-md.html">
-	
-	<zero-md file="$::file">
-	    <div class="md-html" style=padding:50px;>
-		<!-- PLACEHOLDER FOR CONTENT -->
-	    </div>
-	</zero-md>
+    division style="padding:30px" {
+	put "<zero-md src='$::file'></zero-md>"
     }
 }
 
