@@ -1,7 +1,8 @@
 #!tclkit
 
+set cnt 0
 foreach i [glob /Repos/*.git] {
-    puts >>>$i
+    puts "[incr cnt]: $i"
     cd $i
     catch {exec /usr/bin/git fetch --all}
 }
