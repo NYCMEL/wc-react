@@ -1,0 +1,7 @@
+#!tclkit
+
+foreach i [glob /Repos/*.git] {
+    puts >>>$i
+    cd $i
+    catch {exec /usr/bin/git fetch --all}
+}
