@@ -712,29 +712,6 @@ m::proc -public tk::pretty {
 }
 
 ######################################################
-#####
-######################################################
-m::proc -public tk::zip {
-    -src:required
-} {
-    Documentation goes here...
-} {  
-    Trace
-
-    set root [file rootname $src]
-    set dir  [file dirname  $src]
-    set fname [lindex [split $src "/"] end]
-
-    if {[catch {
-	cd $dir
-	exec /usr/bin/zip $fname.zip $fname
-    } e] != 0} {
-	h1 "ERROR(tk::zip): $e"
-	exit
-    }
-}
-
-######################################################
 ##### 
 ######################################################
 proc tk::cdir {} {
