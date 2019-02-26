@@ -23,22 +23,39 @@ namespace eval tk {}
 #####
 ######################################################
 m::proc -public tk::zip {
-    -src:required
+    {-src ""}
+    {-ele ""}
 } {
     Documentation goes here...
 } {  
     Trace
 
+    if {[info exist ::src] == 1} {set src $::src}
+    if {[info exist ::ele] == 1} {set ele $::ele}
+
     set root [file rootname $src]
     set dir  [file dirname  $src]
     set fname [lindex [split $src "/"] end]
 
+    set d [clock format [clock seconds] -format %D]
+    regsub -all "/" $d "." d
+
     if {[catch {
 	cd $dir
-	exec /usr/bin/zip $fname.zip $fname
+	exec /usr/bin/zip $fname.$d.zip $fname
     } e] != 0} {
 	h1 "ERROR(tk::zip): $e"
 	exit
     }
+
+    if {$ele != ""} {
+	javascript {
+	    put [subst {
+		jQuery("#$ele").append("<a href='/tmp/$fname.$d.zip' class='btn btn-primary'>DOWNLOAD</a>");
+	    }]
+	}
+    }
+
+    return "/tmp/$fname.$d.zip"
 }
 
