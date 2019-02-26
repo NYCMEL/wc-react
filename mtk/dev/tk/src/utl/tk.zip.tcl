@@ -42,7 +42,7 @@ m::proc -public tk::zip {
 
     if {[catch {
 	cd $dir
-	exec /usr/bin/zip /tmp/$fname.$d.zip $fname
+	exec /usr/bin/zip -r /tmp/$fname.$d.zip $fname
     } e] != 0} {
 	h1 "ERROR(tk::zip): $e"
 	exit
