@@ -40,18 +40,15 @@ m::proc -public tk::zip {
     set d [clock format [clock seconds] -format %D]
     regsub -all "/" $d "." d
 
-    if {[catch {
+    catch {
 	cd $dir
-	exec zip -r /tmp/$fname.$d.zip $fname
-    } e] != 0} {
-	h5 "ERROR(tk::zip): $e"
-	exit
+	exec tar cvzf /tmp/$fname.$d.tgz $fname
     }
 
     if {$ele != ""} {
 	javascript {
 	    put [subst {
-		jQuery("#$ele").append("<a href='/tmp/$fname.$d.zip' class='btn btn-primary'>DOWNLOAD</a>")
+		jQuery("#$ele").append("<a href='/tmp/$fname.$d.tgz' class='btn btn-primary'>DOWNLOAD</a>")
 	    }]
 	}
     }
