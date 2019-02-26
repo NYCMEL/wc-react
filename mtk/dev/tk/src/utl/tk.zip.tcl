@@ -42,7 +42,7 @@ m::proc -public tk::zip {
 
     if {[catch {
 	cd $dir
-	exec /usr/bin/zip $fname.$d.zip $fname
+	exec /usr/bin/zip /tmp/$fname.$d.zip $fname
     } e] != 0} {
 	h1 "ERROR(tk::zip): $e"
 	exit
@@ -51,7 +51,7 @@ m::proc -public tk::zip {
     if {$ele != ""} {
 	javascript {
 	    put [subst {
-		jQuery("#$ele").append("<a href='/tmp/$fname.$d.zip' class='btn btn-primary'>DOWNLOAD</a>");
+		jQuery("#$ele").append("<a href='/tmp/$fname.$d.zip' class='btn btn-primary'>DOWNLOAD</a>")
 	    }]
 	}
     }
