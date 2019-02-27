@@ -24,14 +24,12 @@ namespace eval tk {}
 ######################################################
 m::proc -public tk::zip {
     {-src ""}
-    {-ele ""}
 } {
     Documentation goes here...
 } {  
     Trace
 
     if {[info exist ::src] == 1} {set src $::src}
-    if {[info exist ::ele] == 1} {set ele $::ele}
 
     set root [file rootname $src]
     set dir  [file dirname  $src]
@@ -45,13 +43,7 @@ m::proc -public tk::zip {
 	exec tar cvzf /tmp/$fname.$d.tgz $fname
     }
 
-    if {$ele != ""} {
-	javascript {
-	    put [subst {
-		jQuery("#$ele").append("<a href='/tmp/$fname.$d.tgz' class='btn btn-primary'>DOWNLOAD</a>")
-	    }]
-	}
-    }
+    put "<script>window.open('/tmp/$fname.$d.tgz')</script>"
 
     return "/tmp/$fname.$d.zip"
 }
