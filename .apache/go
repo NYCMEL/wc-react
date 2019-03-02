@@ -1,2 +1,3 @@
-rm logs/*
+rm -rf logs;mkdir logs
+
 httpd -f /Melify/.apache/httpd.conf.mel

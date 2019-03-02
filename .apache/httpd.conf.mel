@@ -39,30 +39,8 @@ Mutex default:/Melify/.apache/logs
 # prevent Apache from glomming onto all bound IP addresses.
 #
 #Listen 12.34.56.78:80
-#Listen 80
-#Listen 8080
-
-Listen 2000
-Listen 2100
-Listen 2200
-Listen 2300
-Listen 2400
-Listen 2500
-Listen 2600
-Listen 2700
-Listen 2800
-Listen 2900
-
-Listen 3000
-Listen 3100
-Listen 3200
-Listen 3300
-Listen 3400
-Listen 3500
-Listen 3600
-Listen 3700
-Listen 3800
-Listen 3900
+Listen 80
+Listen 8080
 
 #
 # Dynamic Shared Object (DSO) Support
