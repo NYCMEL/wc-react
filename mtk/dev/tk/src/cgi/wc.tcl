@@ -17,6 +17,23 @@
 #
 ###HEADE###################################################################
 
+namespace eval wc {
+    ######################################################
+    ##### 
+    ######################################################
+    blank panel {args} {
+	cgi_put "<wc-blank"
+	_cgi_close_proc_push "cgi_put </wc-blank>"
+
+	if {[llength $args]} {
+	    cgi_put "[_cgi_lrange $args 0 [expr {[llength $args]-2}]]"
+	}
+	cgi_put ">"
+	uplevel 1 [lindex $args end]
+	_cgi_close_proc
+    }
+}
+
 namespace eval c {
     ######################################################
     ##### 
