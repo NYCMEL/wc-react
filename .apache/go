@@ -1,3 +1,5 @@
 rm -rf logs;mkdir logs
 
 httpd -f /Melify/.apache/httpd.conf.mel
+
+sleep 1;cat logs/error_log 
