@@ -32,7 +32,7 @@ ServerRoot "/usr"
     PidFile "/tmp/httpd.pid"
 </IfModule>
 
-Mutex default:/Melify/apache
+Mutex default:/Melify/.apache
 
 #
 # Listen: Allows you to bind Apache to specific IP addresses and/or
@@ -198,7 +198,7 @@ LoadModule hfs_apple_module libexec/apache2/mod_hfs_apple.so
 # It is usually good practice to create a dedicated user and group for
 # running httpd, as with most system services.
 #
-User o686469
+User melify
 Group _www
 
 </IfModule>
@@ -335,7 +335,7 @@ Alias	"/tools"	"/Melify/tools"
 # logged here.  If you *do* define an error logfile for a <VirtualHost>
 # container, that host's errors will be logged there and not here.
 #
-ErrorLog "/Melify/apache/error_log"
+ErrorLog "/Melify/.apache/error_log"
 
 #
 # LogLevel: Control the number of messages logged to the error_log.
@@ -364,7 +364,7 @@ LogLevel warn
     # define per-<VirtualHost> access logfiles, transactions will be
     # logged therein and *not* in this file.
     #
-    CustomLog "/Melify/apache/access_log" common
+    CustomLog "/Melify/.apache/access_log" common
 
     #
     # If you prefer a logfile with access, agent, and referer information
