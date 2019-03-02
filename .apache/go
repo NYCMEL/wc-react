@@ -1,4 +1,4 @@
 rm logs/*
 httpd -f /Melify/.apache/httpd.conf.mel
 
-#ps -ef | grep httpd
+cat /Melify/.apache/logs/error_log
