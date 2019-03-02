@@ -28,10 +28,6 @@
 #
 ServerRoot "/usr"
 
-<IfModule !mpm_netware_module>
-    PidFile "/tmp/httpd.pid"
-</IfModule>
-
 Mutex default:/Melify/.apache/logs
 
 #
@@ -200,6 +196,8 @@ LoadModule hfs_apple_module libexec/apache2/mod_hfs_apple.so
 #
 User melify
 Group _www
+
+PidFile "/tmp/httpd.mel.pid"
 
 </IfModule>
 </IfModule>

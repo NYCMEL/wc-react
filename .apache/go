@@ -1,2 +1,3 @@
+rm logs/*
 httpd -f /Melify/.apache/httpd.conf.mel
 ps -ef | grep httpd
