@@ -28,6 +28,18 @@
 #
 ServerRoot "/usr"
 
+<IfModule !mpm_netware_module>
+    PidFile "/tmp/httpd.pid"
+</IfModule>
+
+#
+# Mutex: Allows you to set the mutex mechanism and mutex file directory
+# for individual mutexes, or change the global defaults
+#
+# Uncomment and change the directory if mutexes are file-based and the default
+# mutex file directory is not on a local disk or is not appropriate for some
+# other reason.
+#
 Mutex default:/Melify/.apache/logs
 
 #
