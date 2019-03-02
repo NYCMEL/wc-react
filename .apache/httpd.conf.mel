@@ -28,8 +28,10 @@
 #
 ServerRoot "/usr"
 
+PidFile "/Melify/.apache/logs/httpd.mel.pid"
+
 <IfModule !mpm_netware_module>
-    PidFile "/tmp/httpd.pid"
+    PidFile /Melify/.apache/logs
 </IfModule>
 
 #
@@ -187,7 +189,7 @@ LoadModule hfs_apple_module libexec/apache2/mod_hfs_apple.so
 User melify
 Group staff
 
-PidFile "/tmp/httpd.mel.pid"
+PidFile "/Melify/.apache/logs/httpd.mel.pid"
 
 </IfModule>
 </IfModule>
