@@ -905,7 +905,7 @@ m::proc -public tk::sleep {
 }
 
 ######################################################
-##### 
+##### $("#xx").html('[tk::buffered -proc test::wc]')
 ######################################################
 m::proc -public tk::buffered {
     {-proc:required}
