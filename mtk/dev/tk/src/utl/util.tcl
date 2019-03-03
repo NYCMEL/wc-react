@@ -903,3 +903,23 @@ m::proc -public tk::sleep {
     after $time set end 1
     vwait end
 }
+
+######################################################
+##### 
+######################################################
+m::proc -public tk::buffered {
+    {-proc:required}
+} {
+    Documentation goes here...
+} {    
+    Trace
+    variable _id [id]
+
+    set b [buffer $proc]
+    regsub -all "\n" $b " "    b
+    regsub -all "\"" $b "\\\"" b
+    regsub -all "\'" $b "\\\'" b
+    
+    return $b
+}
+

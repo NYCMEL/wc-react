@@ -21,7 +21,7 @@ namespace eval wc {
     ######################################################
     ##### 
     ######################################################
-    blank panel {args} {
+    proc blank {args} {
 	cgi_put "<wc-blank"
 	_cgi_close_proc_push "cgi_put </wc-blank>"
 

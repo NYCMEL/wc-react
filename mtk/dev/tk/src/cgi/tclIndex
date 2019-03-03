@@ -6,6 +6,7 @@
 # element name is the name of a command and the value is
 # a script that loads the command.
 
+set auto_index(::wc::blank) [list source [file join $dir wc.tcl]]
 set auto_index(::c::panel) [list source [file join $dir wc.tcl]]
 set auto_index(::c::accordion) [list source [file join $dir wc.tcl]]
 set auto_index(::c::tabs) [list source [file join $dir wc.tcl]]
