@@ -913,7 +913,6 @@ m::proc -public tk::buffered {
     Documentation goes here...
 } {    
     Trace
-    variable _id [id]
 
     set b [buffer $proc]
     regsub -all "\n" $b " "    b
