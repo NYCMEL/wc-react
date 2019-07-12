@@ -1,1 +1,1 @@
-rsync -avp --exclude cache ~/snapshots/ melify@turnongreen.com/Users/melify/snapshots
+rsync -avp --exclude cache ~/snapshots/ melify@turnongreen.com:/Users/melify/snapshots
