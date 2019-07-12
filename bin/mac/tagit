@@ -8,15 +8,18 @@ foreach i [glob "/Melify/mtk/dev/tk/lib/components/w/html/*.html"] {
     set s ""
     set f [open $i r]
     while {[gets $f line] >= 0} {
+	# IF START TAG FOUND
 	if {[string first "<wc-$t" $line] != -1} {
 	    append s $line
 	}
 
+	# IF END TAG FOUND
 	if {[string first "</wc-$t>" $line] != -1} {
 	    append s $line
 	    break
 	}
 
+	# ADD LINES IN BETWEEN
 	if {$s != ""} {
 	    append s $line
 	}
