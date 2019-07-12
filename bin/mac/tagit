@@ -5,8 +5,8 @@ foreach i [glob "/Melify/mtk/dev/tk/lib/components/w/html/*.html"] {
 
     set t [file rootname [file tail $i]]
 
-    set f [open $i r]
     set s ""
+    set f [open $i r]
     while {[gets $f line] >= 0} {
 	if {[string first "<wc-$t" $line] != -1} {
 	    append s $line
@@ -14,13 +14,16 @@ foreach i [glob "/Melify/mtk/dev/tk/lib/components/w/html/*.html"] {
 
 	if {[string first "</wc-$t>" $line] != -1} {
 	    append s $line
+	    break
 	}
 
-	append s $line
+	if {$s != ""} {
+	    append s $line
+	}
     }
     close $f
 
-    puts >>>>>>>>>>>>>>>$s
+    puts ==$s
 
     exit
 }
