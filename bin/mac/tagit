@@ -1,32 +1,38 @@
 #!/Melify/bin/mac/tclkit
 
 foreach i [glob "/Melify/mtk/dev/tk/lib/components/w/html/*.html"] {
-    puts ">>>>>>>>>>>>>>$i"
+    if {[string index $i 0] == "_"} {
+	continue
+    }
 
     set t [file rootname [file tail $i]]
+    puts $t
 
     set s ""
     set f [open $i r]
     while {[gets $f line] >= 0} {
-	# IF START TAG FOUND
-	if {[string first "<wc-$t" $line] != -1} {
-	    append s $line
-	}
-
-	# IF END TAG FOUND
-	if {[string first "</wc-$t>" $line] != -1} {
-	    append s $line
-	    break
-	}
-
 	# ADD LINES IN BETWEEN
 	if {$s != ""} {
 	    append s $line
 	}
+
+	if {[string first "<wc-$t " $line] != -1} {
+	    # IF START TAG FOUND
+	    append s $line
+
+	    # ALL TAGS ARE ON SAME LINE
+	    if {[string first "</wc-$t>" $line] != -1} {
+		# IF END TAG FOUND ON SAME LINE
+		break
+	    }
+	}
+
+	if {[string first "</wc-$t>" $line] != -1} {
+	    # IF END TAG FOUND
+	    break
+	}
     }
     close $f
 
-    puts ==$s
-
-    exit
+    puts $s\n\n
 }
