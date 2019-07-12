@@ -1,0 +1,6 @@
+#!/Melify/bin/mac/tclkit
+
+foreach i [glob "/Melify/mtk/dev/tk/lib/components/w/html/*.html"] {
+    puts ">>>>>>>>>>>>>>$i"
+    exit
+}
