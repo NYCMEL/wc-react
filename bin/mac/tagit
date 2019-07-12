@@ -2,5 +2,25 @@
 
 foreach i [glob "/Melify/mtk/dev/tk/lib/components/w/html/*.html"] {
     puts ">>>>>>>>>>>>>>$i"
+
+    set t [file rootname [file tail $i]]
+
+    set f [open $i r]
+    set s ""
+    while {[gets $f line] >= 0} {
+	if {[string first "<wc-$t" $line] != -1} {
+	    append s $line
+	}
+
+	if {[string first "</wc-$t>" $line] != -1} {
+	    append s $line
+	}
+
+	append s $line
+    }
+    close $f
+
+    puts >>>>>>>>>>>>>>>$s
+
     exit
 }
