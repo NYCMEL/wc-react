@@ -19,6 +19,7 @@ lappend ::auto_path\
     $TKSERVER/tk/lib/components/fm\
     $TKSERVER/tk/lib/components/dtcc\
     $TKSERVER/tk/lib/components/jpmc\
+    $TKSERVER/tk/lib/components/t\
     \
     $TKSERVER/tk/lib/components/w/mtk\
     $TKSERVER/tk/lib/components/wc/mtk\
