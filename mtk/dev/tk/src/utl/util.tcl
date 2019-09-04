@@ -626,7 +626,7 @@ m::proc -public tk::test:procs {
 		h1 "[string toupper $::page] <small>- play around and be happy <i class='fa fa-smile-o'></i></small>"
 	    }
 
-	    number_list {
+	    number_list class="padding-0 margin-0" {
 		foreach i [lsort [info procs]] {
 		    if {[string index $i 0] == "_"} {
 			continue
@@ -640,10 +640,9 @@ m::proc -public tk::test:procs {
 			default {
 			    incr cnt
 			    if {[info exist ::testcallback] == 0} {
-				li class="btn btn-xs btn-outline-secondary" [style min-width 180px] [url $i [URL callback [string range [namespace current] 2 end]::$i]]
+				li [url $i [URL callback [string range [namespace current] 2 end]::$i] class="btn btn-xs btn-outline-secondary" [style min-width 180px]]
 			    } else {
-				set url [url $i [URL callback $::testcallback widget [string range [namespace current] 2 end]::$i]]
-				li class="btn btn-xs btn-outline-secondary" [style min-width 180px] $url
+				put [url $i [URL callback $::testcallback widget [string range [namespace current] 2 end]::$i] class="btn btn-xs btn-outline-secondary" [style min-width 180px]]
 			    }
 			}
 		    }
