@@ -924,7 +924,7 @@ m::proc -public tk::buffered {
 ######################################################
 ##### 
 ######################################################
-proc dbQuery {var} {
+proc dbQuery2JSON {var} {
     upvar $var v
 
     set jstr "\["
