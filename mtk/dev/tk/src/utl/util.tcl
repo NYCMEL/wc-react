@@ -921,3 +921,27 @@ m::proc -public tk::buffered {
     return $b
 }
 
+######################################################
+##### 
+######################################################
+proc dbQuery {var} {
+    upvar $var v
+
+    set jstr "\["
+
+    for {set i 0} {$i < [lindex $v(*) 0]} {incr i} {
+	append jstr "\{"
+
+	foreach j [lrange $v(*) 1 end] {
+	    append jstr "\"$j\":\"$v($i,$j)\","
+	}
+
+	set jstr [string replace $jstr end end]
+	append jstr "\},"
+    }
+    set jstr [string replace $jstr end end]
+
+    append jstr "\]"
+
+    return $jstr
+}
