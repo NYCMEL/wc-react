@@ -943,7 +943,6 @@ m::proc -public dbQuery2JSON {
     set jstr "\{"
     append jstr "\"size\":\"[lindex $v(*) 0]\","
     append jstr "\"headers\": \"[join [lrange $v(*) 1 end] ,]\","
-    append jstr "\"status\": \"success\","
 
     append jstr "\"values\": \["
 
