@@ -27,13 +27,5 @@ foreach i [import_list] {
     import $i
 }
 
-if {[info exist db] == 0} {
-    tk::use:db "/Melify/mtk/$ENV/app/$APP/db/sqlite.db"
-    tk::db::sqlite::query:v -variable v $query
-} else {
-    tk::use:db "$db"
-    tk::db::sqlite::query:v -variable v -db $db $query
-}
-
 put "Content-Type: application/json\n\n"
-put [dbQuery2JSON v]
+put [dbQuery2JSON -db "/Melify/mtk/$ENV/app/$APP/db/sqlite.db" -query $query]

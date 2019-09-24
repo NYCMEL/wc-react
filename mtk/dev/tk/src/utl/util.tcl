@@ -924,12 +924,26 @@ m::proc -public tk::buffered {
 ######################################################
 ##### 
 ######################################################
-proc dbQuery2JSON {var} {
-    upvar $var v
+m::proc -public dbQuery2JSON {
+    -db:required
+    -query:required
+} {
+    Documentation goes here...
+} {    
+    tk::use:db $db
+
+    if {[catch {
+	tk::db::sqlite::query:v -variable v $query
+    } e] != 0} {
+	set v(*) "1 status"
+	set v(0,status) "failed"
+	set v(0,message) "$e"
+    }
 
     set jstr "\{"
     append jstr "\"size\":\"[lindex $v(*) 0]\","
     append jstr "\"headers\": \"[join [lrange $v(*) 1 end] ,]\","
+    append jstr "\"status\": \"success\","
 
     append jstr "\"values\": \["
 
