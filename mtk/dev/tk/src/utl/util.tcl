@@ -927,7 +927,11 @@ m::proc -public tk::buffered {
 proc dbQuery2JSON {var} {
     upvar $var v
 
-    set jstr "\["
+    set jstr "\{"
+    append jstr "\"size\":\"[lindex $v(*) 0]\","
+    append jstr "\"headers\": \"[join [lrange $v(*) 1 end] ,]\","
+
+    append jstr "\"values\": \["
 
     for {set i 0} {$i < [lindex $v(*) 0]} {incr i} {
 	append jstr "\{"
@@ -942,6 +946,7 @@ proc dbQuery2JSON {var} {
     set jstr [string replace $jstr end end]
 
     append jstr "\]"
+    append jstr "\}"
 
     return $jstr
 }
