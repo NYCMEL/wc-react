@@ -626,7 +626,7 @@ m::proc -public tk::test:procs {
 		h1 "[string toupper $::page] <small>- play around and be happy <i class='fa fa-smile-o'></i></small>"
 	    }
 
-	    number_list {
+	    number_list class="padding-0 margin-0" {
 		foreach i [lsort [info procs]] {
 		    if {[string index $i 0] == "_"} {
 			continue
@@ -640,10 +640,9 @@ m::proc -public tk::test:procs {
 			default {
 			    incr cnt
 			    if {[info exist ::testcallback] == 0} {
-				li class="btn btn-xs btn-outline-secondary" [style min-width 180px] [url $i [URL callback [string range [namespace current] 2 end]::$i]]
+				li [url $i [URL callback [string range [namespace current] 2 end]::$i] class="btn btn-xs btn-outline-secondary" [style min-width 180px]]
 			    } else {
-				set url [url $i [URL callback $::testcallback widget [string range [namespace current] 2 end]::$i]]
-				li class="btn btn-xs btn-outline-secondary" [style min-width 180px] $url
+				put [url $i [URL callback $::testcallback widget [string range [namespace current] 2 end]::$i] class="btn btn-xs btn-outline-secondary" [style min-width 180px]]
 			    }
 			}
 		    }
@@ -922,3 +921,45 @@ m::proc -public tk::buffered {
     return $b
 }
 
+######################################################
+##### 
+######################################################
+m::proc -public dbQuery2JSON {
+    -db:required
+    -query:required
+} {
+    Documentation goes here...
+} {    
+    tk::use:db $db
+
+    if {[catch {
+	tk::db::sqlite::query:v -variable v $query
+    } e] != 0} {
+	set v(*) "1 status"
+	set v(0,status) "failed"
+	set v(0,message) "$e"
+    }
+
+    set jstr "\{"
+    append jstr "\"size\":\"[lindex $v(*) 0]\","
+    append jstr "\"headers\": \"[join [lrange $v(*) 1 end] ,]\","
+
+    append jstr "\"values\": \["
+
+    for {set i 0} {$i < [lindex $v(*) 0]} {incr i} {
+	append jstr "\{"
+
+	foreach j [lrange $v(*) 1 end] {
+	    append jstr "\"$j\":\"$v($i,$j)\","
+	}
+
+	set jstr [string replace $jstr end end]
+	append jstr "\},"
+    }
+    set jstr [string replace $jstr end end]
+
+    append jstr "\]"
+    append jstr "\}"
+
+    return $jstr
+}
