@@ -65,13 +65,13 @@ close $f
 ################################################################################
 #### LESS
 ################################################################################
-set f [open $templates/xx.component.yy.less r]
+set f [open $templates/xx.component.yy.scss r]
 set r [read $f]
 close $f
 
 regsub -all "CNAME" $r "$CNAME" r
 
-set f [open "./inc/$FN.less" w]
+set f [open "./inc/$FN.scss" w]
 puts $f $r
 close $f
 
