@@ -27,10 +27,13 @@ while {1} {
 	set a [string first ":" $x]
 	set t [string range [lindex [split $x "\}\}"] 0] [incr a] end]
 
-	if {[string trim $t] != ""} {
-	    set t "$t\},"
+	# SKIP BLANKS 
+	if {[string trim $t] == ""} {
+	    continue
 	}
 	
+	set t "$t\},"
+
 	# SKIP IF WE ALREADY HAVE IT
 	set z0 [string first "lastPrice" $x]
 	set z1 [string range $x [expr $z0 + 11] [expr $z0+50]]
