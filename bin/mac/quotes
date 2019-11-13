@@ -22,6 +22,8 @@ while {1} {
     if {[catch {
 	exec curl -X GET --header "Authorization: " "https://api.tdameritrade.com/v1/marketdata/$symbol/quotes?apikey=N6RSFI69A6DPXUVJM22BB8T7HFUMXOIW"
     } e] != 0} {
+	puts -nonewline ".";flush stdout
+
 	set x [lindex [split $e \n] 0]
 	set a [string first ":" $x]
 	set t [string range [lindex [split $x "\}\}"] 0] [incr a] end]
@@ -32,7 +34,6 @@ while {1} {
 	    puts $f $t;flush $f
 	}
 	    
-	puts -nonewline ".";flush stdout
 	set tmp $t
 	sleep 500
     }
