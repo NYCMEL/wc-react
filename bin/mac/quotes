@@ -13,7 +13,7 @@ set symbol [string toupper [lindex $argv 0]]
 
 source "/Melify/mtk/dev/tk/src/utl/json2dict.tcl"
 
-set f [open /tmp/$symbol.json a+]
+set f [open /Melify/mtk/dev/tk/lib/components/w/data/trader/$symbol.json a+]
 puts $f "\n\n\["
 
 set tmp ""
@@ -28,10 +28,14 @@ while {1} {
 	set x [lindex [split $e \n] 0]
 	set a [string first ":" $x]
 	set t [string range [lindex [split $x "\}\}"] 0] [incr a] end]
-	set t "$t\},"
+
+	if {[string trim $t] != ""} {
+	    set t "$t\},"
+	}
 	
 	if {$t != $tmp} {
 	    puts -nonewline "[incr cnt]";flush stdout
+	    #puts $t;flush $f
 	    puts $f $t;flush $f
 	}
 	    
