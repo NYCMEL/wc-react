@@ -16,7 +16,7 @@ source "/Melify/mtk/dev/tk/src/utl/json2dict.tcl"
 set f [open /tmp/$symbol.json w]
 puts $f "\["
 
-set to ""
+set tmp ""
 
 while {1} {
     if {[catch {
@@ -27,13 +27,13 @@ while {1} {
 	set t [string range [lindex [split $x "\}\}"] 0] [incr a] end]
 	set t "$t\},"
 	
-	if {$t != $to} {
+	if {$t != $tmp} {
 	    puts $t
 	    puts $f $t;flush $f
 	}
 	    
 	puts -nonewline ".";flush stdout
-	set to $t
+	set tmp $t
 	sleep 500
     }
 }
