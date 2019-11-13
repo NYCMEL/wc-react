@@ -33,14 +33,19 @@ while {1} {
 	    set t "$t\},"
 	}
 	
-	if {$t != $tmp} {
+	# SKIP IF WE ALREADY HAVE IT
+	set z0 [string first "lastPrice" $x]
+	set z1 [string range $x [expr $z0 + 11] [expr $z0+50]]
+	set z2 [lindex [split $z1 ","] 0]
+
+	if {$z2 != $tmp} {
 	    puts -nonewline "[incr cnt]";flush stdout
 	    #puts $t;flush $f
 	    puts $f $t;flush $f
 	}
 	    
-	set tmp $t
-	sleep 500
+	set tmp $z2
+	sleep 1000
     }
 }
 
