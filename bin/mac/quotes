@@ -5,15 +5,16 @@ if {$argc != 1} {
     exit
 }
 
-set symbol [lindex $argv 0]
+proc sleep {n} {
+    after [expr {int($n)}]
+}
+
+set symbol [string toupper [lindex $argv 0]]
 
 source "/Melify/mtk/dev/tk/src/utl/json2dict.tcl"
 
 set f [open /tmp/$symbol.json w]
-
-proc sleep {n} {
-    after [expr {int($n)}]
-}
+puts $f "\["
 
 set to ""
 
