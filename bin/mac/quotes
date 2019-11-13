@@ -1,8 +1,15 @@
 #!/Melify/bin/mac/tclkit
 
+if {$argc != 1} {
+    puts "USAGE: quotes <symbol>"
+    exit
+}
+
+set symbol [lindex $argv 0]
+
 source "/Melify/mtk/dev/tk/src/utl/json2dict.tcl"
 
-set f [open /tmp/c.quotes w]
+set f [open /tmp/$symbol.json w]
 
 proc sleep {n} {
     after [expr {int($n)}]
@@ -12,15 +19,16 @@ set to ""
 
 while {1} {
     if {[catch {
-	exec curl -X GET --header "Authorization: " "https://api.tdameritrade.com/v1/marketdata/c/quotes?apikey=N6RSFI69A6DPXUVJM22BB8T7HFUMXOIW"
+	exec curl -X GET --header "Authorization: " "https://api.tdameritrade.com/v1/marketdata/$symbol/quotes?apikey=N6RSFI69A6DPXUVJM22BB8T7HFUMXOIW"
     } e] != 0} {
 	set x [lindex [split $e \n] 0]
-	set t [string range [lindex [split $x "\}\}"] 0] 5 end]
+	set a [string first ":" $x]
+	set t [string range [lindex [split $x "\}\}"] 0] [incr a] end]
 	set t "$t\},"
 	
 	if {$t != $to} {
 	    puts $t
-	    puts $f $t
+	    puts $f $t;flush $f
 	}
 	    
 	puts -nonewline ".";flush stdout
