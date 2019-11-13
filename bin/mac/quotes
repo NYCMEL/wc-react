@@ -1,0 +1,31 @@
+#!/Melify/bin/mac/tclkit
+
+source "/Melify/mtk/dev/tk/src/utl/json2dict.tcl"
+
+set f [open /tmp/c.quotes w]
+
+proc sleep {n} {
+    after [expr {int($n)}]
+}
+
+set to ""
+
+while {1} {
+    if {[catch {
+	exec curl -X GET --header "Authorization: " "https://api.tdameritrade.com/v1/marketdata/c/quotes?apikey=N6RSFI69A6DPXUVJM22BB8T7HFUMXOIW"
+    } e] != 0} {
+	set x [lindex [split $e \n] 0]
+	set t [string range [lindex [split $x "\}\}"] 0] 5 end]
+	set t "$t\},"
+	
+	if {$t != $to} {
+	    puts $t
+	    puts $f $t
+	}
+	    
+	puts -nonewline ".";flush stdout
+	set to $t
+	sleep 500
+    }
+}
+
