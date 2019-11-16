@@ -141,7 +141,10 @@ proc process {} {
 		}
 	    }
 
-	    catch {parray ta}
+	    if {[array exist ta] == 1} {
+		puts "\n"
+		parray ta
+	    }
 
 	    puts -nonewline ".";flush stdout
 	    after 1000
