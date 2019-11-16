@@ -1,0 +1,158 @@
+#!/Melify/bin/mac/tclkit
+
+source "/Melify/mtk/dev/tk/src/utl/json2dict.tcl"
+
+if {$argc != 1} {
+    puts "\nUSAGE: trader <symbol>"
+    puts "EXAMPLE: trader AAPL\n"
+    exit
+}
+
+set symbol [string toupper [lindex $argv 0]]
+
+######################################################
+##### 
+######################################################
+proc reset {} {
+    set ::s 4;# SIZE
+    set ::e 0;# POINTER TO LAST TICK IN ARRAY
+    
+    # INITIALIZE
+    for {set i 1} {$i < $::s} {incr i} {
+	set ::t($i) 0
+    }
+}
+
+######################################################
+##### 
+######################################################
+proc trader {line} {
+    if {[info exist ::o] == 0} {
+	# GET NEXT LINE AND SET ARRAY
+	set ::o 1;# 1 = SELL, 0 = BUY
+	set ::e 0
+
+	# SET INITIAL PRICE
+	set ::t($::e) $::price
+
+	# FOR TESTING
+	set ::t($::e) $::price
+
+	set ::trade $::t(0)
+	set ::tot 0
+
+	reset 
+    }
+    
+    set x [lindex [split $line "|"] 9]
+
+    # SELL
+    if {$::o == 1} {
+	if {$x > $::t($::e)} {
+	    incr ::e
+	    set ::t($::e) $x
+
+	    if {$::e == [expr $::s -1]} {
+		puts -nonewline "SEL, ";flush stdout;
+
+		for {set i 0} {$i < $::s} {incr i} {
+		    puts -nonewline "$::t($i), ";flush stdout;
+		}
+		
+		set ::tot [expr $::tot + [expr $x - $::trade]]
+		puts "$::tot\n"
+
+		# NOW BUY (REVERSE)
+		set ::o 0;
+
+		# START WITH LAST PRICE
+		set ::t(0) $x
+		set ::trade $::t(0)
+		
+		reset
+	    }
+	} else {
+	    reset
+	}
+    }
+
+    # BUY
+    if {$::o == 0} {
+	if {$x < $::t($::e)} {
+	    incr ::e
+	    set ::t($::e) $x
+
+	    if {$::e == [expr $::s -1]} {
+		puts -nonewline "BUY, ";flush stdout;
+
+		for {set i 0} {$i < $::s} {incr i} {
+		    puts -nonewline "$::t($i), ";flush stdout;
+		}
+
+		set ::tot [expr $::tot + [expr $::trade - $x]]
+		puts "$::tot"
+
+		# START WITH LAST PRICE
+		set ::t(0) $::t($::e)
+		set ::trade $::t(0)
+		set ::o 1; # NOW BUY (REVERSE)
+
+		reset
+	    }
+	} else {
+	    reset
+
+	    # START WITH LAST PRICE
+	    set ::t($::e) $x
+	}
+    }
+}
+
+######################################################
+##### 
+######################################################
+proc process {} {
+    set h {
+	"assetType" "symbol" "description" "bidPrice" "bidSize" "bidId" "askPrice" "askSize" "askId" "lastPrice" "lastSize" "lastId" "openPrice" "highPrice" "lowPrice"
+	"bidTick" "closePrice" "netChange" "totalVolume" "quoteTimeInLong" "tradeTimeInLong" "mark" "exchange" "exchangeName" "marginable" "shortable" "volatility" "digits" "52WkHigh" "52WkLow" "nAV"
+	"peRatio" "divAmount" "divYield" "divDate" "securityStatus" "regularMarketLastPrice" "regularMarketLastSize" "regularMarketNetChange" "regularMarketTradeTimeInLong"
+	"netPercentChangeInDouble" "markChangeInDouble" "markPercentChangeInDouble" "regularMarketPercentChangeInDouble" "delayed"
+    }
+
+    set output ""
+
+    while {1} {
+	if {[catch {
+	    exec curl -X GET --header "Authorization: " "https://api.tdameritrade.com/v1/marketdata/$::symbol/quotes?apikey=N6RSFI69A6DPXUVJM22BB8T7HFUMXOIW"
+	} e] != 0} {
+	    catch {unset ta}
+
+	    set x [lindex [split $e \n] 0]
+	    set y [json::json2dict $x]
+
+	    if {$output != $x} {
+		catch {
+		    foreach i $h {
+			set ta($i) [dict get $y "$::symbol" $i]
+		    }
+
+		    # CALL TRADER TO PROCESS THIS LINE
+		    trader [lstring $x 0 end]
+		}
+	    }
+
+	    catch {parray ta}
+
+	    puts -nonewline ".";flush stdout
+	    after 10
+
+	    set output $x
+	}
+    }
+}
+
+######################################################
+##### 
+######################################################
+process
+
