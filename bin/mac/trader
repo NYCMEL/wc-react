@@ -144,7 +144,7 @@ proc process {} {
 	    catch {parray ta}
 
 	    puts -nonewline ".";flush stdout
-	    after 10
+	    after 1000
 
 	    set output $x
 	}
