@@ -30,7 +30,7 @@ proc process {} {
 	} e] != 0} {
 	    set d [json::json2dict $e]
 
-	    foreach i [dict keys $d] {
+	    foreach i [lsort [dict keys $d]] {
 		puts ""
 		set j [dict get $d $i]
 		#puts $j
