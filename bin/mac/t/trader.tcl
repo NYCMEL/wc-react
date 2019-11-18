@@ -8,7 +8,7 @@ if {$argc != 1} {
     exit
 }
 
-set symbol [string toupper [lindex $argv 0]]
+set symbols [string toupper [lindex $argv 0]]
 
 ######################################################
 ##### 
@@ -17,18 +17,18 @@ proc process {} {
     set suffix [clock format [clock seconds] -format "%Y-%m-%d"]
     set fo [open /tmp/stocks-$suffix.dat w]
 
+    foreach i [split $::symbols ,] {
+	set tmpo($i) ""
+    }
+
     while {1} {
 	if {[catch {
-	    regsub -all "," $::symbol "%2C" ::symbol
-	    exec curl -X GET --header "Authorization: " "https://api.tdameritrade.com/v1/marketdata/quotes?apikey=N6RSFI69A6DPXUVJM22BB8T7HFUMXOIW&symbol=$::symbol"
+	    regsub -all "," $::symbols "%2C" ::symbols
+	    exec curl -X GET --header "Authorization: " "https://api.tdameritrade.com/v1/marketdata/quotes?apikey=N6RSFI69A6DPXUVJM22BB8T7HFUMXOIW&symbol=$::symbols"
 	} e] != 0} {
 	    set stocks [json::json2dict $e]
 
 	    foreach i [lsort [dict keys $stocks]] {
-		if {[info exist tmp($i)] == 0} {
-		    set tmpo($i) ""
-		}
-
 		set j [dict get $stocks $i]
 		set tmp($i) [dict get $j lastPrice]
 
