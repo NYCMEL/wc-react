@@ -32,7 +32,17 @@ proc process {} {
 
 	    foreach i [dict keys $d] {
 		puts ""
-		puts [dict get $d $i]
+		set j [dict get $d $i]
+		#puts $j
+
+		set jstr ""
+		foreach {m n} $j {
+		    append jstr "\"$m\":\"$n\","
+		}
+		set jstr [string replace $jstr end end]
+		#puts $jstr
+
+		puts [list $jstr]
 	    }
 	}
 
