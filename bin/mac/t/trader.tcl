@@ -17,6 +17,7 @@ proc process {} {
     set suffix [clock format [clock seconds] -format "%Y-%m-%d"]
     set fo [open /tmp/stocks-$suffix.dat w]
 
+    # OLD PRICES
     foreach i [split $::symbols ,] {
 	set tmpo($i) ""
     }
@@ -32,12 +33,14 @@ proc process {} {
 		set j [dict get $stocks $i]
 		set tmp($i) [dict get $j lastPrice]
 
+		# DO NOT PROCESS IF WE HAVE PRICE ALREADY
 		if {$tmpo($i) != $tmp($i)} {
 		    puts $fo "dict set stocks $i [list $j]\n";flush stdout
 		} else {
 		    puts -nonewline ".";flush stdout
 		}
 
+		# OLD PRICES
 		set tmpo($i) $tmp($i)
 	    }
 	}
@@ -49,4 +52,6 @@ proc process {} {
 ######################################################
 ##### 
 ######################################################
+puts "PROCESSING: $symbols"
+
 process
