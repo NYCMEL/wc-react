@@ -33,7 +33,7 @@ proc process {} {
 		set tmp($i) [dict get $j lastPrice]
 
 		if {$tmpo($i) != $tmp($i)} {
-		    puts $fo "dict set stocks $i [list $j]\n"
+		    puts $fo "dict set stocks $i [list $j]\n";flush stdout
 		} else {
 		    puts -nonewline ".";flush stdout
 		}
