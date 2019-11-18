@@ -22,15 +22,27 @@ proc process {} {
 	    regsub -all "," $::symbol "%2C" ::symbol
 	    exec curl -X GET --header "Authorization: " "https://api.tdameritrade.com/v1/marketdata/quotes?apikey=N6RSFI69A6DPXUVJM22BB8T7HFUMXOIW&symbol=$::symbol"
 	} e] != 0} {
-	    set d [json::json2dict $e]
+	    set stocks [json::json2dict $e]
 
-	    foreach i [lsort [dict keys $d]] {
-		set j [dict get $d $i]
-		puts $fo "dict set stocks $i [list $j]\n"
+	    foreach i [lsort [dict keys $stocks]] {
+		if {[info exist tmp($i)] == 0} {
+		    set tmpo($i) ""
+		}
+
+		set j [dict get $stocks $i]
+		set tmp($i) [dict get $j lastPrice]
+
+		if {$tmpo($i) != $tmp($i)} {
+		    puts $fo "dict set stocks $i [list $j]\n"
+		} else {
+		    puts -nonewline ".";flush stdout
+		}
+
+		set tmpo($i) $tmp($i)
 	    }
 	}
 
-	exit
+	after 1000
     }
 }
 
