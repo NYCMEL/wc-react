@@ -123,8 +123,13 @@ proc process {} {
 
     while {1} {
 	if {[catch {
-	    exec curl -X GET --header "Authorization: " "https://api.tdameritrade.com/v1/marketdata/$::symbol/quotes?apikey=N6RSFI69A6DPXUVJM22BB8T7HFUMXOIW"
+	    regsub -all "," $::symbol "%2C" ::symbol
+	    puts >>>>>>>>>>$::symbol
+
+	    exec curl -X GET --header "Authorization: " "https://api.tdameritrade.com/v1/marketdata/quotes?apikey=N6RSFI69A6DPXUVJM22BB8T7HFUMXOIW&symbol=$::symbol"
 	} e] != 0} {
+	    puts >>>>>>>>>>>>>>>>$e
+
 	    catch {unset tick}
 
 	    set x [lindex [split $e \n] 0]
