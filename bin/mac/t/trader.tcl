@@ -14,7 +14,8 @@ set symbol [string toupper [lindex $argv 0]]
 ##### 
 ######################################################
 proc process {} {
-    set fo [open /tmp/stocks.dat w]
+    set suffix [clock format [clock seconds] -format "%Y-%m-%d"]
+    set fo [open /tmp/stocks-$suffix.dat w]
 
     while {1} {
 	if {[catch {
@@ -24,7 +25,6 @@ proc process {} {
 	    set d [json::json2dict $e]
 
 	    foreach i [lsort [dict keys $d]] {
-		puts ""
 		set j [dict get $d $i]
 		#puts $j
 
@@ -33,6 +33,7 @@ proc process {} {
 		    append jstr "\"$m\":\"$n\","
 		}
 		set jstr [string replace $jstr end end]
+		puts $fo ""
 		puts $fo "dict set stocks $i [list $jstr]"
 		#puts [list $jstr]
 	    }
