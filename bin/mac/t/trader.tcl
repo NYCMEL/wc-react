@@ -53,5 +53,4 @@ proc process {} {
 ##### 
 ######################################################
 puts "PROCESSING: $symbols"
-
 process
