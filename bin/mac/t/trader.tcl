@@ -26,16 +26,7 @@ proc process {} {
 
 	    foreach i [lsort [dict keys $d]] {
 		set j [dict get $d $i]
-		#puts $j
-
-		set jstr ""
-		foreach {m n} $j {
-		    append jstr "\"$m\":\"$n\","
-		}
-		set jstr [string replace $jstr end end]
-		puts $fo ""
-		puts $fo "dict set stocks $i [list $jstr]"
-		#puts [list $jstr]
+		puts $fo "dict set stocks $i [list $j]\n"
 	    }
 	}
 
