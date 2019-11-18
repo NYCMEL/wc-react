@@ -14,14 +14,7 @@ set symbol [string toupper [lindex $argv 0]]
 ##### 
 ######################################################
 proc process {} {
-    set h {
-	"assetType" "symbol" "description" "bidPrice" "bidSize" "bidId" "askPrice" "askSize" "askId" "lastPrice" "lastSize" "lastId" "openPrice" "highPrice" "lowPrice"
-	"bidTick" "closePrice" "netChange" "totalVolume" "quoteTimeInLong" "tradeTimeInLong" "mark" "exchange" "exchangeName" "marginable" "shortable" "volatility" "digits" "52WkHigh" "52WkLow" "nAV"
-	"peRatio" "divAmount" "divYield" "divDate" "securityStatus" "regularMarketLastPrice" "regularMarketLastSize" "regularMarketNetChange" "regularMarketTradeTimeInLong"
-	"netPercentChangeInDouble" "markChangeInDouble" "markPercentChangeInDouble" "regularMarketPercentChangeInDouble" "delayed"
-    }
-
-    set output ""
+    set fo [open /tmp/stocks.dat w]
 
     while {1} {
 	if {[catch {
@@ -40,9 +33,8 @@ proc process {} {
 		    append jstr "\"$m\":\"$n\","
 		}
 		set jstr [string replace $jstr end end]
-		#puts $jstr
-
-		puts [list $jstr]
+		puts $fo "dict set stocks $i [list $jstr]"
+		#puts [list $jstr]
 	    }
 	}
 
