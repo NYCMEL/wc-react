@@ -19,9 +19,8 @@ proc process {} {
 	set fo($i) [open /tmp/$i.[clock format [clock seconds] -format "%Y-%m-%d"].dat w]
 
 	set tmpo($i) ""
+	set cnt($i) 0
     }
-
-    set cnt 0
 
     while {1} {
 	if {[catch {
@@ -39,8 +38,8 @@ proc process {} {
 
 		# DO NOT PROCESS IF WE HAVE PRICE ALREADY
 		if {$tmpo($i) != $tmp($i)} {
-		    incr cnt
-		    puts $fo($i) "dict set stocks $i-$cnt [list $d]\n";flush $fo($i)
+		    incr cnt($i)
+		    puts $fo($i) "dict set stocks $i-$cnt($i) [list $d]\n";flush $fo($i)
 		} else {
 		    puts -nonewline ".";flush stdout
 		}
