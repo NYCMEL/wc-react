@@ -53,9 +53,9 @@ proc save {} {
 		    # OLD PRICES
 		    set tmpo($i) $tmp($i)
 		}
+	    } e] != 0} {
+		puts "ERROR: $e"
 	    }
-	} e] != 0} {
-	    puts "ERROR: $e"
 	}
 
 	after 1000
