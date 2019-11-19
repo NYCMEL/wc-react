@@ -9,7 +9,7 @@ if {$argc != 1} {
 }
 
 set symbols [string toupper [lindex $argv 0]]
-set gd "/Users/melify/Google Drive/Trader/stocks"; file mkdir $gd
+set gd "/Users/melify/Dropbox/Trader/stocks"; file mkdir $gd
 
 ######################################################
 ##### 
