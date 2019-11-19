@@ -38,7 +38,6 @@ proc process {} {
 		# DO NOT PROCESS IF WE HAVE PRICE ALREADY
 		if {$tmpo($i) != $tmp($i)} {
 		    puts $fo "dict set stocks $i [list $d]\n";flush $fo
-		    puts "$i|$tmp($i)"
 		} else {
 		    puts -nonewline ".";flush stdout
 		}
