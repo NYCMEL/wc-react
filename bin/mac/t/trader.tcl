@@ -21,7 +21,7 @@ proc save {} {
     foreach i [split $::symbols ,] {
 	file mkdir $gd/$i/[clock format [clock seconds] -format "%Y-%m-%d"]
 	
-	set fo($i) [open $gd/$i/[clock format [clock seconds] -format "%Y-%m-%d"]/$i.dat w]
+	set fo($i) [open $gd/$i/[clock format [clock seconds] -format "%Y-%m-%d"]/$i.txt w]
 
 	set tmpo($i) ""
     }
