@@ -16,7 +16,9 @@ set symbols [string toupper [lindex $argv 0]]
 proc process {} {
     # OLD PRICES
     foreach i [split $::symbols ,] {
-	set fo($i) [open ./stocks/$i.[clock format [clock seconds] -format "%Y-%m-%d"].dat w]
+	file mkdir ./stocks/$i/[clock format [clock seconds] -format "%Y-%m-%d"]
+	
+	set fo($i) [open ./stocks/$i/[clock format [clock seconds] -format "%Y-%m-%d"]/$i.dat w]
 
 	set tmpo($i) ""
     }
