@@ -30,12 +30,14 @@ proc process {} {
 	    set stocks [json::json2dict $e]
 
 	    foreach i [lsort [dict keys $stocks]] {
-		set j [dict get $stocks $i]
-		set tmp($i) [dict get $j lastPrice]
+		set symbol [dict get $stocks $i]
+
+		# SAVE LAST PRICE FOR SYMBOL
+		set tmp($i) [dict get $symbol lastPrice]
 
 		# DO NOT PROCESS IF WE HAVE PRICE ALREADY
 		if {$tmpo($i) != $tmp($i)} {
-		    puts $fo "dict set stocks $i [list $j]\n";flush stdout
+		    puts $fo "dict set stocks $i [list $symbol]\n";flush stdout
 		} else {
 		    puts -nonewline ".";flush stdout
 		}
