@@ -26,6 +26,11 @@ proc d2j {symbol} {
 }
 
 foreach i [glob /Users/melify/Dropbox/Trader/stocks/*] {
-    puts [d2j [file tail $i]]
-    puts ------------------------
+    set sym [file tail $i]
+
+    set fo [open "/Users/melify/Dropbox/Trader/stocks/$sym/2019-11-19/$sym.json" w]
+
+    puts "/Users/melify/Dropbox/Trader/stocks/$sym/2019-11-19/$sym.json"
+    puts $fo [d2j $sym]
+    close $fo
 }
