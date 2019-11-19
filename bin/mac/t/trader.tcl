@@ -14,10 +14,10 @@ set symbols [string toupper [lindex $argv 0]]
 ##### 
 ######################################################
 proc process {} {
-    set fo [open /tmp/stocks.[clock format [clock seconds] -format "%Y-%m-%d"].dat w]
-
     # OLD PRICES
     foreach i [split $::symbols ,] {
+	set fo($i) [open /tmp/$i.[clock format [clock seconds] -format "%Y-%m-%d"].dat w]
+
 	set tmpo($i) ""
     }
 
@@ -40,7 +40,7 @@ proc process {} {
 		# DO NOT PROCESS IF WE HAVE PRICE ALREADY
 		if {$tmpo($i) != $tmp($i)} {
 		    incr cnt
-		    puts $fo "dict set stocks $i [list $d]\n";flush $fo
+		    puts $fo($i) "dict set stocks $i [list $d]\n";flush $fo($i)
 		} else {
 		    puts -nonewline ".";flush stdout
 		}
