@@ -1,6 +1,6 @@
 #!/Melify/bin/mac/tclkit
 
-source ./stocks/AAPL.2019-11-18.dat
+source ./stocks/AAPL/2019-11-19/AAPL.dat
 
 proc process {a} {
     upvar a b
