@@ -40,7 +40,7 @@ proc process {} {
 		# DO NOT PROCESS IF WE HAVE PRICE ALREADY
 		if {$tmpo($i) != $tmp($i)} {
 		    incr cnt
-		    puts $fo($i) "dict set stocks $i [list $d]\n";flush $fo($i)
+		    puts $fo($i) "dict set stocks $i-$cnt [list $d]\n";flush $fo($i)
 		} else {
 		    puts -nonewline ".";flush stdout
 		}
