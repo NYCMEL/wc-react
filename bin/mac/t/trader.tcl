@@ -21,6 +21,8 @@ proc process {} {
 	set tmpo($i) ""
     }
 
+    set cnt 0
+
     while {1} {
 	if {[catch {
 	    regsub -all "," $::symbols "%2C" ::symbols
@@ -37,6 +39,7 @@ proc process {} {
 
 		# DO NOT PROCESS IF WE HAVE PRICE ALREADY
 		if {$tmpo($i) != $tmp($i)} {
+		    incr cnt
 		    puts $fo "dict set stocks $i [list $d]\n";flush $fo
 		} else {
 		    puts -nonewline ".";flush stdout
