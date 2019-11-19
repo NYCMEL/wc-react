@@ -13,7 +13,7 @@ set symbols [string toupper [lindex $argv 0]]
 ######################################################
 ##### 
 ######################################################
-proc process {} {
+proc save {} {
     # OLD PRICES
     foreach i [split $::symbols ,] {
 	file mkdir ./stocks/$i/[clock format [clock seconds] -format "%Y-%m-%d"]
@@ -37,10 +37,11 @@ proc process {} {
 		# SAVE LAST PRICE FOR SYMBOL
 		set tmp($i) [dict get $d lastPrice]
 
-		# DO NOT PROCESS IF WE HAVE PRICE ALREADY
+		# DO NOT SAVE IF WE HAVE PRICE ALREADY
 		if {$tmpo($i) != $tmp($i)} {
 		    set time [dict get $d tradeTimeInLong]
 		    puts $fo($i) "dict set stocks $time [list $d]\n";flush $fo($i)
+		    puts -nonewline " $i ";flush stdout
 		} else {
 		    puts -nonewline ".";flush stdout
 		}
@@ -57,5 +58,5 @@ proc process {} {
 ######################################################
 ##### 
 ######################################################
-puts "PROCESSING: $symbols"
-process
+puts "SAVEING: $symbols"
+save
