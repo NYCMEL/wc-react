@@ -43,7 +43,7 @@ proc save {} {
 		    puts $fo($i) "dict set stocks $time [list $d]\n";flush $fo($i)
 		    puts -nonewline " $i ";flush stdout
 		} else {
-		    puts -nonewline ".";flush stdout
+		    #puts -nonewline ".";flush stdout
 		}
 
 		# OLD PRICES
