@@ -14,8 +14,7 @@ set symbols [string toupper [lindex $argv 0]]
 ##### 
 ######################################################
 proc process {} {
-    set suffix [clock format [clock seconds] -format "%Y-%m-%d"]
-    set fo [open /tmp/stocks-$suffix.dat w]
+    set fo [open /tmp/stocks.[clock format [clock seconds] -format "%Y-%m-%d"].dat w]
 
     # OLD PRICES
     foreach i [split $::symbols ,] {
@@ -31,14 +30,15 @@ proc process {} {
 
 	    foreach i [lsort [dict keys $stocks]] {
 		# GET INDIVIDUAL SYMBOL STOCK INFO
-		set symbol [dict get $stocks $i]
+		set d [dict get $stocks $i]
 
 		# SAVE LAST PRICE FOR SYMBOL
-		set tmp($i) [dict get $symbol lastPrice]
+		set tmp($i) [dict get $d lastPrice]
 
 		# DO NOT PROCESS IF WE HAVE PRICE ALREADY
 		if {$tmpo($i) != $tmp($i)} {
-		    puts $fo "dict set stocks $i [list $symbol]\n";flush stdout
+		    puts $fo "dict set stocks $i [list $d]\n";flush stdout
+		    puts KKKKKKKKKKKKKK
 		} else {
 		    puts -nonewline ".";flush stdout
 		}
