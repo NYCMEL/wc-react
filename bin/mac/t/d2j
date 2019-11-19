@@ -26,6 +26,6 @@ proc d2j {symbol} {
 }
 
 foreach i [glob /Users/melify/Dropbox/Trader/stocks/*] {
-    puts [d2j $i]
-    puts ===================
+    puts [d2j [file tail $i]]
+    puts ------------------------
 }
