@@ -2,6 +2,9 @@
 
 source "/Melify/mtk/dev/tk/src/utl/json2dict.tcl"
 
+########################################################################################
+#### CONVERT TCL ARRAY TO JSON
+########################################################################################
 proc d2j {symbol} {
     source "/Users/melify/Dropbox/Trader/stocks/$symbol/2019-11-19/$symbol.txt"
 
@@ -25,7 +28,9 @@ proc d2j {symbol} {
     return $res
 }
 
-# CREATE JSON FILES FROM TCL DATA
+########################################################################################
+#### CREATE JSON FILES FROM TCL DATA
+########################################################################################
 foreach i [glob /Users/melify/Dropbox/Trader/stocks/*] {
     if {[file isdir $i] == 1} {
 	set sym [file tail $i]
