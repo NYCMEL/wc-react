@@ -30,6 +30,7 @@ proc process {} {
 	    set stocks [json::json2dict $e]
 
 	    foreach i [lsort [dict keys $stocks]] {
+		# GET INDIVIDUAL SYMBOL STOCK INFO
 		set symbol [dict get $stocks $i]
 
 		# SAVE LAST PRICE FOR SYMBOL
