@@ -54,7 +54,7 @@ proc save {} {
 		    set tmpo($i) $tmp($i)
 		}
 	    } e] != 0} {
-		puts "ERROR: $e"
+		puts "ERROR: $stocks|$e"
 	    }
 	}
 
