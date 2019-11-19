@@ -31,27 +31,31 @@ proc save {} {
 	    regsub -all "," $::symbols "%2C" ::symbols
 	    exec curl -X GET --header "Authorization: " "https://api.tdameritrade.com/v1/marketdata/quotes?apikey=N6RSFI69A6DPXUVJM22BB8T7HFUMXOIW&symbol=$::symbols"
 	} e] != 0} {
-	    set stocks [json::json2dict $e]
+	    if {[catch {
+		set stocks [json::json2dict $e]
 
-	    foreach i [lsort [dict keys $stocks]] {
-		# GET INDIVIDUAL SYMBOL STOCK INFO
-		set d [dict get $stocks $i]
+		foreach i [lsort [dict keys $stocks]] {
+		    # GET INDIVIDUAL SYMBOL STOCK INFO
+		    set d [dict get $stocks $i]
 
-		# SAVE LAST PRICE FOR SYMBOL
-		set tmp($i) [dict get $d lastPrice]
+		    # SAVE LAST PRICE FOR SYMBOL
+		    set tmp($i) [dict get $d lastPrice]
 
-		# DO NOT SAVE IF WE HAVE PRICE ALREADY
-		if {$tmpo($i) != $tmp($i)} {
-		    set time [dict get $d tradeTimeInLong]
-		    puts $fo($i) "dict set stocks $time [list $d]\n";flush $fo($i)
-		    puts -nonewline " $i ";flush stdout
-		} else {
-		    #puts -nonewline ".";flush stdout
+		    # DO NOT SAVE IF WE HAVE PRICE ALREADY
+		    if {$tmpo($i) != $tmp($i)} {
+			set time [dict get $d tradeTimeInLong]
+			puts $fo($i) "dict set stocks $time [list $d]\n";flush $fo($i)
+			puts -nonewline " $i ";flush stdout
+		    } else {
+			#puts -nonewline ".";flush stdout
+		    }
+
+		    # OLD PRICES
+		    set tmpo($i) $tmp($i)
 		}
-
-		# OLD PRICES
-		set tmpo($i) $tmp($i)
 	    }
+	} e] != 0} {
+	    puts "ERROR: $e"
 	}
 
 	after 1000
