@@ -25,4 +25,7 @@ proc d2j {symbol} {
     return $res
 }
 
-puts [d2j BA]
+foreach i [glob /Users/melify/Dropbox/Trader/stocks/*] {
+    puts [d2j $i]
+    puts ===================
+}
