@@ -9,16 +9,19 @@ if {$argc != 1} {
 }
 
 set symbols [string toupper [lindex $argv 0]]
+set gd "/Users/melify/Google Drive/Trader/stocks"; file mkdir $gd
 
 ######################################################
 ##### 
 ######################################################
 proc save {} {
+    global gd
+
     # OLD PRICES
     foreach i [split $::symbols ,] {
-	file mkdir ./stocks/$i/[clock format [clock seconds] -format "%Y-%m-%d"]
+	file mkdir $gd/$i/[clock format [clock seconds] -format "%Y-%m-%d"]
 	
-	set fo($i) [open ./stocks/$i/[clock format [clock seconds] -format "%Y-%m-%d"]/$i.dat w]
+	set fo($i) [open $gd/$i/[clock format [clock seconds] -format "%Y-%m-%d"]/$i.dat w]
 
 	set tmpo($i) ""
     }
