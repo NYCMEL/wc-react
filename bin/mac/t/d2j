@@ -3,7 +3,15 @@
 source "/Melify/mtk/dev/tk/src/utl/json2dict.tcl"
 source "/Users/melify/Dropbox/Trader/stocks/AAPL/2019-11-19/AAPL.txt"
 
+proc process {a} {
+    upvar a b
+
+    parray b
+
+    #puts [json::dict2json [dict get $stocks $k]]
+}
+
 foreach k [dict key $stocks] {
-    puts [json::dict2json [dict get $stocks $k]]
+    process a
 }
 
