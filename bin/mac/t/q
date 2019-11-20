@@ -27,24 +27,22 @@ proc dir {} {
     set s1 [lsort -increasing $x]
     set s2 [lsort -decreasing $x]
 
-    puts s1---$s1|$x
-    puts s2---$s2|$x
-
     if {$s1 == $x} {
-	puts UUUUUUUUUUUUU
+	return U
     }
 
     if {$s2 == $x} {
-	puts DDDDDDDDDDDDDDD
+	return D
     }
+
+    return ""
 }
 
 ######################################################
 ####
 ######################################################
 set x {10 55 65}
-dir
+puts [dir]
 
 set x {65 55 10}
-queue 5
-dir
+puts [dir]
