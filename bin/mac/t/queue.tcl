@@ -18,6 +18,8 @@ proc dir {} {
     global x
     global ticks
 
+    puts ---$x
+
     set s1 [lsort -increasing $x]
     set s2 [lsort -decreasing $x]
 
@@ -30,13 +32,10 @@ proc dir {} {
     }
 }
 
-queue 50
-queue 80
-queue 10
-queue 55
-queue 65
+set x {50 80 10 55 65}
 queue 75
+dir
 
-puts $x
-
+set x {50 80 65 55 10}
+queue 5
 dir
