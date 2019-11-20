@@ -12,13 +12,11 @@ proc queue {val} {
     }
 }
 
-queue apple
-queue orange
-queue peach
-queue mel
-queue heravi
-queue red
-queue white
-queue blue
+queue 50
+queue 80
+queue 10
+queue 55
+queue 65
+queue 75
 
 puts $x
