@@ -24,12 +24,11 @@ proc dir {} {
     global x
     global ticks
 
-
     set s1 [lsort -increasing $x]
     set s2 [lsort -decreasing $x]
 
-    puts s1---$s1
-    puts s2---$s2
+    puts s1---$s1|$x
+    puts s2---$s2|$x
 
     if {$s1 == $x} {
 	puts UUUUUUUUUUUUU
@@ -40,10 +39,12 @@ proc dir {} {
     }
 }
 
-set x {50 80 10 55 65}
-queue 75
+######################################################
+####
+######################################################
+set x {10 55 65}
 dir
 
-set x {50 80 65 55 10}
+set x {65 55 10}
 queue 5
 dir
