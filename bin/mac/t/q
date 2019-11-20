@@ -29,14 +29,14 @@ namespace eval queue {
 	set s2 [lsort -decreasing $x]
 
 	if {$s1 == $x} {
-	    return "U"
+	    return "S"
 	}
 
 	if {$s2 == $x} {
-	    return "D"
+	    return "B"
 	}
 
-	return "N"
+	return ""
     }
 }
 
