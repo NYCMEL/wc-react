@@ -24,10 +24,12 @@ proc dir {} {
     global x
     global ticks
 
-    puts ---$x
 
     set s1 [lsort -increasing $x]
     set s2 [lsort -decreasing $x]
+
+    puts s1---$s1
+    puts s2---$s2
 
     if {$s1 == $x} {
 	puts UUUUUUUUUUUUU
