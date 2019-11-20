@@ -3,46 +3,52 @@
 set x [list]
 set ticks 3
 
-######################################################
-####
-######################################################
-proc queue {val} {
-    global x
-    global ticks
-    
-    lappend x $val
+namespace eval queue {
+    ######################################################
+    ####
+    ######################################################
+    proc add {val} {
+	global x
+	global ticks
+	
+	lappend x $val
 
-    if {[llength $x] > $ticks} {
-	set x [lrange $x end-[expr $ticks -1] end]
+	if {[llength $x] > $ticks} {
+	    set x [lrange $x end-[expr $ticks -1] end]
+	}
+    }
+
+    ######################################################
+    ####
+    ######################################################
+    proc dir {} {
+	global x
+	global ticks
+
+	set s1 [lsort -increasing $x]
+	set s2 [lsort -decreasing $x]
+
+	if {$s1 == $x} {
+	    return U
+	}
+
+	if {$s2 == $x} {
+	    return D
+	}
+
+	return ""
     }
 }
 
 ######################################################
 ####
 ######################################################
-proc dir {} {
-    global x
-    global ticks
+queue::add 10
+queue::add 55
+queue::add 65
+puts --[queue::dir]
 
-    set s1 [lsort -increasing $x]
-    set s2 [lsort -decreasing $x]
-
-    if {$s1 == $x} {
-	return U
-    }
-
-    if {$s2 == $x} {
-	return D
-    }
-
-    return ""
-}
-
-######################################################
-####
-######################################################
-set x {10 55 65}
-puts [dir]
-
-set x {65 55 10}
-puts [dir]
+queue::add 65
+queue::add 55
+queue::add 10
+puts --[queue::dir]
