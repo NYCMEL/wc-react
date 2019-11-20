@@ -36,7 +36,7 @@ namespace eval queue {
 	    return D
 	}
 
-	return ""
+	return "N"
     }
 }
 
@@ -50,5 +50,10 @@ puts --[queue::dir]
 
 queue::add 65
 queue::add 55
+queue::add 10
+puts --[queue::dir]
+
+queue::add 55
+queue::add 65
 queue::add 10
 puts --[queue::dir]
