@@ -2,13 +2,14 @@
 
 namespace eval queue {
     set x [list]
-    set ticks 3
+    set ticks 0
 
     ######################################################
     ####
     ######################################################
-    proc init {} {
+    proc init {ticks} {
 	set queue::x [list]
+	set queue::ticks $ticks
     }
 
     ######################################################
@@ -26,16 +27,20 @@ namespace eval queue {
     ####
     ######################################################
     proc dir {} {
+	if {[llength $queue::x] != $queue::ticks} {
+	    return
+	}
+
 	set s1 [lsort -increasing $queue::x]
 	set s2 [lsort -decreasing $queue::x]
 	
 	if {$s1 == $queue::x} {
-	    queue::init
+	    queue::init queue::ticks
 	    return "S"
 	}
 
 	if {$s2 == $queue::x} {
-	    queue::init
+	    queue::init queue::ticks
 	    return "B"
 	}
 
@@ -46,18 +51,23 @@ namespace eval queue {
 ######################################################
 ####
 ######################################################
-queue::init
+queue::init 3
 
+queue::add 04
+queue::add 05
 queue::add 10
 queue::add 55
 queue::add 65
 puts --[queue::dir]
 
+queue::init 3
 queue::add 65
 queue::add 55
 queue::add 10
 puts --[queue::dir]
 
+queue::init 3
+queue::init 5
 queue::add 55
 queue::add 65
 queue::add 10
