@@ -31,8 +31,8 @@ namespace eval queue {
 	    return
 	}
 
-	set s1 [lsort -increasing $queue::x]
-	set s2 [lsort -decreasing $queue::x]
+	set s1 [lsort -increasing -real $queue::x]
+	set s2 [lsort -decreasing -real $queue::x]
 	
 	if {$s1 == $queue::x} {
 	    buy [lindex $queue::x end]
@@ -67,21 +67,21 @@ proc sell {price} {
 ######################################################
 queue::init 3
 
-queue::add 04
-queue::add 05
-queue::add 10
-queue::add 55
-queue::add 65
+queue::add 4.0
+queue::add 5.0
+queue::add 10.0
+queue::add 55.0
+queue::add 65.0
 queue::dir buy sell
 
-queue::add 90
-queue::add 65
-queue::add 55
-queue::add 25
+queue::add 90.0
+queue::add 65.0
+queue::add 55.0
+queue::add 5.0
 queue::dir buy sell
 
-queue::init 5
-queue::add 55
-queue::add 65
-queue::add 10
+queue::init 5.0
+queue::add 55.0
+queue::add 65.0
+queue::add 10.0
 queue::dir buy sell
