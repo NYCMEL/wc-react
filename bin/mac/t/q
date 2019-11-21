@@ -35,12 +35,12 @@ namespace eval queue {
 	set s2 [lsort -decreasing $queue::x]
 	
 	if {$s1 == $queue::x} {
-	    queue::init queue::ticks
+	    queue::init $queue::ticks
 	    return "S"
 	}
 
 	if {$s2 == $queue::x} {
-	    queue::init queue::ticks
+	    queue::init $queue::ticks
 	    return "B"
 	}
 
@@ -60,13 +60,11 @@ queue::add 55
 queue::add 65
 puts --[queue::dir]
 
-queue::init 3
 queue::add 65
 queue::add 55
 queue::add 10
 puts --[queue::dir]
 
-queue::init 3
 queue::init 5
 queue::add 55
 queue::add 65
