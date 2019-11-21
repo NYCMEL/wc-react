@@ -7,6 +7,13 @@ namespace eval queue {
     ######################################################
     ####
     ######################################################
+    proc init {} {
+	set queue::x [list]
+    }
+
+    ######################################################
+    ####
+    ######################################################
     proc add {val} {
 	lappend queue::x $val
 
@@ -23,10 +30,12 @@ namespace eval queue {
 	set s2 [lsort -decreasing $queue::x]
 	
 	if {$s1 == $queue::x} {
+	    queue::init
 	    return "S"
 	}
 
 	if {$s2 == $queue::x} {
+	    queue::init
 	    return "B"
 	}
 
@@ -37,6 +46,8 @@ namespace eval queue {
 ######################################################
 ####
 ######################################################
+queue::init
+
 queue::add 10
 queue::add 55
 queue::add 65
