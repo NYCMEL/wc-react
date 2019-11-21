@@ -8,31 +8,25 @@ namespace eval queue {
     ####
     ######################################################
     proc add {val} {
-	global x
-	global ticks
-	
-	lappend x $val
+	lappend queue::x $val
 
-	if {[llength $x] > $ticks} {
-	    set x [lrange $x end-[expr $ticks -1] end]
+	if {[llength $queue::x] > $queue::ticks} {
+	    set queue::x [lrange $queue::x end-[expr $queue::ticks -1] end]
 	}
     }
-
+    
     ######################################################
     ####
     ######################################################
     proc dir {} {
-	global x
-	global ticks
-
-	set s1 [lsort -increasing $x]
-	set s2 [lsort -decreasing $x]
-
-	if {$s1 == $x} {
+	set s1 [lsort -increasing $queue::x]
+	set s2 [lsort -decreasing $queue::x]
+	
+	if {$s1 == $queue::x} {
 	    return "S"
 	}
 
-	if {$s2 == $x} {
+	if {$s2 == $queue::x} {
 	    return "B"
 	}
 
