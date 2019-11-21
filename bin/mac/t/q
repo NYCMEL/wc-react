@@ -1,9 +1,9 @@
 #!/Melify/bin/mac/tclkit
 
-set x [list]
-set ticks 3
-
 namespace eval queue {
+    set x [list]
+    set ticks 3
+
     ######################################################
     ####
     ######################################################
