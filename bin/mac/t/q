@@ -67,10 +67,14 @@ proc process {} {
     switch [queue::dir] {
 	"BUY" {
 	    puts "B > [lindex $queue::x end]"
+
+	    # INITIALIZE
 	    queue::init $queue::ticks
 	}
 	"SELL" {
 	    puts "S > [lindex $queue::x end]"
+
+	    # INITIALIZE
 	    queue::init $queue::ticks
 	}
     }
