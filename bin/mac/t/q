@@ -26,7 +26,7 @@ namespace eval queue {
     ######################################################
     ####
     ######################################################
-    proc dir {buy sell} {
+    proc dir {} {
 	if {[llength $queue::x] != $queue::ticks} {
 	    return
 	}
@@ -35,13 +35,11 @@ namespace eval queue {
 	set s2 [lsort -decreasing -real $queue::x]
 	
 	if {$s1 == $queue::x} {
-	    buy [lindex $queue::x end]
-	    queue::init $queue::ticks
+	    return "BUY"
 	}
 
 	if {$s2 == $queue::x} {
-	    sell [lindex $queue::x end]
-	    queue::init $queue::ticks
+	    return "SELL"
 	}
 
 	return ""
@@ -65,6 +63,22 @@ proc sell {price} {
 ######################################################
 ####
 ######################################################
+proc process {} {
+    switch [queue::dir] {
+	"BUY" {
+	    puts "B > [lindex $queue::x end]"
+	    queue::init $queue::ticks
+	}
+	"SELL" {
+	    puts "S > [lindex $queue::x end]"
+	    queue::init $queue::ticks
+	}
+    }
+}
+
+######################################################
+####
+######################################################
 queue::init 3
 
 queue::add 4.0
@@ -72,16 +86,16 @@ queue::add 5.0
 queue::add 10.0
 queue::add 55.0
 queue::add 65.0
-queue::dir buy sell
+process
 
 queue::add 90.0
 queue::add 65.0
 queue::add 55.0
 queue::add 5.0
-queue::dir buy sell
+process
 
 queue::init 5.0
 queue::add 55.0
 queue::add 65.0
 queue::add 10.0
-queue::dir buy sell
+process
