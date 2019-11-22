@@ -71,7 +71,7 @@ proc process {type} {
 ######################################################
 ####
 ######################################################
-queue::init 3
+queue::init 4
 
 source "~/Dropbox/Trader/stocks/AAPL/2019-11-19/AAPL.txt"
 
