@@ -54,13 +54,13 @@ namespace eval queue {
 proc process {type} {
     switch $type {
 	"B" {
-	    puts "\nB: $queue::x"
+	    puts "B: $queue::x"
 
 	    # INITIALIZE
 	    queue::init $queue::ticks
 	}
 	"S" {
-	    puts "\nS: $queue::x"
+	    puts "S: $queue::x"
 
 	    # INITIALIZE
 	    queue::init $queue::ticks
@@ -84,5 +84,5 @@ foreach k [dict key $stocks] {
 
     queue::add $a(lastPrice)
 
-    after 100
+    after 50
 }
