@@ -50,14 +50,14 @@ namespace eval queue {
 ####
 ######################################################
 proc buy {price} {
-    puts "BUY > $price"
+    puts "B: $price"
 }
 
 ######################################################
 ####
 ######################################################
 proc sell {price} {
-    puts "SELL > $price"
+    puts "S: $price"
 }
 
 ######################################################
@@ -66,13 +66,13 @@ proc sell {price} {
 proc process {} {
     switch [queue::dir] {
 	"BUY" {
-	    puts "B > [lindex $queue::x end]"
+	    buy [lindex $queue::x end]
 
 	    # INITIALIZE
 	    queue::init $queue::ticks
 	}
 	"SELL" {
-	    puts "S > [lindex $queue::x end]"
+	    sell [lindex $queue::x end]
 
 	    # INITIALIZE
 	    queue::init $queue::ticks
