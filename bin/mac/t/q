@@ -21,6 +21,8 @@ namespace eval queue {
 	if {[llength $queue::x] > $queue::ticks} {
 	    set queue::x [lrange $queue::x end-[expr $queue::ticks -1] end]
 	}
+
+	dir
     }
     
     ######################################################
@@ -35,11 +37,11 @@ namespace eval queue {
 	set s2 [lsort -decreasing -real $queue::x]
 	
 	if {$s1 == $queue::x} {
-	    return "BUY"
+	    process "S"
 	}
 
 	if {$s2 == $queue::x} {
-	    return "SELL"
+	    process "B"
 	}
 
 	return ""
@@ -49,30 +51,16 @@ namespace eval queue {
 ######################################################
 ####
 ######################################################
-proc buy {price} {
-    puts "B: $price"
-}
-
-######################################################
-####
-######################################################
-proc sell {price} {
-    puts "S: $price"
-}
-
-######################################################
-####
-######################################################
-proc process {} {
-    switch [queue::dir] {
-	"BUY" {
-	    buy [lindex $queue::x end]
+proc process {type} {
+    switch $type {
+	"B" {
+	    puts "\nB: $queue::x"
 
 	    # INITIALIZE
 	    queue::init $queue::ticks
 	}
-	"SELL" {
-	    sell [lindex $queue::x end]
+	"S" {
+	    puts "\nS: $queue::x"
 
 	    # INITIALIZE
 	    queue::init $queue::ticks
@@ -85,21 +73,16 @@ proc process {} {
 ######################################################
 queue::init 3
 
-queue::add 4.0
-queue::add 5.0
-queue::add 10.0
-queue::add 55.0
-queue::add 65.0
-process
+source "~/Dropbox/Trader/stocks/AAPL/2019-11-19/AAPL.txt"
 
-queue::add 90.0
-queue::add 65.0
-queue::add 55.0
-queue::add 5.0
-process
+foreach k [dict key $stocks] {
+    foreach {i j} [dict get $stocks $k] {
+	set a($i) $j
+    }
 
-queue::init 5.0
-queue::add 55.0
-queue::add 65.0
-queue::add 10.0
-process
+    #puts -nonewline ".";flush stdout
+
+    queue::add $a(lastPrice)
+
+    after 100
+}
