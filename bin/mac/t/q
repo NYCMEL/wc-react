@@ -2,26 +2,26 @@
 
 namespace eval queue {
     set data [list]
-    set ticks 0
+    set nticks 0
     set start "B"
 
     ######################################################
     ####
     ######################################################
-    proc init {ticks} {
+    proc init {nticks} {
 	set queue::data [list]
-	set queue::ticks $ticks
+	set queue::nticks $nticks
     }
 
     ######################################################
     ####
     ######################################################
     proc add {} {
-	upvar t t
-	lappend queue::data $t(lastPrice)
+	upvar ctick ctick
+	lappend queue::data $ctick(lastPrice)
 	
-	if {[llength $queue::data] > $queue::ticks} {
-	    set queue::data [lrange $queue::data end-[expr $queue::ticks -1] end]
+	if {[llength $queue::data] > $queue::nticks} {
+	    set queue::data [lrange $queue::data end-[expr $queue::nticks -1] end]
 	}
 	
 	dir
@@ -31,9 +31,9 @@ namespace eval queue {
     ####
     ######################################################
     proc dir {} {
-	upvar t t
+	upvar ctick ctick
 
-	if {[llength $queue::data] != $queue::ticks} {
+	if {[llength $queue::data] != $queue::nticks} {
 	    return
 	}
 
@@ -47,7 +47,7 @@ namespace eval queue {
 		# RESET START
 		set queue::start "B"
 
-		puts [array get t]
+		puts [array get ctick]
 	    }
 	}
 
@@ -58,7 +58,7 @@ namespace eval queue {
 		# RESET START
 		set queue::start "S"
 
-		puts [array get t]
+		puts [array get ctick]
 	    }
 	}
     }
@@ -67,14 +67,14 @@ namespace eval queue {
 ######################################################
 ####
 ######################################################
-proc test {ticks date symbol timeout} {
-    queue::init $ticks
+proc test {nticks date symbol timeout} {
+    queue::init $nticks
 
     source "~/Dropbox/Trader/stocks/AAPL/$date/$symbol.txt"
 
     foreach k [dict key $stocks] {
 	foreach {i j} [dict get $stocks $k] {
-	    set t($i) $j
+	    set ctick($i) $j
 	}
 	
 	#puts -nonewline ".";flush stdout
