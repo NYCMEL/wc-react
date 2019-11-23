@@ -71,18 +71,22 @@ proc process {type} {
 ######################################################
 ####
 ######################################################
-queue::init 4
+proc test {ticks date symbol timeout} {
+    queue::init $ticks
 
-source "~/Dropbox/Trader/stocks/AAPL/2019-11-19/AAPL.txt"
+    source "~/Dropbox/Trader/stocks/AAPL/$date/$symbol.txt"
 
-foreach k [dict key $stocks] {
-    foreach {i j} [dict get $stocks $k] {
-	set a($i) $j
+    foreach k [dict key $stocks] {
+	foreach {i j} [dict get $stocks $k] {
+	    set a($i) $j
+	}
+	
+	#puts -nonewline ".";flush stdout
+	
+	queue::add $a(lastPrice)
+
+	after $timeout
     }
-
-    #puts -nonewline ".";flush stdout
-
-    queue::add $a(lastPrice)
-
-    after 50
 }
+
+test 4 2019-11-19 AAPL 100
