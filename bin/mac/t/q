@@ -17,13 +17,13 @@ namespace eval queue {
     ####
     ######################################################
     proc add {} {
-	upvar a arr
-	lappend queue::data $arr(lastPrice)
+	upvar t t
+	lappend queue::data $t(lastPrice)
 	
 	if {[llength $queue::data] > $queue::ticks} {
 	    set queue::data [lrange $queue::data end-[expr $queue::ticks -1] end]
 	}
-
+	
 	dir
     }
     
@@ -31,6 +31,8 @@ namespace eval queue {
     ####
     ######################################################
     proc dir {} {
+	upvar t t
+
 	if {[llength $queue::data] != $queue::ticks} {
 	    return
 	}
@@ -40,10 +42,12 @@ namespace eval queue {
 	
 	if {$s1 == $queue::data} {
 	    if {$queue::start != "B"} {
-		puts "S: $queue::data\n"
+		puts "S: $queue::data"
 		
 		# RESET START
 		set queue::start "B"
+
+		puts [array get t]
 	    }
 	}
 
@@ -53,6 +57,8 @@ namespace eval queue {
 
 		# RESET START
 		set queue::start "S"
+
+		puts [array get t]
 	    }
 	}
     }
@@ -68,7 +74,7 @@ proc test {ticks date symbol timeout} {
 
     foreach k [dict key $stocks] {
 	foreach {i j} [dict get $stocks $k] {
-	    set a($i) $j
+	    set t($i) $j
 	}
 	
 	#puts -nonewline ".";flush stdout
