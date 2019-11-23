@@ -40,8 +40,7 @@ namespace eval queue {
 	
 	if {$s1 == $queue::x} {
 	    if {$queue::start != "B"} {
-
-		process "S"
+		puts "S: $queue::x\n"
 		
 		# RESET START
 		set queue::start "B"
@@ -50,25 +49,11 @@ namespace eval queue {
 
 	if {$s2 == $queue::x} {
 	    if {$queue::start != "S"} {
-		process "B"
+		puts "B: $queue::x"
 
 		# RESET START
 		set queue::start "S"
 	    }
-	}
-    }
-}
-
-######################################################
-####
-######################################################
-proc process {type} {
-    switch $type {
-	"B" {
-	    puts "B: $queue::x"
-	}
-	"S" {
-	    puts "S: $queue::x\n"
 	}
     }
 }
