@@ -47,7 +47,7 @@ namespace eval queue {
 		# RESET START
 		set queue::start "B"
 
-		puts [array get ctick]
+		set tickb [array get ctick]
 	    }
 	}
 
@@ -58,7 +58,7 @@ namespace eval queue {
 		# RESET START
 		set queue::start "S"
 
-		puts [array get ctick]
+		set ticks [array get ctick]
 	    }
 	}
     }
