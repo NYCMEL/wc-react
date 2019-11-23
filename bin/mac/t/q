@@ -1,7 +1,7 @@
 #!/Melify/bin/mac/tclkit
 
 namespace eval queue {
-    set x [list]
+    set data [list]
     set ticks 0
     set start "B"
 
@@ -9,7 +9,7 @@ namespace eval queue {
     ####
     ######################################################
     proc init {ticks} {
-	set queue::x [list]
+	set queue::data [list]
 	set queue::ticks $ticks
     }
 
@@ -18,10 +18,10 @@ namespace eval queue {
     ######################################################
     proc add {} {
 	upvar a arr
-	lappend queue::x $arr(lastPrice)
+	lappend queue::data $arr(lastPrice)
 	
-	if {[llength $queue::x] > $queue::ticks} {
-	    set queue::x [lrange $queue::x end-[expr $queue::ticks -1] end]
+	if {[llength $queue::data] > $queue::ticks} {
+	    set queue::data [lrange $queue::data end-[expr $queue::ticks -1] end]
 	}
 
 	dir
@@ -31,25 +31,25 @@ namespace eval queue {
     ####
     ######################################################
     proc dir {} {
-	if {[llength $queue::x] != $queue::ticks} {
+	if {[llength $queue::data] != $queue::ticks} {
 	    return
 	}
 
-	set s1 [lsort -increasing -real $queue::x]
-	set s2 [lsort -decreasing -real $queue::x]
+	set s1 [lsort -increasing -real $queue::data]
+	set s2 [lsort -decreasing -real $queue::data]
 	
-	if {$s1 == $queue::x} {
+	if {$s1 == $queue::data} {
 	    if {$queue::start != "B"} {
-		puts "S: $queue::x\n"
+		puts "S: $queue::data\n"
 		
 		# RESET START
 		set queue::start "B"
 	    }
 	}
 
-	if {$s2 == $queue::x} {
+	if {$s2 == $queue::data} {
 	    if {$queue::start != "S"} {
-		puts "B: $queue::x"
+		puts "B: $queue::data"
 
 		# RESET START
 		set queue::start "S"
