@@ -41,17 +41,19 @@ namespace eval queue {
 	    if {$queue::start == "B"} {
 		return ""
 	    } else {
-		set queue::start "B"
-
 		process "S"
+
+		queue::init $queue::ticks
+		set queue::start "B"
 	    }
 	}
 
 	if {$s2 == $queue::x} {
 	    if {$queue::start == "B"} {
-		set queue::start "S"
-
 		process "B"
+
+		queue::init $queue::ticks
+		set queue::start "S"
 	    } else {
 		return ""
 	    }
@@ -68,15 +70,9 @@ proc process {type} {
     switch $type {
 	"B" {
 	    puts "B: $queue::x"
-
-	    # INITIALIZE
-	    queue::init $queue::ticks
 	}
 	"S" {
 	    puts "S: $queue::x\n"
-
-	    # INITIALIZE
-	    queue::init $queue::ticks
 	}
     }
 }
@@ -102,4 +98,4 @@ proc test {ticks date symbol timeout} {
     }
 }
 
-test 4 2019-11-19 AAPL 100
+test 4 2019-11-19 AAPL 10
