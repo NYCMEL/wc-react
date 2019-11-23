@@ -43,7 +43,7 @@ namespace eval queue {
 	    } else {
 		process "S"
 
-		queue::init $queue::ticks
+		#queue::init $queue::ticks
 		set queue::start "B"
 	    }
 	}
@@ -52,7 +52,7 @@ namespace eval queue {
 	    if {$queue::start == "B"} {
 		process "B"
 
-		queue::init $queue::ticks
+		#queue::init $queue::ticks
 		set queue::start "S"
 	    } else {
 		return ""
