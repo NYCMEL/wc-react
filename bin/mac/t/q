@@ -73,7 +73,7 @@ proc process {type} {
 	    queue::init $queue::ticks
 	}
 	"S" {
-	    puts "S: $queue::x"
+	    puts "S: $queue::x\n"
 
 	    # INITIALIZE
 	    queue::init $queue::ticks
