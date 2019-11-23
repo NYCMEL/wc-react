@@ -5,6 +5,9 @@ namespace eval queue {
     set nticks 0
     set start "B"
 
+    array set ticks {}
+    array set tickb {}
+
     ######################################################
     ####
     ######################################################
@@ -42,23 +45,24 @@ namespace eval queue {
 	
 	if {$s1 == $queue::data} {
 	    if {$queue::start != "B"} {
-		puts "S: $queue::data"
-		
-		# RESET START
-		set queue::start "B"
+		array set queue::ticks [array get ctick]
 
-		set tickb [array get ctick]
+		if {$queue::tickb(lastPrice) < $queue::ticks(lastPrice)} {
+		    puts "S: $queue::data\n"
+		    
+		    # RESET START
+		    set queue::start "B"
+		}
 	    }
 	}
 
 	if {$s2 == $queue::data} {
 	    if {$queue::start != "S"} {
+		array set queue::tickb [array get ctick]
 		puts "B: $queue::data"
-
+		
 		# RESET START
 		set queue::start "S"
-
-		set ticks [array get ctick]
 	    }
 	}
     }
