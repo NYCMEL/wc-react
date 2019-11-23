@@ -58,8 +58,6 @@ namespace eval queue {
 		return ""
 	    }
 	}
-
-	return ""
     }
 }
 
