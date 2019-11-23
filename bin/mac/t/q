@@ -16,9 +16,10 @@ namespace eval queue {
     ######################################################
     ####
     ######################################################
-    proc add {val} {
-	lappend queue::x $val
-
+    proc add {} {
+	upvar a arr
+	lappend queue::x $arr(lastPrice)
+	
 	if {[llength $queue::x] > $queue::ticks} {
 	    set queue::x [lrange $queue::x end-[expr $queue::ticks -1] end]
 	}
@@ -38,24 +39,21 @@ namespace eval queue {
 	set s2 [lsort -decreasing -real $queue::x]
 	
 	if {$s1 == $queue::x} {
-	    if {$queue::start == "B"} {
-		return ""
-	    } else {
-		process "S"
+	    if {$queue::start != "B"} {
 
-		#queue::init $queue::ticks
+		process "S"
+		
+		# RESET START
 		set queue::start "B"
 	    }
 	}
 
 	if {$s2 == $queue::x} {
-	    if {$queue::start == "B"} {
+	    if {$queue::start != "S"} {
 		process "B"
 
-		#queue::init $queue::ticks
+		# RESET START
 		set queue::start "S"
-	    } else {
-		return ""
 	    }
 	}
     }
@@ -90,7 +88,7 @@ proc test {ticks date symbol timeout} {
 	
 	#puts -nonewline ".";flush stdout
 	
-	queue::add $a(lastPrice)
+	queue::add
 
 	after $timeout
     }
