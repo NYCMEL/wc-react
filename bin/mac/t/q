@@ -10,6 +10,7 @@ namespace eval queue {
     proc init {ticks} {
 	set queue::x [list]
 	set queue::ticks $ticks
+	set queue::start "B"
     }
 
     ######################################################
@@ -37,11 +38,23 @@ namespace eval queue {
 	set s2 [lsort -decreasing -real $queue::x]
 	
 	if {$s1 == $queue::x} {
-	    process "S"
+	    if {$queue::start == "B"} {
+		return ""
+	    } else {
+		set $queue::start "B"
+
+		process "S"
+	    }
 	}
 
 	if {$s2 == $queue::x} {
-	    process "B"
+	    if {$queue::start == "B"} {
+		set $queue::start "S"
+
+		process "B"
+	    } else {
+		return ""
+	    }
 	}
 
 	return ""
