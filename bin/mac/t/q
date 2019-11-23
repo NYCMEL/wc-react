@@ -98,4 +98,5 @@ proc test {ticks date symbol timeout} {
     }
 }
 
+#RUN TEST SCRIPT
 test 5 2019-11-19 AAPL 10
