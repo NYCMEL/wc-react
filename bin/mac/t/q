@@ -98,4 +98,4 @@ proc test {ticks date symbol timeout} {
     }
 }
 
-test 4 2019-11-19 AAPL 10
+test 5 2019-11-19 AAPL 10
