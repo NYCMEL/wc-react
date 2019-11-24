@@ -8,6 +8,8 @@ set symbol "AAPL"
 set u 0
 set d 0
 set p 0
+set t 0
+set v 0
 
 source "~/Dropbox/Trader/stocks/$symbol/$date/$symbol.txt"
 
@@ -20,6 +22,9 @@ foreach k [dict key $stocks] {
     
     #if {[incr cnt] > 20} exit;#TMP
     
+    set t $a(quoteTimeInLong)
+    set v $a(totalVolume)
+
     if {$a(lastPrice) > $p} {
 	# PRICE IS UP
 	incr u; set d 0
@@ -31,12 +36,12 @@ foreach k [dict key $stocks] {
     }
 
     if {$u == 4} {
-	puts SEL>>>>>>>>>>>$u|$d|$p
+	puts "SEL: $u|$d|$p|$v|$t"
 	set u 0;set d 0
     }
 
     if {$d == 4} {
-	puts BUY>>>>>>>>>>>$u|$d|$p
+	puts "BUY: $u|$d|$p|$v|$t"
 	set u 0;set d 0
     }
 }
