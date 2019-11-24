@@ -90,4 +90,4 @@ proc test {nticks date symbol timeout} {
 }
 
 #RUN TEST SCRIPT
-test 5 2019-11-19 AAPL 5
+test 5 2019-11-19 AAPL 0
