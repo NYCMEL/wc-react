@@ -5,13 +5,14 @@ set nticks 9
 set symbol "AAPL"
 
 ############################
-set u 0
-set d 0
-set p 0
-set t 0
-set v 0
 
 for {set nticks 3} {$nticks < 10} {incr nticks} {
+    set u 0
+    set d 0
+    set p 0
+    set t 0
+    set v 0
+
     set f [open ./compare/$nticks.dat w]
 
     source "~/Dropbox/Trader/stocks/$symbol/$date/$symbol.txt"
