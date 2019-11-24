@@ -23,23 +23,21 @@ foreach k [dict key $stocks] {
     
     if {$a(lastPrice) > $pu} {
 	# PRICE IS UP
-	set d 0
-	incr u
+	incr u; set d 0
 	set pu $a(lastPrice)
     } elseif {$a(lastPrice) < $pu} {
 	# PRICE IS DOWN
-	set u 0
-	incr d
+	incr d; set u 0
 	set pd $a(lastPrice)
     }
 
-    if {$pu == 4} {
+    if {$u == 4} {
+	puts SEL>>>>>>>>>>>$u|$d|$pd
 	set u 0;set d 0
-	puts SEL>>>>>>>>>>>$u|$d
     }
 
-    if {$pd == 4} {
+    if {$d == 4} {
+	puts BUY>>>>>>>>>>>$u|$d|$pu
 	set u 0;set d 0
-	puts BUY>>>>>>>>>>>$u|$d
     }
 }
