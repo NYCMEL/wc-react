@@ -27,12 +27,12 @@ for {set nticks 3} {$nticks < 10} {incr nticks} {
 	if {$a(lastPrice) > $p} {
 	    # PRICE IS UP (S)
 	    incr u; set d 0
-	    set p $a(lastPrice)
 	} elseif {$a(lastPrice) < $p} {
 	    # PRICE IS DOWN (B)
 	    incr d; set u 0
-	    set p $a(lastPrice)
 	}
+
+	set p $a(lastPrice)
 
 	set fmt "%3s %5.4f0 %d %d %5d %5d %10.4f0 %10.4f0"
 
