@@ -48,7 +48,9 @@ namespace eval queue {
 		array set queue::ticks [array get ctick]
 
 		if {$queue::tickb(lastPrice) < $queue::ticks(lastPrice)} {
-		    puts "S: [join $queue::data |]\n"
+		    set delta [format $%.4f [expr $queue::ticks(lastPrice) - $queue::tickb(lastPrice)]]
+
+		    puts "S: [join $queue::data |] ($delta)\n"
 		    
 		    # RESET START
 		    set queue::start "B"
