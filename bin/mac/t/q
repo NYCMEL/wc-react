@@ -19,19 +19,27 @@ foreach k [dict key $stocks] {
 	set a($i) $j
     }
     
-    if {[incr cnt] > 10} exit;#TMP
+    #if {[incr cnt] > 20} exit;#TMP
     
     if {$a(lastPrice) > $pu} {
 	# PRICE IS UP
 	set d 0
-	set pu $a(lastPrice)
 	incr u
+	set pu $a(lastPrice)
     } elseif {$a(lastPrice) < $pu} {
 	# PRICE IS DOWN
 	set u 0
-	set pd $a(lastPrice)
 	incr d
+	set pd $a(lastPrice)
     }
 
-    puts >>>>>>>>>>>$u|$d
+    if {$pu == 4} {
+	set u 0;set d 0
+	puts SEL>>>>>>>>>>>$u|$d
+    }
+
+    if {$pd == 4} {
+	set u 0;set d 0
+	puts BUY>>>>>>>>>>>$u|$d
+    }
 }
