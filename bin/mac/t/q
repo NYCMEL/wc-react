@@ -45,6 +45,8 @@ for {set nticks 3} {$nticks < 10} {incr nticks} {
 	    puts $f [format $fmt "B" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(askSize) $a(bidPrice) $a(askPrice)]
 	    set u 0;set d 0
 	}
+
+	unset a
     }
 
     close $f
