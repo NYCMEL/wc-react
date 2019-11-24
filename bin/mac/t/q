@@ -1,7 +1,6 @@
 #!/Melify/bin/mac/tclkit
 
 set date "2019-11-19"
-set nticks 9
 set symbol "AAPL"
 
 ############################
