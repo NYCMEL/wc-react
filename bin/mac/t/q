@@ -15,6 +15,8 @@ source "~/Dropbox/Trader/stocks/$symbol/$date/$symbol.txt"
 
 set cnt 0
 
+puts [format "%s\t%s\t\t%s\t%s" "" "PRICE" "VOLUME" "TIME"]
+
 foreach k [dict key $stocks] {
     foreach {i j} [dict get $stocks $k] {
 	set a($i) $j
@@ -36,13 +38,13 @@ foreach k [dict key $stocks] {
     }
 
     if {$u == 4} {
-	puts [format "%s\t %0.4f0\t %s\t %s" "SEL" $p $v $t]
+	puts [format "%s\t%0.4f0\t%s\t%s" "SEL" $p $v $t]
 	#puts "BUY $p $v $t";exit
 	set u 0;set d 0
     }
 
     if {$d == 4} {
-	puts [format "%s\t %0.4f0\t %s\t %s" "SEL" $p $v $t]
+	puts [format "%s\t%0.4f0\t%s\t%s" "SEL" $p $v $t]
 	#puts "BUY $p $v $t";exit
 	set u 0;set d 0
     }
