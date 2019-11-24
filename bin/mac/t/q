@@ -5,12 +5,12 @@ set symbol "AAPL"
 
 ############################
 
+source "~/Dropbox/Trader/stocks/$symbol/$date/$symbol.txt"
+
 for {set nticks 3} {$nticks < 10} {incr nticks} {
     set u 0; set d 0; set p 0
 
     set f [open ./compare/$nticks.dat w]
-
-    source "~/Dropbox/Trader/stocks/$symbol/$date/$symbol.txt"
 
     puts "ticks = $nticks"
     
