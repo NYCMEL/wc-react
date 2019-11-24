@@ -38,7 +38,7 @@ foreach k [dict key $stocks] {
     }
 
     if {$u == 4} {
-	puts [format "%s\t%0.4f0\t%s\t%s" "SEL" $p $v $t]
+	puts [format "%s\t%0.4f0\t%s\t%s" "BUY" $p $v $t]
 	#puts "BUY $p $v $t";exit
 	set u 0;set d 0
     }
