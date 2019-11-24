@@ -28,11 +28,11 @@ for {set nticks 3} {$nticks < 10} {incr nticks} {
 	}
 	
 	if {$a(lastPrice) > $p} {
-	    # PRICE IS UP (SELL)
+	    # PRICE IS UP (S)
 	    incr u; set d 0
 	    set p $a(lastPrice)
 	} elseif {$a(lastPrice) < $p} {
-	    # PRICE IS DOWN (BUY)
+	    # PRICE IS DOWN (B)
 	    incr d; set u 0
 	    set p $a(lastPrice)
 	}
