@@ -15,18 +15,13 @@ source "~/Dropbox/Trader/stocks/$symbol/$date/$symbol.txt"
 
 set cnt 0
 
-puts [format "%s\t%s\t\t%s\t%s" "" "PRICE" "VOLUME" "TIME"]
+puts [format "%3s %s %10s %5s %20s %10s" "" "PRICE" "VOLUME" "TIME" "BidSize" "AskSize"]
 
 foreach k [dict key $stocks] {
     foreach {i j} [dict get $stocks $k] {
 	set a($i) $j
     }
     
-    #if {[incr cnt] > 20} exit;#TMP
-    
-    set t $a(quoteTimeInLong)
-    set v $a(totalVolume)
-
     if {$a(lastPrice) > $p} {
 	# PRICE IS UP
 	incr u; set d 0
@@ -37,15 +32,15 @@ foreach k [dict key $stocks] {
 	set p $a(lastPrice)
     }
 
+    set fmt "%3s %5.4f0 %d %d %10d %10d"
+
     if {$u == 4} {
-	puts [format "%s\t%0.4f0\t%d\t%d" "BUY" $p $v $t]
-	#puts "BUY $p $v $t";exit
+	puts [format $fmt "B" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(askSize)]
 	set u 0;set d 0
     }
 
     if {$d == 4} {
-	puts [format "%s\t%0.4f0\t%d\t%d" "SEL" $p $v $t]
-	#puts "BUY $p $v $t";exit
+	puts [format $fmt "S" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(askSize)]
 	set u 0;set d 0
     }
 }
