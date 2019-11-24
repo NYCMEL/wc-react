@@ -1,7 +1,7 @@
 #!/Melify/bin/mac/tclkit
 
 set date "2019-11-19"
-set nticks 4
+set nticks 9
 set symbol "AAPL"
 
 ############################
@@ -36,12 +36,12 @@ foreach k [dict key $stocks] {
 
     set fmt "%3s %5.4f0 %d %d %5d %5d %10.4f0 %10.4f0"
 
-    if {$u == 4} {
+    if {$u == $nticks} {
 	puts [format $fmt "B" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(askSize) $a(bidPrice) $a(askPrice)]
 	set u 0;set d 0
     }
 
-    if {$d == 4} {
+    if {$d == $nticks} {
 	puts [format $fmt "S" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(askSize) $a(bidPrice) $a(askPrice)]
 	set u 0;set d 0
     }
