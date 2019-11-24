@@ -15,7 +15,7 @@ source "~/Dropbox/Trader/stocks/$symbol/$date/$symbol.txt"
 
 set cnt 0
 
-puts [format "%3s %s %10s %5s %20s %10s" "" "PRICE" "VOLUME" "TIME" "BidSize" "AskSize"]
+puts "  X PRICE     VOLUME  TIME                 BidSize    AskSize"
 
 foreach k [dict key $stocks] {
     foreach {i j} [dict get $stocks $k] {
