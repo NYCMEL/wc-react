@@ -17,8 +17,8 @@ for {set nticks 3} {$nticks < 10} {incr nticks} {
 
     source "~/Dropbox/Trader/stocks/$symbol/$date/$symbol.txt"
 
-    puts $nticks
-
+    puts "ticks = $nticks"
+    
     puts $f "ticks = $nticks"
     puts $f "------------------------------------------------------------------------"
     puts $f "  X PRICE     VOLUME  TIME            BIDs  ASKs  BIDp        ASKp"
