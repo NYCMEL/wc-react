@@ -16,7 +16,7 @@ source "~/Dropbox/Trader/stocks/$symbol/$date/$symbol.txt"
 set cnt 0
 
 puts "------------------------------------------------------------------------"
-puts "  X PRICE     VOLUME  TIME            BIDs  BIDp        ASKs  ASKp"
+puts "  X PRICE     VOLUME  TIME            BIDs  ASKs  BIDp        ASKp"
 puts "------------------------------------------------------------------------"
 
 foreach k [dict key $stocks] {
@@ -34,15 +34,15 @@ foreach k [dict key $stocks] {
 	set p $a(lastPrice)
     }
 
-    set fmt "%3s %5.4f0 %d %d %5d %10.4f0 %5d %10.4f0"
+    set fmt "%3s %5.4f0 %d %d %5d %5d %10.4f0 %10.4f0"
 
     if {$u == 4} {
-	puts [format $fmt "B" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(bidPrice) $a(askSize) $a(askPrice)]
+	puts [format $fmt "B" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(askSize) $a(bidPrice) $a(askPrice)]
 	set u 0;set d 0
     }
 
     if {$d == 4} {
-	puts [format $fmt "S" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(bidPrice) $a(askSize) $a(askPrice)]
+	puts [format $fmt "S" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(askSize) $a(bidPrice) $a(askPrice)]
 	set u 0;set d 0
     }
 }
