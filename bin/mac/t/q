@@ -37,16 +37,18 @@ foreach k [dict key $stocks] {
     }
 
     if {$u == 4} {
-	puts "SEL: $u|$d|$p|$v|$t"
-	puts $f "SEL|$u|$d|$p|$v|$t"
+	puts "SEL: $p|$v|$t"
+	puts $f "SEL $p $v $t"
 	set u 0;set d 0
     }
 
     if {$d == 4} {
-	puts "BUY: $u|$d|$p|$v|$t"
-	puts $f "BUY|$u|$d|$p|$v|$t"
+	puts "BUY: $p|$v|$t"
+	puts $f "BUY $p $v $t"
 	set u 0;set d 0
     }
 }
 
 close $f
+
+#awk '{printf "%-30s|%-30s|%-30s|%-30s\n",$1,$2,$3,$4}'  /tmp/junk.txt
