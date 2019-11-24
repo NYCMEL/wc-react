@@ -10,8 +10,6 @@ for {set nticks 3} {$nticks < 10} {incr nticks} {
     set u 0
     set d 0
     set p 0
-    set t 0
-    set v 0
 
     set f [open ./compare/$nticks.dat w]
 
@@ -30,11 +28,11 @@ for {set nticks 3} {$nticks < 10} {incr nticks} {
 	}
 	
 	if {$a(lastPrice) > $p} {
-	    # PRICE IS UP
+	    # PRICE IS UP (SELL)
 	    incr u; set d 0
 	    set p $a(lastPrice)
 	} elseif {$a(lastPrice) < $p} {
-	    # PRICE IS DOWN
+	    # PRICE IS DOWN (BUY)
 	    incr d; set u 0
 	    set p $a(lastPrice)
 	}
@@ -42,12 +40,12 @@ for {set nticks 3} {$nticks < 10} {incr nticks} {
 	set fmt "%3s %5.4f0 %d %d %5d %5d %10.4f0 %10.4f0"
 
 	if {$u == $nticks} {
-	    puts $f [format $fmt "B" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(askSize) $a(bidPrice) $a(askPrice)]
+	    puts $f [format $fmt "S" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(askSize) $a(bidPrice) $a(askPrice)]
 	    set u 0;set d 0
 	}
 
 	if {$d == $nticks} {
-	    puts $f [format $fmt "S" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(askSize) $a(bidPrice) $a(askPrice)]
+	    puts $f [format $fmt "B" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(askSize) $a(bidPrice) $a(askPrice)]
 	    set u 0;set d 0
 	}
     }
