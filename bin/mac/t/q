@@ -15,7 +15,7 @@ source "~/Dropbox/Trader/stocks/$symbol/$date/$symbol.txt"
 
 set cnt 0
 
-puts "  X PRICE     VOLUME  TIME            BID    ASK"
+puts "  X PRICE     VOLUME  TIME             BID(S) ASK(S)"
 
 foreach k [dict key $stocks] {
     foreach {i j} [dict get $stocks $k] {
@@ -32,7 +32,7 @@ foreach k [dict key $stocks] {
 	set p $a(lastPrice)
     }
 
-    set fmt "%3s %5.4f0 %d %d %5d %5d"
+    set fmt "%3s %5.4f0 %d %d %6d %6d"
 
     if {$u == 4} {
 	puts [format $fmt "B" $p $a(totalVolume) $a(quoteTimeInLong) $a(bidSize) $a(askSize)]
