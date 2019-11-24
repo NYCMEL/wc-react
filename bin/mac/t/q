@@ -1,25 +1,37 @@
 #!/Melify/bin/mac/tclkit
 
-######################################################
-####
-######################################################
-proc test {nticks date symbol timeout} {
-    queue::init $nticks
+set date "2019-11-19"
+set nticks 4
+set symbol "AAPL"
 
-    source "~/Dropbox/Trader/stocks/$symbol/$date/$symbol.txt"
+############################
+set u 0
+set d 0
+set pu 0
+set pd 0
 
-    foreach k [dict key $stocks] {
-	foreach {i j} [dict get $stocks $k] {
-	    set ctick($i) $j
-	}
-	
-	#puts -nonewline ".";flush stdout
-	
-	queue::add
+source "~/Dropbox/Trader/stocks/$symbol/$date/$symbol.txt"
 
-	after $timeout
+set cnt 0
+
+foreach k [dict key $stocks] {
+    foreach {i j} [dict get $stocks $k] {
+	set a($i) $j
     }
-}
+    
+    if {[incr cnt] > 10} exit;#TMP
+    
+    if {$a(lastPrice) > $pu} {
+	# PRICE IS UP
+	set d 0
+	set pu $a(lastPrice)
+	incr u
+    } elseif {$a(lastPrice) < $pu} {
+	# PRICE IS DOWN
+	set u 0
+	set pd $a(lastPrice)
+	incr d
+    }
 
-#RUN TEST SCRIPT
-test 5 2019-11-19 AAPL 0
+    puts >>>>>>>>>>>$u|$d
+}
