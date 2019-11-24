@@ -3,7 +3,6 @@
 set date "2019-11-19"
 set nticks 4
 set symbol "AAPL"
-set f [open /tmp/junk.txt w]
 
 ############################
 set u 0
@@ -37,18 +36,15 @@ foreach k [dict key $stocks] {
     }
 
     if {$u == 4} {
-	puts "SEL: $p|$v|$t"
-	puts $f "SEL $p $v $t"
+	puts [format "%s\t %0.4f0\t %s\t %s" "SEL" $p $v $t]
+	#puts "BUY $p $v $t";exit
 	set u 0;set d 0
     }
 
     if {$d == 4} {
-	puts "BUY: $p|$v|$t"
-	puts $f "BUY $p $v $t"
+	puts [format "%s\t %0.4f0\t %s\t %s" "SEL" $p $v $t]
+	#puts "BUY $p $v $t";exit
 	set u 0;set d 0
     }
 }
 
-close $f
-
-#awk '{printf "%-30s|%-30s|%-30s|%-30s\n",$1,$2,$3,$4}'  /tmp/junk.txt
