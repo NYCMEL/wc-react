@@ -6,7 +6,7 @@ source "/Melify/mtk/dev/tk/src/utl/json2dict.tcl"
 #### CONVERT TCL ARRAY TO JSON
 ########################################################################################
 proc d2j {symbol} {
-    source "/Users/melify/Dropbox/Trader/stocks/$symbol/2019-11-19/$symbol.txt"
+    source "/Users/melify/Dropbox/Trader/stocks/$symbol/2019-11-26/$symbol.txt"
 
     set res "\["
     foreach k [dict key $stocks] {
@@ -34,10 +34,10 @@ proc d2j {symbol} {
 foreach i [glob /Users/melify/Dropbox/Trader/stocks/*] {
     if {[file isdir $i] == 1} {
 	set sym [file tail $i]
-	set fo [open "/Users/melify/Dropbox/Trader/stocks/$sym/2019-11-19/$sym.json" w]
+	set fo [open "/Users/melify/Dropbox/Trader/stocks/$sym/2019-11-26/$sym.json" w]
 	puts $fo [d2j $sym]
 	close $fo
 
-	puts "/Users/melify/Dropbox/Trader/stocks/$sym/2019-11-19/$sym.json"
+	puts "/Users/melify/Dropbox/Trader/stocks/$sym/2019-11-26/$sym.json"
     }
 }
