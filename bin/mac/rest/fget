@@ -28,11 +28,11 @@ foreach i [import_list] {
 }
 
 put "Content-Type: application/json\n\n"
-puts $::fname|$::json;flush stdout
+puts $::fname\n;flush stdout
 
 set f [open /tmp/$::fname r]
 set r [read $f];close $f
 
-set r [string replace $r end end]
-puts "AAA$r";flush stdout
-
+# REPLACE ,\n FROM LINE
+set r [string replace $r end-2 end]
+puts "\[$r\]";flush stdout
