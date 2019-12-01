@@ -29,3 +29,9 @@ foreach i [import_list] {
 
 put "Content-Type: application/json\n\n"
 puts $::fname|$::json
+
+if {[catch {
+    exec echo $::json >> /tmp/z
+} e] != 0} {
+    puts >>>>>>>>>>$e
+}
