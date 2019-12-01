@@ -30,6 +30,8 @@ foreach i [import_list] {
 put "Content-Type: application/json\n\n"
 puts $::fname\n;flush stdout
 
+parray ::env
+
 set f [open /Melify/data/stocks/[clock format [clock seconds] -format "%Y-%m-%d"].$::fname r]
 set r [read $f];close $f
 
