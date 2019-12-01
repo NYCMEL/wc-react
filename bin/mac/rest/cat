@@ -5,7 +5,7 @@
 #######################################################
 source /Melify/mtk/dev/tk//src/cgi/cgi.tcl
 
-source ../app.cfg
+source ../../app.cfg
 
 set env(HOME) "/tmp"
 
@@ -27,4 +27,5 @@ foreach i [import_list] {
     import $i
 }
 
-h1 $::json
+put "Content-Type: application/json\n\n"
+puts $::fname|$::json
