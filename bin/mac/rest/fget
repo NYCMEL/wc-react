@@ -30,7 +30,7 @@ foreach i [import_list] {
 put "Content-Type: application/json\n\n"
 puts $::fname\n;flush stdout
 
-set f [open /Melify/data/stocks/$::fname r]
+set f [open /Melify/data/stocks/[clock format [clock seconds] -format "%Y-%m-%d"].$::fname r]
 set r [read $f];close $f
 
 # REPLACE ,\n FROM LINE
