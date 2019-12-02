@@ -1,4 +1,4 @@
-#!/Melify/bin/mac/tclkit
+x#!/Melify/bin/mac/tclkit
 
 set date "2019-11-19"
 set symbol "AAPL"

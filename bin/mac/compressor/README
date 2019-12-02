@@ -1,1 +1,0 @@
-java -jar /Melify/bin/mac/compressor/yui.jar /Melify/mtk/dev/tk/inc/mtk.buffer.js > /tmp/mtk.buffer.min.js
