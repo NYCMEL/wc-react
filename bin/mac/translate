@@ -1,0 +1,63 @@
+#!/Melify/bin/mac/tclkit
+###########################################################
+# USE _T_{id} IN YOUR HTML CODE FOR THIS TOOL TO WORK
+###########################################################
+
+if {$argc != 3} {
+    puts "\nUSAGE: lan <path-tohtml-file-name> <path-to-destination-folder> <path-to-locale.csv-file>\n"
+    exit
+}
+
+set file [lindex $argv 0]
+set path [lindex $argv 1]
+set loca [lindex $argv 2]
+
+####################################################
+####
+####################################################
+proc parseCSV {file} {
+    package require csv
+    package require struct::queue
+
+    set csv [ open $file {RDWR} ]
+
+    struct::queue q
+    csv::read2queue $csv q
+
+    return [q peek [q size]]
+}
+
+####################################################
+####
+####################################################
+set result [parseCSV $loca]
+
+set h [lindex $result 0]
+puts $h
+
+# MAKE DIRECTORIES
+foreach i [lrange $h 1 end] {
+    file mkdir $i
+}
+
+# OPEN AND READ CONTENT OF HTML FILE
+set f [open $file r]
+set r [read $f]
+close $f       
+
+#TRANSLATE EACH LANGUAGE NOW
+set ind 1
+foreach i [lrange $h $ind end] {
+    set k $r
+    puts "Updating $file ($i)"
+
+    foreach j [lrange $result 1 end] {
+	regsub -all "_T_[lindex $j 0]" $k [lindex $j $ind] k
+    }
+
+    set f [open [file join $path $i $file] w]
+    puts $f $k
+    close $f
+
+    incr ind
+}
