@@ -19,11 +19,11 @@ proc parseCSV {file} {
     package require csv
     package require struct::queue
 
-    set csv [ open $file {RDWR} ]
-
+    set csv [open $file {RDWR}]
+    
     struct::queue q
     csv::read2queue $csv q
-
+    
     return [q peek [q size]]
 }
 
@@ -54,7 +54,7 @@ foreach i [lrange $h $ind end] {
     foreach j [lrange $result 1 end] {
 	regsub -all "_T_[lindex $j 0]" $k [lindex $j $ind] k
     }
-
+    
     set f [open [file join $path $i $file] w]
     puts $f $k
     close $f
