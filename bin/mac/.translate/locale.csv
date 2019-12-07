@@ -1,5 +1,5 @@
 id,en,it
-1000,"Hello Mel","Ciao, Mel"
+1000,"Hello ""Mel""","Ciao, Mel"
 1001,"Bye Mel","Addio Mel"
 1002,"Please enter...","Per favore digita..."
 1003,"First name is required","Il nome è un campo obbligatorio"
