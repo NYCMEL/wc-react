@@ -1,0 +1,2 @@
+TRANSLATE:
+translate ./test.html ./ ./locale.csv 
