@@ -1,0 +1,1 @@
+/Melify/bin/mac/translate ./test.html ./ ./locale.csv 
