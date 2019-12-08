@@ -35,11 +35,6 @@ set result [parseCSV $loca]
 set h [lindex $result 0]
 puts $h
 
-# MAKE DIRECTORIES
-foreach i [lrange $h 1 end] {
-    file mkdir $i
-}
-
 # OPEN AND READ CONTENT OF HTML FILE
 set f [open $file r]
 set r [read $f]
@@ -55,7 +50,7 @@ foreach i [lrange $h $ind end] {
 	regsub -all "_T_[lindex $j 0]" $k [lindex $j $ind] k
     }
     
-    set f [open [file join $path $i $file] w]
+    set f [open "[file rootname $file].$i.html" w]
     puts $f $k
     close $f
 
