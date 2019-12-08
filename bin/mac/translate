@@ -29,9 +29,9 @@ proc parseCSV {file} {
 ####################################################
 ####
 ####################################################
-set result [parseCSV $loca]
+set list [parseCSV $loca]
 
-set h [lindex $result 0]
+set h [lindex $list 0]
 puts $h
 
 # OPEN AND READ CONTENT OF HTML FILE
@@ -45,7 +45,7 @@ foreach i [lrange $h $ind end] {
     set k $r
     puts "Updating $file ($i)"
 
-    foreach j [lrange $result 1 end] {
+    foreach j [lrange $list 1 end] {
 	regsub -all "_T_[lindex $j 0]" $k [lindex $j $ind] k
     }
     
