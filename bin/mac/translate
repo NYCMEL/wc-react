@@ -4,7 +4,7 @@
 ###########################################################
 
 if {$argc != 2} {
-    puts "\nUSAGE: lan <path-tohtml-file-name> <path-to-locale.csv-file>\n"
+    puts "\nUSAGE: lan <path-to-html-file-name> <path-to-locale.csv-file>\n"
     exit
 }
 

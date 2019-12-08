@@ -1,6 +1,6 @@
 TRANSLATE:
 
-USAGE: translate <path-tohtml-file-name> <path-to-locale.csv-file>
+USAGE: translate <path-to-html-file-name> <path-to-locale.csv-file>
 
 EXAMPLE: translate ./test.html ./locale.csv
 
