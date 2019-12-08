@@ -1,2 +1,6 @@
 TRANSLATE:
-translate ./test.html ./locale.csv 
+
+USAGE: lan <path-tohtml-file-name> <path-to-locale.csv-file>
+
+EXAMPLE: translate ./test.html ./locale.csv
+
