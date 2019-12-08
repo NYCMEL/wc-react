@@ -3,14 +3,13 @@
 # USE _T_{id} IN YOUR HTML CODE FOR THIS TOOL TO WORK
 ###########################################################
 
-if {$argc != 3} {
-    puts "\nUSAGE: lan <path-tohtml-file-name> <path-to-destination-folder> <path-to-locale.csv-file>\n"
+if {$argc != 2} {
+    puts "\nUSAGE: lan <path-tohtml-file-name> <path-to-locale.csv-file>\n"
     exit
 }
 
 set file [lindex $argv 0]
-set path [lindex $argv 1]
-set loca [lindex $argv 2]
+set loca [lindex $argv 1]
 
 ####################################################
 ####
