@@ -49,6 +49,8 @@ foreach i [lrange $h $ind end] {
 	regsub -all "_T_[lindex $j 0]" $k [lindex $j $ind] k
     }
     
+    #regsub -all "<!--.*?-->" $k "" k
+
     set f [open "[file rootname $file].$i.html" w]
     puts $f $k
     close $f
