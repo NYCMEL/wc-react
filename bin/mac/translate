@@ -53,8 +53,10 @@ foreach i [lrange $h $ind end] {
     puts $f $k
     close $f
 
+    file copy -force "[file rootname $file].$i.html" /tmp/junk.html
+
     # MINIFY HTML CODE
-    #exec node /Melify/mtk/dev/tk/lib/components/misc/webpack/node_modules/minify/bin/minify.js "/tmp/[file rootname $file].$i.html" > [file rootname $file].$i.html
+    exec node /Melify/mtk/dev/tk/lib/components/misc/webpack/node_modules/minify/bin/minify.js /tmp/junk.html > [file rootname $file].$i.html
 
     incr ind
 }
