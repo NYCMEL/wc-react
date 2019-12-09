@@ -11,12 +11,6 @@ if {$argc != 2} {
 set file [lindex $argv 0]
 set loca [lindex $argv 1]
 
-if {[info exist testing] == 1} {
-    puts XXXXXXXXXXXXXXX;exit
-    # MINIFY HTML CODE
-    exec node /Melify/mtk/dev/tk/lib/components/misc/webpack/node_modules/minify/bin/minify.js $file > /tmp/$file
-}
-
 ####################################################
 ####
 ####################################################
@@ -41,7 +35,7 @@ set h [lindex $list 0]
 puts $h
 
 # OPEN AND READ CONTENT OF HTML FILE
-set f [open "/tmp/$file" r]
+set f [open $file r]
 set r [read $f]
 close $f       
 
@@ -55,9 +49,12 @@ foreach i [lrange $h $ind end] {
 	regsub -all "_T_[lindex $j 0]" $k [lindex $j $ind] k
     }
     
-    set f [open "[file rootname $file].$i.html" w]
+    set f [open "/tmp/[file rootname $file].$i.html" w]
     puts $f $k
     close $f
+
+    # MINIFY HTML CODE
+    exec node /Melify/mtk/dev/tk/lib/components/misc/webpack/node_modules/minify/bin/minify.js "/tmp/[file rootname $file].$i.html" > [file rootname $file].$i.html
 
     incr ind
 }
