@@ -49,12 +49,12 @@ foreach i [lrange $h $ind end] {
 	regsub -all "_T_[lindex $j 0]" $k [lindex $j $ind] k
     }
     
-    set f [open "/tmp/[file rootname $file].$i.html" w]
+    set f [open "[file rootname $file].$i.html" w]
     puts $f $k
     close $f
 
     # MINIFY HTML CODE
-    exec node /Melify/mtk/dev/tk/lib/components/misc/webpack/node_modules/minify/bin/minify.js "/tmp/[file rootname $file].$i.html" > [file rootname $file].$i.html
+    #exec node /Melify/mtk/dev/tk/lib/components/misc/webpack/node_modules/minify/bin/minify.js "/tmp/[file rootname $file].$i.html" > [file rootname $file].$i.html
 
     incr ind
 }
