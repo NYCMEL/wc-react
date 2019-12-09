@@ -11,7 +11,10 @@ if {$argc != 2} {
 set file [lindex $argv 0]
 set loca [lindex $argv 1]
 
-exec node /Melify/mtk/dev/tk/lib/components/misc/webpack/node_modules/minify/bin/minify.js $file > /tmp/$file
+if {[info exist testing] == 1} {
+    # MINIFY HTML CODE
+    exec node /Melify/mtk/dev/tk/lib/components/misc/webpack/node_modules/minify/bin/minify.js $file > /tmp/$file
+}
 
 ####################################################
 ####
