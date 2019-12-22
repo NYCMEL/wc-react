@@ -13,10 +13,15 @@ namespace eval filetail {
 	after 1000
     }
 
-    proc init {fname delay} {
+    # end = 0 (SKIP TO END OF FILE}
+    # end = END (GO TO END OF THE FILE)
+    proc init {fname delay end} {
 	set hFile [open $fname "r"]
-	# seek to the end of file if needed
-	# seek $hFile 0 end 
+
+	if {$end == 0} {
+	    # seek to the end of file if needed
+	    seek $hFile 0 end
+	}
 
 	fconfigure $hFile -buffering none -eofchar "" -blocking no
 	fileevent $hFile readable [subst {filetail::readHandler $hFile $delay}]

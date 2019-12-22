@@ -9,4 +9,4 @@ lappend auto_path\
     /Melify/mtk/dev/tk/src/utl\
     /Melify/mtk/dev/tk/src/eng
 
-filetail::init "/tmp/z.json" 1000
+filetail::init "/tmp/z.json" 1000 0
