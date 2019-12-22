@@ -1,9 +1,10 @@
 #!/Melify/bin/mac/tclkit
 
 namespace eval filetail {
-    proc readHandler {handle} {
+    proc readHandler {handle delay} {
 	set line [read $handle]
 
+	# PROCESS NONE-BLANK LINES
 	if {[string trim $line] != ""} {
 	    process $line
 	}
@@ -12,13 +13,13 @@ namespace eval filetail {
 	after 1000
     }
 
-    proc init {fname} {
+    proc init {fname delay} {
 	set hFile [open $fname "r"]
 	# seek to the end of file if needed
 	# seek $hFile 0 end 
 
 	fconfigure $hFile -buffering none -eofchar "" -blocking no
-	fileevent $hFile readable [subst {filetail::readHandler $hFile}]
+	fileevent $hFile readable [subst {filetail::readHandler $hFile $delay}]
 
 	proc process {line} {
 	    puts -nonewline $line; flush stdout
@@ -29,4 +30,4 @@ namespace eval filetail {
     }
 }
 
-filetail::init "/tmp/z.json"
+filetail::init "/tmp/z.json" 1000
