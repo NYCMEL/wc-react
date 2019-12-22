@@ -1,0 +1,25 @@
+#!/Melify/bin/mac/tclkit
+
+proc setup filename {
+    set ::fp [open $filename]
+    seek $::fp 0 end
+}
+
+proc read_more {} {
+    set new [read $::fp]
+    
+    if {$new != ""} {
+	process $new
+    }
+
+    after 1000 read_more
+}
+
+proc process {line} {
+    puts -nonewline $line; flush stdout
+}
+
+setup "/tmp/z.json"
+read_more
+
+vwait forever
