@@ -1,0 +1,16 @@
+#!/Melify/bin/mac/tclkit
+
+source ib.tcl
+
+#DUMMY IT UP
+proc Trace {args} {}
+
+lappend auto_path\
+    /Melify/mtk/dev/tk/src\
+    /Melify/mtk/dev/tk/src/db\
+    /Melify/mtk/dev/tk/src/utl\
+    /Melify/mtk/dev/tk/src/eng
+
+ib::quote 1000 "265598,1520593,3691937"
+
+vwait forever
