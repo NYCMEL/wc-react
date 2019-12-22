@@ -1,25 +1,27 @@
 #!/Melify/bin/mac/tclkit
 
-proc setup filename {
-    set ::fp [open $filename]
-    seek $::fp 0 end
-}
+proc readHandler {handle} {
+    set line [read $handle]
 
-proc read_more {} {
-    set new [read $::fp]
-    
-    if {$new != ""} {
-	process $new
+    if {[string trim $line] != ""} {
+	puts -------$line------
+	process $line
     }
 
-    after 1000 read_more
+    # TO REDUCE CPU OVERHEAD...
+    after 1000
 }
+
+set hFile [open "/tmp/z.json" "r"]
+# seek to the end of file if needed
+# seek $hFile 0 end 
+
+fconfigure $hFile -buffering none -eofchar "" -blocking no
+fileevent $hFile readable [subst {readHandler $hFile}]
 
 proc process {line} {
     puts -nonewline $line; flush stdout
 }
 
-setup "/tmp/z.json"
-read_more
-
+#just for exiting into main event loop
 vwait forever
