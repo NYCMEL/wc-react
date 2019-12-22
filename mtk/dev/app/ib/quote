@@ -8,6 +8,8 @@ lappend auto_path\
     /Melify/mtk/dev/tk/src/utl\
     /Melify/mtk/dev/tk/src/eng
 
-ib::quote 1000 "265598,1520593,3691937"
+##################################################
+#                AAPL   JPM     K
+ib::quote 1000 "265598,1520593,8758"
 
 vwait forever
