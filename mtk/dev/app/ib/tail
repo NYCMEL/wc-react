@@ -1,26 +1,32 @@
 #!/Melify/bin/mac/tclkit
 
-proc readHandler {handle} {
-    set line [read $handle]
+namespace eval filetail {
+    proc readHandler {handle} {
+	set line [read $handle]
 
-    if {[string trim $line] != ""} {
-	process $line
+	if {[string trim $line] != ""} {
+	    process $line
+	}
+
+	# TO REDUCE CPU OVERHEAD...
+	after 1000
     }
 
-    # TO REDUCE CPU OVERHEAD...
-    after 1000
+    proc init {} {
+	set hFile [open "/tmp/z.json" "r"]
+	# seek to the end of file if needed
+	# seek $hFile 0 end 
+
+	fconfigure $hFile -buffering none -eofchar "" -blocking no
+	fileevent $hFile readable [subst {filetail::readHandler $hFile}]
+
+	proc process {line} {
+	    puts -nonewline $line; flush stdout
+	}
+
+	#just for exiting into main event loop
+	vwait forever
+    }
 }
 
-set hFile [open "/tmp/z.json" "r"]
-# seek to the end of file if needed
-# seek $hFile 0 end 
-
-fconfigure $hFile -buffering none -eofchar "" -blocking no
-fileevent $hFile readable [subst {readHandler $hFile}]
-
-proc process {line} {
-    puts -nonewline $line; flush stdout
-}
-
-#just for exiting into main event loop
-vwait forever
+filetail::init
