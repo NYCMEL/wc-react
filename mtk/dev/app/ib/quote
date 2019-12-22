@@ -2,9 +2,6 @@
 
 source ib.tcl
 
-#DUMMY IT UP
-proc Trace {args} {}
-
 lappend auto_path\
     /Melify/mtk/dev/tk/src\
     /Melify/mtk/dev/tk/src/db\
