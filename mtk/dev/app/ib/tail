@@ -4,7 +4,6 @@ proc readHandler {handle} {
     set line [read $handle]
 
     if {[string trim $line] != ""} {
-	puts -------$line------
 	process $line
     }
 
