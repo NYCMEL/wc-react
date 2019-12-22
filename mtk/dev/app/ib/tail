@@ -12,8 +12,8 @@ namespace eval filetail {
 	after 1000
     }
 
-    proc init {} {
-	set hFile [open "/tmp/z.json" "r"]
+    proc init {fname} {
+	set hFile [open $fname "r"]
 	# seek to the end of file if needed
 	# seek $hFile 0 end 
 
@@ -29,4 +29,4 @@ namespace eval filetail {
     }
 }
 
-filetail::init
+filetail::init "/tmp/z.json"
