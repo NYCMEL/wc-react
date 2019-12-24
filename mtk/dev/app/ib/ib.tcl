@@ -5,7 +5,7 @@ namespace eval ib {
     namespace eval quote {
 	proc init {every symbols} {
 	    foreach i [split $symbols ,] {
-		set ::f($i) [open ./data/$::date.$i.json w]
+		set ::f($i) [open ./data/$::date.$i.json a+]
 	    }
 
 	    ib::quote::pull $every $symbols
