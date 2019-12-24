@@ -1,22 +1,33 @@
 set last ""
-set f [open ./data/data.json w]
-
 namespace eval ib {
-    proc quote {every symbols} {
-	if {[catch {
-	    foreach i  [json::json2dict [exec curl -s -k -X GET "https://localhost:5000/v1/portal/iserver/marketdata/snapshot?conids=$symbols"]] {
-		if {$i != $::last} {
-		    puts -nonewline .;flush stdout
-		    puts $::f $i;flush $::f
-		    set ::last "$i"
-		    puts "$i";flush stdout
-		}
+    namespace eval quote {
+	proc init {every symbols} {
+	    foreach i [split $symbols ,] {
+		set ::f($i) [open ./data/$i.json w]
 	    }
-	} e] != 0} {
-	    puts >>>>>>>>>>$e
+
+	    ib::quote::pull $every $symbols
 	}
 
-	after $every ib::quote $every $symbols
+	proc pull {every symbols} {
+	    if {[catch {
+		foreach i  [json::json2dict [exec curl -s -k -X GET "https://localhost:5000/v1/portal/iserver/marketdata/snapshot?conids=$symbols"]] {
+		    if {$i != $::last} {
+			foreach j [split $i \n] {
+			    set ind [lindex $j 1]
+			}
+
+			puts -nonewline .;flush stdout
+			puts $::f($ind) $i;flush $::f($ind)
+			set ::last "$i"
+		    }
+		}
+	    } e] != 0} {
+		puts >>>>>>>>>>$e
+	    }
+
+	    after $every ib::quote::pull $every $symbols
+	}
     }
 
     proc order {conid orderType listingExchange price side ticker quantity} {
