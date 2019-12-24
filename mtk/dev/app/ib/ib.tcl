@@ -1,5 +1,6 @@
-set date [clock format [clock seconds] -format %Y-%m-%d]
 set last ""
+set date [clock format [clock seconds] -format %Y-%m-%d]
+
 namespace eval ib {
     namespace eval quote {
 	proc init {every symbols} {
