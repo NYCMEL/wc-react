@@ -9,17 +9,18 @@ namespace eval ib {
 		set ::f($i) [open ./data/$::date.$i.json a+]
 	    }
 
+	    exec curl -s -k -X POST "https://localhost:5000/v1/portal/iserver/account" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"acctId\": \"U3401789\"}"
+
 	    ib::quote::pull $every $symbols
 	}
 
 	proc pull {every symbols} {
 	    if {[catch {
-		foreach i  [json::json2dict [exec curl -s -k -X GET "https://localhost:5000/v1/portal/iserver/marketdata/snapshot?conids=$symbols"]] {
+		foreach i [json::json2dict [exec curl -s -k -X GET "https://localhost:5000/v1/portal/iserver/marketdata/snapshot?conids=$symbols"]] {
 		    if {$i != $::last} {
-			set ind [lindex [split $i \n] 1]
-			puts >>>>>>>>>$ind
+			foreach j [split $i \n] {
+			    set ind [lindex $j 1]
 
-			if {$ind != ""} {
 			    puts -nonewline .;flush stdout
 			    puts $::f($ind) $i;flush $::f($ind)
 			    set ::last "$i"
