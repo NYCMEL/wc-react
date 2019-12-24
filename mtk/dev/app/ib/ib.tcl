@@ -5,6 +5,7 @@ namespace eval ib {
     namespace eval quote {
 	proc init {every symbols} {
 	    foreach i [split $symbols ,] {
+		puts "./data/$::date.$i.json"
 		set ::f($i) [open ./data/$::date.$i.json a+]
 	    }
 
@@ -15,13 +16,14 @@ namespace eval ib {
 	    if {[catch {
 		foreach i  [json::json2dict [exec curl -s -k -X GET "https://localhost:5000/v1/portal/iserver/marketdata/snapshot?conids=$symbols"]] {
 		    if {$i != $::last} {
-			foreach j [split $i \n] {
-			    set ind [lindex $j 1]
-			}
+			set ind [lindex [split $i \n] 1]
+			puts >>>>>>>>>$ind
 
-			puts -nonewline .;flush stdout
-			puts $::f($ind) $i;flush $::f($ind)
-			set ::last "$i"
+			if {$ind != ""} {
+			    puts -nonewline .;flush stdout
+			    puts $::f($ind) $i;flush $::f($ind)
+			    set ::last "$i"
+			}
 		    }
 		}
 	    } e] != 0} {
