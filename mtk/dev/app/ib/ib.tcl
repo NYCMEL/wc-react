@@ -1,9 +1,10 @@
+set date [clock format [clock seconds] -format %Y-%m-%d]
 set last ""
 namespace eval ib {
     namespace eval quote {
 	proc init {every symbols} {
 	    foreach i [split $symbols ,] {
-		set ::f($i) [open ./data/$i.json w]
+		set ::f($i) [open ./data/$::date.$i.json w]
 	    }
 
 	    ib::quote::pull $every $symbols
