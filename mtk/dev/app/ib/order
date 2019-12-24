@@ -2,4 +2,4 @@
 
 source ib.tcl
 
-ib::order 1520593 Market NYSE 230.50 BUY JPM 1
+ib::order::place 1520593 Market NYSE 230.50 BUY JPM 1
