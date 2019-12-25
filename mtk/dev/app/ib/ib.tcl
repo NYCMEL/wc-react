@@ -9,7 +9,8 @@ namespace eval ib {
 		set ::f($i) [open ./data/$::date.$i.json a+]
 	    }
 
-	    exec curl -s -k -X POST "https://localhost:5000/v1/portal/iserver/account" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"acctId\": \"U3401789\"}"
+	    set res [json::json2dict [exec curl -s -k -X POST "https://localhost:5000/v1/portal/iserver/account" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"acctId\": \"U3401789\"}"]]
+	    puts >>>>>>>>$res
 
 	    ib::quote::pull $every $symbols
 	}
@@ -22,7 +23,7 @@ namespace eval ib {
 			    array set ta $i
 			    set ind [lindex $j 1]
 
-			    set k "$ta(_updated),$ta(55),$ta(71),$ta(82),$ta(83),$ta(31)"
+			    set k "$ta(_updated),$ta(71),$ta(82),$ta(83),$ta(31)"
 
 			    puts -nonewline .;flush stdout
 			    puts $::f($ind) $k;flush $::f($ind)
