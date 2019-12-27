@@ -17,7 +17,7 @@ namespace eval ib {
 
 	proc pull {every symbols} {
 	    if {[catch {
-		foreach i [json::json2dict [exec curl -s -k -X GET "https://localhost:5000/v1/portal/iserver/marketdata/snapshot?conids=$symbols&fields=31"]] {
+		foreach i [json::json2dict [exec curl -s -k -X GET "https://localhost:5000/v1/portal/iserver/marketdata/snapshot?conids=$symbols"]] {
 		    array set ta $i
 		    set ind $ta(conid)
 		    
