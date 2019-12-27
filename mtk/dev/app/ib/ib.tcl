@@ -5,7 +5,7 @@ namespace eval ib {
 	proc init {every symbols} {
 	    foreach i [split $symbols ,] {
 		puts "./data/$::date.$i.json"
-		set ::f($i) [open ./data/$::date.$i.json w]
+		set ::f($i) [open ./data/$::date.$i.dat w]
 		set ::last($i) 0
 	    }
 
