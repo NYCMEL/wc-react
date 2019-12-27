@@ -10,7 +10,7 @@ namespace eval ib {
 	    }
 
 	    set res [json::json2dict [exec curl -s -k -X POST "https://localhost:5000/v1/portal/iserver/account" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"acctId\": \"U3401789\"}"]]
-	    puts >>>>>>>>$res
+	    puts "INFO: $res"
 
 	    ib::quote::pull $every $symbols
 	}
