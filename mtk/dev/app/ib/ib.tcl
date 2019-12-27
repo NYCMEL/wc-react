@@ -29,7 +29,7 @@ namespace eval ib {
 		    }
 		}
 	    } e] != 0} {
-		puts >>>>>>>>>>$e
+		puts "ERROR: $e"
 	    }
 
 	    after $every ib::quote::pull $every $symbols
