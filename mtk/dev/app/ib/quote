@@ -23,7 +23,7 @@ lappend auto_path\
 # 86		139.55		Ask Price
 # 71		139.22		Low
 ##################################################
-#                AAPL   JPM     K
-ib::quote::init 1000 "265598,1520593,8758,4762"
+#                AAPL   JPM     K    BA        AMZN    C
+ib::quote::init 1000 "265598,1520593,8758,4762,3691937,87335484"
 
 vwait forever
