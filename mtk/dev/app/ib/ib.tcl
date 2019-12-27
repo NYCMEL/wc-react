@@ -20,13 +20,10 @@ namespace eval ib {
 		foreach i [json::json2dict [exec curl -s -k -X GET "https://localhost:5000/v1/portal/iserver/marketdata/snapshot?conids=$symbols&fields=31"]] {
 		    if {$i != $::last} {
 			foreach j [split $i \n] {
-			    array set ta $i
 			    set ind [lindex $j 1]
 
-			    set k "$ta(_updated),$ta(71),$ta(82),$ta(83),$ta(31)"
-
 			    puts -nonewline .;flush stdout
-			    puts $::f($ind) $k;flush $::f($ind)
+			    puts $::f($ind) $i;flush $::f($ind)
 			    set ::last "$i"
 			}
 		    }
