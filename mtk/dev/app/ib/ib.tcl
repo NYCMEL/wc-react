@@ -1,4 +1,3 @@
-set last ""
 set date [clock format [clock seconds] -format %Y-%m-%d]
 
 namespace eval ib {
@@ -7,6 +6,7 @@ namespace eval ib {
 	    foreach i [split $symbols ,] {
 		puts "./data/$::date.$i.json"
 		set ::f($i) [open ./data/$::date.$i.json a+]
+		set ::last($i) 0
 	    }
 
 	    set res [json::json2dict [exec curl -s -k -X POST "https://localhost:5000/v1/portal/iserver/account" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"acctId\": \"U3401789\"}"]]
@@ -18,13 +18,14 @@ namespace eval ib {
 	proc pull {every symbols} {
 	    if {[catch {
 		foreach i [json::json2dict [exec curl -s -k -X GET "https://localhost:5000/v1/portal/iserver/marketdata/snapshot?conids=$symbols&fields=31"]] {
-		    if {$i != $::last} {
+		    array set ta $i
+		    set ind $ta(conid)
+		    
+		    if {$ta(31) != $::last($ind)} {
 			foreach j [split $i \n] {
-			    set ind [lindex $j 1]
-
 			    puts -nonewline .;flush stdout
 			    puts $::f($ind) $i;flush $::f($ind)
-			    set ::last "$i"
+			    set ::last($ind) $ta(31)
 			}
 		    }
 		}
