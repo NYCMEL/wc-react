@@ -50,9 +50,7 @@ proc process {} {
 ##### 
 ######################################################
 proc reset {} {
-    upvar s s
-    upvar e e
-    upvar t t
+    global s e t
 
     set s 4;# SIZE
     set e 0;# POINTER TO LAST TICK IN ARRAY
@@ -66,7 +64,86 @@ proc reset {} {
 ######################################################
 ##### 
 ######################################################
-proc trader {} {
+proc trader {line} {
+    global o n s e t trade tot
+
+    set x [lindex [split $line "|"] 9]
+
+    if {$x == $t($e)} {
+	# SKIP SAME PRICES
+    } else {
+	# NEED TO SELL
+	if {$o == 1} {
+	    if {$x > $t($e)} {
+		incr e
+		set t($e) $x
+
+		if {$e == [expr $s -1]} {
+		    puts -nonewline "SEL, ";flush stdout;
+
+		    for {set i 0} {$i < $s} {incr i} {
+			puts -nonewline "$t($i), ";flush stdout;
+		    }
+		    
+		    set tot [expr $tot + [expr $x - $trade]]
+		    puts "$tot\n"
+
+		    # NOW BUY (REVERSE)
+		    set o 0;
+
+		    # START WITH LAST PRICE
+		    set t(0) $x
+		    set trade $t(0)
+		    
+		    reset
+		}
+	    } else {
+		reset
+	    }
+	}
+
+	# NEED TO BUY
+	if {$o == 0} {
+	    if {$x < $t($e)} {
+		incr e
+		set t($e) $x
+
+		if {$e == [expr $s -1]} {
+		    puts -nonewline "BUY, ";flush stdout;
+
+		    for {set i 0} {$i < $s} {incr i} {
+			puts -nonewline "$t($i), ";flush stdout;
+		    }
+
+		    set tot [expr $tot + [expr $trade - $x]]
+		    puts "$tot"
+
+		    # START WITH LAST PRICE
+		    set t(0) $t($e)
+		    set trade $t(0)
+		    set o 1; # NOW BUY (REVERSE)
+
+		    reset
+		}
+	    } else {
+		reset
+
+		# START WITH LAST PRICE
+		set t($e) $x
+	    }
+	}
+    }
+
+    #after 10;
+    #puts -nonewline .;flush stdout
+}
+
+######################################################
+##### 
+######################################################
+proc testing {} {
+    global s o n e t trade tot
+
     set f [open /Melify/mtk/dev/app/links/app.vfs/data/c.quotes r]
 
     # GET HEADERS
@@ -88,78 +165,8 @@ proc trader {} {
     set tot 0
 
     while {[gets $f line] >= 0} {
-	set x [lindex [split $line "|"] 9]
-
-	if {$x == $t($e)} {
-	    # SKIP SAME PRICES
-	} else {
-	    # NEED TO SELL
-	    if {$o == 1} {
-		if {$x > $t($e)} {
-		    incr e
-		    set t($e) $x
-
-		    if {$e == [expr $s -1]} {
-			puts -nonewline "SEL, ";flush stdout;
-
-			for {set i 0} {$i < $s} {incr i} {
-			    puts -nonewline "$t($i), ";flush stdout;
-			}
-			
-			set tot [expr $tot + [expr $x - $trade]]
-			puts "$tot\n"
-
-			# NOW BUY (REVERSE)
-			set o 0;
-
-			# START WITH LAST PRICE
-			set t(0) $x
-			set trade $t(0)
-			
-			reset
-		    }
-		} else {
-		    reset
-		}
-	    }
-
-	    # NEED TO BUY
-	    if {$o == 0} {
-		if {$x < $t($e)} {
-		    incr e
-		    set t($e) $x
-
-		    if {$e == [expr $s -1]} {
-			puts -nonewline "BUY, ";flush stdout;
-
-			for {set i 0} {$i < $s} {incr i} {
-			    puts -nonewline "$t($i), ";flush stdout;
-			}
-
-			set tot [expr $tot + [expr $trade - $x]]
-			puts "$tot"
-
-			# START WITH LAST PRICE
-			set t(0) $t($e)
-			set trade $t(0)
-			set o 1; # NOW BUY (REVERSE)
-
-			reset
-		    }
-		} else {
-		    reset
-
-		    # START WITH LAST PRICE
-		    set t($e) $x
-		}
-	    }
-	}
-
-	#after 10;
-	#puts -nonewline .;flush stdout
+	trader $line
     }
-
-    close $f
 }
 
-trader
+testing
