@@ -178,7 +178,7 @@ proc testing {} {
 # USAGE: trader testing|live
 if {[catch {
     if {$argc == 0} {
-	testing
+	puts "\nUSAGE: trader testing|live\n"
     } else {
 	eval $argv
     }
