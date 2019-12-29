@@ -159,7 +159,7 @@ proc testing {} {
     # GET NEXT LINE AND SET ARRAY
     set n [split [gets $f] "|"]
     set e 0
-    set t($e) [lindex $n 9]
+    set t($e) 0; # FIRST TIME THROUGH
 
     reset 
 
