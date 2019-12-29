@@ -116,7 +116,7 @@ proc trader {line} {
 		    }
 
 		    set tot [expr $tot + [expr $trade - $x]]
-		    puts "$tot"
+		    puts "\[$tot\]"
 
 		    # START WITH LAST PRICE
 		    set t(0) $t($e)
