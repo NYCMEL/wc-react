@@ -2,6 +2,9 @@
 
 source "/Melify/mtk/dev/tk/src/utl/json2dict.tcl"
 
+######################################################
+##### 
+######################################################
 proc process {} {
     set h {
 	"assetType" "symbol" "description" "bidPrice" "bidSize" "bidId" "askPrice" "askSize" "askId" "lastPrice" "lastSize" "lastId" "openPrice" "highPrice" "lowPrice"
@@ -31,7 +34,7 @@ proc process {} {
 		    puts "\n$s"
 
 		    # CALL TRADER TO PROCESS THIS LINE
-		    #trader $x
+		    trader $x
 		}
 	    }
 
