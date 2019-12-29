@@ -148,7 +148,7 @@ proc testing {} {
 
     set cnt 0
 
-    set f [open /Melify/mtk/dev/app/links/app.vfs/data/AAPL.quotes r]
+    set f [open /Melify/mtk/dev/app/links/app.vfs/data/c.quotes r]
 
     # GET HEADERS
     gets $f
