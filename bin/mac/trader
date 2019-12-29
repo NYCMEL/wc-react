@@ -144,6 +144,8 @@ proc trader {line} {
 proc testing {} {
     global s o n e t trade tot
 
+    puts "> STARTED TESTING:"
+
     set cnt 0
 
     set f [open /Melify/mtk/dev/app/links/app.vfs/data/c.quotes r]
@@ -171,7 +173,7 @@ proc testing {} {
 	trader $line
     }
 
-    puts "\nPROCESSED: $cnt trades"
+    puts "> PROCESSED: $cnt trades"
 }
 
 testing
