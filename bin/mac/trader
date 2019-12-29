@@ -160,7 +160,6 @@ proc testing {} {
     set n [split [gets $f] "|"]
     set e 0
     set t($e) [lindex $n 9]
-    set t($e) 69.53
 
     reset 
 
