@@ -5,7 +5,7 @@ source "/Melify/mtk/dev/tk/src/utl/json2dict.tcl"
 ######################################################
 ##### 
 ######################################################
-proc process {} {
+proc live {} {
     set h {
 	"assetType" "symbol" "description" "bidPrice" "bidSize" "bidId" "askPrice" "askSize" "askId" "lastPrice" "lastSize" "lastId" "openPrice" "highPrice" "lowPrice"
 	"bidTick" "closePrice" "netChange" "totalVolume" "quoteTimeInLong" "tradeTimeInLong" "mark" "exchange" "exchangeName" "marginable" "shortable" "volatility" "digits" "52WkHigh" "52WkLow" "nAV"
@@ -175,4 +175,13 @@ proc testing {} {
     puts "> PROCESSED: $cnt trades"
 }
 
-testing
+# USAGE: trader testing|live
+if {[catch {
+    if {$argc == 0} {
+	testing
+    } else {
+	eval $argv
+    }
+} e] != 0} {
+    puts "\nUSAGE: trader testing|live\n"
+}
