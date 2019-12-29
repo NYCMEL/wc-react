@@ -27,6 +27,8 @@ proc reset {} {
 ##### 
 ######################################################
 proc trader {line} {
+    puts >>>>>>>$line
+
     if {[info exist ::o] == 0} {
 	# GET NEXT LINE AND SET ARRAY
 	set ::o 1;# 1 = SELL, 0 = BUY
@@ -133,13 +135,15 @@ proc process {} {
 	    set y [json::json2dict $x]
 
 	    if {$output != $x} {
-		catch {
+		if {[catch {
 		    foreach i $h {
 			set tick($i) [dict get $y "$::symbol" $i]
 		    }
 
 		    # CALL TRADER TO PROCESS THIS LINE
-		    trader [range range $x 0 end]
+		    trader [string range $x 0 end]
+		} e] != 0} {
+		    puts "ERROR: $e";exit
 		}
 	    }
 
