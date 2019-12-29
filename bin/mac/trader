@@ -139,7 +139,7 @@ proc process {} {
 		    }
 
 		    # CALL TRADER TO PROCESS THIS LINE
-		    trader [lstring $x 0 end]
+		    trader [range range $x 0 end]
 		}
 	    }
 
