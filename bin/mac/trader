@@ -144,6 +144,8 @@ proc trader {line} {
 proc testing {} {
     global s o n e t trade tot
 
+    set cnt 0
+
     set f [open /Melify/mtk/dev/app/links/app.vfs/data/c.quotes r]
 
     # GET HEADERS
@@ -165,8 +167,11 @@ proc testing {} {
     set tot 0
 
     while {[gets $f line] >= 0} {
+	incr cnt
 	trader $line
     }
+
+    puts "\nPROCESSED: $cnt trades"
 }
 
 testing
