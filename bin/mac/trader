@@ -31,7 +31,7 @@ proc live {} {
 		    }
 
 		    set s [string replace $s end end "\n"]
-		    puts "\n$s"
+		    #puts "\n$s"
 
 		    # CALL TRADER TO PROCESS THIS LINE
 		    trader $x
