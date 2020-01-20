@@ -1,25 +1,11 @@
 #!/Melify/bin/mac/tclkit
 
-# CHECK ARGUMENTS
-if {$argc == 0} {
-    puts ""
-    puts "USAGE: packer component-1 component-2 ... component-n"
-    puts "\tAVAILABLE COMPONENTS: "
-    set cnt 0
-    foreach i [lsort [array names dep]] {
-	puts "\t[incr cnt]: $i"
-    }
-    puts ""
-    puts "\texample: packer maker countdown ..."
-    puts ""
-    exit
-}
-
 # SET PATHS
 set react   "/Melify/mtk/dev/tk/lib/components/misc/react"
 set angular "/Melify/mtk/dev/tk/lib/components/misc/angular"
 set webpack "/Melify/mtk/dev/tk/lib/components/misc/webpack"
-set comps   "$argv"
+set comps   [file tail [pwd]]
+puts "PACKING: $comps"
 
 #############################################
 #### USAGE: delay::delay-bw 2000
