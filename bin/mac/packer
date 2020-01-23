@@ -223,6 +223,10 @@ while {1} {
         eval exec open http://localhost$webpack/build/index.html
         #eval exec say "Have no fear, Mel is here"
 
+	# add document register
+	exec cat /Melify/mtk/dev/tk/lib/components/misc/webpack/src/w/js/ext/document-register-element.js $webpack/build/wc.bundle.js > tmp
+	exec mv tmp $webpack/build/wc.bundle.js
+
 	# CREATE ZIP FILE
 	exec gzip -k $webpack/build/wc.bundle.js
 	file rename $webpack/build/wc.bundle.js.gz $webpack/build/wc.bundle.gz.js
