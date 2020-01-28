@@ -5,7 +5,7 @@
 #######################################################
 source /Melify/mtk/dev/tk//src/cgi/cgi.tcl
 
-source ../../app.cfg
+source ../app.cfg
 
 set env(HOME) "/tmp"
 
