@@ -28,4 +28,4 @@ foreach i [import_list] {
 }
 
 put "Content-Type: application/json\n\n"
-put [dbQuery2JSON -db "/Melify/mtk/$ENV/app/$APP/db/sqlite.db" -query $query]
+put [dbQuery2JSON -db $db -query $query]
