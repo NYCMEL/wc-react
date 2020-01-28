@@ -2,6 +2,7 @@
 
 #######################################################
 ###### SERVER CODE
+######   CALL restDB WITH PATH-TO-DB AND query STRING
 #######################################################
 source /Melify/mtk/dev/tk//src/cgi/cgi.tcl
 
