@@ -170,7 +170,10 @@ set f [open $webpack/src/.index.html r]
 set r [read $f]
 close $f
 
-regsub "<HTMLCODE/>" $r "$html" r
+set tmp [string toupper $comps]
+
+regsub "HTMLTITLE"   $r "$tmp"   r
+regsub "<HTMLCODE/>" $r "$html"  r
 
 set f [open $webpack/src/index.html w]
 puts $f $r
