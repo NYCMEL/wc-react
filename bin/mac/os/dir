@@ -2,7 +2,7 @@
 
 #######################################################
 #### DIR LISTING ON SERVER
-#### http://localhost/mtk/os/dir?path=/Melify/mtk/dev/tk/lib/components/w/html/*.html
+#### http://localhost/mtk/os/dir?path=/Melify/mtk/dev/tk/lib/components/w/html&files=*
 #######################################################
 source /Melify/mtk/dev/tk//src/cgi/cgi.tcl
 
@@ -28,7 +28,9 @@ foreach i [import_list] {
     import $i
 }
 
-regsub -all "\n" [glob -nocomplain $::path] "|" rval
+cd $::path
+
+regsub -all "\n" [glob -nocomplain $::files] "|" rval
 
 put "Content-Type: application/json\n\n"
 puts $rval
