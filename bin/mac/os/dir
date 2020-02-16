@@ -30,7 +30,11 @@ foreach i [import_list] {
 
 cd $::path
 
-regsub -all "\n" [glob -nocomplain $::files] "|" rval
+set rval ""
+foreach i [glob -nocomplain $::files] {
+    append rval "\"$i\","
+}
+set rval [string replace $rval end end]
 
 put "Content-Type: application/json\n\n"
-puts $rval
+put "\[$rval\]"
