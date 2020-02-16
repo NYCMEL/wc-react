@@ -170,10 +170,10 @@ set f [open $webpack/src/.index.html r]
 set r [read $f]
 close $f
 
-set tmp [string toupper $comps]
+set tmp "WC-[string toupper $comps]"
 
-regsub "HTMLTITLE"   $r "$tmp"   r
-regsub "<HTMLCODE/>" $r "$html"  r
+regsub -all "HTMLTITLE"   $r "$tmp"   r
+regsub -all "<HTMLCODE/>" $r "$html"  r
 
 set f [open $webpack/src/index.html w]
 puts $f $r
@@ -223,7 +223,7 @@ while {1} {
         catch {exec killall npm}
 
         puts "DONE WITH $argv..."
-        eval exec open http://localhost$webpack/build/index.html
+        #eval exec open http://localhost$webpack/build/index.html
         #eval exec say "Have no fear, Mel is here"
 
 	# ADD DOCUMENT REGISTER
