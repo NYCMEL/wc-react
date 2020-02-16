@@ -31,9 +31,10 @@ foreach i [import_list] {
 cd $::path
 
 set rval ""
-foreach i [glob -nocomplain $::files] {
+foreach i [lsort [glob -nocomplain $::files]] {
     append rval "\"$i\","
 }
+
 set rval [string replace $rval end end]
 
 put "Content-Type: application/json\n\n"
