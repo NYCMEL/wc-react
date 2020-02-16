@@ -1,7 +1,8 @@
 #!/Melify/bin/mac/tclkit
 
 #######################################################
-###### SERVER CODE
+#### DIR LISTING ON SERVER
+#### http://localhost/mtk/os/dir?path=/Melify/mtk/dev/tk/lib/components/w/html/*.html
 #######################################################
 source /Melify/mtk/dev/tk//src/cgi/cgi.tcl
 
