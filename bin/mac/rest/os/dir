@@ -5,8 +5,7 @@
 #### http://localhost/mtk/os/dir?path=/Melify/mtk/dev/tk/lib/components/w/html&files=*
 #######################################################
 source /Melify/mtk/dev/tk//src/cgi/cgi.tcl
-
-source ../../../app.cfg
+source /Melify/mtk/dev/app/links/bin/app.cfg
 
 set env(HOME) "/tmp"
 
