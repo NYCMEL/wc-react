@@ -10,6 +10,7 @@
     "preBuild": "rimraf build",
     "build-lib": "rollup -c",
     "after-build": "cpx \"./src/components/Accordion/wc.bundle.js\" ./build",
+    "after-build": "cpx \"./src/Melify\" ./build",
     "build": "npm-run-all preBuild build-lib after-build",
     "lint": "standard",
     "format": "prettier-standard --format",
