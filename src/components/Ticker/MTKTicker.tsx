@@ -27,9 +27,9 @@ export const MTKTicker = (props: MTKTickerProps) => {
 		<div className="container mt-5">
 		    <div className="row">
 			<div className="col-md-12">
-			    <wc-ticker
-				symbols={props.symbols}
-				interval={props.interval}
+			    <wc-ticker  style={{fontFamily:"fal"}}
+			    symbols={props.symbols}
+			    interval={props.interval}
 			    {...props}
 			    />
 			</div>
