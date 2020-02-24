@@ -3,4 +3,4 @@ import {MTKAccordion} from "./MTKAccordion";
 
 export default {title: 'MTK Accordion'}
 
-export const basic = () => <MTKAccordion cfg="asdas" show={true}/>
+export const basic = () => <MTKAccordion cfg="./data.json" show={true}/>
