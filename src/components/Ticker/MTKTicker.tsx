@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {CommonProps} from "../../Common";
+import "../../Melify/fonts/fonts.css";
 
 declare global {
     namespace JSX {
