@@ -14,7 +14,7 @@ require('./wc.bundle.js');
 interface MTKAccordionProps {
     id?: string;
     cfg: string;
-    show: boolean;
+    show: number;
 }
 
 export const MTKAccordion = (props: MTKAccordionProps) => {
@@ -37,7 +37,7 @@ export const MTKAccordion = (props: MTKAccordionProps) => {
 		<div className="container mt-5">
 		    <div className="row">
 			<div className="col-md-6">
-			    <wc-accordion id="my-accordion-1" cfg="http://links.melify.com/tk/lib/components/w/data/accordion.json" show="true"></wc-accordion>
+			    <wc-accordion id="my-accordion-1" cfg="http://links.melify.com/tk/lib/components/w/data/accordion.json" show={2}></wc-accordion>
 			</div>
 		    </div>
 		</div>
