@@ -23,12 +23,18 @@ export const MTKTicker = (props: MTKTickerProps) => {
     return (
         <div role='heading'>
             <div id="wc">
-                <wc-ticker
-                    symbols={props.symbols}
-                    interval={props.interval}
-                    {...props}
-                />
-            </div>
-        </div>
+		<div className="container mt-5">
+		    <div className="row">
+			<div className="col-md-6">
+			    <wc-ticker
+				symbols={props.symbols}
+				interval={props.interval}
+			    {...props}
+			    />
+			</div>
+		    </div>
+		</div>
+	    </div>
+	</div>
     )
 };

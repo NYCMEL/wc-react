@@ -33,13 +33,19 @@ export const MTKAccordion = (props: MTKAccordionProps) => {
         <div role='heading'>
             {props.id}
             <div id="wc">
-                <wc-accordion
-                    id="my-accordion-1"
-                    cfg="http://links.melify.com/tk/lib/components/w/data/accordion.json"
-                    show="1">Test
-                </wc-accordion>
-            </div>
-        </div>
+		<div className="container mt-5">
+		    <div className="row">
+			<div className="col-md-6">
+			    <wc-accordion
+				id="my-accordion-1"
+				cfg="http://links.melify.com/tk/lib/components/w/data/accordion.json"
+				show="1">
+			    </wc-accordion>
+			</div>
+		    </div>
+		</div>
+	    </div>
+	</div>
     )
 };
 
