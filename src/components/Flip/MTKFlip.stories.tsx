@@ -3,4 +3,4 @@ import {MTKFlip} from "./MTKFlip";
 
 export default {title: 'MTK Flip'}
 
-export const basic = () => <MTKFlip id="test" class="test-class"/>
+export const basic = () => <MTKFlip id="test" style={{width:"400px",height:"200px"}}/>
