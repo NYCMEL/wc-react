@@ -6,21 +6,25 @@ import "./MTKHeadline.css";
 declare global {
     namespace JSX {
         interface IntrinsicElements {
-            'wc-flip': any;
-            'wc-flip-front': any;
-            'wc-flip-back': any;
+            'wc-headline': any;
+            'wc-headline-title': any;
+            'wc-headline-body': any;
+            'wc-headline-date': any;
+            'wc-headline-author': any
             wc: any;
         }
     }
 }
 
-interface MTKHeadlineProps {
+interface MTKHeadlineProps extends CommonProps {
     id?: string;
-    front: JSX.element | string | JSX.element[];
-    back: JSX.element | string | JSX.element[];
+    title: JSX.Element | string | JSX.Element[];
+    author: JSX.Element | string | JSX.Element[];
+    body: JSX.Element | string | JSX.Element[];
+    date: JSX.Element | string | JSX.Element[];
 }
 
-export const MTKHeadline = (props: CommonProps) => {
+export const MTKHeadline = (props: MTKHeadlineProps) => {
     // @ts-ignore
     window.wcENV = "dev";
 
@@ -35,15 +39,20 @@ export const MTKHeadline = (props: CommonProps) => {
     }, []);
     return (
         <div role='heading'>
-	    <wc-flip {...props}>
-		<wc-flip-front style={{background: 'wheat', padding: '30px', textAlign: 'center'}}>
-		    {props.front}
-		</wc-flip-front>
-		
-		<wc-flip-back style={{background: 'khaki', padding: '30px', textAlign: 'center'}}>
-		    {props.back}
-		</wc-flip-back>
-	    </wc-flip>
-	</div>
+            <wc-headline id="my-headline-1">
+                <wc-headline-title>
+                    {props.title}
+                </wc-headline-title>
+                <wc-headline-body>
+                    {props.body}
+                </wc-headline-body>
+                <wc-headline-date>
+                    {props.date}
+                </wc-headline-date>
+                <wc-headline-author>
+                    {props.author}
+                </wc-headline-author>
+            </wc-headline>
+        </div>
     )
 };

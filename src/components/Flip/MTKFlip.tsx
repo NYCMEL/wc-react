@@ -14,10 +14,10 @@ declare global {
     }
 }
 
-interface MTKFlipProps {
+interface MTKFlipProps extends CommonProps {
     id?: string;
-    front: JSX.element | string | JSX.element[];
-    back: JSX.element | string | JSX.element[];
+    front: JSX.Element | string | JSX.Element[];
+    back: JSX.Element | string | JSX.Element[];
 }
 
 export const MTKFlip = (props: MTKFlipProps) => {
@@ -35,15 +35,15 @@ export const MTKFlip = (props: MTKFlipProps) => {
     }, []);
     return (
         <div role='heading'>
-	    <wc-flip {...props}>
-		<wc-flip-front style={{background: 'wheat', padding: '30px', textAlign: 'center'}}>
-		    {props.front}
-		</wc-flip-front>
-		
-		<wc-flip-back style={{background: 'khaki', padding: '30px', textAlign: 'center'}}>
-		    {props.back}
-		</wc-flip-back>
-	    </wc-flip>
-	</div>
+            <wc-flip {...props}>
+                <wc-flip-front style={{background: 'wheat', padding: '30px', textAlign: 'center'}}>
+                    {props.front}
+                </wc-flip-front>
+
+                <wc-flip-back style={{background: 'khaki', padding: '30px', textAlign: 'center'}}>
+                    {props.back}
+                </wc-flip-back>
+            </wc-flip>
+        </div>
     )
 };
