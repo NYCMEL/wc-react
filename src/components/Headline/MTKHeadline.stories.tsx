@@ -7,7 +7,13 @@ export const basic = () => (
     <div id="wc">
 	<div className="aem pt-5">
             <MTKHeadline author="Mel" body={
-		<div>body content</div>
+		<div>
+		    <div>
+			body content... 
+			body content... 
+			body content... 
+		    </div>
+		</div>
 	    } date="2/25/2020" title={
 		<h1>title</h1>
 	    } />
