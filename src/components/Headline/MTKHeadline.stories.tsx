@@ -5,7 +5,7 @@ export default {title: 'MTK Headline'}
 
 export const basic = () => (
     <div id="wc">
-	<div className="aem pt-5">
+	<div className="aem p-5">
             <MTKHeadline author="Mel" body={
 		<div>
 		    body content... 
