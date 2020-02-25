@@ -31,18 +31,7 @@ export const MTKAccordion = (props: MTKAccordionProps) => {
         }
     }, []);
     return (
-        <div role='heading'>
-            {props.id}
-            <div id="wc">
-		<div className="container mt-5">
-		    <div className="row">
-			<div className="col-md-6">
-			    <wc-accordion id="my-accordion-1" cfg={props.cfg} show={props.show}></wc-accordion>
-			</div>
-		    </div>
-		</div>
-	    </div>
-	</div>
+	<wc-accordion id="my-accordion-1" cfg={props.cfg} show={props.show}></wc-accordion>
     )
 };
 
