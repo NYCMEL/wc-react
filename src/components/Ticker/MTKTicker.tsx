@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {CommonProps} from "../../Common";
+import "./MTKTicker.css";
 
 declare global {
     namespace JSX {
@@ -22,19 +23,11 @@ export const MTKTicker = (props: MTKTickerProps) => {
 
     return (
         <div role='heading'>
-            <div id="wc">
-		<div className="container mt-5">
-		    <div className="row">
-			<div className="col-md-12">
-			    <wc-ticker  style={{fontFamily:"fal"}}
-			    symbols={props.symbols}
-			    interval={props.interval}
-			    {...props}
-			    />
-			</div>
-		    </div>
-		</div>
-	    </div>
+	    <wc-ticker  style={{fontFamily:"fal"}}
+			symbols={props.symbols}
+			interval={props.interval}
+	    {...props}
+	    />
 	</div>
     )
 };
