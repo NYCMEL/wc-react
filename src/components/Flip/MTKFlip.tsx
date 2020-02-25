@@ -14,13 +14,13 @@ declare global {
     }
 }
 
-interface MTKAccordionProps {
+interface MTKFlipProps {
     id?: string;
     front: JSX.element | string | JSX.element[];
     back: JSX.element | string | JSX.element[];
 }
 
-export const MTKFlip = (props: CommonProps) => {
+export const MTKFlip = (props: MTKFlipProps) => {
     // @ts-ignore
     window.wcENV = "dev";
 

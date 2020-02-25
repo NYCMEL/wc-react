@@ -19,7 +19,6 @@ interface MTKAccordionProps {
 }
 
 export const MTKAccordion = (props: MTKAccordionProps) => {
-
     useEffect(() => {
         const listener = (e: any) => {
             console.log(e.detail.action, "EVENT ===============");
