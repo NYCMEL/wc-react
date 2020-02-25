@@ -29,23 +29,15 @@ export const MTKFlip = (props: CommonProps) => {
     }, []);
     return (
         <div role='heading'>
-            <div id="wc">
-		<div className="container mt-5">
-		    <div className="row">
-			<div className="col-md-6">
-			    <wc-flip {...props}>
-				<wc-flip-front style={{background: 'wheat', padding: '30px', textAlign: 'center'}}>
-				    <h5>If you click on me, i Can flip and show you more stuff</h5>
-				</wc-flip-front>
-
-				<wc-flip-back style={{background: 'khaki', padding: '30px', textAlign: 'center'}}>
-				    <h5>Here is some more. if you move out, i will flip back</h5>
-				</wc-flip-back>
-			    </wc-flip>
-			</div>
-		    </div>
-		</div>
-	    </div>
+	    <wc-flip {...props}>
+		<wc-flip-front style={{background: 'wheat', padding: '30px', textAlign: 'center'}}>
+		    <h5>If you click on me, i Can flip and show you more stuff</h5>
+		</wc-flip-front>
+		
+		<wc-flip-back style={{background: 'khaki', padding: '30px', textAlign: 'center'}}>
+		    <h5>Here is some more. if you move out, i will flip back</h5>
+		</wc-flip-back>
+	    </wc-flip>
 	</div>
     )
 };
