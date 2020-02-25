@@ -18,10 +18,10 @@ declare global {
 
 interface MTKHeadlineProps extends CommonProps {
     id?: string;
-    title: JSX.Element | string | JSX.Element[];
+    title: JSX.Element  | string | JSX.Element[];
     author: JSX.Element | string | JSX.Element[];
-    body: JSX.Element | string | JSX.Element[];
-    date: JSX.Element | string | JSX.Element[];
+    body: JSX.Element   | string | JSX.Element[];
+    date: JSX.Element   | string | JSX.Element[];
 }
 
 export const MTKHeadline = (props: MTKHeadlineProps) => {
@@ -41,7 +41,7 @@ export const MTKHeadline = (props: MTKHeadlineProps) => {
         <div role='heading'>
             <wc-headline id="my-headline-1">
                 <wc-headline-title>
-                    {props.title}
+                    <h1>{props.title}</h1>
                 </wc-headline-title>
                 <wc-headline-body>
                     {props.body}
