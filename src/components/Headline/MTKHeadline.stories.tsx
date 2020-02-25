@@ -7,7 +7,7 @@ export const basic = () => (
     <div id="wc">
         <div className="container mt-5">
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-12 aem">
                     <MTKHeadline
                         author={"Mel"}
                         body={<div>body content</div>}

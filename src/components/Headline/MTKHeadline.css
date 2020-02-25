@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
-wc-flip-front, wc-flip-back {
+wc-headline {
+    background: url(./container-background.png)!important;
+}
+
+wc-headline * {
     font-family: Roboto!important;
 }
