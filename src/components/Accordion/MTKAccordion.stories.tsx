@@ -1,6 +1,5 @@
 import * as React from 'react'
 import {MTKAccordion} from "./MTKAccordion";
-import "../../Melify/fonts/fonts.css";
 
 export default {title: 'MTK Accordion'}
 
