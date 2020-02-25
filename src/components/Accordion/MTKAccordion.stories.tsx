@@ -4,6 +4,7 @@ import {MTKAccordion} from "./MTKAccordion";
 export default {title: 'MTK Accordion'}
 
 export const basic = () => (
+    // EXAMPLE USAGE OF WC-ACCORDION COMPONENT
     <div id="wc">
 	<div className="container mt-5">
 	    <div className="row">
