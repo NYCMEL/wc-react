@@ -1,5 +1,6 @@
 import * as React from "react";
 import {useEffect} from "react";
+import "./MTKAccordion.css";
 
 declare global {
     namespace JSX {
