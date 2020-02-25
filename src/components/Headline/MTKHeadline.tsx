@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {useEffect} from "react";
 import {CommonProps} from "../../Common";
-import "./MTKFlip.css";
+import "./MTKHeadline.css";
 
 declare global {
     namespace JSX {
@@ -14,13 +14,13 @@ declare global {
     }
 }
 
-interface MTKAccordionProps {
+interface MTKHeadlineProps {
     id?: string;
     front: JSX.element | string | JSX.element[];
     back: JSX.element | string | JSX.element[];
 }
 
-export const MTKFlip = (props: CommonProps) => {
+export const MTKHeadline = (props: CommonProps) => {
     // @ts-ignore
     window.wcENV = "dev";
 

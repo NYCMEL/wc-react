@@ -1,17 +1,32 @@
 import * as React from 'react'
-import {MTKFlip} from "./MTKFlip";
+import {MTKHeadline} from "./MTKHeadline";
 
-export default {title: 'MTK Flip'}
+export default {title: 'MTK Headline'}
 
 export const basic = () => (
     <div id="wc">
 	<div className="container mt-5">
 	    <div className="row">
 		<div className="col-md-6">
-		    <MTKFlip id="test" style={{width:"400px",height:"200px"}}
-			     front = {<h5>IF YOU CLICK ON ME <br/> i Can flip and show you more stuff</h5>}
-			     back = {<h5>IF YOU MOUSE OUT <br/>i flip back</h5>}
-		    />
+		    <wc-headline id="my-headline-1">
+			<wc-headline-title>
+			    Headline <small>(inline)</small>
+			</wc-headline-title>
+
+			<wc-headline-body>
+			    Optional Supporting copy. Etiam varius leo vel eros iaculis, tempus porta lacus posuere. Nulla in erat gravida,
+			    convallis nibh non, accumsan dui. Pellentesque ac vulputate elit,
+			    et aliquam ipsum. Nam ut nulla volutpat, consequat libero vitae, tincidunt lectus.
+			</wc-headline-body>
+
+			<wc-headline-date>
+			    08 Mar 2018
+			</wc-headline-date>
+
+			<wc-headline-author>
+			    Mel M. Heravi
+			</wc-headline-author>
+		    </wc-headline>
     		</div>
 	    </div>
 	</div>
