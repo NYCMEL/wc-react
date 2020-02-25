@@ -1,0 +1,17 @@
+var accordion_data = [
+    {
+	"header": "Card I",
+	"body": "http://links.melify.com/mtk/render?ajax=1&callback=tk::dummy::3",
+	"icon": "<i class='fa fa-comments'></i>"
+    },
+    {
+	"header": "Card II",
+	"body": "http://links.melify.com/mtk/render?ajax=1&callback=tk::dummy::3",
+	"icon": "<i class='fa fa-gear'></i>"
+    },
+    {
+	"header": "Card III",
+	"body": "http://links.melify.com/mtk/render?ajax=1&callback=tk::dummy::3",
+	"icon": "<i class='fa fa-calendar'></i>"
+    }
+]
