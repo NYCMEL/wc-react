@@ -14,6 +14,12 @@ declare global {
     }
 }
 
+interface MTKAccordionProps {
+    id?: string;
+    front: JSX.element | string | JSX.element[];
+    back: JSX.element | string | JSX.element[];
+}
+
 export const MTKFlip = (props: CommonProps) => {
     // @ts-ignore
     window.wcENV = "dev";
@@ -31,11 +37,11 @@ export const MTKFlip = (props: CommonProps) => {
         <div role='heading'>
 	    <wc-flip {...props}>
 		<wc-flip-front style={{background: 'wheat', padding: '30px', textAlign: 'center'}}>
-		    <h5>If you click on me, i Can flip and show you more stuff</h5>
+		    {props.front}
 		</wc-flip-front>
 		
 		<wc-flip-back style={{background: 'khaki', padding: '30px', textAlign: 'center'}}>
-		    <h5>Here is some more. if you move out, i will flip back</h5>
+		    {props.back}
 		</wc-flip-back>
 	    </wc-flip>
 	</div>

@@ -8,7 +8,10 @@ export const basic = () => (
 	<div className="container mt-5">
 	    <div className="row">
 		<div className="col-md-6">
-		    <MTKFlip id="test" style={{width:"400px",height:"200px"}}/>
+		    <MTKFlip id="test" style={{width:"400px",height:"200px"}}
+			     front = {<h5>IF YOU CLICK ON ME <br/> i Can flip and show you more stuff</h5>}
+			     back = {<h5>IF YOU MOUSE OUT <br/>i flip back</h5>}
+		    />
     		</div>
 	    </div>
 	</div>
