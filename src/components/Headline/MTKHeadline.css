@@ -1,7 +1,8 @@
 wc-headline {
     background: url(./container-background.png)!important;
+    font-family: Roboto!important;
 }
 
-wc-headline * {
-    font-family: Roboto!important;
+h1 {
+    text-transform: uppercase!important;
 }
