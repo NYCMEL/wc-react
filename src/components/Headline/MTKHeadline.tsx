@@ -40,7 +40,7 @@ export const MTKHeadline = (props: MTKHeadlineProps) => {
     return (
         <div role='heading'>
             <wc-headline id="my-headline-1">
-                <wc-headline-title>
+                <wc-headline-title className="text-uppercase">
                     {props.title}
                 </wc-headline-title>
 
