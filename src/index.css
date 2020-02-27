@@ -1,3 +1,4 @@
+/* ======= ROBOTO ========== */
 @font-face {
     font-family: 'fl';
     src: local('Roboto'), local('Roboto-Light'), url(./fonts/Roboto-Light.ttf) format('truetype');
@@ -18,6 +19,7 @@
     src: local('Roboto'), local('Roboto-Bold'), url(./fonts/Roboto-Bold.ttf) format('truetype');
 }
 
+/* ======= AMPLITUDE ========== */
 @font-face {
     font-family: 'fal';
     src: local('Amplitude'), local('Amplitude-Light'), url(./fonts/Amplitude-Light.ttf) format('truetype');
