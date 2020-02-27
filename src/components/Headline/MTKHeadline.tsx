@@ -11,6 +11,7 @@ declare global {
             'wc-headline-body': any;
             'wc-headline-date': any;
             'wc-headline-author': any
+            'wc-include': any
             wc: any;
         }
     }
