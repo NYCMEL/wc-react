@@ -5,7 +5,7 @@ export default {title: 'MTK Headline'}
 
 export const basic = () => (
     <div id="wc">
-	<div className="aem pt-5">
+	<div className="aem p-5">
             <MTKHeadline author="Mel" body={
 		<wc-include href="http://links.melify.com/mtk/render?callback=tk::dummy::3"></wc-include>
 	    } date="2/25/2020" title={
