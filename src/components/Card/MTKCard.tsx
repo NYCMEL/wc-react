@@ -30,8 +30,6 @@ export const MTKCard = (props: MTKCardProps) => {
         }
     }, []);
     return (
-        <div role='heading'>
-	    <wc-card id="my-card-2" cfg={props.cfg}}></wc-card>
-	</div>
+	<wc-card {...props} id="my-card-2" cfg={props.cfg} />
     )
 };
