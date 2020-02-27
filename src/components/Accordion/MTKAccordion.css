@@ -1,4 +1,8 @@
 @import "../../index.css";
 
+.card-body {
+    font-family: fl;
+}
+
 .card-header {
 }
