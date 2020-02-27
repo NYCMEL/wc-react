@@ -1,37 +1,36 @@
 import * as React from "react";
 import {useEffect} from "react";
-import "./MTKAccordion.css";
+import "./MTKBanner.css";
 
 declare global {
     namespace JSX {
         interface IntrinsicElements {
-            'wc-accordion': any;
+            'wc-banner': any;
             wc: any;
         }
     }
 }
-require('./wc.bundle.js');
 
-interface MTKAccordionProps {
+interface MTKBannerProps {
     id?: string;
     cfg: string;
     show: number;
 }
 
-export const MTKAccordion = (props: MTKAccordionProps) => {
+export const MTKBanner = (props: MTKBannerProps) => {
     useEffect(() => {
         const listener = (e: any) => {
             console.log(e.detail.action, "EVENT ===============");
         }
 
-        window.addEventListener('wc-accordion', listener);
+        window.addEventListener('wc-banner', listener);
 
         return () => {
-            window.removeEventListener('wc-accordion', listener);
+            window.removeEventListener('wc-banner', listener);
         }
     }, []);
     return (
-	<wc-accordion id="my-accordion-1" cfg={props.cfg} show={props.show}></wc-accordion>
+	<wc-banner id="my-banner-1" cfg={props.cfg} show={props.show}></wc-banner>
     )
 };
 
