@@ -17,3 +17,23 @@
     font-family: 'fb';
     src: local('Roboto'), local('Roboto-Bold'), url(./fonts/Roboto-Bold.ttf) format('truetype');
 }
+
+@font-face {
+    font-family: 'fal';
+    src: local('Amplitude'), local('Amplitude-Light'), url(./fonts/Amplitude-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'far';
+    src: local('Amplitude'), local('Amplitude-Regular'), url(./fonts/Amplitude-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'fam';
+    src: local('Amplitude'), local('Amplitude-Medium'), url(./fonts/Amplitude-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'fab';
+    src: local('Amplitude'), local('Amplitude-Bold'), url(./fonts/Amplitude-Bold.ttf) format('truetype');
+}
