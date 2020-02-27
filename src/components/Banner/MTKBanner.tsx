@@ -40,7 +40,7 @@ export const MTKBanner = (props: MTKBannerProps) => {
 		<wc-banner-lhs className="col-md-6">
 		    <div>
 			<wc-banner-title className="display-4">
-			    {props.title}
+			    <h1>{props.title}</h1>
 			</wc-banner-title>
 
 			<wc-banner-subtitle className="lead">
