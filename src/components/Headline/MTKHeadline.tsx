@@ -41,7 +41,7 @@ export const MTKHeadline = (props: MTKHeadlineProps) => {
         <div role='heading'>
             <wc-headline id="my-headline-1">
                 <wc-headline-title>
-                    <h1>{props.title}</h1>
+                    {props.title}
                 </wc-headline-title>
                 <wc-headline-body>
                     {props.body}
