@@ -1,5 +1,6 @@
 import * as React from "react";
 import {useEffect} from "react";
+import {CommonProps} from "../../Common";
 import "./MTKBanner.css";
 
 declare global {
@@ -16,25 +17,25 @@ declare global {
     }
 }
 
-interface MTKBannerProps {
+interface MTKBannerProps extends CommonProps {
     id?: string;
-    title: string;
+    title: JSX.Element | string | JSX.Element[];
 }
 
 export const MTKBanner = (props: MTKBannerProps) => {
     useEffect(() => {
         const listener = (e: any) => {
-            console.log(e.detail.action, "EVENT ===============");
+	    console.log(e.detail.action, "EVENT ===============");
         }
 
         window.addEventListener('wc-banner', listener);
 
         return () => {
-            window.removeEventListener('wc-banner', listener);
+	    window.removeEventListener('wc-banner', listener);
         }
     }, []);
     return (
-	<wc-banner id="my-banner-1" background="#FFF">
+	<wc-banner {...props}>
 	    <wc-banner-lhs className="col-md-6">
 		<div>
 		    <wc-banner-title className="display-4">
@@ -63,5 +64,3 @@ export const MTKBanner = (props: MTKBannerProps) => {
 	</wc-banner>
     )
 };
-
-
