@@ -40,18 +40,15 @@ export const MTKHeadline = (props: MTKHeadlineProps) => {
     return (
         <div role='heading'>
             <wc-headline id="my-headline-1">
-                <wc-headline-title className="text-uppercase">
-                    {props.title}
+                <wc-headline-title>
+                    <h1>{props.title}</h1>
                 </wc-headline-title>
-
                 <wc-headline-body>
                     {props.body}
                 </wc-headline-body>
-
                 <wc-headline-date>
                     {props.date}
                 </wc-headline-date>
-
                 <wc-headline-author>
                     {props.author}
                 </wc-headline-author>
