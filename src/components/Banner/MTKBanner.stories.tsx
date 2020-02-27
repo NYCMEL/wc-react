@@ -13,8 +13,8 @@ export const basic = () => (
 			<wc-include href="http://links.melify.com/mtk/render?callback=tk::dummy::3"></wc-include>
 		    } actions={
 			<div>
-			    <a id="btn-more-1" class="btn btn-primary btn-action mr-3" href="#" role="button">More I</a>
-			    <a id="btn-more-2" class="btn btn-primary btn-action" href="#" role="button">More II</a>
+			    <button className="btn btn-primary btn-action btn-more-1 mr-3" role="button">More I</button>
+			    <button className="btn btn-primary btn-action btn-more-2" role="button">Even More II</button>
 			</div>
 		    }
 		    />
