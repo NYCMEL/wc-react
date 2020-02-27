@@ -9,7 +9,9 @@ export const basic = () => (
 	<div className="container mt-5">
 	    <div className="row">
 		<div className="col-md-8">
-		    <MTKBanner cfg="http://localhost/tk/lib/components/w/data/banner.react.json" show={0}></MTKBanner>
+		    <MTKBanner>
+			<h1>KKKKKKKKK</h1>
+		    </MTKBanner>
 		</div>
 	    </div>
 	</div>

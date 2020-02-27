@@ -6,6 +6,7 @@ declare global {
     namespace JSX {
         interface IntrinsicElements {
             'wc-banner': any;
+	    'wc-banner-title': any;
 	    'wc-banner-lhs': any;
 	    'wc-banner-rhs': any;
 	    'wc-banner-actions': any;
@@ -16,8 +17,6 @@ declare global {
 
 interface MTKBannerProps {
     id?: string;
-    cfg: string;
-    show: number;
 }
 
 export const MTKBanner = (props: MTKBannerProps) => {
