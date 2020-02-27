@@ -3,6 +3,21 @@ body {
 }
 
 @font-face {
-    font-family: 'FiraSans';
-    src: local('fl'), local('Roboto'), local('Roboto-Light'), ur;(./fonts/Roboto-Light.ttf) format('truetype');
+    font-family: 'fl';
+    src: local('Roboto'), local('Roboto-Light'), ur;(./fonts/Roboto-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'fr';
+    src: local('Roboto'), local('Roboto-Regular'), ur;(./fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'fm';
+    src: local('Roboto'), local('Roboto-Medium'), ur;(./fonts/Roboto-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'fb';
+    src: local('Roboto'), local('Roboto-Bold'), ur;(./fonts/Roboto-Bold.ttf) format('truetype');
 }
