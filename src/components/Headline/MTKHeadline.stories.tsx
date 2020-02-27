@@ -9,7 +9,7 @@ export const basic = () => (
             <MTKHeadline author="Mel" body={
 		<wc-include href="http://links.melify.com/mtk/render?callback=tk::dummy::3"></wc-include>
 	    } date="2/25/2020" title={
-		<h1>title</h1>
+		<span>headline title</span>
 	    } />
 	</div>
     </div>
