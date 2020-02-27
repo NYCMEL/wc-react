@@ -1,3 +1,7 @@
+body {
+    border: 20px red dashed;
+}
+
 @font-face {
     font-family: 'FiraSans';
     src: local('Roboto'), local('Roboto-Light'), ur;(./fonts/Roboto-Light.ttf) format('truetype');
