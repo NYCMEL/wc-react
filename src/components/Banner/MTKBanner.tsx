@@ -20,6 +20,7 @@ declare global {
 interface MTKBannerProps extends CommonProps {
     id?: string;
     title: JSX.Element | string | JSX.Element[];
+    subtitle: JSX.Element | string | JSX.Element[];
 }
 
 export const MTKBanner = (props: MTKBannerProps) => {
@@ -40,19 +41,13 @@ export const MTKBanner = (props: MTKBannerProps) => {
 		<wc-banner-lhs className="col-md-6">
 		    <div>
 			<wc-banner-title className="display-4">
-			    <h1>{props.title}</h1>
+			    <h2>{props.title}</h2>
 			</wc-banner-title>
 
 			<wc-banner-subtitle className="lead">
-			    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-			    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+			    {props.subtitle}
 			</wc-banner-subtitle>
-
-			<p>
-			    <hr/>
-			    Hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilis
-			</p>
-
+			
 			<wc-banner-actions className="lead">
 			    <a id="btn-more-1" className="btn btn-primary btn-action" href="#" role="button">More I</a>
 			    <a id="btn-more-2" className="btn btn-primary btn-action" href="#" role="button">More II</a>
@@ -60,8 +55,7 @@ export const MTKBanner = (props: MTKBannerProps) => {
 		    </div>
 		</wc-banner-lhs>
 
-		<wc-banner-rhs className="col-md-6 cover">
-		</wc-banner-rhs>
+		<wc-banner-rhs className="col-md-6 cover"></wc-banner-rhs>
 	    </wc-banner>
 	</div>
     )

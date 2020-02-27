@@ -2,5 +2,6 @@
 @import "../../index.css";
 
 wc-banner-rhs {
+    border: 10px red slid!important;
     background: url(./dots.png)!important;
 }
