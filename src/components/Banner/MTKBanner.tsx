@@ -7,6 +7,7 @@ declare global {
         interface IntrinsicElements {
             'wc-banner': any;
 	    'wc-banner-title': any;
+	    'wc-banner-subtitle': any;
 	    'wc-banner-lhs': any;
 	    'wc-banner-rhs': any;
 	    'wc-banner-actions': any;
@@ -17,6 +18,7 @@ declare global {
 
 interface MTKBannerProps {
     id?: string;
+    title: JSX.Element  | string | JSX.Element[];
 }
 
 export const MTKBanner = (props: MTKBannerProps) => {
@@ -33,30 +35,30 @@ export const MTKBanner = (props: MTKBannerProps) => {
     }, []);
     return (
 	<wc-banner id="my-banner-1" background="#FFF">
-	    <wc-banner-lhs class="col-md-6">
+	    <wc-banner-lhs class={col-md-6}>
 		<div>
-		    <wc-banner-title class="display-4">
-			Banner example
+		    <wc-banner-title className={display-4}>
+			{props.title}
 		    </wc-banner-title>
 
-		    <wc-banner-subtitle class="lead">
+		    <wc-banner-subtitle class={lead}>
 			Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
 			sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
 		    </wc-banner-subtitle>
 
 		    <p>
 			<hr/>
-			Hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
+			Hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilis
 		    </p>
 
-		    <wc-banner-actions class="lead">
+		    <wc-banner-actions class={lead}>
 			<a id="btn-more-1" class="btn btn-primary btn-action" href="#" role="button">More I</a>
 			<a id="btn-more-2" class="btn btn-primary btn-action" href="#" role="button">More II</a>
 		    </wc-banner-actions>
 		</div>
 	    </wc-banner-lhs>
 
-	    <wc-banner-rhs class="col-md-6 cover">
+	    <wc-banner-rhs className={{col-md-6 cover}}>
 	    </wc-banner-rhs>
 	</wc-banner>
     )
