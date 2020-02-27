@@ -8,8 +8,8 @@ export const basic = () => (
     <div id="wc">
 	<div className="container mt-5">
 	    <div className="row">
-		<div className="col-md-6">
-		    <MTKAccordion cfg="http://localhost/tk/lib/components/w/data/accordion.json" show={0}></MTKAccordion>
+		<div className="col-md-8">
+		    <MTKAccordion cfg="http://localhost/tk/lib/components/w/data/accordion.react.json" show={0}></MTKAccordion>
 		</div>
 	    </div>
 	</div>
