@@ -33,7 +33,7 @@ m::proc -public tk::dummy::1 {
     
     catch {h1 $::title}
 
-    table width=100% cellspacing=0 cellpadding=10 border=0 class="tk-normal" {
+    table width=100% cellspacing=0 cellpadding=10 border=0 class="tk-normal fl" {
 	table_row {
 	    table_data valign=top width=65% [style padding-right 50px] {
 		p class="tk-bold tk-fg-brown" [clock format [clock seconds]]
@@ -86,7 +86,7 @@ m::proc -public tk::dummy::2 {
     
     catch {h1 $::title}
 
-    table width=100% cellspacing=0 cellpadding=10 border=0 class="tk-normal" {
+    table width=100% cellspacing=0 cellpadding=10 border=0 class="tk-normal fl" {
 	table_row {
 	    table_data valign=top width=65% {
 		p class="tk-bold tk-fg-brown" [clock format [clock seconds]]
@@ -121,7 +121,7 @@ m::proc -public tk::dummy::3 {
     set x [clock format [clock seconds] -format "%T"]
 
     for {set i 0} {$i <= $size} {incr i} {
-	division style=padding-bottom:10px {
+	division style=padding-bottom:10px class="fl" {
 	    put "[string toupper [lorem -language $language 4]] - $x";br
 	    put [lorem -language $language 30]
 	}
