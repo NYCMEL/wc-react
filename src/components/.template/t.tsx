@@ -1,7 +1,7 @@
 import * as React from "react";
 import {useEffect} from "react";
 import {CommonProps} from "../../Common";
-`import "./MTKCNAME.css";
+import "./MTKCNAME.css";
 
 declare global {
     namespace JSX {
