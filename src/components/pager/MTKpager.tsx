@@ -14,8 +14,8 @@ declare global {
 
 interface MTKpagerProps extends CommonProps {
     id?: string;
-	env: string;
-	path: string;
+    env: string;
+    path: string;
 }
 
 export const MTKpager = (props: MTKpagerProps) => {
