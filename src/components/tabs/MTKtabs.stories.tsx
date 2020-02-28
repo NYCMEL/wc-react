@@ -9,7 +9,7 @@ export const basic = () => (
 	<div className="container mt-5">
 	    <div className="row">
 		<div className="col-md-12">
-		    <MTKtabs id="my-tabs" cfg="http://links.melify.com/tk/lib/components/misc/webpack/src/w/cfg/tabs.json"></MTKtabs>
+		    <MTKtabs id="my-tabs" cfg="http://links.melify.com/tk/lib/components/misc/webpack/src/w/cfg/tabs.react.json"></MTKtabs>
 		</div>
 	    </div>
 	</div>
