@@ -1,0 +1,31 @@
+#!/Melify/bin/mac/tclkit
+
+if {$argc != 1} {
+    puts "\nusage: page <dir-name>\n"
+    exit
+}
+
+set dir [lindex [split [lindex $argv 0] .] 0]
+
+if {[file exist ${dir}] == 1} {
+    puts "\n"
+    puts "\tfolder ${dir} exist. Can not continue"
+    puts "\n"
+    exit
+}
+
+if {[file exist /Repos/${dir}.git] == 1} {
+    puts "\n"
+    puts "\tRepository /Repos/${dir}.git exist. Can not continue"
+    puts "\n"
+    exit
+}
+
+file copy /Repos/_blank.git /Repos/${dir}.git
+
+if {[catch {
+    exec /usr/bin/git clone /Repos/${dir}.git
+} e] != 0} {
+    puts ${e}
+}
+

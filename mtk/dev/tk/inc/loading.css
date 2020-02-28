@@ -1,0 +1,20 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    background: #ebebeb url('/tk/img/common/loading.3.gif') 50% 50% no-repeat;
+}
+
+/* ANYTIME THE BODY HAS THE LOADING CLASS OUR MODAL ELEMENT WILL BE VISIBLE */
+.loading {
+    overflow: hidden;
+}
+
+.loading .modal {
+    display: block;
+}

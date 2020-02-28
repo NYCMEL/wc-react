@@ -1,4 +1,19 @@
+<<<<<<< HEAD
+app
+private
+.sass-cache
+tools
+samples
+modules
+components
+.DS_Store
+w3c
+watcher
+fonts
+w.re-factored
+=======
 node_modules/
 coverage/
 build/
 .idea
+>>>>>>> 0b5f4d56ca416e20bcca9ed395ca510e89cbcdcc

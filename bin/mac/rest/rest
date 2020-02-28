@@ -1,0 +1,114 @@
+#!/Melify/bin/mac/tclkit
+
+#######################################################
+###### SERVER CODE
+#######################################################
+source /Melify/mtk/dev/tk//src/cgi/cgi.tcl
+
+source ../app.cfg
+
+set env(HOME) "/tmp"
+
+# DO NOT PRINT ANYTHIN TO STDOUT
+namespace eval tk {}
+proc tk::bugger {args} {}
+
+#DUMMY IT UP
+proc Trace {args} {}
+
+lappend auto_path\
+    /Melify/mtk/$ENV/tk/src\
+    /Melify/mtk/$ENV/tk/src/db\
+    /Melify/mtk/$ENV/tk/src/utl\
+    /Melify/mtk/$ENV/tk/src/eng
+
+cgi_input
+foreach i [import_list] {
+    import $i
+}
+
+switch $key {
+    "query" {
+	package require json::write
+
+	if {[info exist db] == 0} {
+	    tk::use:db "/Melify/mtk/$ENV/app/$APP/db/sqlite.db"
+	    tk::db::sqlite::query:v -variable v $query
+	} else {
+	    tk::use:db "$db"
+	    tk::db::sqlite::query:v -variable v -db $db $query
+	}
+	
+	switch $type {
+	    "json" {
+		set json "\[ "
+
+		#RETURN JSON FROM THE RESULT
+		for {set i 0} {$i < [lindex $v(*) 0]} {incr i} {
+		    foreach j [lrange $v(*) 1 end] {
+			set t($j) "$v($i,$j)"
+		    }
+		    
+		    set accumulate ""
+		    foreach {key value} [array get t] {
+			lappend accumulate $key [json::write string $value]
+		    }
+		    
+		    append json " [json::write object {*}$accumulate], "
+		}
+		set json [string replace $json end-1 end "]"]
+
+		put [subst {
+		    $json
+		}]
+	    }
+	    default {
+		put [subst {
+		    [array get v]
+		}]
+	    }
+	}
+    }
+}
+
+
+#EXAMPLE
+##########################################################################################
+#set url "http://test/mtk/rest?key=query&type=json&query=select%20*%20from%20users%20"
+
+# var jqxhr = jQuery.getJSON( "$url", function(data) {
+#     console.log( "success: " + JSON.stringify(data));
+
+#     jQuery.each( data, function( key, val ) {
+# 	var items = \[\];
+# 	jQuery("body").append("<h1>" + key + "<h1>");
+
+# 	jQuery.each( val, function( key, val ) {
+#	    items.push( "<li id='" + key + "'>" + key + ":" + val + "</li>" );
+# 	});
+
+# 	jQuery( "<ul/>", {
+# 	    html: items.join( "" )
+# 	}).appendTo( "body" );		    
+#     });
+# })
+# .error(function(jqXHR, textStatus, errorThrown) {
+#     console.log("error " + textStatus);
+#     console.log("incoming Text " + jqXHR.responseText);
+# })
+# .done(function() {
+#     console.log( "second success" );
+# })
+
+# // Set another completion function for the request above
+# jqxhr.complete(function() {
+#     console.log( "second complete" );
+# });
+
+
+# put [subst {
+#     [exec /usr/bin/python\
+# 	 "/Melify/bin/mac/query.py"\
+# 	 "/Melify/mtk/dev/app/test/db/sqlite.db"\
+# 	 "select * from users"]
+# }]
