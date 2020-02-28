@@ -14,7 +14,8 @@ declare global {
 
 interface MTKappProps extends CommonProps {
     id?: string;
-    path: string;
+	path: string;
+	page: string;
 }
 
 export const MTKapp = (props: MTKappProps) => {
@@ -33,3 +34,4 @@ export const MTKapp = (props: MTKappProps) => {
 	<wc-app id={props.id} path={props.path} {...props}></wc-app>
     )
 };
+
