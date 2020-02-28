@@ -7,4 +7,5 @@ export {MTKTicker}    from './components/Ticker/MTKTicker';
 export {MTKapp}       from './components/app/MTKapp';
 export {MTKpager}     from './components/pager/MTKpager';
 export {MTKtabs}      from './components/tabs/MTKtabs';
+export {MTKpanels}    from './components/panels/MTKpanels';
 
