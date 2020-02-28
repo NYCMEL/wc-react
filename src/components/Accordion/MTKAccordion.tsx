@@ -10,7 +10,7 @@ declare global {
         }
     }
 }
-require('./wc.bundle.js');
+require('./wc.bundle.gz.js');
 
 interface MTKAccordionProps {
     id?: string;
