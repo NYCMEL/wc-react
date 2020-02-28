@@ -1,0 +1,10 @@
+{
+    "card": [
+	"props": {
+	    id?: string;
+	    cfg: string;
+	},
+	"model": {
+	}
+    ]
+}
