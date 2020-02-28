@@ -1,7 +1,7 @@
 import * as React from "react";
 import {useEffect} from "react";
 import {CommonProps} from "../../Common";
-import "./MTKBanner.css";
+import "./Banner.css";
 
 declare global {
     namespace JSX {
@@ -17,14 +17,14 @@ declare global {
     }
 }
 
-interface MTKBannerProps extends CommonProps {
+interface BannerProps extends CommonProps {
     id?: string;
     title: JSX.Element | string | JSX.Element[];
     subtitle: JSX.Element | string | JSX.Element[];
     actions: JSX.Element | string | JSX.Element[];
 }
 
-export const MTKBanner = (props: MTKBannerProps) => {
+export const Banner = (props: BannerProps) => {
     useEffect(() => {
         const listener = (e: any) => {
 	    console.log(e.detail.action, "EVENT ===============");

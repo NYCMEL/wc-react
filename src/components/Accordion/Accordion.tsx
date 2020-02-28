@@ -1,6 +1,6 @@
 import * as React from "react";
 import {useEffect} from "react";
-import "./MTKAccordion.css";
+import "./Accordion.css";
 
 declare global {
     namespace JSX {
@@ -12,13 +12,13 @@ declare global {
 }
 require('./wc.bundle.js');
 
-interface MTKAccordionProps {
+interface AccordionProps {
     id?: string;
     cfg: string;
     show: number;
 }
 
-export const MTKAccordion = (props: MTKAccordionProps) => {
+export const Accordion = (props: AccordionProps) => {
     useEffect(() => {
         const listener = (e: any) => {
             console.log(e.detail.action, "EVENT ===============");

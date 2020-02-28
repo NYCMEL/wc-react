@@ -1,7 +1,7 @@
 import * as React from 'react'
-import {MTKAccordion} from "./MTKAccordion";
+import {Accordion} from "./Accordion";
 
-export default {title: 'MTK Accordion'}
+export default {title: ' Accordion'}
 
 export const basic = () => (
     // EXAMPLE USAGE OF WC-ACCORDION COMPONENT
@@ -9,7 +9,7 @@ export const basic = () => (
 	<div className="container mt-5">
 	    <div className="row">
 		<div className="col-md-8">
-		    <MTKAccordion cfg="http://localhost/tk/lib/components/w/data/accordion.react.json" show={0}></MTKAccordion>
+		    <Accordion cfg="http://localhost/tk/lib/components/w/data/accordion.react.json" show={0}></Accordion>
 		</div>
 	    </div>
 	</div>

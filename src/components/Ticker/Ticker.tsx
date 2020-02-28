@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {CommonProps} from "../../Common";
-import "./MTKTicker.css";
+import "./Ticker.css";
 
 declare global {
     namespace JSX {
@@ -11,23 +11,19 @@ declare global {
     }
 }
 
-interface MTKTickerProps extends CommonProps {
+interface TickerProps extends CommonProps {
     id?: string;
     symbols: string[];
     interval?: number;
 }
 
-export const MTKTicker = (props: MTKTickerProps) => {
+export const Ticker = (props: TickerProps) => {
     // @ts-ignore
     window.wcENV = "dev";
 
     return (
         <div role='heading'>
-	    <wc-ticker  style={{fontFamily:"fal"}}
-			symbols={props.symbols}
-			interval={props.interval}
-	    {...props}
-	    />
+	    <wc-ticker style={{fontFamily:"fal"}} symbols={props.symbols} interval={props.interval}  {...props} />
 	</div>
     )
 };

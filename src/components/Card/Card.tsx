@@ -1,7 +1,7 @@
 import * as React from "react";
 import {useEffect} from "react";
 import {CommonProps} from "../../Common";
-import "./MTKCard.css";
+import "./Card.css";
 
 declare global {
     namespace JSX {
@@ -12,12 +12,12 @@ declare global {
     }
 }
 
-interface MTKCardProps extends CommonProps {
+interface CardProps extends CommonProps {
     id?: string;
     cfg: string;
 }
 
-export const MTKCard = (props: MTKCardProps) => {
+export const Card = (props: CardProps) => {
     useEffect(() => {
         const listener = (e: any) => {
 	    console.log(e.detail.action, "EVENT ===============");

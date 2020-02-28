@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {useEffect} from "react";
 import {CommonProps} from "../../Common";
-import "./MTKFlip.css";
+import "./Flip.css";
 
 declare global {
     namespace JSX {
@@ -14,13 +14,13 @@ declare global {
     }
 }
 
-interface MTKFlipProps extends CommonProps {
+interface FlipProps extends CommonProps {
     id?: string;
     front: JSX.Element | string | JSX.Element[];
     back: JSX.Element | string | JSX.Element[];
 }
 
-export const MTKFlip = (props: MTKFlipProps) => {
+export const Flip = (props: FlipProps) => {
     // @ts-ignore
     window.wcENV = "dev";
 

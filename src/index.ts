@@ -1,3 +1,3 @@
-export {MTKTicker}    from './components/Ticker/MTKTicker';
-export {MTKAccordion} from './components/Accordion/MTKAccordion';
-export {MTKFlip}      from './components/Flip/MTKFlip';
+export {Ticker}    from './components/Ticker/Ticker';
+export {Accordion} from './components/Accordion/Accordion';
+export {Flip}      from './components/Flip/Flip';

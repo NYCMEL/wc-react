@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {useEffect} from "react";
 import {CommonProps} from "../../Common";
-import "./MTKHeadline.css";
+import "./Headline.css";
 
 declare global {
     namespace JSX {
@@ -17,7 +17,7 @@ declare global {
     }
 }
 
-interface MTKHeadlineProps extends CommonProps {
+interface HeadlineProps extends CommonProps {
     id?: string;
     title: JSX.Element  | string | JSX.Element[];
     author: JSX.Element | string | JSX.Element[];
@@ -25,7 +25,7 @@ interface MTKHeadlineProps extends CommonProps {
     date: JSX.Element   | string | JSX.Element[];
 }
 
-export const MTKHeadline = (props: MTKHeadlineProps) => {
+export const Headline = (props: HeadlineProps) => {
     // @ts-ignore
     window.wcENV = "dev";
 
