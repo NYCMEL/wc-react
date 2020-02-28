@@ -14,7 +14,7 @@ declare global {
 
 interface MTKtabsProps extends CommonProps {
     id?: string;
-	cfg: string;
+    cfg: string;
 }
 
 export const MTKtabs = (props: MTKtabsProps) => {
@@ -33,4 +33,3 @@ export const MTKtabs = (props: MTKtabsProps) => {
 	<wc-tabs id={props.id} cfg={props.cfg} {...props}></wc-tabs>
     )
 };
-
