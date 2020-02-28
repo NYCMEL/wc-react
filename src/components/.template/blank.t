@@ -7,7 +7,7 @@ array set ta {
     }
 
     sample {
-	<wc-blank id={props.id} class="text-center p-4 border">
+	<wc-blank id={props.id} class="text-center p-4 border" {...props}>
 	    {props.title}
 	</wc-blank>
     }

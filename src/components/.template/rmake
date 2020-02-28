@@ -1,2 +1,20 @@
 #!/Melify/bin/mac/tclkit
 
+source blank.t
+
+#parray ta
+
+foreach i {"css" "stories.tsx" "tsx"} {
+    set f [open t.$i r]
+    set r [read $f]
+    close $f
+
+    regsub -all "CNAME"  $r "$ta(name)"   r
+    regsub -all "PROPS"  $r "$ta(props)"  r
+    regsub -all "SAMPLE" $r "$ta(sample)" r
+
+    file mkdir comps/$ta(name)
+    set f [open comps/$ta(name)/MTK$ta(name).$i w]
+    puts $f $r
+    close $f
+}
