@@ -19,7 +19,7 @@ interface MTKCNAMEProps extends CommonProps {
 export const MTKCNAME = (props: MTKCNAMEProps) => {
     useEffect(() => {
         const listener = (e: any) => {
-	    console.log(e.detail.action, "EVENT ===============");
+	    console.log("EVENT ===============", e.detail);
         }
 
         window.addEventListener('wc-CNAME', listener);
@@ -29,6 +29,6 @@ export const MTKCNAME = (props: MTKCNAMEProps) => {
         }
     }, []);
     return (
-	CMODEL
+	SAMPLE
     )
 };
