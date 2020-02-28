@@ -6,12 +6,12 @@ if {$argc != 1} {
 
 set name [lindex $argv 0]
 
-source .react/$name.t
+source /Melify/bin/mac/.react/$name.t
 
 #parray ta
 
 foreach i {"css" "stories.tsx" "tsx"} {
-    set f [open .react/t.$i r]
+    set f [open /Melify/bin/mac/.react/t.$i r]
     set r [read $f]
     close $f
 
@@ -19,6 +19,7 @@ foreach i {"css" "stories.tsx" "tsx"} {
     regsub -all "PROPS"  $r [string trim "$ta(props)"]  r
     regsub -all "SAMPLE" $r [string trim "$ta(sample)"] r
     regsub -all "STORY"  $r [string trim "$ta(story)"]  r
+    regsub -all "CSS"    $r [string trim "$ta(css)"]    r
 
     file mkdir /Melify/mtk/dev/tk/lib/components/misc/react-t/src/components/$ta(name)
     set f [open /Melify/mtk/dev/tk/lib/components/misc/react-t/src/components/$ta(name)/MTK$ta(name).$i w]
