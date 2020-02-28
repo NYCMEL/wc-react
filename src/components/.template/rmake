@@ -9,12 +9,13 @@ foreach i {"css" "stories.tsx" "tsx"} {
     set r [read $f]
     close $f
 
-    regsub -all "CNAME"  $r "$ta(name)"   r
-    regsub -all "PROPS"  $r "$ta(props)"  r
-    regsub -all "SAMPLE" $r "$ta(sample)" r
+    regsub -all "CNAME"  $r [string trim "$ta(name)"]   r
+    regsub -all "PROPS"  $r [string trim "$ta(props)"]  r
+    regsub -all "SAMPLE" $r [string trim "$ta(sample)"] r
+    regsub -all "STORY"  $r [string trim "$ta(story)"]  r
 
-    file mkdir comps/$ta(name)
-    set f [open comps/$ta(name)/MTK$ta(name).$i w]
+    file mkdir ../$ta(name)
+    set f [open ../$ta(name)/MTK$ta(name).$i w]
     puts $f $r
     close $f
 }

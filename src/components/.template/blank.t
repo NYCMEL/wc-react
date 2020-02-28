@@ -11,4 +11,8 @@ array set ta {
 	    {props.title}
 	</wc-blank>
     }
+
+    story {
+	<MTKblank id="my-blank" title="HELLO MEL"></MTKblank>
+    }
 }
