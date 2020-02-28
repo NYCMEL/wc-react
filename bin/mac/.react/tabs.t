@@ -14,6 +14,6 @@ array set ta {
     }
 
     story {
-	<MTKtabs id="my-tabs" cfg="http://links.melify.com/tk/lib/components/misc/webpack/src/w/cfg/tabs.json"></MTKtabs>
+	<MTKtabs id="my-tabs" cfg="http://links.melify.com/tk/lib/components/misc/webpack/src/w/cfg/tabs.react.json"></MTKtabs>
     }
 }
