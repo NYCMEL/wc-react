@@ -1,0 +1,8 @@
+wc-flip-front, wc-flip-back {
+    font-family: fl!important;
+}
+
+wc-flip-front h5, wc-flip-back h5 {
+    font-family: fr!important;
+    font-weight: 300!important;
+}

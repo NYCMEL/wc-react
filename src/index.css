@@ -1,0 +1,41 @@
+/* ======= ROBOTO ========== */
+@font-face {
+    font-family: 'fl';
+    src: local('Roboto'), local('Roboto-Light'), url(./fonts/Roboto-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'fr';
+    src: local('Roboto'), local('Roboto-Regular'), url(./fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'fm';
+    src: local('Roboto'), local('Roboto-Medium'), url(./fonts/Roboto-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'fb';
+    src: local('Roboto'), local('Roboto-Bold'), url(./fonts/Roboto-Bold.ttf) format('truetype');
+}
+
+/* ======= AMPLITUDE ========== */
+@font-face {
+    font-family: 'fal';
+    src: local('Amplitude'), local('Amplitude-Light'), url(./fonts/Amplitude-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'far';
+    src: local('Amplitude'), local('Amplitude-Regular'), url(./fonts/Amplitude-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'fam';
+    src: local('Amplitude'), local('Amplitude-Medium'), url(./fonts/Amplitude-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'fab';
+    src: local('Amplitude'), local('Amplitude-Bold'), url(./fonts/Amplitude-Bold.ttf) format('truetype');
+}
