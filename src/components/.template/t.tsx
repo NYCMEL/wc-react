@@ -13,7 +13,7 @@ declare global {
 }
 
 interface MTKCNAMEProps extends CommonProps {
-    CPROPS
+    PROPS
 }
 
 export const MTKCNAME = (props: MTKCNAMEProps) => {
