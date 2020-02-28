@@ -1,15 +1,15 @@
 import * as React from 'react'
-import {MTKCard} from "./MTKCard";
+import {MTKCNAME} from "./MTKCNAME";
 
-export default {title: 'MTK Card'}
+export default {title: 'MTK CNAME'}
 
 export const basic = () => (
-    // EXAMPLE USAGE OF WC-CARD COMPONENT
+    // EXAMPLE USAGE OF WC-CNAME COMPONENT
     <div id="wc">
 	<div className="container mt-5">
 	    <div className="row">
 		<div className="col-md-6">
-		    <MTKCard cfg="http://links.melify.com/tk/lib/components/w/cfg/cards/card-2.react.json" />
+		    CMODEL
 		</div>
 	    </div>
 	</div>
