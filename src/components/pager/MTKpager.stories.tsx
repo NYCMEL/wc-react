@@ -3,6 +3,8 @@ import {MTKpager} from "./MTKpager";
 
 export default {title: 'MTK pager'}
 
+window.wcENV = "dev";
+
 export const basic = () => (
     // EXAMPLE USAGE OF WC-pager COMPONENT
     <div id="wc">
@@ -14,5 +16,4 @@ export const basic = () => (
 	    </div>
 	</div>
     </div>
-		    )
-
+)
