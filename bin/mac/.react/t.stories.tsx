@@ -8,8 +8,8 @@ export const basic = () => (
     <div id="wc">
 	<div className="container mt-5">
 	    <div className="row">
-		<div className="col-md-6">
-		    <h1>STORY</h1>
+		<div className="col-md-12">
+		    STORY
 		</div>
 	    </div>
 	</div>
