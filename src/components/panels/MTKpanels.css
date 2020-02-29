@@ -1,7 +1,9 @@
 @import "../../index.css";
 
 wc-panels {
-    border:10px red solid!important;
+    display:block!important;
+    border:10px lime solid;
+    min-height:400px;
 }
 
 .hex-bars:hover {
