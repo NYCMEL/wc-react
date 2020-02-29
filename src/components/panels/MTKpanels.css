@@ -1,4 +1,14 @@
 @import "../../index.css";
 
+wc-panels {
+    border:10px red solid!important;
+}
+
+.hex-bars:hover {
+    cursor: pointer;
+    color: steelblue;
+}
+
+
 
 
