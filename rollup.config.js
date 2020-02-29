@@ -2,6 +2,7 @@ import typescript from 'rollup-plugin-typescript2'
 import commonjs from 'rollup-plugin-commonjs'
 import external from 'rollup-plugin-peer-deps-external'
 import resolve from 'rollup-plugin-node-resolve'
+import postcss from 'rollup-plugin-postcss'
 
 import pkg from './package.json'
 
@@ -24,6 +25,10 @@ export default {
   plugins: [
     external(),
     resolve(),
+    postcss({
+      modules: true,
+      extract: true
+    }),
     typescript({
       rollupCommonJSResolveHack: true,
       exclude: [
