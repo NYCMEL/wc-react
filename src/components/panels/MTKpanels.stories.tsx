@@ -11,6 +11,9 @@ export const basic = () => (
 		<div className="col-md-12">
 		    <div className="panels-container p-5 border shadow bg-light">
 			<h1>HELLO MEL</h1>
+			<div>
+			    <wc-include href="http://links.melify.com/mtk/render?ajax=1&callback=tk::dummy::3"></wc-include>
+			</div>
 		    </div>
 
 		    <MTKpanels id="my-panels" cfg="http://links.melify.com/tk/lib/components/w/html/parts/panels/config.json" parent=".panels-container" />
