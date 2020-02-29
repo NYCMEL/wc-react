@@ -2,11 +2,10 @@
 
 wc-panels {
     display: block!important;
-    background: #F7F7F7!important;
 }
 
 #panel-1, #panel-2 {
-    /* display: block!important; */
+    display: block;
 }
 
 .panels-container {
