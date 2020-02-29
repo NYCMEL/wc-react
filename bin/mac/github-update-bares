@@ -1,8 +1,0 @@
-#!tclkit
-
-set cnt 0
-foreach i [lsort [glob /Repos/*.git]] {
-    puts "[incr cnt]: $i"
-    cd $i
-    catch {exec /usr/bin/git fetch --all}
-}

@@ -1,5 +1,0 @@
-1000|$(".box").css("background","yellow");
-1000|$(".box").css("background","red");
-1000|$(".box").css("background","green");
-1000|$(".box").css("background","pink");
-1000|$(".box").css("background","transparent");
