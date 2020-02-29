@@ -31,7 +31,14 @@ export const MTKpanels = (props: MTKpanelsProps) => {
         }
     }, []);
     return (
-	<wc-panels id={props.id} cfg={props.cfg} parent={props.parent} {...props}></wc-panels>
+	<div>
+	    <wc-panels id={props.id} cfg={props.cfg} parent={props.parent} {...props}></wc-panels>
+
+	    <script>
+		var w = document.querySelector("wc-panels");
+		w.open("panel-1");
+	    </script>
+	</div>
     )
 };
 
