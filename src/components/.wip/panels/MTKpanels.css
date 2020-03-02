@@ -1,0 +1,23 @@
+@import "../../index.css";
+
+wc-panels {
+    display: block!important;
+}
+
+#panel-1, #panel-2 {
+    display: block;
+}
+
+.panels-container {
+    border: 1px red solid;
+    height: 400px;
+}
+
+.hex-bars:hover {
+    cursor: pointer;
+    color: steelblue;
+}
+
+
+
+

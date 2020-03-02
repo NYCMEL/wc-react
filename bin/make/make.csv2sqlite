@@ -1,8 +1,0 @@
-#!/Melify/bin/mac/tclkit
-
-if {$argc != 1} {
-   puts "USAGE: make.csv2sqlite <file.csv>"
-   exit
-}
-
-exec bin/querycsv.py -i [lindex $argv 0] -f [lindex $argv 0].db -k ""
