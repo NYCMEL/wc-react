@@ -1,0 +1,27 @@
+#show .banner {
+  border-bottom: 1px #CCC solid;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+#show .banner span {
+  color: brown;
+}
+#show #code {
+  width: 100%;
+  height: 370px;
+  background: #f7f7f7;
+  overflow: auto;
+}
+#show #preview {
+  height: 370px;
+  overflow: auto;
+}
+#show #refresh,
+#show #showme,
+#show #save,
+#show #default {
+  display: none;
+}
+#show li {
+  font-size: 125%;
+}

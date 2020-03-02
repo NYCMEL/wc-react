@@ -1,0 +1,25 @@
+@import "/GitHub/bootstrap/scss/bootstrap";
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/GitHub/fonts/apache/roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+.font-roboto {font-family: Roboto}
+
+code,kbd,pre,.img-rounded,.img-thumbnail,.img-circle,.form-control,.btn,.btn-link,.dropdown-menu,.list-group-item,
+.input-group-addon,.input-group-btn,.nav-tabs a,.nav-pills a,.navbar,.navbar-toggle,.icon-bar,.breadcrumb,.pagination,
+.pager *,.label,.badge,.jumbotron,.thumbnail,.alert,.progress,.panel,.well,.modal-content,.tooltip-inner,.popover,
+.popover-title,.carousel-indicators li {border-radius:0px!important; -webkit-border-radius:0px!important; -moz-border-radius:0px!important;}
+
+.btn-wide {min-width: 120px;@extend .btn;}
+
+.sm {@extend .form-control-sm;@extend .btn-sm;}
+.md {font-size: 16px;}
+.lg {@extend .form-control-lg;@extend .btn-lg;}
+
+label {
+    &.sm {padding-left:0;font-size: 14px;}
+    &.md {padding-left:0;font-size: 16px;}
+    &.lg {padding-left:0;font-size: 18px;}
+}

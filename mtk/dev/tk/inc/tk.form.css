@@ -1,0 +1,85 @@
+/****HEADS*****************************************************************
+*
+*  Melify Internet Toolkit (MTK) - Copyright (C) 2015  Melify LLC.
+*  
+*  This program is free software: you can redistribute it and/or modify
+*  it under the terms of the GNU General Public License as published by
+*  the Free Software Foundation, either version 3 of the License, or
+*  any later version.
+*  
+*  This program is distributed in the hope that it will be useful,
+*  but WITHOUT ANY WARRANTY; without even the implied warranty of
+*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*  GNU General Public License for more details.
+*  
+*  You should have received a copy of the GNU General Public License
+*  along with this program.  If not, see http://www.gnu.org/licenses.
+*
+****HEADE*****************************************************************/
+form {
+  font-family: helvetica!important;
+  font-size: 14px;
+}
+form ::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #CCC;
+}
+form :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #CCC;
+  opacity: 1;
+}
+form ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #CCC;
+  opacity: 1;
+}
+form :-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #CCC;
+}
+form input[type=text] {
+  border-radius: 2px;
+}
+form input[type=radio] {
+  width: 22px;
+  height: 22px;
+  zoom: 1.02;
+}
+form input[type=checkbox] {
+  width: 22px;
+  height: 22px;
+  zoom: 1.02;
+}
+form .forme {
+  display: table-cell;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+form label {
+  margin-bottom: -2px;
+  line-height: 40px;
+}
+form label.right {
+  text-align: right;
+}
+form label[for] {
+  margin-bottom: 0px;
+  font-weight: 500;
+}
+form p {
+  margin: 0;
+  padding: 0;
+  color: #666;
+  line-height: 30px;
+}
+form input[type=text] {
+  font-weight: normal;
+  color: #000;
+}
+form .btn {
+  min-width: 80px;
+}
+form .cancel {
+  padding-right: 20px;
+}

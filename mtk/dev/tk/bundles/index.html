@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="en">
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Webpack App</title>
+
+	<!-- REQUIRED BY W3C STATS -->
+	<script>
+	 wcENV="prod"; // prod || dev
+	 wcAPP="PUT YOUR APPLICATION NAME HERE";
+	 wcURL="http://www.melify.com/tk/lib/components/w";
+	</script>
+
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/Melify/fonts/fonts.css" rel="stylesheet">
+    </head>
+
+    <body id="wc" style="margin:0;padding:0;background:#FFF">
+	<div>
+	    <wc-include href="/tk/lib/components/misc/webpack/src/w/html/_prod.html"></wc-include>
+	</div>
+
+	<wc-accordion id="my-accordion" show="1">
+	    <wc-card id="my-card-1" cfg="/tk/lib/components/w/cfg/cards/card-1-accordion.json"></wc-card>
+	    <wc-card id="my-card-2" cfg="/tk/lib/components/w/cfg/cards/card-1-accordion.json"></wc-card>
+	    <wc-card id="my-card-3" cfg="/tk/lib/components/w/cfg/cards/card-1-accordion.json"></wc-card>
+	</wc-accordion>
+	<wc-banner id="my-banner-1" background="#FFF">
+	    <wc-banner-lhs class="col-md-6">
+		<div style="background:#FFF" class="p-3">
+		    <wc-banner-title class="display-4">
+			Banner example
+		    </wc-banner-title>
+
+		    <wc-banner-subtitle class="lead">
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+			sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+		    </wc-banner-subtitle>
+
+		    <p>
+			<hr class="my-4">
+			Hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
+		    </p>
+
+		    <wc-banner-actions class="lead">
+			<a id="btn-more-1" class="btn btn-primary btn-action" href="#" role="button">More I</a>
+			<a id="btn-more-2" class="btn btn-primary btn-action" href="#" role="button">More II</a>
+		    </wc-banner-actions>
+		</div>
+	    </wc-banner-lhs>
+
+	    <wc-banner-rhs class="col-md-6 cover" style="background:url(/tk/lib/components/misc/webpack/src/w/assets/tmp/dots.png)">
+	    </wc-banner-rhs>
+	</wc-banner>
+	<style>
+	 body {background: #ebebeb;}
+	 .app-page {min-height:300px;}
+	</style>
+
+	<wc-app id="my-app" cfg="/tk/lib/components/misc/webpack/src/w/cfg/app.json" testing="true" class="col-md-12" style="margin:0 auto">
+	    <h1>Loading...
+	</wc-app>
+	<wc-band id="my-band" class="col-md-8 shadow"></wc-band>
+
+	<script src="/tk/lib/components/w/ext/highcharts/highcharts.js"></script>
+	<script src="/Melify/mtk/dev/tk/lib/components/w/cfg/band.json"></script> 
+	
+	<script>
+	 // NEED THIS IN DEV ENVIRONMENT DUE TO DELAYS
+	 setTimeout(function(){
+	     let b1 = document.querySelector("#my-band");
+	     b1.configure(bdata);
+	 }, 500);
+	</script>
+	<wc-banner id="my-banner-1" background="#FFF">
+	    <wc-banner-lhs class="col-md-6">
+		<div style="background:#FFF" class="p-3">
+		    <wc-banner-title class="display-4">
+			Banner example
+		    </wc-banner-title>
+
+		    <wc-banner-subtitle class="lead">
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+			sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+		    </wc-banner-subtitle>
+
+		    <p>
+			<hr class="my-4">
+			Hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
+		    </p>
+
+		    <wc-banner-actions class="lead">
+			<a id="btn-more-1" class="btn btn-primary btn-action" href="#" role="button">More I</a>
+			<a id="btn-more-2" class="btn btn-primary btn-action" href="#" role="button">More II</a>
+		    </wc-banner-actions>
+		</div>
+	    </wc-banner-lhs>
+
+	    <wc-banner-rhs class="col-md-6 cover" style="background:url(/tk/lib/components/misc/webpack/src/w/assets/tmp/dots.png)">
+	    </wc-banner-rhs>
+	</wc-banner>
+	<wc-blank id="my-blank">
+	    <h1 style="border:1px red solid;background:yellow;padding:20px;width:400px;margin:20px;text-align:center;text-transform:uppercase">blank</h1>
+	</wc-blank>
+	<wc-breadcrumb id="my-breadcrumb">
+ 	    <ol class='breadcrumb'>
+		<li class="breadcrumb-item"><a href="#">Home</a></li>
+		<li class="breadcrumb-item"><a href="#">Products</a></li>
+		<li class="breadcrumb-item active">Audios</li>
+	    </ol>
+	</wc-breadcrumb>
+	<div class="col-md-4">
+	    <h3 class="h3-direction">Horizontal</h3>
+	    <wc-form name="my-form" role="form" id="my-form" class="form-control-md" style="border:1px #CECECE solid;padding:20px;display:block">
+		<wc-calendar id="my-calendar" name="adate" label="Date" columns="4,8" placeholder="pick a date" help="date is a required field" data-error="must be a date format..." required></wc-calendar>
+		
+		<hr />
+		<div class="form-group">
+		    <input type="submit" name="action" value="LET'S GO" class="btn btn-outline-primary" id="submit-btn-1">
+		</div>
+	    </wc-form>
+	</div>
+	<wc-card id="my-card-2" cfg="/tk/lib/components/w/cfg/cards/card-2.json" style="height:100%;"></wc-card>
+	<wc-carousel id="my-carousel-1" options='{"slidesToShow":3, "autoplay":true, "dots":true, "speed":1000, "initialSlide":0}' class="col-6">
+	    <div><a href="#"><img src="http://localhost/tk/img/business/png/cart-10.png"	   width="300" slick-caption="Picture A" alt="Picture A" /></a></div>
+	    <div><a href="#"><img src="http://localhost/tk/img/business/png/barcode.png"	   width="300" slick-caption="Picture B" alt="Picture B" /></a></div>
+	    <div><a href="#"><img src="http://localhost/tk/img/business/png/calculator.png"	   width="300" slick-caption="Picture C" alt="Picture C" /></a></div>
+	    <div><a href="#"><img src="http://localhost/tk/img/business/png/bag-6.png"	   width="300" slick-caption="Picture D" alt="Picture D" /></a></div>
+	    <div><a href="#"><img src="http://localhost/tk/img/business/png/coin-10.png"	   width="300" slick-caption="Picture E" alt="Picture E" /></a></div>
+	    <div><a href="#"><img src="http://localhost/tk/img/business/png/credit-card-1.png" width="300" slick-caption="Picture F" alt="Picture F" /></a></div>
+	</wc-carousel>
+	<div style="width:600px;height:300px;background:wheat">
+	    <wc-center id="my-center-1">
+		<div style="background:lime;text-align:center">
+		    <h1>HELLO MEL</h1>
+		    <p>DEVELOPER CONSOLE HAS A LOT OF GOODIES :)</p>
+		</div>
+	    </wc-center>
+	</div>
+	<wc-chart class="border shadow" id="my-donut-1"></wc-chart>
+
+	<script src="/tk/lib/components/w/ext/highcharts/highcharts.js"></script>
+	<script src="/Melify/mtk/dev/tk/lib/components/w/cfg/chart.donut.json"></script>
+	<script>
+	 setTimeout(function(){
+	     let c = document.querySelector("#my-donut-1");
+	     c.configure(cdata);
+	 }, 500);
+	</script>
+	<div class="col-md-4">
+	    <wc-form name="my-form" role="form" id="my-form" class="form-control-md" style="border:1px #CECECE solid;padding:20px" model="chkModel">
+		<div class="clearfix">
+		    <div class="float-sm-left">
+			<wc-check id="my-check-1" name="v(agree)" label="I Agree with Terms" checked required></wc-check>
+		    </div>
+		    <div class="float-sm-left">
+			<wc-check id="my-check-2" name="v(signup)" label="Newsletter ?"></wc-check>
+		    </div>
+		</div>
+
+		<hr />
+		<div class="form-group">
+		    <input type="submit" name="action" value="LET'S GO" class="btn btn-info" id="submit-btn-1">
+		</div>
+	    </wc-form>
+	</div>
+	<script src="/tk/lib/components/misc/webpack/node_modules/dragula/dist/dragula.min.js"></script>
+
+	<style>
+	 #my-src {
+	     padding:10px;
+	     background: #f7f7f7;
+	 }
+
+	 #my-src .btn {
+	     text-align:left;
+	     display:block;
+	     margin:2px;
+	 }
+
+	 #my-dst {
+	     border-left: 1px #CCC solid;
+	     padding:10px;
+	     background: #f7f7f7;
+	     min-height:500px!important;
+	 }
+	</style>
+
+	<div class="row">
+	    <div class="col-sm-2" id="my-src">
+		<a id="brown"  href="#" class="btn btn-sm btn-outline-secondary">Brown</a>
+		<a id="orange" href="#" class="btn btn-sm btn-outline-secondary">Orange</a>
+		<a id="green"  href="#" class="btn btn-sm btn-outline-secondary">Green</a>
+	    </div>
+	    
+	    <div class="col-sm-10" id="my-dst">
+	    </div>
+	</div>
+	
+	<wc-dad id="my-dad" src="my-src" dst="my-dst" copy="true" direction="horizontal"></wc-dad>
+
+	<hr>
+	<h5 style="color:indianred">DEVELOPER CONSOLE HAS A LOT OF GOODIES :)</h5>
+	</div>
+
+	<script src="../dist/wc.js"></script> 
+
+	<script>
+	 //////////////////////////////////
+	 // SUBSCRIPTIONS
+	 //////////////////////////////////
+	 wc.subscribe("wc-dad", function(e) {
+	     console.info("SUBSCRIPTION FOR: wc-dad :", JSON.stringify(e.detail));
+
+	     //$("body").append("<BR>" + JSON.stringify(e.detail));
+
+	     dad = document.querySelector("#my-dad");
+
+	     // ADD NEW ELEMENT. ELSE WE ARE SHUFFLING STUFF
+	     if (e.detail.new) {
+		 let id = "div-" + Math.floor( Math.random() * 100 );
+
+		 if (e.detail.sibling != null) {
+		     let sid = e.detail.sibling.getAttribute("id");
+		     
+		     $("#my-dst #" + sid).before("<div id='" + id + "' style='display:inline-block;margin:10px' wc-include='/tk/lib/components/w/data/dad/dad.html'><span class='wc-loading-img'></span></div>");
+		 } else {
+		     $("#my-dst").append("<div id='" + id + "' style='display:inline-block;margin:10px'><wc-include href='/tk/lib/components/w/data/dad/dad.html'></wc-include><span class='wc-loading-img'></span></div>");
+		 }
+
+		 setTimeout(function(){
+		     $("#" + id + " .card").css("border", "3px solid " + e.detail.did);
+		     $("#" + id + " .card-header").html(e.detail.did + " | " + id);
+		 }, 200);
+	     }
+	 });
+	</script>
+	<wc-designer id="my-designer" cfg="../cfg/designer/designer.json"></wc-designer>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#my-dialog-modal">
+	    Launch demo modal
+	</button>
+
+	<wc-dialog id="my-dialog" width="800px" height="450px" top="100px" closeable="false">
+	    <wc-dialog-title>
+		My Dialog Title
+	    </wc-dialog-title>
+
+	    <wc-dialog-body>
+		<h1>Modal body content here</h1>
+		<p>
+		    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+		    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+		    accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+		    takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+		    sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+		    erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+		    ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+		    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod
+		    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+		    eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+		</p>
+	    </wc-dialog-body>
+
+	    <wc-dialog-controls>
+		<button id="btn-close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		<button id="btn-save" type="button" class="btn btn-primary">Save changes</button>
+	    </wc-dialog-controls>
+	</wc-dialog>
+	<wc-dropdown id="my-dropdown" style="width:300px" btn="btn-outline-primary" selected="eur" class="md">
+	    <a href="#" id="usd">US Dollar ($)</a>
+	    <a href="#" id="gbp">Sterling (£)</a>
+	    <a href="#" id="eur">Euro (€)</a>
+	    <a href="#" id="cny" data-fixed-columns="5">Chinese Yuan (￥)</a>
+	    <a href="#" id="sek">Swedish Krona (kr)</a>
+	    <a href="#" id="jpy">Japanese Yen – JPY (¥)</a>
+	    <a href="#" id="aud">Australian Dollar – AUD (A$)</a>
+	    <div class="dropdown-divider"></div>
+	    <a href="#" id="chf">Swiss Franc – CHF (Fr.)</a>
+	    <a href="#" id="krw">South Korean Won – KRW (₩)</a>
+	    <a href="#" id="cad">Canadian Dollar - CAD (C$)</a>
+	    <a href="#" id="twd" data-fixed-columns="5">Taiwan Dollar - TWD (NT$)</a>
+	    <a href="#" id="mxn">Mexican Peso - MXN (MEX$)</a>
+	    <a href="#" id="brl" data-fixed-columns="5">Brazilian Real - BRL (R$)</a>
+	</wc-dropdown>
+	<div class="text-center" style="padding:50px">
+	    <a id="a-driver" style="font-size:20px">DROP ANYTHING</a>
+	    
+	    <wc-dropper id="my-dropper-1" driver="a-driver" url="/mtk/render?ajax=1<HTMLCODE/>callback=tk::dummy::3" style="width:300px;padding:5px;height:300px;overflow:auto"></wc-dropper>
+	</div>
+	<div style="width:400px;height:200px;margin:100px">
+	    <wc-flip id="my-flip-1">
+		<wc-flip-front style="background:wheat;padding:30px;text-align:center">
+		    <h5>If you click on me, i Can flip and show you more stuff</h5>
+		</wc-flip-front>
+
+		<wc-flip-back style="background:khaki;padding:30px;text-align:center">
+		    <h5>Here is some more. if you move out, i will flip back</h5>
+		</wc-frlip-back>
+		</wc-flip>
+	</div>
+	<wc-form name="my-form" role="form" id="my-form" class="form-control-md" model="formModel">
+	    <div class="container-fluid">
+		<div class="row">
+		    <div class="col-md-6">
+			<wc-text name="v(uname)" id="uname-1" label="Full Name" placeholder="your name goes here..." columns="4,8"
+				 value="Mel Heravi" required></wc-text>
+			<wc-text name="v(email)" id="email-1" label="Email" placeholder="your email here..." columns="4,8" type="email"
+				 pattern="email" value="mel@melify.com" required></wc-text>
+			<wc-text name="v(phone)" id="phone-1" label="Phone" placeholder="Like: 212-555-5555"
+				 pattern="phone" columns="4,8" help="Phone number is NOT required"
+				 data-error="Format like 212-555-5555"></wc-text>
+
+			<wc-calendar id="my-calendar" name="adate" label="Date" columns="4,8" placeholder="mm/dd/yyyy"
+				     help="date is a required field" data-error="must be a date format..." required>
+			</wc-calendar>
+			
+			<wc-groupbox id="groupbox-1" name="v(gbox)" label="Fav Fruit" columns="4,8" help="Please select one">
+			    <div class="float-sm-left">
+				<wc-radio id="fruit-apple" name="v(fruit)" label="Apple"  value="1" required></wc-radio>
+			    </div>
+			    <div class="float-sm-left">
+				<wc-radio id="fruit-orange" name="v(fruit)" label="Orange" value="2"></wc-radio>
+			    </div>
+			    <div class="float-sm-left">
+				<wc-radio id="fruit-peach" name="v(fruit)" label="Peach"  value="3"></wc-radio>
+			    </div>
+			</wc-groupbox>
+
+			<wc-groupbox id="groupbox-2" name="v(gbox2)" label="Agreements" columns="4,8" help="You must agree with Terms <HTMLCODE/> Conditions">
+			    <div class="float-sm-left">
+				<wc-check id="check-1" name="v(agree)" label="I Agree" checked required></wc-check>
+			    </div>
+			    <div class="float-sm-left">
+				<wc-check id="check-2" name="v(signup)" label="Subscribe me"></wc-check>
+			    </div>
+			</wc-groupbox>
+		    </div>
+
+		    <div class="col-md-1">
+		    </div>
+
+		    <div class="col-md-5">
+			<wc-select id="color-1" name="v(color)" label="Fav Color" columns="4,8" help="Please pick a color" data-error="color is a required field" required searchable="true" placeholder="Please select...">
+			    <option value=""></option>
+			    <option value="1">1 = Red</option>
+			    <option value="2">2 = White</option>
+			    <option value="3">3 = Blue</option>
+			</wc-select>
+			
+			<wc-textarea id="textarea-1" label="Notes" columns="4,8" placeholder="Your notes ..."  help="Notes is NOT a required field"></wc-textarea>
+		    </div>
+		    
+		    <div class="col-md-12">
+			<hr />
+			<div class="form-group">
+			    <input type="submit" name="action" value="LET'S GO" class="btn btn-primary" id="submit-btn-1" />
+			</div>
+		    </div>
+		</div>
+	    </div>
+	</wc-form>
+	<div class="col-md-5">
+	    <h3 class="h3-direction">Horizontal</h3>
+	    <wc-form name="my-form" role="form" id="my-form" class="form-control-md" style="border:1px #CECECE solid;padding:20px;display:block">
+		<wc-groupbox id="groupbox-1" name="v(gbox)" label="Choose a Fruit" columns="4,8">
+		    <div class="float-left">
+			<wc-radio id="radio-1" name="v(radio)" label="Apple"  value="1" required></wc-radio>
+		    </div>
+		    <div class="float-left">
+			<wc-radio id="radio-2" name="v(radio)" label="Orange" value="2"></wc-radio>
+		    </div>
+		    <div class="float-left">
+			<wc-radio id="radio-3" name="v(radio)" label="Peach"  value="3"></wc-radio>
+		    </div>
+		</wc-groupbox>
+
+		<wc-groupbox id="groupbox-2" name="v(gbox)" label="Agreements" columns="4,8">
+		    <div class="float-left">
+			<wc-check id="check-1" name="v(agree)" label="I Agree" required></wc-check>
+		    </div>
+		    <div class="float-left">
+			<wc-check id="check-2" name="v(signup)" label="Subscribe me"></wc-check>
+		    </div>
+		</wc-groupbox>
+
+		<hr />
+		<div class="form-group">
+		    <input type="submit" name="action" value="LET'S GO" class="btn btn-info" id="submit-btn-1">
+		</div>
+	    </wc-form>
+	</div>
+	<wc-header-2 id="my-aem-header" fluid="true" menus="/tk/lib/components/w/data/aem"></wc-header-2>
+	<wc-headline id="my-headline-1">
+	    <wc-headline-title>
+		Headline <small>(inline)</small>
+	    </wc-headline-title>
+
+	    <wc-headline-body>
+		Optional Supporting copy. Etiam varius leo vel eros iaculis, tempus porta lacus posuere. Nulla in erat gravida,
+		convallis nibh non, accumsan dui. Pellentesque ac vulputate elit,
+		et aliquam ipsum. Nam ut nulla volutpat, consequat libero vitae, tincidunt lectus.
+	    </wc-headline-body>
+
+	    <wc-headline-date>
+		08 Mar 2018
+	    </wc-headline-date>
+
+	    <wc-headline-author>
+		Mel M. Heravi
+	    </wc-headline-author>
+	</wc-headline>
+	<wc-icon id="my-icon-1" name="home" size="36px" color="indianred" class="mb-3" border="true"></wc-icon>
+	<wc-listbox id="my-listbox" width="400px">
+	    <ul class="list-group">
+		<li id="item-1" class="list-group-item">First item</li>
+		<li id="item-2" class="list-group-item active">Second item</li>
+		<li id="item-3" class="list-group-item">Third item</li>
+		<li id="item-4" class="list-group-item">Fourth item</li>
+		<li id="item-5" class="list-group-item">Fifth item</li>
+	    </ul>
+	</wc-listbox>
+	<wc-login id="my-login" class="login-normal" aname="My Application Name" style="visibility:visible"></wc-login>
+	<wc-melify id="melify-app"></wc-melify>
+	<wc-menubar id="my-menubar" class="m-5 w-50">
+	    <div class="menu border">
+		<ul>
+                    <li><a href="#">Home</a></li>
+
+                    <li><a href="#">News</a>
+			<ul>
+                            <li><a href="#">Today</a></li>
+                            <li><a href="#">Calendar</a></li>
+                            <li><a href="#">Sport</a></li>
+			</ul>
+                    </li>
+
+                    <li><a href="#">About</a>
+			<ul>
+                            <li><a href="#">School</a>
+				<ul>
+                                    <li><a href="#">Lidership</a></li>
+                                    <li><a href="#">History</a></li>
+                                    <li><a href="#">Locations</a></li>
+                                    <li><a href="#">Careers</a></li>
+				</ul>
+                            </li>
+                            <li><a href="#">Study</a>
+				<ul>
+                                    <li><a href="#">Undergraduate</a></li>
+                                    <li><a href="#">Masters</a></li>
+                                    <li><a href="#">International</a></li>
+                                    <li><a href="#">Online</a></li>
+				</ul>
+                            </li>
+                            <li><a href="#">Research</a>
+				<ul>
+                                    <li><a href="#">Undergraduate research</a></li>
+                                    <li><a href="#">Masters research</a></li>
+                                    <li><a href="#">Funding</a></li>
+				</ul>
+                            </li>
+			</ul>
+                    </li>
+
+		</ul>
+	    </div>
+	</wc-menubar>
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#my-modal-dialog" data-backdrop="static" data-keyboard="false">Launch my modal</button>
+	
+	<wc-modal id="my-modal" title="My modal dialog title" width="600px" height="400px">
+	    <wc-modal-body>
+		<h4>Modal content goes here</h4>
+		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+		tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+		At vero eos et accusam et justo duo dolores et ea rebum.
+		Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+		Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+		sed diam nonumy eirmod tempor 
+	    </wc-modal-body>
+
+	    <wc-modal-controls>
+		<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+		<button type='button' class='btn btn-primary' onclick="alert('success')">Save changes</button>
+	    </wc-modal-controls>
+	</wc-modal>
+	<h3>LEFT TO RIGHT</h3>
+	<hr>
+	<wc-orgchart id="my-orgchart-1"></wc-orgchart>
+	<wc-page id="my-page-1" fluid="false">
+	    <wc-page-header>
+		<wc-include href="/tk/lib/components/misc/webpack/src/w/html/parts/page/page.header.html"/>
+	    </wc-page-header>
+	    
+	    <wc-page-body>
+		<wc-include href="/tk/lib/components/misc/webpack/src/w/html/parts/page/page.body.html"/>
+	    </wc-page-body>
+
+	    <wc-page-footer>
+		<wc-include href="/tk/lib/components/misc/webpack/src/w/html/parts/page/page.footer.html"/>
+	    </wc-page-footer>
+	</wc-page>
+	<h1><a href="#" id="pusher-1">CURRENCY: USD</a></h1>
+
+	<wc-popup class="" id="my-popup-1" width="300" height="auto" driver="pusher-1">
+	    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+	    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+	    diam voluptua. At vero eos et accusam et justo duo dolores
+	    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+	    et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+	    et accusam et justo duo dolores et ea rebum. Stet clita
+	    kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+	</wc-popup>
+	<wc-quick-links id="my-quick-links" class="shadow border p-3">
+	    <wc-quick-links-heading>
+		Quick Links
+	    </wc-quick-links-heading>
+
+	    <wc-quick-links-content>
+		<ul>
+		    <li id="link-1">Link I</li>
+		    <li id="link-2">Link II</li>
+		    <li id="link-3">Link III</li>
+		    <li id="link-4">Link IV</li>
+		    <li id="link-5">Link V</li>
+		</ul>
+	    </wc-quick-links-content>
+	</wc-quick-links>
+	<div class="clearfix">
+	    <div class="col-md-4">
+		<wc-form name="my-form" role="form" id="my-form" class="form-control-md" style="border:1px #CECECE solid;padding:20px">
+		    <div class="clearfix">
+			<div class="float-sm-left">
+			    <wc-radio id="radio-1" name="myradio" label="Apple" value="1" required></wc-radio>
+			</div>
+			<div class="float-sm-left">
+			    <wc-radio id="radio-2" name="myradio" label="Orange" value="2"></wc-radio>
+			</div>
+			<div class="float-sm-left">
+			    <wc-radio id="radio-3" name="myradio" label="Peach" value="3"></wc-radio>
+			</div>
+		    </div>
+
+		    <hr />
+		    <div class="form-group">
+			<input type="submit" name="action" value="LET'S GO" class="btn btn-info" id="submit-btn-1">
+		    </div>
+		</wc-form>
+	    </div>
+	</div>
+	<div class="clearfix">
+	    <div class="col-md-5">
+		<h3 class="h3-direction">Horizontal</h3>
+		<wc-form name="my-form" role="form" id="my-form" class="form-control-md" style="border:1px #CECECE solid;padding:20px">
+		    <wc-select name="v(color)" id="select-1" label="Pick a color" columns="4,8" help="Please pick a color" data-error="color is a required field" searchable="true" value="1" placeholder="please select..." required>
+			<option value="">[Please Select]</option>
+			<option value="1">Red</option>
+			<option value="2">White</option>
+			<option value="3">Blue</option>
+		    </wc-select>
+
+		    <hr />
+		    <div class="form-group">
+			<input type="submit" name="action" value="LET'S GO" class="btn btn-info" id="submit-btn-1">
+		    </div>
+		</wc-form>
+	    </div>
+	</div>
+	
+	<wc-slide id="my-slide" toggler="toggle-menu" speed="300" search="true" title="Application Menus">
+	    <wc-slide-menus>
+		<ul>
+		    <li><a id="link-1000" href="#">Card</a></li>
+		    <li><a id="link-2000" href="#">Checkbox</a></li>
+		    <li><a id="link-3000" href="#">Dialog</a></li>
+		    <li><a id="link-4000" href="#">Dropdown</a></li>
+		    <li><a id="link-5000" href="#">Form</a></li>
+		    <li><a id="link-6000" href="#">Groupbox</a></li>
+		    <li><a id="link-7000" href="#">Include</a></li>
+		    <li><a id="link-8000" href="#">Listbox</a></li>
+		    <li><a id="link-9000" href="#">Make</a></li>
+		    <li><span>Panel Types</span>
+			<ul>
+			    <li><a id="link-10000" href="#">Panel</a></li>
+			    <li><a id="link-11000" href="#">Accordion</a></li>
+			</ul>
+		    </li>
+		</ul>
+	    </wc-slide-menus>
+	</wc-slide>
+
+	<div class="wrapper" style="padding:20px">
+	    <a id="toggle-menu"><i class='fa fa-bars fa-2x'></i></a>
+	    <hr>
+	    <div id="main-container">
+		<h4>
+		    MENUS VIA JAVASCRIPT: <pre>document.querySelector("wc-slide").open()<BR>document.querySelector("wc-slide").close()</pre>
+		</h4>
+	    </div>
+	</div>
+	
+	<hr>
+	<h5 style="color:indianred">DEVELOPER CONSOLE HAS A LOT OF GOODIES :)</h5>
+	</div>
+	
+	<script>wcAPP="wc";wcENV="dev"</script>
+
+	<script src="../dist/wc.js"></script> 
+
+	<link rel="stylesheet" href="/tk/lib/components/misc/webpack/node_modules/sidr/dist/stylesheets/jquery.sidr.light.min.css" />
+	<script src="/tk/lib/components/misc/webpack/node_modules/sidr/dist/jquery.sidr.min.js"></script>
+	<wc-stocks id="my-stocks-1" symbols="HOV,C,AAPL"></wc-stocks>
+	<wc-swipe id="my-swipe" pagination="false" navigation="false" autoheight="true" space="0" start="1">
+	    <div><span class="wc-loading-img"></span></div>
+	    <div><span class="wc-loading-img"></span></div>
+	    <div><span class="wc-loading-img"></span></div>
+	    <div><span class="wc-loading-img"></span></div>
+	    <div><span class="wc-loading-img"></span></div>
+	</wc-swipe>
+	<wc-table id='my-table' datatable='{"pagination":false, "search":false, "info":false, "height":"300px", "sort":{"column":2, "direction":"asc"}}'>
+	    <table class="table table-striped table-hover" id="my-table-table" style={{ border: '1px #CECECE solid' }}>
+		<thead>
+		    <tr>
+			<th>Issue Date</th>
+			<th>Product</th>
+			<th>Qty</th>
+			<th>Paid</th>
+			<th>Balance</th>
+			<th>Total</th>
+		    </tr>   
+		</thead>
+
+		<tbody>
+		    <tr>
+			<td>Jan 20, 2015</td>
+			<td>Normal Sim</td>
+			<td>1000</td>
+			<td><span class="pull-right">$18,893.00</span></td>
+			<td><span class="pull-right">$131,107.00</span></td>
+			<td><span class="pull-right">$150,000.00</span></td>
+		    </tr>
+		    <tr>
+			<td>Feb 20, 2015</td>
+			<td>Nokia 3310</td>
+			<td>10,000</td>
+			<td><span class="pull-right">$2,520,000.00</span></td>
+			<td><span class="pull-right">$12,480,000.00</span></td>
+			<td><span class="pull-right">$15,000,000.00</span></td>
+		    </tr>
+		    <tr>
+			<td>Mar 20, 2015</td>
+			<td>Nokia 3310</td>
+			<td>100,000</td>
+			<td><span class="pull-right">$404,000.00</span></td>
+			<td><span class="pull-right">$1,096,000.00</span></td>
+			<td><span class="pull-right">$1,500,000.00</span></td>
+		    </tr>
+
+		    <tr>
+			<td>Jan 20, 2015</td>
+			<td>Normal Sim</td>
+			<td>1000</td>
+			<td><span class="pull-right">$18,893.00</span></td>
+			<td><span class="pull-right">$131,107.00</span></td>
+			<td><span class="pull-right">$150,000.00</span></td>
+		    </tr>
+		    <tr>
+			<td>Feb 20, 2015</td>
+			<td>Nokia 3310</td>
+			<td>10,000</td>
+			<td><span class="pull-right">$2,520,000.00</span></td>
+			<td><span class="pull-right">$12,480,000.00</span></td>
+			<td><span class="pull-right">$15,000,000.00</span></td>
+		    </tr>
+		    <tr>
+			<td>Mar 20, 2015</td>
+			<td>Nokia 3310</td>
+			<td>100,000</td>
+			<td><span class="pull-right">$404,000.00</span></td>
+			<td><span class="pull-right">$1,096,000.00</span></td>
+			<td><span class="pull-right">$1,500,000.00</span></td>
+		    </tr>
+
+		    <tr>
+			<td>Jan 20, 2015</td>
+			<td>Normal Sim</td>
+			<td>1000</td>
+			<td><span class="pull-right">$18,893.00</span></td>
+			<td><span class="pull-right">$131,107.00</span></td>
+			<td><span class="pull-right">$150,000.00</span></td>
+		    </tr>
+
+		    <tr>
+			<td>Feb 20, 2015</td>
+			<td>Nokia 3310</td>
+			<td>10,000</td>
+			<td><span class="pull-right">$2,520,000.00</span></td>
+			<td><span class="pull-right">$12,480,000.00</span></td>
+			<td><span class="pull-right">$15,000,000.00</span></td>
+		    </tr>
+		    <tr>
+			<td>Mar 20, 2015</td>
+			<td>Nokia 3310</td>
+			<td>100,000</td>
+			<td><span class="pull-right">$404,000.00</span></td>
+			<td><span class="pull-right">$1,096,000.00</span></td>
+			<td><span class="pull-right">$1,500,000.00</span></td>
+		    </tr>
+
+		    <tr>
+			<td>Jan 20, 2015</td>
+			<td>Normal Sim</td>
+			<td>1000</td>
+			<td><span class="pull-right">$18,893.00</span></td>
+			<td><span class="pull-right">$131,107.00</span></td>
+			<td><span class="pull-right">$150,000.00</span></td>
+		    </tr>
+
+		    <tr>
+			<td>Feb 20, 2015</td>
+			<td>Nokia 3310</td>
+			<td>10,000</td>
+			<td><span class="pull-right">$2,520,000.00</span></td>
+			<td><span class="pull-right">$12,480,000.00</span></td>
+			<td><span class="pull-right">$15,000,000.00</span></td>
+		    </tr>
+		    <tr>
+			<td>Mar 20, 2015</td>
+			<td>Nokia 3310</td>
+			<td>100,000</td>
+			<td><span class="pull-right">$404,000.00</span></td>
+			<td><span class="pull-right">$1,096,000.00</span></td>
+			<td><span class="pull-right">$1,500,000.00</span></td>
+		    </tr>
+
+		    <tr>
+			<td>Jan 20, 2015</td>
+			<td>Normal Sim</td>
+			<td>1000</td>
+			<td><span class="pull-right">$18,893.00</span></td>
+			<td><span class="pull-right">$131,107.00</span></td>
+			<td><span class="pull-right">$150,000.00</span></td>
+		    </tr>
+
+		    <tr>
+			<td>Feb 20, 2015</td>
+			<td>Nokia 3310</td>
+			<td>10,000</td>
+			<td><span class="pull-right">$2,520,000.00</span></td>
+			<td><span class="pull-right">$12,480,000.00</span></td>
+			<td><span class="pull-right">$15,000,000.00</span></td>
+		    </tr>
+		</tbody>
+	    </table>
+	</wc-table>
+	<wc-table-plain id="my-table-plain-1">
+	    <span class="wc-loading-img"></span>
+	</wc-table-plain>
+        <div style="max-width:800px" class="ml-3">
+	    <wc-tabs id="my-tabs" config="/tk/lib/components/misc/webpack/src/w/cfg/tabs.json" selected="1"></wc-tabs>
+        </div>
+	<wc-test id="my-test-1">
+	    ...
+	</wc-test>
+	<div class="clearfix">
+	    <div class="col-md-5">
+		<h3 class="h3-direction">Horizontal</h3>
+		<wc-form name="my-form" role="form" id="my-form" class="form-control-md" style="border:1px #CECECE solid;padding:20px">
+		    <wc-text id="text-1" name="fname" label="First Name" columns="4,8" placeholder="your first name..." help="First name is a required field" data-error="Please enter alphanumeric" required></wc-text>
+		    
+		    <wc-text id="text-2" name="lname" label="Last Name" value="Heravi" placeholder="your last name..." columns="4,8" help="Last name is a required field" data-error="Please enter alphanumeric" required></wc-text>
+
+		    <hr />
+		    <div class="form-group">
+			<input type="submit" name="action" value="LET'S GO" class="btn btn-outline-primary" id="submit-btn-1">
+		    </div>
+		</wc-form>
+	    </div>
+	</div>
+	<div class="clearfix">
+	    <div class="col-md-6">
+		<h3 class="h3-direction">Horizontal</h3>
+		<wc-form name="my-form" role="form" id="my-form" class="form-control-md" style="border:1px #CECECE solid;padding:20px">
+		    <wc-textarea id="my-notes" label="Enter your Notes" columns="4,8" placeholder="Your notes ..."  help="Notes is a required field" required></wc-textarea>
+		    
+		    <div class="form-group">
+			<input type="submit" name="action" value="LET'S GO" class="btn btn-info" id="submit-btn-1">
+		    </div>
+		</wc-form>
+	    </div>
+	</div>
+	<wc-ticker id="my-ticker-1" symbols="AAPL,HOV,C" interval="5"></wc-ticker>
+	<wc-tile class="border shadow" id="my-tile-1" style="width:400px;height:200px" clickable="true">
+	    <wc-tile-title>
+		Title here
+	    </wc-tile-title>
+	    
+	    <wc-tile-description>
+		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
+	    </wc-tile-description>
+	</wc-tile>
+	<wc-tile-2 id="my-tile-1" style="width:300px;height:300px;border:2px #0277BD solid" class="m-5">
+	    <wc-tile-2-front class="text-light">
+		<wc-tile-2-center>
+		    <h1>Front</h1>
+		    <p>Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy</p>
+		    <i><b class="text-warning">ON HOVER I CHANGE SIDES</b></i>
+		</wc-tile-2-center>
+	    </wc-tile-2-front>
+
+	    <wc-tile-2-back class="text-light">
+		<wc-tile-2-center>
+		    <h1>Back</h1>
+		    <p>Sadipscing elitr sed diam nonumy Lorem ipsum dolor sit amet consetetur</p>
+		</wc-tile-2-center>
+	    </wc-tile-2-back>
+	</wc-tile-2>
+
+	<wc-tile-2 id="my-tile-2" style="width:300px;height:300px" class="m-5">
+	    <wc-tile-2-front class="text-light bg-primary">
+		<wc-tile-2-center>
+		    <h1>I am static</h1>
+		    <p>Consetetur sadipscing elitr sed diam nonumy. Lorem ipsum</p>
+		</wc-tile-2-center>
+	    </wc-tile-2-front>
+	</wc-tile-2>
+	<wc-toolbar id="my-toolbar-h" class="wc-toolbar-horizontal" bg="#EF6C00" fg="#FFF" isize="18px">
+	    <wc-toolbar-item id="tb-1" icon="save"></wc-toolbar-item>
+	    <wc-toolbar-item wc-toolbar-sep></wc-toolbar-item>
+	    <wc-toolbar-item id="tb-2" icon="cut"></wc-toolbar-item>
+	    <wc-toolbar-item id="tb-3" icon="copy"></wc-toolbar-item>
+	    <wc-toolbar-item id="tb-4" icon="paste"></wc-toolbar-item>
+	    <wc-toolbar-item wc-toolbar-sep></wc-toolbar-item>
+	    <wc-toolbar-item id="tb-5" icon="times"></wc-toolbar-item>
+	</wc-toolbar>
+	<wc-typeahead id="my-typeahead-11" placeholder="Large..." style="font-size:300%" url="/Melify/mtk/dev/tk/lib/components/w/cfg/states.json" name="long" value="short" class="border-all" show="5"></wc-typeahead>
+	<wc-wizard id="my-wizard" class="text-center mt-2">
+	    <wc-wizard-step-container>
+		<wc-wizard-step id="step-1" class="active">Age</wc-wizard-step>
+		<wc-wizard-step id="step-2">Amount</wc-wizard-step>
+		<wc-wizard-step id="step-3">Spending</wc-wizard-step>
+		<wc-wizard-step id="step-4">Calculate</wc-wizard-step>
+	    </wc-wizard-step-container>
+
+	    <wc-wizard-content-container>
+		<wc-wizard-content for="step-1" wc-include="/tk/lib/components/w/html/parts/wizard/step-1.html"></wc-wizard-content>
+		<wc-wizard-content for="step-2" wc-include="/tk/lib/components/w/html/parts/wizard/step-2.html"></wc-wizard-content>
+		<wc-wizard-content for="step-3" wc-include="/tk/lib/components/w/html/parts/wizard/step-3.html"></wc-wizard-content>
+		<wc-wizard-content for="step-4" wc-include="/tk/lib/components/w/html/parts/wizard/step-4.html"></wc-wizard-content>
+	    </wc-wizard-content-container>
+	</wc-wizard>
+
+	<script type="text/javascript" src="wc.bundle.gz.js"></script>
+    </body>
+</html>
+
+
