@@ -30,3 +30,4 @@ What are the SEO Best Practices When Merging Websites?
 - Benchmark the performance of your old sites before you shut them down to measure the new site’s performance
 
 Content Overlap
+Google Analytics
