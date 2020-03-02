@@ -1,0 +1,30 @@
+https://rsj8000.com/guide-merging-websites-seo-best-practices
+
+Audit
+ - pull out every current URL on your sites into a content matrix. I’d recommend investing in a scanning tool, like DeepCrawl,
+
+ - Create a spreadsheet that contains every URL on your current website. You can divide your URLs into four groups:
+   - Essential content
+   - pages that you think are absolutely integral to your business
+   - content that needs to be recreated on the new site
+   - backlinks is a page that lots of other external websites think is good and are linking back to.
+   - Content that has a lot of social shares or traffic from social media
+
+ - Outdated or nonessential content that doesn’t have any links and doesn’t bring in traffic.
+ - Content that has a lot of backlinks and/or social shares or that brings in a lot of organic traffic.
+   - ontent that is resonating with your readers
+ - Whatever is left
+ 
+What are the SEO Best Practices When Merging Websites?
+- Select a domain for the new website, preferably one that already has some link equity and authority
+- Create a new information architecture for the website with a clear folder structure
+- Perform a content audit on the outgoing sites, identifying all content that has link equity, content that generates traffic and conversions and important brand content
+- Recreate important content in the new site
+- Create 301 redirects directly from old content to new content
+- Redirect inessential content to the homepage
+- Leave redirects in place for nine months
+- Create Google Search Console profile for new website and submit sitemaps
+- Monitor any broken links and 404s in the Google Search Console after launching the new site
+- If you leave duplicated content live on an old domain, apply a canonical URL to the old piece of
+  content that tells search engines that the official version of this piece of content lives on the new website.
+- Benchmark the performance of your old sites before you shut them down to measure the new site’s performance
