@@ -28,3 +28,5 @@ What are the SEO Best Practices When Merging Websites?
 - If you leave duplicated content live on an old domain, apply a canonical URL to the old piece of
   content that tells search engines that the official version of this piece of content lives on the new website.
 - Benchmark the performance of your old sites before you shut them down to measure the new site’s performance
+
+Content Overlap
