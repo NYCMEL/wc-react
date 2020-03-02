@@ -3,6 +3,7 @@ https://rsj8000.com/guide-merging-websites-seo-best-practices
 Audit
  - pull out every current URL on your sites into a content matrix. I’d recommend investing in a scanning tool, like DeepCrawl,
 
+ - Establish a Thorough 301 Redirect Map
  - Create a spreadsheet that contains every URL on your current website. You can divide your URLs into four groups:
    - Essential content
    - pages that you think are absolutely integral to your business
@@ -29,5 +30,6 @@ What are the SEO Best Practices When Merging Websites?
   content that tells search engines that the official version of this piece of content lives on the new website.
 - Benchmark the performance of your old sites before you shut them down to measure the new site’s performance
 
-Content Overlap
-Google Analytics
+* Content Overlap
+* Google Analytics
+

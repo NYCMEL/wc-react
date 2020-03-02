@@ -1,0 +1,50 @@
+#!/Melify/bin/mac/tclkit
+
+####################################################
+#### 
+####################################################
+proc grep {pattern args} {
+    set result {}
+
+    if {[llength $args] == 0} {
+	# read from stdin
+	set lnum 0
+	while {[gets stdin line] >= 0} {
+	    incr lnum
+	    if {[regexp $pattern $line]} {
+		lappend result $line
+	    }
+	}
+    } else {
+	foreach filename $args {
+	    set file [open $filename r]
+	    set lnum 0
+	    while {[gets $file line] >= 0} {
+		incr lnum
+		if {[regexp $pattern $line]} {
+		    lappend result $line
+		}
+	    }
+	    close $file
+	}
+    }
+
+    return $result
+}
+
+package require Itcl
+
+auto_mkindex . *.tcl
+
+set f [open tclIndex a+]
+
+foreach j [glob -nocomplain *.tcl] {
+    foreach i [eval grep m::proc $j] {
+	set i "$i\}"
+
+	puts $i
+	puts $f "set auto_index([lindex $i 2]) \[list source \[file join \$dir $j\]\]"
+    }
+}
+
+close $f
