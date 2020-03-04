@@ -1,0 +1,53 @@
+#!/Melify/bin/mac/tclkit
+
+if {$argc != 1} {
+    puts "USAGE: quotes <symbol>"
+    exit
+}
+
+proc sleep {n} {
+    after [expr {int($n)}]
+}
+
+set symbol [string toupper [lindex $argv 0]]
+
+source "/Melify/mtk/dev/tk/src/utl/json2dict.tcl"
+
+set f [open /Melify/mtk/dev/tk/lib/components/w/data/trader/$symbol.json w]
+puts $f "\n\n\["
+
+set tmp ""
+set cnt 0
+
+while {1} {
+    if {[catch {
+	exec curl -X GET --header "Authorization: " "https://api.tdameritrade.com/v1/marketdata/$symbol/quotes?apikey=N6RSFI69A6DPXUVJM22BB8T7HFUMXOIW"
+    } e] != 0} {
+	set x [lindex [split $e \n] 0]
+	set a [string first ":" $x]
+	set t [string range [lindex [split $x "\}\}"] 0] [incr a] end]
+
+	# SKIP BLANKS 
+	if {[string trim $t] == ""} {
+	    continue
+	}
+	
+	set t "$t\},"
+
+	# SKIP IF WE ALREADY HAVE IT
+	set z0 [string first "lastPrice" $x]
+	set z1 [string range $x [expr $z0 + 11] [expr $z0+50]]
+	set z2 [lindex [split $z1 ","] 0]
+
+	puts -nonewline ".";flush stdout
+
+	if {$z2 != $tmp} {
+	    puts -nonewline "[incr cnt]";flush stdout
+	    puts $f $t;flush $f
+	}
+
+	set tmp $z2
+	sleep 1000
+    }
+}
+

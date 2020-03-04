@@ -1,0 +1,51 @@
+#!/Melify/bin/mac/tclkit
+
+if {$argc != 1} {
+    puts "\nusage: page <folder-name>\n"
+    exit
+}
+
+set folder "[pwd]/[lindex $argv 0]"
+
+puts "\n---------------------------------------------------"
+puts "Making a new html folder $folder"
+
+file mkdir $folder/js
+file mkdir $folder/css
+
+# PROCESS CSS FOLODER
+cd $folder/css
+set files {
+    /GitHub/Font-Awesome/css/font-awesome.min.css	font-awesome.min.css
+    /Melify/mtk/dev/tk/inc/bootstrap.min.css		bootstrap.min.css
+    /Melify/bin/make/doc/templates/make.html.scss	app.scss
+    /Melify/bin/make/doc/templates/make.html.css	app.css
+    /Melify/bin/make/doc/templates/make.comps.scss	comps.scss
+    /Melify/bin/make/doc/templates/make.comps.css	comps.css
+}
+
+foreach {i j} $files {
+    file copy -force $i $j
+}
+
+# PROCESS JS FOLODER
+cd $folder/js
+set files {
+    /Melify/mtk/dev/tk/jquery/scripts/jquery-2.1.4.min.js	jquery.min.js
+    /Melify/mtk/dev/tk/inc/bootstrap.min.js			bootstrap.min.js
+    /Melify/bin/make/doc/templates/make.html.js			app.js
+    /Melify/bin/make/doc/templates/make.comps.js		comps.js
+    /GitHub/ready/dist/ready.min.js				ready.js
+}
+
+foreach {i j} $files {
+    file copy -force $i $j
+}
+
+cd $folder
+file copy -force /Melify/bin/make/doc/templates/make.html.html index.html
+
+# FONTS FOLDER
+file copy -force /GitHub/Font-Awesome/fonts .
+
+puts "---------------------------------------------------\n"

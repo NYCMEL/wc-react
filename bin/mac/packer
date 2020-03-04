@@ -1,0 +1,241 @@
+#!/Melify/bin/mac/tclkit
+
+# SET PATHS
+set react   "/Melify/mtk/dev/tk/lib/components/misc/react"
+set angular "/Melify/mtk/dev/tk/lib/components/misc/angular"
+set webpack "/Melify/mtk/dev/tk/lib/components/misc/webpack"
+set comps   [file tail [pwd]]
+puts "PACKING: $comps"
+
+#############################################
+#### USAGE: delay::delay-bw 2000
+#############################################
+namespace eval delay {
+    variable _i
+    variable c/ms
+    
+    proc calibrate {} {
+        variable c/ms
+        #puts "calibrating clock clicks.."
+        set start [clock clicks]
+        after 1000
+        set end [clock clicks]
+        set c/ms [expr {($end-$start)/1000.0}]
+        #puts "speed: [expr {${c/ms}*1000}] clicks per second"
+    }
+    
+    calibrate
+    
+    # busywaiting delay
+    proc delay-bw {sec} {
+        variable c/ms
+	# do nothing
+    }
+    
+    # busywaiting "after idle" delay, using event loop
+    proc delay-ev {sec} {
+	variable c/ms
+	set s [clock clicks]
+	set e [expr {$s+$sec*${c/ms}}]
+	evwait ::delay::_i $e
+	vwait ::delay::_i
+	unset ::delay::_i
+    }
+    
+    # worker for delay-ev
+    # continually reschedules itself via "after idle" until end time
+    proc evwait {var {end 0}} {
+	set ct [clock clicks]
+	if {$ct < $end} {
+	    after idle [list ::delay::evwait $var $end]
+	    return
+	} else {
+	    set $var 0
+	}
+    }
+}
+
+######################################################
+##### 
+######################################################
+proc dependencies {} {
+    set files [glob $::webpack/src/w/html/*.html]
+
+    foreach fname $files {
+	set name [file rootname [file tail $fname]]
+	if {[string index $name 0] == "_"} {
+	    continue
+	}
+	
+	set f [open $fname r]
+	while {[gets $f line] >= 0} {
+	    if {[string first " nope" $line] != -1} {
+		break
+	    }
+	}
+
+	set s [string trim [lindex [split $line ":"] 1]]
+	set s [string range [string trim $s] 1 end-2]
+
+	regsub -all "'" $s "" s
+	regsub -all "," $s "" s
+	regsub -all "../js/" $s "" s
+	regsub -all ".js" $s "" s
+
+	set comps [split $s]
+
+	lappend ::auto_path ../req
+
+	set tmp [list]
+	foreach i $comps {
+	    if {[string trim $i] == ""} {
+		continue
+	    }
+
+	    if {[file exist $::webpack/src/w/req/$i.tcl] == 1} {
+		source $::webpack/src/w/req/$i.tcl
+	    } else {
+		set req($i) [subst {
+		    import "./w/scss/_$i.scss";
+		    import "./w/js/$i";
+		}]
+	    }
+	    
+	    append tmp $req($i)\n
+	}
+
+	set ::dep($name) $tmp
+    }
+}
+
+dependencies
+
+######################################################
+##### CREATE INDEX.JS FILE
+######################################################
+puts ""
+puts "> Creating index.js file..."
+
+set str ""
+foreach i $comps {
+    set i [string trim $i]
+
+    if {[info exist dep($i)] == 1} {
+        append str [string trim $dep($i)]
+    } else {
+	puts "ERROR: DON'T HAVE $i component yet!"
+	exit
+    }
+}
+
+set f [open $webpack/src/.index.js r]
+set r [read $f];
+close $f
+regsub -all "<BUNDLED>" $r $str r
+
+set f [open $webpack/src/index.js w]
+puts $f $r;
+close $f
+
+######################################################
+##### CREATE INDEX.HTML FILE
+######################################################
+puts "> Creating index.html file..."
+
+set html ""
+foreach i $comps {
+    set i [string trim $i]
+    set f [open $webpack/src/w/html/${i}.html r]
+    
+    while {[gets $f line] >= 0} {
+        if {[string first "<!-- SAMPLE -->" $line] != -1} {
+            break
+        }
+    }
+    
+    while {[gets $f line] >= 0} {
+        if {[string first "<!-- SAMPLE -->" $line] == -1} {
+	    if {[string first "<!--" $line] == -1} {
+		append html "$line\n"
+	    }
+        } else {
+            break
+        }
+    }
+}
+
+# 1; WEBPACK
+################################################
+set f [open $webpack/src/.index.html r]
+set r [read $f]
+close $f
+
+set tmp "WC-[string toupper $comps]"
+
+regsub -all "HTMLTITLE"   $r "$tmp"   r
+regsub -all "<HTMLCODE/>" $r "$html"  r
+
+set f [open $webpack/src/index.html w]
+puts $f $r
+close $f
+
+# 1: REACT
+################################################
+set f [open $react/src/.App.js r]
+set r [read $f]
+close $f
+
+regsub -all "<!--" $html "// <!--" html
+
+regsub "<HTMLCODE/>" $r "$html" r
+
+set f [open $react/src/App.js w]
+puts $f $r
+close $f
+
+# 1: ANGULAR
+################################################
+set f [open $angular/app/view1/.view1.html r]
+set r [read $f]
+close $f
+
+regsub -all "<!--" $html "// <!--" html
+
+regsub "<HTMLCODE/>" $r "$html" r
+
+set f [open $angular/app/view1/view1.html w]
+puts $f $r
+close $f
+
+######################################################
+##### CREATE INDEX.HTML FILE
+######################################################
+puts "> Creating bundle file..."
+
+cd $webpack
+file delete -force $webpack/build
+exec npm run build &
+
+while {1} {
+    if {[file exist $webpack/build/wc.bundle.js] == 0} {
+        delay::delay-bw 1000
+    } else {
+        catch {exec killall npm}
+
+        puts "DONE WITH $argv..."
+        #eval exec open http://localhost$webpack/build/index.html
+        #eval exec say "Have no fear, Mel is here"
+
+	# ADD DOCUMENT REGISTER
+	exec cat /Melify/mtk/dev/tk/lib/components/misc/webpack/src/w/js/ext/document-register-element.js $webpack/build/wc.bundle.js > tmp
+	exec mv tmp $webpack/build/wc.bundle.js
+
+	# CREATE ZIP FILE
+	exec gzip -k $webpack/build/wc.bundle.js
+	file rename $webpack/build/wc.bundle.js.gz $webpack/build/wc.bundle.gz.js
+
+        exit
+    }
+}
+
+vwait 1

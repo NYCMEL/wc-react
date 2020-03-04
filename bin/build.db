@@ -1,0 +1,35 @@
+#!/Melify/bin/mac/tclkit
+
+## STARTHEAD ##################################################################
+#
+#   COPYRIGHT (C) 1993,2009 Mel Heravi                                       
+#   EMAIL:        Support@Melify.com                                        
+#   URL:          http://www.Melify.com                                    
+#   PHONE:        (888) 2-Melify
+#   -------------------------------------------------------------------------
+#   THIS PROGRAM IS SHAREWARE; YOU CAN REDISTRIBUTE IT AND/OR MODIFY IT. 
+#   THIS PROGRAM IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,          
+#   BUT WITHOUT ANY WARRANTY; WITHOUT EVEN THE IMPLIED WARRANTY OF           
+#   MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.                     
+#   -------------------------------------------------------------------------
+#   SOME JAVASCRIPTS INCLUDED IN THIS PACKAGE MAY REQUIRE A SEPARATE         
+#   LICENSE, PLEASE COMPLY WITH THEIR LICENSING AGREEMENTS                   
+#
+## REVISIONS ##################################################################
+#
+# $LastChangedDate: 2009-09-11 19:07:33 -0400 (Fri, 11 Sep 2009) $
+# $Date: 2009-09-11 19:07:33 -0400 (Fri, 11 Sep 2009) $
+# $LastChangedRevision: 9947 $
+# $Revision: 9947 $
+# $LastChangedBy: mserver $
+# $Author: mserver $
+# $Id: build 9947 2009-09-11 23:07:33Z mserver $
+#
+## ENDHED  ####################################################################
+
+lappend auto_path \
+    /Melify/mtk/dev/tk/src/utl\
+    /Melify/mtk/dev/tk/src/db
+
+#CREATE AN SQLITE DATABASE FROM DUMP FILE
+tk::create::db

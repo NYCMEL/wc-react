@@ -1,0 +1,30 @@
+#!/Melify/bin/mac/tclkit
+
+lappend ::auto_path ../
+
+package require unqlite
+
+unqlite db1 "test.db"
+for {set i 1} {$i <= 100} {incr i} {
+    set key [db1 random_string 4]
+    set value [db1 random_string 20]
+    
+    db1 kv_store $key $value
+}
+
+db1 cursor_init cursor1
+for {cursor1 first} {[cursor1 isvalid]} {cursor1 next} {
+    set key [cursor1 getkey]
+    set data [cursor1 getdata]
+    
+    set outputkey "Get key: "
+    append outputkey $key
+    puts $outputkey
+    
+    set outputdata "Get data: "
+    append outputdata $data
+    puts $outputdata
+}
+
+cursor1 release
+db1 close

@@ -1,0 +1,21 @@
+#!/Melify/bin/mac/tclkit
+
+################################################################################
+####
+################################################################################
+if {$argc != 1} {
+    puts "\nusage: eid <tcl-file>\n"
+    exit
+}
+
+set f [open $argv r]
+set r [read $f]
+close $f
+
+set c [clock seconds]
+
+while {[regsub "EID" $r "\[id\]-[incr c]" r] >0} {}
+
+set f [open $argv w]
+puts $f $r
+close $f
