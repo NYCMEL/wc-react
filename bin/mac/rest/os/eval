@@ -29,7 +29,7 @@ foreach i [import_list] {
 #set cmnd "du -s /"
 
 put "Content-Type: application/json\n\n"
-set rval [eval exec $cmnd]
+set rval [eval $cmnd]
 regsub -all {\n} $rval "|" rval
 put $rval
 
