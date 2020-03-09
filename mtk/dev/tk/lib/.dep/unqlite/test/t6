@@ -1,9 +1,0 @@
-package require unqlite
-
-unqlite db1 ":mem:" -in-memory 1
-# for Windows
-#db1 jx9_eval_file "c:/config_writer.jx9"
-# for Linux
-db1 jx9_eval_file "/home/danilo/config_writer.jx9"
-
-db1 close
