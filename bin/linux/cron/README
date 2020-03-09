@@ -1,3 +1,0 @@
-1: crontab -e
-2: add crontab.example content there
-3: close the editor
