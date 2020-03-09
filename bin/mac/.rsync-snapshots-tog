@@ -1,1 +1,0 @@
-rsync -avp --exclude cache ~/snapshots/ melify@melify.com:/Users/melify/snapshots
