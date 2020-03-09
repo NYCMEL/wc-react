@@ -1,0 +1,62 @@
+#!/Melify/bin/mac/tclkit
+###########################################################
+# USE _T_{id} IN YOUR HTML CODE FOR THIS TOOL TO WORK
+###########################################################
+
+if {$argc != 2} {
+    puts "\nUSAGE: lan <path-to-html-file-name> <path-to-locale.csv-file>\n"
+    exit
+}
+
+set file [lindex $argv 0]
+set loca [lindex $argv 1]
+
+####################################################
+####
+####################################################
+proc parseCSV {file} {
+    package require csv
+    package require struct::queue
+
+    set csv [open $file {RDWR}]
+    
+    struct::queue q
+    csv::read2queue $csv q
+    
+    return [q peek [q size]]
+}
+
+####################################################
+####
+####################################################
+set list [parseCSV $loca]
+
+set h [lindex $list 0]
+puts $h
+
+# OPEN AND READ CONTENT OF HTML FILE
+set f [open $file r]
+set r [read $f]
+close $f       
+
+#TRANSLATE EACH LANGUAGE NOW
+set ind 1
+foreach i [lrange $h $ind end] {
+    set k $r
+    puts "Updating $file ($i)"
+
+    foreach j [lrange $list 1 end] {
+	regsub -all "_T_[lindex $j 0]" $k [lindex $j $ind] k
+    }
+    
+    set f [open "[file rootname $file].$i.html" w]
+    puts $f $k
+    close $f
+
+    file copy -force "[file rootname $file].$i.html" /tmp/junk.html
+
+    # MINIFY HTML CODE
+    exec node /Melify/mtk/dev/tk/lib/components/misc/webpack/node_modules/minify/bin/minify.js /tmp/junk.html > [file rootname $file].$i.html
+
+    incr ind
+}

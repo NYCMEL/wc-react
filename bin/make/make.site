@@ -1,0 +1,52 @@
+#!/Melify/bin/mac/tclkit
+
+if {$argc != 2} {
+    puts "\nusage: page <type> <site-name>\n"
+    exit
+}
+
+puts "\n---------------------------------------------------"
+
+set gitfile [lindex $argv 0]
+set newfile [lindex $argv 1]
+
+if {[file exist /Repos/$gitfile.git] == 0} {
+    puts "\n"
+    puts "\t git folder /Repos/$gitfile.git does not exist. CAN NOT CONTINUE!"
+    puts "\n"
+    exit
+}
+
+if {[file exist /Melify/mtk/dev/app/$newfile] == 1} {
+    puts "\n"
+    puts "\tfolder /Melify/mtk/dev/app/$newfile exist. CAN NOT CONTINUE!"
+    puts "\n"
+    exit
+}
+
+if {[file exist /Repos/$newfile.git] == 1} {
+    puts "\n"
+    puts "\tRepository /Repos/$newfile.git exist. CAN NOT CONTINUE!"
+    puts "\n"
+    exit
+}
+
+cd /Repos
+puts "1: creating $newfile.git repository..."
+file copy $gitfile.git $newfile.git
+
+cd /Melify/mtk/dev/app
+puts "2: checking out $newfile directory now...";flush stdout
+if {[catch {
+    exec /usr/bin/git clone /Repos/$newfile.git
+} e] != 0} {
+    puts ${e}
+}
+
+# OPEN UP THE OWNERSHIP
+exec /bin/chmod -R 777 $newfile
+
+puts "\nYour site is ready for use at: /Melify/mtk/dev/app/$newfile"
+
+puts "---------------------------------------------------"
+

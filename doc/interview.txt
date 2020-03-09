@@ -1,0 +1,102 @@
+-Conduct a detailed analysis of two digital content management platforms to document multiple levels of capability gaps
+-Conduct numerous rounds of interviews with key subject matter experts across product, technology and business analyst areas
+-Develop clear, detailed requirements that will serve as the foundation of development estimates and a prioritized roadmap for development
+-Develop detailed financial estimates based on numerous rounds of interviews with key stakeholders across product, technology, QA and infrastructure areas
+-Document detailed plans for conversions and upgrades including workflow working closely with key project management staff
+-Balance business and technology issues as well as communicate appropriately with both technology and business experts.
+-Translate business requirements into appropriate Functional specifications.
+-Effectively facilitate group workshops 
+-Work with the product management, user community, various technical groups (on and off shore) and vendors in the development of functional and technical specifications.
+-Develop project plans, which will be used to track the progress of a project.
+-Develop project target achievements and completion dates and adhere to an agreed upon schedule.
+-Assist in the design of test plans for new or modified programs to ensure their quality, efficiency, integrity and consistency to specifications.
+-Assist in the preparation for implementation and adherence to standards and procedures for application installs.
+-Timely communication of project statuses
+
+QUALIFICATIONS:
+-Demonstrated evidence of providing consultative leadership in large scope projects
+-Track record for analyzing and documenting complex business processes and system flows and proposing elegant solutions
+-Demonstrated experience writing requirements specifications for Information Systems within the web applications or content management or CRM space 
+-Excellent presentation, interpersonal and communication skills, oral and written, with the ability to tailor messages to a diverse audience
+-Experience working with web applications
+-Demonstrated experience analyzing and understanding the need of different system user group personas
+
+ 
+KEVIN DARLINGTON (Broadridge)
+================================================================================
+PRIOR EXPERIENCE: FanieMae iPad property appraisal - Transaction Auditing, SSA
+ 
+MY RESPONSE
+---------------------------------------------------------------------------------
+-MISSION STATEMENT (involve product owners)
+ - why are we doing this for?
+ - goals that need to me met
+ - timing
+ 
+-AUDIT EACH PACKAGE (initial/re-visit later)
+ - list major functionalities of each package
+ - create flow diagrams and mind-maps
+
+-INTERVIEWS
+ - interview end-users and create personas and roles
+ - list all functions and assign to personas (based on what we know)
+ - prioritize functional usage of each package (important to have, not so)
+ - users pain points
+ 
+-USERS
+ - create roles, personas & current journeys (who and where are they)
+ - happy path stories for each role/user
+ - their like and dislikes of current system
+ - wish lists
+ 
+-GAP ANALYSIS
+ - Current State (where we are today)
+ - Future State (where we want to be)
+
+-REQUIREMENTS
+ - generate rought requirement doc and share with stakeholders
+ - future state documentation
+   - work with product manager to document capabilities, front/backend, frameworks, personnel, geo-locations etc.
+   - document navigation items (just a combined bullet list)
+   - perform a UCD sessions with end users and group navigation items (will end up somewhere on the final package)
+   - update requirment with each iteration
+
+-PLAN MIGRATION DOCUMENTS
+ - branding	
+ - paper prototype. share with stakeholders
+ - develop project plan
+   - list capabilities
+   - list functionalities
+   - translate requirement funtionalities to specs (iterate and breain storm)
+   - rough estimage to be shared with management and product managers
+
+-HIGH FIDELITY PROTOTYPING
+ - create click through HTML prototypes (my expertise)
+ - share links with stakeholders for testing and feedback
+ - gather all feedbacks
+ - update prototype
+ - repeat until (done!)
+ - share HTML/CSS/JavaScript with dev team as a heads-up
+
+-PLAN IMPLEMENTATION STEPS
+ - based on priorities
+ - test, share each alpha releases
+ - next steps ...
+
+
+=================================
+> 2 platforms. one is newer
+
+> Financial advisers
+> aquired systems over the years
+  - some redundant
+
+> Asses platforms
+  - Need detailed spec
+  - Combine then 2
+  - Migration path
+  - Buy-in from stake holders
+
+  - Financial impact
+    - Cold Fusion
+    - .Net

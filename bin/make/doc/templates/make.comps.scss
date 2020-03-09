@@ -1,0 +1,17 @@
+wc-card {
+    display:block;
+
+    border: 1px #CCC solid;
+
+    .card-img-top {
+	width: 100%;
+    }
+
+    .card-block {
+	padding:10px;
+	
+	.card-body {
+	    overflow:auto;
+	}
+    }
+}

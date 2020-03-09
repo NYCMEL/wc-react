@@ -1,0 +1,88 @@
+#!/Melify/bin/mac/tclkit
+
+################################################################################
+####
+################################################################################
+if {$argc != 1} {
+    puts "\nusage: component <component name like google.tabs>\n"
+    exit
+}
+
+# LOCATION OF ALL TEMPLATES
+set templates "/Melify/mtk/dev/tk/lib/components/template/wc"
+
+file mkdir inc
+
+set XX  [file tail [pwd]]
+set sp  [split $argv .]
+set YY  "wc::[join $sp ::]"
+set FN  wc.[join $sp .]
+
+# COMPONENT NAME
+set CNAME wc-[join $sp "-"]
+
+# JS FUNCTION NAME
+set JNAME "wc"
+foreach i $sp {
+    append JNAME [string totitle $i]
+}
+
+# NAMESPACE
+set NSPACE ""
+append NSPACE "namespace eval wc \{\n"
+
+foreach i $sp {
+    append NSPACE "namespace eval $i \{\n"
+}
+foreach i $sp {
+    append NSPACE "\}\n"
+}
+append NSPACE "\}\n"
+
+################################################################################
+#### TCL
+################################################################################
+set f [open $templates/xx.component.yy.tcl r]
+set r [read $f]
+close $f
+
+#COMPONENT ID
+set CID "MTK[clock seconds]"
+
+regsub -all "NSPACE" $r "$NSPACE" r
+regsub -all "YY"     $r "$YY"     r
+regsub -all "XX"     $r "$XX"     r
+regsub -all "FN"     $r "$FN"     r
+regsub -all "CNAME"  $r "$CNAME"  r
+regsub -all "CID"    $r "$CID"    r
+regsub -all "JNAME"  $r "$JNAME"  r
+
+set f [open "$FN.tcl" w]
+puts $f $r
+close $f
+
+################################################################################
+#### LESS
+################################################################################
+set f [open $templates/xx.component.yy.scss r]
+set r [read $f]
+close $f
+
+regsub -all "CNAME" $r "$CNAME" r
+
+set f [open "inc/$FN.scss" w]
+puts $f $r
+close $f
+
+################################################################################
+####
+################################################################################
+set f [open $templates/xx.component.yy.js r]
+set r [read $f]
+close $f
+
+regsub -all "JNAME" $r "$JNAME" r
+
+set f [open "inc/$FN.js" w]
+puts $f $r
+close $f
