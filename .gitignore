@@ -1,4 +1,17 @@
+app
+private
+.sass-cache
+tools
+samples
+modules
+components
+.DS_Store
+w3c
+watcher
+fonts
+w.re-factored
 node_modules/
 coverage/
 build/
 .idea
+package-lock.json

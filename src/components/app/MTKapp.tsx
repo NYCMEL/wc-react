@@ -1,34 +1,37 @@
 import * as React from "react";
 import {useEffect} from "react";
 import {CommonProps} from "../../Common";
-import "./MTKCNAME.css";
+import "./MTKapp.css";
 
 declare global {
     namespace JSX {
         interface IntrinsicElements {
-            'wc-CNAME': any;
+            'wc-app': any;
             wc: any;
         }
     }
 }
 
-interface MTKCNAMEProps extends CommonProps {
-    PROPS
+interface MTKappProps extends CommonProps {
+    id?: string;
+	path: string;
+	page: string;
 }
 
-export const MTKCNAME = (props: MTKCNAMEProps) => {
+export const MTKapp = (props: MTKappProps) => {
     useEffect(() => {
         const listener = (e: any) => {
 	    console.log("EVENT ===============", e.detail);
         }
 
-        window.addEventListener('wc-CNAME', listener);
+        window.addEventListener('wc-app', listener);
 
         return () => {
-	    window.removeEventListener('wc-CNAME', listener);
+	    window.removeEventListener('wc-app', listener);
         }
     }, []);
     return (
-	SAMPLE
+	<wc-app id={props.id} path={props.path} {...props}></wc-app>
     )
 };
+

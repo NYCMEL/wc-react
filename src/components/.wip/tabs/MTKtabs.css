@@ -1,0 +1,9 @@
+@import "../../index.css";
+
+wc-tabs {
+}
+
+wc-tabs .page-container {
+    min-height:500px;
+}
+

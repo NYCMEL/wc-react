@@ -9,7 +9,7 @@ export const basic = () => (
 	<div className="container mt-5">
 	    <div className="row">
 		<div className="col-md-12">
-		    <MTKBanner title="MEL WAS HERE" subtitle={
+		    <MTKBanner title="Banner title" subtitle={
 			<wc-include href="http://links.melify.com/mtk/render?callback=lorem&size=40"></wc-include>
 		    } actions={
 			<div>

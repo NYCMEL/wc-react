@@ -30,6 +30,8 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "cpx": "^1.5.0",
+    "font-awesome": "^4.7.0",
+    "google-fonts-webpack-plugin": "^0.4.4",
     "jest": "^25.1.0",
     "npm-run-all": "^4.1.5",
     "prettier-standard": "^16.1.0",
@@ -40,6 +42,7 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.2",
+    "rollup-plugin-postcss": "^2.1.1",
     "rollup-plugin-typescript2": "^0.26.0",
     "standard": "^14.3.1",
     "standard-prettier": "^1.0.1",
@@ -70,5 +73,6 @@
       "afterAll",
       "jest"
     ]
-  }
+  },
+  "dependencies": {}
 }

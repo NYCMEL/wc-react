@@ -1,34 +1,37 @@
 import * as React from "react";
 import {useEffect} from "react";
 import {CommonProps} from "../../Common";
-import "./MTKCNAME.css";
+import "./MTKpager.css";
 
 declare global {
     namespace JSX {
         interface IntrinsicElements {
-            'wc-CNAME': any;
+            'wc-pager': any;
             wc: any;
         }
     }
 }
 
-interface MTKCNAMEProps extends CommonProps {
-    PROPS
+interface MTKpagerProps extends CommonProps {
+    id?: string;
+    env: string;
+    path: string;
 }
 
-export const MTKCNAME = (props: MTKCNAMEProps) => {
+export const MTKpager = (props: MTKpagerProps) => {
     useEffect(() => {
         const listener = (e: any) => {
 	    console.log("EVENT ===============", e.detail);
         }
 
-        window.addEventListener('wc-CNAME', listener);
+        window.addEventListener('wc-pager', listener);
 
         return () => {
-	    window.removeEventListener('wc-CNAME', listener);
+	    window.removeEventListener('wc-pager', listener);
         }
     }, []);
     return (
-	SAMPLE
+	<wc-pager id={props.id} path={props.path} env={props.env} {...props}></wc-pager>
     )
 };
+
