@@ -1,0 +1,17 @@
+var accordion = [
+    {
+	"header": "Card I",
+	"body": "/mtk/render?ajax=1&callback=tk::dummy::3",
+	"icon": "<i class='fa fa-comments'></i>"
+    },
+    {
+	"header": "Card II",
+	"body": "/mtk/render?ajax=1&callback=tk::dummy::3",
+	"icon": "<i class='fa fa-gear'></i>"
+    },
+    {
+	"header": "Card III",
+	"body": "/mtk/render?ajax=1&callback=tk::dummy::3",
+	"icon": "<i class='fa fa-calendar'></i>"
+    }
+]
