@@ -14,12 +14,27 @@ require('./wc.bundle.js');
 
 interface MTKAccordionProps {
     id?: string;
-    cfg: string;
+    cfg?: AccordionItem[];
     show: number;
 }
 
+export interface AccordionItem {
+    header: string,
+    body: string,
+    icon: string,
+}
+
+
+
 export const MTKAccordion = (props: MTKAccordionProps) => {
     useEffect(() => {
+
+
+        let w = document.querySelector("wc-accordion");
+
+        // @ts-ignore
+        w.configure(props.cfg);
+        // console.log(props.cfg);
         const listener = (e: any) => {
             console.log(e.detail.action, "EVENT ===============");
         }
@@ -31,7 +46,7 @@ export const MTKAccordion = (props: MTKAccordionProps) => {
         }
     }, []);
     return (
-	<wc-accordion id="my-accordion-1" cfg={props.cfg} show={props.show}></wc-accordion>
+        <wc-accordion id="my-accordion-1" show={props.show}></wc-accordion>
     )
 };
 
