@@ -1,6 +1,6 @@
 #!/Melify/bin/mac/tclkit
 
-source blank.t
+source avatar.t
 
 #parray ta
 
