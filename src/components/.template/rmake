@@ -17,7 +17,7 @@ source comps/$cname.t
 #parray ta
 
 foreach i {"css" "stories.tsx" "tsx"} {
-    set f [open t.$i r]
+    set f [open _comp.$i r]
     set r [read $f]
     close $f
 
