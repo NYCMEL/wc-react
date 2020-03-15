@@ -10,6 +10,7 @@ declare global {
         }
     }
 }
+
 require('./wc.bundle.js');
 
 interface MTKAccordionProps {
@@ -24,17 +25,14 @@ export interface AccordionItem {
     icon: string,
 }
 
-
-
 export const MTKAccordion = (props: MTKAccordionProps) => {
     useEffect(() => {
-
-
         let w = document.querySelector("wc-accordion");
+        console.log(">>>>>>>>>>", props.cfg, w);
 
         // @ts-ignore
         w.configure(props.cfg);
-        // console.log(props.cfg);
+
         const listener = (e: any) => {
             console.log(e.detail.action, "EVENT ===============");
         }
