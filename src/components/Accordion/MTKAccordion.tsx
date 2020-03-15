@@ -11,8 +11,6 @@ declare global {
     }
 }
 
-require('./wc.bundle.js');
-
 interface MTKAccordionProps {
     id?: string;
     cfg?: AccordionItem[];

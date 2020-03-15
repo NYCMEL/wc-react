@@ -6,21 +6,21 @@ export default {title: 'MTK Accordion'}
 export const basic = () => {
 
     const accordionData = [
-	{
-	    "header": "Card I",
-	    "body": "<wc-include href='http://links.melify.com/mtk/render?ajax=1&callback=lorem&size=100'></wc-include>",
-	    "icon": "<i class='fa fa-comments'></i>"
-	},
-	{
-	    "header": "Card II",
-	    "body": "<wc-include href='http://links.melify.com/mtk/render?ajax=1&callback=lorem&size=100'></wc-include>",
-	    "icon": "<i class='fa fa-gear'></i>"
-	},
-	{
-	    "header": "Card III",
-	    "body": "<wc-include href='http://links.melify.com/mtk/render?ajax=1&callback=lorem&size=100'></wc-include>",
-	    "icon": "<i class='fa fa-calendar'></i>"
-	}
+        {
+            "header": "Card I",
+            "body": "<wc-include href='http://links.melify.com/mtk/render?ajax=1&callback=lorem&size=100'></wc-include>",
+            "icon": "<i class='fa fa-comments'></i>"
+        },
+        {
+            "header": "Card II",
+            "body": "<wc-include href='http://links.melify.com/mtk/render?ajax=1&callback=lorem&size=100'></wc-include>",
+            "icon": "<i class='fa fa-gear'></i>"
+        },
+        {
+            "header": "Card III",
+            "body": "<wc-include href='http://links.melify.com/mtk/render?ajax=1&callback=lorem&size=100'></wc-include>",
+            "icon": "<i class='fa fa-calendar'></i>"
+        }
     ];
 
     return (
