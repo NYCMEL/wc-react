@@ -22,7 +22,7 @@ interface MTKFlipProps extends CommonProps {
 
 export const MTKFlip = (props: MTKFlipProps) => {
     // @ts-ignore
-    window.wcENV = "dev";
+    //window.wcENV = "dev";
 
     useEffect(() => {
         const listener = (e: any) => {

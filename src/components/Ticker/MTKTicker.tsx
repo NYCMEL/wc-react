@@ -19,15 +19,11 @@ interface MTKTickerProps extends CommonProps {
 
 export const MTKTicker = (props: MTKTickerProps) => {
     // @ts-ignore
-    window.wcENV = "dev";
+    //window.wcENV = "dev";
 
     return (
         <div role='heading'>
-	    <wc-ticker  style={{fontFamily:"fal"}}
-			symbols={props.symbols}
-			interval={props.interval}
-	    {...props}
-	    />
+	    <wc-ticker style={{fontFamily:"fal"}} symbols={props.symbols} interval={props.interval} {...props}  />
 	</div>
     )
 };

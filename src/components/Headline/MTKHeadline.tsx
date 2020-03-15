@@ -27,7 +27,7 @@ interface MTKHeadlineProps extends CommonProps {
 
 export const MTKHeadline = (props: MTKHeadlineProps) => {
     // @ts-ignore
-    window.wcENV = "dev";
+    //window.wcENV = "dev";
 
     useEffect(() => {
         const listener = (e: any) => {
