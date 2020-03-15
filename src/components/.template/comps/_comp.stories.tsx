@@ -9,7 +9,7 @@ export const basic = () => (
 	<div className="container mt-5">
 	    <div className="row">
 		<div className="col-md-6">
-		    <h1>STORY</h1>
+		    STORY
 		</div>
 	    </div>
 	</div>
