@@ -26,13 +26,12 @@ export interface AccordionItem {
 export const MTKAccordion = (props: MTKAccordionProps) => {
     useEffect(() => {
         let w = document.querySelector("wc-accordion");
-        console.log(">>>>>>>>>>", props.cfg, w);
 
         // @ts-ignore
         w.configure(props.cfg);
 
         const listener = (e: any) => {
-            console.log(e.detail.action, "EVENT ===============");
+ 	    console.info(`SUBSCRIPTION TRIGGERED ${e.type} > ${JSON.stringify(e.detail)}`);
         }
 
         window.addEventListener('wc-accordion', listener);
