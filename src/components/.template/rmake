@@ -1,6 +1,18 @@
 #!/Melify/bin/mac/tclkit
 
-source avatar.t
+if {$argc != 1} {
+    puts "\nUSAGE: rmake <component-name>\n"
+    exit
+}
+
+set cname [lindex $argv 0]
+
+if {[file exist $cname.t] == 0} {
+    puts "\nFILE $cname.t DOES NOT EXIST\n"
+    exit
+}
+
+source $cname.t
 
 #parray ta
 
