@@ -4,10 +4,10 @@ array set ta {
     props {
 	id?: string;
 	img: string;
+	title: string;
 	width: string;
 	height: string;
-	background:: string;
-	title: JSX.Element | string | JSX.Element[];
+	background: string;
     }
 
     sample {
