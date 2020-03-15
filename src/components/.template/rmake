@@ -14,7 +14,7 @@ if {[file exist comps/$cname.t] == 0} {
 
 source comps/$cname.t
 
-parray ta;exit
+#parray ta;
 
 foreach i {"css" "stories.tsx" "tsx"} {
     set f [open comps/_comp.$i r]
