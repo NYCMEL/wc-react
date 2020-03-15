@@ -7,12 +7,12 @@ if {$argc != 1} {
 
 set cname [lindex $argv 0]
 
-if {[file exist $cname.t] == 0} {
+if {[file exist comps/$cname.t] == 0} {
     puts "\nFILE $cname.t DOES NOT EXIST\n"
     exit
 }
 
-source $cname.t
+source comps/$cname.t
 
 #parray ta
 
