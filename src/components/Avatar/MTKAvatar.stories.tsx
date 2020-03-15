@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {MTKavatar} from "./MTKAvatar";
+import {MTKAvatar} from "./MTKAvatar";
 
 export default {title: 'MTK Avatar'}
 

@@ -1,7 +1,7 @@
 import * as React from "react";
 import {useEffect} from "react";
 import {CommonProps} from "../../Common";
-import "./MTKavatar.css";
+import "./MTKAvatar.css";
 
 declare global {
     namespace JSX {
@@ -12,16 +12,12 @@ declare global {
     }
 }
 
-interface MTKavatarProps extends CommonProps {
+interface MTKAvatarProps extends CommonProps {
     id?: string;
-    img: string;
-    width: string;
-    height: string;
-    background:: string;
     title: JSX.Element | string | JSX.Element[];
 }
 
-export const MTKavatar = (props: MTKavatarProps) => {
+export const MTKAvatar = (props: MTKAvatarProps) => {
     useEffect(() => {
         const listener = (e: any) => {
  	    console.info(`SUBSCRIPTION TRIGGERED ${e.type} > ${JSON.stringify(e.detail)}`);
@@ -34,7 +30,7 @@ export const MTKavatar = (props: MTKavatarProps) => {
         }
     }, []);
     return (
-	<wc-avatar id={props.id} class="text-center p-4 border" {...props}>
+	<wc-avatar id={props.id} {...props}>
 	    {props.title}
 	</wc-avatar>
     )
