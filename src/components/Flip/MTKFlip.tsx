@@ -26,9 +26,11 @@ export const MTKFlip = (props: MTKFlipProps) => {
 
     useEffect(() => {
         const listener = (e: any) => {
-            console.log(e);
+ 	    console.info(`SUBSCRIPTION TRIGGERED ${e.type} > ${JSON.stringify(e.detail)}`);
         }
+	
         window.addEventListener('wc-flip', listener);
+
         return () => {
             window.removeEventListener('wc-flip', listener);
         }

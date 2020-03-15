@@ -21,7 +21,7 @@ interface MTKpagerProps extends CommonProps {
 export const MTKpager = (props: MTKpagerProps) => {
     useEffect(() => {
         const listener = (e: any) => {
-	    console.log("EVENT ===============", e.detail);
+ 	    console.info(`SUBSCRIPTION TRIGGERED ${e.type} > ${JSON.stringify(e.detail)}`);
         }
 
         window.addEventListener('wc-pager', listener);
