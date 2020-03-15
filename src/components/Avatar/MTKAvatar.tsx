@@ -14,7 +14,11 @@ declare global {
 
 interface MTKAvatarProps extends CommonProps {
     id?: string;
-    title: JSX.Element | string | JSX.Element[];
+    img: string;
+    title: string;
+    width: string;
+    height: string;
+    background: string;
 }
 
 export const MTKAvatar = (props: MTKAvatarProps) => {
@@ -30,9 +34,7 @@ export const MTKAvatar = (props: MTKAvatarProps) => {
         }
     }, []);
     return (
-	<wc-avatar id={props.id} {...props}>
-	    {props.title}
-	</wc-avatar>
+	<wc-avatar id={props.id} {...props}></wc-avatar>
     )
 };
 
