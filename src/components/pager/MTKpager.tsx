@@ -28,6 +28,8 @@ export const MTKpager = (props: MTKpagerProps) => {
     useEffect(() => {
         let w = document.querySelector("wc-pager");
 
+	window.alert(props.cfg);
+
         // @ts-ignore
         w.configure(props.cfg);
 

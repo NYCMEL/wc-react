@@ -20,7 +20,7 @@ interface MTKAccordionProps {
 export interface AccordionItem {
     header: string,
     body: string,
-    icon: string,
+    icon: string
 }
 
 export const MTKAccordion = (props: MTKAccordionProps) => {
