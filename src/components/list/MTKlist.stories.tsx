@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {MTKlist} from "./MTKlist";
 
-export default {title: 'MTK list'}
+export default {title: 'MTK List'}
 
 export const basic = () => (
     // EXAMPLE USAGE OF WC-list COMPONENT
@@ -26,4 +26,3 @@ export const basic = () => (
 	</div>
     </div>
 )
-

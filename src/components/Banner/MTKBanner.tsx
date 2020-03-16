@@ -27,7 +27,7 @@ interface MTKBannerProps extends CommonProps {
 export const MTKBanner = (props: MTKBannerProps) => {
     useEffect(() => {
         const listener = (e: any) => {
- 	    wc.info(`SUBSCRIPTION TRIGGERED ${e.type} > ${JSON.stringify(e.detail)}`);
+ 	    console.info(`SUBSCRIPTION TRIGGERED ${e.type} > ${JSON.stringify(e.detail)}`);
         }
 
         window.addEventListener('wc-banner', listener);
