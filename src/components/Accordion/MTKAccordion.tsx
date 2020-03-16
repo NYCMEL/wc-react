@@ -41,7 +41,7 @@ export const MTKAccordion = (props: MTKAccordionProps) => {
         }
     }, []);
     return (
-        <wc-accordion id="my-accordion-1" show={props.show}></wc-accordion>
+        <wc-accordion id={props.id} show={props.show}></wc-accordion>
     )
 };
 

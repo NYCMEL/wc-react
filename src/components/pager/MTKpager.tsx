@@ -14,7 +14,6 @@ declare global {
 
 interface MTKpagerProps extends CommonProps {
     id?: string;
-    env: string;
     cfg?: pagerItem[];
 }
 
@@ -43,6 +42,6 @@ export const MTKpager = (props: MTKpagerProps) => {
         }
     }, []);
     return (
-	<wc-pager id={props.id} {...props}></wc-pager>
+	<wc-pager id={props.id}></wc-pager>
     )
 };
