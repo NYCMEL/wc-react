@@ -4,7 +4,6 @@ import {MTKAccordion} from "./MTKAccordion";
 export default {title: 'MTK Accordion'}
 
 export const basic = () => {
-
     const accordionData = [
         {
             "header": "Card I",
