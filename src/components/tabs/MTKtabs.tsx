@@ -14,8 +14,8 @@ declare global {
 
 interface MTKtabsProps extends CommonProps {
     id?: string;
-	cfg: JSX.Element | string | JSX.Element[];
-	show: number;
+    cfg: JSX.Element | string | JSX.Element[];
+    show: number;
 }
 
 export const MTKtabs = (props: MTKtabsProps) => {

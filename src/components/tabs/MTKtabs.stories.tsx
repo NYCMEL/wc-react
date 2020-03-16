@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {MTKtabs} from "./MTKtabs";
 
-export default {title: 'MTK tabs'}
+export default {title: 'MTK Tabs'}
 
 export const basic = () => (
     // EXAMPLE USAGE OF WC-tabs COMPONENT
@@ -9,7 +9,7 @@ export const basic = () => (
 	<div className="container mt-5">
 	    <div className="row">
 		<div className="col-md-6">
-		    <MTKtabs id="my-tabs"></MTKtabs>
+		    <MTKtabs id="my-tabs" cfg="http://links.melify.com/tk/lib/components/misc/webpack/src/w/cfg/tabs.lhs.json" show={0}></MTKtabs>
 		</div>
 	    </div>
 	</div>
