@@ -9,7 +9,7 @@ export const basic = () => (
 	<div className="container mt-5">
 	    <div className="row">
 		<div className="col-md-6">
-		    <MTKlist id="my-list">
+		    <MTKlist id="my-list" arrows="true">
 			<div className="border">
 			    <a id="item-1">Item 1</a>
 			    <div>

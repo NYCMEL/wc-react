@@ -15,6 +15,7 @@ declare global {
 interface MTKlistProps extends CommonProps {
     id?: string;
     children: JSX.Element | string | JSX.Element[];
+    arrows: JSX.Element | string | JSX.Element[];
 }
 
 export const MTKlist = (props: MTKlistProps) => {
