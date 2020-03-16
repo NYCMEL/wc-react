@@ -14,12 +14,12 @@ declare global {
 
 interface MTKlistProps extends CommonProps {
     id?: string;
-	title: JSX.Element | string | JSX.Element[];
+    children: JSX.Element | string | JSX.Element[];
 }
 
 export const MTKlist = (props: MTKlistProps) => {
     useEffect(() => {
-        const listener = (e: any) => {
+        const listener = (e:any) => {
  	    console.info(`SUBSCRIPTION TRIGGERED ${e.type} > ${JSON.stringify(e.detail)}`);
         }
 
@@ -30,9 +30,7 @@ export const MTKlist = (props: MTKlistProps) => {
         }
     }, []);
     return (
-	<wc-list id={props.id} class="text-center p-4 border" {...props}>
-	    {props.title}
-	</wc-list>
+	<wc-list id={props.id} {...props}></wc-list>
     )
 };
 

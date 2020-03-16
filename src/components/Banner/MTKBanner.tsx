@@ -27,7 +27,7 @@ interface MTKBannerProps extends CommonProps {
 export const MTKBanner = (props: MTKBannerProps) => {
     useEffect(() => {
         const listener = (e: any) => {
-	    console.log(e.detail.action, "EVENT ===============");
+ 	    wc.info(`SUBSCRIPTION TRIGGERED ${e.type} > ${JSON.stringify(e.detail)}`);
         }
 
         window.addEventListener('wc-banner', listener);
@@ -40,7 +40,7 @@ export const MTKBanner = (props: MTKBannerProps) => {
         <div role='heading'>
 	    <wc-banner {...props}>
 		<wc-banner-lhs class="col-md-6 d-block">
-		    <div>
+		    <div className="border">
 			<wc-banner-title class="display-4">
 			    {props.title}
 			</wc-banner-title>
