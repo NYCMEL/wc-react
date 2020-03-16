@@ -15,6 +15,7 @@ declare global {
 interface MTKpagerProps extends CommonProps {
     id?: string;
     cfg?: pagerItem[];
+    env?: string;
 }
 
 export interface pagerItem {
@@ -28,7 +29,7 @@ export const MTKpager = (props: MTKpagerProps) => {
     useEffect(() => {
         let w = document.querySelector("wc-pager");
 
-	window.alert(props.cfg);
+	console.log(">>>>>>>>>", JSON.stringify(props.cfg));
 
         // @ts-ignore
         w.configure(props.cfg);
@@ -44,6 +45,6 @@ export const MTKpager = (props: MTKpagerProps) => {
         }
     }, []);
     return (
-	<wc-pager id={props.id}></wc-pager>
+	<wc-pager id={props.id} env={props.env}></wc-pager>
     )
 };
