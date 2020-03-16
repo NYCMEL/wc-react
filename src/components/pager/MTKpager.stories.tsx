@@ -9,7 +9,7 @@ export const basic = () => (
 	<div className="container mt-5">
 	    <div className="row">
 		<div className="col-md-12">
-		    <MTKpager id="my-pager" class="wc-maximize" env="dev" path="http://links.melify.com/tk/lib/components/w/html/parts/pager/.react"></MTKpager>
+		    <MTKpager id="my-pager" class="wc-maximize" env="dev" path="http://links.melify.com/tk/lib/components/w/html/parts/pager"></MTKpager>
 		</div>
 	    </div>
 	</div>
