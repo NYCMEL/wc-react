@@ -11,14 +11,14 @@ export const basic = () => (
 		<div className="col-md-6">
 		    <MTKlist id="my-list">
 			<div className="border">
-			    <a href="#" id="item-1">Item 1</a>
+			    <a href="#!" id="item-1">Item 1</a>
 			    <div>
-				<a href="#" id="item-11">Item 1.1</a>
-				<a href="#" id="item-12">Item 1.2</a>
-				<a href="#" id="item-13">Item 1.3</a>
+				<a href="#!" id="item-11">Item 1.1</a>
+				<a href="#!" id="item-12">Item 1.2</a>
+				<a href="#!" id="item-13">Item 1.3</a>
 			    </div>
-			    <a href="#" id="item-2">Item 2</a>
-			    <a href="#" id="item-3">Item 3</a>
+			    <a href="#!" id="item-2">Item 2</a>
+			    <a href="#!" id="item-3">Item 3</a>
 			</div>
 		    </MTKlist>
 		</div>
