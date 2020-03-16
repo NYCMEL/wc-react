@@ -1,5 +1,5 @@
 array set ta {
-    name "blank"
+    name "list"
 
     props {
 	id?: string;
@@ -7,12 +7,12 @@ array set ta {
     }
 
     sample {
-	<wc-blank id={props.id} class="text-center p-4 border" {...props}>
+	<wc-list id={props.id} class="text-center p-4 border" {...props}>
 	    {props.title}
-	</wc-blank>
+	</wc-list>
     }
 
     story {
-	<MTKblank id="my-blank" title="HELLO MEL"></MTKblank>
+	<MTKlist id="my-list" title="HELLO MEL"></MTKlist>
     }
 }
