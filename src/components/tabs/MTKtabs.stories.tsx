@@ -8,7 +8,7 @@ export const basic = () => (
     <div id="wc">
 	<div className="container mt-5">
 	    <div className="row">
-		<div className="col-md-6">
+		<div className="col-md-12">
 		    <MTKtabs id="my-tabs" cfg="http://links.melify.com/tk/lib/components/misc/webpack/src/w/cfg/remote/tabs.lhs.json" show={0}></MTKtabs>
 		</div>
 	    </div>
