@@ -1,18 +1,17 @@
 array set ta {
-    name "list"
+    name "tabs"
 
     props {
 	id?: string;
-	title: JSX.Element | string | JSX.Element[];
+	cfg: JSX.Element | string | JSX.Element[];
+	show: number;
     }
 
     sample {
-	<wc-list id={props.id} class="text-center p-4 border" {...props}>
-	    {props.title}
-	</wc-list>
+	<wc-tabs id={props.id} {...props}></wc-tabs>
     }
 
     story {
-	<MTKlist id="my-list" title="HELLO MEL"></MTKlist>
+	<MTKtabs id="my-tabs"></MTKtabs>
     }
 }
