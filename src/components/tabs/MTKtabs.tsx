@@ -44,7 +44,7 @@ export const MTKtabs = (props: MTKtabsProps) => {
     }, []);
 
     return (
-	<wc-tabs id={props.id} {...props}></wc-tabs>
+	<wc-tabs id={props.id} show={props.show}></wc-tabs>
     )
 };
 
