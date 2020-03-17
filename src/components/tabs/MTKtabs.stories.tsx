@@ -26,7 +26,7 @@ export const basic = () => {
         <div id="wc">
             <div className="container mt-5">
                 <div className="row">
-                    <div className="col-md-8">
+                    <div className="col-md-12">
                         <MTKtabs cfg={tabsData} show={1} />
                     </div>
                 </div>
