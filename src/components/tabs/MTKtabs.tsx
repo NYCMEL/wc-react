@@ -14,12 +14,12 @@ declare global {
 
 interface MTKtabsProps extends CommonProps {
     id?: string;
-    cfg?: TabsItem[];
+    cfg?: tabsItem[];
     icon: string;
     show: number;
 }
 
-export interface TabsItem {
+export interface tabsItem {
     header: string,
     body: string,
     icon: string
