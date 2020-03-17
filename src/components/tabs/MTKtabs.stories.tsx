@@ -5,21 +5,31 @@ export default {title: 'MTK Tabs'}
 
 export const basic = () => {
     const tabsData = [
-        {
-            "header": "Card I",
-            "body": "<wc-include href='http://links.melify.com/mtk/render?ajax=1&callback=lorem&size=100'></wc-include>",
-            "icon": "<i class='fa fa-comments'></i>"
-        },
-        {
-            "header": "Card II",
-            "body": "<wc-include href='http://links.melify.com/mtk/render?ajax=1&callback=lorem&size=100'></wc-include>",
-            "icon": "<i class='fa fa-gear'></i>"
-        },
-        {
-            "header": "Card III",
-            "body": "<wc-include href='http://links.melify.com/mtk/render?ajax=1&callback=lorem&size=100'></wc-include>",
-            "icon": "<i class='fa fa-calendar'></i>"
-        }
+	{
+	    "cache": "true",
+	    "page": "home",
+	    "label": "Welcome",
+	    "url": "<wc-include href='http://links.melify.com/tk/lib/components/w/html/parts/pager/home.html'></wc-include>"
+
+	},
+	{
+	    "cache": "true",
+	    "page": "products",
+	    "label": "Our Products",
+	    "url": "<wc-include href='http://links.melify.com/tk/lib/components/w/html/parts/pager/products.html'></wc-include>"
+	},
+	{
+	    "cache": "false",
+	    "page": "contact",
+	    "label": "Contact us",
+	    "url": "<wc-include href='http://links.melify.com/tk/lib/components/w/html/parts/pager/contact.html'></wc-include>"
+	},
+	{
+	    "cache": "true",
+	    "page": "cart",
+	    "label": "Shopping Cart",
+	    "url": "<wc-include href='http://links.melify.com/tk/lib/components/w/html/parts/pager/cart.html'></wc-include>"
+	}
     ];
 
     return (
@@ -27,7 +37,7 @@ export const basic = () => {
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-md-12">
-                        <MTKtabs cfg={tabsData} side="top" show={1} />
+                        <MTKtabs id="my-tabs" cfg={tabsData} side="top" show={0} />
                     </div>
                 </div>
             </div>

@@ -20,9 +20,10 @@ interface MTKtabsProps extends CommonProps {
 }
 
 export interface tabsItem {
-    header: string,
-    body: string,
-    icon: string
+    cache: string,
+    page: string,
+    label: string,
+    url: string
 }
 
 export const MTKtabs = (props: MTKtabsProps) => {
