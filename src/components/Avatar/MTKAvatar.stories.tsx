@@ -15,4 +15,3 @@ export const basic = () => (
 	</div>
     </div>
 )
-

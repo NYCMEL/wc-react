@@ -14,7 +14,7 @@ declare global {
 
 interface MTKtabsProps extends CommonProps {
     id?: string;
-    cfg?: tabsItem[];
+    cfg?: string;
     show: number;
     side: string;
 }
@@ -28,11 +28,7 @@ export interface tabsItem {
 
 export const MTKtabs = (props: MTKtabsProps) => {
     useEffect(() => {
-        let w = document.querySelector("wc-tabs");
-
         // @ts-ignore
-        w.configure(props.cfg);
-
         const listener = (e: any) => {
  	    console.info(`SUBSCRIPTION TRIGGERED ${e.type} > ${JSON.stringify(e.detail)}`);
         }
@@ -45,7 +41,7 @@ export const MTKtabs = (props: MTKtabsProps) => {
     }, []);
 
     return (
-	<wc-tabs id={props.id} side={props.side} show={props.show}></wc-tabs>
+	<wc-tabs id={props.id} side={props.side} show={props.show} cfg={props.cfg}></wc-tabs>
     )
 };
 
