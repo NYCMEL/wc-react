@@ -14,12 +14,24 @@ declare global {
 
 interface MTKtabsProps extends CommonProps {
     id?: string;
-	cfg: JSX.Element | string | JSX.Element[];
-	show: number;
+    cfg?: TabsItem[];
+    icon: string;
+    show: number;
+}
+
+export interface TabsItem {
+    header: string,
+    body: string,
+    icon: string
 }
 
 export const MTKtabs = (props: MTKtabsProps) => {
     useEffect(() => {
+        let w = document.querySelector("wc-tabs");
+
+        // @ts-ignore
+        w.configure(props.cfg);
+
         const listener = (e: any) => {
  	    console.info(`SUBSCRIPTION TRIGGERED ${e.type} > ${JSON.stringify(e.detail)}`);
         }
@@ -30,6 +42,7 @@ export const MTKtabs = (props: MTKtabsProps) => {
 	    window.removeEventListener('wc-tabs', listener);
         }
     }, []);
+
     return (
 	<wc-tabs id={props.id} {...props}></wc-tabs>
     )
