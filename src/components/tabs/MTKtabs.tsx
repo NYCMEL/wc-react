@@ -15,7 +15,6 @@ declare global {
 interface MTKtabsProps extends CommonProps {
     id?: string;
     cfg?: tabsItem[];
-    icon: string;
     show: number;
 }
 
