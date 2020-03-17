@@ -16,6 +16,7 @@ interface MTKtabsProps extends CommonProps {
     id?: string;
     cfg?: tabsItem[];
     show: number;
+    side: string;
 }
 
 export interface tabsItem {
