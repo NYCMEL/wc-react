@@ -27,7 +27,7 @@ export const basic = () => {
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-md-8">
-                        <MTKAccordion cfg={accordionData} show={1} />
+                        <MTKAccordion id="my-accordion" cfg={accordionData} show={1} />
                     </div>
                 </div>
             </div>
