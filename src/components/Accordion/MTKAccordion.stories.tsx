@@ -67,7 +67,7 @@ export const basic = () => {
 			<ol>
 			    <li><code style={codeStyle}>&#123;requestor:"my-accordion", request:"open", panel:1&#125;</code></li>
 			    <li><code style={codeStyle}>&#123;requestor:"my-accordion", request:"load", panel:0, url:"/mtk/render?ajax=1&callback=tk::dummy::3&#125;"</code></li>
-			    <li><code style={codeStyle}>&#123;requestor:"my-accordion", request:"load", panel:0, html:"&lt;h1&gt;Mel was here&lt;/h1&gt;&#125;"</code></li>
+			    <li><code style={codeStyle}>&#123;requestor:"my-accordion", request:"load", panel:0, html:"&lt;h1&gt;IT WORKED !&lt;/h1&gt;&#125;"</code></li>
 			</ol>
                     </div>
                 </div>
