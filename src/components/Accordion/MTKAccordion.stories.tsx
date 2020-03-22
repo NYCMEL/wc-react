@@ -28,6 +28,12 @@ export const basic = () => {
 	fontFamily: "fixed"
     };
 
+    function publish(id, values) {
+	var event = document.createEvent('CustomEvent');
+	event.initCustomEvent(id, true, true, values);
+	document.dispatchEvent(event);
+    }
+
     function accordionOpen() {
 	publish("my-accordion", {time:new Date().getTime(), requestor:"my-accordion", request:"open", panel:0});
     }
