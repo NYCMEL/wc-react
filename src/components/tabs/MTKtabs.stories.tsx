@@ -5,6 +5,12 @@ import {publish} from "../../Utils";
 export default {title: 'MTK Tabs'}
 
 export const basic = () => {
+    var codeStyle = {
+        color: 'brown',
+        fontSize: '14px',
+        fontFamily: "fixed"
+    };
+
     return (
 	<div id="wc">
             <div className="container mt-5">
@@ -30,10 +36,27 @@ export const basic = () => {
 		</div>
             </div>
 
-	    <div className="container mt-5">
+            <div className="container mt-2">
+                <div className="row">
+                    <div className="col-md-12">
+                        <h5>JSON requests</h5>
+                        <ol>
+                            <li><code style={codeStyle}>&#123;requestor:"my-tabs", request:"open", tab:1&#125;</code></li>
+                            <li><code style={codeStyle}>&#123;requestor:"my-tabs", request:"load", tab:0, url:"/mtk/render?ajax=1&callback=tk::dummy::3&#125;"</code></li>
+                            <li><code style={codeStyle}>&#123;requestor:"my-tabs", request:"load", tab:0, html:"&lt;h1&gt;IT WORKED !&lt;/h1&gt;&#125;"</code></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+	    <hr/>
+	    <div className="container mt-2">
 		<div className="row">
-		    <div className="col-md-12 border">
-			<MTKtabs id="my-tabs" cfg="http://links.melify.com/tk/lib/components/misc/webpack/src/w/cfg/tabs.json" side="top" show={2} />
+		    <div className="col-md-12">
+                        <h5>my-tabs</h5>
+			<div className="border">
+			    <MTKtabs id="my-tabs" cfg="http://links.melify.com/tk/lib/components/misc/webpack/src/w/cfg/tabs.json" side="top" show={2} />
+			</div>
 		    </div>
 		</div>
 	    </div>
