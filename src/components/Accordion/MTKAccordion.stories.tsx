@@ -35,48 +35,17 @@ export const basic = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <div id="my-btn-group" className="btn-group" role="group" aria-label="Basic example">
-                            <button
-                                type="button"
-                                className="btn btn-outline-secondary"
-                                onClick={() =>
-                                            publish({
-                                                requestor: "my-accordion",
-                                                request: "open",
-                                                panel: 0
-                                            })
-                                       }
-                            >
-                                1 - Open Panel One
+                            <button type="button" className="btn btn-outline-secondary" onClick={() => publish({
+				requestor: "my-accordion", request: "open", panel: 0}
+			    )} > 1 - Open Panel One</button>
+
+                            <button type="button" className="btn btn-outline-secondary" onClick={() => publish({
+				requestor: "my-accordion", request: "load", panel: 0, url: "http://links.melify.com/mtk/render?ajax=1&callback=tk::dummy::3"
+			    })} > 2 - Load Panel One From URL
                             </button>
 
-                            <button
-                                type="button"
-                                className="btn btn-outline-secondary"
-                                onClick={() =>
-                                    publish({
-                                        requestor: "my-accordion",
-                                        request: "load",
-                                        panel: 0,
-                                        url: "http://links.melify.com/mtk/render?ajax=1&callback=tk::dummy::3"
-                                    })
-                                }
-                            >
-                                2 - Load Panel One From URL
-                            </button>
-
-
-                            <button
-                                type="button"
-                                className="btn btn-outline-secondary"
-                                onClick={() =>
-                                    publish({
-                                        requestor: "my-accordion",
-                                        request: "load", panel: 0,
-                                        html: "<h1>It worked!</h1>"
-                                    })
-                                }
-                            >
-                                3 - Load Panel One From URL
+                            <button type="button" className="btn btn-outline-secondary" onClick={() => publish({
+                                requestor: "my-accordion", request: "load", panel: 0, html: "<h1>It worked!</h1>"})} > 3 - Load Panel One From URL
                             </button>
                         </div>
                     </div>
