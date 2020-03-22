@@ -28,24 +28,15 @@ export const basic = () => {
 	fontFamily: "fixed"
     };
 
-    function publish(id, values) {
-	console.log("publish", id, values);
-
-	var event = document.createEvent('CustomEvent');
-	event.initCustomEvent(id, true, true, values);
-	document.dispatchEvent(event);
-	console.log(">>>>>>>", event);
-    }
-
-    function sayOpen() {
+    function accordionOpen() {
 	publish("my-accordion", {time:new Date().getTime(), requestor:"my-accordion", request:"open", panel:0});
     }
     
-    function sayURL() {
+    function accordionURL() {
 	publish("my-accordion", {time:new Date().getTime(), requestor:"my-accordion", request:"load", panel:0, url:"http://links.melify.com/mtk/render?ajax=1&callback=tk::dummy::3"})
     }
     
-    function sayHTML() {
+    function accordionHTML() {
 	publish("my-accordion", {time:new Date().getTime(), requestor:"my-accordion", request:"load", panel:0, html:"<h1>Mel was here</h1>"})
     }
     
@@ -55,9 +46,9 @@ export const basic = () => {
                 <div className="row">
                     <div className="col-md-12">
 			<div id="my-btn-group" className="btn-group" role="group" aria-label="Basic example">
-			    <button type="button" className="btn btn-outline-secondary" onClick={sayOpen}>1 - Open Panel One</button>
-			    <button type="button" className="btn btn-outline-secondary" onClick={sayURL}>2 - Load Panel One From URL</button>
-			    <button type="button" className="btn btn-outline-secondary" onClick={sayHTML}>3 - Load Panel One From HTML</button>
+			    <button type="button" className="btn btn-outline-secondary" onClick={accordionOpen}>1 - Open Panel One</button>
+			    <button type="button" className="btn btn-outline-secondary" onClick={accordionURL}>2 - Load Panel One From URL</button>
+			    <button type="button" className="btn btn-outline-secondary" onClick={accordionHTML}>3 - Load Panel One From HTML</button>
 			</div>
                     </div>
                 </div>
