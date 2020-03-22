@@ -73,7 +73,8 @@ export const basic = () => {
                 </div>
             </div>
 
-            <div className="container mt-5">
+	    <hr/>
+            <div className="container pt-3">
                 <div className="row">
                     <div className="col-md-8">
 			<h5>my-accordion</h5>
