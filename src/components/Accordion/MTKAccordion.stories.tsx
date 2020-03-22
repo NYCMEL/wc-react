@@ -28,7 +28,7 @@ export const basic = () => {
 	fontFamily: "fixed"
     };
 
-    function publish(id, values) {
+    function publish(id:any, values:any) {
 	var event = document.createEvent('CustomEvent');
 	event.initCustomEvent(id, true, true, values);
 	document.dispatchEvent(event);
