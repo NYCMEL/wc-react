@@ -12,16 +12,16 @@ export const basic = () => {
                     <div className="col-md-12 margin-0 padding-0">
                         <div id="my-btn-group" className="btn-group" role="group" aria-label="Basic example">
                             <button type="button" className="btn btn-outline-secondary" onClick={() => publish({
-				requestor: "my-tabs", request: "open", tab: 1}
+				requestor:"my-tabs", request:"open", tab:1}
 			    )} > 1 - Open Tab One</button>
 
                             <button type="button" className="btn btn-outline-secondary" onClick={() => publish({
-				requestor: "my-tabs", request: "load", tab: 1, url: "http://links.melify.com/mtk/render?ajax=1&callback=tk::dummy::3"
+				requestor:"my-tabs", request:"load", tab:1, url:"http://links.melify.com/mtk/render?ajax=1&callback=tk::dummy::3"
 			    })} > 2 - Load Tab One From URL
                             </button>
 
                             <button type="button" className="btn btn-outline-secondary" onClick={() => publish({
-                                requestor: "my-tabs", request: "load", tab: 1, html: "<h1>It worked!</h1>"})} > 3 - Load Tab One From URL
+                                requestor:"my-tabs", request:"load", tab:1, html:"<h1>It worked!</h1>"})} > 3 - Load Tab One From URL
                             </button>
                         </div>
                     </div>
